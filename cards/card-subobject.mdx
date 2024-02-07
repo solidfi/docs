@@ -1,0 +1,14 @@
+---
+title: "The Cardholder sub-object"
+description: The Cardholder sub-object's fields, types, and descriptions
+---
+
+Note: For a non-KYC business member with card only access, you can create a cardholder with their firstName, lastName, email, and dateOfBirth. For more info, see this help article: [Know Your Business (KYB)](https://help.solidfi.com/hc/en-us/articles/4406107994139-Know-Your-Business-KYB-).
+
+| **Field**      | **Type** | **Description**                                                                                                    |
+|----------------|----------|--------------------------------------------------------------------------------------------------------------------|
+| id             | string   | unique id of the cardholder created                                                                                |
+| personId       | string   | person id of the cardholder                                                                                        |
+| billingAddress | object   | when type of address is billing, see [The Address sub-object](https://www.solidfi.com/docs/the-address-sub-object) |
+| createdAt      | string   | time at which the cardholder was created                                                                           |
+| modifiedAt     | string   | time at which the cardholder was modified                                                                          |

@@ -1,0 +1,18 @@
+---
+title: "The Intrabank sub-object"
+description: Part of the Contact Object, the Intrabank sub-object contains the account number or account ID of a linked account that also resides on the Solid platform.
+---
+When [creating an intrabank contact](https://www.solidfi.com/docs/create-a-contact), you can pass either the accountId or accountNumber to link the account.
+
+| Field         | Type   | Description                             |
+|---------------|--------|-----------------------------------------|
+| accountNumber | string | account number of the intrabank contact |
+| accountId     | string | account ID of the intrabank contact     |
+
+Note that contacts have the three possible types in  [the Contact Object](https://www.solidfi.com/docs/the-contact-object): others, selfAch, and selfIntrabank.
+
+If the user is linking intrabank accounts owned by the same entity, this is referred to as a selfIntrabank contact.
+
+In this situation, they should create a separate contact for the selfIntrabank link using only the intrabank sub-object.
+
+If users try to include a self-owned intrabank account when creating a standard others contact, they receive an error such as "EC_CONTACT_INVALID_SELF_INTRABANK_REQUEST" and "Invalid self intrabank request". They should remove the intrabank sub-object and create a separate contact for the selfIntrabank link.

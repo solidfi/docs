@@ -1,0 +1,21 @@
+---
+title: "Transaction Status Codes"
+description: Solid uses status response codes to indicate the status of a transaction
+---
+Solid uses status response codes to indicate the status of a transaction. Here is a list of potential transfer status codes and the transaction types they're associated with.
+
+| Type               |             **pending** |             **canceled** |             **settled** |
+|--------------------|-------------------------|--------------------------|-------------------------|
+| ACH Send           | X                       | X                        | X                       |
+| ACH Receive        | X                       | X                        | X                       |
+| Domestic Wire      | X                       | X                        | X                       |
+| International Wire | X                       | X                        | X                       |
+| Send Check         | X                       | X                        | X                       |
+| Deposit Check      | X                       | X                        | X                       |
+| Debit Push         | X                       | X                        | X                       |
+| Debit Pull         | X                       |                          | X                       |
+| Crypto Trade       |                         |                          | X                       |
+| Crypto Send        | X                       |                          | X                       |
+| Reversal           |                         |                          | X                       |
+
+**pending** = in review or waiting for approval

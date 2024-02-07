@@ -1,0 +1,68 @@
+---
+title: "Digital Wallet Push Provisioning"
+description: API for provisioning Apple Pay and Google Pay for Solid cards
+---
+The Provision API is used to enable in-app push provisioning for Apple Pay and Google Pay. Please also see [this help center article on obtaining the necessary entitlements from Apple and Google](https://help.solidfi.com/hc/en-us/articles/6343456222875-Digital-Wallet-in-app-push-provisioning).
+
+Note: API is only operational in live mode.
+
+**Sample Code available here:**
+
+Apple Pay: [GitHub - solidfi/ios-iap: iOS In App Push Provisioning Sample](https://github.com/solidfi/ios-iap)
+
+Google Pay: [GitHub - solidfi/android-iap: Android In App Push Provisioning Sample](https://github.com/solidfi/android-iap)
+
+Note: The header sd-device-id is optional.  
+
+
+ENDPOINT
+```url ENDPOINT
+POST /v1/card/:id/provision
+```
+
+Note: The header **sd-device-id** is optional.  
+
+
+```url APPLE PAY REQUEST
+{
+  "wallet": "applePay",
+  "applepay": {
+    "deviceCert": "&lt;apple-digitial-cert&gt;",
+    "nonceSignature": "&lt;nonce-signature&gt;",
+    "nonce": "&lt;nonce&gt;"
+  }
+}
+```
+
+```json APPLE PAY RESPONSE
+
+{
+  "wallet": "applepay",
+  "applepay": {
+    "paymentAccountReference": "&lt;account-ref&gt;",
+    "activationData": "&lt;activation-data&gt;",
+    "encryptedPassData": "&lt;pass-data&gt;",
+    "ephemeralPublicKey": "&lt;public-key&gt;"
+  }
+}
+```
+
+```json GOOGLE PAY REQUEST
+{
+  "wallet": "googlePay",
+  "googlePay": {
+    "clientCustomerId": "",
+    "deviceId": ""
+  }
+}
+```
+
+```json GOOGLE PAY RESPONSE
+{
+  "wallet": "googlepay",
+  "googlepay": {
+    "paymentAccountReference": "",
+    "opaquePaymentCard": ""
+  }
+}
+```

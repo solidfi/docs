@@ -1,0 +1,51 @@
+---
+title: "Retrieve a Receive Transfer"
+description: Retrieves the receive transfer information
+---
+You can retrieve the transfer information by passing the receive transfer type and transfer id. The below example retrieves the transfer information of an intrabank transfer. You can replace intrabank with any other receive transfer form factor:
+- intrabank
+- ach
+- check
+
+
+```url ENDPOINT 
+GET /v1/receive/intrabank/{{transferId}}
+```
+
+ 
+```json RESPONSE
+{
+    "id": "tra-5db46bae-758b-46f9-8fbe-99bbd100e4d4",
+    "accountId": "acc-63d656eb-fedc-4250-8111-48a5ff0faed9",
+    "contactId": "con-ab8e4ddc-cf09-448d-aa19-f71527b8393c",
+    "name": "Bright Might LLC",
+    "accountNumber": "9990001149517700",
+    "routingNumber": "",
+    "address": {
+        "addressType": "",
+        "line1": "",
+        "line2": "",
+        "city": "",
+        "state": "",
+        "country": "",
+        "postalCode": ""
+    },
+    "amount": "10.00",
+    "status": "completed",
+    "description": "Intrabank Pull",
+    "txnType": "credit",
+    "transferType": "intrabank",
+    "transferSubType": "originated",
+    "createdAt": "2021-12-17T00:58:13Z",
+    "modifiedAt": "2021-12-17T00:58:13Z",
+    "transferredAt": "2021-12-17T00:58:13Z",
+    "accountType": "",
+    "iban": "",
+    "valid": "",
+    "parentTransferId": "",
+    "reviewCode": "",
+    "reviewMessage": "",
+    "type": "",
+    "metadata": null
+}
+```

@@ -1,0 +1,16 @@
+---
+title: "The Family object"
+description: Family Object's attributes, fields, and types
+---
+
+| Field      | Type   | Optional | Description                                                      |
+|------------|--------|----------|------------------------------------------------------------------|
+| id         | string |          | unique id of the family created                                  |
+| name       | string |          | name of the family                                               |
+| email      | string | Yes      | email of the family                                              |
+| phone      | string | Yes      | mobile phone of the family                                       |
+| address    | object |          | see The Address sub-object                                       |
+| programId  | string |          | id of the program associated to the family                       |
+| status     | enum   |          | status of the family - active - inactive - dormant - deactivated |
+| createdAt  | string |          | time at which the family object was created                      |
+| modifiedAt | string |          | time at which the family object was modified                     |

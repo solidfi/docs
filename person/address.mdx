@@ -1,0 +1,19 @@
+---
+title: "The Address sub-object"
+description: Address Object's attributes, fields, types.
+---
+The Solid platform will perform a USPS address validation and normalize the address. For example:
+
+**1234 Southeast 25th street** will be normalized to:
+
+**1234 SE 25th St**
+
+| Field       | Type   | Description                                                                             |
+|-------------|--------|-----------------------------------------------------------------------------------------|
+| addressType | enum   | address type with possible values: - mailing - billing - shipping - card - wire - check |
+| line1       | string | line 1 of the address (60 characters max)                                               |
+| line2       | string | line 2 of the address (optional, 60 characters max)                                     |
+| city        | string | city of the address (60 characters max)                                                 |
+| state       | string | 2-Letter US state abbreviation or 60 characters max (ex: CA)                            |
+| country     | string | 2-letter abbreviated country code(ex: US)                                               |
+| postalCode  | string | postal code (60 characters max)                                                         |

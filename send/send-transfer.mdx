@@ -1,0 +1,35 @@
+---
+title: "The Send Transfer object"
+description: The Send Transfer object's attributes, fields, and types
+---
+- Intrabank = 500 character limit
+- Wire = 135 character limit
+
+| Field            | Type    | Optional | Description                                                                                                                                                                     |
+|------------------|---------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id               | string  |          | unique id of the transfer                                                                                                                                                       |
+| accountId        | string  |          | unique id of the bank account associated with the transfer                                                                                                                      |
+| contactId        | string  |          | unique id of the bank account associated with the transfer                                                                                                                      |
+| name             | string  |          | name of the contact, either full name of person or legal name of business                                                                                                       |
+| accountNumber    | string  |          | account number of the contact                                                                                                                                                   |
+| routingNumber    | string  | Yes      | routing number of the contact                                                                                                                                                   |
+| address          | object  | Yes      | see [the Address sub-object](https://www.solidfi.com/docs/the-address-sub-object)                                                                                               |
+| amount           | decimal |          | amount of the transfer (eg. 0.00)                                                                                                                                               |
+| status           | enum    |          | status of the transfer with possible values: - completed - pending - declined - settled - approved                                                                              |
+| title            | string  | optional | title of the transfer. It can be sent on the request object for all send APIs                                                                                                   |
+|                  |         |          |                                                                                                                                                                                 |
+| description      | string  |          | description of the transfer - ACH = 500 character limit - Check = 200 character limit                                                                                           |
+| txnType          | enum    |          | transaction type of the transfer with possible values: - credit - debit                                                                                                         |
+| transferType     | enum    |          | transfer type with possible values: - intrabank - ach - card - physicalCheck - domesticWire                                                                                     |
+| transferSubType  | enum    |          | transfer sub type with possible values: - originated - received - auth - authUpdate - reversal - refund - interest - fees - penalty - promotionalCredit - accountCreationCredit |
+| accountType      | string  |          | type of the account                                                                                                                                                             |
+| bankName         | string  |          | bank name                                                                                                                                                                       |
+| valid            | string  |          | if account is valid                                                                                                                                                             |
+| parentTransferId | string  |          | parent transfer id                                                                                                                                                              |
+| reviewCode       | string  |          | [see list of review codes](https://assets-global.website-files.com/616c7256b52c543a920623bd/62bd0bf5ea57f8ea867aab30_Solid%20Transfer%20Review%20Code%20Matrix.pdf)             |
+| reviewMessage    | string  |          | description of reason for decline                                                                                                                                               |
+| type             | string  |          | type of the transfer                                                                                                                                                            |
+| createdAt        | string  |          | time at which the transfer object was created                                                                                                                                   |
+| modifiedAt       | string  |          | time at which the transfer object was modified                                                                                                                                  |
+| transferredAt    | string  |          | time at which the money was transfered                                                                                                                                          |
+| attachment       | string  |          | optional field for [Send a Check attachments](https://www.solidfi.com/docs/send-a-check)                                                                                        |

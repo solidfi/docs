@@ -1,0 +1,26 @@
+---
+title: "Person Testing (KYC)"
+description: Information on testing the creation of a person and submitting them for KYC
+---
+
+When you [Create a Person](https://www.solidfi.com/docs/create-a-person), you will need to [Submit a KYC](https://www.solidfi.com/docs/submit-a-kyc) (Know Your Customer) for that person. Only after KYC is approved, a personal bank account can be originated for the person. KYC results (approved, review, declined) can be simulated in TEST mode based on the entered SSN (idNumber).
+
+- Approved: Any SSN that starts with 2 through 9 will be approved (Ex: 271-81-2177)  
+- Review: Any SSN that starts with 1 will go into a review (Ex: 171-81-2177)  
+- Declined: Any SSN that starts with 0 will be declined (Ex: 071-81-2177)
+
+To prevent fraud, Solid is enforcing a new rule that users cannot sign up with the same Social Security Number (SSN) more than once per program. You can use the SSN numbers below for testing purposes in Prod Test which will bypass the uniqueness validation.
+
+If using full SSN:
+
+- 099999999 -> KYC will go to decline  
+- 199999999 -> KYC will go to in-review  
+- 999999999 -> KYC will go to approved
+
+If using last 4 SSN:
+
+- 0999 -> KYC will go to decline  
+- 1999 -> KYC will go to in-review  
+- 9999 -> KYC will go to approved  
+
+Note: In test mode, the phone number **+15555555555** is whitelisted and can be used for multiple persons.

@@ -1,0 +1,74 @@
+---
+title: "RDFI Transfer Testing"
+description: Information on testing ACH and Wire transfers as the RDFI
+---
+
+This document contains information on testing ACH and Wire transfers as the Receiving Depository Financial Institution (RDFI). See also testing as the Originating Depository Financial Institution (ODFI) in these documents:  
+- [Send ACH Testing](https://www.solidfi.com/docs/send-ach-testing)  
+- [Send Wire Testing](https://www.solidfi.com/docs/send-wire-testing)  
+- [Receive ACH Testing](https://www.solidfi.com/docs/receive-ach-testing)
+
+You can use the APIs below to test receiving ACH and Wire transfers in Solid's TEST environment without moving real money. You will need a valid bank routing number for the routingNumber field. Here are some examples:  
+- 121042882 (Wells Fargo)  
+- 026009593 (Bank of America)  
+- 322271627 (Chase)
+
+**Test Incoming ACH (Credit)**
+
+
+```url ENDPOINT
+ POST /v1/account/:id/test/ach
+```
+
+
+```json REQUEST
+{
+  "amount": "10.00",
+  "txnType": "credit",
+  "description": "optional",
+  "senderName": "optional",
+  "senderRoutingNumber": "121042882"
+}
+```
+
+**Test Incoming ACH (Debit)**
+
+
+```url ENDPOINT
+ POST /v1/account/:id/test/ach
+```
+
+```json REQUEST
+{
+  "amount": "10.00",
+  "txnType": "debit",
+  "description": "optional",
+  "senderName": "optional",
+  "senderRoutingNumber": "121042882"
+}
+```
+
+**Test Incoming Wire**
+
+
+```url ENDPOINT
+POST /v1/account/:id/test/wire
+```
+
+
+```json REQUEST
+{
+  "amount": "10.00",
+  "wireType": "domestic",
+  "description": "optional",
+  "senderName": "optional",
+  "senderRoutingNumber": "121042882"
+}
+```
+
+Notes:  
+- wireType = domestic or international  
+- if international, senderRoutingNumber = bank's SWIFT code, for example:  
+- HBUKGB4BXXX (HSBC UK BANK PLC)  
+- BNPAFRPHXXX (BNP PARIBAS)  
+- ICICINBBXXX (ICICI BANK LIMITED)

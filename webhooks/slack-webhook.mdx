@@ -1,0 +1,26 @@
+---
+title: "Slack Webhooks Integration"
+description: Get notifications of new webhooks sent to a Slack channel
+---
+
+You may find it useful to get webhook notifications sent to a Slack channel, for example when a Person KYC goes into review. Here's how to set it up:
+
+1. Create a new Slack channel to receive the notifications if needed
+
+2. Create a Slack app for the integration at [https://api.slack.com/apps](https://api.slack.com/apps/)‍
+
+3.  Select "From scratch," give the app a name, and select your workspace
+
+4.  Click "Incoming Webhooks" and switch on "Activate Incoming Webhooks"
+
+5. Click "Add New Webhook to Workspace" and select the Slack channel to receive on, and click Allow
+
+6. Click the Copy button next to the webhook URL
+
+7. To create the webhook, open the [Solid Dashboard](https://dashboard.solidfi.com/), and go to Developer > Webhooks (or use the [Create a Webhook](https://www.solidfi.com/docs/create-a-webhook) API).
+
+8. Click the Create button, enter the copied URL, add a description, and select which webhooks to include, then click Done.
+
+9. You can use the Test button to test the Slack channel is receiving the webhooks.
+
+<Frame>![](/images/slack-webhook.png)</Frame>

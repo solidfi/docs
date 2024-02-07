@@ -1,0 +1,31 @@
+---
+title: "Send ACH Testing"
+description: Information on testing the Send ACH functionality
+---
+You can test [Send an ACH Push](https://www.solidfi.com/docs/send-an-ach-push) in Solid's TEST mode without moving real money. You will first need to [Create a Contact](https://www.solidfi.com/docs/create-a-contact) to store the account and routing numbers to which you are going to send the transfer. The contact will also need to have a valid bank routing number. Here are some examples:
+
+Sample ACH Routing Numbers:
+- 121042882 (Wells Fargo)
+- 026009593 (Bank of America)
+- 322271627 (Chase)
+
+```url ENDPOINT
+POST /v1/send/ach
+```
+
+ 
+```json REQUEST
+{
+    "accountId": "<em>{{accountId}}</em>",
+    "contactId": "<em>{{contactId}}</em>",
+    "amount": "500.00",
+    "description": "Rent Payment",
+    "type": "sameDay"
+}
+```
+
+Test values in amount field will have the following results, executed hourly:
+
+- Transfers less than the account's available balance will succeed
+- If Amount == $99.99, we create a reversal for this ACH RDFI ANF (Account Not Found)
+- If Amount ≥ $1100 we create a reversal for the ACH (non-ANF)

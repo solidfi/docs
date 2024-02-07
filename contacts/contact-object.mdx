@@ -1,0 +1,30 @@
+---
+title: "The Contact object"
+---
+| Field      | Type   | Optional | Description                                                                                                                         |
+|------------|--------|----------|-------------------------------------------------------------------------------------------------------------------------------------|
+| id         | string |          | unique id of the contact created                                                                                                    |
+| accountId  | string |          | unique id of the bank account to which the contact belongs                                                                          |
+| name       | string |          | person full name or business legal name (100 character max, alphanumeric + special characters allowed, 40 character max for checks) |
+| label      | string | Yes      | optional label for the contact                                                                                                      |
+| email      | string | Yes      | email address of the contact                                                                                                        |
+| phone      | string | Yes      | mobile phone of the contact                                                                                                         |
+| status     | enum   |          | status of the contact with possible values: - active - deleted                                                                      |
+| intrabank  | object | Yes      | see [The Intrabank sub-object](https://www.solidfi.com/docs/the-intrabank-sub-object)                                               |
+| ach        | object | Yes      | see [The ACH sub-object](https://www.solidfi.com/docs/the-ach-sub-object)                                                           |
+| wire       | object | Yes      | see [The Wire sub-object](https://www.solidfi.com/docs/the-domestic-wire-sub-object)                                                |
+| check      | object | Yes      | see [The Check sub-object](https://www.solidfi.com/docs/the-check-sub-object)                                                       |
+| card       | object | Yes      | see [The Send Card sub-object](https://www.solidfi.com/docs/the-send-card-sub-object)                                               |
+| debitCard  | object | Yes      | see [The Debit Card sub-object](https://www.solidfi.com/docs/the-debit-card-sub-object)                                             |
+| type       | enum   |          | type of contact with possible values*: - others - selfAch - selfIntrabank                                                           |
+| programId  | string |          | id of the program associated to the contact                                                                                         |
+| createdAt  | string |          | time at which the contact object was created                                                                                        |
+| modifiedAt | string |          | time at which the contact object was modified                                                                                       |
+
+*Note the contact types: others, selfAch, and selfIntrabank.
+
+If the user is linking intrabank accounts owned by the same entity, this is referred to as a selfIntrabank contact.
+
+In this situation, they should create a separate contact for the selfIntrabank link using only the intrabank sub-object.
+
+If users try to include a self-owned intrabank account when creating a standard "others" contact, they receive an error such as "EC_CONTACT_INVALID_SELF_INTRABANK_REQUEST" and "Invalid self intrabank request". They should remove the intrabank sub-object and create a separate contact for the selfIntrabank link.

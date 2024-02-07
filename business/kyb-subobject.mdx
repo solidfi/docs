@@ -1,0 +1,14 @@
+---
+title: "The KYB sub-object"
+description: KYB Object's attributes, fields, types.
+---
+| Field         | Type   | Optional | Description                                                                                                                            |
+|---------------|--------|----------|----------------------------------------------------------------------------------------------------------------------------------------|
+| id            | string |          | unique id of the business KYB created                                                                                                  |
+| businessId    | string |          | unique id of the business                                                                                                              |
+| status        | enum   |          | business KYB status with possible values: - notStarted - submitted - approved - declined - inReview                                    |
+| reviewCode    | string |          | code if KYB status results in a review                                                                                                 |
+| reviewMessage | string |          | message if KYB status results in a review                                                                                              |
+| results       | object |          | result of the KYB `{    "fraud": "approved",    "address": "approved",     "businessName": "approved",     "personName": "approved" }` |
+| createdAt     | string |          | time at which the KYB object was created                                                                                               |
+| modifiedAt    | string |          | time at which the KYB object was modified                                                                                              |                                                                                                                                    |

@@ -1,0 +1,36 @@
+---
+title: "KYB Approval"
+description: API that can be used to approve or decline the KYB of a business
+---
+
+This API can be used to approve or decline the KYB of a business when the KYB status is inReview. The program will need to have operator access granted for the APIs to be available.
+
+```url ENDPOINT
+PATCH /v1/business/:id/kyb
+```
+
+```json REQUEST
+{
+  "status": "approved"
+}
+```
+
+```json RESPONSE
+{
+  "id": "kyb-072bb727-f728-4fc1-b410-c7a0d61255ed",
+  "businessId": "bus-e0ee8aad-f1b1-41a5-95e9-34dd162ca6ed",
+  "status": "approved",
+  "reviewCode": "",
+  "reviewMessage": "",
+  "results": {
+    "fraud": "approved",
+    "address": "approved",
+    "businessName": "approved",
+    "personName": "approved"
+  },
+  "createdAt": "2022-09-10T02:17:44Z",
+  "modifiedAt": "2022-09-10T02:24:00Z"
+}
+```
+
+

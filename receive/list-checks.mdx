@@ -1,0 +1,100 @@
+---
+title: "List all Checks Deposited"
+description: Retrieves list of all checks deposited receive transfers in an account
+---
+
+ 
+```url ENDPOINT
+GET v1/receive/check?accountId=
+{{accountId}}
+```
+FILTERS
+
+The table below describes various filters that can be passed as query parameters to narrow the response.
+
+| **Filter**        | **Type** | **Description**                                                                                     |
+|-------------------|----------|-----------------------------------------------------------------------------------------------------|
+| offset            | int      | start index (default = 0)                                                                           |
+| limit             | int      | number of records to return (default = 25, max = 100)                                               |
+| accountId         | string   | account ID                                                                                          |
+| txnType           | enum     | credit, debit                                                                                       |
+| modifiedStartTime | string   | modified time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)                                              |
+| modifiedEndTime   | string   | modified time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)                                              |
+| externalId        | string   | Matches the externalId key if set in the object's [metadata](https://www.solidfi.com/docs/metadata) |
+
+
+```json RESPONSE
+{
+    "total": 2,
+    "data": [
+        {
+            "id": "tra-c1c89979-2302-4710-a80f-1ac0f72cc9de",
+            "accountId": "acc-63d656eb-fedc-4250-8111-48a5ff0faed9",
+            "contactId": "con-ab8e4ddc-cf09-448d-aa19-f71527b8393c",
+            "name": "Bright Might LLC",
+            "accountNumber": "",
+            "routingNumber": "",
+            "address": {
+                "addressType": "check",
+                "line1": "123 Main St",
+                "line2": "",
+                "city": "New York",
+                "state": "NY",
+                "country": "US",
+                "postalCode": "10001"
+            },
+            "amount": "28.00",
+            "status": "pending",
+            "description": "Payment",
+            "txnType": "credit",
+            "transferType": "physicalCheck",
+            "transferSubType": "originated",
+            "createdAt": "2021-12-17T00:51:01Z",
+            "modifiedAt": "2021-12-17T00:51:24Z",
+            "transferredAt": "2021-12-17T00:51:01Z",
+            "accountType": "",
+            "iban": "",
+            "valid": "",
+            "parentTransferId": "",
+            "reviewCode": "",
+            "reviewMessage": "",
+            "type": "",
+            "metadata": null
+        },
+        {
+            "id": "tra-cb841dfa-8ff8-4705-a99e-0bfe9d42cc29",
+            "accountId": "acc-63d656eb-fedc-4250-8111-48a5ff0faed9",
+            "contactId": "con-ab8e4ddc-cf09-448d-aa19-f71527b8393c",
+            "name": "Bright Might LLC",
+            "accountNumber": "",
+            "routingNumber": "",
+            "address": {
+                "addressType": "check",
+                "line1": "123 Main St",
+                "line2": "",
+                "city": "New York",
+                "state": "NY",
+                "country": "US",
+                "postalCode": "10001"
+            },
+            "amount": "58.00",
+            "status": "pending",
+            "description": "Payment",
+            "txnType": "credit",
+            "transferType": "physicalCheck",
+            "transferSubType": "originated",
+            "createdAt": "2021-12-17T00:42:29Z",
+            "modifiedAt": "2021-12-17T00:48:27Z",
+            "transferredAt": "2021-12-17T00:42:29Z",
+            "accountType": "",
+            "iban": "",
+            "valid": "true",
+            "parentTransferId": "",
+            "reviewCode": "",
+            "reviewMessage": "",
+            "type": "",
+            "metadata": null
+        }
+    ]
+}
+```

@@ -1,0 +1,17 @@
+---
+title: "The Member object"
+description: Member Object's attributes, fields, types
+---
+
+| Field           | Type    | Required            | Description                                                                       |
+|-----------------|---------|---------------------|-----------------------------------------------------------------------------------|
+| id              | string  | read only           | unique id of the member created                                                   |
+| familyId        | string  | yes (or businessId) | unique id of the member's family                                                  |
+| businessId      | string  | yes (or familyId)   | unique id of the member's business                                                |
+| isControlPerson | boolean | yes                 | true if this member is the control person of the business                         |
+| ownership       | string  | yes                 | ownership percentage in the business                                              |
+| designation     | string  | yes                 | the official role of the member in the business. See Business Member Designations |
+| title           | string  | no                  | optional title of the member (use if the designation field is set to "other")     |
+| person          | object  | yes                 | see The Person sub-object                                                         |
+| createdAt       | string  | read only           | time at which the member object was created                                       |
+| modifiedAt      | string  | read only           | time at which the member object was modified                                      |

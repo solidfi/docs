@@ -1,0 +1,36 @@
+---
+title: "Receive ACH Testing"
+description: Information on testing the Receive ACH functionality
+---
+You can test [Receive an ACH Pull](https://www.solidfi.com/docs/receive-an-ach-pull) in Solid's TEST mode without moving real money. You will first need to [Create a Contact](https://www.solidfi.com/docs/create-a-contact) to store the account and routing numbers from which you are going to pull the transfer. The contact will also need to have a valid bank routing number. Here are some examples:
+
+Sample ACH Routing Numbers:  
+- 121042882 (Wells Fargo)  
+- 026009593 (Bank of America)  
+- 322271627 (Chase)
+
+
+```url ENDPOINT
+POST /v1/receive/ach
+```
+
+```json REQUEST
+{
+    "accountId": "<em>{{accountId}}</em>",
+    "contactId": "<em>{{contactId}}</em>",
+    "amount": "20.00",
+    "description": "Fund Account",
+    "type": "sameDay"
+}
+```
+Test values in amount field will have the following results, executed hourly:
+
+Day 1 Batch Simulation after ACH Request:  
+- Amount >=$100 is Rejected  
+- Amount < $100 goes to Day 2  
+
+Day 2 Batch Simulation after ACH Request:  
+- Amount ≥ $50 Rejected as NSF (Insufficient Funds)  
+- Account Number = 9999999999 Rejected as ANF (Account not Found)  
+- If not rejected that means it is approved.
+

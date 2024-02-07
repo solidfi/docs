@@ -1,0 +1,24 @@
+---
+title: "IDV Approval"
+description: API that can be used to approve or decline the IDV of a person
+---
+
+```url ENDPOINT
+PATCH /v1/person/:id/idv
+```
+
+```json REQUEST
+{
+  "status": "approved"
+}
+```
+
+```json RESPONSE
+{
+    "id": "idv-5db17028-1e1d-428a-b9d9-e8d4c5058d2a",
+    "url": "",
+    "status": "approved",
+    "createdAt": "2021-12-14T22:12:44Z",
+    "modifiedAt": "2021-12-15T22:20:14Z"
+}
+```

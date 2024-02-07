@@ -1,0 +1,15 @@
+---
+title: "The Shipping sub-object"
+---
+
+| **Field**       | **Type** | **Optional** | **Description**                                                                                                     |
+|-----------------|----------|--------------|---------------------------------------------------------------------------------------------------------------------|
+| id              | string   |              | unique id of shipping object created.                                                                               |
+| shippingAddress | string   |              | when type of address is shipping, see [The Address sub-object](https://www.solidfi.com/docs/the-address-sub-object) |
+| eta             | string   |              | estimated time of arrival for the shipped card                                                                      |
+| deliveryStatus  | enum     |              | card's delivery status with possible values: - pending - shipped - delivered - returned - failure - canceled        |
+| createdAt       | string   |              | time at which the shipping object was created                                                                       |
+| modifiedAt      | string   |              | time at which the shipping object was modified                                                                      |
+| deliveryPartner | string   |              | delivery partner (eg. USPS) used to ship the card                                                                   |
+| trackingNumber  | string   |              | tracking number if USPS Priority or UPS Next Day                                                                    |
+| trackingUrl     | string   |              | tracking URL if USPS Priority or UPS Next Day                                                                       |

@@ -1,0 +1,36 @@
+---
+title: "KYC Approval"
+description: API that can be used to approve or decline the KYC of a person
+---
+
+This API can be used to approve or decline the KYC of a person when the KYC status is inReview. The program will need to have operator access granted for the APIs to be available.
+
+```url ENDPOINT
+PATCH /v1/person/:id/kyc
+```
+
+```json REQUEST
+{
+  "status": "approved"
+}
+```
+
+
+```json RESPONSE
+{
+  "id": "kyc-2af65a27-43ef-4caa-a439-ebcd93f312f0",
+  "personId": "per-4c9422af-ed81-45dc-a003-805f3faf37b1",
+  "status": "approved",
+  "reviewCode": "",
+  "reviewMessage": "",
+  "results": {
+    "idv": "notStarted",
+    "address": "approved",
+    "dateOfBirth": "approved",
+    "fraud": "approved",
+    "bank": "approved"
+  },
+  "createdAt": "2022-09-10T02:11:31Z",
+  "modifiedAt": "2022-09-10T02:13:32Z"
+}
+```

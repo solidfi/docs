@@ -1,0 +1,124 @@
+---
+title: "The Transaction Type sub-object"
+description: A description of the possible transaction types and their sub-objects
+---
+
+#### ACH Transaction sub-object
+
+| **Field**           | **Type** | **Description**                                                                                                                |
+|---------------------|----------|--------------------------------------------------------------------------------------------------------------------------------|
+| transferId          | string   | unique id of the transfer object created                                                                                       |
+| contactId           | string   | contact id of individual or business for the transfer                                                                          |
+| name                | string   | contact name of individual or business for the transfer                                                                        |
+| routingNumber       | string   | routing number of the contact's account                                                                                        |
+| type                | enum     | type of ach, sameDay or nextDay                                                                                                |
+| bankName            | string   | name of bank where the ACH originated                                                                                          |
+| traceNumber         | string   | unique identifier within the ACH batch file                                                                                    |
+| authId              | string   | ACH authorization ID number                                                                                                    |
+| returnReasonMessage | string   | [reason code](https://paymentcloudinc.com/blog/ach-return-codes/#list-of-nacha-ach-return-codes) given in case of ACH reversal |
+
+#### Card Transaction sub-object
+
+| **Field**                | **Type** | **Description**                                                                                                                                                                                                                                                                                                     |
+|--------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id                       | string   | cardId of the card used in the transaction                                                                                                                                                                                                                                                                          |
+| transferId               | string   | unique id of transfer object created                                                                                                                                                                                                                                                                                |
+| label                    | string   | label of the card used                                                                                                                                                                                                                                                                                              |
+| merchant                 | object   | merchant the card was used at. "merchant": `{   "merchantName": "CVS PHARMACY",   "merchantCity": "SAN JOSE",   "merchantState": "CA",   "merchantCountry": "US",   "postalCode": "95129",   "merchantCategory": "Drug Stores and Pharmacies"   "merchantCategoryCode": "5912"   "merchantId": "824743298982361" }` |
+| authMethod               | enum     | method of use for the card transaction: - keyedIn - swipe - chip - online - contactless - other                                                                                                                                                                                                                     |
+| wallet                   | enum     | digital wallet type: - applePay - googlePay - samsungPay                                                                                                                                                                                                                                                            |
+| authId                   | string   | card authorization ID                                                                                                                                                                                                                                                                                               |
+| localTransactionAmount   | int      | local currency transaction amount                                                                                                                                                                                                                                                                                   |
+| localTransactionCurrency | string   | local currency code (eg. USD)                                                                                                                                                                                                                                                                                       |
+| currencyConversionRate   | int      | local currency conversion rate                                                                                                                                                                                                                                                                                      |
+| rewardAmount             | int      | amount of card reward earned on the transaction if applicable                                                                                                                                                                                                                                                       |
+| isCaptured               | bool     | indicates if the transaction is captured or closed (auth, authUpdate, refund). A card transaction can be disputed only if it is captured (isCaptured=true)                                                                                                                                                          |
+| capturedAt               | string   | time at which the auth capture occurred                                                                                                                                                                                                                                                                             |
+| disputeStatus            | enum     | indicates whether transaction is in dispute with possible values: notInitiated (default), initiated, successful, declined                                                                                                                                                                                           |
+| availableLimit           | int      | spending amount available on the card (for limitInterval allTime only)                                                                                                                                                                                                                                              |
+| pinVerified              | bool     | indicates if the PIN was entered to complete the transaction                                                                                                                                                                                                                                                        |
+
+#### Intrabank Transaction sub-object
+
+| **Field**     | **Type** | **Description**                                         |
+|---------------|----------|---------------------------------------------------------|
+| transferId    | string   | unique id of the transfer object created                |
+| contactId     | string   | contact id of individual or business for the transfer   |
+| name          | string   | contact name of individual or business for the transfer |
+| routingNumber | string   | routing number of the contact's account                 |
+| bankName      | string   | name of bank where the transfer originated              |
+
+#### The Domestic Wire sub-object
+
+| **Field**     | **Type** | **Description**                                                                                                                    |
+|---------------|----------|------------------------------------------------------------------------------------------------------------------------------------|
+| accountNumber | string   | bank account number of the contact                                                                                                 |
+| routingNumber | string   | ACH routing number of the contact's bank                                                                                           |
+| imad          | string   | IMAD (Input Message Accountability Data) number is a unique number generated by FedwireService for tracking purposes.              |
+| omad          | string   | OMAD (Output Message Accountability Data) number is a unique number generated by FedwireService for tracking purposes.             |
+| accountType   | string   | type of the contact's bank account with possible values: - businessChecking - personalChecking - businessSavings - personalSavings |
+| bankName      | string   | bank name of contact's bank                                                                                                        |
+| address       | object   | see [the Address sub-object](https://www.solidfi.com/docs/the-address-sub-object)                                                  |
+
+#### ‍The International Wire sub-object
+
+| **Field**                       | **Type** | **Description**                                                                                                       |
+|---------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------|
+| bankIdentifierType              | enum     | Bank identifier type possible values: - swift                                                                         |
+| bankIdentifierCode              | string   | bank's SWIFT/BIC code                                                                                                 |
+| imad                            | string   | IMAD (Input Message Accountability Data) number is a unique number generated by FedwireService for tracking purposes. |
+| accountType                     | string   | type of the contact's bank account with possible values: - business - personal                                        |
+| beneficiaryBank                 | string   | name of the beneficiary bank                                                                                          |
+| beneficiaryAddress              | object   | see [The Address sub-object](https://www.solidfi.com/docs/the-address-sub-object)                                     |
+| beneficiaryBankAddress          | object   | see [The Address sub-object](https://www.solidfi.com/docs/the-address-sub-object)                                     |
+| correspondentBank               | string   | name of the correspondent bank, if aaplicable                                                                         |
+| correspondentBankIdentifierCode | string   | correspondent bank's SWIFT/BIC code                                                                                   |
+| correspondentBankAddress        | object   | see [The Address sub-object](https://www.solidfi.com/docs/the-address-sub-object)                                     |
+
+#### The Debit Card sub-object
+
+| **Field**  | **Type** | **Description**           |
+|------------|----------|---------------------------|
+| transferId | string   | unique ID of the transfer |
+| contactId  | string   | unique ID of the contact  |
+| name       | string   | name of the contact       |
+
+#### The Solid Card sub-object
+
+| **Field**  | **Type** | **Description**           |
+|------------|----------|---------------------------|
+| transferId | string   | unique ID of the transfer |
+| contactId  | string   | unique ID of the contact  |
+| name       | string   | name of the contact       |
+
+#### The Check sub-object
+
+| **Field**   | **Type** | **Description**                                                                                                                                                                                                                                                                                      |
+|-------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| transferId  | string   | unique ID of the transfer                                                                                                                                                                                                                                                                            |
+| contactId   | string   | unique ID of the contact                                                                                                                                                                                                                                                                             |
+| name        | string   | name of the contact                                                                                                                                                                                                                                                                                  |
+| checkNumber | string   | check number                                                                                                                                                                                                                                                                                         |
+| isCashed    | bool     | flag to indicate if the check has been cashed                                                                                                                                                                                                                                                        |
+| cashedAt    | string   | timestamp of when the check was cashed                                                                                                                                                                                                                                                               |
+| shipping    | object   | the shipping object contains the following: - [shippingAddress](https://www.solidfi.com/docs/the-address-sub-object) sub-object (required) - **eta** is the estimated time of arrival - **deliveryStatus** has possible values of created, mailed, transit, processed, delivered, rerouted, returned |
+
+
+More Info about deliveryStatus:
+
+**created** - set at the time of check creation, upon getting successful response from LOB.
+
+**mailed** - A check receives a "Mailed" tracking event from USPS, this means that the mail entered USPS system.
+
+**transit** - A check receives an "transit" tracking event, this means that the check is on its way to the destination.
+
+**processed** - The mail has been green-lit for delivery at the recipient's nearest postal facility. The mail should reach the mailbox within 1 business day of this tracking event.
+
+**delivered** - A check receives a "delivered" tracking event, this means that the check has reached the destination. Please not that this status is not available for all postal address types, specifically PO boxes.
+
+**rerouted** - The mail is re-routed due to recipient change of address, address errors, or USPS relabeling of barcode/ID tag area. This effectively means that the check is still in transit.
+
+**returned** - The check is being returned to the sender due to barcode, ID tag area, or address errors.
+
+Note: For PO Box addresses, the status will remain as transit even after the check has been cashed.
+

@@ -1,0 +1,67 @@
+---
+title: "Metadata"
+description: The Solid Platform supports metadata to add information to the resource
+---
+The Solid Platform support includes metadata on the following resources:
+[Persons](https://www.solidfi.com/docs/the-person-object), [Businesses](https://www.solidfi.com/docs/the-business-object), [Accounts](https://www.solidfi.com/docs/the-account-object), [Contacts](https://www.solidfi.com/docs/the-contact-object), [Cards](https://www.solidfi.com/docs/the-card-object), [Transactions](https://www.solidfi.com/docs/the-transaction-object), and [Transfers](https://www.solidfi.com/docs/the-send-transfer-object)
+
+Metadata takes the form of free-form key-value pairs. You may send metadata when you create an object (POST) and when updating the object (PATCH).  If you would like to remove metadata that is already on an object, you can unset it by passing in the key-value pair with an empty string, like this:  
+
+```json
+{  "key": "" }
+```
+
+Current limitations:  
+- Max of 20 keys for any single metadata object  
+- Max of 4KB for any single metadata object
+
+EXAMPLE (in Create a Person)
+
+```json example
+{
+  "id": "per-3ebfa3d2-5d36-411d-984a-9e3a328011c5",
+  "firstName": "John",
+  "middleName": "",
+  "lastName": "Doe",
+  "phone": "+19418405843",
+  "phoneVerified": true,
+  "email": "john.doe@gmail.com",
+  "emailVerified": false,
+  "dateOfBirth": "1974-01-25",
+  "idType": "ssn",
+  "idNumber": "223902234",
+  "address": {
+    "addressType": "mailing",
+    "line1": "123 Main St",
+    "line2": "",
+    "city": "New York",
+    "state": "NY",
+    "country": "US",
+    "postalCode": "10001"
+  },
+  "kyc": {
+    "id": "kyc-d40f6bdd-6e12-446e-a3a8-7bd3b2dbb182",
+    "personId": "per-3ebfa3d2-5d36-411d-984a-9e3a328011c5",
+    "status": "notStarted",
+    "reviewCode": "",
+    "reviewMessage": "",
+    "results": {
+      "idv": "notStarted",
+      "address": "notStarted",
+      "dateOfBirth": "notStarted",
+      "fraud": "notStarted"
+    },
+    "createdAt": "2021-12-14T21:25:19Z",
+    "modifiedAt": "2021-12-14T21:25:19Z"
+  },
+  "programId": "prg-b9f17601-4717-460e-bda5-9598f6f6db28",
+  "createdAt": "2021-12-14T21:25:19Z",
+  "modifiedAt": "2021-12-14T21:25:19Z",
+  "language": "en",
+  "metadata": {
+    "externalId": "usr_9HG724gvHJB378v3h",
+    "description": "Pro user"
+  },
+  "status": "active"
+}
+```

@@ -1,0 +1,50 @@
+---
+title: "Cancel an ACH Pull"
+description: Use this API to cancel an ACH Pull before it has been sent to the bank for processing
+---
+
+ 
+```url ENDPOINT
+POST /receive/ach/:id/cancel
+```
+
+
+```json RESPONSE
+{
+  "id": "tra-5c3a9072-e041-4409-8756-42232160dccd",
+  "bankName": "SolidBanking",
+  "accountId": "acc-d8d8fcc5-8587-46b2-9139-41a0770c2dd3",
+  "contactId": "con-ed43c372-8587-46b2-9139-41a0770c2dd3",
+  "name": "Micheal Murray",
+  "accountNumber": "9999999999999",
+  "routingNumber": "121042882",
+  "address": {
+    "addressType": "",
+    "line1": "",
+    "line2": "",
+    "city": "",
+    "state": "",
+    "country": "",
+    "postalCode": ""
+  },
+  "amount": "4.25",
+  "status": "pending",
+  "description": "ACH Cancel testing",
+  "txnType": "debit",
+  "transferType": "ach",
+  "transferSubType": "originated",
+  "createdAt": "2022-08-17T05:33:54Z",
+  "modifiedAt": "2022-08-17T05:35:52Z",
+  "transferredAt": "2022-08-17T05:33:54Z",
+  "accountType": "businessChecking",
+  "iban": "",
+  "valid": "false",
+  "parentTransferId": "",
+  "reviewCode": "",
+  "reviewMessage": "",
+  "type": "nextDay",
+  "metadata": null,
+  "title": "",
+  "card": null
+}
+```

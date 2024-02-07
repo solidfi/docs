@@ -1,0 +1,433 @@
+{
+    "name": "Solid",
+    "logo": "/logo.png",
+    "favicon": "/favicon.png",
+    "colors": {
+      "primary": "#248BF5",
+      "light": "#55A9FF",
+      "dark": "#248BF5"
+    },
+    "modeToggle": {
+        "default": "dark",
+        "isHidden": true
+    },
+    "topbarCtaButton": {
+      "name": "Dashboard",
+      "url": "https://dashboard.solidfi.com/login?&_ga=2.71532817.308955735.1702327933-383528257.1702327933"
+    },
+    "tabs": [
+        {
+            "name": "API Reference",
+            "url": "api-reference"
+        }
+    ],
+    "anchors": [
+      {
+        "name": "Status",
+        "icon": "signal-bars",
+        "url": "https://status.solidfi.com/?&_ga=2.106479873.308955735.1702327933-383528257.1702327933"
+      },
+      {
+        "name": "Contact Us",
+        "icon": "inbox",
+        "url": "https://www.solidfi.com/contact?"
+      },
+      {
+        "name": "Help Center",
+        "icon": "block-question",
+        "url": "https://help.solidfi.com/hc/en-us?&_ga=2.8628919.308955735.1702327933-383528257.1702327933"
+      }
+    ],
+    "navigation": [
+        {
+            "group": "General",
+            "pages": [
+              "general/introduction",
+              "general/dashboard",
+              "general/environments",
+              "general/authentication",
+              "general/idempotency",
+              "general/metadata",
+              "general/errors",
+              "general/rate-limiting",
+              "general/testing",
+              "general/platform",
+              "general/pagination"
+        
+            ]
+        },
+
+        {
+          "group": "Person",
+          "pages": [
+            "person/intro-person",
+            "person/person-object",
+            "person/address",
+            "person/kyc-object",
+            "person/person-testing",
+            "person/kyc-approval",
+            "person/idv-approval"
+          ]
+      },
+
+      {
+        "group": "Business",
+        "pages": [
+          "business/intro-business",
+          "business/business-object",
+          "business/kyb-subobject",
+          "business/business-testing",
+          "business/kyb-approval",
+          "business/naics-codes",
+          "business/submit-projections",
+          "business/retrieve-projections",
+          "business/member-designations",
+          "business/owner-disclosure"
+        ]
+    },
+    {
+      "group": "Documents",
+      "pages": [
+        "documents/intro-documents",
+        "documents/document-object"
+      ]
+  },
+
+  {
+    "group": "Member",
+    "pages": [
+      "member/intro-member",
+      "member/member-object"
+    ]
+},
+  {
+    "group": "Accounts",
+    "pages": [
+      "accounts/intro-accounts",
+      "accounts/account-object",
+      "accounts/config-subobject",
+      "accounts/account-config",
+      "accounts/ach-webhooks",
+      "accounts/rdfi-transfer"
+    ]
+  },
+
+  {
+    "group": "Family",
+    "pages": [
+      "family/intro-family",
+      "family/family-object"
+    ]
+  },
+  {
+    "group": "Contacts",
+    "pages": [
+      "contacts/intro-contacts",
+      "contacts/contact-object",
+      "contacts/intrabank-subobject",
+      "contacts/ach-subobject",
+      "contacts/wire-subobject",
+      "contacts/check-subobject",
+      "contacts/debit-subobject",
+      "contacts/plaid-integration",
+      "contacts/domestic-subobject"
+    ]
+  },
+  {
+    "group": "Send",
+    "pages": [
+      "send/intro-send",
+      "send/send-transfer",
+      "send/send-ach",
+      "send/send-wire"
+    ]
+  },
+
+  {
+    "group": "Receive",
+    "pages": [
+      "receive/intro-receive",
+      "receive/receive-object",
+      "receive/receive-deposit",
+      "receive/list-checks",
+      "receive/retrieve-receive",
+      "receive/receive-ach",
+      "receive/cancel-ach",
+      "receive/download-check"
+    ]
+  },
+
+  {
+    "group": "Cards",
+    "pages": [
+      "cards/intro-cards",
+      "cards/card-object",
+      "cards/card-subobject",
+      "cards/transaction-subobject",
+      "cards/shipping-subobject",
+      "cards/card-decline",
+      "cards/card-rta",
+      "cards/card-testing",
+      "cards/digital-wallet"
+    ]
+  },
+
+  {
+    "group": "Transactions",
+    "pages": [
+      "transactions/intro-transactions",
+      "transactions/transaction-object",
+      "transactions/transaction-subobject",
+      "transactions/enriched-data",
+      "transactions/transaction-status",
+      "transactions/transfer-status",
+      "transactions/subtype-matrix",
+      "transactions/card-trans-subobject"
+    ]
+  },
+
+  {
+    "group": "Webhooks",
+    "pages": [
+      "webhooks/intro-webhooks",
+      "webhooks/webhook-object",
+      "webhooks/webhook-samples",
+      "webhooks/card-webhooks",
+      "webhooks/ach-webhooks",
+      "webhooks/slack-webhook"
+    ]
+  },
+
+  {
+    "group": "Programs",
+    "pages": [
+      "program/intro-program",
+      "program/program-object"
+    ]
+  },
+
+  {
+    "group": "Help Desk",
+    "pages": [
+      "helpdesk/intro-tickets",
+      "helpdesk/ticket-object"
+    ]
+  },
+
+        {
+            "group": "Person",
+            "pages": [
+              "api-reference/person/create-a-person",
+              "api-reference/person/retrieve-a-person",
+              "api-reference/person/update-a-person",
+              "api-reference/person/retrieve-a-kyc",
+              "api-reference/person/submit-a-kyc",
+              "api-reference/person/kyc-approval",
+              "api-reference/person/retrieve-an-idv",
+              "api-reference/person/submit-an-idv",
+              "api-reference/person/idv-approval"
+            ]
+          },
+          {
+            "group": "Business",
+            "pages": [
+              "api-reference/business/list-all-businesses",
+              "api-reference/business/create-a-business",
+              "api-reference/business/retrieve-a-business",
+              "api-reference/business/update-a-business",
+              "api-reference/business/retrieve-a-kyb",
+              "api-reference/business/submit-a-kyb",
+              "api-reference/business/kyb-approval"
+            ]
+          },
+          {
+            "group": "Documents Person",
+            "pages": [
+              "api-reference/documents-person/list-all-documents",
+              "api-reference/documents-person/create-a-document",
+              "api-reference/documents-person/retrieve-a-document",
+              "api-reference/documents-person/delete-a-document",
+              "api-reference/documents-person/update-a-document",
+              "api-reference/documents-person/get-upload-url",
+              "api-reference/documents-person/get-download-url"
+            ]
+          },
+          {
+            "group": "Document Business",
+            "pages": [
+              "api-reference/document-business/upload-a-document",
+              "api-reference/document-business/list-of-all-documents",
+              "api-reference/document-business/create-a-document",
+              "api-reference/document-business/retrieve-a-document",
+              "api-reference/document-business/delete-a-document",
+              "api-reference/document-business/update-document",
+              "api-reference/document-business/get-document-upload-url",
+              "api-reference/document-business/get-document-download-url"
+            ]
+          },
+          {
+            "group": "Family",
+            "pages": [
+              "api-reference/family/list-all-families",
+              "api-reference/family/create-a-family",
+              "api-reference/family/retrieve-a-family",
+              "api-reference/family/update-a-family"
+            ]
+          },
+          {
+            "group": "Member",
+            "pages": [
+              "api-reference/member/list-all-family-members",
+              "api-reference/member/create-a-family-member",
+              "api-reference/member/retrieve-a-member",
+              "api-reference/member/delete-a-member",
+              "api-reference/member/update-a-member",
+              "api-reference/member/retrieve-a-member-kyc",
+              "api-reference/member/submit-a-member-kyc"
+            ]
+          },
+          {
+            "group": "Accounts",
+            "pages": [
+              "api-reference/accounts/list-all-accounts",
+              "api-reference/accounts/create-an-account",
+              "api-reference/accounts/retrieve-an-account",
+              "api-reference/accounts/update-an-account",
+              "api-reference/accounts/retrieve-account-limits",
+              "api-reference/accounts/retrieve-a-statement",
+              "api-reference/accounts/list-all-statements"
+            ]
+          },
+          {
+            "group": "Contacts",
+            "pages": [
+              "api-reference/contacts/list-all-contacts",
+              "api-reference/contacts/create-a-contact",
+              "api-reference/contacts/retrieve-a-contact",
+              "api-reference/contacts/delete-a-contact",
+              "api-reference/contacts/update-a-contact",
+              "api-reference/contacts/retrieve-bank-info",
+              "api-reference/contacts/plaid-processortoken-integration"
+            ]
+          },
+          {
+            "group": "Send",
+            "pages": [
+              "api-reference/send/list-all-intrabank-push",
+              "api-reference/send/send-an-intrabank-push",
+              "api-reference/send/get-an-intrabank-push",
+              "api-reference/send/update-an-intrabank-push",
+              "api-reference/send/list-all-ach-push",
+              "api-reference/send/send-an-ach-push",
+              "api-reference/send/get-an-ach-push",
+              "api-reference/send/update-an-ach-push",
+              "api-reference/send/list-all-wire-sent",
+              "api-reference/send/send-an-wire-transfer",
+              "api-reference/send/get-an-wire-transfer",
+              "api-reference/send/update-an-wire-transfer",
+              "api-reference/send/list-all-check-sent",
+              "api-reference/send/send-an-check",
+              "api-reference/send/get-an-check-sent",
+              "api-reference/send/update-an-check-sent"
+            ]
+          },
+          {
+            "group": "Receive",
+            "pages": [
+              "api-reference/receive/list-all-intrabank-pull",
+              "api-reference/receive/receive-an-intrabank-pull",
+              "api-reference/receive/retrieve-an-receive-intrabank",
+              "api-reference/receive/update-an-receive-intrabank",
+              "api-reference/receive/list-all-ach-pull",
+              "api-reference/receive/receive-an-ach-pull",
+              "api-reference/receive/retrieve-a-receive-ach-transfer",
+              "api-reference/receive/update-an-receive-ach"
+            ]
+          },
+          {
+            "group": "Cards",
+            "pages": [
+              "api-reference/cards/list-all-cards",
+              "api-reference/cards/create-a-card",
+              "api-reference/cards/activate-a-card",
+              "api-reference/cards/create-a-pin-token",
+              "api-reference/cards/set-a-new-pin",
+              "api-reference/cards/retrieve-a-card",
+              "api-reference/cards/delete-a-card",
+              "api-reference/cards/update-a-card",
+              "api-reference/cards/create-a-show-token",
+              "api-reference/cards/show-a-card",
+              "api-reference/cards/list-all-atm",
+              "api-reference/cards/replace-a-card",
+              "api-reference/cards/retrieve-declined-card-authorizations"
+            ]
+          },
+          {
+            "group": "Transactions",
+            "pages": [
+              "api-reference/transactions/retrieve-a-transaction",
+              "api-reference/transactions/update-a-transaction",
+              "api-reference/transactions/list-all-transactions"
+            ]
+          },
+          {
+            "group": "Webhooks",
+            "pages": [
+              "api-reference/webhooks/list-all-webhook-events",
+              "api-reference/webhooks/list-all-webhooks",
+              "api-reference/webhooks/create-a-webhook",
+              "api-reference/webhooks/delete-a-webhook",
+              "api-reference/webhooks/update-a-webhook",
+              "api-reference/webhooks/retrieve-a-webhook",
+              "api-reference/webhooks/retrieve-a-webhook-secret"
+            ]
+          },
+          {
+            "group": "Program",
+            "pages": [
+              "api-reference/program/retrieve-a-program",
+              "api-reference/program/list-all-stats",
+              "api-reference/program/list-all-persons",
+              "api-reference/program/list-all-businesses",
+              "api-reference/program/list-all-family",
+              "api-reference/program/list-all-members",
+              "api-reference/program/list-all-cards",
+              "api-reference/program/list-all-accounts",
+              "api-reference/program/list-all-contacts",
+              "api-reference/program/list-all-transactions",
+              "api-reference/program/list-all-transfers",
+              "api-reference/program/list-all-carddecline-txn"
+            ]
+          },
+          {
+            "group": "Batch",
+            "pages": [
+              "api-reference/batch/create-an-intrabank-batch",
+              "api-reference/batch/retrieve-an-intrabank-batch"
+            ]
+          },
+          {
+            "group": "Help Desk",
+            "pages": [
+              "api-reference/help-desk/create-a-ticket",
+              "api-reference/help-desk/retrieve-a-ticket",
+              "api-reference/help-desk/update-a-ticket",
+              "api-reference/help-desk/delete-a-ticket",
+              "api-reference/help-desk/list-all-tickets",
+              "api-reference/help-desk/upload-an-attachment"
+            ]
+          },
+          {
+            "group": "Testing",
+            "pages": [
+              "api-reference/testing/test-incoming-ach-credit",
+              "api-reference/testing/test-incoming-domesticwire",
+              "api-reference/testing/auth"
+            ]
+          }
+    ],
+    "footerSocials":
+      {
+          "linkedin": "https://www.linkedin.com/company/solidfi/"
+      }
+  }

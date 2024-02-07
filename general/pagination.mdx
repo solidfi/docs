@@ -1,0 +1,12 @@
+---
+title: "Pagination"
+description: General information on pagination in List All API calls
+---
+When calling any of the List All APIs on the Solid platform, you can control the pagination of the response using the following filters. For other filters, see the documentation for the relevant List All API.
+
+As the max number of records returned is 100, if you find your response shows a "total" value over 100, use the "offset" filter to get the subsequent remaining records.
+
+| Filter | Type | Description                                           |
+|--------|------|-------------------------------------------------------|
+| offset | int  | start index (default = 0)                             |
+| limit  | int  | number of records to return (default = 25, max = 100) |

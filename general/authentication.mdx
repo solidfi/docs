@@ -1,0 +1,18 @@
+---
+title: "Authentication"
+description: Solid offers API key based (Userless) method of authentication
+---
+All requests must be made over HTTPS and authenticated via API Key or access_token (i.e token auth). Certain requests can only be authenticated via API key. You need to pass the TEST or LIVE API key in the header. You can view and manage your API keys in the Solid Dashboard. API keys must be kept secret. They should not be in your client-side code or checked into your application's code.
+
+1. Proceed to Create a Person with the API key. Set the sd-api-key in the header.
+2. Once you create a person, you will receive the personId in the response.
+3. You will need to pass the personId (sd-person-id) in the header along with the API key (sd-api-key) in every API call going forward. This is done for access control and auditing purposes.
+
+
+
+```bash EXAMPLE
+curl --request GET <base_url>/v1/person \
+--header 'Content-Type: application/json' \
+--header 'sd-api-key: sd_test_34477ggh78' \
+--header 'sd-person-id: per-bace1330-8478-4963-9ae8-e06a478228a1' \
+```

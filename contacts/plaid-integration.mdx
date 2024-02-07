@@ -1,0 +1,83 @@
+---
+title: "Plaid Link Integration"
+description: Information on how to implement the Plaid processor token for account linking
+---
+Plaid is used to link external accounts to account contacts on the Solid platform. Once linked, users can Send/Receive ACH transactions to/from the linked accounts. More information on this partnership and Plaid documentation available here. Here's how to implement it:
+
+- Get the processor token from Plaid using their SDK for the account you want to link with Solid.
+- Share the processor token with Solid using the API below.
+- Solid Platform will get account details from Plaid and Create a Contact and return a Contact object in the response, which can then be used to move funds using Send an ACH or Receive an ACH from the linked account.
+
+
+```url ENDPOINT
+POST /v1/account/:id/processor-token
+```
+ 
+```json REQUEST
+{
+  "processorToken": "processor-sandbox-40mc8e83-1e61-4c4c-ad9c-0138c42b68c7"
+}
+```
+
+```json RESPONSE
+{
+  "id": "con-f00fc74f-fd78-440f-a723-532f950a3320",
+  "accountId": "acc-91d9649cc-dcc2-4732-9a26-df402ade1b31",
+  "name": "Alberta apikey Charleson",
+  "email": "accountholder0@example.com",
+  "phone": "+19189924174",
+  "status": "active",
+  "intrabank": null,
+  "ach": {
+    "accountNumber": "1111222233331111",
+    "routingNumber": "011401533",
+    "accountType": "personalSavings",
+    "bankName": "Citizens Bank"
+  },
+  "createdAt": "2022-01-27T09:01:26Z",
+  "modifiedAt": "2022-01-27T09:01:26Z",
+  "wire": null,
+  "check": null,
+  "card": null,
+  "type": "selfACH",
+  "metadata": null,
+  "programId": "prg-4085ab68-7331-4733-ac92-69239baaff42",
+  "debitCard": null
+}
+```
+
+Note: Identity verification is built into the Plaid processor token API. This checks to make sure the name on the linked account matches the Solid account as well checking that phone or email or address matches as well:
+
+match = name AND (phone OR email OR address)
+
+If you want to bypass the identity verification, you can include the "verify" field in your request body and set it to "false" which will allow you to link the account for ACH push, but ACH pull will not be allowed without verification.
+
+```json
+{
+  "processorToken": "processor-sandbox-40mc8e83-1e61-4c4c-ad9c-0138c42b68c7",
+  "verify": false
+}
+```
+
+**Testing in the sandbox environment:**
+
+The Plaid API always returns the account holder name as Alberta Bobbeth Charleson. The Person name should match with this name. First name - Alberta and last name - Charleson.
+
+The person phone should be one of these
+
++1112223333
++1112224444
++1112225555
+
+The person email should be one of these:
+
+accountholder0@example.com‍
+‍accountholder1@example.com
+extraordinarily.long.email.username.123456@reallylonghostname.com
+
+Person address should be one of these:
+
+2992 Cameron Road, Malakoff, NY, US - 14236
+2493 Leisure Lane, San Matias, CA, US - 93405-2255
+
+‍

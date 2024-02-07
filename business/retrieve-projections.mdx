@@ -1,0 +1,72 @@
+---
+title: "Retrieve Business Projections"
+description: API to get projected amounts of annual transaction volume in each of the payment form factors
+---
+Use this API to retrieve estimated annual transaction projections for a business.
+
+```url ENDPOINT
+GET /v1/business/{{businessId}}/projection
+```
+
+```json RESPONSE
+{
+  "transactions": {
+    "annual": {
+      "send": {
+        "ach": {
+          "count": "30",
+          "amount": "1000.00"
+        },
+        "internationalAch": {
+          "count": "0",
+          "amount": "0.00"
+        },
+        "domesticWire": {
+          "count": "20",
+          "amount": "2000.00"
+        },
+        "internationalWire": {
+          "count": "20",
+          "amount": "2000.00"
+        },
+        "physicalCheck": {
+          "count": "20",
+          "amount": "2000.00"
+        }
+      },
+      "receive": {
+        "ach": {
+          "count": "20",
+          "amount": "2000.00"
+        },
+        "physicalCheck": {
+          "count": "20",
+          "amount": "2000.00"
+        }
+      },
+      "incoming": {
+        "achPush": {
+          "count": "20",
+          "amount": "2000.00"
+        },
+        "achPull": {
+          "count": "20",
+          "amount": "2000.00"
+        },
+        "internationalAch": {
+          "count": "20",
+          "amount": "2000.00"
+        },
+        "domesticWire": {
+          "count": "20",
+          "amount": "2000.00"
+        },
+        "internationalWire": {
+          "count": "20",
+          "amount": "2000.00"
+        }
+      }
+    }
+  }
+}
+```

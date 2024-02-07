@@ -1,0 +1,52 @@
+---
+title: "The Enriched Data Transaction sub-object"
+description: Additional merchant information for card transactions
+---
+To make the transaction details more user-friendly and provide additional details such as website URL, logo, address, and location, we have integrated enriched merchant data into the Solid Transaction Object. Below you will find the additional fields of the enrichedData sub-object in the Transaction object response.
+
+| **Field** | **Description**                                       |
+|-----------|-------------------------------------------------------|
+| name      | name of the merchant that processed the transaction   |
+| email     | name of the merchant that processed the transaction   |
+| email     | email address of the merchant                         |
+| phone     | phone number of the merchant                          |
+| website   | website of the merchant                               |
+| logo      | merchant logo                                         |
+| address   | merchant street address, city, state, country and ZIP |
+| location  | latitude and longitude of the merchant                |
+| labels    | descriptive category identifiers for the merchant     |
+
+Here's sample of the enriched data in the transaction response:
+
+```json SAMPLE
+{
+  "enrichedData": {
+    "merchant": {
+      "name": "Grizzly Cafe Wrightwood",
+      "email": "",
+      "phone": "7602496733",
+      "website": "grizzlycafe.com",
+      "logo": "https://logos.ntropy.com/grizzlycafe.com",
+      "address": {
+        "addressType": "",
+        "line1": "1455 Highway 2",
+        "line2": "",
+        "city": "Wrightwood",
+        "state": "CA",
+        "country": "US",
+        "postalCode": "92397"
+      },
+      "location": {
+        "latitude": "34.36080",
+        "longitude": "-117.63559"
+      }
+    },
+    "labels": [
+      "food and drink",
+      "cafes and coffee shops",
+      "Food and Drink",
+      "Restaurants"
+    ]
+  }
+}
+```
