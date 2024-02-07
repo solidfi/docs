@@ -1,0 +1,33 @@
+---
+title: "Errors"
+description: Solid uses conventional HTTP response codes to indicate the success or failure.
+---
+When there is an error, the Solid Platform returns an object with the details of the error. It includes the request Id, the method used, error status, code, external message, and an internal system message.
+
+```json EXAMPLE
+{
+  "requestId": "req-0414ff1c-5e7b-456a-8730-aa970bc8146b",
+  "method": "GET",
+  "status": 400,
+  "code": "EC_PERSON_ID_HEADER_REQUIRED",
+  "message": "The person id in missing in the header",
+  "sysMessage": "personId_missing"
+}
+```
+In general:
+- Codes in the 2xx range indicate success.
+- Codes in the 4xx range indicate an error that failed given the information provided
+- Codes in the 5xx range indicate an error with Solid's servers (let us know via a help desk ticket if you see them)
+
+| Status             | Text              | Description                                                                          |
+|--------------------|-------------------|--------------------------------------------------------------------------------------|
+| 200                | OK                | Everything worked as expected                                                        |
+| 400                | Bad Request       | The request was unacceptable, often due to missing a required parameter              |
+| 401                | Unauthorized      | The request was unauthorized, or had missing or invalid API key                      |
+| 403                | Forbidden         | The API key doesn't have permissions to perform the request                          |
+| 404                | Not Found         | The requested resource doesn't exist                                                 |
+| 409                | Conflict          | The request conflicts with another request (perhaps using the same idempotency key). |
+| 429                | Too Many Requests | Too many requests hit the API too quickly (due to rate limiting)                     |
+| 500, 502, 503, 504 | Server Errors     | Something went wrong on the platform                                                 |
+
+Here is a link to see the full list of error codes for the Solid platform: [Solid Error Codes](https://docs.google.com/spreadsheets/d/1s0fQFp6yN2smiWIDJe9pqJzF-heU-pmZ/edit?usp=sharing&ouid=117773702895624971040&rtpof=true&sd=true)

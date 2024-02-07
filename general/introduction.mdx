@@ -1,0 +1,64 @@
+---
+title: "Introduction"
+description: Build your FinTech product on the Solid Platform.
+---
+
+![](https://assets-global.website-files.com/616c7256b52c5422cf0623ce/61b0002803933bfe8b78653d_Dev-Center.png)
+
+We keep money simple. You Store, You Spend, You Receive, You Send.
+‍
+In order to get started, you'll need:
+- TEST account on the Solid Dashboard (sign in here, if you want to sign up, contact us to get started)
+- API key
+- API docs
+- Postman or a similar tool to run the APIs
+
+There are nine steps to originate a bank account, create cards and send money. Follow the step by step instructions below.
+
+![](https://assets-global.website-files.com/616c7256b52c5422cf0623ce/61ce511954ef345b39b7f8d5_619b61ba5bf2843f58d213e6_steps.png)
+
+Here are the nine steps we will guide you through. After completing these nine steps, you will have originated an account, created cards and moved money (send and receive).
+‍
+<Steps>
+  <Step title="Step 1: Auth">
+    - Sign up for access to the Dashboard
+    - Under the Developer section, use the API key to authenticate API requests.
+  </Step>
+  <Step title="Step 2: Person">
+    - create person
+    - update person with details: `PATCH /v1/person/{{personId}}`
+    - submit the person for a KYC: `POST v1/person/{{personId}}/kyc`
+    - check the KYC result: `GET /v1/person/{{personId}}/kyc`
+    - if you are creating a business bank account, go to Step 3, else to Step 5
+  </Step>
+  <Step title="Step 3: Business">
+    - create business with details: `POST /v1/business`
+    - submit the business for a KYB: `/v1/business/{{businessId}}/kyb`
+    - check the KYB result: `GET /v1/business/{{businessId}}/kyb`
+    - if the business has owners with over 25% ownership, go to Step 4, else go to Step 5
+  </Step>
+    <Step title="Step 4: Member">
+    - create member with details: `POST /v1/member`
+    - submit the member for a KYC: `POST /v1/member/{{memberId}}/kyc`
+    - check the KYC result: `GET /v1/member/{{memberId}}/kyc`
+  </Step>
+    <Step title="Step 5: Bank Accounts">
+    - in order to create an account, person KYC needs to be approved and business KYB needs to be approved (if applicable)
+    - create bank account with details: POST /v1/account
+    - create couple of accounts (account 1 and account 2) under the same business, so you can move money between accounts
+  </Step>
+    <Step title="Step 6: Contacts">
+    - while in account 1, create contact A with account 2's bank account number:` POST /v1/contact`
+  </Step>
+    <Step title="Step 7: Send">
+    - send an intrabank transfer from account 1 to contact A: `/v1/send/intrabank`
+  </Step>
+    <Step title="Step 8: Cards">
+    - create cards in account 1: `/v1/card`
+  </Step>
+    <Step title="Step 9: Transactions">
+    - view transactions of account 1:` /v1/account/{{accountId}}/transaction`
+  </Step>
+</Steps>
+
+<Check>Congratulations, you have now successfully created a person, a business, created two accounts for the business, sent money between them, and created a credit card!</Check>

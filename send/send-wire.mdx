@@ -1,0 +1,70 @@
+---
+title: "Send Wire Testing"
+description: Information on testing the Send Wire functionality
+---
+You can test [Send a Wire Transfer](https://www.solidfi.com/docs/send-a-wire-transfer) in Solid's TEST mode without moving real money. You will first need to [Create a Contact](https://www.solidfi.com/docs/create-a-contact) to store the account and routing numbers to which you are going to send the transfer.
+
+For Domestic Wire, contact will also need to have a valid bank routing number. Here are some samples:  
+- 121000248 (Wells Fargo)  
+- 026009593 (Bank of America)  
+- 021000021 (Chase)
+
+For International Wire, contact will also need to have a valid SWIFT/BIC code. Here are some samples:  
+- HBUKGB4BXXX (HSBC UK BANK PLC)  
+- BNPAFRPHXXX (BNP PARIBAS)  
+- ICICINBBXXX (ICICI BANK LIMITED)
+
+
+```url ENDPOINT
+POST /v1/send/wire
+```
+
+
+```json REQUEST
+{
+    "accountId": "<em>{{accountId}}</em>",
+    "contactId": "<em>{{contactId}}</em>",
+    "type": "domestic",
+    "amount": "14.00",
+    "description": "Maximum of 35 characters"
+}
+```
+Amount ≤ $16.96 will result in a successful wire transfer.
+
+
+```json RESPONSE
+{
+    "id": "tra-a356baee-6824-462d-97a4-5e15b6a6ef78",
+    "accountId": "acc-63d656eb-fedc-4250-8111-48a5ff0faed9",
+    "contactId": "con-ab8e4ddc-cf09-448d-aa19-f71527b8393c",
+    "name": "Bright Might LLC",
+    "accountNumber": "1098324502",
+    "routingNumber": "121042882",
+    "address": {
+        "addressType": "wire",
+        "line1": "123 Main St",
+        "line2": "",
+        "city": "New York",
+        "state": "NY",
+        "country": "US",
+        "postalCode": "10001"
+    },
+    "amount": "14.00",
+    "status": "completed",
+    "description": "Maximum of 35 characters",
+    "txnType": "debit",
+    "transferType": "domesticWire",
+    "transferSubType": "originated",
+    "createdAt": "2021-12-16T08:17:47Z",
+    "modifiedAt": "2021-12-16T08:17:47Z",
+    "transferredAt": "2021-12-16T08:17:47Z",
+    "accountType": "businessChecking",
+    "iban": "",
+    "valid": "",
+    "parentTransferId": "",
+    "reviewCode": "",
+    "reviewMessage": "",
+    "type": "",
+    "metadata": null
+}
+```

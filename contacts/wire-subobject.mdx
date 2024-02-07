@@ -1,0 +1,84 @@
+---
+title: "The Wire sub-object"
+description: The fields of the Wire sub-objects which are part of the contact object
+---
+The Domestic Wire sub-object
+
+| Field         | Type   | Optional  | Description                                                                                                                                               |
+|---------------|--------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| accountNumber | string |           | bank account number of the contact                                                                                                                        |
+| routingNumber | string |           | ACH routing number of the contact's bank                                                                                                                  |
+| accountType   | string |           | type of the contact's bank account with possible values: - businessChecking - personalChecking - businessSavings - personalSavings                        |
+| bankName      | string |           | bank name of contact's bank                                                                                                                               |
+| last4         | string | read only | last 4 digits of the account number (useful in case of [TANs](https://developer.chase.com/products/aggregation-fdx/guides/tokenized-account-number-tan/)) |
+| address       | object |           | beneficiary address: [Domestic Wire Address sub-object](https://www.solidfi.com/docs/the-domestic-wire-address-sub-object)                                |
+
+```json Example
+"wire": {
+        "domestic": {
+            "accountNumber": "1098324502",
+            "routingNumber": "121000248",
+            "accountType": "businessChecking",
+            "bankName": "Wells Fargo",
+            "address": {
+                "addressType": "wire",
+                "line1": "123 Main St",
+                "line2": "",
+                "city": "New York",
+                "state": "NY",
+                "country": "US",
+                "postalCode": "10001"
+            }
+        }
+    }
+```
+**The International Wire sub-object**
+
+Notes:
+- The contact phone number needs to be set when sending an international wire.
+- [Click here for more details on international wire requirements](https://assets-global.website-files.com/616c7256b52c543a920623bd/6359fbfb4b79fbd8f3d2770c_Intl-Wire.pdf), including country specific requirements.
+
+| Field                           | Type   | Description                                                                                 |
+|---------------------------------|--------|---------------------------------------------------------------------------------------------|
+| bankIdentifierType              | enum   | Bank identifier type possible values: - swift                                               |
+| bankIdentifierCode              | string | bank's SWIFT/BIC code                                                                       |
+| accountType                     | string | type of the contact's bank account with possible values: - business - personal              |
+| beneficiaryBank                 | string | name of the beneficiary bank                                                                |
+| beneficiaryAddress              | object | see [the Address sub-object](https://www.solidfi.com/docs/the-address-sub-object)           |
+| beneficiaryBankAddress          | object | see [the Address sub-object](https://www.solidfi.com/docs/the-address-sub-object)           |
+| correspondentBank               | string | optional name of the correspondent/intermediary bank, if aaplicable                         |
+| correspondentBankIdentifierCode | string | optional correspondent/intermediary bank's SWIFT/BIC code                                   |
+| correspondentBankAddress        | object | optional, see [the Address sub-object](https://www.solidfi.com/docs/the-address-sub-object) |
+
+
+```json Example
+"wire": {
+        "international": {
+            "accountNumber": "920020006167511”,
+            "bankIdentifierType": "Swift",
+            "bankIdentifierCode": "AXISINBB227",
+            "accountType": "business",
+            "beneficiaryBank": "AXIS BANK LIMITED",
+            "beneficiaryAddress": {
+                "addressType": "wire",
+                "line1": "No.520, 6th Main Road, HAL 2nd Stage",
+                "line2": "Indiranagar",
+                "city": "BANGALORE",
+                "state": "KARNATAKA",
+                "country": "INDIA",
+                "postalCode": "560038"
+            },
+            "beneficiaryBankAddress": {
+                "addressType": "wire",
+                "line1": "233 2ND MAIN SAMPIGE ROAD",
+                "line2": "",
+                "city": "BANGALORE",
+                "state": "KARNATAKA",
+                "country": "INDIA",
+                "postalCode": "560003"
+            },
+            "correspondentBank": ""
+        }
+    }
+}
+```

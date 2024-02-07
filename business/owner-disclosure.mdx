@@ -1,0 +1,59 @@
+---
+title: "Business Ownership Disclosure"
+description: Two API endpoints to submit and retrieve the required business ownership disclosures
+---
+The person creating the business must sign the business ownership disclosure which contains details of the business and its owners who have 25 percent or greater ownership. [Here is a sample document](https://assets-global.website-files.com/616c7256b52c543a920623bd/65a813128ca5a4e0e80fe7ea_FinCEN_CDD_BO_Form.pdf). This document must be signed even if no owners have 25% or above ownership. Any business KYB submitted without business ownership disclosure will return the error message "Business ownership disclosure is mandatory."
+
+This document can be signed and submitted in an automated manner using the API below. The POST API call will return a Docusign URL for the disclosure document with all details pre-populated. The person creating the business should verify all the information and sign the disclosure. The program can then view and download the signed document from the business documents section in the Solid dashboard.
+
+```url ENDPOINT
+POST v1/business/<businessId>/ownershipDisclosure
+```
+
+```json REQUEST
+{
+  "redirectUrl": "https://solidfi.com/redirectpage.htm"
+}
+```
+**The DocuSign URL will expire in 5 minutes.** If you need to regenerate the URL for a business owner, you can send the "action": "regenerate" field in the request body. If you POST without this command, the original URL will be returned again in the response.
+
+```json REQUEST
+{
+  "action": "regenerate",
+  "redirectUrl": "https://solidfi.com/redirectpage.htm"
+}
+```
+
+```json RESPONSE
+{
+  "url": "https://app.docusign.com/editor/embeddedSign?signature_id=...&amp;token=...",
+  "status": "pending",
+  "signedAt": ""
+}
+```
+To retrieve the ownershipDisclosure status of a business, use the GET API call.
+
+```url ENDPOINT
+GET v1/business/<businessId>/ownershipDisclosure
+```
+```json RESPONSE
+{
+  "url": ".",
+  "status": "completed",
+  "signedAt": "2021-02-08T12:47:29Z"
+}
+```
+#### Key points
+The only possible value of “action” is “regenerate,” and it’s an optional field. You must pass “regenerate”, only if you have made some changes in the business details and the ownership document needs to be regenerated. If a POST request is made without “action” field, the previously generated document URL will be returned.
+
+The possible values of “status” are “pending” and “completed”. 
+- pending: when a new signing URL is created
+- completed: when the document has been signed
+
+Making a POST request in the following scenarios will return an error
+- If the document has already been signed. However, you can still make a POST request with regenerate option.
+- If the business KYB is already approved or declined. 
+
+**Important date**
+
+**2/15/2024**: Any business KYB submitted without business ownership disclosure will return the error message "Business ownership disclosure is mandatory."

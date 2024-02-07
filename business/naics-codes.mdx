@@ -1,0 +1,53 @@
+---
+title: "List NAICS Codes"
+description: API to get the list of NAICS codes to be used when creating a business
+---
+Your program needs to collect a 6-digit NAICS code for every business that is being onboarded . The Business object has a mandatory field - “naicsCode” that must be be set when you Create a Business.
+
+NAICS Codes are used to classify businesses into specific industries. NAICS uses a hierarchical structure and is as follows:
+
+- Sector (2-digit code)
+   - Industry Group (4-digit code)
+      - National Industry (6-digit code)
+
+**Example**:
+- Construction (23 is the NAICS code)
+   - Nonresidential Building Construction (2362 is the NAICS code)
+      - Industrial Building Construction (236210 is the NAICS code)
+
+If a business is best categorized under Industrial Building Construction, the program should send the NAICS code 236210 in the business create or update endpoint.
+
+#### Please note:
+
+- The response from the get NAICS endpoint will have hundreds of codes; the sample below is just to show the response structure.
+-  NAICS code cannot be updated once the business is approved/declined.
+
+```url ENDPOINT
+GET /v1/business/naicscode
+```
+
+```json RESPONSE
+{
+  "data": [
+    {
+      "code": 61,
+      "name": "Educational Services",
+      "total": 33,
+      "industries": [
+        {
+          "code": 6111,
+          "name": "Elementary",
+          "total": 34,
+          " subindustries": [
+            {
+              "code": 611110,
+              "name": "Elementary and Secondary Schools"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "total": 20
+}	
+```

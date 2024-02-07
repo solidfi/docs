@@ -1,0 +1,15 @@
+---
+title: "The Webhook object"
+description: Webhook Object's attributes, fields, types.
+---
+
+| **Field**   | **Type** | **Optional** | **Description**                                                                                                                                               |
+|-------------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id          | string   |              | unique id of the webhook                                                                                                                                      |
+| programId   | string   |              | program id of the webhook                                                                                                                                     |
+| url         | string   |              | the URL of the webhook endpoint                                                                                                                               |
+| events      | array    |              | an array of events with the possible values: person.kyc.approved person.kyc.declined business.kyb.approved business.kyb.declined account.debit account.credit |
+| description | string   | Yes          | description of the webhook                                                                                                                                    |
+| status      | enum     |              | webhook status with possible values: - active - paused - deactivated - deleted                                                                                |
+| createdAt   | string   |              | time at which the webhook was created                                                                                                                         |
+| modifiedAt  | string   |              | time at which the webhook was modified                                                                                                                        |

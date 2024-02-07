@@ -1,0 +1,38 @@
+---
+title: "Rate Limiting"
+description: Limiting the number of periodic requests received by an API
+---
+### What is rate limiting?
+Rate limiting is used to protect services from excessive use and thereby maintain availability. Rate limiting on both the client side and the server side is critical for maximizing throughput and minimizing latency.
+
+To ensure all of our programs and their end users can reliably use the Solid APIs and other services, we rate-limit access to those services to ensure no program, its end users, or malicious hackers abuse access. When a program's traffic exceeds their allocated rate limit, an HTTP 429 status code (Too Many Requests) is returned.
+
+### What rate limits apply to the Solid platform?
+There are 2 rate limiting points affecting the Solid platform:
+
+#### 1. Solid's AWS CloudFront rate limits
+Solid's cloud infrastructure limits all incoming traffic, including a Program's incoming Solid API HTTP traffic, on a per-client-IP-address basis, to 1000 HTTP requests per rolling 5-minute window.
+
+#### 2. Solid API backend rate limits
+In the TEST environment, Solid default rate-limits a program's traffic (across all client IP addresses) to:
+
+- 50 read operations per second
+- 50 write operations per second
+
+In the LIVE environment, Solid default rate-limits a program's traffic (across all client IP addresses) to:
+
+- 100 read operations per second
+- 100 write operations per second
+
+#### What happens if your program exceeds the rate limits?
+When you hit the rate limits, your application will receive a 429 response, and you may try the request again when the traffic is reduced, but the best practice is to throttle your client side traffic before hitting the rate limits in the first place. Please see this article on [Client side strategies](https://cloud.google.com/architecture/rate-limiting-strategies-techniques#client-side_strategies).
+
+We may reduce limits to prevent abuse, or increase limits to enable high-traffic FinTech apps. Note that a client IP whose traffic persistently exceeds this limit by a large margin may be throttled even further.
+
+If you need a different limit (lower or higher), please create a help desk ticket with the reason for the change, and we will review the request.
+
+<Frame>![](/images/rate-limits.png)</Frame>
+
+
+
+

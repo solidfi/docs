@@ -1,0 +1,80 @@
+---
+title: "Submit Business Projections"
+description: API to collect projected amounts of annual transaction volume in each of the payment form factors
+---
+
+Your program needs to collect estimated annual transaction projections for every business that is being onboarded for KYB approval purposes. This needs to be collected for each transaction type (ACH, wire, check, etc) the business plans to use. The transaction volume can be approximate, but this information is required by the bank for KYB purposes.
+
+**Please note**:
+
+- Every field is mandatory. If a particular transaction type is not being used, set the value to 0 explicitly
+- We don't currently support sending internationalACH, so it can be simply set to 0
+- “incoming”->”achPush” refers to incoming ACH credits, and “incoming”->”achPull”refers to incoming ACH debits
+- Business projection cannot be updated once the business is approved/declined
+
+```url ENDPOINT
+PATCH /v1/business/{{businessId}}/projection
+```
+
+```json REQUEST
+{
+  "transactions": {
+    "annual": {
+      "send": {
+        "ach": {
+          "count": "30",
+          "amount": "1000.00"
+        },
+        "internationalAch": {
+          "count": "0",
+          "amount": "0.00"
+        },
+        "domesticWire": {
+          "count": "20",
+          "amount": "2000.00"
+        },
+        "internationalWire": {
+          "count": "20",
+          "amount": "2000.00"
+        },
+        "physicalCheck": {
+          "count": "20",
+          "amount": "2000.00"
+        }
+      },
+      "receive": {
+        "ach": {
+          "count": "20",
+          "amount": "2000.00"
+        },
+        "physicalCheck": {
+          "count": "20",
+          "amount": "2000.00"
+        }
+      },
+      "incoming": {
+        "achPush": {
+          "count": "20",
+          "amount": "2000.00"
+        },
+        "achPull": {
+          "count": "20",
+          "amount": "2000.00"
+        },
+        "internationalAch": {
+          "count": "20",
+          "amount": "2000.00"
+        },
+        "domesticWire": {
+          "count": "20",
+          "amount": "2000.00"
+        },
+        "internationalWire": {
+          "count": "20",
+          "amount": "2000.00"
+        }
+      }
+    }
+  }
+}
+```

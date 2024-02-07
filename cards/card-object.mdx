@@ -1,0 +1,35 @@
+---
+title: "The Cardholder object"
+---
+
+| **Field**         | **Type** | **Optional** | **Description**                                                                                                                                              |
+|-------------------|----------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id                | string   |              | unique id of the card created                                                                                                                                |
+| accountId         | string   |              | unique id of the bank account to which the card belongs                                                                                                      |
+| businessId        | string   |              | unique id of the business, if the bank account belongs to a business                                                                                         |
+| programId         | string   |              | program id of the bank account                                                                                                                               |
+| cardholder        | object   |              | see [The Cardholder sub-object](https://www.solidfi.com/docs/the-cardholder-sub-object?)                                                                     |
+| cardType          | enum     |              | card type with possible values: - virtual - physical                                                                                                         |
+| label             | string   |              | label of the card.                                                                                                                                           |
+| limitInterval     | enum     | yes          | limit interval with possible values: - daily - weekly - monthly - yearly - allTime - perTransaction                                                          |
+| limitAmount       | string   | yes          | spend limit amount of the card                                                                                                                               |
+| shipping          | object   | yes          | required only for a physical card, see [The Shipping sub-object](https://www.solidfi.com/docs/the-shipping-sub-object)                                       |
+| currency          | string   |              | currency of funds in the card.                                                                                                                               |
+| expiryMonth       | string   |              | expiration month of the card                                                                                                                                 |
+| expiryYear        | string   |              | expiration year of the card                                                                                                                                  |
+| last4             | string   |              | last 4 digits of the card number                                                                                                                             |
+| cardStatus        | enum     |              | card status with possible values: - active - inactive (use to temporarily freeze) - canceled (use to permanently cancel) - pendingActivation                 |
+| createdPersonId   | string   |              | person id of the person that created the card                                                                                                                |
+| bin               | enum     |              | card bin with possible values: - debit - credit                                                                                                              |
+| allowedCategories | array    | Yes          | an array of mcc codes to allow on the card. Example ["0742","0763"] see complete list [here](https://github.com/greggles/mcc-codes/blob/main/mcc_codes.json) |
+| blockedCategories | array    | Yes          | an array of mcc codes to block on the card. Example ["0742","0763"] see complete list [here](https://github.com/greggles/mcc-codes/blob/main/mcc_codes.json) |
+| allowedMerchants  | array    | Yes          | an array of merchant names to allow on the card. Example ["Subway","Campus Cafe"]                                                                            |
+| blockedMerchants  | array    | Yes          | an array of merchant names to block on the card. Example ["Arco","Valero"]                                                                                   |
+| availableLimit    | int      |              | spending amount available on the card (for limitInterval allTime only)                                                                                       |
+| theme             | string   | Yes          | card theme, if the program has multiple card themes                                                                                                          |
+| embossingPerson   | string   | Yes          | name of the person to be embossed on the card, max 19 characters, not allowing: ! " & ' * + , : ; < = > @ _                                                  |
+| embossingBusiness | string   | Yes          | name of the person to be embossed on the card, max 19 characters, not allowing: ! " & ' * + , : ; < = > @ _                                                  |
+| atmAccess         | boolean  | Yes          | atm access for the card, true means enabled (by default), false means disabled                                                                               |
+| activatedAt       | string   |              | time at which the card was activated                                                                                                                         |
+| createdAt         | string   |              | time at which the card was created                                                                                                                           |
+| modifiedAt        | string   |              | time at which the card was modified                                                                                                                          |

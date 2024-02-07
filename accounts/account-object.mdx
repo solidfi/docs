@@ -1,0 +1,181 @@
+---
+title: "The Account object"
+description: Account Object's attributes, fields, types.
+---
+| Field                    | Type    | Optional | Description                                                                                                                                                                     |
+|--------------------------|---------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id                       | string  |          | unique id of the bank account created                                                                                                                                           |
+| businessId               | string  |          | unique id of the business, in case of a business bank account                                                                                                                   |
+| familyId                 | string  |          | unique id of the family, in case of a bank account created for a family                                                                                                         |
+| label                    | string  |          | account label (for example: Payroll)                                                                                                                                            |
+| routingNumber            | string  |          | 9 digit routing number of the bank account                                                                                                                                      |
+| accountNumber            | string  |          | 16 digit account number of the bank account                                                                                                                                     |
+| status                   | enum    |          | status of the bank account with possible values: - active - debitBlocked (debits frozen) - creditBlocked (credits frozen) - blocked (both frozen) - closed (permanently closed) |
+| type                     | string  |          | type of the bank account with possible values: - businessChecking - personalChecking - cardAccount - clearingAccount - fallbackAccount - fundingAccount                         |
+| programId                | string  |          | program id that this bank account belongs to                                                                                                                                    |
+| isVerified               | boolean |          | true if the bank account is fully verified by compliance                                                                                                                        |
+| verifiedAt               | string  |          | timestamp of full verification by compliance                                                                                                                                    |
+| acceptedTerms            | boolean |          | true if the account terms were accepted during account creation                                                                                                                 |
+| interest                 | string  |          | interest percentage if an interest earning account                                                                                                                              |
+| fees                     | string  |          | fees charged per month if it is a fee based account                                                                                                                             |
+| currency                 | enum    |          | currency of the bank account, currently supported: - USD                                                                                                                        |
+| availableBalance         | string  |          | available balance in the bank account                                                                                                                                           |
+| pendingDebit             | string  |          | pending debits from the bank account (non-operational)                                                                                                                          |
+| pendingCredit            | string  |          | pending credits to the bank account (non-operational)                                                                                                                           |
+| sponsorBankName          | string  |          | Test Bank.                                                                                                                                                                      |
+| createdAt                | string  |          | time at which the account object was created                                                                                                                                    |
+| modifiedAt               | string  |          | time at which the account object was modified                                                                                                                                   |
+| createdPersonId          | string  |          | person id of the person that created the bank account                                                                                                                           |
+| accountInterestFrequency | string  |          | frequency at which interest is paid out (if any)                                                                                                                                |
+| config                   | object  |          | see [The Config sub-object](https://www.solidfi.com/docs/the-config-sub-object)                                                                                                 |
+
+```json Sample Object
+{
+  "id": "acc-cdc4ca0a-2f1b-4c0b-9964-2339268c2d7b",
+  "businessId": "",
+  "familyId": "fam-d8b5d10e-9bc0-4c5d-9ecd-3ef95bf8f2fa",
+  "label": "Doe Money",
+  "routingNumber": "084106768",
+  "accountNumber": "9991238158805732",
+  "status": "active",
+  "type": "personalChecking",
+  "programId": "prg-ddb08641-6565-465d-ba94-ed199497299f",
+  "isVerified": false,
+  "verifiedAt": "",
+  "acceptedTerms": true,
+  "interest": "0.00",
+  "fees": "0.00",
+  "currency": "USD",
+  "availableBalance": "170.00",
+  "sponsorBankName": "Test Bank",
+  "createdAt": "2022-06-21T14:23:48Z",
+  "modifiedAt": "2022-08-03T17:59:56Z",
+  "pendingDebit": "0.00",
+  "pendingCredit": "0.00",
+  "createdPersonId": "per-c1df28cb-a889-41ea-9ab3-6b33c8985c0f",
+  "accountInterestFrequency": "monthly",
+  "metadata": null,
+  "config": {
+    "card": {
+      "virtual": {
+        "enabled": true,
+        "count": "25"
+      },
+      "physical": {
+        "enabled": true,
+        "count": "5"
+      }
+    },
+    "send": {
+      "intrabank": {
+        "enabled": true
+      },
+      "ach": {
+        "enabled": true,
+        "sameDay": true
+      },
+      "wire": {
+        "enabled": true
+      },
+      "check": {
+        "enabled": true
+      },
+      "card": {
+        "enabled": true
+      },
+      "debitCard": {
+        "enabled": true
+      },
+      "internationalWire": {
+        "enabled": true
+      },
+      "digitalCheck": {
+        "enabled": false
+      },
+      "physicalCard": {
+        "enabled": false
+      }
+    },
+    "receive": {
+      "intrabank": {
+        "enabled": true
+      },
+      "ach": {
+        "enabled": true,
+        "sameDay": true
+      },
+      "check": {
+        "enabled": true
+      },
+      "debitCard": {
+        "enabled": true
+      }
+    },
+    "limits": {
+      "receive": {
+        "daily": "1000.00",
+        "monthly": "10000.00",
+        "intrabank": {
+          "daily": "0.00",
+          "monthly": "0.00"
+        },
+        "ach": {
+          "daily": "0.00",
+          "monthly": "0.00"
+        },
+        "check": {
+          "daily": "0.00",
+          "monthly": "0.00"
+        },
+        "debitCard": {
+          "daily": "0.00",
+          "monthly": "0.00"
+        }
+      },
+      "send": {
+        "daily": "1000.00",
+        "monthly": "10000.00",
+        "intrabank": {
+          "daily": "0.00",
+          "monthly": "0.00"
+        },
+        "ach": {
+          "daily": "0.00",
+          "monthly": "0.00"
+        },
+        "domesticWire": {
+          "daily": "0.00",
+          "monthly": "0.00"
+        },
+        "internationalWire": {
+          "daily": "0.00",
+          "monthly": "0.00"
+        },
+        "check": {
+          "daily": "0.00",
+          "monthly": "0.00"
+        },
+        "card": {
+          "daily": "0.00",
+          "monthly": "0.00"
+        },
+        "debitCard": {
+          "daily": "0.00",
+          "monthly": "0.00"
+        }
+      }
+    },
+    "fallback": {
+      "originated": null,
+      "received": null
+    },
+    "incoming": {
+      "achPull": {
+        "enabled": true,
+        "allowedOriginators": [],
+        "blockedOriginators": []
+      }
+    }
+  }
+}
+```

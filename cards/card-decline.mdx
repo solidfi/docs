@@ -1,0 +1,70 @@
+---
+title: "Card Declined Reason Codes"
+description: A list of possible reason codes that may appear in the card.declined "reason" field
+---
+
+When listening for the card.declined webhook, you will see a "reason" field which may explain why the card authorization was declined. Here's a list of possible reason codes with a brief explanation of each.
+
+| **Reason code**      | **Description**                                                                                                                                                         |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| accountInactive      | Account is not active or deactivated                                                                                                                                    |
+| atmNotAllowed        | ATM transactions not enabled                                                                                                                                            |
+| avsError             | Address verification failed                                                                                                                                             |
+| businessNotActive    | Business is not active or deactivated                                                                                                                                   |
+| cardHolderNotActive  | Cardholder is not active or deactivated                                                                                                                                 |
+| cardInactive         | Card is not active or deactivated                                                                                                                                       |
+| customerCanceled     | Card has been canceled by the customer                                                                                                                                  |
+| doNotHonor           | Card is not honored at this merchant                                                                                                                                    |
+| duplicateTransaction | Transaction is duplicated                                                                                                                                               |
+| expiredCard          | Card has expired                                                                                                                                                        |
+| invalidAmount        | Invalid tranaction amount                                                                                                                                               |
+| invalidCardNumber    | Invalid card number                                                                                                                                                     |
+| invalidCryptogram    | Invalid chip data                                                                                                                                                       |
+| invalidCurrency      | Invalid currency                                                                                                                                                        |
+| invalidCVV           | Invalid card CVV code                                                                                                                                                   |
+| invalidIssuer        | Invalid card issuer                                                                                                                                                     |
+| invalidMerchant      | Merchant is non-functional or there is a problem with the merchant configuration                                                                                        |
+| invalidPIN           | Invalid card PIN entered                                                                                                                                                |
+| invalidTransaction   | Invalid format of card details. Check card info and try again. Ensure no spaces or special characters in the card number.                                               |
+| issuerProcessorError | Technical error at the issuer processor - try running again                                                                                                             |
+| limitsCrossed        | Card limits exceeded for one of the following: - program daily limit for all cards - program monthly limit for all cards - interval limit if set on the individual card |
+| lostOrStolenCard     | Card marked as lost or stolen                                                                                                                                           |
+| lowBalance           | Insufficient balance for transaction amount                                                                                                                             |
+| merchantNotAllowed   | Merchant not in allowed merchant list                                                                                                                                   |
+| merchantNotAllowed   | Merchant is in blocked merchant list                                                                                                                                    |
+| pinChangeError       | PIN change error                                                                                                                                                        |
+| pinTriesExceeded     | Too many incorrect PIN attempts                                                                                                                                         |
+| pinValidationFailed  | ATM withdrawal international decline                                                                                                                                    |
+| restrictedCard       | Merchant catgeory or country is restricted                                                                                                                              |
+| securityViolation    | Account verification failed - cardholder phone/email mismatch                                                                                                           |
+| suspectedFraud       | Card is flagged for suspected fraud                                                                                                                                     |
+| technicalError       | Network error or other technical issue - try running card again                                                                                                         |
+| transactionTimedOut  | Transaction timed out - try running card again                                                                                                                          |
+| userError            | User error - try running card again                                                                                                                                     |
+
+Here's a sample response for the card.declined webhook that illustrates the reason code:
+
+```json SAMPLE RESPONSE
+{
+   "eventType": "card.declined",
+   "data": {
+     "cardId": "crd-d9ee9776-f244-46d7-8d08-0f6317f61442",
+     "amount": "1000.00",
+     "currency": "USD",
+     "status": "closed",
+     <strong>"reason": "lowBalance"</strong>,
+     "approved": "false",
+     "method": "",
+     "merchant": {
+       "merchantName": "CVS PHARMACY",
+       "merchantCity": "SAN JOSE",
+       "merchantState": "CA",
+       "merchantCountry": "CAN",
+       "postalCode": "",
+       "merchantCategory": "Bakeries",
+       "merchantCategoryCode": "5462"
+     },
+     "createdAt": "2021-11-15T08:13:19.650542275Z"
+   }
+ }
+ ```

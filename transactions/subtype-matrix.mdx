@@ -1,0 +1,38 @@
+---
+title: "Transaction Subtype Matrix"
+description: A matrix of possible subtypes and their associated transaction types
+---
+
+Below you will find a matrix of possible subtypes and their associated transaction types.
+
+| SubType               | **intrabank** | **ach** | **domesticWire** | **card** | **physicalCheck** | **internationalWire** |
+|-----------------------|---------------|---------|------------------|----------|-------------------|-----------------------|
+| originated            | X             | X       | X                |          | X                 | X                     |
+| auth                  |               |         |                  | X        |                   |                       |
+| authUpdate            |               |         |                  | X        |                   |                       |
+| reversal              | X             | X       | X                | X        | X                 | X                     |
+| refund                |               |         |                  | X        |                   |                       |
+| accountCreationCredit | X             |         |                  |          |                   |                       |
+| received              | X             | X       | X                |          |                   | X                     |
+| accountClosing        | X             |         |                  |          |                   |                       |
+| push                  |               |         |                  | X        |                   |                       |
+| pull                  |               |         |                  | X        |                   |                       |
+| overdraft             | X             |         |                  |          |                   |                       |
+| atm                   |               |         |                  | X        |                   |                       |
+| topup                 |               |         |                  | X        |                   |                       |
+| reward                |               |         |                  | X        |                   |                       |
+
+**originated** = transfer is initiated
+**auth** = card authorization
+**authUpdate** = card authorization update
+**reversal** = transaction is reversed
+**‍refund** = card transaction is refunded (may be less than auth amount)
+**accountCreationCredit** = $0 transaction on account opening
+**received** = user receives a transfer
+**accountClosing** = transaction while moving funds for closing account
+**pull** = incoming debit pull
+**push** = incoming debit push
+**overdraft** = transfer of funds to/from a fallback account
+**atm** = ATM transaction
+**topup** = funds added to [Send a Card](https://www.solidfi.com/docs/send-a-card)
+**reward** = [merchant funded reward](https://www.solidfi.com/docs/merchant-funded-rewards) on card spend

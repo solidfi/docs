@@ -1,0 +1,81 @@
+---
+title: "Business Member Designations"
+description: A list of the possible values for the designation field in the member object
+---
+
+The "designation" field in the [business member object](https://www.solidfi.com/docs/the-member-object) is a mandatory field. Each business member must have this field set before [KYB submission](https://www.solidfi.com/docs/submit-a-kyb).
+
+Each business needs to have one control person. The programs can use the [isControlPerson](https://www.solidfi.com/docs/the-member-object) flag in the business member object to set a member as the control person. The programs must explicitly ask through their application if the business member being added is the control person or not. When the program designates a business member as a control person by setting the "isControlPerson" field to true, and a control person already exists, the previously assigned member will no longer be considered a control person, and this flag isControlPerson will be overriden for the previous assigned person.
+
+The control person must have one of the designations from the list below:
+
+- chiefExecutiveOfficer  
+- chiefFinancialOfficer  
+- chiefOperatingOfficer  
+- chiefLegalOfficer  
+- generalCounsel  
+- managingMember  
+- member  
+- generalPartner  
+- managingPartner  
+- partner  
+- president  
+- executiveVicePresident  
+- vicePresident  
+- treasurer  
+- comptroller  
+- managingDirector  
+- chairmanOfTheBoardOfDirectors
+
+For other members of a business that are not the control person, the designation can be set to any of the full list of designation values:
+
+- chiefExecutiveOfficer  
+- chiefFinancialOfficer  
+- chiefOperatingOfficer  
+- chiefLegalOfficer  
+- generalCounsel  
+- managingMember  
+- member  
+- generalPartner  
+- managingPartner  
+- partner  
+- president  
+- executiveVicePresident  
+- vicePresident  
+- treasurer  
+- comptroller  
+- managingDirector  
+- chairmanOfTheBoardOfDirectors  
+- chiefRevenueOfficer  
+- financialAdvisor  
+- designer  
+- chiefTechnologyOfficer  
+- engineer  
+- analyst  
+- controller  
+- manager  
+- financeManager  
+- salesManager  
+- chiefCreditOfficer  
+- accountManager  
+- chairman  
+- generalManager  
+- chiefMarketingOfficer  
+- headOfOperations  
+- chiefOfStaff  
+- taxSpecialist  
+- founder  
+- chiefProductOfficer  
+- projectManager  
+- accountant  
+- secretary  
+- digitalMarketingManager  
+- chiefBusinessOfficer  
+- chiefInnovationOfficer  
+- headOfFinance  
+- chiefBrandOfficer  
+- humanResourcesManager  
+- productManager  
+- other
+
+If a business member selects the designation “other”, sending the exact designation in the “title” field is mandatory.

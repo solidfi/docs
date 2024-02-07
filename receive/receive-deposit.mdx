@@ -1,0 +1,135 @@
+---
+title: "Receive a Check Deposit"
+description: Receives a check deposit money transfer from a contact.
+---
+Receive a check deposit money transfer is done by passing the required account id, contact id, amount and description. Response is a [transfer object](https://www.solidfi.com/docs/the-receive-transfer-object). It takes 3-5 business days for the credit to reflect in the account.
+
+Depositing checks is a two step process:  
+Step 1: Initiate a check deposit via POST /v1/receive/check  
+Step 2: Pass the front and back of the check as images via PATCH `/v1/receive/check/{{transferId}}/files`
+
+**Step 1: Initiate a check deposit**
+
+
+
+```url ENDPOINT
+POST v1/receive/check
+```
+
+```json REQUEST
+{
+    "accountId": "<em>{{accountId}}</em>",
+    "contactId": "<em>{{contactId}}</em>",
+    "amount": "58.00",
+    "description": "Payment"
+}
+```
+
+
+
+```json RESPONSE
+{
+    "id": "tra-cb841dfa-8ff8-4705-a99e-0bfe9d42cc29",
+    "accountId": "acc-63d656eb-fedc-4250-8111-48a5ff0faed9",
+    "contactId": "con-ab8e4ddc-cf09-448d-aa19-f71527b8393c",
+    "name": "Bright Might LLC",
+    "accountNumber": "",
+    "routingNumber": "",
+    "address": {
+        "addressType": "check",
+        "line1": "123 Main St",
+        "line2": "",
+        "city": "New York",
+        "state": "NY",
+        "country": "US",
+        "postalCode": "10001"
+    },
+    "amount": "58.00",
+    "status": "waitingForFiles",
+    "description": "Payment",
+    "txnType": "credit",
+    "transferType": "physicalCheck",
+    "transferSubType": "originated",
+    "createdAt": "2021-12-17T00:42:29Z",
+    "modifiedAt": "2021-12-17T00:42:29Z",
+    "transferredAt": "2021-12-17T00:42:29Z",
+    "accountType": "",
+    "iban": "",
+    "valid": "",
+    "parentTransferId": "",
+    "reviewCode": "",
+    "reviewMessage": "",
+    "type": "",
+    "metadata": null
+}
+```
+
+Once the check deposit transfer object is created via the POST v1/receive/check, the transfer object is returned in the response with the status "waiting for files". Now, you move to Step 2, which is uploading the front and back of the check, by referencing the transferId via a PATCH.
+
+Below file types are supported for Check files.  
+- jpg  
+- jpeg  
+- png  
+Max file size is 10MB for each file.
+
+**Step 2: Pass the front and back of the check as images**
+
+Notes:   
+- The check needs to be in landscape orientation (horizontal)  
+- Please don't rotate the check and send to the Solid Platform  
+- As an alternative to uploading images via file path, you can send the image encoded in Base64 format.
+
+
+
+```url ENDPOINT
+PATCH /v1/receive/check/{{transferId}}/files  
+```
+    
+
+
+```json REQUEST
+curl --location --request PATCH 'https://test-api.solidfi.com/v1/receive/check/{{transferId}}/files' \
+--header 'sd-api-key: {{api-key}}' \
+--header 'sd-person-id: {{personId}}' \
+--form 'front=@"/{{path}}/front.jpg"' \
+--form 'back=@"/{{path}}/back.jpg"'
+```
+
+
+```json RESPONSE
+{
+    "id": "tra-c1c89979-2302-4710-a80f-1ac0f72cc9de",
+    "accountId": "acc-63d656eb-fedc-4250-8111-48a5ff0faed9",
+    "contactId": "con-ab8e4ddc-cf09-448d-aa19-f71527b8393c",
+    "name": "Bright Might LLC",
+    "accountNumber": "",
+    "routingNumber": "",
+    "address": {
+        "addressType": "check",
+        "line1": "123 Main St",
+        "line2": "",
+        "city": "New York",
+        "state": "NY",
+        "country": "US",
+        "postalCode": "10001"
+    },
+    "amount": "28.00",
+    "status": "pending",
+    "description": "Payment",
+    "txnType": "credit",
+    "transferType": "physicalCheck",
+    "transferSubType": "originated",
+    "createdAt": "2021-12-17T00:51:01Z",
+    "modifiedAt": "2021-12-17T00:51:24Z",
+    "transferredAt": "2021-12-17T00:51:01Z",
+    "accountType": "",
+    "iban": "",
+    "valid": "",
+    "parentTransferId": "",
+    "reviewCode": "",
+    "reviewMessage": "",
+    "type": "",
+    "metadata": null
+}
+```
+

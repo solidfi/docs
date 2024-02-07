@@ -1,0 +1,362 @@
+---
+title: "Account Config"
+description: API used to update the account configuration
+---
+This document describes the API that can be used to update the account configuration for a specific bank account. This can be used to enable payment form factors, set limits, fallback accounts, and Incoming blocked/allowed originators. See The Config sub-object.
+
+Required HTTP Headers:
+- sd-api-key: `{{sd-api-key}}`
+- sd-person-id: `{{sd-person-id}}`
+
+
+```url ENDPOINT
+PATCH /v1/account/:id/
+```
+
+
+In this section, we are focused on configuring settings for virtual and physical cards for an account. You can enable/disable each type of card as well as specify the limit on the number of each card that the account can issue.
+
+```json SAMPLE CARD CONFIG REQUEST
+{
+  "config": {
+    "card": {
+      "virtual": {
+        "enabled": true,
+        "count": "15"
+      },
+      "physical": {
+        "enabled": true,
+        "count": "5"
+      }
+    }
+  }
+}
+```
+
+
+
+In this section, we are focused on configuring account settings to enable Send and Receive payment form factors as well as set limits for each of those form factors for the designated account. If a field is not included in the request, it will inherit the values from the [Program Config](https://www.solidfi.com/docs/the-program-object).
+
+```json SAMPLE REQUEST FOR SEND, RECEIVE, AND LIMITS
+{
+  "config": {
+    "send": {
+      "intrabank": {
+        "enabled": true
+      },
+      "ach": {
+        "enabled": true,
+        "sameDay": true
+      },
+      "wire": {
+        "enabled": true
+      },
+      "check": {
+        "enabled": true
+      },
+      "card": {
+        "enabled": true
+      },
+      "debitCard": {
+        "enabled": true
+      },
+      "internationalWire": {
+        "enabled": true
+      },
+      "digitalCheck": {
+        "enabled": false
+      },
+      "physicalCard": {
+        "enabled": false
+      },
+      "crossBorder": {
+        "enabled": true
+      }
+    },
+    "receive": {
+      "intrabank": {
+        "enabled": true
+      },
+      "ach": {
+        "enabled": true,
+        "sameDay": true
+      },
+      "check": {
+        "enabled": true
+      },
+      "debitCard": {
+        "enabled": true
+      }
+    },
+    "limits": {
+      "receive": {
+        "daily": "2000.00",
+        "monthly": "20000.00",
+        "intrabank": {
+          "daily": "",
+          "monthly": ""
+        },
+        "ach": {
+          "daily": "",
+          "monthly": ""
+        },
+        "check": {
+          "daily": "",
+          "monthly": ""
+        },
+        "debitCard": {
+          "daily": "",
+          "monthly": ""
+        }
+      },
+      "send": {
+        "daily": "2000.00",
+        "monthly": "20000.00",
+        "intrabank": {
+          "daily": "",
+          "monthly": ""
+        },
+        "ach": {
+          "daily": "",
+          "monthly": ""
+        },
+        "domesticWire": {
+          "daily": "",
+          "monthly": ""
+        },
+        "internationalWire": {
+          "daily": "",
+          "monthly": ""
+        },
+        "check": {
+          "daily": "",
+          "monthly": ""
+        },
+        "card": {
+          "daily": "",
+          "monthly": ""
+        },
+        "debitCard": {
+          "daily": "",
+          "monthly": ""
+        },
+        "crossBorder": {
+          "daily": "",
+          "monthly": ""
+        }
+      }
+    }
+  }
+}
+```
+
+
+In this section we are focused on setting up account level fallbacks for ACH and Cards. Fallback account IDs specified must be for accounts of type fallbackAccount. The Fallback is used in overdraft scenarios when funds are being debited from an account. For Cards this would be on authorizations from the card network and for ACH it would be for incoming ACH debits originated outside of Solid. ACH and Card fallbacks can be used independently from each other.
+
+```json SAMPLE FALLBACK REQUEST
+{
+  "config": {
+    "fallback": {
+      "received": {
+        "ach": {
+          "enabled": true,
+          "fallbackId": "acc-300cd547-aac9-4381-87e6-0798c1a9faa5"
+        },
+        "card": {
+          "enabled": true,
+          "fallbackId": "acc-300cd547-aac9-4381-87e6-0798c1a9faa5"
+        }
+      }
+    }
+  }
+}
+```
+
+
+In this section, we are focused on setting up allowed and blocked originators for ACH Pull transactions.
+
+```json SAMPLE INCOMING CONFIG REQUEST
+{
+  "config": {
+    "incoming": {
+      "achPull": {
+        "allowedOriginators": [
+          "citi",
+          "pge"
+        ]
+      }
+    }
+  }
+}
+```
+
+
+```json SAMPLE RESPONSE
+{
+  "id": "acc-cdc4ca0a-2f1b-4c0b-9964-2339268c2d7b",
+  "businessId": "",
+  "label": "Doe Money",
+  "routingNumber": "084106768",
+  "accountNumber": "9991238158805732",
+  "status": "active",
+  "type": "personalChecking",
+  "programId": "prg-ddb08641-6565-465d-ba94-ed199497299f",
+  "isVerified": false,
+  "verifiedAt": "",
+  "acceptedTerms": true,
+  "interest": "0.00",
+  "fees": "0.00",
+  "currency": "USD",
+  "availableBalance": "76203.18",
+  "sponsorBankName": "Evolve Bank &amp; Trust",
+  "createdAt": "2022-06-21T14:23:48Z",
+  "modifiedAt": "2023-01-25T18:22:12Z",
+  "pendingDebit": "0.00",
+  "pendingCredit": "0.00",
+  "createdPersonId": "per-c1df28cb-a889-41ea-9ab3-6b33c8985c0f",
+  "accountInterestFrequency": "monthly",
+  "metadata": null,
+  "config": {
+    "card": {
+      "virtual": {
+        "enabled": true,
+        "count": "15"
+      },
+      "physical": {
+        "enabled": true,
+        "count": "5"
+      }
+    },
+    "send": {
+      "intrabank": {
+        "enabled": true
+      },
+      "ach": {
+        "enabled": true,
+        "sameDay": true
+      },
+      "wire": {
+        "enabled": true
+      },
+      "check": {
+        "enabled": true
+      },
+      "card": {
+        "enabled": true
+      },
+      "debitCard": {
+        "enabled": true
+      },
+      "internationalWire": {
+        "enabled": true
+      },
+      "digitalCheck": {
+        "enabled": false
+      },
+      "physicalCard": {
+        "enabled": false
+      },
+      "crossBorder": {
+        "enabled": true
+      }
+    },
+    "receive": {
+      "intrabank": {
+        "enabled": true
+      },
+      "ach": {
+        "enabled": true,
+        "sameDay": true
+      },
+      "check": {
+        "enabled": true
+      },
+      "debitCard": {
+        "enabled": true
+      }
+    },
+    "limits": {
+      "receive": {
+        "daily": "2000.00",
+        "monthly": "20000.00",
+        "intrabank": {
+          "daily": "",
+          "monthly": ""
+        },
+        "ach": {
+          "daily": "",
+          "monthly": ""
+        },
+        "check": {
+          "daily": "",
+          "monthly": ""
+        },
+        "debitCard": {
+          "daily": "",
+          "monthly": ""
+        }
+      },
+      "send": {
+        "daily": "2000.00",
+        "monthly": "20000.00",
+        "intrabank": {
+          "daily": "",
+          "monthly": ""
+        },
+        "ach": {
+          "daily": "",
+          "monthly": ""
+        },
+        "domesticWire": {
+          "daily": "",
+          "monthly": ""
+        },
+        "internationalWire": {
+          "daily": "",
+          "monthly": ""
+        },
+        "check": {
+          "daily": "",
+          "monthly": ""
+        },
+        "card": {
+          "daily": "",
+          "monthly": ""
+        },
+        "debitCard": {
+          "daily": "",
+          "monthly": ""
+        },
+        "crossBorder": {
+          "daily": "",
+          "monthly": ""
+        }
+      }
+    },
+    "fallback": {
+      "received": {
+        "intrabank": null,
+        "ach": {
+          "enabled": true,
+          "fallbackId": "acc-300cd547-aac9-4381-87e6-0798c1a9faa5"
+        },
+        "card": {
+          "enabled": true,
+          "fallbackId": "acc-300cd547-aac9-4381-87e6-0798c1a9faa5"
+        }
+      }
+    },
+    "incoming": {
+      "achPull": {
+        "enabled": true,
+        "allowedOriginators": [
+          "citi",
+          "pge"
+        ],
+        "blockedOriginators": null
+      }
+    }
+  },
+  "familyId": "fam-d8b5d10e-9bc0-4c5d-9ecd-3ef95bf8f2fa"
+}
+```

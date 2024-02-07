@@ -1,0 +1,14 @@
+---
+title: "The KYC sub-object"
+description: KYC Object's attributes, fields, types.
+---
+| Field         | Type   | Optional | Description                                                                                                                                         |
+|---------------|--------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| id            | string |          | unique id of the person's KYC created                                                                                                               |
+| personId      | string |          | unique id of the person                                                                                                                             |
+| status        | enum   |          | person's KYC status with possible values: - notStarted - submitted - approved - declined - inReview                                                 |
+| reviewCode    | string |          | see list of KYC In Review Codes                                                                                                                     |
+| reviewMessage | string |          | message if KYC status results in a review                                                                                                           |
+| results       | object |          | results of the KYC processes (idv, dateOfBirth, address, fraud, bank) with possible values: - notStarted - pending - inReview - approved - declined |
+| createdAt     | string |          | time at which the KYC object was created                                                                                                            |
+| modifiedAt    | string |          | time at which the KYC object was modified                                                                                                           |

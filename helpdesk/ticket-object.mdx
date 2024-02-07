@@ -1,0 +1,20 @@
+---
+title: "The Ticket object"
+description: Help Desk Ticket Object's attributes, fields, types
+---
+
+| **Field**     | **Type** | **Optional** | **Description**                                                                                                             |
+|---------------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------|
+| id            | string   |              | unique id of the ticket created                                                                                             |
+| subject       | string   |              | subject of the ticket                                                                                                       |
+| description   | string   |              | description of the ticket                                                                                                   |
+| status        | enum     |              | status of the ticket with possible values: - new - open - on-hold - pending - solved                                        |
+| type          | enum     |              | type of the ticket with possible values: - questions - tasks - incidents - issues - disputes - complaints - feature_request |
+| priority      | enum     |              | priority of the ticket with possible values: - low - normal - high - urgent                                                 |
+| canBeSolved   | bollean  |              | states whether the ticket is allowed to be marked as solved                                                                 |
+| programId     | string   |              | program id that this bank account belongs to                                                                                |
+| createdAt     | string   |              | time at which the account object was created                                                                                |
+| modifiedAt    | string   |              | time at which the account object was modified                                                                               |
+| personId      | string   | Yes          | unique identifier for person eg. per-********-****-****-****-************                                                   |
+| accountId     | string   | Yes          | unique identifier for account eg. acc-********-****-****-****-************                                                  |
+| transactionId | string   | Yes          | unique identifier for a transaction eg. txn-********-****-****-****-************                                            |

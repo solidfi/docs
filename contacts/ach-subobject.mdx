@@ -1,0 +1,13 @@
+---
+title: "The ACH sub-object"
+description: The fields of the ACH sub-object which is part of the contact object
+---
+
+| Field         | Type    | Optional  | Description                                                                                                                        |
+|---------------|---------|-----------|------------------------------------------------------------------------------------------------------------------------------------|
+| accountNumber | string  |           | bank account number of the contact                                                                                                 |
+| routingNumber | string  |           | ACH routing number of the contact's bank                                                                                           |
+| accountType   | string  |           | type of the contact's bank account with possible values: - businessChecking - personalChecking - businessSavings - personalSavings |
+| bankName      | string  |           | bank name of contact's bank                                                                                                        |
+| last4         | string  | read only | last 4 digits of the account number (useful in case of TANs)                                                                       |
+| verified      | boolean |           | if the account is verified, true or false                                                                                          |

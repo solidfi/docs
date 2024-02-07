@@ -1,0 +1,28 @@
+---
+title: "The Receive object"
+description: The Receive object's fields, types, and descriptions
+---
+| **Field**        | **Type** | **Optional** | **Description**                                                                                                                                                                 |
+|------------------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id               | string   |              | unique id of the transfer                                                                                                                                                       |
+| accountId        | string   |              | unique id of the bank account associated with the transfer                                                                                                                      |
+| contactId        | string   |              | unique id of the bank account associated with the transfer                                                                                                                      |
+| name             | string   |              | name of the contact, either full name of person or legal name of business                                                                                                       |
+| accountNumber    | string   |              | account number of the contact                                                                                                                                                   |
+| routingNumber    | string   | Yes          | routing number of the contact                                                                                                                                                   |
+| address          | string   | Yes          | address of the contact                                                                                                                                                          |
+| amount           | decimal  |              | amount of the transfer (eg. 0.00)                                                                                                                                               |
+| status           | enum     |              | status of the transfer with possible values: - completed - pending - declined - settled - approved - waitingForFiles                                                            |
+| description      | string   |              | description of the transfer                                                                                                                                                     |
+| txnType          | enum     |              | transaction type of the transfer with possible values: - credit - debit                                                                                                         |
+| transferType     | enum     |              | transfer type with possible values: - intraBank - ach - card - physicalCheck - domesticWire                                                                                     |
+| transferSubType  | enum     |              | transfer sub type with possible values: - originated - received - auth - authUpdate - reversal - refund - interest - fees - penalty - promotionalCredit - accountCreationCredit |
+| accountType      | string   |              | type of the account                                                                                                                                                             |
+| valid            | string   |              | if account is valid                                                                                                                                                             |
+| parentTransferId | string   |              | parent transfer id                                                                                                                                                              |
+| reviewCode       | string   |              | see [list of review codes](https://assets-global.website-files.com/616c7256b52c543a920623bd/62bd0bf5ea57f8ea867aab30_Solid%20Transfer%20Review%20Code%20Matrix.pdf)             |
+| reviewMessage    | string   |              | description of reason for decline                                                                                                                                               |
+| type             | string   |              | type of the transfer                                                                                                                                                            |
+| createdAt        | string   |              | time at which the transfer object was created                                                                                                                                   |
+| modifiedAt       | string   |              | time at which the transfer object was modified                                                                                                                                  |
+| transferredAt    | string   |              | time at which the money was transfered                                                                                                                                          |

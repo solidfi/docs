@@ -1,0 +1,35 @@
+---
+title: "Introduction to Webhooks"
+description: Webhooks notify you about events related to an account
+---
+
+You can configure webhook endpoints via the API and listen for events. That way, you don't need to poll the API for updates. Webhooks allow Solid to notify customers of changes to various resources in the Solid Platform. Such changes would include KYC, KYB, and transaction updates. In order to secure our webhook events we are signing the HTTP request body with an HMAC using the secret as the signing key.
+
+##### ‍**Webhook Secret**‍
+
+Every webhook created has a secret that's used to sign requests with a signature header allowing listeners to validate requests.**‍**‍
+
+##### ‍**Signature matching the HMAC**
+
+All Solid webhook request messages are sent with a sd-webhook-sha256-signature header key which should be used to validate the message payload. The algorithm calculates the HMAC of the HTTP request body in bytes using the webhook secret as the key (via SHA-256). If the calculated HMAC matches the value in the sd-webhook-sha256-signature then the message should be considered a valid Solid message. If the HMAC validation fails the message should be discarded.
+
+##### **Solid sends webhooks from the following IP addresses:**
+
+44.231.31.224  
+44.235.206.45  
+52.13.208.146
+
+This section contains the following documentation:
+
+[The Webhook object](https://www.solidfi.com/docs/the-webhook-object)  
+[List all Webhook events](https://www.solidfi.com/docs/list-all-webhook-events)  
+[Create a Webhook](https://www.solidfi.com/docs/create-a-webhook)  
+[Update a Webhook](https://www.solidfi.com/docs/update-a-webhook)  
+[Retrieve a Webhook](https://www.solidfi.com/docs/retrieve-a-webhook)  
+[Retrieve a Webhook Secret](https://www.solidfi.com/docs/retrieve-a-webhook-secret)  
+[List all Subscribed Webhooks](https://www.solidfi.com/docs/list-all-webhooks)  
+[Delete a Webhook](https://www.solidfi.com/docs/delete-a-webhook)  
+[Webhook samples](https://www.solidfi.com/docs/webhook-samples)  
+[Card RTA Webhooks](https://www.solidfi.com/docs/card-rta-webhooks)  
+[ACH RTA Webhooks](https://www.solidfi.com/docs/ach-rta-webhooks)  
+[Slack Webhooks Integration](https://www.solidfi.com/docs/slack-webhooks-integration)  

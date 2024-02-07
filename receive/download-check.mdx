@@ -1,0 +1,25 @@
+---
+title: "Download Check Deposit Images"
+description: Retrieves the image files for a check deposit
+---
+
+You can retrieve the original and processed images for the front and back of received check deposits with this API. Original files are in JPEG format and processed images are in black & white TIF format.
+
+ENDPOINT
+```url ENDPOINT
+GET /v1/receive/intrabank/{{transferId}}/files
+```
+
+
+```json RESPONSE
+{
+  "front": {
+    "original": "JPEG-file-URL",
+    "processed": "TIF-file-URL"
+  },
+  "back": {
+    "original": "JPEG-file-URL",
+    "processed": "TIF-file-URL"
+  }
+}
+```

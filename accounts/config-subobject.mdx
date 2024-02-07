@@ -1,0 +1,66 @@
+---
+title: "The Config sub-object"
+description: Account Config sub-objects for configuring settings at the account level
+---
+
+Below are the sub-objects you can use in the account config sub-object to conigure account level settings. For more info and sample requests, see the Account Config API doc.
+
+**The card config sub-object:**
+
+| Field    | Type   | Description                                                                         |
+|----------|--------|-------------------------------------------------------------------------------------|
+| virtual  | object | used to enable virtual cards: - enabled (boolean) - count (number of cards allowed) |
+| physical | object | used to enable physical cards - enabled (boolean) - count (number of cards allowed) |
+
+**The send config sub-objec:**
+
+| Field             | Type   | Description                                                     |
+|-------------------|--------|-----------------------------------------------------------------|
+| intrabank         | object | used to enable intrabank push - enabled (boolean)               |
+| ach               | object | used to enable ach push - enabled (boolean) - sameDay (boolean) |
+| wire              | object | used to enable send a wire - enabled (boolean)                  |
+| check             | object | used to enable send a check - enabled (boolean)                 |
+| card              | object | used to enable send a card - enabled (boolean)                  |
+| debitCard         | object | used to enable debit push - enabled (boolean)                   |
+| internationalWire | object | used to enable international wire - enabled (boolean)           |
+| digitalCheck      | object | not currently supported                                         |
+| physicalCard      | object | not currently supported                                         |
+| crossBorder       | object | sed to enable cross-border payments - enabled (boolean)         |
+
+**The receive config sub-object:**
+
+| Field     | Type   | Description                                                     |
+|-----------|--------|-----------------------------------------------------------------|
+| intrabank | object | used to enable intrabank pull - enabled (boolean)               |
+| ach       | object | used to enable ACH pull - enabled (boolean) - sameDay (boolean) |
+| check     | object | used to enable check deposits - enabled (boolean)               |
+| debitCard | object | used to enable debit pull - enabled (boolean)                   |
+
+**The limits config sub-object:**
+
+| Field   | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|---------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| receive | object | receive limit config: - daily: overall limit to be pulled in a day - monthly: overall limit to be pulled in a month - intrabank: daily, monthly intrabank sub-limits - ach: daily, monthly ACH sub-limits - check: daily, monthly check deposit sub-limits - debitCard: daily, monthly debit pull sub-limits                                                                                                                                                                                                        |
+| send    | object | receive limit config: - daily: overall limit to be pulled in a day - monthly: overall limit to be pulled in a month - intrabank: daily, monthly intrabank sub-limits - ach: daily, monthly ACH sub-limits - domesticWire: daily, monthly wire sub-limits - internationalWire: daily, monthly wire sub-limits - check: daily, monthly check deposit sub-limits - card: daily, monthly send a card sub-limits - debitCard: daily, monthly debit pull sub-limits - crossBorder: daily, monthly cross-border sub-limits |
+
+**The fallback config sub-object:**
+
+| Field     | Type   | Description                                                                                                                   |
+|-----------|--------|-------------------------------------------------------------------------------------------------------------------------------|
+| received  |        |                                                                                                                               |
+| intrabank | object | used to set another account as fallback for intrabank debits - enabled (boolean) - fallbackId (accountId of fallback account) |
+| intrabank | object | used to set another account as fallback for intrabank debits - enabled (boolean) - fallbackId (accountId of fallback account) |
+| ach       | object | used to set another account as fallback for ACH debits - enabled (boolean) - fallbackId (accountId of fallback account)       |
+| card      | object | used to set another account as fallback for card debits - enabled (boolean) - fallbackId (accountId of fallback account)      |
+
+**The incoming config sub-object:**
+
+| Field              | Type    | Description                                            |
+|--------------------|---------|--------------------------------------------------------|
+| achPull            |         |                                                        |
+| enabled            | boolean | used to enable blocked/allowed originators of ACH pull |
+| allowedOriginators | object  | list allowed originators in square brackets            |
+| blockedOriginators | object  | list blocked originators in square brackets            |
+
+
+

@@ -1,0 +1,65 @@
+---
+title: "Card Testing"
+description: Information on how to test card transactions
+---
+You can create cards and simulate card transactions in Solid's TEST mode. This allows you to test your cards before you go LIVE without making actual money transactions. Follow these steps:
+
+1. [Create a Card](https://www.solidfi.com/docs/create-a-card) (cardType: virtual)
+2. Test a Card Auth transaction by passing the test amount
+
+
+```url ENDPOINT
+POST /v1/card/:id/test
+```
+
+REQUEST
+```json REQUEST
+{
+ "amount": "14.90"
+}
+```
+
+200 OK success status response code indicates that the test transaction was posted.
+
+#### Notes:
+- currently you can use the simulation to test virtual cards only
+- use it only in TEST mode
+- pass the full amount (with dollar.cents) as a string. Ex: "10.00" or "4.90"
+- interval limits and MCC restrictions are not supported in test mode
+
+#### Other things you can test:
+- pass an amount that is greater than the available balance to see a "decline" response
+- pass different types of transactions in the "txnType" field, such as "authUpdate" or "reversal" or "refund"
+- pass custom merchant data in the merchant sub-object
+
+```json REQUEST WITH AUTHUPDATE, REVERSAL, OR REFUND (PASS parentTxnId)
+
+{
+  "amount": "20.00",
+  "parentTxnId": "txn-2c373294-4738-4b0d-9263-5de47deaead9",
+  "txnType": "authUpdate"
+}
+```
+
+```json REQUEST WITH MERCHANT DATA
+{
+  "amount": "10.00",
+  "merchant": {
+    "merchantName": "Wells Fargo ATM",
+    "merchantCity": "San Mateo",
+    "merchantState": "CA",
+    "merchantCountry": "US",
+    "postalCode": "94403",
+    "merchantCategory": "Automated Cash Dispenser",
+    "merchantCategoryCode": "6011"
+  }
+}
+```
+
+```json REQUEST FOR REFUND WITHOUT PARENT TRANSACTION ID
+{
+  "amount": "20.00",
+  "txnType": "refund"
+}
+```
+

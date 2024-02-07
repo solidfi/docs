@@ -1,0 +1,28 @@
+---
+title: "Transfer Status Codes"
+description: Solid uses status response codes to indicate the status of a transfer transaction
+---
+
+Solid uses status response codes to indicate the status of a transfer. Please note this is the status of the transfer sub-object only. For status codes of the whole transaction object, [see this doc](http://www.solidfi.com/docs/transaction-status-codes). Here is a list of potential transfer status codes and the transaction types they're associated with.
+
+| Type               | **completed** | **pending** | **declined** | **settled** | **approved** | **waitingForFiles** |
+|--------------------|---------------|-------------|--------------|-------------|--------------|---------------------|
+| ACH send (push)    | X             | X           | X            |             |              |                     |
+| ACH receive (pull) | X             | X           | X            |             |              |                     |
+| Domestic Wire      | X             | X           | X            |             |              |                     |
+| International Wire | X             | X           | X            |             |              |                     |
+| Send Check         | X             | X           | X            |             |              |                     |
+| Deposit Check      | X             | X           | X            |             |              | X                   |
+| Debit Push         | X             | X           | X            |             |              |                     |
+| Debit Pull         | X             | X           |              |             |              |                     |
+| Crypto Trade       | X             | X           |              | X           | X            |                     |
+| Crypto Send        | X             | X           |              | X           | X            |                     |
+| Reversal           |               |             |              | X           |              |                     |
+
+**completed** = transfer completed
+**pending** = transfer in review or waiting for approval
+**declined** = transfer declined
+**settled** = transfer settled
+**‍approved** = transfer approved
+**waitingForFiles** = waiting for check images to be uploaded
+

@@ -1,0 +1,17 @@
+---
+title: "Business Testing (KYB)"
+description: Information on testing creation of a business and submitting it for KYB
+---
+When you [Create a Business](https://www.solidfi.com/docs/create-a-business), you will need to [Submit a KYB](https://www.solidfi.com/docs/submit-a-kyb) (Know Your Business) for that business. Only after [KYC for the person](https://www.solidfi.com/docs/submit-a-kyc) (applicant) is approved, and KYB for the business is approved, a bank account can be originated for the business. KYB results (approved, review, declined) can be simulated in TEST mode based on the entered EIN (idNumber).
+
+- Approved: Any EIN that starts with 2 through 9 will be approved (Ex: 27-1812177)  
+- Review: Any EIN that starts with 1 will go into a review (Ex: 17-1812177)  
+- Declined: Any EIN that starts with 0 will be declined (Ex: 07-1812177)
+
+To prevent fraud, Solid enforces a rule that users cannot sign up with the same Employer Identification Number (EIN) more than once per program. You can use below EIN numbers for testing purposes in Prod test which will bypass the uniqueness validation.
+
+If using full EIN:
+
+- 099999999 -> KYB will go to decline  
+- 199999999 -> KYB will go to in-review  
+- 999999999 -> KYB will go to approved

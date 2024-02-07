@@ -1,0 +1,47 @@
+---
+title: "The Debit Card sub-object"
+description: Debit Card Object's attributes, fields, types
+---
+| Field       | Type    | Optional | Description                                                                       |
+|-------------|---------|----------|-----------------------------------------------------------------------------------|
+| cardNumber  | string  |          | card token                                                                        |
+| last4       | string  |          | Last 4 of the card                                                                |
+| expiryMonth | string  |          | Expiration month of the card                                                      |
+| cvv         | string  |          | CVV code (required for debit pull verification)                                   |
+| expiryYear  | string  |          | Expiration Year of the card                                                       |
+| pull        | boolean |          | if debit pull is enabled or disabled by the debit card issuer                     |
+| push        | boolean |          | if debit pull is enabled or disabled by the debit card issuer                     |
+| address     | object  |          | see [The Address sub-object](https://www.solidfi.com/docs/the-address-sub-object) |
+
+```json SAMPLE OBJECT
+{
+  "cardNumber": "tok_live_6GVyHuQR7aAjCZivYzLbuP_9990",
+  "last4": "9990",
+  "expiryMonth": "10",
+  "expiryYear": "2024",
+  "cvv": "123",
+  "address": {
+    "addressType": "card",
+    "line1": "113 James Way",
+    "line2": "",
+    "city": "Las Vegas",
+    "state": "NV",
+    "country": "US",
+    "postalCode": "89145"
+  },
+  "pull": {
+    "enabled": true
+  },
+  "push": {
+    "enabled": true
+  }
+}
+```
+
+For detailed steps read:‍
+
+[Send a Debit Push](https://www.solidfi.com/docs/send-a-debit-push)
+
+[Receive a Debit Pull](https://www.solidfi.com/docs/receive-a-debit-pull)
+
+Examples are also available in the postman collection.

@@ -1,0 +1,91 @@
+---
+title: "Card RTA Webhooks"
+description: Information related to Solid’s Real-Time Authorization (RTA) for cards
+---
+
+Card RTA (Real Time Authorization) can be set and enabled in the Developer > Real Time Authorization section of the dashboard. The card RTA webhook event card.auth.request is sent on any card authorization request. When enabled, the receiver must respond within 2 seconds with an approved or declined response. If the call times out or responds with a non-2xx status code, then stand-in processing rules will apply based on the RTA setup.
+
+All RTA webhook requests are signed with a sd-webhook-sha256-signature header. The secret key is available in the dashboard in the Developer > Real Time Authorization section.
+
+#### Sample Request
+```
+{
+  "eventType": "card.auth.request",
+  "programId": "prg-d4fb72d0-4f99-46b5-b137-91af779827b7",
+  "env": "staging",
+  "data": {
+    "id": "car-6603e6d5-164b-4e05-8ae3-cff5203dc9c1",
+    "amount": "6.00",
+    "merchant": {
+      "merchantName": "CVS PHARMACY",
+      "merchantCity": "SAN JOSE",
+      "merchantState": "CA",
+      "merchantCountry": "USA",
+      "postalCode": "",
+      "merchantCategory": "Bakeries",
+      "merchantCategoryCode": "5462",
+      "merchantId": "CRD ACCEPTOR ID"
+    },
+    "status": "pending",
+    "Account": {
+      "id": "acc-be9a1613-5768-4cd9-bd41-4b93b9cca515",
+      "label": "personalChecking",
+      "type": "personalChecking",
+      "balance": "614.00",
+      "currency": "USD",
+      "metadata": null
+    },
+    "Card": {
+      "id": "crd-54ca16db-ddcf-42f0-b738-13b7672669cb",
+      "label": "virtual",
+      "bin": "credit",
+      "type": "virtual",
+      "theme": "",
+      "limitAmount": "100.00",
+      "limitInterval": "allTime",
+      "metadata": {
+        "externalId": "buff_user_001"
+      }
+    },
+    "createdAt": "2022-10-21T10:34:07Z",
+    "authMethod": "swipe",
+    "Ach": null,
+    "wallet": null,
+    "personId": "per-f846dc89-4d8b-47a7-8353-1b6007039020",
+    "programId": "prg-d4fb72d0-4f99-46b5-b137-91af779827b7",
+    "localTransactionAmount": "6.00",
+    "localTransactionCurrency": "USD",
+    "currencyConversionRate": "1.000000000",
+    "rtaType": "partialAuth"
+  }
+}
+```
+
+#### Sample Responses
+
+Response status can be approved or declined with a 200 OK status code. In the case of "rtaType": "partialAuth" the optional "approvedBalance" response will instruct the Solid platform how much to authorize.
+
+```
+{
+  "status": "approved",
+  "approvedBalance": "1000.00"
+}
+```
+
+For declined Card RTA responses, we also support sending an optional declineCode of insufficientFunds. If the declineCode is not included, or is an unsupported code, it will default to the generic decline code doNotHonor.
+
+```
+{
+  "status": "declined",
+  "declineCode": "insufficientFunds",
+  "approvedBalance": "1000.00"
+}
+```
+
+```
+{
+  "status": "declined",
+  "declineCode": "doNotHonor",
+  "approvedBalance": "1000.00"
+}
+```

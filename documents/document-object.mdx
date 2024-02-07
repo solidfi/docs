@@ -1,0 +1,15 @@
+---
+title: "The Document Object"
+description: Document object's attributes, fields, and types
+---
+The table below defines the fields contained within the Document object:
+
+| Field          | Type   | Description                                                                                    |                                                                                                 |
+|----------------|--------|------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| docType        | enum   | business document types: - certificate - agreement - formation - IRS - ownership - DBA - other | person document types: - drivingLicense - profilePicture - stateID - visa - greenCard - other   |
+| name           | string | optional name of document                                                                      |                                                                                                 |
+| description    | string | description of the document                                                                    |                                                                                                 |
+| documentNumber | string | document number                                                                                |                                                                                                 |
+| issuingCountry | string | issuing country (2-alpha ISO code)                                                             |                                                                                                 |
+| issuingState   | string | issuing state or province (2-alpha)                                                            |                                                                                                 |
+| expirationDate | string | format is YYYY-MM-DD                                                                           |                                                                                                 |

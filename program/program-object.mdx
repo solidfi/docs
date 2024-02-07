@@ -1,0 +1,234 @@
+---
+title: "The Program object"
+description: Program is a configuration includes details, limits, and other settings.
+---
+
+```json 
+{
+  "id": "prg-b9f17601-4717-460e-bda5-9598f6f6db28",
+  "productName": "acme fintech",
+  "accountNumberPrefix": "8871",
+  "status": "active",
+  "description": "This program is for acme",
+  "programType": "platform",
+  "identity": {
+    "themeId": "",
+    "templateId": "",
+    "enabled": true
+  },
+  "company": {
+    "name": "Acme, Inc.",
+    "domain": "acme.com",
+    "subDomain": "app.acme.com",
+    "description": "acme is fintech super app for the gen z",
+    "tin": "21345",
+    "entityType": "unlistedCorporation",
+    "address": {
+      "addressType": "mailing",
+      "line1": "123 Main St",
+      "line2": "",
+      "city": "New York",
+      "state": "NY",
+      "country": "US",
+      "postalCode": "10001"
+    },
+    "contact": {
+      "name": "Jake Thompson",
+      "email": "jake@acme.com",
+      "phoneNumber": "+14083908321"
+    },
+"businessId": ""
+  },
+  "brand": {
+    "id": "pbr-e581be56-0785-449c-877f-2ad01164d5d4",
+    "primaryColor": "#141414",
+    "squareLogo": "",
+    "landscapeLogo": "",
+    "fontName": "helvatica",
+    "fontURL": "",
+    "cardArtPhysical": "",
+    "cardArtVirtual": "",
+    "cardArtVirtualBack": "",
+    "cardArtPhysicalBack": "",
+    "secondaryColor": "",
+    "supportEmail": "",
+    "darkPrimaryColor": "",
+    "darkSecondaryColor": "",
+    "darkSquareLogo": "",
+    "darkLandscapeLogo": "",
+    "redirectUrl": "https://acme.app/",
+    "createdAt": "2021-03-30T13:43:51Z",
+    "modifiedAt": "2021-12-17T08:24:37.148261994Z"
+  },
+  "bank": {
+    "sponsor": "Evolve",
+    "fdicInsurance": true,
+    "maxAccounts": {
+      "personal": "10",
+      "business": "10"
+    },
+    "accountType": {
+      "personalChecking": true,
+      "personalSavings": false,
+      "businessChecking": true,
+      "businessSavings": false
+    },
+    "accountSubType": {
+      "dda": true,
+      "interest": true,
+      "clearing": false,
+      "reserve": false,
+      "accrue": false
+    },
+    "accountInterest": "0.00",
+    "accountFees": "0.00",
+    "accountInterestFrequency": "annual",
+    "accountCreationCredit": "00.00"
+  },
+  "card": {
+    "type": {
+      "virtual": {
+        "enabled": true,
+        "count": "1000"
+      },
+      "physical": {
+        "enabled": true,
+        "count": "100"
+      }
+    },
+    "bin": {
+      "personalDebit": {
+        "enabled": true,
+        "sponsor": "Evolve",
+        "issuerProcessor": "i",
+        "embosser": "",
+        "issuerProcessorData": null
+      },
+      "personalCredit": {
+        "enabled": true,
+        "sponsor": "Evolve",
+        "issuerProcessor": "",
+        "embosser": "",
+        "issuerProcessorData": null
+      },
+      "businessDebit": {
+        "enabled": true,
+        "sponsor": "Evolve",
+        "issuerProcessor": "",
+        "embosser": "",
+        "issuerProcessorData": null
+      },
+      "businessCredit": {
+        "enabled": true,
+        "sponsor": "Evolve",
+        "issuerProcessor": "",
+        "embosser": "",
+        "issuerProcessorData": null
+      }
+    }
+  },
+  "send": {
+    "intrabank": {
+      "enabled": true,
+      "via": "Test Bank"
+    },
+    "ach": {
+      "enabled": true,
+      "via": "Test Bank",
+      "sameDay": true
+    },
+    "wire": {
+      "enabled": true,
+      "via": "Test Bank"
+    },
+    "check": {
+      "enabled": true,
+      "via": "Test Bank"
+    },
+    "card": {
+      "enabled": true,
+      "via": "Test Bank"
+    },
+    "debitCard": {
+      "enabled": false,
+      "via": ""
+    }
+  },
+  "receive": {
+    "intrabank": {
+      "enabled": true,
+      "via": "Test Bank"
+    },
+    "ach": {
+      "enabled": true,
+      "via": "Test Bank",
+      "sameDay": true
+    },
+    "check": {
+      "enabled": true,
+      "via": "Test Bank"
+    },
+    "debitCard": {
+      "enabled": false,
+      "via": ""
+    }
+  },
+  "limits": {
+    "receive": {
+      "daily": "400000.00",
+      "monthly": "1200000.00"
+    },
+    "send": {
+      "daily": "20000.00",
+      "monthly": "300000.53"
+    }
+  },
+  "legal": {
+    "bank": "",
+    "program": "",
+    "solid": "",
+    "help": "",
+    "disclosure": ""
+  },
+  "billing": {
+    "platformFee": "0.00",
+    "perAccountFee": "0.00",
+    "interestRate": "0.00",
+    "interchangeRevShare": "0.00",
+    "perCardFee": "0.00"
+  },
+  "createdAt": "2021-03-30T13:43:51Z",
+  "modifiedAt": "2021-12-17T08:24:37.210849425Z",
+  "language": "",
+  "notification": {
+    "ntfSmsEnabled": true,
+    "solidNtfSenderNumber": "",
+    "smsSenderNumber": "",
+    "twilioSenderSid": "",
+    "twilioSenderToken": "",
+    "ntfEmailEnabled": true,
+    "ntfSenderEmail": "",
+    "ntfSenderName": "",
+    "sendgridKey": "",
+    "segmentId": ""
+  },
+  "ops": {
+    "kyc": true,
+    "kyb": true
+  },
+  "allowedIpList": null,
+  "fallback": {
+    "originated": null,
+    "received": null
+  },
+  "realTimeAuth": {
+    "notification": null,
+    "card": null,
+    "ach": null,
+    "intrabank": null
+},
+  "dispute": {
+    "checkingAccountId": ""
+  }
+}
+```
