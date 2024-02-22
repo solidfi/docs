@@ -1,2 +1,2 @@
 # docs
-Solid Documentation
+Solid Documentation Center
