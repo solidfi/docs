@@ -14,6 +14,12 @@
   {
     "/v1/person": {
       "post": {
+        "tags": [
+          "Person"
+        ],
+        "summary": "Create a Person",
+        "description": "Creates a person by passing the required person information",
+        "operationId": "createAPerson",
 	"parameters": [
           {
             "in": "header",
@@ -104,7 +110,30 @@
 			"example": "02351"
                       }
                     }
-                  }
+                  },
+		  "examples": {
+                    "Create a Person": {
+                      "value": {
+			"address": {
+			  "addressType": "mailing",
+			  "city": "Los Gatos",
+			  "country": "US",
+			  "line1": "1 Broadway",
+			  "line2": "",
+			  "postalCode": "95030",
+			  "state": "CA"
+			},
+			"dateOfBirth": "1974-01-25",
+			"email": "john.doe.0331@solidfi.com",
+			"firstName": "John",
+			"idNumber": "999999999",
+			"idType": "ssn",
+			"lastName": "Doe",
+			"middleName": "",
+			"phone": "+15555555555"
+                      }
+                    }
+		  }
 		}
               }
             }
@@ -112,7 +141,81 @@
 	},
 	"responses": {
           "201": {
-            "description": "HTTP Status 201"
+            "description": "Create a Person",
+	    "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "511"
+                }
+              },
+              "Via": {
+                "schema": {
+                  "type": "string",
+                  "example": "1.1 5ab5dc09da67e3ea794ec8a82992cc88.cloudfront.net (CloudFront)"
+                }
+              },
+              "X-Amz-Cf-Id": {
+                "schema": {
+                  "type": "string",
+                  "example": "bkkQ1yQ-CJybOo8O87pzALqdL8C4geGmbxnUFsHEP53vFmdnPybTSA=="
+                }
+              },
+              "X-Amz-Cf-Pop": {
+                "schema": {
+                  "type": "string",
+                  "example": "HIO50-C1"
+                }
+              },
+              "X-Cache": {
+                "schema": {
+                  "type": "string",
+                  "example": "Miss from cloudfront"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "gzip"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 20 Nov 2023 05:31:49 GMT"
+                }
+              },
+              "sd-request-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "req-f4de66e0-1331-40b2-8be8-dae37e5bd5b1"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "istio-envoy"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-envoy-upstream-service-time": {
+                "schema": {
+                  "type": "string",
+                  "example": "1536"
+                }
+              }
+	    }
           },
           "content": {
             "application/json": {
@@ -277,132 +380,485 @@
                     "example": "active"
                   }
 		}
+              },
+	      "examples": {
+                "Create a Person": {
+                  "value": {
+                    "address": {
+                      "addressType": "mailing",
+                      "city": "Los Gatos",
+                      "country": "US",
+                      "line1": "1 Broadway",
+                      "line2": "",
+                      "postalCode": "95030",
+                      "state": "CA"
+                    },
+                    "createdAt": "2023-11-20T05:32:11Z",
+                    "dateOfBirth": "1974-01-25",
+                    "email": "john.doe.0331@solidfi.com",
+                    "emailVerified": false,
+                    "firstName": "John",
+                    "id": "per-e6553324-1db8-49a8-a0d3-29132280b838",
+                    "idNumber": "999999999",
+                    "idType": "ssn",
+                    "kyc": {
+                      "createdAt": "2023-11-20T05:31:48Z",
+                      "id": "kyc-69760d03-7957-46d5-b34f-ff820fd66520",
+                      "modifiedAt": "2023-11-20T05:31:48Z",
+                      "personId": "per-e6553324-1db8-49a8-a0d3-29132280b838",
+                      "results": {
+                        "address": "notStarted",
+                        "bank": "notStarted",
+                        "dateOfBirth": "notStarted",
+                        "fraud": "notStarted",
+                        "idv": "notStarted"
+                      },
+                      "reviewCode": "",
+                      "reviewMessage": "",
+                      "reviewReasons": null,
+                      "status": "notStarted"
+                    },
+                    "language": "en",
+                    "lastName": "Doe",
+                    "metadata": null,
+                    "middleName": "",
+                    "modifiedAt": "2023-11-20T05:32:11Z",
+                    "phone": "+15555555555",
+                    "phoneVerified": true,
+                    "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
+                    "status": "active"
+                  }
+                }
               }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "/v1/person/{personId}": {
+      "patch": {
+	"tags": [
+          "Person"
+        ],
+        "summary": "Update a Person",
+        "description": "Updates the person information by passing the person id.<br><br> **Please note:** when KYC status = approved, you can no longer update these fields:<br> *- firstName*<br> *- lastName*<br> *- dateOfBirth*<br> *- idNumber*<br> *- address*<br>",
+        "operationId": "updateAPerson",
+	"parameters": [
+          {
+            "name": "sd-api-key",
+            "in": "header",
+            "required": true,
+            "schema": {
+	      "type": "string",
+	      "example": "{{sd-api-key}}"
+            }
+          },
+          {
+            "name": "sd-person-id",
+            "in": "header",
+            "required": true,
+            "schema": {
+	      "type": "string",
+	      "example": "{{sd-person-id}}"
+            }
+          },
+          {
+            "in": "header",
+            "name": "content-type",
+            "schema": {
+	      "type": "string",
+	      "example": "application/json"
+            },
+            "required": true
+          },
+	],
+	"requestBody": {
+          "content": {
+            "application/json": {
+	      "schema": {
+		"type": "object",
+		"properties": {
+                  "firstName": {
+                    "type": "string",
+                    "example": "ABC"
+                  },
+                  "middleName": {
+                    "type": "string",
+                    "example": "XYZ"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "example": "ABCD"
+                  },
+		  "email": {
+                    "type": "string",
+                    "example": "johndoe@solidfi.com"
+                  },
+                  "phone": {
+                    "type": "string",
+                    "example": "+9251312304"
+                  },
+                  "dateOfBirth": {
+                    "type": "string",
+                    "example": "1988-05-02"
+                  },
+                  "taxId": {
+                    "type": "string",
+                    "example": "0909090909"
+                  },
+                  "taxType": {
+                    "type": "string",
+                    "example": "ssn"
+                  }
+		}
+	      }
+            }
+          }
+	},
+	"responses": {
+          "200": {
+            "description": "Update a Person",
+          },
+          "headers": {
+            "Connection": {
+              "schema": {
+                "type": "string",
+                "example": "keep-alive"
+              }
+            },
+            "Content-Length": {
+              "schema": {
+                "type": "string",
+                "example": "534"
+              }
+            },
+            "Via": {
+              "schema": {
+                "type": "string",
+                "example": "1.1 4dde8ec6d6c12741888c2d3a059d4a2e.cloudfront.net (CloudFront)"
+              }
+            },
+            "X-Amz-Cf-Id": {
+              "schema": {
+                "type": "string",
+                "example": "hj4qurZnBR3CUEEqOqRbvgJC_jn3hyBU-1isXNk1izG-Qf9XMhKZyw=="
+              }
+            },
+            "X-Amz-Cf-Pop": {
+              "schema": {
+                "type": "string",
+                "example": "HIO50-C1"
+              }
+            },
+            "X-Cache": {
+              "schema": {
+                "type": "string",
+                "example": "Miss from cloudfront"
+              }
+            },
+            "content-encoding": {
+              "schema": {
+                "type": "string",
+                "example": "gzip"
+              }
+            },
+            "date": {
+              "schema": {
+                "type": "string",
+                "example": "Mon, 20 Nov 2023 05:57:33 GMT"
+              }
+            },
+            "sd-request-id": {
+              "schema": {
+                "type": "string",
+                "example": "req-945cd576-9732-4ee7-a5fc-ab4d56bc37cd"
+              }
+            },
+            "server": {
+              "schema": {
+                "type": "string",
+                "example": "istio-envoy"
+              }
+            },
+            "vary": {
+              "schema": {
+                "type": "string",
+                "example": "Accept-Encoding"
+              }
+            },
+            "x-envoy-upstream-service-time": {
+              "schema": {
+                "type": "string",
+                "example": "3009"
+              }
+            }
+          },
+          "content": {
+            "application/json": {
+	      "schema": {
+		"type": "object",
+		"properties": {
+                  "address": {
+                    "type": "object",
+                    "properties": {
+                      "addressType": {
+                        "type": "string",
+                        "example": "mailing"
+                      },
+                      "city": {
+                        "type": "string",
+                        "example": "Los Gatos"
+                      },
+                      "country": {
+                        "type": "string",
+                        "example": "US"
+                      },
+                      "line1": {
+                        "type": "string",
+                        "example": "1 Broadway"
+                      },
+                      "line2": {
+                        "type": "string",
+                        "example": ""
+                      },
+                      "postalCode": {
+                        "type": "string",
+                        "example": "95030"
+                      },
+                      "state": {
+                        "type": "string",
+                        "example": "CA"
+                      }
+                    }
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "example": "2023-11-20T05:32:11Z"
+                  },
+                  "dateOfBirth": {
+                    "type": "string",
+                    "example": "1974-01-25"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "johndoe@solidfi.com"
+                  },
+                  "emailVerified": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "example": "John"
+                  },
+                  "id": {
+                    "type": "string",
+                    "example": "per-e6553324-1db8-49a8-a0d3-29132280b838"
+                  },
+                  "idNumber": {
+                    "type": "string",
+                    "example": "999999999"
+                  },
+                  "idType": {
+                    "type": "string",
+                    "example": "ssn"
+                  },
+                  "kyc": {
+                    "type": "object",
+                    "properties": {
+                      "createdAt": {
+                        "type": "string",
+                        "example": "2023-11-20T05:31:48Z"
+                      },
+                      "id": {
+                        "type": "string",
+                        "example": "kyc-69760d03-7957-46d5-b34f-ff820fd66520"
+                      },
+                      "modifiedAt": {
+                        "type": "string",
+                        "example": "2023-11-20T05:31:48Z"
+                      },
+                      "personId": {
+                        "type": "string",
+                        "example": "per-e6553324-1db8-49a8-a0d3-29132280b838"
+                      },
+                      "results": {
+                        "type": "object",
+                        "properties": {
+                          "address": {
+                            "type": "string",
+                            "example": "notStarted"
+                          },
+                          "bank": {
+                            "type": "string",
+                            "example": "notStarted"
+                          },
+                          "dateOfBirth": {
+                            "type": "string",
+                            "example": "notStarted"
+                          },
+                          "fraud": {
+                            "type": "string",
+                            "example": "notStarted"
+                          },
+                          "idv": {
+                            "type": "string",
+                            "example": "notStarted"
+                          }
+                        }
+                      },
+                      "reviewCode": {
+                        "type": "string",
+                        "example": ""
+                      },
+                      "reviewMessage": {
+                        "type": "string",
+                        "example": ""
+                      },
+                      "reviewReasons": {
+                        "type": "object",
+                        "properties": {
+                          "address": {
+                            "type": "array",
+                            "items": {},
+                            "example": []
+                          },
+                          "bank": {
+                            "type": "array",
+                            "items": {},
+                            "example": []
+                          },
+                          "dateOfBirth": {
+                            "type": "array",
+                            "items": {},
+                            "example": []
+                          },
+                          "fraud": {
+                            "type": "array",
+                            "items": {},
+                            "example": []
+                          },
+                          "idv": {
+                            "type": "array",
+                            "items": {},
+                            "example": []
+                          },
+                          "other": {
+                            "type": "array",
+                            "items": {},
+                            "example": []
+                          }
+                        }
+                      },
+                      "status": {
+                        "type": "string",
+                        "example": "notStarted"
+                      }
+                    }
+                  },
+                  "language": {
+                    "type": "string",
+                    "example": "en"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "example": "Doe"
+                  },
+                  "metadata": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "middleName": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "modifiedAt": {
+                    "type": "string",
+                    "example": "2023-11-20T05:57:56Z"
+                  },
+                  "phone": {
+                    "type": "string",
+                    "example": "+15555555555"
+                  },
+                  "phoneVerified": {
+                    "type": "boolean",
+                    "example": true
+                  },
+                  "programId": {
+                    "type": "string",
+                    "example": "prg-ffa511da-1adc-4603-b845-173b895a33f6"
+                  },
+                  "status": {
+                    "type": "string",
+                    "example": "active"
+                  }
+                }
+	      },
+	      "examples": {
+                "Update a Person": {
+                  "value": {
+                    "address": {
+                      "addressType": "mailing",
+                      "city": "Los Gatos",
+                      "country": "US",
+                      "line1": "1 Broadway",
+                      "line2": "",
+                      "postalCode": "95030",
+                      "state": "CA"
+                    },
+                    "createdAt": "2023-11-20T05:32:11Z",
+                    "dateOfBirth": "1974-01-25",
+                    "email": "johndoe@solidfi.com",
+                    "emailVerified": false,
+                    "firstName": "John",
+                    "id": "per-e6553324-1db8-49a8-a0d3-29132280b838",
+                    "idNumber": "999999999",
+                    "idType": "ssn",
+                    "kyc": {
+                      "createdAt": "2023-11-20T05:31:48Z",
+                      "id": "kyc-69760d03-7957-46d5-b34f-ff820fd66520",
+                      "modifiedAt": "2023-11-20T05:31:48Z",
+                      "personId": "per-e6553324-1db8-49a8-a0d3-29132280b838",
+                      "results": {
+                        "address": "notStarted",
+                        "bank": "notStarted",
+                        "dateOfBirth": "notStarted",
+                        "fraud": "notStarted",
+                        "idv": "notStarted"
+                      },
+                      "reviewCode": "",
+                      "reviewMessage": "",
+                      "reviewReasons": {
+                        "address": [],
+                        "bank": [],
+                        "dateOfBirth": [],
+                        "fraud": [],
+                        "idv": [],
+                        "other": []
+                      },
+                      "status": "notStarted"
+                    },
+                    "language": "en",
+                    "lastName": "Doe",
+                    "metadata": null,
+                    "middleName": "",
+                    "modifiedAt": "2023-11-20T05:57:56Z",
+                    "phone": "+15555555555",
+                    "phoneVerified": true,
+                    "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
+                    "status": "active"
+                  }
+		}
+	      }
             }
           }
 	}
       }
-    },
-    {
-      "/v1/person/{personId}": {
-	"post": {
-	  "parameters": [
-            {
-              "in": "header",
-              "name": "content-type",
-              "schema": {
-		"type": "string",
-		"example": "application/json"
-              },
-              "required": true
-            },
-	    {
-              "in": "header",
-              "name": "authorization",
-              "schema": {
-		"type": "string",
-		"example": "Bearer null"
-              },
-              "required": true
-            }
-	  ],
-	  "requestBody": {
-            "content": {
-              "application/json": {
-		"schema": {
-		  "type": "object",
-		  "properties": {
-                    "firstName": {
-                      "type": "string",
-                      "example": "ABC"
-                    },
-                    "middleName": {
-                      "type": "string",
-                      "example": "XYZ"
-                    },
-                    "lastName": {
-                      "type": "string",
-                      "example": "ABCD"
-                    },
-                    "phone": {
-                      "type": "string",
-                      "example": "+9251312304"
-                    },
-                    "dateOfBirth": {
-                      "type": "string",
-                      "example": "1988-05-02"
-                    },
-                    "taxId": {
-                      "type": "string",
-                      "example": "0909090909"
-                    },
-                    "taxType": {
-                      "type": "string",
-                      "example": "ssn"
-                    }
-		  }
-		}
-              }
-            }
-	  },
-	  "responses": {
-            "200": {
-              "description": "HTTP Status 200"
-            },
-            "content": {
-              "application/json": {
-		"schema": {
-		  "type": "object",
-		  "properties": {
-                    "id": {
-                      "type": "string",
-                      "example": "per-91d92e27-a4f9-4bca-9113-82d6c5490197"
-                    },
-                    "firstName": {
-                      "type": "string",
-                      "example": "Sachin"
-                    },
-                    "middleName": {
-                      "type": "string",
-                      "example": "Smith"
-                    },
-                    "lastName": {
-                      "type": "string",
-                      "example": "Doe"
-                    },
-                    "phone": {
-                      "type": "string",
-                      "example": "+12513123404"
-                    },
-                    "dateOfBirth": {
-                      "type": "string",
-                      "example": "1988-05-02"
-                    },
-                    "taxId": {
-                      "type": "string",
-                      "example": "123123123"
-                    },
-                    "taxType": {
-                      "type": "string",
-                      "example": "ssn"
-                    },
-                    "createdAt": {
-                      "type": "string",
-                      "example": "2020-01-01T00:00:00Z"
-                    },
-                    "modifiedAt": {
-                      "type": "string",
-                      "example": "2020-01-01T00:00:00Z"
-                    }
-		  }
-		}
-              }
-            }
-	  }
-	}
-      }
-    },
-    "/v1/person/{personId}/kyc": {
+    }
+  },
+  "/v1/person/{personId}/kyc": {
       "get": {
         "tags": [
           "Person"
