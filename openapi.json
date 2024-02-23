@@ -17,8 +17,8 @@
         "tags": [
           "Person"
         ],
-        "summary": "Create a Person",
-        "description": "Creates a person by passing the required person information",
+        "description": "Create a Person",
+        "summary": "Creates a person by passing the required person information",
         "operationId": "createAPerson",
 	"parameters": [
           {
@@ -442,8 +442,8 @@
 	"tags": [
           "Person"
         ],
-        "summary": "Update a Person",
-        "description": "Updates the person information by passing the person id.<br><br> **Please note:** when KYC status = approved, you can no longer update these fields:<br> *- firstName*<br> *- lastName*<br> *- dateOfBirth*<br> *- idNumber*<br> *- address*<br>",
+        "description": "Update a Person",
+        "summary": "Updates the person information by passing the person id.<br><br> **Please note:** when KYC status = approved, you can no longer update these fields:<br> *- firstName*<br> *- lastName*<br> *- dateOfBirth*<br> *- idNumber*<br> *- address*<br>",
         "operationId": "updateAPerson",
 	"parameters": [
           {
@@ -863,8 +863,8 @@
         "tags": [
           "Person"
         ],
-        "summary": "Retrieve a KYC",
         "description": "Retrieve a KYC",
+        "summary": "Retrieve a KYC",
         "operationId": "retrieveAKyc",
         "parameters": [
           {
@@ -1126,8 +1126,8 @@
         "tags": [
           "Person"
         ],
-        "summary": "Submit a KYC",
         "description": "Submit a KYC",
+        "summary": "Submit a KYC",
         "operationId": "submitAKyc",
         "parameters": [
           {
@@ -1367,8 +1367,8 @@
         "tags": [
           "Person"
         ],
-        "summary": "KYC Approval",
         "description": "KYC Approval",
+        "summary": "KYC Approval",
         "operationId": "kycApproval",
         "parameters": [
           {
@@ -1653,8 +1653,8 @@
         "tags": [
           "Person"
         ],
-        "summary": "Retrieve an IDV",
         "description": "Retrieve an IDV",
+        "summary": "Retrieve an IDV",
         "operationId": "retrieveAnIdv",
         "parameters": [
           {
@@ -1809,8 +1809,8 @@
         "tags": [
           "Person"
         ],
-        "summary": "Submit an IDV",
         "description": "Submit an IDV",
+        "summary": "Submit an IDV",
         "operationId": "submitAnIdv",
         "parameters": [
           {
