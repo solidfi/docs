@@ -813,7 +813,7 @@
           "Person"
         ],
         "summary": "Update a Person",
-        "description": "Updates the person information by passing the person id. **Please note:** when KYC status = approved, you can no longer update these fields:  *- firstName*  *- lastName*  *- dateOfBirth*  *- idNumber*  *- address",
+        "description": "Updates the person information by passing the person id. **Please note:** when KYC status = approved, you can no longer update these fields:  - firstName - lastName - dateOfBirth  - idNumber - address",
         "operationId": "updateAPerson",
         "parameters": [
           {
