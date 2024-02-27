@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.3", 
+  "openapi": "3.0.3",
   "info": {
     "title": "Solid FinTech Platform APIs-Mintlify",
     "version": "1.0.0",
@@ -10,8 +10,7 @@
       "url": "https://test-api.solidfi.com"
     }
   ],
-  "paths":
-  {
+  "paths": {
     "/v1/person": {
       "post": {
         "tags": [
@@ -20,35 +19,79 @@
         "summary": "Create a Person",
         "description": "Creates a person by passing the required person information",
         "operationId": "createAPerson",
-	"parameters": [
+        "parameters": [
           {
-            "in": "header",
-            "name": "content-type",
-            "schema": {
-              "type": "string",
-              "example": "application/json"
-            },
-            "required": true
-          },
-          {
-            "in": "header",
             "name": "sd-api-key",
+            "in": "header",
             "schema": {
               "type": "string",
-              "example": "sd_test_34477ggh88"
+              "example": "{{sd-api-key}}"
             },
             "required": true
           }
-	],
-	"requestBody": {
+        ],
+        "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-		"type": "object",
-		"properties": {
+                "type": "object",
+                "properties": {
+                  "address": {
+                    "type": "object",
+                    "properties": {
+                      "addressType": {
+                        "type": "string",
+                        "example": "mailing"
+                      },
+                      "city": {
+                        "type": "string",
+                        "example": "Los Gatos"
+                      },
+                      "country": {
+                        "type": "string",
+                        "example": "US"
+                      },
+                      "line1": {
+                        "type": "string",
+                        "example": "1 Broadway"
+                      },
+                      "line2": {
+                        "type": "string",
+                        "example": ""
+                      },
+                      "postalCode": {
+                        "type": "string",
+                        "example": "95030"
+                      },
+                      "state": {
+                        "type": "string",
+                        "example": "CA"
+                      }
+                    }
+                  },
+                  "dateOfBirth": {
+                    "type": "string",
+                    "example": "1974-01-25"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "john.doe.0331@solidfi.com"
+                  },
                   "firstName": {
                     "type": "string",
-                    "example": "LCB SOLID DPS"
+                    "example": "John"
+                  },
+                  "idNumber": {
+                    "type": "string",
+                    "example": "999999999"
+                  },
+                  "idType": {
+                    "type": "string",
+                    "example": "ssn"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "example": "Doe"
                   },
                   "middleName": {
                     "type": "string",
@@ -57,92 +100,39 @@
                   "phone": {
                     "type": "string",
                     "example": "+15555555555"
-                  },
-                  "lastName": {
-                    "type": "string",
-                    "example": "Testing"
-                  },
-                  "dateOfBirth": {
-                    "type": "string",
-                    "example": "1974-01-01"
-                  },
-                  "idType": {
-                    "type": "string",
-                    "example": "ssn"
-                  },
-                  "idNumber": {
-                    "type": "string",
-                    "example": "124890761"
-                  },
-                  "email": {
-                    "type": "string",
-                    "example": "avinashc@solidfi.com"
-                  },
-                  "address": {
-                    "type": "object",
-                    "properties": {
-                      "addressType": {
-			"type": "string",
-			"example": "mailing"
-                      },
-                      "line1": {
-			"type": "string",
-			"example": "777  Brockton  Ave"
-                      },
-                      "line2": {
-			"type": "string",
-			"example": ""
-                      },
-                      "city": {
-			"type": "string",
-			"example": "San Mateo"
-                      },
-                      "state": {
-			"type": "string",
-			"example": "CA"
-                      },
-                      "country": {
-			"type": "string",
-			"example": "US"
-                      },
-                      "postalCode": {
-			"type": "string",
-			"example": "02351"
-                      }
-                    }
-                  },
-		  "examples": {
-                    "Create a Person": {
-                      "value": {
-			"address": {
-			  "addressType": "mailing",
-			  "city": "Los Gatos",
-			  "country": "US",
-			  "line1": "1 Broadway",
-			  "line2": "",
-			  "postalCode": "95030",
-			  "state": "CA"
-			},
-			"dateOfBirth": "1974-01-25",
-			"email": "john.doe.0331@solidfi.com",
-			"firstName": "John",
-			"idNumber": "999999999",
-			"idType": "ssn",
-			"lastName": "Doe",
-			"middleName": "",
-			"phone": "+15555555555"
-                      }
-                    }
-		  }
-		}
+                  }
+                }
+              },
+              "examples": {
+                "Create a Person": {
+                  "value": {
+                    "address": {
+                      "addressType": "mailing",
+                      "city": "Los Gatos",
+                      "country": "US",
+                      "line1": "1 Broadway",
+                      "line2": "",
+                      "postalCode": "95030",
+                      "state": "CA"
+                    },
+                    "dateOfBirth": "1974-01-25",
+                    "email": "john.doe.0331@solidfi.com",
+                    "firstName": "John",
+                    "idNumber": "999999999",
+                    "idType": "ssn",
+                    "lastName": "Doe",
+                    "middleName": "",
+                    "phone": "+15555555555"
+                  }
+                }
               }
             }
           }
-	},
-	"responses": {
+        },
+        "responses": {
           "201": {
             "description": "Create a Person",
-	    "headers": {
+            "headers": {
               "Connection": {
                 "schema": {
                   "type": "string",
@@ -215,218 +205,224 @@
                   "example": "1536"
                 }
               }
-	    }
-          },
-          "content": {
-            "application/json": {
-              "schema": {
-		"type": "object",
-		"properties": {
-                  "id": {
-                    "type": "string",
-                    "example": "per-16229a02-88ad-4cde-8faf-747e70f4c7dd"
-                  },
-                  "firstName": {
-                    "type": "string",
-                    "example": "LCB SOLID DPS"
-                  },
-                  "middleName": {
-                    "type": "string",
-                    "example": ""
-                  },
-                  "lastName": {
-                    "type": "string",
-                    "example": "Testing"
-                  },
-                  "phone": {
-                    "type": "string",
-                    "example": "+15555555555"
-                  },
-                  "phoneVerified": {
-                    "type": "boolean",
-                    "example": true
-                  },
-                  "email": {
-                    "type": "string",
-                    "example": "avinashc@solidfi.com"
-                  },
-                  "emailVerified": {
-                    "type": "boolean",
-                    "example": false
-                  },
-                  "dateOfBirth": {
-                    "type": "string",
-                    "example": "1974-01-01"
-                  },
-                  "idType": {
-                    "type": "string",
-                    "example": "ssn"
-                  },
-                  "idNumber": {
-                    "type": "string",
-                    "example": "124890761"
-                  },
-                  "address": {
-                    "type": "object",
-                    "properties": {
-                      "addressType": {
-			"type": "string",
-			"example": "mailing"
-                      },
-                      "line1": {
-			"type": "string",
-			"example": "777 Brockton Ave"
-                      },
-                      "line2": {
-			"type": "string",
-			"example": ""
-                      },
-                      "city": {
-			"type": "string",
-			"example": "Abington"
-                      },
-                      "state": {
-			"type": "string",
-			"example": "MA"
-                      },
-                      "country": {
-			"type": "string",
-			"example": "US"
-                      },
-                      "postalCode": {
-			"type": "string",
-			"example": "02351-2111"
-                      }
-                    }
-                  },
-                  "kyc": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-			"type": "string",
-			"example": "kyc-ec3f27a8-6cd8-4820-8a0f-e7015aa0f5b4"
-                      },
-                      "personId": {
-			"type": "string",
-			"example": "per-16229a02-88ad-4cde-8faf-747e70f4c7dd"
-                      },
-                      "status": {
-			"type": "string",
-			"example": "notStarted"
-                      },
-                      "reviewCode": {
-			"type": "string",
-			"example": ""
-                      },
-                      "reviewMessage": {
-			"type": "string",
-			"example": ""
-                      },
-                      "results": {
-			"type": "object",
-			"properties": {
-                          "idv": {
-                            "type": "string",
-                            "example": "notStarted"
-                          },
-                          "address": {
-                            "type": "string",
-                            "example": "notStarted"
-                          },
-                          "dateOfBirth": {
-                            "type": "string",
-                            "example": "notStarted"
-                          },
-                          "fraud": {
-                            "type": "string",
-                            "example": "notStarted"
-                          },
-                          "bank": {
-                            "type": "string",
-                            "example": "notStarted"
-                          }
-			}
-                      },
-                      "createdAt": {
-			"type": "string",
-			"example": "2024-02-23T10:48:54Z"
-                      },
-                      "modifiedAt": {
-			"type": "string",
-			"example": "2024-02-23T10:48:54Z"
-                      },
-                      "reviewReasons": null
-                    }
-                  },
-                  "programId": {
-                    "type": "string",
-                    "example": "prg-4865f43a-0400-47e4-ab5b-8a06283944a3"
-                  },
-                  "createdAt": {
-                    "type": "string",
-                    "example": "2024-02-23T10:48:47Z"
-                  },
-                  "modifiedAt": {
-                    "type": "string",
-                    "example": "2024-02-23T10:48:47Z"
-                  },
-                  "language": {
-                    "type": "string",
-                    "example": "en"
-                  },
-                  "metadata": null,
-                  "status": {
-                    "type": "string",
-                    "example": "active"
-                  }
-		}
-              },
-	      "examples": {
-                "Create a Person": {
-                  "value": {
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
                     "address": {
-                      "addressType": "mailing",
-                      "city": "Los Gatos",
-                      "country": "US",
-                      "line1": "1 Broadway",
-                      "line2": "",
-                      "postalCode": "95030",
-                      "state": "CA"
+                      "type": "object",
+                      "properties": {
+                        "addressType": {
+                          "type": "string",
+                          "example": "mailing"
+                        },
+                        "city": {
+                          "type": "string",
+                          "example": "Los Gatos"
+                        },
+                        "country": {
+                          "type": "string",
+                          "example": "US"
+                        },
+                        "line1": {
+                          "type": "string",
+                          "example": "1 Broadway"
+                        },
+                        "line2": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "postalCode": {
+                          "type": "string",
+                          "example": "95030"
+                        },
+                        "state": {
+                          "type": "string",
+                          "example": "CA"
+                        }
+                      }
                     },
-                    "createdAt": "2023-11-20T05:32:11Z",
-                    "dateOfBirth": "1974-01-25",
-                    "email": "john.doe.0331@solidfi.com",
-                    "emailVerified": false,
-                    "firstName": "John",
-                    "id": "per-e6553324-1db8-49a8-a0d3-29132280b838",
-                    "idNumber": "999999999",
-                    "idType": "ssn",
+                    "createdAt": {
+                      "type": "string",
+                      "example": "2023-11-20T05:32:11Z"
+                    },
+                    "dateOfBirth": {
+                      "type": "string",
+                      "example": "1974-01-25"
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "john.doe.0331@solidfi.com"
+                    },
+                    "emailVerified": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "firstName": {
+                      "type": "string",
+                      "example": "John"
+                    },
+                    "id": {
+                      "type": "string",
+                      "example": "per-e6553324-1db8-49a8-a0d3-29132280b838"
+                    },
+                    "idNumber": {
+                      "type": "string",
+                      "example": "999999999"
+                    },
+                    "idType": {
+                      "type": "string",
+                      "example": "ssn"
+                    },
                     "kyc": {
-                      "createdAt": "2023-11-20T05:31:48Z",
-                      "id": "kyc-69760d03-7957-46d5-b34f-ff820fd66520",
-                      "modifiedAt": "2023-11-20T05:31:48Z",
-                      "personId": "per-e6553324-1db8-49a8-a0d3-29132280b838",
-                      "results": {
-                        "address": "notStarted",
-                        "bank": "notStarted",
-                        "dateOfBirth": "notStarted",
-                        "fraud": "notStarted",
-                        "idv": "notStarted"
-                      },
-                      "reviewCode": "",
-                      "reviewMessage": "",
-                      "reviewReasons": null,
-                      "status": "notStarted"
+                      "type": "object",
+                      "properties": {
+                        "createdAt": {
+                          "type": "string",
+                          "example": "2023-11-20T05:31:48Z"
+                        },
+                        "id": {
+                          "type": "string",
+                          "example": "kyc-69760d03-7957-46d5-b34f-ff820fd66520"
+                        },
+                        "modifiedAt": {
+                          "type": "string",
+                          "example": "2023-11-20T05:31:48Z"
+                        },
+                        "personId": {
+                          "type": "string",
+                          "example": "per-e6553324-1db8-49a8-a0d3-29132280b838"
+                        },
+                        "results": {
+                          "type": "object",
+                          "properties": {
+                            "address": {
+                              "type": "string",
+                              "example": "notStarted"
+                            },
+                            "bank": {
+                              "type": "string",
+                              "example": "notStarted"
+                            },
+                            "dateOfBirth": {
+                              "type": "string",
+                              "example": "notStarted"
+                            },
+                            "fraud": {
+                              "type": "string",
+                              "example": "notStarted"
+                            },
+                            "idv": {
+                              "type": "string",
+                              "example": "notStarted"
+                            }
+                          }
+                        },
+                        "reviewCode": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "reviewMessage": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "reviewReasons": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "status": {
+                          "type": "string",
+                          "example": "notStarted"
+                        }
+                      }
                     },
-                    "language": "en",
-                    "lastName": "Doe",
-                    "metadata": null,
-                    "middleName": "",
-                    "modifiedAt": "2023-11-20T05:32:11Z",
-                    "phone": "+15555555555",
-                    "phoneVerified": true,
-                    "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                    "status": "active"
+                    "language": {
+                      "type": "string",
+                      "example": "en"
+                    },
+                    "lastName": {
+                      "type": "string",
+                      "example": "Doe"
+                    },
+                    "metadata": {
+                      "nullable": true,
+                      "example": null
+                    },
+                    "middleName": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "modifiedAt": {
+                      "type": "string",
+                      "example": "2023-11-20T05:32:11Z"
+                    },
+                    "phone": {
+                      "type": "string",
+                      "example": "+15555555555"
+                    },
+                    "phoneVerified": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "programId": {
+                      "type": "string",
+                      "example": "prg-ffa511da-1adc-4603-b845-173b895a33f6"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "active"
+                    }
+                  }
+                },
+                "examples": {
+                  "Create a Person": {
+                    "value": {
+                      "address": {
+                        "addressType": "mailing",
+                        "city": "Los Gatos",
+                        "country": "US",
+                        "line1": "1 Broadway",
+                        "line2": "",
+                        "postalCode": "95030",
+                        "state": "CA"
+                      },
+                      "createdAt": "2023-11-20T05:32:11Z",
+                      "dateOfBirth": "1974-01-25",
+                      "email": "john.doe.0331@solidfi.com",
+                      "emailVerified": false,
+                      "firstName": "John",
+                      "id": "per-e6553324-1db8-49a8-a0d3-29132280b838",
+                      "idNumber": "999999999",
+                      "idType": "ssn",
+                      "kyc": {
+                        "createdAt": "2023-11-20T05:31:48Z",
+                        "id": "kyc-69760d03-7957-46d5-b34f-ff820fd66520",
+                        "modifiedAt": "2023-11-20T05:31:48Z",
+                        "personId": "per-e6553324-1db8-49a8-a0d3-29132280b838",
+                        "results": {
+                          "address": "notStarted",
+                          "bank": "notStarted",
+                          "dateOfBirth": "notStarted",
+                          "fraud": "notStarted",
+                          "idv": "notStarted"
+                        },
+                        "reviewCode": "",
+                        "reviewMessage": "",
+                        "reviewReasons": null,
+                        "status": "notStarted"
+                      },
+                      "language": "en",
+                      "lastName": "Doe",
+                      "metadata": null,
+                      "middleName": "",
+                      "modifiedAt": "2023-11-20T05:32:11Z",
+                      "phone": "+15555555555",
+                      "phoneVerified": true,
+                      "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
+                      "status": "active"
+                    }
                   }
                 }
               }
@@ -434,431 +430,784 @@
           }
         }
       }
-    }
-  },
-  {
+    },
     "/v1/person/{personId}": {
+      "get": {
+        "tags": [
+          "Person"
+        ],
+        "summary": "Retrieve a Person",
+        "description": "Retrieve a Person",
+        "operationId": "retrieveAPerson",
+        "parameters": [
+          {
+            "name": "sd-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{sd-api-key}}"
+            },
+            "required":true
+          },
+          {
+            "name": "sd-person-id",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{sd-person-id}}"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Retrieve a Person": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Retrieve a Person",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "534"
+                }
+              },
+              "Via": {
+                "schema": {
+                  "type": "string",
+                  "example": "1.1 4dde8ec6d6c12741888c2d3a059d4a2e.cloudfront.net (CloudFront)"
+                }
+              },
+              "X-Amz-Cf-Id": {
+                "schema": {
+                  "type": "string",
+                  "example": "Qvo0WFHvh1_6CPoDzcQQoe2K-yKuUShhwP9KcI7_41U6OC3QforS4g=="
+                }
+              },
+              "X-Amz-Cf-Pop": {
+                "schema": {
+                  "type": "string",
+                  "example": "HIO50-C1"
+                }
+              },
+              "X-Cache": {
+                "schema": {
+                  "type": "string",
+                  "example": "Miss from cloudfront"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "gzip"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 20 Nov 2023 05:57:39 GMT"
+                }
+              },
+              "sd-request-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "req-f96f0387-c5df-40ab-8ba7-648457df7752"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "istio-envoy"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-envoy-upstream-service-time": {
+                "schema": {
+                  "type": "string",
+                  "example": "135"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "address": {
+                      "type": "object",
+                      "properties": {
+                        "addressType": {
+                          "type": "string",
+                          "example": "mailing"
+                        },
+                        "city": {
+                          "type": "string",
+                          "example": "Los Gatos"
+                        },
+                        "country": {
+                          "type": "string",
+                          "example": "US"
+                        },
+                        "line1": {
+                          "type": "string",
+                          "example": "1 Broadway"
+                        },
+                        "line2": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "postalCode": {
+                          "type": "string",
+                          "example": "95030"
+                        },
+                        "state": {
+                          "type": "string",
+                          "example": "CA"
+                        }
+                      }
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "2023-11-20T05:32:11Z"
+                    },
+                    "dateOfBirth": {
+                      "type": "string",
+                      "example": "1974-01-25"
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "johndoe@solidfi.com"
+                    },
+                    "emailVerified": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "firstName": {
+                      "type": "string",
+                      "example": "John"
+                    },
+                    "id": {
+                      "type": "string",
+                      "example": "per-e6553324-1db8-49a8-a0d3-29132280b838"
+                    },
+                    "idNumber": {
+                      "type": "string",
+                      "example": "999999999"
+                    },
+                    "idType": {
+                      "type": "string",
+                      "example": "ssn"
+                    },
+                    "kyc": {
+                      "type": "object",
+                      "properties": {
+                        "createdAt": {
+                          "type": "string",
+                          "example": "2023-11-20T05:31:48Z"
+                        },
+                        "id": {
+                          "type": "string",
+                          "example": "kyc-69760d03-7957-46d5-b34f-ff820fd66520"
+                        },
+                        "modifiedAt": {
+                          "type": "string",
+                          "example": "2023-11-20T05:31:48Z"
+                        },
+                        "personId": {
+                          "type": "string",
+                          "example": "per-e6553324-1db8-49a8-a0d3-29132280b838"
+                        },
+                        "results": {
+                          "type": "object",
+                          "properties": {
+                            "address": {
+                              "type": "string",
+                              "example": "notStarted"
+                            },
+                            "bank": {
+                              "type": "string",
+                              "example": "notStarted"
+                            },
+                            "dateOfBirth": {
+                              "type": "string",
+                              "example": "notStarted"
+                            },
+                            "fraud": {
+                              "type": "string",
+                              "example": "notStarted"
+                            },
+                            "idv": {
+                              "type": "string",
+                              "example": "notStarted"
+                            }
+                          }
+                        },
+                        "reviewCode": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "reviewMessage": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "reviewReasons": {
+                          "type": "object",
+                          "properties": {
+                            "address": {
+                              "type": "array",
+                              "items": {},
+                              "example": []
+                            },
+                            "bank": {
+                              "type": "array",
+                              "items": {},
+                              "example": []
+                            },
+                            "dateOfBirth": {
+                              "type": "array",
+                              "items": {},
+                              "example": []
+                            },
+                            "fraud": {
+                              "type": "array",
+                              "items": {},
+                              "example": []
+                            },
+                            "idv": {
+                              "type": "array",
+                              "items": {},
+                              "example": []
+                            },
+                            "other": {
+                              "type": "array",
+                              "items": {},
+                              "example": []
+                            }
+                          }
+                        },
+                        "status": {
+                          "type": "string",
+                          "example": "notStarted"
+                        }
+                      }
+                    },
+                    "language": {
+                      "type": "string",
+                      "example": "en"
+                    },
+                    "lastName": {
+                      "type": "string",
+                      "example": "Doe"
+                    },
+                    "metadata": {
+                      "nullable": true,
+                      "example": null
+                    },
+                    "middleName": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "modifiedAt": {
+                      "type": "string",
+                      "example": "2023-11-20T05:57:56Z"
+                    },
+                    "phone": {
+                      "type": "string",
+                      "example": "+15555555555"
+                    },
+                    "phoneVerified": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "programId": {
+                      "type": "string",
+                      "example": "prg-ffa511da-1adc-4603-b845-173b895a33f6"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "active"
+                    }
+                  }
+                },
+                "examples": {
+                  "Retrieve a Person": {
+                    "value": {
+                      "address": {
+                        "addressType": "mailing",
+                        "city": "Los Gatos",
+                        "country": "US",
+                        "line1": "1 Broadway",
+                        "line2": "",
+                        "postalCode": "95030",
+                        "state": "CA"
+                      },
+                      "createdAt": "2023-11-20T05:32:11Z",
+                      "dateOfBirth": "1974-01-25",
+                      "email": "johndoe@solidfi.com",
+                      "emailVerified": false,
+                      "firstName": "John",
+                      "id": "per-e6553324-1db8-49a8-a0d3-29132280b838",
+                      "idNumber": "999999999",
+                      "idType": "ssn",
+                      "kyc": {
+                        "createdAt": "2023-11-20T05:31:48Z",
+                        "id": "kyc-69760d03-7957-46d5-b34f-ff820fd66520",
+                        "modifiedAt": "2023-11-20T05:31:48Z",
+                        "personId": "per-e6553324-1db8-49a8-a0d3-29132280b838",
+                        "results": {
+                          "address": "notStarted",
+                          "bank": "notStarted",
+                          "dateOfBirth": "notStarted",
+                          "fraud": "notStarted",
+                          "idv": "notStarted"
+                        },
+                        "reviewCode": "",
+                        "reviewMessage": "",
+                        "reviewReasons": {
+                          "address": [],
+                          "bank": [],
+                          "dateOfBirth": [],
+                          "fraud": [],
+                          "idv": [],
+                          "other": []
+                        },
+                        "status": "notStarted"
+                      },
+                      "language": "en",
+                      "lastName": "Doe",
+                      "metadata": null,
+                      "middleName": "",
+                      "modifiedAt": "2023-11-20T05:57:56Z",
+                      "phone": "+15555555555",
+                      "phoneVerified": true,
+                      "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
+                      "status": "active"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "patch": {
-	"tags": [
+        "tags": [
           "Person"
         ],
         "summary": "Update a Person",
         "description": "Updates the person information by passing the person id.<br><br> **Please note:** when KYC status = approved, you can no longer update these fields:<br> *- firstName*<br> *- lastName*<br> *- dateOfBirth*<br> *- idNumber*<br> *- address*<br>",
         "operationId": "updateAPerson",
-	"parameters": [
+        "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
-            "required": true,
             "schema": {
-	      "type": "string",
-	      "example": "{{sd-api-key}}"
-            }
+              "type": "string",
+              "example": "{{sd-api-key}}"
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
             "in": "header",
-            "required": true,
             "schema": {
-	      "type": "string",
-	      "example": "{{sd-person-id}}"
-            }
-          },
-          {
-            "in": "header",
-            "name": "content-type",
-            "schema": {
-	      "type": "string",
-	      "example": "application/json"
+              "type": "string",
+              "example": "{{sd-person-id}}"
             },
-            "required": true
-          },
-	],
-	"requestBody": {
-          "content": {
-            "application/json": {
-	      "schema": {
-		"type": "object",
-		"properties": {
-                  "firstName": {
-                    "type": "string",
-                    "example": "ABC"
-                  },
-                  "middleName": {
-                    "type": "string",
-                    "example": "XYZ"
-                  },
-                  "lastName": {
-                    "type": "string",
-                    "example": "ABCD"
-                  },
-		  "email": {
-                    "type": "string",
-                    "example": "johndoe@solidfi.com"
-                  },
-                  "phone": {
-                    "type": "string",
-                    "example": "+9251312304"
-                  },
-                  "dateOfBirth": {
-                    "type": "string",
-                    "example": "1988-05-02"
-                  },
-                  "taxId": {
-                    "type": "string",
-                    "example": "0909090909"
-                  },
-                  "taxType": {
-                    "type": "string",
-                    "example": "ssn"
-                  }
-		}
-	      }
-            }
+            "required":true
           }
-	},
-	"responses": {
-          "200": {
-            "description": "Update a Person",
-          },
-          "headers": {
-            "Connection": {
-              "schema": {
-                "type": "string",
-                "example": "keep-alive"
-              }
-            },
-            "Content-Length": {
-              "schema": {
-                "type": "string",
-                "example": "534"
-              }
-            },
-            "Via": {
-              "schema": {
-                "type": "string",
-                "example": "1.1 4dde8ec6d6c12741888c2d3a059d4a2e.cloudfront.net (CloudFront)"
-              }
-            },
-            "X-Amz-Cf-Id": {
-              "schema": {
-                "type": "string",
-                "example": "hj4qurZnBR3CUEEqOqRbvgJC_jn3hyBU-1isXNk1izG-Qf9XMhKZyw=="
-              }
-            },
-            "X-Amz-Cf-Pop": {
-              "schema": {
-                "type": "string",
-                "example": "HIO50-C1"
-              }
-            },
-            "X-Cache": {
-              "schema": {
-                "type": "string",
-                "example": "Miss from cloudfront"
-              }
-            },
-            "content-encoding": {
-              "schema": {
-                "type": "string",
-                "example": "gzip"
-              }
-            },
-            "date": {
-              "schema": {
-                "type": "string",
-                "example": "Mon, 20 Nov 2023 05:57:33 GMT"
-              }
-            },
-            "sd-request-id": {
-              "schema": {
-                "type": "string",
-                "example": "req-945cd576-9732-4ee7-a5fc-ab4d56bc37cd"
-              }
-            },
-            "server": {
-              "schema": {
-                "type": "string",
-                "example": "istio-envoy"
-              }
-            },
-            "vary": {
-              "schema": {
-                "type": "string",
-                "example": "Accept-Encoding"
-              }
-            },
-            "x-envoy-upstream-service-time": {
-              "schema": {
-                "type": "string",
-                "example": "3009"
-              }
-            }
-          },
+        ],
+        "requestBody": {
           "content": {
             "application/json": {
-	      "schema": {
-		"type": "object",
-		"properties": {
-                  "address": {
-                    "type": "object",
-                    "properties": {
-                      "addressType": {
-                        "type": "string",
-                        "example": "mailing"
-                      },
-                      "city": {
-                        "type": "string",
-                        "example": "Los Gatos"
-                      },
-                      "country": {
-                        "type": "string",
-                        "example": "US"
-                      },
-                      "line1": {
-                        "type": "string",
-                        "example": "1 Broadway"
-                      },
-                      "line2": {
-                        "type": "string",
-                        "example": ""
-                      },
-                      "postalCode": {
-                        "type": "string",
-                        "example": "95030"
-                      },
-                      "state": {
-                        "type": "string",
-                        "example": "CA"
-                      }
-                    }
-                  },
-                  "createdAt": {
-                    "type": "string",
-                    "example": "2023-11-20T05:32:11Z"
-                  },
-                  "dateOfBirth": {
-                    "type": "string",
-                    "example": "1974-01-25"
-                  },
+              "schema": {
+                "type": "object",
+                "properties": {
                   "email": {
                     "type": "string",
                     "example": "johndoe@solidfi.com"
-                  },
-                  "emailVerified": {
-                    "type": "boolean",
-                    "example": false
-                  },
-                  "firstName": {
-                    "type": "string",
-                    "example": "John"
-                  },
-                  "id": {
-                    "type": "string",
-                    "example": "per-e6553324-1db8-49a8-a0d3-29132280b838"
-                  },
-                  "idNumber": {
-                    "type": "string",
-                    "example": "999999999"
-                  },
-                  "idType": {
-                    "type": "string",
-                    "example": "ssn"
-                  },
-                  "kyc": {
-                    "type": "object",
-                    "properties": {
-                      "createdAt": {
-                        "type": "string",
-                        "example": "2023-11-20T05:31:48Z"
-                      },
-                      "id": {
-                        "type": "string",
-                        "example": "kyc-69760d03-7957-46d5-b34f-ff820fd66520"
-                      },
-                      "modifiedAt": {
-                        "type": "string",
-                        "example": "2023-11-20T05:31:48Z"
-                      },
-                      "personId": {
-                        "type": "string",
-                        "example": "per-e6553324-1db8-49a8-a0d3-29132280b838"
-                      },
-                      "results": {
-                        "type": "object",
-                        "properties": {
-                          "address": {
-                            "type": "string",
-                            "example": "notStarted"
-                          },
-                          "bank": {
-                            "type": "string",
-                            "example": "notStarted"
-                          },
-                          "dateOfBirth": {
-                            "type": "string",
-                            "example": "notStarted"
-                          },
-                          "fraud": {
-                            "type": "string",
-                            "example": "notStarted"
-                          },
-                          "idv": {
-                            "type": "string",
-                            "example": "notStarted"
-                          }
-                        }
-                      },
-                      "reviewCode": {
-                        "type": "string",
-                        "example": ""
-                      },
-                      "reviewMessage": {
-                        "type": "string",
-                        "example": ""
-                      },
-                      "reviewReasons": {
-                        "type": "object",
-                        "properties": {
-                          "address": {
-                            "type": "array",
-                            "items": {},
-                            "example": []
-                          },
-                          "bank": {
-                            "type": "array",
-                            "items": {},
-                            "example": []
-                          },
-                          "dateOfBirth": {
-                            "type": "array",
-                            "items": {},
-                            "example": []
-                          },
-                          "fraud": {
-                            "type": "array",
-                            "items": {},
-                            "example": []
-                          },
-                          "idv": {
-                            "type": "array",
-                            "items": {},
-                            "example": []
-                          },
-                          "other": {
-                            "type": "array",
-                            "items": {},
-                            "example": []
-                          }
-                        }
-                      },
-                      "status": {
-                        "type": "string",
-                        "example": "notStarted"
-                      }
-                    }
-                  },
-                  "language": {
-                    "type": "string",
-                    "example": "en"
-                  },
-                  "lastName": {
-                    "type": "string",
-                    "example": "Doe"
-                  },
-                  "metadata": {
-                    "nullable": true,
-                    "example": null
-                  },
-                  "middleName": {
-                    "type": "string",
-                    "example": ""
-                  },
-                  "modifiedAt": {
-                    "type": "string",
-                    "example": "2023-11-20T05:57:56Z"
-                  },
-                  "phone": {
-                    "type": "string",
-                    "example": "+15555555555"
-                  },
-                  "phoneVerified": {
-                    "type": "boolean",
-                    "example": true
-                  },
-                  "programId": {
-                    "type": "string",
-                    "example": "prg-ffa511da-1adc-4603-b845-173b895a33f6"
-                  },
-                  "status": {
-                    "type": "string",
-                    "example": "active"
                   }
                 }
-	      },
-	      "examples": {
+              },
+              "examples": {
                 "Update a Person": {
                   "value": {
-                    "address": {
-                      "addressType": "mailing",
-                      "city": "Los Gatos",
-                      "country": "US",
-                      "line1": "1 Broadway",
-                      "line2": "",
-                      "postalCode": "95030",
-                      "state": "CA"
-                    },
-                    "createdAt": "2023-11-20T05:32:11Z",
-                    "dateOfBirth": "1974-01-25",
-                    "email": "johndoe@solidfi.com",
-                    "emailVerified": false,
-                    "firstName": "John",
-                    "id": "per-e6553324-1db8-49a8-a0d3-29132280b838",
-                    "idNumber": "999999999",
-                    "idType": "ssn",
-                    "kyc": {
-                      "createdAt": "2023-11-20T05:31:48Z",
-                      "id": "kyc-69760d03-7957-46d5-b34f-ff820fd66520",
-                      "modifiedAt": "2023-11-20T05:31:48Z",
-                      "personId": "per-e6553324-1db8-49a8-a0d3-29132280b838",
-                      "results": {
-                        "address": "notStarted",
-                        "bank": "notStarted",
-                        "dateOfBirth": "notStarted",
-                        "fraud": "notStarted",
-                        "idv": "notStarted"
-                      },
-                      "reviewCode": "",
-                      "reviewMessage": "",
-                      "reviewReasons": {
-                        "address": [],
-                        "bank": [],
-                        "dateOfBirth": [],
-                        "fraud": [],
-                        "idv": [],
-                        "other": []
-                      },
-                      "status": "notStarted"
-                    },
-                    "language": "en",
-                    "lastName": "Doe",
-                    "metadata": null,
-                    "middleName": "",
-                    "modifiedAt": "2023-11-20T05:57:56Z",
-                    "phone": "+15555555555",
-                    "phoneVerified": true,
-                    "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                    "status": "active"
+                    "email": "johndoe@solidfi.com"
                   }
-		}
-	      }
+                }
+              }
             }
           }
-	}
-      }
-    }
-  },
-  "/v1/person/{personId}/kyc": {
+        },
+        "responses": {
+          "200": {
+            "description": "Update a Person",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "string",
+                  "example": "534"
+                }
+              },
+              "Via": {
+                "schema": {
+                  "type": "string",
+                  "example": "1.1 4dde8ec6d6c12741888c2d3a059d4a2e.cloudfront.net (CloudFront)"
+                }
+              },
+              "X-Amz-Cf-Id": {
+                "schema": {
+                  "type": "string",
+                  "example": "hj4qurZnBR3CUEEqOqRbvgJC_jn3hyBU-1isXNk1izG-Qf9XMhKZyw=="
+                }
+              },
+              "X-Amz-Cf-Pop": {
+                "schema": {
+                  "type": "string",
+                  "example": "HIO50-C1"
+                }
+              },
+              "X-Cache": {
+                "schema": {
+                  "type": "string",
+                  "example": "Miss from cloudfront"
+                }
+              },
+              "content-encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "gzip"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 20 Nov 2023 05:57:33 GMT"
+                }
+              },
+              "sd-request-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "req-945cd576-9732-4ee7-a5fc-ab4d56bc37cd"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string",
+                  "example": "istio-envoy"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "x-envoy-upstream-service-time": {
+                "schema": {
+                  "type": "string",
+                  "example": "3009"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "address": {
+                      "type": "object",
+                      "properties": {
+                        "addressType": {
+                          "type": "string",
+                          "example": "mailing"
+                        },
+                        "city": {
+                          "type": "string",
+                          "example": "Los Gatos"
+                        },
+                        "country": {
+                          "type": "string",
+                          "example": "US"
+                        },
+                        "line1": {
+                          "type": "string",
+                          "example": "1 Broadway"
+                        },
+                        "line2": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "postalCode": {
+                          "type": "string",
+                          "example": "95030"
+                        },
+                        "state": {
+                          "type": "string",
+                          "example": "CA"
+                        }
+                      }
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "example": "2023-11-20T05:32:11Z"
+                    },
+                    "dateOfBirth": {
+                      "type": "string",
+                      "example": "1974-01-25"
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "johndoe@solidfi.com"
+                    },
+                    "emailVerified": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "firstName": {
+                      "type": "string",
+                      "example": "John"
+                    },
+                    "id": {
+                      "type": "string",
+                      "example": "per-e6553324-1db8-49a8-a0d3-29132280b838"
+                    },
+                    "idNumber": {
+                      "type": "string",
+                      "example": "999999999"
+                    },
+                    "idType": {
+                      "type": "string",
+                      "example": "ssn"
+                    },
+                    "kyc": {
+                      "type": "object",
+                      "properties": {
+                        "createdAt": {
+                          "type": "string",
+                          "example": "2023-11-20T05:31:48Z"
+                        },
+                        "id": {
+                          "type": "string",
+                          "example": "kyc-69760d03-7957-46d5-b34f-ff820fd66520"
+                        },
+                        "modifiedAt": {
+                          "type": "string",
+                          "example": "2023-11-20T05:31:48Z"
+                        },
+                        "personId": {
+                          "type": "string",
+                          "example": "per-e6553324-1db8-49a8-a0d3-29132280b838"
+                        },
+                        "results": {
+                          "type": "object",
+                          "properties": {
+                            "address": {
+                              "type": "string",
+                              "example": "notStarted"
+                            },
+                            "bank": {
+                              "type": "string",
+                              "example": "notStarted"
+                            },
+                            "dateOfBirth": {
+                              "type": "string",
+                              "example": "notStarted"
+                            },
+                            "fraud": {
+                              "type": "string",
+                              "example": "notStarted"
+                            },
+                            "idv": {
+                              "type": "string",
+                              "example": "notStarted"
+                            }
+                          }
+                        },
+                        "reviewCode": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "reviewMessage": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "reviewReasons": {
+                          "type": "object",
+                          "properties": {
+                            "address": {
+                              "type": "array",
+                              "items": {},
+                              "example": []
+                            },
+                            "bank": {
+                              "type": "array",
+                              "items": {},
+                              "example": []
+                            },
+                            "dateOfBirth": {
+                              "type": "array",
+                              "items": {},
+                              "example": []
+                            },
+                            "fraud": {
+                              "type": "array",
+                              "items": {},
+                              "example": []
+                            },
+                            "idv": {
+                              "type": "array",
+                              "items": {},
+                              "example": []
+                            },
+                            "other": {
+                              "type": "array",
+                              "items": {},
+                              "example": []
+                            }
+                          }
+                        },
+                        "status": {
+                          "type": "string",
+                          "example": "notStarted"
+                        }
+                      }
+                    },
+                    "language": {
+                      "type": "string",
+                      "example": "en"
+                    },
+                    "lastName": {
+                      "type": "string",
+                      "example": "Doe"
+                    },
+                    "metadata": {
+                      "nullable": true,
+                      "example": null
+                    },
+                    "middleName": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "modifiedAt": {
+                      "type": "string",
+                      "example": "2023-11-20T05:57:56Z"
+                    },
+                    "phone": {
+                      "type": "string",
+                      "example": "+15555555555"
+                    },
+                    "phoneVerified": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "programId": {
+                      "type": "string",
+                      "example": "prg-ffa511da-1adc-4603-b845-173b895a33f6"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "active"
+                    }
+                  }
+                },
+                "examples": {
+                  "Update a Person": {
+                    "value": {
+                      "address": {
+                        "addressType": "mailing",
+                        "city": "Los Gatos",
+                        "country": "US",
+                        "line1": "1 Broadway",
+                        "line2": "",
+                        "postalCode": "95030",
+                        "state": "CA"
+                      },
+                      "createdAt": "2023-11-20T05:32:11Z",
+                      "dateOfBirth": "1974-01-25",
+                      "email": "johndoe@solidfi.com",
+                      "emailVerified": false,
+                      "firstName": "John",
+                      "id": "per-e6553324-1db8-49a8-a0d3-29132280b838",
+                      "idNumber": "999999999",
+                      "idType": "ssn",
+                      "kyc": {
+                        "createdAt": "2023-11-20T05:31:48Z",
+                        "id": "kyc-69760d03-7957-46d5-b34f-ff820fd66520",
+                        "modifiedAt": "2023-11-20T05:31:48Z",
+                        "personId": "per-e6553324-1db8-49a8-a0d3-29132280b838",
+                        "results": {
+                          "address": "notStarted",
+                          "bank": "notStarted",
+                          "dateOfBirth": "notStarted",
+                          "fraud": "notStarted",
+                          "idv": "notStarted"
+                        },
+                        "reviewCode": "",
+                        "reviewMessage": "",
+                        "reviewReasons": {
+                          "address": [],
+                          "bank": [],
+                          "dateOfBirth": [],
+                          "fraud": [],
+                          "idv": [],
+                          "other": []
+                        },
+                        "status": "notStarted"
+                      },
+                      "language": "en",
+                      "lastName": "Doe",
+                      "metadata": null,
+                      "middleName": "",
+                      "modifiedAt": "2023-11-20T05:57:56Z",
+                      "phone": "+15555555555",
+                      "phoneVerified": true,
+                      "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
+                      "status": "active"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "personId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/v1/person/{personId}/kyc": {
       "get": {
         "tags": [
           "Person"
@@ -873,7 +1222,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -881,7 +1231,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
-            }
+            },
+            "required":true
           }
         ],
         "requestBody": {
@@ -1136,7 +1487,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -1377,7 +1729,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -1663,7 +2016,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -1819,7 +2173,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -1975,7 +2330,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -2040,7 +2396,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -2447,7 +2804,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -2894,7 +3252,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -3236,7 +3595,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -3601,7 +3961,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -3799,7 +4160,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -3997,7 +4359,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -4062,7 +4425,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -4374,7 +4738,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -4703,7 +5068,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -4891,7 +5257,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -4925,7 +5292,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -5185,7 +5553,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -5343,7 +5712,8 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
+            },
+            "required":true
           },
           {
             "name": "sd-person-id",
@@ -35221,6 +35591,14 @@
               "type": "string",
               "example": "{{sd-api-key}}"
             }
+          },
+          {
+            "name": "sd-person-id",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{sd-person-id}}"
+            }
           }
         ],
         "requestBody": {
@@ -35537,6 +35915,14 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
+            }
+          },
+          {
+            "name": "sd-person-id",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{sd-person-id}}"
             }
           }
         ],
@@ -36799,6 +37185,14 @@
               "type": "string",
               "example": "{{sd-api-key}}"
             }
+          },
+          {
+            "name": "sd-person-id",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{sd-person-id}}"
+            }
           }
         ],
         "requestBody": {
@@ -37203,6 +37597,14 @@
               "type": "string",
               "example": "{{sd-api-key}}"
             }
+          },
+          {
+            "name": "sd-person-id",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{personId}}"
+            }
           }
         ],
         "requestBody": {
@@ -37449,6 +37851,14 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
+            }
+          },
+          {
+            "name": "sd-person-id",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{personId}}"
             }
           }
         ],
