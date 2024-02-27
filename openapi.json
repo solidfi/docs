@@ -429,6 +429,435 @@
             }
           }
         }
+      },
+      "get": {
+        "tags": [
+          "Person"
+        ],
+        "summary": "Get Person details",
+        "description": "Retrieve details of a person.",
+        "operationId": "getAPerson",
+        "parameters": [
+          {
+            "name": "sd-api-key",
+            "in": "header",
+            "description": "API Key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sd-person-id",
+            "in": "header",
+            "description": "Person ID from the sd-person-id header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "per-ba5f6039-0896-4f5e-af6c-d445b9a3a022"
+                    },
+                    "firstName": {
+                      "type": "string",
+                      "example": "Alberta"
+                    },
+                    "middleName": {
+                      "type": "string",
+                      "example": "Kkx"
+                    },
+                    "lastName": {
+                      "type": "string",
+                      "example": "Charleson"
+                    },
+                    "phone": {
+                      "type": "string",
+                      "example": "+12221231231"
+                    },
+                    "phoneVerified": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "accountholder0@example.com"
+                    },
+                    "emailVerified": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "dateOfBirth": {
+                      "type": "string",
+                      "example": "1974-01-01"
+                    },
+                    "idType": {
+                      "type": "string",
+                      "example": "ssn"
+                    },
+                    "idNumber": {
+                      "type": "string",
+                      "example": "856661231"
+                    },
+                    "address": {
+                      "type": "object",
+                      "properties": {
+                        "addressType": {
+                          "type": "string",
+                          "example": "wire"
+                        },
+                        "line1": {
+                          "type": "string",
+                          "example": "12322 Degroat Rd"
+                        },
+                        "line2": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "city": {
+                          "type": "string",
+                          "example": "Jersey"
+                        },
+                        "state": {
+                          "type": "string",
+                          "example": "NJ"
+                        },
+                        "country": {
+                          "type": "string",
+                          "example": "US"
+                        },
+                        "postalCode": {
+                          "type": "string",
+                          "example": "32112"
+                        }
+                      }
+                    },
+                    "kyc": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "example": "kyc-58fcfb55-5200-4174-a70e-93f427ca4170"
+                        },
+                        "personId": {
+                          "type": "string",
+                          "example": "per-ba5f6039-0896-4f5e-af6c-d445b9a3a022"
+                        },
+                        "status": {
+                          "type": "string",
+                          "example": "approved"
+                        },
+                        "reviewCode": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "reviewMessage": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "results": {
+                          "type": "object",
+                          "properties": {
+                            "idv": {
+                              "type": "string",
+                              "example": "approved"
+                            },
+                            "address": {
+                              "type": "string",
+                              "example": "approved"
+                            },
+                            "dateOfBirth": {
+                              "type": "string",
+                              "example": "approved"
+                            },
+                            "fraud": {
+                              "type": "string",
+                              "example": "approved"
+                            },
+                            "bank": {
+                              "type": "string",
+                              "example": "approved"
+                            }
+                          }
+                        },
+                        "createdAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2021-04-30T12:26:24Z"
+                        },
+                        "modifiedAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2022-11-27T18:43:04Z"
+                        },
+                        "reviewReasons": {
+                          "type": "object",
+                          "properties": {
+                            "idv": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "code": {
+                                    "type": "string",
+                                    "example": "R1004"
+                                  },
+                                  "description": {
+                                    "type": "string",
+                                    "example": "ID Barcode Detection"
+                                  }
+                                }
+                              }
+                            },
+                            "address": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "code": {
+                                    "type": "string",
+                                    "example": "R1102"
+                                  },
+                                  "description": {
+                                    "type": "string",
+                                    "example": "Address mismatch"
+                                  }
+                                }
+                              }
+                            },
+                            "dateOfBirth": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "code": {
+                                    "type": "string",
+                                    "example": "R1202"
+                                  },
+                                  "description": {
+                                    "type": "string",
+                                    "example": "Date of birth mismatch"
+                                  }
+                                }
+                              }
+                            },
+                            "fraud": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "code": {
+                                    "type": "string",
+                                    "example": "R1344"
+                                  },
+                                  "description": {
+                                    "type": "string",
+                                    "example": "Phone number has been in service between 30 and 90 days"
+                                  }
+                                }
+                              }
+                            },
+                            "other": {
+                              "type": "array",
+                              "items": {}
+                            },
+                            "bank": {
+                              "type": "array",
+                              "items": {}
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "programId": {
+                      "type": "string",
+                      "example": "prg-4865f43a-0400-47e4-ab5b-8a06283944a3"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2021-04-30T12:26:41Z"
+                    },
+                    "modifiedAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2022-09-12T09:52:43Z"
+                    },
+                    "language": {
+                      "type": "string",
+                      "example": "en"
+                    },
+                    "metadata": {
+                      "type": "object",
+                      "example": null
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "active"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string",
+                      "example": "req-24eee96e-369f-4ce2-97d7-9f0be48aeb16"
+                    },
+                    "method": {
+                      "type": "string",
+                      "example": "GET"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "example": 400
+                    },
+                    "code": {
+                      "type": "string",
+                      "example": "EC_PERSON_ID_HEADER_REQUIRED"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "missing person id in header"
+                    },
+                    "sysMessage": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "programId": {
+                      "type": "string",
+                      "example": "prg-4865f43a-0400-47e4-ab5b-8a06283944a3"
+                    },
+                    "env": {
+                      "type": "string",
+                      "example": "dev"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2024-02-26T17:17:11Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string",
+                      "example": "req-8eeb74d4-c745-4508-9698-c32a68ef79aa"
+                    },
+                    "method": {
+                      "type": "string",
+                      "example": "GET"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "example": 401
+                    },
+                    "code": {
+                      "type": "string",
+                      "example": "EC_APIKEY_NOT_FOUND"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "unauthorized"
+                    },
+                    "sysMessage": {
+                      "type": "string",
+                      "example": "invalid api key"
+                    },
+                    "programId": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "env": {
+                      "type": "string",
+                      "example": "dev"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2024-02-26T17:16:44Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Person not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string",
+                      "example": "req-b55ad68d-9205-40af-8a1a-7980e9ea6c92"
+                    },
+                    "method": {
+                      "type": "string",
+                      "example": "GET"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "example": 404
+                    },
+                    "code": {
+                      "type": "string",
+                      "example": "EC_PERSON_NOT_FOUND"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "person not found"
+                    },
+                    "sysMessage": {
+                      "type": "string",
+                      "example": "person does not exist"
+                    },
+                    "programId": {
+                      "type": "string",
+                      "example": "prg-4865f43a-0400-47e4-ab5b-8a06283944a3"
+                    },
+                    "env": {
+                      "type": "string",
+                      "example": "dev"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2024-02-26T17:17:49Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/v1/person/{personId}": {
