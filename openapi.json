@@ -12,7 +12,7 @@
   ],
   "paths": {
     "/v1/person": {
-      "post": {
+            "post": {
         "tags": [
           "Person"
         ],
