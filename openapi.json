@@ -36336,7 +36336,9 @@
               "type": "string",
               "enum": [
                 "active",
-                "deactivated"
+                "paused",
+                "deactivated",
+                "deleted"
               ],
               "example": "active"
             }
