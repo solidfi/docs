@@ -36328,6 +36328,43 @@
               "type": "string",
               "example": "{{sd-api-key}}"
             }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "active",
+                "deactivated"
+              ],
+              "example": "active"
+            }
+          },
+          {
+            "in": "query",
+            "name": "query",
+            "schema": {
+              "type": "string",
+              "description": "Filter by description,events and url"
+            },
+            "example": "card.spend"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Offset pagination determines the starting point within the collection of resource results"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Limit pagination controls the maximum of results to return"
           }
         ],
         "responses": {
