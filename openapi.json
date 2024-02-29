@@ -36020,14 +36020,6 @@
               "type": "string",
               "example": "{{sd-api-key}}"
             }
-          },
-          {
-            "name": "sd-person-id",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{{sd-person-id}}"
-            }
           }
         ],
         "requestBody": {
@@ -36344,14 +36336,6 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
-          },
-          {
-            "name": "sd-person-id",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{{sd-person-id}}"
             }
           }
         ],
@@ -37271,14 +37255,6 @@
               "type": "string",
               "example": "{{sd-api-key}}"
             }
-          },
-          {
-            "name": "sd-person-id",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{{sd-person-id}}"
-            }
           }
         ],
         "requestBody": {
@@ -37614,14 +37590,6 @@
               "type": "string",
               "example": "{{sd-api-key}}"
             }
-          },
-          {
-            "name": "sd-person-id",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{{sd-person-id}}"
-            }
           }
         ],
         "requestBody": {
@@ -37754,14 +37722,6 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
-          },
-          {
-            "name": "sd-person-id",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{{sd-person-id}}"
             }
           }
         ],
@@ -38025,14 +37985,6 @@
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
-            }
-          },
-          {
-            "name": "sd-person-id",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{{personId}}"
             }
           }
         ],
