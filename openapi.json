@@ -36010,7 +36010,7 @@
           "Webhooks"
         ],
         "summary": "List all Webhook Events",
-        "description": "Retrieves list of all webhook events available for subscription.<br><br>You can select which events to subscribe to when you create a webhook.",
+        "description": "Retrieves list of all webhook events available for subscription.\nYou can select which events to subscribe to when you create a webhook.",
         "operationId": "listAllWebhookEvents",
         "parameters": [
           {
@@ -37684,7 +37684,7 @@
           "Webhooks"
         ],
         "summary": "Update a Webhook",
-        "description": "Updates the webhook information by passing the webhook id.<br><br>You can only update the:<br><br>- url<br><br>- events<br><br>- description<br><br>- status <br><br>",
+        "description": "Updates the webhook information by passing the webhook id.\nYou can only update the:\n- url\n- events\n- description\n- status",
         "operationId": "updateAWebhook",
         "parameters": [
           {
