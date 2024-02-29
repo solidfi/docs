@@ -36010,29 +36010,19 @@
           "Webhooks"
         ],
         "summary": "List all Webhook Events",
-        "description": "List all Webhook Events",
+        "description": "Retrieves list of all webhook events available for subscription.<br><br>You can select which events to subscribe to when you create a webhook.",
         "operationId": "listAllWebhookEvents",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "examples": {
-                "List all Webhook Events": {
-                  "value": ""
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "List all Webhook Events",
@@ -36326,30 +36316,20 @@
         "tags": [
           "Webhooks"
         ],
-        "summary": "List all Webhooks",
-        "description": "List all Webhooks",
+        "summary": "‍List all Webhooks",
+        "description": "Retrieves list of all webhook subscriptions for your program",
         "operationId": "listAllWebhooks",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "examples": {
-                "List all Webhooks": {
-                  "value": ""
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "List all Webhooks",
@@ -37245,12 +37225,13 @@
           "Webhooks"
         ],
         "summary": "Create a Webhook",
-        "description": "Create a Webhook",
+        "description": "Create a webhook endpoint with a url and a list of events.",
         "operationId": "createAWebhook",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -37580,29 +37561,19 @@
           "Webhooks"
         ],
         "summary": "Delete a Webhook",
-        "description": "Delete a Webhook",
+        "description": "Delete a webhook by passing the webhook id.",
         "operationId": "deleteAWebhook",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "examples": {
-                "Delete a Webhook": {
-                  "value": ""
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Delete a Webhook",
@@ -37713,12 +37684,13 @@
           "Webhooks"
         ],
         "summary": "Update a Webhook",
-        "description": "Update a Webhook",
+        "description": "Updates the webhook information by passing the webhook id.<br><br>You can only update the:<br><br>- url<br><br>- events<br><br>- description<br><br>- status <br><br>",
         "operationId": "updateAWebhook",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -37976,29 +37948,19 @@
           "Webhooks"
         ],
         "summary": "Retrieve a Webhook",
-        "description": "Retrieve a Webhook",
+        "description": "Retrieves the webhook information by passing the webhook id.",
         "operationId": "retrieveAWebhook",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "examples": {
-                "Retrieve a Webhook": {
-                  "value": ""
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Retrieve a Webhook",
@@ -38223,37 +38185,19 @@
           "Webhooks"
         ],
         "summary": "Retrieve a Webhook Secret",
-        "description": "Retrieve a Webhook Secret",
+        "description": "Retrieves the webhook sercret by passing the webhook id.",
         "operationId": "retrieveAWebhookSecret",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
             }
-          },
-          {
-            "name": "sd-person-id",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{{personId}}"
-            }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "examples": {
-                "Retrieve a Webhook Secret": {
-                  "value": ""
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Retrieve a Webhook Secret",
