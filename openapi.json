@@ -1291,6 +1291,104 @@
                 }
               }
             }
+          },
+	  "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string",
+                      "example": "req-24eee96e-369f-4ce2-97d7-9f0be48aeb16"
+                    },
+                    "method": {
+                      "type": "string",
+                      "example": "PATCH"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "example": 400
+                    },
+                    "code": {
+                      "type": "string",
+                      "example": "EC_PERSON_INVALID_ARGS"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "invalid args"
+                    },
+                    "sysMessage": {
+                      "type": "string",
+                      "example": "proto: (line 2:5): unknown field \"designation\""
+                    },
+                    "programId": {
+                      "type": "string",
+                      "example": "prg-4865f43a-0400-47e4-ab5b-8a06283944a3"
+                    },
+                    "env": {
+                      "type": "string",
+                      "example": "dev"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2024-02-26T17:17:11Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+	  "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string",
+                      "example": "req-8eeb74d4-c745-4508-9698-c32a68ef79aa"
+                    },
+                    "method": {
+                      "type": "string",
+                      "example": "PATCH"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "example": 401
+                    },
+                    "code": {
+                      "type": "string",
+                      "example": "EC_AUTH_INVALID_TOKEN"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "invalid token"
+                    },
+                    "sysMessage": {
+                      "type": "string",
+                      "example": "token contains an invalid number of segments"
+                    },
+                    "programId": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "env": {
+                      "type": "string",
+                      "example": "dev"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2024-02-26T17:16:44Z"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       },
