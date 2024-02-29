@@ -41605,6 +41605,63 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string",
+                      "example": "req-8eeb74d4-c745-4508-9698-c32a68ef79aa"
+                    },
+                    "method": {
+                      "type": "string",
+                      "example": "GET"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "example": 401
+                    },
+                    "code": {
+                      "type": "string",
+                      "example": "EC_APIKEY_NOT_FOUND"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "unauthorized"
+                    },
+                    "sysMessage": {
+                      "type": "string",
+                      "example": "invalid api key"
+                    },
+                    "programId": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "env": {
+                      "type": "string",
+                      "example": "dev"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2024-02-26T17:16:44Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Program not found",
+            "content": {
+              "text/plain": {
+                "example": "404 Page Not Found"
+              }
+            }
           }
         }
       },
