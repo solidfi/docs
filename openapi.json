@@ -34664,37 +34664,13 @@
           "Transactions"
         ],
         "summary": "List all Transactions",
-        "description": "List all Transactions",
+        "description": "Retrieves list of all transactions that belong to an account or other ID",
         "operationId": "listAllTransactions",
         "parameters": [
           {
-            "name": "limit",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "example": "100"
-            }
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "example": "0"
-            }
-          },
-          {
-            "name": "export",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "example": "json"
-            },
-            "description": "pdf,csv,json"
-          },
-          {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -34703,10 +34679,249 @@
           {
             "name": "sd-person-id",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
             }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "settled",
+                "pending"
+              ],
+              "example": "settled"
+            }
+          },
+          {
+            "in": "query",
+            "name": "transferType",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "intrabank",
+                "ach",
+                "card",
+                "domesticWire",
+                "internationalWire",
+                "debitCard",
+                "physicalCheck",
+                "send",
+                "receive"
+              ],
+              "example": "ach"
+            }
+          },
+          {
+            "in": "query",
+            "name": "txnType",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "debit",
+                "credit"
+              ],
+              "example": "debit"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subType",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "originated",
+                "auth",
+                "authUpdate",
+                "reversal",
+                "refund",
+                "accountCreationCredit",
+                "received",
+                "accountClosing",
+                "pull",
+                "push",
+                "overdraft",
+                "atm",
+                "topup",
+                "reward"
+              ],
+              "example": "originated"
+            }
+          },
+          {
+            "in": "query",
+            "name": "transferId",
+            "schema": {
+              "type": "string",
+              "example": "tra-bb69fdc5-d2d1-44e4-b042-24d1746d2e9d"
+            }
+          },
+          {
+            "in": "query",
+            "name": "cardId",
+            "schema": {
+              "type": "string",
+              "example": "crd-20cee32a-320c-464b-ac0f-4825e1b40fdf"
+            }
+          },
+          {
+            "in": "query",
+            "name": "contactId",
+            "schema": {
+              "type": "string",
+              "example": "con-daa0a6e4-02c6-4d8e-8715-6d8d551ba8ab"
+            }
+          },
+          {
+            "in": "query",
+            "name": "personId",
+            "schema": {
+              "type": "string",
+              "example": "per-5c07ac7f-3528-4a66-8978-095bfa303c3f"
+            }
+          },
+          {
+            "in": "query",
+            "name": "businessId",
+            "schema": {
+              "type": "string",
+              "example": "bus-c2a1a9cd-f3ea-45b3-acb8-f781befec7dd"
+            }
+          },
+          {
+            "in": "query",
+            "name": "parentTransactionId",
+            "schema": {
+              "type": "string",
+              "example": "txn-dbe9c7c3-8fba-4dfa-8a9f-6f45e117e4f7"
+            }
+          },
+          {
+            "in": "query",
+            "name": "parentTransferId",
+            "schema": {
+              "type": "string",
+              "example": "tra-b114f5aa-8fc0-4fb4-a476-b9cc92fbea68"
+            }
+          },
+          {
+            "in": "query",
+            "name": "minAmount",
+            "schema": {
+              "type": "string",
+              "description": "minimum amount (up two decimal places)"
+            },
+            "example": "100.00"
+          },
+          {
+            "in": "query",
+            "name": "maxAmount",
+            "schema": {
+              "type": "number",
+              "description": "maximum amount (up two decimal places)"
+            },
+            "example": "1000.00"
+          },
+          {
+            "in": "query",
+            "name": "metadata.query",
+            "schema": {
+              "type": "number",
+              "description": "searches data in the metadata sub-object"
+            },
+            "example": "usr_9HG724gvHJB378v3h"
+          },
+          {
+            "in": "query",
+            "name": "query",
+            "schema": {
+              "type": "string",
+              "description": "searches data in the amount,title and description"
+            },
+            "example": "Test ACH"
+          },
+          {
+            "name": "export",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "pdf"
+            },
+            "description": "pdf,csv,json"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2024-02-26"
+            },
+            "description": "created time in ISO UTC format (YYYY-MM-DD)"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2024-02-26"
+            },
+            "description": "created time in ISO UTC format (YYYY-MM-DD)"
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2024-02-26T07:16:55Z"
+            },
+            "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2024-02-26T07:16:55Z"
+            },
+            "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+          },
+          {
+            "name": "modifiedStartTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2024-02-26T07:16:55Z"
+            },
+            "description": "modified time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+          },
+          {
+            "name": "modifiedEndTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2024-02-26T07:16:55Z"
+            },
+            "description": "modified time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Offset pagination determines the starting point within the collection of resource results.\n Start index (default = 0)"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Limit pagination controls the maximum of results to return.\n Number of records to return (default = 25, max = 100)"
           }
         ],
         "responses": {
