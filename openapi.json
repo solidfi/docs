@@ -34812,7 +34812,7 @@
             "in": "query",
             "name": "minAmount",
             "schema": {
-              "type": "string",
+              "type": "number",
               "description": "minimum amount (up two decimal places)"
             },
             "example": "100.00"
@@ -34849,6 +34849,10 @@
             "in": "query",
             "schema": {
               "type": "string",
+              "enum": [
+                "pdf",
+                "csv",
+                "json"],
               "example": "pdf"
             },
             "description": "pdf,csv,json"
@@ -34867,7 +34871,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2024-02-26"
+              "example": "2024-02-27"
             },
             "description": "created time in ISO UTC format (YYYY-MM-DD)"
           },
@@ -34885,7 +34889,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2024-02-26T07:16:55Z"
+              "example": "2024-02-27T07:16:55Z"
             },
             "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
           },
@@ -34903,7 +34907,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2024-02-26T07:16:55Z"
+              "example": "2024-02-27T07:16:55Z"
             },
             "description": "modified time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
           },
