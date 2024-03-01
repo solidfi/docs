@@ -33764,12 +33764,13 @@
           "Transactions"
         ],
         "summary": "Retrieve a Transaction",
-        "description": "Retrieve a Transaction",
+        "description": "Retrieves the transaction information by passing the account id and transaction id.",
         "operationId": "retrieveATransaction",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -33778,6 +33779,7 @@
           {
             "name": "sd-person-id",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
@@ -34176,12 +34178,13 @@
           "Transactions"
         ],
         "summary": "Update a Transaction",
-        "description": "Update a Transaction",
+        "description": "Enables you to update the title,description and metadata of a transaction on the Solid platform",
         "operationId": "updateATransaction",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -34190,6 +34193,7 @@
           {
             "name": "sd-person-id",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
@@ -34208,17 +34212,14 @@
                   },
                   "metadata": {
                     "type": "object",
-                    "properties": {
-                      "description": {
-                        "type": "string",
-                        "example": "Pro user"
-                      },
-                      "externalId": {
-                        "type": "string",
-                        "example": "usr_9HG724gvHJB378v3h"
-                      }
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "example": {
+                        "description": "Pro user",
+                        "externalId": "usr_9HG724gvHJB378v3h"
                     }
-                  },
+                },
                   "title": {
                     "type": "string",
                     "example": "New title"
