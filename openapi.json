@@ -7634,12 +7634,13 @@
           "Family"
         ],
         "summary": "List all Families",
-        "description": "List all Families",
+        "description": "Retrieves list of all the families associated to the person ID or other parameter",
         "operationId": "listAllFamilies",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -7648,23 +7649,47 @@
           {
             "name": "sd-person-id",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
             }
+          },          
+          {
+            "name": "startTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2024-02-26T07:16:55Z"
+            },
+            "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2024-02-27T07:16:55Z"
+            },
+            "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Offset pagination determines the starting point within the collection of resource results.\n Start index (default = 0)"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Limit pagination controls the maximum of results to return.\n Number of records to return (default = 25, max = 100)"
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "examples": {
-                "List all Families": {
-                  "value": ""
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "List all Families",
@@ -7897,12 +7922,13 @@
           "Family"
         ],
         "summary": "Create a Family",
-        "description": "Create a Family",
+        "description": "Creates a family by passing the required family information.",
         "operationId": "createAFamily",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -7911,6 +7937,7 @@
           {
             "name": "sd-person-id",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
@@ -9328,12 +9355,13 @@
           "Family"
         ],
         "summary": "Retrieve a Family",
-        "description": "Retrieve a Family",
+        "description": "Retrieves the family information by passing the family id.",
         "operationId": "retrieveAFamily",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -9342,23 +9370,13 @@
           {
             "name": "sd-person-id",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "examples": {
-                "Retrieve a Family": {
-                  "value": ""
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Retrieve a Family",
@@ -9551,12 +9569,13 @@
           "Family"
         ],
         "summary": "Update a Family",
-        "description": "Update a Family",
+        "description": "Updates the family information by passing the family id.\nYou can only update the:\n- name\n- email\n- phone\n- address",
         "operationId": "updateAFamily",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -9565,6 +9584,7 @@
           {
             "name": "sd-person-id",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
@@ -34787,15 +34807,7 @@
           },
           {
             "in": "query",
-            "name": "businessId",
-            "schema": {
-              "type": "string",
-              "example": "bus-c2a1a9cd-f3ea-45b3-acb8-f781befec7dd"
-            }
-          },
-          {
-            "in": "query",
-            "name": "parentTransactionId",
+            "name": "parentTxnId",
             "schema": {
               "type": "string",
               "example": "txn-dbe9c7c3-8fba-4dfa-8a9f-6f45e117e4f7"
