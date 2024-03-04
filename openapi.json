@@ -11334,6 +11334,7 @@
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -11342,23 +11343,164 @@
           {
             "name": "sd-person-id",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
             }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "active",
+                "blocked",
+                "debitBlocked",
+                "creditBlocked"
+              ],
+              "example": "blocked"
+            }
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "businessChecking",
+                "personalChecking",
+                "cardAccount",
+                "clearingAccount",
+                "fallbackAccount",
+                "fundingAccount"
+              ],
+              "example": "businessChecking"
+            }
+          },
+          {
+            "in": "query",
+            "name": "accountNumber",
+            "schema": {
+              "type": "string",
+              "example": "9877475274998840"
+            }
+          },
+          {
+            "in": "query",
+            "name": "familyId",
+            "schema": {
+              "type": "string",
+              "example": "fam-67b98643-978e-4a52-bfe6-9cd54472010f"
+            }
+          },
+          {
+            "in": "query",
+            "name": "businessId",
+            "schema": {
+              "type": "string",
+              "example": "bus-c2a1a9cd-f3ea-45b3-acb8-f781befec7dd"
+            }
+          },
+          {
+            "in": "query",
+            "name": "minAmount",
+            "schema": {
+              "type": "number",
+              "description": "minimum amount (up two decimal places)"
+            },
+            "example": "100.00"
+          },
+          {
+            "in": "query",
+            "name": "maxAmount",
+            "schema": {
+              "type": "number",
+              "description": "maximum amount (up two decimal places)"
+            },
+            "example": "1000.00"
+          },
+          {
+            "in": "query",
+            "name": "metadata.query",
+            "schema": {
+              "type": "number",
+              "description": "searches data in the metadata sub-object"
+            },
+            "example": "usr_9HG724gvHJB378v3h"
+          },
+          {
+            "in": "query",
+            "name": "externalId",
+            "schema": {
+              "type": "string",
+              "description": "Matches the externalId key if set in the metadata object's"
+            },
+            "example": "usr_9HG724gvHJB378v3h"
+          },
+          {
+            "in": "query",
+            "name": "query",
+            "schema": {
+              "type": "string",
+              "description": "searches data in the label and accountNumber"
+            },
+            "example": "Demo Account"
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2024-02-26T07:16:55Z"
+            },
+            "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2024-02-26T07:16:55Z"
+            },
+            "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+          },
+          {
+            "name": "modifiedStartTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2024-02-26T07:16:55Z"
+            },
+            "description": "modified time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+          },
+          {
+            "name": "modifiedEndTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2024-02-26T07:16:55Z"
+            },
+            "description": "modified time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Offset pagination determines the starting point within the collection of resource results.\n Start index (default = 0)"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Limit pagination controls the maximum of results to return.\n Number of records to return (default = 25, max = 100)"
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "examples": {
-                "List all Accounts": {
-                  "value": ""
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "List all Accounts",
@@ -13096,12 +13238,13 @@
           "Accounts"
         ],
         "summary": "Retrieve an Account",
-        "description": "Retrieve an Account",
+        "description": "Retrieves the account information by passing the account ID",
         "operationId": "retrieveAnAccount",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -13110,23 +13253,13 @@
           {
             "name": "sd-person-id",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "examples": {
-                "Retrieve an Account": {
-                  "value": ""
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Retrieve an Account",
@@ -13873,12 +14006,13 @@
           "Accounts"
         ],
         "summary": "Update an Account",
-        "description": "Update an Account",
+        "description": "Updates the account information by passing the account id.\n**You can update the below fields:**\n- label\n- status (can be used to close accounts with 0 balance)\n- allowedOriginators\n- blockedOriginators\n- fallback\n- metadata\n- config (Lesser then Program Level limits)",
         "operationId": "updateAnAccount",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -13887,6 +14021,7 @@
           {
             "name": "sd-person-id",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
@@ -15229,12 +15364,13 @@
           "Accounts"
         ],
         "summary": "Retrieve Account Limits",
-        "description": "Retrieve Account Limits",
+        "description": "Retrieves an account's limits by passing the account id.",
         "operationId": "retrieveAccountLimits",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -15243,23 +15379,13 @@
           {
             "name": "sd-person-id",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "examples": {
-                "Retrieve Account Limits": {
-                  "value": ""
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Retrieve Account Limits",
@@ -15856,26 +15982,19 @@
         }
       ]
     },
-    "/v1/account/{accountId}/statement/2021/12": {
+    "/v1/account/{accountId}/statement/2024/02": {
       "get": {
         "tags": [
           "Accounts"
         ],
         "summary": "Retrieve a Statement",
-        "description": "Retrieve a Statement",
+        "description": "Statements are generated at the end of each month. For example, if the account was created on Aug 10, 2022, the first statement would be available on Sep 1, 2022. The statements are generated as per UTC time zone.\n**You can retrieve an account statement by:**\n- passing the year and month parameter as yyyy/mm\n- passing the export parameter as export=json or export=pdf\n**Export options:**\n- pdf\n- csv\n- json (default)",
         "operationId": "retrieveAStatement",
         "parameters": [
           {
-            "name": "export",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "example": "json"
-            }
-          },
-          {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -15884,23 +16003,39 @@
           {
             "name": "sd-person-id",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
             }
+          },
+          {
+            "name": "export",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "pdf",
+                "csv",
+                "json"],
+              "example": "pdf"
+            },
+            "description": "Export type pdf,csv,json"
+          },          
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "enum": [
+                true,
+                false
+              ],
+              "example": true
+            },
+            "description": "Send Email to Account Created Person emailId"
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "examples": {
-                "Retrieve a Statement": {
-                  "value": ""
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Retrieve a Statement",
@@ -16400,12 +16535,13 @@
           "Accounts"
         ],
         "summary": "List all Statements",
-        "description": "List all Statements",
+        "description": "Retrieves list of all account statements by passing the account ID",
         "operationId": "listAllStatements",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -16414,23 +16550,13 @@
           {
             "name": "sd-person-id",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "examples": {
-                "List all Statements": {
-                  "value": ""
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "List all Statements",
@@ -34843,7 +34969,7 @@
             "in": "query",
             "name": "metadata.query",
             "schema": {
-              "type": "number",
+              "type": "string",
               "description": "searches data in the metadata sub-object"
             },
             "example": "usr_9HG724gvHJB378v3h"
@@ -70079,6 +70205,7 @@
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -70087,6 +70214,7 @@
           {
             "name": "sd-person-id",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
