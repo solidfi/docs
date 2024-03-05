@@ -7660,34 +7660,34 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2024-02-26T07:16:55Z"
-            },
-            "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+              "example": "2024-02-26T07:16:55Z",
+              "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+            }
           },
           {
             "name": "endTime",
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2024-02-27T07:16:55Z"
-            },
-            "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+              "example": "2024-02-27T07:16:55Z",
+              "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+            }
           },
           {
             "in": "query",
             "name": "offset",
             "schema": {
-              "type": "integer"
-            },
-            "description": "Offset pagination determines the starting point within the collection of resource results.\n Start index (default = 0)"
+              "type": "integer",
+              "description": "Offset pagination determines the starting point within the collection of resource results.\n Start index (default = 0)"
+            }          
           },
           {
             "in": "query",
             "name": "limit",
             "schema": {
-              "type": "integer"
-            },
-            "description": "Limit pagination controls the maximum of results to return.\n Number of records to return (default = 25, max = 100)"
+              "type": "integer",
+              "description": "Limit pagination controls the maximum of results to return.\n Number of records to return (default = 25, max = 100)"
+            }          
           }
         ],
         "responses": {
@@ -11407,98 +11407,98 @@
             "in": "query",
             "name": "minAmount",
             "schema": {
-              "type": "number",
+              "type": "number",      
+              "example": "100.00",
               "description": "minimum amount (up two decimal places)"
-            },
-            "example": "100.00"
+            }
           },
           {
             "in": "query",
             "name": "maxAmount",
             "schema": {
               "type": "number",
+              "example": "1000.00",
               "description": "maximum amount (up two decimal places)"
-            },
-            "example": "1000.00"
+            }
           },
           {
             "in": "query",
             "name": "metadata.query",
             "schema": {
               "type": "string",
+              "example": "usr_9HG724gvHJB378v3h",
               "description": "searches data in the metadata sub-object"
-            },
-            "example": "usr_9HG724gvHJB378v3h"
+            }
           },
           {
             "in": "query",
             "name": "externalId",
             "schema": {
               "type": "string",
+              "example": "usr_9HG724gvHJB378v3h",
               "description": "Matches the externalId key if set in the metadata object's"
-            },
-            "example": "usr_9HG724gvHJB378v3h"
+            }
           },
           {
             "in": "query",
             "name": "query",
             "schema": {
               "type": "string",
+              "example": "Demo Account",
               "description": "searches data in the label and accountNumber"
-            },
-            "example": "Demo Account"
+            }
           },
           {
             "name": "startTime",
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2024-02-26T07:16:55Z"
-            },
-            "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+              "example": "2024-02-26T07:16:55Z",
+              "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+            }
           },
           {
             "name": "endTime",
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2024-02-26T07:16:55Z"
-            },
-            "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+              "example": "2024-02-26T07:16:55Z",
+              "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+            }
           },
           {
             "name": "modifiedStartTime",
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2024-02-26T07:16:55Z"
-            },
-            "description": "modified time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+              "example": "2024-02-26T07:16:55Z",
+              "description": "modified time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+            }
           },
           {
             "name": "modifiedEndTime",
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2024-02-26T07:16:55Z"
-            },
-            "description": "modified time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+              "example": "2024-02-26T07:16:55Z",
+              "description": "modified time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+            }
           },
           {
             "in": "query",
             "name": "offset",
             "schema": {
-              "type": "integer"
-            },
-            "description": "Offset pagination determines the starting point within the collection of resource results.\n Start index (default = 0)"
+              "type": "integer",
+              "description": "Offset pagination determines the starting point within the collection of resource results.\n Start index (default = 0)"
+            }
           },
           {
             "in": "query",
             "name": "limit",
             "schema": {
-              "type": "integer"
-            },
-            "description": "Limit pagination controls the maximum of results to return.\n Number of records to return (default = 25, max = 100)"
+              "type": "integer",
+              "description": "Limit pagination controls the maximum of results to return.\n Number of records to return (default = 25, max = 100)"
+            }
           }
         ],
         "responses": {
@@ -16017,24 +16017,21 @@
               "enum": [
                 "pdf",
                 "csv",
-                "json"],
+                "json"
+              ],
+              "description": "Export type: pdf, csv, or json",
               "example": "pdf"
-            },
-            "description": "Export type pdf,csv,json"
+            }
           },          
           {
             "name": "email",
             "in": "query",
             "schema": {
               "type": "boolean",
-              "enum": [
-                true,
-                false
-              ],
+              "description": "Send Email to Account Created Person emailId",
               "example": true
-            },
-            "description": "Send Email to Account Created Person emailId"
-          }
+            }
+          }          
         ],
         "responses": {
           "200": {
@@ -34952,36 +34949,36 @@
             "name": "minAmount",
             "schema": {
               "type": "number",
-              "description": "minimum amount (up two decimal places)"
-            },
-            "example": "100.00"
+              "description": "minimum amount (up two decimal places)",
+              "example": "100.00"
+            }
           },
           {
             "in": "query",
             "name": "maxAmount",
             "schema": {
               "type": "number",
-              "description": "maximum amount (up two decimal places)"
-            },
-            "example": "1000.00"
+              "description": "maximum amount (up two decimal places)",
+              "example": "1000.00"
+            }
           },
           {
             "in": "query",
             "name": "metadata.query",
             "schema": {
               "type": "string",
-              "description": "searches data in the metadata sub-object"
-            },
-            "example": "usr_9HG724gvHJB378v3h"
+              "description": "searches data in the metadata sub-object",
+              "example": "usr_9HG724gvHJB378v3h"
+            }
           },
           {
             "in": "query",
             "name": "query",
             "schema": {
               "type": "string",
-              "description": "searches data in the amount,title and description"
-            },
-            "example": "Test ACH"
+              "description": "searches data in the amount,title and description",
+              "example": "Test ACH"
+            }
           },
           {
             "name": "export",
@@ -34992,79 +34989,79 @@
                 "pdf",
                 "csv",
                 "json"],
+              "description": "pdf,csv,json",
               "example": "pdf"
-            },
-            "description": "pdf,csv,json"
+            }
           },
           {
             "name": "startDate",
             "in": "query",
             "schema": {
               "type": "string",
+              "description": "created time in ISO UTC format (YYYY-MM-DD)",
               "example": "2024-02-26"
-            },
-            "description": "created time in ISO UTC format (YYYY-MM-DD)"
+            }
           },
           {
             "name": "endDate",
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2024-02-27"
-            },
-            "description": "created time in ISO UTC format (YYYY-MM-DD)"
+              "example": "2024-02-27",
+              "description": "created time in ISO UTC format (YYYY-MM-DD)"
+            }
           },
           {
             "name": "startTime",
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2024-02-26T07:16:55Z"
-            },
-            "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+              "example": "2024-02-26T07:16:55Z",
+              "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+            }
           },
           {
             "name": "endTime",
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2024-02-27T07:16:55Z"
-            },
-            "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+              "example": "2024-02-27T07:16:55Z",
+              "description": "created time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+            }
           },
           {
             "name": "modifiedStartTime",
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2024-02-26T07:16:55Z"
-            },
-            "description": "modified time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+              "example": "2024-02-26T07:16:55Z",
+              "description": "modified time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+            }
           },
           {
             "name": "modifiedEndTime",
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "2024-02-27T07:16:55Z"
-            },
-            "description": "modified time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+              "example": "2024-02-27T07:16:55Z",
+              "description": "modified time in ISO UTC format (YYYY-MM-DDThh:mm:ssZ)"
+            }
           },
           {
             "in": "query",
             "name": "offset",
             "schema": {
-              "type": "integer"
-            },
-            "description": "Offset pagination determines the starting point within the collection of resource results.\n Start index (default = 0)"
+              "type": "integer",
+              "description": "Offset pagination determines the starting point within the collection of resource results.\n Start index (default = 0)"
+            }          
           },
           {
             "in": "query",
             "name": "limit",
             "schema": {
-              "type": "integer"
-            },
-            "description": "Limit pagination controls the maximum of results to return.\n Number of records to return (default = 25, max = 100)"
+              "type": "integer",
+              "description": "Limit pagination controls the maximum of results to return.\n Number of records to return (default = 25, max = 100)"
+            }          
           }
         ],
         "responses": {
@@ -36706,25 +36703,25 @@
             "name": "query",
             "schema": {
               "type": "string",
+              "example": "card.spend",
               "description": "Filter by description,events and url"
-            },
-            "example": "card.spend"
+            }
           },
           {
             "in": "query",
             "name": "offset",
             "schema": {
-              "type": "integer"
-            },
-            "description": "Offset pagination determines the starting point within the collection of resource results"
+              "type": "integer",
+              "description": "Offset pagination determines the starting point within the collection of resource results.\n Start index (default = 0)"
+            }          
           },
           {
             "in": "query",
             "name": "limit",
             "schema": {
-              "type": "integer"
-            },
-            "description": "Limit pagination controls the maximum of results to return"
+              "type": "integer",
+              "description": "Limit pagination controls the maximum of results to return.\n Number of records to return (default = 25, max = 100)"
+            }          
           }
         ],
         "responses": {
