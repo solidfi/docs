@@ -15982,15 +15982,23 @@
         }
       ]
     },
-    "/v1/account/{accountId}/statement/2024/02": {
+    "/v1/account/{accountId}/statement/2021/12": {
       "get": {
         "tags": [
           "Accounts"
         ],
         "summary": "Retrieve a Statement",
-        "description": "Statements are generated at the end of each month.The statements are generated as per UTC time zone.\nYou can retrieve an account statement by:\n- passing the year and month parameter as yyyy/mm\n- passing the export parameter as export=json or export=pdf\nExport options:\n- pdf\n- csv\n- json (default)",
+        "description": "Statements are generated at the end of each month.The statements are generated as per UTC time zone.\nYou can retrieve an account statement by:\n\n- passing the year and month parameter as yyyy/mm\n- passing the export parameter as export=json or export=pdf \n\nExport options:\n- pdf\n- csv\n- json (default)",
         "operationId": "retrieveAStatement",
         "parameters": [
+          {
+            "name": "export",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "json"
+            }
+          },
           {
             "name": "sd-api-key",
             "in": "header",
@@ -16008,31 +16016,19 @@
               "type": "string",
               "example": "{{sd-person-id}}"
             }
-          },
-          {
-            "name": "export",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "enum": [
-                "pdf",
-                "csv",
-                "json"
-              ],
-              "description": "Export type: pdf, csv, or json",
-              "example": "pdf"
-            }
-          },          
-          {
-            "name": "email",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "description": "Send Email to Account Created Person emailId",
-              "example": true
-            }
-          }          
+          }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Retrieve a Statement": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Retrieve a Statement",
