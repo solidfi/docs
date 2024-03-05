@@ -15988,7 +15988,7 @@
           "Accounts"
         ],
         "summary": "Retrieve a Statement",
-        "description": "Statements are generated at the end of each month. For example, if the account was created on Aug 10, 2022, the first statement would be available on Sep 1, 2022. The statements are generated as per UTC time zone.\n**You can retrieve an account statement by:**\n- passing the year and month parameter as yyyy/mm\n- passing the export parameter as export=json or export=pdf\n**Export options:**\n- pdf\n- csv\n- json (default)",
+        "description": "Statements are generated at the end of each month.The statements are generated as per UTC time zone.\nYou can retrieve an account statement by:\n- passing the year and month parameter as yyyy/mm\n- passing the export parameter as export=json or export=pdf\nExport options:\n- pdf\n- csv\n- json (default)",
         "operationId": "retrieveAStatement",
         "parameters": [
           {
