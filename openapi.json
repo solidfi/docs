@@ -11425,7 +11425,7 @@
             "in": "query",
             "name": "metadata.query",
             "schema": {
-              "type": "number",
+              "type": "string",
               "description": "searches data in the metadata sub-object"
             },
             "example": "usr_9HG724gvHJB378v3h"
