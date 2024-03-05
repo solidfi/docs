@@ -11328,7 +11328,7 @@
           "Accounts"
         ],
         "summary": "List all Accounts",
-        "description": "List all Accounts",
+        "description": "‍Retrieves list of all bank accounts that belong to a business, person, or other parameter",
         "operationId": "listAllAccounts",
         "parameters": [
           {
@@ -11408,7 +11408,7 @@
             "name": "minAmount",
             "schema": {
               "type": "number",      
-              "example": "100.00",
+              "example": 100.00,
               "description": "minimum amount (up two decimal places)"
             }
           },
@@ -11417,7 +11417,7 @@
             "name": "maxAmount",
             "schema": {
               "type": "number",
-              "example": "1000.00",
+              "example": 1000.00,
               "description": "maximum amount (up two decimal places)"
             }
           },
@@ -12433,12 +12433,13 @@
           "Accounts"
         ],
         "summary": "Create an Account",
-        "description": "Create an Account",
+        "description": "Creates an account by passing the required account information.\nDuring the account creation, it is your responsibility to present an option for the user to accept the Terms, after which you should set acceptedTerms as true in the request body.\n\nPlease note:\n- When creating a business account, pass the \"businessId\" in the request object.\n- When creating a family account, pass the \"familyId\" in the request object.\n- When creating a personal account, the \"personId\" is already included in the header.",
         "operationId": "createAnAccount",
         "parameters": [
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
@@ -12447,6 +12448,7 @@
           {
             "name": "sd-person-id",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-person-id}}"
@@ -34946,7 +34948,7 @@
             "schema": {
               "type": "number",
               "description": "minimum amount (up two decimal places)",
-              "example": "100.00"
+              "example": 100.00
             }
           },
           {
@@ -34955,7 +34957,7 @@
             "schema": {
               "type": "number",
               "description": "maximum amount (up two decimal places)",
-              "example": "1000.00"
+              "example": 1000.00
             }
           },
           {
