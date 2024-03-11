@@ -41194,10 +41194,27 @@
                 "type": "object",
                 "properties": {
                   "field": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Filter field name",
+                    "enum": [
+                      "id",
+                      "email",
+                      "phone",
+                      "status",
+                      "idNumber",
+                      "query",
+                      "kycstatus",
+                      "startTime",
+                      "endTime",
+                      "externalId",
+                      "modifiedStartTime",
+                      "modifiedEndTime",
+                      "dateOfBirth"
+                    ]
                   },
                   "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Filter value"
                   }
                 }
               }
