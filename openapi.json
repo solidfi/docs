@@ -41679,6 +41679,55 @@
                 "example": "404 Page Not Found"
               }
             }
+          },
+          "500": {
+            "description": "Internal Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string",
+                      "example": "req-8eeb74d4-c745-4508-9698-c32a68ef79aa"
+                    },
+                    "method": {
+                      "type": "string",
+                      "example": "GET"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "example": 500
+                    },
+                    "code": {
+                      "type": "string",
+                      "example": "EC_UNSPECIFIED"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "panic: runtime error"
+                    },
+                    "sysMessage": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "programId": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "env": {
+                      "type": "string",
+                      "example": "dev"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2024-02-26T17:16:44Z"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       },
