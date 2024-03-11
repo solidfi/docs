@@ -41546,9 +41546,110 @@
           {
             "name": "sd-api-key",
             "in": "header",
+            "required": true,
             "schema": {
               "type": "string",
               "example": "{{sd-api-key}}"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of items to return",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of items to skip",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "Field to order results by",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filters",
+            "in": "query",
+            "description": "List of filters",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "field": {
+                    "type": "string",
+                    "description": "Filter field name",
+                    "enum": [
+                      "id",
+                      "email",
+                      "phone",
+                      "status",
+                      "idNumber",
+                      "query",
+                      "kycstatus",
+                      "startTime",
+                      "endTime",
+                      "externalId",
+                      "modifiedStartTime",
+                      "modifiedEndTime",
+                      "dateOfBirth"
+                    ]
+                  },
+                  "value": {
+                    "type": "string",
+                    "description": "Filter value"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "include_address",
+            "in": "query",
+            "description": "Include address information",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "include_kyc",
+            "in": "query",
+            "description": "Include KYC information",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "include_meta",
+            "in": "query",
+            "description": "Include meta information",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "include_business",
+            "in": "query",
+            "description": "Include business information",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "include_business_all",
+            "in": "query",
+            "description": "Include all business information",
+            "schema": {
+              "type": "boolean"
             }
           }
         ],
@@ -41634,155 +41735,166 @@
                 "schema": {
                   "type": "object",
                   "properties": {
+                    "total": {
+                      "type": "integer"
+                    },
                     "data": {
                       "type": "array",
                       "items": {
                         "type": "object",
                         "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "first_name": {
+                            "type": "string"
+                          },
+                          "last_name": {
+                            "type": "string"
+                          },
+                          "phone": {
+                            "type": "string"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "date_of_birth": {
+                            "type": "string"
+                          },
+                          "id_type": {
+                            "type": "string"
+                          },
+                          "id_number": {
+                            "type": "string"
+                          },
                           "address": {
                             "type": "object",
                             "properties": {
-                              "addressType": {
-                                "type": "string",
-                                "example": "mailing"
+                              "address_type": {
+                                "type": "string"
+                              },
+                              "line_1": {
+                                "type": "string"
+                              },
+                              "line_2": {
+                                "type": "string"
                               },
                               "city": {
-                                "type": "string",
-                                "example": "New York"
-                              },
-                              "country": {
-                                "type": "string",
-                                "example": "US"
-                              },
-                              "line1": {
-                                "type": "string",
-                                "example": "789 Main St"
-                              },
-                              "line2": {
-                                "type": "string",
-                                "example": ""
-                              },
-                              "postalCode": {
-                                "type": "string",
-                                "example": "10001"
+                                "type": "string"
                               },
                               "state": {
-                                "type": "string",
-                                "example": "NY"
+                                "type": "string"
+                              },
+                              "country": {
+                                "type": "string"
+                              },
+                              "postal_code": {
+                                "type": "string"
                               }
                             }
-                          },
-                          "createdAt": {
-                            "type": "string",
-                            "example": "2023-11-20T06:20:48Z"
-                          },
-                          "dateOfBirth": {
-                            "type": "string",
-                            "example": "1974-04-22"
-                          },
-                          "email": {
-                            "type": "string",
-                            "example": "jane.doe@gmail.com"
-                          },
-                          "emailVerified": {
-                            "type": "boolean",
-                            "example": false
-                          },
-                          "firstName": {
-                            "type": "string",
-                            "example": "Jane"
-                          },
-                          "id": {
-                            "type": "string",
-                            "example": "per-e942e118-f323-465c-aa57-ff9034264731"
-                          },
-                          "idNumber": {
-                            "type": "string",
-                            "example": "287654321"
-                          },
-                          "idType": {
-                            "type": "string",
-                            "example": "ssn"
                           },
                           "kyc": {
                             "type": "object",
                             "properties": {
-                              "createdAt": {
-                                "type": "string",
-                                "example": "2023-11-20T06:20:25Z"
-                              },
                               "id": {
-                                "type": "string",
-                                "example": "kyc-80ff0279-0a38-4da4-b59d-8c38874c21bf"
+                                "type": "string"
                               },
-                              "modifiedAt": {
-                                "type": "string",
-                                "example": "2023-11-20T06:22:33Z"
+                              "person_id": {
+                                "type": "string"
                               },
-                              "personId": {
-                                "type": "string",
-                                "example": "per-e942e118-f323-465c-aa57-ff9034264731"
+                              "status": {
+                                "type": "string"
+                              },
+                              "review_code": {
+                                "type": "string"
+                              },
+                              "review_message": {
+                                "type": "string"
                               },
                               "results": {
                                 "type": "object",
                                 "properties": {
+                                  "idv": {
+                                    "type": "string"
+                                  },
                                   "address": {
-                                    "type": "string",
-                                    "example": "approved"
+                                    "type": "string"
                                   },
-                                  "bank": {
-                                    "type": "string",
-                                    "example": "approved"
-                                  },
-                                  "dateOfBirth": {
-                                    "type": "string",
-                                    "example": "approved"
+                                  "date_of_birth": {
+                                    "type": "string"
                                   },
                                   "fraud": {
-                                    "type": "string",
-                                    "example": "approved"
+                                    "type": "string"
                                   },
-                                  "idv": {
-                                    "type": "string",
-                                    "example": "notStarted"
+                                  "bank": {
+                                    "type": "string"
                                   }
                                 }
                               },
-                              "reviewCode": {
-                                "type": "string",
-                                "example": ""
+                              "created_at": {
+                                "type": "string"
                               },
-                              "reviewMessage": {
-                                "type": "string",
-                                "example": ""
+                              "modified_at": {
+                                "type": "string"
                               },
-                              "reviewReasons": {
+                              "review_reasons": {
                                 "type": "object",
                                 "properties": {
+                                  "idv": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "code": {
+                                          "type": "string"
+                                        },
+                                        "description": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    }
+                                  },
                                   "address": {
                                     "type": "array",
-                                    "items": {},
-                                    "example": []
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "code": {
+                                          "type": "string"
+                                        },
+                                        "description": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    }
                                   },
-                                  "bank": {
+                                  "date_of_birth": {
                                     "type": "array",
-                                    "items": {},
-                                    "example": []
-                                  },
-                                  "dateOfBirth": {
-                                    "type": "array",
-                                    "items": {},
-                                    "example": []
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "code": {
+                                          "type": "string"
+                                        },
+                                        "description": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    }
                                   },
                                   "fraud": {
                                     "type": "array",
-                                    "items": {},
-                                    "example": []
-                                  },
-                                  "idv": {
-                                    "type": "array",
-                                    "items": {},
-                                    "example": []
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "code": {
+                                          "type": "string"
+                                        },
+                                        "description": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    }
                                   },
                                   "other": {
                                     "type": "array",
@@ -41790,2783 +41902,219 @@
                                       "type": "object",
                                       "properties": {
                                         "code": {
-                                          "type": "string",
-                                          "example": "R1401"
+                                          "type": "string"
                                         },
                                         "description": {
-                                          "type": "string",
-                                          "example": "Phone number mismatch"
+                                          "type": "string"
                                         }
                                       }
-                                    },
-                                    "example": [
-                                      {
-                                        "code": "R1401",
-                                        "description": "Phone number mismatch"
+                                    }
+                                  },
+                                  "bank": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "code": {
+                                          "type": "string"
+                                        },
+                                        "description": {
+                                          "type": "string"
+                                        }
                                       }
-                                    ]
+                                    }
                                   }
                                 }
-                              },
-                              "status": {
-                                "type": "string",
-                                "example": "approved"
                               }
                             }
                           },
-                          "language": {
-                            "type": "string",
-                            "example": "en"
+                          "program_id": {
+                            "type": "string"
                           },
-                          "lastName": {
-                            "type": "string",
-                            "example": "Doe"
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "modified_at": {
+                            "type": "string"
+                          },
+                          "language": {
+                            "type": "string"
                           },
                           "metadata": {
-                            "nullable": true,
-                            "example": null
-                          },
-                          "middleName": {
-                            "type": "string",
-                            "example": ""
-                          },
-                          "modifiedAt": {
-                            "type": "string",
-                            "example": "2023-11-20T06:21:41Z"
-                          },
-                          "phone": {
-                            "type": "string",
-                            "example": "+15555555555"
-                          },
-                          "phoneVerified": {
-                            "type": "boolean",
-                            "example": true
-                          },
-                          "programId": {
-                            "type": "string",
-                            "example": "prg-ffa511da-1adc-4603-b845-173b895a33f6"
+                            "type": "object"
                           },
                           "status": {
-                            "type": "string",
-                            "example": "active"
+                            "type": "string"
                           }
                         }
-                      },
-                      "example": [
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "New York",
-                            "country": "US",
-                            "line1": "789 Main St",
-                            "line2": "",
-                            "postalCode": "10001",
-                            "state": "NY"
-                          },
-                          "createdAt": "2023-11-20T06:20:48Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "jane.doe@gmail.com",
-                          "emailVerified": false,
-                          "firstName": "Jane",
-                          "id": "per-e942e118-f323-465c-aa57-ff9034264731",
-                          "idNumber": "287654321",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-20T06:20:25Z",
-                            "id": "kyc-80ff0279-0a38-4da4-b59d-8c38874c21bf",
-                            "modifiedAt": "2023-11-20T06:22:33Z",
-                            "personId": "per-e942e118-f323-465c-aa57-ff9034264731",
-                            "results": {
-                              "address": "approved",
-                              "bank": "approved",
-                              "dateOfBirth": "approved",
-                              "fraud": "approved",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1401",
-                                  "description": "Phone number mismatch"
-                                }
-                              ]
-                            },
-                            "status": "approved"
-                          },
-                          "language": "en",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "",
-                          "modifiedAt": "2023-11-20T06:21:41Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Los Gatos",
-                            "country": "US",
-                            "line1": "1 Broadway",
-                            "line2": "",
-                            "postalCode": "95030",
-                            "state": "CA"
-                          },
-                          "createdAt": "2023-11-20T05:32:11Z",
-                          "dateOfBirth": "1974-01-25",
-                          "email": "johndoe@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "John",
-                          "id": "per-e6553324-1db8-49a8-a0d3-29132280b838",
-                          "idNumber": "999999999",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-20T05:31:48Z",
-                            "id": "kyc-69760d03-7957-46d5-b34f-ff820fd66520",
-                            "modifiedAt": "2023-11-20T05:57:59Z",
-                            "personId": "per-e6553324-1db8-49a8-a0d3-29132280b838",
-                            "results": {
-                              "address": "approved",
-                              "bank": "approved",
-                              "dateOfBirth": "approved",
-                              "fraud": "approved",
-                              "idv": "approved"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1401",
-                                  "description": "Phone number mismatch"
-                                }
-                              ]
-                            },
-                            "status": "approved"
-                          },
-                          "language": "en",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "",
-                          "modifiedAt": "2023-11-20T05:57:56Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-15T08:28:50Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Dayne",
-                          "id": "per-a3b5abd0-ed8a-4fe3-9cca-2661059410b0",
-                          "idNumber": "999999999",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-15T08:28:50Z",
-                            "id": "kyc-72bf9341-ddd5-483a-b06b-af238bf440dd",
-                            "modifiedAt": "2023-11-15T08:28:50Z",
-                            "personId": "per-a3b5abd0-ed8a-4fe3-9cca-2661059410b0",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-15T08:28:50Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-15T05:01:36Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Virgil",
-                          "id": "per-aa842e9e-77e9-4bb1-8a70-39cf1faf97ce",
-                          "idNumber": "20916666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-15T05:01:37Z",
-                            "id": "kyc-fb1c7dc8-5dfd-49c2-a6f7-6c35ade0e86f",
-                            "modifiedAt": "2023-11-15T05:01:37Z",
-                            "personId": "per-aa842e9e-77e9-4bb1-8a70-39cf1faf97ce",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-15T05:01:36Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-15T04:57:23Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Virgil",
-                          "id": "per-0599717d-c1a8-4547-9140-de5f1ae68b62",
-                          "idNumber": "20916666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-15T04:57:24Z",
-                            "id": "kyc-8892a9e9-ccf3-42b5-8067-cd55b7c7dc30",
-                            "modifiedAt": "2023-11-15T04:57:24Z",
-                            "personId": "per-0599717d-c1a8-4547-9140-de5f1ae68b62",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-15T04:57:23Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-15T04:52:41Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Virgil",
-                          "id": "per-ad43bc81-4190-45be-891d-d056562e8fba",
-                          "idNumber": "20916666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-15T04:52:42Z",
-                            "id": "kyc-3008dd5f-f98b-4cfc-a2f1-f0dbca4829bb",
-                            "modifiedAt": "2023-11-15T04:52:42Z",
-                            "personId": "per-ad43bc81-4190-45be-891d-d056562e8fba",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-15T04:52:41Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "New York",
-                            "country": "US",
-                            "line1": "123 Main St",
-                            "line2": "",
-                            "postalCode": "10001",
-                            "state": "NY"
-                          },
-                          "createdAt": "2023-11-15T04:09:25Z",
-                          "dateOfBirth": "1974-01-01",
-                          "email": "Reginald@solid.com",
-                          "emailVerified": false,
-                          "firstName": "Audreanna",
-                          "id": "per-a29889d6-f4be-46be-9742-f7ffd113b729",
-                          "idNumber": "999999999",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-15T04:09:25Z",
-                            "id": "kyc-c9d3463b-5036-4562-83e9-ab8f40dcfbb7",
-                            "modifiedAt": "2023-11-15T04:09:57Z",
-                            "personId": "per-a29889d6-f4be-46be-9742-f7ffd113b729",
-                            "results": {
-                              "address": "approved",
-                              "bank": "approved",
-                              "dateOfBirth": "approved",
-                              "fraud": "approved",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1401",
-                                  "description": "Phone number mismatch"
-                                }
-                              ]
-                            },
-                            "status": "approved"
-                          },
-                          "language": "en",
-                          "lastName": "Moore House",
-                          "metadata": null,
-                          "middleName": "",
-                          "modifiedAt": "2023-11-15T04:09:25Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "New York",
-                            "country": "US",
-                            "line1": "123 Main St",
-                            "line2": "",
-                            "postalCode": "10001",
-                            "state": "NY"
-                          },
-                          "createdAt": "2023-11-15T03:58:58Z",
-                          "dateOfBirth": "1974-01-01",
-                          "email": "Katherine@solid.com",
-                          "emailVerified": false,
-                          "firstName": "Christian",
-                          "id": "per-e36622f1-aa2a-42e1-8f25-9083ec6cfe32",
-                          "idNumber": "999999999",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-15T03:59:00Z",
-                            "id": "kyc-4c6bf217-7411-42b4-b44e-be0bc24e5f21",
-                            "modifiedAt": "2023-11-15T04:00:39Z",
-                            "personId": "per-e36622f1-aa2a-42e1-8f25-9083ec6cfe32",
-                            "results": {
-                              "address": "approved",
-                              "bank": "approved",
-                              "dateOfBirth": "approved",
-                              "fraud": "approved",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1401",
-                                  "description": "Phone number mismatch"
-                                }
-                              ]
-                            },
-                            "status": "approved"
-                          },
-                          "language": "en",
-                          "lastName": "Harris",
-                          "metadata": null,
-                          "middleName": "FamOne",
-                          "modifiedAt": "2023-11-15T03:58:58Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T11:50:31Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Calista",
-                          "id": "per-addcac94-cfbb-4c15-a8a4-7e87b30fe415",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T11:50:31Z",
-                            "id": "kyc-fc96c61a-d26b-4dd0-b637-5130265f76b4",
-                            "modifiedAt": "2023-11-13T11:51:17Z",
-                            "personId": "per-addcac94-cfbb-4c15-a8a4-7e87b30fe415",
-                            "results": {
-                              "address": "approved",
-                              "bank": "approved",
-                              "dateOfBirth": "approved",
-                              "fraud": "approved",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1403",
-                                  "description": "ID type is not SSN"
-                                }
-                              ]
-                            },
-                            "status": "approved"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T11:50:31Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Abington",
-                            "country": "US",
-                            "line1": "777 Brockton Ave",
-                            "line2": "",
-                            "postalCode": "02351-2111",
-                            "state": "MA"
-                          },
-                          "createdAt": "2023-11-13T10:56:57Z",
-                          "dateOfBirth": "1990-01-01",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Margie",
-                          "id": "per-a9b01985-7417-421e-b355-2928b6cdf5de",
-                          "idNumber": "199999999",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-13T10:56:58Z",
-                            "id": "kyc-97564f98-f788-4b2b-9d64-6fdbe770437f",
-                            "modifiedAt": "2023-11-13T10:57:11Z",
-                            "personId": "per-a9b01985-7417-421e-b355-2928b6cdf5de",
-                            "results": {
-                              "address": "inReview",
-                              "bank": "inReview",
-                              "dateOfBirth": "inReview",
-                              "fraud": "inReview",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "R222",
-                            "reviewMessage": "Unknown review code. Please create a help desk ticket with Solid.",
-                            "reviewReasons": {
-                              "address": [
-                                {
-                                  "code": "R1102",
-                                  "description": "Address mismatch"
-                                }
-                              ],
-                              "bank": [],
-                              "dateOfBirth": [
-                                {
-                                  "code": "R1202",
-                                  "description": "Date of birth mismatch"
-                                }
-                              ],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1401",
-                                  "description": "Phone number mismatch"
-                                }
-                              ]
-                            },
-                            "status": "inReview"
-                          },
-                          "language": "en",
-                          "lastName": "Becker",
-                          "metadata": null,
-                          "middleName": "",
-                          "modifiedAt": "2023-11-13T11:53:50Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T10:49:48Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Erica",
-                          "id": "per-c149f201-bcc6-410c-bb1e-7f35c5cd92cb",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T10:49:49Z",
-                            "id": "kyc-57be316c-34d2-40e8-b3fe-c4b4550d3d42",
-                            "modifiedAt": "2023-11-13T10:49:49Z",
-                            "personId": "per-c149f201-bcc6-410c-bb1e-7f35c5cd92cb",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T10:49:48Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T10:40:24Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Shaun",
-                          "id": "per-703f0a48-ccc8-41dd-aff0-14e456fd9e58",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T10:40:25Z",
-                            "id": "kyc-25dfa4f2-5d60-4801-97da-a18c10e5fd7b",
-                            "modifiedAt": "2023-11-13T10:40:25Z",
-                            "personId": "per-703f0a48-ccc8-41dd-aff0-14e456fd9e58",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T10:40:24Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T10:09:25Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Werner",
-                          "id": "per-e6f294b7-e60d-40b5-885d-ed9433c7418a",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T10:09:25Z",
-                            "id": "kyc-029c8d19-4f87-40c5-a5e5-e5e91569bca2",
-                            "modifiedAt": "2023-11-13T10:09:25Z",
-                            "personId": "per-e6f294b7-e60d-40b5-885d-ed9433c7418a",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T10:09:25Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T10:09:20Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Cleve",
-                          "id": "per-b6ec432c-9b21-42ee-8c0c-bdd85c71e5f7",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T10:09:20Z",
-                            "id": "kyc-d1f0f891-0ba5-4072-94e8-da1bf0f0265e",
-                            "modifiedAt": "2023-11-13T10:09:20Z",
-                            "personId": "per-b6ec432c-9b21-42ee-8c0c-bdd85c71e5f7",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T10:09:20Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T08:11:15Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Cleta",
-                          "id": "per-c9458e73-3b50-4b5b-88db-f32c5f591c98",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T08:11:16Z",
-                            "id": "kyc-b8efe8b0-3ce9-458a-87f3-21b4e934b1bc",
-                            "modifiedAt": "2023-11-13T08:11:16Z",
-                            "personId": "per-c9458e73-3b50-4b5b-88db-f32c5f591c98",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T08:29:23Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T07:42:38Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Jazlyn",
-                          "id": "per-63bd7699-f90b-4e4e-b411-a8956e56777b",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T07:42:38Z",
-                            "id": "kyc-ff6dc4a6-ad52-4e75-99cd-f55032d9fd80",
-                            "modifiedAt": "2023-11-13T07:42:38Z",
-                            "personId": "per-63bd7699-f90b-4e4e-b411-a8956e56777b",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T07:42:38Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T07:39:56Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Wendy",
-                          "id": "per-464d4186-b5cb-4970-bf73-99a41682dd62",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T07:39:57Z",
-                            "id": "kyc-b728043a-7a45-4282-8d92-551db196036a",
-                            "modifiedAt": "2023-11-13T07:39:57Z",
-                            "personId": "per-464d4186-b5cb-4970-bf73-99a41682dd62",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T07:41:37Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T07:33:59Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Nat",
-                          "id": "per-aca96d44-6f1f-4bbd-8856-32567e1f16ec",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T07:33:59Z",
-                            "id": "kyc-7d279c37-5fbb-4720-8492-ad516eda0689",
-                            "modifiedAt": "2023-11-13T07:33:59Z",
-                            "personId": "per-aca96d44-6f1f-4bbd-8856-32567e1f16ec",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T07:33:59Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T07:12:23Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Audreanne",
-                          "id": "per-a286bc34-7c39-470d-be34-a370b51fe924",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T07:12:24Z",
-                            "id": "kyc-9cc75f4f-f0a5-4839-92ac-412b8a71f3d7",
-                            "modifiedAt": "2023-11-13T07:12:24Z",
-                            "personId": "per-a286bc34-7c39-470d-be34-a370b51fe924",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T07:18:19Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Abington",
-                            "country": "US",
-                            "line1": "777 Brockton Ave",
-                            "line2": "",
-                            "postalCode": "02351-2111",
-                            "state": "MA"
-                          },
-                          "createdAt": "2023-11-06T16:59:16Z",
-                          "dateOfBirth": "1974-01-01",
-                          "email": "avinashc@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "vdpmc",
-                          "id": "per-719df226-cde7-4ece-aad4-f1ba87e0e502",
-                          "idNumber": "262446848",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-06T16:59:19Z",
-                            "id": "kyc-666bf418-9573-4198-b938-becbb40220e1",
-                            "modifiedAt": "2023-11-06T16:59:19Z",
-                            "personId": "per-719df226-cde7-4ece-aad4-f1ba87e0e502",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "en",
-                          "lastName": "kff",
-                          "metadata": null,
-                          "middleName": "Charles",
-                          "modifiedAt": "2023-11-06T16:59:16Z",
-                          "phone": "+12624454608",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Abington",
-                            "country": "US",
-                            "line1": "777 Brockton Ave",
-                            "line2": "",
-                            "postalCode": "02351-2111",
-                            "state": "MA"
-                          },
-                          "createdAt": "2023-11-06T16:57:28Z",
-                          "dateOfBirth": "1974-01-01",
-                          "email": "avinashc@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "ivdfo",
-                          "id": "per-b40d65a6-5412-47db-b1da-5c5f9fe3259c",
-                          "idNumber": "262449773",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-06T16:57:30Z",
-                            "id": "kyc-14a842df-3dfd-48fe-92c5-4731af6dae6b",
-                            "modifiedAt": "2023-11-06T16:57:30Z",
-                            "personId": "per-b40d65a6-5412-47db-b1da-5c5f9fe3259c",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "en",
-                          "lastName": "dbk",
-                          "metadata": null,
-                          "middleName": "Charles",
-                          "modifiedAt": "2023-11-06T16:57:28Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Abington",
-                            "country": "US",
-                            "line1": "777 Brockton Ave",
-                            "line2": "",
-                            "postalCode": "02351-2111",
-                            "state": "MA"
-                          },
-                          "createdAt": "2023-11-06T16:50:18Z",
-                          "dateOfBirth": "1974-01-01",
-                          "email": "avinashc@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "hvfuu",
-                          "id": "per-84a8a709-1e82-4847-aeee-6d694ad3ed37",
-                          "idNumber": "262440605",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-06T16:50:22Z",
-                            "id": "kyc-73a85fcb-dffc-4828-a26a-69a2cee214b1",
-                            "modifiedAt": "2023-11-06T16:50:22Z",
-                            "personId": "per-84a8a709-1e82-4847-aeee-6d694ad3ed37",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "en",
-                          "lastName": "kwo",
-                          "metadata": null,
-                          "middleName": "Charles",
-                          "modifiedAt": "2023-11-06T16:50:18Z",
-                          "phone": "+12624462100",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Abington",
-                            "country": "US",
-                            "line1": "777 Brockton Ave",
-                            "line2": "",
-                            "postalCode": "02351-2111",
-                            "state": "MA"
-                          },
-                          "createdAt": "2023-11-01T19:24:40Z",
-                          "dateOfBirth": "1974-01-01",
-                          "email": "avinashc@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "LCB SOLID",
-                          "id": "per-d0004dc7-190e-4685-bab2-875ce2771980",
-                          "idNumber": "262441248",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-01T19:24:42Z",
-                            "id": "kyc-8a3d32ff-bafd-4b22-8c32-13736918f257",
-                            "modifiedAt": "2023-11-01T19:45:46Z",
-                            "personId": "per-d0004dc7-190e-4685-bab2-875ce2771980",
-                            "results": {
-                              "address": "approved",
-                              "bank": "approved",
-                              "dateOfBirth": "approved",
-                              "fraud": "approved",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1401",
-                                  "description": "Phone number mismatch"
-                                }
-                              ]
-                            },
-                            "status": "approved"
-                          },
-                          "language": "en",
-                          "lastName": "Testing",
-                          "metadata": null,
-                          "middleName": "",
-                          "modifiedAt": "2023-11-01T19:24:40Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Abington",
-                            "country": "US",
-                            "line1": "777 Brockton Ave",
-                            "line2": "",
-                            "postalCode": "02351-2111",
-                            "state": "MA"
-                          },
-                          "createdAt": "2023-11-01T18:03:29Z",
-                          "dateOfBirth": "1974-01-01",
-                          "email": "avinashc@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "SOLID LCB",
-                          "id": "per-3d96d695-e230-434f-9f8f-49fb9c90f8a2",
-                          "idNumber": "262441247",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-01T18:03:31Z",
-                            "id": "kyc-e057cae7-faa7-4df0-8198-af33e79324f8",
-                            "modifiedAt": "2023-11-01T18:03:31Z",
-                            "personId": "per-3d96d695-e230-434f-9f8f-49fb9c90f8a2",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "en",
-                          "lastName": "Testing",
-                          "metadata": null,
-                          "middleName": "",
-                          "modifiedAt": "2023-11-01T18:03:29Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Abington",
-                            "country": "US",
-                            "line1": "777 Brockton Ave",
-                            "line2": "",
-                            "postalCode": "02351-2111",
-                            "state": "MA"
-                          },
-                          "createdAt": "2023-11-01T08:19:01Z",
-                          "dateOfBirth": "1990-01-01",
-                          "email": "test@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "SolidLCB",
-                          "id": "per-be0a1dc7-4d20-44cd-82ea-5a951118b9ce",
-                          "idNumber": "999999999",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-01T08:19:03Z",
-                            "id": "kyc-277acccd-756c-4adc-b0c8-d55f44c0d678",
-                            "modifiedAt": "2023-11-01T08:22:35Z",
-                            "personId": "per-be0a1dc7-4d20-44cd-82ea-5a951118b9ce",
-                            "results": {
-                              "address": "approved",
-                              "bank": "approved",
-                              "dateOfBirth": "approved",
-                              "fraud": "approved",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1401",
-                                  "description": "Phone number mismatch"
-                                }
-                              ]
-                            },
-                            "status": "approved"
-                          },
-                          "language": "en",
-                          "lastName": "VBA",
-                          "metadata": null,
-                          "middleName": "",
-                          "modifiedAt": "2023-11-01T08:19:01Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        }
-                      ]
-                    },
-                    "total": {
-                      "type": "number",
-                      "example": 38
+                      }
                     }
                   }
                 },
                 "examples": {
                   "List all Persons": {
                     "value": {
+                      "total": 2,
                       "data": [
                         {
+                          "id": "123",
+                          "first_name": "John",
+                          "last_name": "Doe",
+                          "phone": "+123456789",
+                          "email": "john.doe@example.com",
+                          "date_of_birth": "1990-01-01",
+                          "id_type": "passport",
+                          "id_number": "ABC123",
                           "address": {
-                            "addressType": "mailing",
-                            "city": "New York",
+                            "address_type": "home",
+                            "line_1": "123 Main St",
+                            "city": "Cityville",
+                            "state": "CA",
                             "country": "US",
-                            "line1": "789 Main St",
-                            "line2": "",
-                            "postalCode": "10001",
-                            "state": "NY"
+                            "postal_code": "12345"
                           },
-                          "createdAt": "2023-11-20T06:20:48Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "jane.doe@gmail.com",
-                          "emailVerified": false,
-                          "firstName": "Jane",
-                          "id": "per-e942e118-f323-465c-aa57-ff9034264731",
-                          "idNumber": "287654321",
-                          "idType": "ssn",
                           "kyc": {
-                            "createdAt": "2023-11-20T06:20:25Z",
-                            "id": "kyc-80ff0279-0a38-4da4-b59d-8c38874c21bf",
-                            "modifiedAt": "2023-11-20T06:22:33Z",
-                            "personId": "per-e942e118-f323-465c-aa57-ff9034264731",
+                            "id": "456",
+                            "person_id": "123",
+                            "status": "approved",
+                            "review_code": "RC123",
+                            "review_message": "Approved",
                             "results": {
-                              "address": "approved",
-                              "bank": "approved",
-                              "dateOfBirth": "approved",
-                              "fraud": "approved",
-                              "idv": "notStarted"
+                              "idv": "pass",
+                              "address": "pass",
+                              "date_of_birth": "pass",
+                              "fraud": "fail",
+                              "bank": "pass"
                             },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1401",
-                                  "description": "Phone number mismatch"
-                                }
-                              ]
-                            },
-                            "status": "approved"
-                          },
-                          "language": "en",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "",
-                          "modifiedAt": "2023-11-20T06:21:41Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Los Gatos",
-                            "country": "US",
-                            "line1": "1 Broadway",
-                            "line2": "",
-                            "postalCode": "95030",
-                            "state": "CA"
-                          },
-                          "createdAt": "2023-11-20T05:32:11Z",
-                          "dateOfBirth": "1974-01-25",
-                          "email": "johndoe@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "John",
-                          "id": "per-e6553324-1db8-49a8-a0d3-29132280b838",
-                          "idNumber": "999999999",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-20T05:31:48Z",
-                            "id": "kyc-69760d03-7957-46d5-b34f-ff820fd66520",
-                            "modifiedAt": "2023-11-20T05:57:59Z",
-                            "personId": "per-e6553324-1db8-49a8-a0d3-29132280b838",
-                            "results": {
-                              "address": "approved",
-                              "bank": "approved",
-                              "dateOfBirth": "approved",
-                              "fraud": "approved",
-                              "idv": "approved"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1401",
-                                  "description": "Phone number mismatch"
-                                }
-                              ]
-                            },
-                            "status": "approved"
-                          },
-                          "language": "en",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "",
-                          "modifiedAt": "2023-11-20T05:57:56Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-15T08:28:50Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Dayne",
-                          "id": "per-a3b5abd0-ed8a-4fe3-9cca-2661059410b0",
-                          "idNumber": "999999999",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-15T08:28:50Z",
-                            "id": "kyc-72bf9341-ddd5-483a-b06b-af238bf440dd",
-                            "modifiedAt": "2023-11-15T08:28:50Z",
-                            "personId": "per-a3b5abd0-ed8a-4fe3-9cca-2661059410b0",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-15T08:28:50Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-15T05:01:36Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Virgil",
-                          "id": "per-aa842e9e-77e9-4bb1-8a70-39cf1faf97ce",
-                          "idNumber": "20916666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-15T05:01:37Z",
-                            "id": "kyc-fb1c7dc8-5dfd-49c2-a6f7-6c35ade0e86f",
-                            "modifiedAt": "2023-11-15T05:01:37Z",
-                            "personId": "per-aa842e9e-77e9-4bb1-8a70-39cf1faf97ce",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-15T05:01:36Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-15T04:57:23Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Virgil",
-                          "id": "per-0599717d-c1a8-4547-9140-de5f1ae68b62",
-                          "idNumber": "20916666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-15T04:57:24Z",
-                            "id": "kyc-8892a9e9-ccf3-42b5-8067-cd55b7c7dc30",
-                            "modifiedAt": "2023-11-15T04:57:24Z",
-                            "personId": "per-0599717d-c1a8-4547-9140-de5f1ae68b62",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-15T04:57:23Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-15T04:52:41Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Virgil",
-                          "id": "per-ad43bc81-4190-45be-891d-d056562e8fba",
-                          "idNumber": "20916666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-15T04:52:42Z",
-                            "id": "kyc-3008dd5f-f98b-4cfc-a2f1-f0dbca4829bb",
-                            "modifiedAt": "2023-11-15T04:52:42Z",
-                            "personId": "per-ad43bc81-4190-45be-891d-d056562e8fba",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-15T04:52:41Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "New York",
-                            "country": "US",
-                            "line1": "123 Main St",
-                            "line2": "",
-                            "postalCode": "10001",
-                            "state": "NY"
-                          },
-                          "createdAt": "2023-11-15T04:09:25Z",
-                          "dateOfBirth": "1974-01-01",
-                          "email": "Reginald@solid.com",
-                          "emailVerified": false,
-                          "firstName": "Audreanna",
-                          "id": "per-a29889d6-f4be-46be-9742-f7ffd113b729",
-                          "idNumber": "999999999",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-15T04:09:25Z",
-                            "id": "kyc-c9d3463b-5036-4562-83e9-ab8f40dcfbb7",
-                            "modifiedAt": "2023-11-15T04:09:57Z",
-                            "personId": "per-a29889d6-f4be-46be-9742-f7ffd113b729",
-                            "results": {
-                              "address": "approved",
-                              "bank": "approved",
-                              "dateOfBirth": "approved",
-                              "fraud": "approved",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1401",
-                                  "description": "Phone number mismatch"
-                                }
-                              ]
-                            },
-                            "status": "approved"
-                          },
-                          "language": "en",
-                          "lastName": "Moore House",
-                          "metadata": null,
-                          "middleName": "",
-                          "modifiedAt": "2023-11-15T04:09:25Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "New York",
-                            "country": "US",
-                            "line1": "123 Main St",
-                            "line2": "",
-                            "postalCode": "10001",
-                            "state": "NY"
-                          },
-                          "createdAt": "2023-11-15T03:58:58Z",
-                          "dateOfBirth": "1974-01-01",
-                          "email": "Katherine@solid.com",
-                          "emailVerified": false,
-                          "firstName": "Christian",
-                          "id": "per-e36622f1-aa2a-42e1-8f25-9083ec6cfe32",
-                          "idNumber": "999999999",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-15T03:59:00Z",
-                            "id": "kyc-4c6bf217-7411-42b4-b44e-be0bc24e5f21",
-                            "modifiedAt": "2023-11-15T04:00:39Z",
-                            "personId": "per-e36622f1-aa2a-42e1-8f25-9083ec6cfe32",
-                            "results": {
-                              "address": "approved",
-                              "bank": "approved",
-                              "dateOfBirth": "approved",
-                              "fraud": "approved",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1401",
-                                  "description": "Phone number mismatch"
-                                }
-                              ]
-                            },
-                            "status": "approved"
-                          },
-                          "language": "en",
-                          "lastName": "Harris",
-                          "metadata": null,
-                          "middleName": "FamOne",
-                          "modifiedAt": "2023-11-15T03:58:58Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T11:50:31Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Calista",
-                          "id": "per-addcac94-cfbb-4c15-a8a4-7e87b30fe415",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T11:50:31Z",
-                            "id": "kyc-fc96c61a-d26b-4dd0-b637-5130265f76b4",
-                            "modifiedAt": "2023-11-13T11:51:17Z",
-                            "personId": "per-addcac94-cfbb-4c15-a8a4-7e87b30fe415",
-                            "results": {
-                              "address": "approved",
-                              "bank": "approved",
-                              "dateOfBirth": "approved",
-                              "fraud": "approved",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1403",
-                                  "description": "ID type is not SSN"
-                                }
-                              ]
-                            },
-                            "status": "approved"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T11:50:31Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Abington",
-                            "country": "US",
-                            "line1": "777 Brockton Ave",
-                            "line2": "",
-                            "postalCode": "02351-2111",
-                            "state": "MA"
-                          },
-                          "createdAt": "2023-11-13T10:56:57Z",
-                          "dateOfBirth": "1990-01-01",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Margie",
-                          "id": "per-a9b01985-7417-421e-b355-2928b6cdf5de",
-                          "idNumber": "199999999",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-13T10:56:58Z",
-                            "id": "kyc-97564f98-f788-4b2b-9d64-6fdbe770437f",
-                            "modifiedAt": "2023-11-13T10:57:11Z",
-                            "personId": "per-a9b01985-7417-421e-b355-2928b6cdf5de",
-                            "results": {
-                              "address": "inReview",
-                              "bank": "inReview",
-                              "dateOfBirth": "inReview",
-                              "fraud": "inReview",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "R222",
-                            "reviewMessage": "Unknown review code. Please create a help desk ticket with Solid.",
-                            "reviewReasons": {
-                              "address": [
-                                {
-                                  "code": "R1102",
-                                  "description": "Address mismatch"
-                                }
+                            "created_at": "2024-01-01T12:00:00Z",
+                            "modified_at": "2024-01-02T12:00:00Z",
+                            "review_reasons": {
+                              "idv": [
+                                {"code": "IDV001", "description": "Incomplete ID Verification"}
                               ],
-                              "bank": [],
-                              "dateOfBirth": [
-                                {
-                                  "code": "R1202",
-                                  "description": "Date of birth mismatch"
-                                }
+                              "address": [],
+                              "date_of_birth": [],
+                              "fraud": [
+                                {"code": "F001", "description": "Suspicious activity"}
                               ],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1401",
-                                  "description": "Phone number mismatch"
-                                }
-                              ]
-                            },
-                            "status": "inReview"
+                              "other": [],
+                              "bank": []
+                            }
                           },
+                          "program_id": "789",
+                          "created_at": "2024-01-01T12:00:00Z",
+                          "modified_at": "2024-01-02T12:00:00Z",
                           "language": "en",
-                          "lastName": "Becker",
-                          "metadata": null,
-                          "middleName": "",
-                          "modifiedAt": "2023-11-13T11:53:50Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T10:49:48Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Erica",
-                          "id": "per-c149f201-bcc6-410c-bb1e-7f35c5cd92cb",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T10:49:49Z",
-                            "id": "kyc-57be316c-34d2-40e8-b3fe-c4b4550d3d42",
-                            "modifiedAt": "2023-11-13T10:49:49Z",
-                            "personId": "per-c149f201-bcc6-410c-bb1e-7f35c5cd92cb",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T10:49:48Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T10:40:24Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Shaun",
-                          "id": "per-703f0a48-ccc8-41dd-aff0-14e456fd9e58",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T10:40:25Z",
-                            "id": "kyc-25dfa4f2-5d60-4801-97da-a18c10e5fd7b",
-                            "modifiedAt": "2023-11-13T10:40:25Z",
-                            "personId": "per-703f0a48-ccc8-41dd-aff0-14e456fd9e58",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T10:40:24Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T10:09:25Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Werner",
-                          "id": "per-e6f294b7-e60d-40b5-885d-ed9433c7418a",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T10:09:25Z",
-                            "id": "kyc-029c8d19-4f87-40c5-a5e5-e5e91569bca2",
-                            "modifiedAt": "2023-11-13T10:09:25Z",
-                            "personId": "per-e6f294b7-e60d-40b5-885d-ed9433c7418a",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T10:09:25Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T10:09:20Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Cleve",
-                          "id": "per-b6ec432c-9b21-42ee-8c0c-bdd85c71e5f7",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T10:09:20Z",
-                            "id": "kyc-d1f0f891-0ba5-4072-94e8-da1bf0f0265e",
-                            "modifiedAt": "2023-11-13T10:09:20Z",
-                            "personId": "per-b6ec432c-9b21-42ee-8c0c-bdd85c71e5f7",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T10:09:20Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T08:11:15Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Cleta",
-                          "id": "per-c9458e73-3b50-4b5b-88db-f32c5f591c98",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T08:11:16Z",
-                            "id": "kyc-b8efe8b0-3ce9-458a-87f3-21b4e934b1bc",
-                            "modifiedAt": "2023-11-13T08:11:16Z",
-                            "personId": "per-c9458e73-3b50-4b5b-88db-f32c5f591c98",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T08:29:23Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T07:42:38Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Jazlyn",
-                          "id": "per-63bd7699-f90b-4e4e-b411-a8956e56777b",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T07:42:38Z",
-                            "id": "kyc-ff6dc4a6-ad52-4e75-99cd-f55032d9fd80",
-                            "modifiedAt": "2023-11-13T07:42:38Z",
-                            "personId": "per-63bd7699-f90b-4e4e-b411-a8956e56777b",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T07:42:38Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T07:39:56Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Wendy",
-                          "id": "per-464d4186-b5cb-4970-bf73-99a41682dd62",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T07:39:57Z",
-                            "id": "kyc-b728043a-7a45-4282-8d92-551db196036a",
-                            "modifiedAt": "2023-11-13T07:39:57Z",
-                            "personId": "per-464d4186-b5cb-4970-bf73-99a41682dd62",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T07:41:37Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T07:33:59Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Nat",
-                          "id": "per-aca96d44-6f1f-4bbd-8856-32567e1f16ec",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T07:33:59Z",
-                            "id": "kyc-7d279c37-5fbb-4720-8492-ad516eda0689",
-                            "modifiedAt": "2023-11-13T07:33:59Z",
-                            "personId": "per-aca96d44-6f1f-4bbd-8856-32567e1f16ec",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T07:33:59Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "chennai",
-                            "country": "IN",
-                            "line1": "2 anna salai, guduvanchery",
-                            "line2": "",
-                            "postalCode": "603202",
-                            "state": "TN"
-                          },
-                          "createdAt": "2023-11-13T07:12:23Z",
-                          "dateOfBirth": "1974-04-22",
-                          "email": "anand@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "Audreanne",
-                          "id": "per-a286bc34-7c39-470d-be34-a370b51fe924",
-                          "idNumber": "287656666",
-                          "idType": "passport",
-                          "kyc": {
-                            "createdAt": "2023-11-13T07:12:24Z",
-                            "id": "kyc-9cc75f4f-f0a5-4839-92ac-412b8a71f3d7",
-                            "modifiedAt": "2023-11-13T07:12:24Z",
-                            "personId": "per-a286bc34-7c39-470d-be34-a370b51fe924",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "ru_RU",
-                          "lastName": "Doe",
-                          "metadata": null,
-                          "middleName": "Mason",
-                          "modifiedAt": "2023-11-13T07:18:19Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Abington",
-                            "country": "US",
-                            "line1": "777 Brockton Ave",
-                            "line2": "",
-                            "postalCode": "02351-2111",
-                            "state": "MA"
-                          },
-                          "createdAt": "2023-11-06T16:59:16Z",
-                          "dateOfBirth": "1974-01-01",
-                          "email": "avinashc@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "vdpmc",
-                          "id": "per-719df226-cde7-4ece-aad4-f1ba87e0e502",
-                          "idNumber": "262446848",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-06T16:59:19Z",
-                            "id": "kyc-666bf418-9573-4198-b938-becbb40220e1",
-                            "modifiedAt": "2023-11-06T16:59:19Z",
-                            "personId": "per-719df226-cde7-4ece-aad4-f1ba87e0e502",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "en",
-                          "lastName": "kff",
-                          "metadata": null,
-                          "middleName": "Charles",
-                          "modifiedAt": "2023-11-06T16:59:16Z",
-                          "phone": "+12624454608",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Abington",
-                            "country": "US",
-                            "line1": "777 Brockton Ave",
-                            "line2": "",
-                            "postalCode": "02351-2111",
-                            "state": "MA"
-                          },
-                          "createdAt": "2023-11-06T16:57:28Z",
-                          "dateOfBirth": "1974-01-01",
-                          "email": "avinashc@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "ivdfo",
-                          "id": "per-b40d65a6-5412-47db-b1da-5c5f9fe3259c",
-                          "idNumber": "262449773",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-06T16:57:30Z",
-                            "id": "kyc-14a842df-3dfd-48fe-92c5-4731af6dae6b",
-                            "modifiedAt": "2023-11-06T16:57:30Z",
-                            "personId": "per-b40d65a6-5412-47db-b1da-5c5f9fe3259c",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "en",
-                          "lastName": "dbk",
-                          "metadata": null,
-                          "middleName": "Charles",
-                          "modifiedAt": "2023-11-06T16:57:28Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Abington",
-                            "country": "US",
-                            "line1": "777 Brockton Ave",
-                            "line2": "",
-                            "postalCode": "02351-2111",
-                            "state": "MA"
-                          },
-                          "createdAt": "2023-11-06T16:50:18Z",
-                          "dateOfBirth": "1974-01-01",
-                          "email": "avinashc@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "hvfuu",
-                          "id": "per-84a8a709-1e82-4847-aeee-6d694ad3ed37",
-                          "idNumber": "262440605",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-06T16:50:22Z",
-                            "id": "kyc-73a85fcb-dffc-4828-a26a-69a2cee214b1",
-                            "modifiedAt": "2023-11-06T16:50:22Z",
-                            "personId": "per-84a8a709-1e82-4847-aeee-6d694ad3ed37",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "en",
-                          "lastName": "kwo",
-                          "metadata": null,
-                          "middleName": "Charles",
-                          "modifiedAt": "2023-11-06T16:50:18Z",
-                          "phone": "+12624462100",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Abington",
-                            "country": "US",
-                            "line1": "777 Brockton Ave",
-                            "line2": "",
-                            "postalCode": "02351-2111",
-                            "state": "MA"
-                          },
-                          "createdAt": "2023-11-01T19:24:40Z",
-                          "dateOfBirth": "1974-01-01",
-                          "email": "avinashc@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "LCB SOLID",
-                          "id": "per-d0004dc7-190e-4685-bab2-875ce2771980",
-                          "idNumber": "262441248",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-01T19:24:42Z",
-                            "id": "kyc-8a3d32ff-bafd-4b22-8c32-13736918f257",
-                            "modifiedAt": "2023-11-01T19:45:46Z",
-                            "personId": "per-d0004dc7-190e-4685-bab2-875ce2771980",
-                            "results": {
-                              "address": "approved",
-                              "bank": "approved",
-                              "dateOfBirth": "approved",
-                              "fraud": "approved",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1401",
-                                  "description": "Phone number mismatch"
-                                }
-                              ]
-                            },
-                            "status": "approved"
-                          },
-                          "language": "en",
-                          "lastName": "Testing",
-                          "metadata": null,
-                          "middleName": "",
-                          "modifiedAt": "2023-11-01T19:24:40Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Abington",
-                            "country": "US",
-                            "line1": "777 Brockton Ave",
-                            "line2": "",
-                            "postalCode": "02351-2111",
-                            "state": "MA"
-                          },
-                          "createdAt": "2023-11-01T18:03:29Z",
-                          "dateOfBirth": "1974-01-01",
-                          "email": "avinashc@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "SOLID LCB",
-                          "id": "per-3d96d695-e230-434f-9f8f-49fb9c90f8a2",
-                          "idNumber": "262441247",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-01T18:03:31Z",
-                            "id": "kyc-e057cae7-faa7-4df0-8198-af33e79324f8",
-                            "modifiedAt": "2023-11-01T18:03:31Z",
-                            "personId": "per-3d96d695-e230-434f-9f8f-49fb9c90f8a2",
-                            "results": {
-                              "address": "notStarted",
-                              "bank": "notStarted",
-                              "dateOfBirth": "notStarted",
-                              "fraud": "notStarted",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": []
-                            },
-                            "status": "notStarted"
-                          },
-                          "language": "en",
-                          "lastName": "Testing",
-                          "metadata": null,
-                          "middleName": "",
-                          "modifiedAt": "2023-11-01T18:03:29Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
-                          "status": "active"
-                        },
-                        {
-                          "address": {
-                            "addressType": "mailing",
-                            "city": "Abington",
-                            "country": "US",
-                            "line1": "777 Brockton Ave",
-                            "line2": "",
-                            "postalCode": "02351-2111",
-                            "state": "MA"
-                          },
-                          "createdAt": "2023-11-01T08:19:01Z",
-                          "dateOfBirth": "1990-01-01",
-                          "email": "test@solidfi.com",
-                          "emailVerified": false,
-                          "firstName": "SolidLCB",
-                          "id": "per-be0a1dc7-4d20-44cd-82ea-5a951118b9ce",
-                          "idNumber": "999999999",
-                          "idType": "ssn",
-                          "kyc": {
-                            "createdAt": "2023-11-01T08:19:03Z",
-                            "id": "kyc-277acccd-756c-4adc-b0c8-d55f44c0d678",
-                            "modifiedAt": "2023-11-01T08:22:35Z",
-                            "personId": "per-be0a1dc7-4d20-44cd-82ea-5a951118b9ce",
-                            "results": {
-                              "address": "approved",
-                              "bank": "approved",
-                              "dateOfBirth": "approved",
-                              "fraud": "approved",
-                              "idv": "notStarted"
-                            },
-                            "reviewCode": "",
-                            "reviewMessage": "",
-                            "reviewReasons": {
-                              "address": [],
-                              "bank": [],
-                              "dateOfBirth": [],
-                              "fraud": [],
-                              "idv": [],
-                              "other": [
-                                {
-                                  "code": "R1401",
-                                  "description": "Phone number mismatch"
-                                }
-                              ]
-                            },
-                            "status": "approved"
-                          },
-                          "language": "en",
-                          "lastName": "VBA",
-                          "metadata": null,
-                          "middleName": "",
-                          "modifiedAt": "2023-11-01T08:19:01Z",
-                          "phone": "+15555555555",
-                          "phoneVerified": true,
-                          "programId": "prg-ffa511da-1adc-4603-b845-173b895a33f6",
+                          "metadata": {},
                           "status": "active"
                         }
-                      ],
-                      "total": 38
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string",
+                      "example": "req-8eeb74d4-c745-4508-9698-c32a68ef79aa"
+                    },
+                    "method": {
+                      "type": "string",
+                      "example": "GET"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "example": 401
+                    },
+                    "code": {
+                      "type": "string",
+                      "example": "EC_APIKEY_NOT_FOUND"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "unauthorized"
+                    },
+                    "sysMessage": {
+                      "type": "string",
+                      "example": "invalid api key"
+                    },
+                    "programId": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "env": {
+                      "type": "string",
+                      "example": "dev"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2024-02-26T17:16:44Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Program not found",
+            "content": {
+              "text/plain": {
+                "example": "404 Page Not Found"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "requestId": {
+                      "type": "string",
+                      "example": "req-8eeb74d4-c745-4508-9698-c32a68ef79aa"
+                    },
+                    "method": {
+                      "type": "string",
+                      "example": "GET"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "example": 500
+                    },
+                    "code": {
+                      "type": "string",
+                      "example": "EC_UNSPECIFIED"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "panic: runtime error"
+                    },
+                    "sysMessage": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "programId": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "env": {
+                      "type": "string",
+                      "example": "dev"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2024-02-26T17:16:44Z"
                     }
                   }
                 }
