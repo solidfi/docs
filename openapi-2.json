@@ -1,0 +1,2192 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Solid v2",
+      "version": "1.0.0",
+      "contact": {}
+    },
+    "servers": [
+      {
+        "url": "{base_url}"
+      },
+      {
+        "url": "https://api.solidfi.com"
+      }
+    ],
+    "paths": {
+      "/v2/master_account/{master_account_id}": {
+        "get": {
+          "tags": [
+            "Master Accounts"
+          ],
+          "summary": "Retrieve a Master Account",
+          "description": "Retrieve a Master Account",
+          "operationId": "retrieveAMasterAccount",
+          "parameters": [
+            {
+              "name": "api_key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Retrieve a Master Account",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Retrieve a Master Account": {
+                      "value": "{\n    \"id\": {{master_account_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"label\": \"Payments Account\",\n    \"available_balance\": \"104100.41\",\n    \"pending_credits\": \"1198.50\",\n    \"pending_debits\": \"390.10\",\n    \"account_number\": \"9545931209\",\n    \"routing_number\": \"123321123\",\n    \"sponsor_bank\": \"Sponsor Bank\",\n    \"currency\": \"usd\",\n    \"external_reference_id\": \"XV-H27LGD-FX\",\n    \"purpose\": \"Payment Ops Master Account\",\n    \"attachments\": [\n        {\n            \"label\": \"flow of funds doc\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"master_account_code\": \"001\"\n    },\n    \"status\": \"open\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-02T21:00:00Z\",\n        \"deactivated_at\": \"2024-04-03T21:00:00Z\"\n    },\n    \"config\": {\n        \"payment\": {{payment_config_id}},\n        \"card\": {{card_config_id}},\n        \"sub_account\": {{sub_account_config_id}}\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "parameters": [
+          {
+            "name": "master_account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "/v2/master_account": {
+        "get": {
+          "tags": [
+            "Master Accounts"
+          ],
+          "summary": "List all Master Accounts",
+          "description": "List all Master Accounts",
+          "operationId": "listAllMasterAccounts",
+          "parameters": [
+            {
+              "name": "master_account_holder_id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "example": "{{master_account_holder_id}}"
+              }
+            },
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "List all Master Accounts",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "List all Master Accounts": {
+                      "value": "{\n    \"data\": [\n        {\n            \"id\": {{master_account_id}},\n            \"client_id\": {{client_id}},\n            \"master_account_holder_id\": {{master_account_holder_id}},\n            \"label\": \"Payments Account\",\n            \"available_balance\": \"104100.41\",\n            \"pending_credits\": \"1198.50\",\n            \"pending_debits\": \"390.10\",\n            \"account_number\": \"9545931209\",\n            \"routing_number\": \"123321123\",\n            \"sponsor_bank\": \"Sponsor Bank\",\n            \"currency\": \"usd\",\n            \"external_reference_id\": \"XV-H27LGD-FX\",\n            \"purpose\": \"Payment Ops Master Account\",\n            \"attachments\": [\n                {\n                    \"label\": \"flow of funds doc\",\n                    \"id\": {{attachment_id}},\n                    \"created_at\": \"2024-04-01T21:00:00Z\"\n                }\n            ],\n            \"metadata\": {\n                \"master_account_code\": \"001\"\n            },\n            \"status\": \"open\",\n            \"timestamps\": {\n                \"created_at\": \"2024-04-01T21:00:00Z\",\n                \"updated_at\": \"2024-04-02T21:00:00Z\",\n                \"deactivated_at\": \"2024-04-03T21:00:00Z\"\n            },\n            \"config\": {\n                \"payment\": {{payment_config_id}},\n                \"card\": {{card_config_id}},\n                \"sub_account\": {{sub_account_config_id}}\n            }\n        }\n    ],\n    \"has_more\": \"true\",\n    \"starting_after\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\",\n    \"ending_before\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\"\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        }
+      },
+      "/v2/sub_account_holder": {
+        "get": {
+          "tags": [
+            "Sub Account Holders"
+          ],
+          "summary": "List all Sub Account Holders",
+          "description": "List all Sub Account Holders",
+          "operationId": "listAllSubAccountHolders",
+          "parameters": [
+            {
+              "name": "master_account_id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "example": "{{master_account_id}}"
+              }
+            },
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "List all Sub Account Holders",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "List all Sub Account Holders": {
+                      "value": "{\n    \"data\": [\n        {\n            \"id\": {{sub_account_holder_id}},\n            \"client_id\": {{client_id}},\n            \"master_account_holder_id\": {{master_account_holder_id}},\n            \"master_account_id\": {{master_account_id}},\n            \"type\": \"person\",\n            \"person\": {\n                \"first_name\": \"Jane\",\n                \"last_name\": \"Doe\",\n                \"id_type\": \"ssn\",\n                \"id_number\": \"223913234\",\n                \"date_of_birth\": \"1974-01-25\",\n                \"phone\": \"+19418405843\",\n                \"email\": \"jane.doe@gmail.com\",\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                }\n            },\n            \"verification\": {\n                \"status\": \"pass\",\n                \"method\": \"persona\",\n                \"url\": \"https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV\"\n            },\n            \"ofac\": {\n                \"status\": \"pass\",\n                \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n            },\n            \"external_reference_id\": \"TW-9L1L2-UVV\",\n            \"purpose\": \"Ace sub-account holder\",\n            \"attachments\": [\n                {\n                    \"label\": \"formation\",\n                    \"id\": {{attachment_id}},\n                    \"created_at\": \"2024-04-01T21:00:00Z\"\n                }\n            ],\n            \"metadata\": {\n                \"customer_code\": \"1501\"\n            },\n            \"status\": \"activated\",\n            \"timestamps\": {\n                \"created_at\": \"2024-04-01T21:00:00Z\",\n                \"updated_at\": \"2024-04-01T21:00:00Z\"\n            }\n        }\n    ],\n    \"has_more\": \"true\",\n    \"starting_after\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\",\n    \"ending_before\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\"\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "post": {
+          "tags": [
+            "Sub Account Holders"
+          ],
+          "summary": "Create a Sub Account Holder",
+          "description": "Create a Sub Account Holder",
+          "operationId": "createASubAccountHolder",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Create a Sub Account Holder": {
+                    "value": "{\n    \"master_account_id\": {{master_account_id}},\n    \"type\": \"person\",\n    \"person\": {\n        \"first_name\": \"Jane\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"jane.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"verification\": {\n        \"status\": \"pass\",\n        \"method\": \"persona\",\n        \"url\": \"https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV\"\n    }\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Create a Sub Account Holder",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Create a Sub Account Holder": {
+                      "value": "{\n  \"id\": {{sub_account_holder_id}},\n  \"client_id\": {{client_id}},\n  \"master_account_holder_id\": {{master_account_holder_id}},\n  \"master_account_id\": {{master_account_id}},\n  \"type\": \"person\",\n  \"person\": {\n    \"first_name\": \"Jane\",\n    \"last_name\": \"Doe\",\n    \"id_type\": \"ssn\",\n    \"id_number\": \"223913234\",\n    \"date_of_birth\": \"1974-01-25\",\n    \"phone\": \"+19418405843\",\n    \"email\": \"jane.doe@gmail.com\",\n    \"address\": {\n      \"line1\": \"123 Main St\",\n      \"line2\": \"\",\n      \"city\": \"New York\",\n      \"state\": \"NY\",\n      \"country\": \"US\",\n      \"postal_code\": \"10001\"\n    }\n  },\n  \"verification\": {\n    \"status\": \"pass\",\n    \"method\": \"persona\",\n    \"url\": \"https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV\"\n  },\n  \"ofac\": {\n    \"status\": \"pass\",\n    \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n  },\n  \"external_reference_id\": \"TW-9L1L2-UVV\",\n  \"purpose\": \"Ace sub-account holder\",\n  \"attachments\": [\n    {\n      \"label\": \"formation\",\n      \"id\": {{attachment_id}},\n      \"created_at\": \"2024-04-01T21:00:00Z\"\n    }\n  ],\n  \"metadata\": {\n    \"customer_code\": \"1501\"\n  },\n  \"status\": \"activated\",\n  \"timestamps\": {\n    \"created_at\": \"2024-04-01T21:00:00Z\",\n    \"updated_at\": \"2024-04-01T21:00:00Z\"\n  }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        }
+      },
+      "/v2/sub_account_holder/{sub_account_holder_id}": {
+        "get": {
+          "tags": [
+            "Sub Account Holders"
+          ],
+          "summary": "Retrieve a Sub Account Holder",
+          "description": "Retrieve a Sub Account Holder",
+          "operationId": "retrieveASubAccountHolder",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Retrieve a Sub Account Holder",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Retrieve a Sub Account Holder": {
+                      "value": "{\n    \"id\": {{sub_account_holder_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"type\": \"person\",\n    \"person\": {\n        \"first_name\": \"Jane\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223913234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"jane.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"verification\": {\n        \"status\": \"pass\",\n        \"method\": \"persona\",\n        \"url\": \"https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV\"\n    },\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"external_reference_id\": \"TW-9L1L2-UVV\",\n    \"purpose\": \"Ace sub-account holder\",\n    \"attachments\": [\n        {\n            \"label\": \"formation\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"customer_code\": \"1501\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "patch": {
+          "tags": [
+            "Sub Account Holders"
+          ],
+          "summary": "Update a Sub Account Holder",
+          "description": "Update a Sub Account Holder",
+          "operationId": "updateASubAccountHolder",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "person": {
+                      "type": "object",
+                      "properties": {
+                        "first_name": {
+                          "type": "string",
+                          "example": "Johnson"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Update a Sub Account Holder": {
+                    "value": {
+                      "person": {
+                        "first_name": "Johnson"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Update a Sub Account Holder",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Update a Sub Account Holder": {
+                      "value": "{\n    \"id\": {{sub_account_holder_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"type\": \"person\",\n    \"person\": {\n        \"first_name\": \"Johnson\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223913234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"jane.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"verification\": {\n        \"status\": \"pass\",\n        \"method\": \"persona\",\n        \"url\": \"https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV\"\n    },\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"external_reference_id\": \"TW-9L1L2-UVV\",\n    \"purpose\": \"Ace sub-account holder\",\n    \"attachments\": [\n        {\n            \"label\": \"formation\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"customer_code\": \"1501\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "parameters": [
+          {
+            "name": "sub_account_holder_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "/v2/sub_account": {
+        "get": {
+          "tags": [
+            "Sub Accounts"
+          ],
+          "summary": "List all Sub Accounts",
+          "description": "List all Sub Accounts",
+          "operationId": "listAllSubAccounts",
+          "parameters": [
+            {
+              "name": "sub_account_holder_id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "example": "{{sub_account_holder_id}}"
+              }
+            },
+            {
+              "name": "master_account_id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "example": "{{master_account_id}}"
+              }
+            },
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "List all Sub Accounts",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "List all Sub Accounts": {
+                      "value": "{\n    \"data\": [\n        {\n            \"id\": {{sub_account_id}},\n            \"client_id\": {{client_id}},\n            \"master_account_holder_id\": {{master_account_holder_id}},\n            \"master_account_id\": {{master_account_id}},\n            \"sub_account_holder_id\": {{sub_account_holder_id}},\n            \"sub_account_holder_name\": \"Ace LLC\",\n            \"label\": \"Ace payments\",\n            \"type\": \"cash\",\n            \"account_number\": \"9540861337293709\",\n            \"routing_number\": \"123206972\",\n            \"available_balance\": \"1000.00\",\n            \"pending_credits\": \"250.00\",\n            \"pending_debits\": \"100.00\",\n            \"currency\": \"usd\",\n            \"external_reference_id\": \"XVH-27LGDFX\",\n            \"attachments\": [\n                {\n                    \"label\": \"contract\",\n                    \"id\": {{attachment_id}},\n                    \"created_at\": \"2024-04-01T21:00:00Z\"\n                }\n            ],\n            \"purpose\": \"Sub account to pay offshore dev team\",\n            \"metadata\": {\n                \"customer_code\": \"908\"\n            },\n            \"status\": \"open\",\n            \"timestamps\": {\n                \"created_at\": \"2024-04-01T21:00:00Z\",\n                \"updated_at\": \"2024-04-01T21:00:00Z\"\n            }\n        }\n    ],\n    \"has_more\": \"true\",\n    \"starting_after\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\",\n    \"ending_before\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\"\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "post": {
+          "tags": [
+            "Sub Accounts"
+          ],
+          "summary": "Create a Sub Account",
+          "description": "Create a Sub Account",
+          "operationId": "createASubAccount",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Create a Sub Account": {
+                    "value": "{\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"label\": \"Ace payments\",\n    \"type\": \"cash\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Create a Sub Account",
+              "headers": {
+                "Connection": {
+                  "schema": {
+                    "type": "string",
+                    "example": "keep-alive"
+                  }
+                },
+                "Content-Length": {
+                  "schema": {
+                    "type": "string",
+                    "example": "0"
+                  }
+                },
+                "Via": {
+                  "schema": {
+                    "type": "string",
+                    "example": "1.1 a821cc058353c1317806ae362898a2d2.cloudfront.net (CloudFront)"
+                  }
+                },
+                "X-Amz-Cf-Id": {
+                  "schema": {
+                    "type": "string",
+                    "example": "3B7-bvRcLEhA6u1l-lUs7H8kIvo0c2Dfc7stGxp2zzi2r23Og9g6OQ=="
+                  }
+                },
+                "X-Amz-Cf-Pop": {
+                  "schema": {
+                    "type": "string",
+                    "example": "SFO5-P1"
+                  }
+                },
+                "X-Cache": {
+                  "schema": {
+                    "type": "string",
+                    "example": "Error from cloudfront"
+                  }
+                },
+                "date": {
+                  "schema": {
+                    "type": "string",
+                    "example": "Sun, 19 May 2024 23:44:48 GMT"
+                  }
+                },
+                "server": {
+                  "schema": {
+                    "type": "string",
+                    "example": "istio-envoy"
+                  }
+                }
+              },
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Create a Sub Account": {
+                      "value": "{\n    \"id\": {{sub_account_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_holder_name\": \"Ace LLC\",\n    \"label\": \"Ace payments\",\n    \"type\": \"cash\",\n    \"account_number\": \"9540861337293709\",\n    \"routing_number\": \"123206972\",\n    \"available_balance\": \"0.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"currency\": \"usd\",\n    \"external_reference_id\": \"XVH-27LGDFX\",\n    \"attachments\": [\n        {\n            \"label\": \"contract\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"purpose\": \"Sub account to pay offshore dev team\",\n    \"metadata\": {\n        \"customer_code\": \"908\"\n    },\n    \"status\": \"open\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        }
+      },
+      "/v2/sub_account/{sub_account_id}": {
+        "get": {
+          "tags": [
+            "Sub Accounts"
+          ],
+          "summary": "Retrieve a Sub Account",
+          "description": "Retrieve a Sub Account",
+          "operationId": "retrieveASubAccount",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Retrieve a Sub Account",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Retrieve a Sub Account": {
+                      "value": "{\n    \"id\": {{sub_account_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_holder_name\": \"Ace LLC\",\n    \"label\": \"Ace PayOps\",\n    \"type\": \"cash\",\n    \"account_number\": \"9540861337293709\",\n    \"routing_number\": \"123206972\",\n    \"available_balance\": \"1000.00\",\n    \"pending_credits\": \"250.00\",\n    \"pending_debits\": \"100.00\",\n    \"currency\": \"usd\",\n    \"external_reference_id\": \"XVH-27LGDFX\",\n    \"attachments\": [\n        {\n            \"label\": \"contract\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"purpose\": \"Sub account to pay offshore dev team\",\n    \"metadata\": {\n        \"customer_code\": \"908\"\n    },\n    \"status\": \"open\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "patch": {
+          "tags": [
+            "Sub Accounts"
+          ],
+          "summary": "Update a Sub Account",
+          "description": "Update a Sub Account",
+          "operationId": "updateASubAccount",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "example": "Ace PayOps"
+                    }
+                  }
+                },
+                "examples": {
+                  "Update a Sub Account": {
+                    "value": {
+                      "label": "Ace PayOps"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Update a Sub Account",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Update a Sub Account": {
+                      "value": "{\n    \"id\": {{sub_account_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_holder_name\": \"Ace LLC\",\n    \"label\": \"Ace PayOps\",\n    \"type\": \"cash\",\n    \"account_number\": \"9540861337293709\",\n    \"routing_number\": \"123206972\",\n    \"available_balance\": \"1000.00\",\n    \"pending_credits\": \"250.00\",\n    \"pending_debits\": \"100.00\",\n    \"currency\": \"usd\",\n    \"external_reference_id\": \"XVH-27LGDFX\",\n    \"attachments\": [\n        {\n            \"label\": \"contract\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"purpose\": \"Sub account to pay offshore dev team\",\n    \"metadata\": {\n        \"customer_code\": \"908\"\n    },\n    \"status\": \"open\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "parameters": [
+          {
+            "name": "sub_account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "/v2/counterparty": {
+        "get": {
+          "tags": [
+            "Counterparties"
+          ],
+          "summary": "List all Counterparties",
+          "description": "List all Counterparties",
+          "operationId": "listAllCounterparties",
+          "parameters": [
+            {
+              "name": "sub_account_id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "example": "{{sub_account_id}}"
+              }
+            },
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "List all Counterparties",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "List all Counterparties": {
+                      "value": "{\n    \"data\": [\n        {\n            \"id\": {{counterparty_id}},\n            \"client_id\": {{client_id}},\n            \"master_account_holder_id\": {{master_account_holder_id}},\n            \"master_account_id\": {{master_account_id}},\n            \"sub_account_holder_id\": {{sub_account_holder_id}},\n            \"sub_account_id\": {{sub_account_id}},\n            \"label\": \"Utilities\",\n            \"type\": \"person\",\n            \"person\": {\n                \"first_name\": \"John\",\n                \"last_name\": \"Doe\",\n                \"id_type\": \"ssn\",\n                \"id_number\": \"223902234\",\n                \"date_of_birth\": \"1974-01-25\",\n                \"phone\": \"+19418405843\",\n                \"email\": \"john.doe@gmail.com\",\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                }\n            },\n            \"business\": {\n                \"legal_name\": \"NewCo LLC\",\n                \"dba\": \"NewCo\",\n                \"entity_type\": \"limited_liability_company\",\n                \"id_type\": \"ein\",\n                \"id_number\": \"187654321\",\n                \"phone\": \"+16604491146\",\n                \"email\": \"support@newco.com\",\n                \"formation_date\": \"2018-02-18\",\n                \"address\": {\n                    \"line1\": \"456 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                },\n                \"members\": [\n                    {\n                        \"first_name\": \"John\",\n                        \"last_name\": \"Doe\",\n                        \"id_type\": \"ssn\",\n                        \"id_number\": \"223902234\",\n                        \"date_of_birth\": \"1974-01-25\",\n                        \"phone\": \"+19418405843\",\n                        \"email\": \"john.doe@gmail.com\",\n                        \"address\": {\n                            \"line1\": \"123 Main St\",\n                            \"line2\": \"\",\n                            \"city\": \"New York\",\n                            \"state\": \"NY\",\n                            \"country\": \"US\",\n                            \"postal_code\": \"10001\"\n                        },\n                        \"ownership\": \"50.00\",\n                        \"title\": \"CEO\",\n                        \"control_person\": true\n                    }\n                ]\n            },\n            \"intra_account\": {\n                \"sub_account_number\": \"95483674098723\",\n                \"sub_account_id\": \"sub_cda1e562657c41e553104b10aad3fe70\"\n            },\n            \"ach\": {\n                \"account_number\": \"98324502\",\n                \"routing_number\": \"121042882\",\n                \"account_type\": \"business_checking\",\n                \"bank_name\": \"Wells Fargo\",\n                \"verification_status\": \"verified\"\n            },\n            \"domestic_wire\": {\n                \"account_number\": \"98324502\",\n                \"routing_number\": \"121042882\",\n                \"account_type\": \"business_checking\",\n                \"bank_name\": \"Wells Fargo\"\n            },\n            \"international_wire\": {\n                \"account_number\": \"920020006167511\",\n                \"beneficiary_bank\": {\n                    \"identifier_code\": \"ICICINBBNRI\",\n                    \"name\": \"ICICI Bank\",\n                    \"address\": {\n                        \"line1\": \"256 Main St\",\n                        \"line2\": \"\",\n                        \"city\": \"Bengaluru\",\n                        \"state\": \"KA\",\n                        \"country\": \"IN\",\n                        \"postal_code\": \"900009\"\n                    }\n                },\n                \"correspondent_bank\": {\n                    \"identifier_code\": \"SCBLUS33XXX\",\n                    \"name\": \"STANDARD CHARTERED BANK\",\n                    \"address\": {\n                        \"line1\": \"1095 12th Ave\",\n                        \"line2\": \"\",\n                        \"city\": \"New York\",\n                        \"state\": \"NY\",\n                        \"country\": \"US\",\n                        \"postal_code\": \"10001\"\n                    }\n                }\n            },\n            \"rtp\": {\n                \"account_number\": \"98324502\",\n                \"routing_number\": \"121042882\",\n                \"account_type\": \"business_checking\",\n                \"bank_name\": \"Wells Fargo\",\n                \"verification_status\": \"verified\"\n            },\n            \"fednow\": {\n                \"account_number\": \"98324502\",\n                \"routing_number\": \"121042882\",\n                \"account_type\": \"business_checking\",\n                \"bank_name\": \"Wells Fargo\",\n                \"verification_status\": \"verified\"\n            },\n            \"check\": {\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                }\n            },\n            \"debit_card\": {\n                \"card_number\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n                \"last4\": \"9990\",\n                \"expiry_month\": \"10\",\n                \"expiry_year\": \"2024\",\n                \"cvv\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                },\n                \"pull_enabled\": true,\n                \"push_enabled\": true\n            },\n            \"purpose\": \"Offshore dev center\",\n            \"external_reference_id\": \"TW-9L1L2-UVV\",\n            \"ofac\": {\n                \"status\": \"pass\",\n                \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n            },\n            \"attachments\": [\n                {\n                    \"label\": \"Dev Contract\",\n                    \"id\": {{attachment_id}},\n                    \"created_at\": \"2024-04-01T21:00:00Z\"\n                }\n            ],\n            \"metadata\": {\n                \"vendor_id\": \"VID-0987ACR\"\n            },\n            \"status\": \"activated\",\n            \"timestamps\": {\n                \"created_at\": \"2024-04-01T21:00:00Z\",\n                \"updated_at\": \"2024-04-01T21:00:00Z\"\n            }\n        }\n    ],\n    \"has_more\": \"true\",\n    \"starting_after\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\",\n    \"ending_before\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\"\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "post": {
+          "tags": [
+            "Counterparties"
+          ],
+          "summary": "Create a Counterparty",
+          "description": "Create a Counterparty",
+          "operationId": "createACounterparty",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Create a Counterparty": {
+                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"label\": \"Development Vendor\",\n    \"type\": \"person\",\n    \"person\": {\n        \"first_name\": \"John\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"intra_account\": {\n        \"sub_account_number\": \"95483674098723\",\n        \"sub_account_id\": \"sub_cda1e562657c41e553104b10aad3fe70\"\n    },\n    \"ach\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"rtp\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"domestic_wire\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\"\n    },\n    \"international_wire\": {\n        \"account_number\": \"920020006167511\",\n        \"beneficiary_bank\": {\n            \"identifier_code\": \"ICICINBBNRI\",\n            \"name\": \"ICICI Bank\",\n            \"address\": {\n                \"line1\": \"256 Main St\",\n                \"line2\": \"\",\n                \"city\": \"Bengaluru\",\n                \"state\": \"KA\",\n                \"country\": \"IN\",\n                \"postal_code\": \"900009\"\n            }\n        },\n        \"correspondent_bank\": {\n            \"identifier_code\": \"SCBLUS33XXX\",\n            \"name\": \"STANDARD CHARTERED BANK\",\n            \"address\": {\n                \"line1\": \"1095 12th Ave\",\n                \"line2\": \"\",\n                \"city\": \"New York\",\n                \"state\": \"NY\",\n                \"country\": \"US\",\n                \"postal_code\": \"10001\"\n            }\n        }\n    },\n    \"purpose\": \"Offshore dev center\",\n    \"external_reference_id\": \"TW-9L1L2-UVV\",\n    \"metadata\": {\n        \"vendor_id\": \"VID-0987ACR\"\n    }\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Create a Counterparty",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Create a Counterparty": {
+                      "value": "{\n    \"id\": {{counterparty_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"label\": \"Development Vendor\",\n    \"type\": \"person\",\n    \"person\": {\n        \"first_name\": \"John\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"business\": {\n        \"legal_name\": \"NewCo LLC\",\n        \"dba\": \"NewCo\",\n        \"entity_type\": \"limited_liability_company\",\n        \"id_type\": \"ein\",\n        \"id_number\": \"187654321\",\n        \"phone\": \"+16604491146\",\n        \"email\": \"support@newco.com\",\n        \"formation_date\": \"2018-02-18\",\n        \"address\": {\n            \"line1\": \"456 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"members\": [\n            {\n                \"first_name\": \"John\",\n                \"last_name\": \"Doe\",\n                \"id_type\": \"ssn\",\n                \"id_number\": \"223902234\",\n                \"date_of_birth\": \"1974-01-25\",\n                \"phone\": \"+19418405843\",\n                \"email\": \"john.doe@gmail.com\",\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                },\n                \"ownership\": \"50.00\",\n                \"title\": \"CEO\",\n                \"control_person\": true\n            }\n        ]\n    },\n    \"intra_account\": {\n        \"sub_account_number\": \"95483674098723\",\n        \"sub_account_id\": \"sub_cda1e562657c41e553104b10aad3fe70\"\n    },\n    \"ach\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"domestic_wire\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\"\n    },\n    \"international_wire\": {\n        \"account_number\": \"920020006167511\",\n        \"beneficiary_bank\": {\n            \"identifier_code\": \"ICICINBBNRI\",\n            \"name\": \"ICICI Bank\",\n            \"address\": {\n                \"line1\": \"256 Main St\",\n                \"line2\": \"\",\n                \"city\": \"Bengaluru\",\n                \"state\": \"KA\",\n                \"country\": \"IN\",\n                \"postal_code\": \"900009\"\n            }\n        },\n        \"correspondent_bank\": {\n            \"identifier_code\": \"SCBLUS33XXX\",\n            \"name\": \"STANDARD CHARTERED BANK\",\n            \"address\": {\n                \"line1\": \"1095 12th Ave\",\n                \"line2\": \"\",\n                \"city\": \"New York\",\n                \"state\": \"NY\",\n                \"country\": \"US\",\n                \"postal_code\": \"10001\"\n            }\n        }\n    },\n    \"rtp\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"fednow\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"check\": {\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"debit_card\": {\n        \"card_number\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n        \"last4\": \"9990\",\n        \"expiry_month\": \"10\",\n        \"expiry_year\": \"2024\",\n        \"cvv\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"pull_enabled\": true,\n        \"push_enabled\": true\n    },\n    \"purpose\": \"Offshore dev center\",\n    \"external_reference_id\": \"TW-9L1L2-UVV\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": [\n        {\n            \"label\": \"Dev Contract\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"vendor_id\": \"VID-0987ACR\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        }
+      },
+      "/v2/counterparty/{counterparty_id}": {
+        "get": {
+          "tags": [
+            "Counterparties"
+          ],
+          "summary": "Retrieve a Counterparty",
+          "description": "Retrieve a Counterparty",
+          "operationId": "retrieveACounterparty",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Retrieve a Counterparty",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Retrieve a Counterparty": {
+                      "value": "{\n    \"id\": {{counterparty_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"label\": \"Utilities\",\n    \"type\": \"person\",\n    \"person\": {\n        \"first_name\": \"John\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"business\": {\n        \"legal_name\": \"NewCo LLC\",\n        \"dba\": \"NewCo\",\n        \"entity_type\": \"limited_liability_company\",\n        \"id_type\": \"ein\",\n        \"id_number\": \"187654321\",\n        \"phone\": \"+16604491146\",\n        \"email\": \"support@newco.com\",\n        \"formation_date\": \"2018-02-18\",\n        \"address\": {\n            \"line1\": \"456 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"members\": [\n            {\n                \"first_name\": \"John\",\n                \"last_name\": \"Doe\",\n                \"id_type\": \"ssn\",\n                \"id_number\": \"223902234\",\n                \"date_of_birth\": \"1974-01-25\",\n                \"phone\": \"+19418405843\",\n                \"email\": \"john.doe@gmail.com\",\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                },\n                \"ownership\": \"50.00\",\n                \"title\": \"CEO\",\n                \"control_person\": true\n            }\n        ]\n    },\n    \"intra_account\": {\n        \"sub_account_number\": \"95483674098723\",\n        \"sub_account_id\": \"sub_cda1e562657c41e553104b10aad3fe70\"\n    },\n    \"ach\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"domestic_wire\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\"\n    },\n    \"international_wire\": {\n        \"account_number\": \"920020006167511\",\n        \"beneficiary_bank\": {\n            \"identifier_code\": \"ICICINBBNRI\",\n            \"name\": \"ICICI Bank\",\n            \"address\": {\n                \"line1\": \"256 Main St\",\n                \"line2\": \"\",\n                \"city\": \"Bengaluru\",\n                \"state\": \"KA\",\n                \"country\": \"IN\",\n                \"postal_code\": \"900009\"\n            }\n        },\n        \"correspondent_bank\": {\n            \"identifier_code\": \"SCBLUS33XXX\",\n            \"name\": \"STANDARD CHARTERED BANK\",\n            \"address\": {\n                \"line1\": \"1095 12th Ave\",\n                \"line2\": \"\",\n                \"city\": \"New York\",\n                \"state\": \"NY\",\n                \"country\": \"US\",\n                \"postal_code\": \"10001\"\n            }\n        }\n    },\n    \"rtp\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"fednow\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"check\": {\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"debit_card\": {\n        \"card_number\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n        \"last4\": \"9990\",\n        \"expiry_month\": \"10\",\n        \"expiry_year\": \"2024\",\n        \"cvv\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"pull_enabled\": true,\n        \"push_enabled\": true\n    },\n    \"purpose\": \"Offshore dev center\",\n    \"external_reference_id\": \"TW-9L1L2-UVV\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": [\n        {\n            \"label\": \"Dev Contract\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"vendor_id\": \"VID-0987ACR\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "patch": {
+          "tags": [
+            "Counterparties"
+          ],
+          "summary": "Update a Counterparty",
+          "description": "Update a Counterparty",
+          "operationId": "updateACounterparty",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "example": "Utilities"
+                    }
+                  }
+                },
+                "examples": {
+                  "Update a Counterparty": {
+                    "value": {
+                      "label": "Utilities"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Update a Counterparty",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Update a Counterparty": {
+                      "value": "{\n    \"id\": {{counterparty_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"label\": \"Utilities\",\n    \"type\": \"person\",\n    \"person\": {\n        \"first_name\": \"John\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"business\": {\n        \"legal_name\": \"NewCo LLC\",\n        \"dba\": \"NewCo\",\n        \"entity_type\": \"limited_liability_company\",\n        \"id_type\": \"ein\",\n        \"id_number\": \"187654321\",\n        \"phone\": \"+16604491146\",\n        \"email\": \"support@newco.com\",\n        \"formation_date\": \"2018-02-18\",\n        \"address\": {\n            \"line1\": \"456 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"members\": [\n            {\n                \"first_name\": \"John\",\n                \"last_name\": \"Doe\",\n                \"id_type\": \"ssn\",\n                \"id_number\": \"223902234\",\n                \"date_of_birth\": \"1974-01-25\",\n                \"phone\": \"+19418405843\",\n                \"email\": \"john.doe@gmail.com\",\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                },\n                \"ownership\": \"50.00\",\n                \"title\": \"CEO\",\n                \"control_person\": true\n            }\n        ]\n    },\n    \"intra_account\": {\n        \"sub_account_number\": \"95483674098723\",\n        \"sub_account_id\": \"sub_cda1e562657c41e553104b10aad3fe70\"\n    },\n    \"ach\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"domestic_wire\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\"\n    },\n    \"international_wire\": {\n        \"account_number\": \"920020006167511\",\n        \"beneficiary_bank\": {\n            \"identifier_code\": \"ICICINBBNRI\",\n            \"name\": \"ICICI Bank\",\n            \"address\": {\n                \"line1\": \"256 Main St\",\n                \"line2\": \"\",\n                \"city\": \"Bengaluru\",\n                \"state\": \"KA\",\n                \"country\": \"IN\",\n                \"postal_code\": \"900009\"\n            }\n        },\n        \"correspondent_bank\": {\n            \"identifier_code\": \"SCBLUS33XXX\",\n            \"name\": \"STANDARD CHARTERED BANK\",\n            \"address\": {\n                \"line1\": \"1095 12th Ave\",\n                \"line2\": \"\",\n                \"city\": \"New York\",\n                \"state\": \"NY\",\n                \"country\": \"US\",\n                \"postal_code\": \"10001\"\n            }\n        }\n    },\n    \"rtp\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"fednow\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"check\": {\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"debit_card\": {\n        \"card_number\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n        \"last4\": \"9990\",\n        \"expiry_month\": \"10\",\n        \"expiry_year\": \"2024\",\n        \"cvv\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"pull_enabled\": true,\n        \"push_enabled\": true\n    },\n    \"purpose\": \"Offshore dev center\",\n    \"external_reference_id\": \"TW-9L1L2-UVV\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": [\n        {\n            \"label\": \"Dev Contract\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"vendor_id\": \"VID-0987ACR\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "parameters": [
+          {
+            "name": "counterparty_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "/v2/card_holder": {
+        "get": {
+          "tags": [
+            "Card Holders"
+          ],
+          "summary": "List all Card Holders",
+          "description": "List all Card Holders",
+          "operationId": "listAllCardHolders",
+          "parameters": [
+            {
+              "name": "master_account_id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "example": "{{master_account_id}}"
+              }
+            },
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "List all Card Holders",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "List all Card Holders": {
+                      "value": "{\n    \"data\": [\n        {\n            \"id\": {{card_holder_id}},\n            \"client_id\": {{client_id}},\n            \"master_account_holder_id\": {{master_account_holder_id}},\n            \"master_account_id\": {{master_account_id}},\n            \"sub_account_holder_id\": {{sub_account_holder_id}},\n            \"sub_account_id\": {{sub_account_id}},\n            \"person\": {\n                \"first_name\": \"Johnson\",\n                \"last_name\": \"Doe\",\n                \"id_type\": \"ssn\",\n                \"id_number\": \"223902234\",\n                \"date_of_birth\": \"1974-01-25\",\n                \"phone\": \"+19418405843\",\n                \"email\": \"john.doe@gmail.com\",\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                }\n            },\n            \"external_reference_id\": \"6RPD1QW-W75\",\n            \"purpose\": \"Ace Sales Rep\",\n            \"ofac\": {\n                \"status\": \"pass\",\n                \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n            },\n            \"metadata\": {\n                \"designation\": \"Senior Sales Manager\",\n                \"employee_number\": \"77\"\n            },\n            \"attachments\": [\n                {\n                    \"label\": \"Employee Badge\",\n                    \"id\": {{attachment_id}},\n                    \"created_at\": \"2024-04-01T21:00:00Z\"\n                }\n            ],\n            \"status\": \"activated\",\n            \"timestamps\": {\n                \"created_at\": \"2024-04-01T21:00:00Z\",\n                \"updated_at\": \"2024-04-02T21:00:00Z\"\n            }\n        }\n    ],\n    \"has_more\": \"true\",\n    \"starting_after\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\",\n    \"ending_before\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\"\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "post": {
+          "tags": [
+            "Card Holders"
+          ],
+          "summary": "Create a Card Holder",
+          "description": "Create a Card Holder",
+          "operationId": "createACardHolder",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Create a Card Holder": {
+                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"person\": {\n        \"first_name\": \"John\",\n        \"middle_name\": \"\",\n        \"last_name\": \"Doe\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"external_reference_id\": \"6RPD1QW-W75\",\n    \"purpose\": \"Ace Sales Expense Card\",\n    \"metadata\": {\n        \"designation\": \"Senior Sales Manager\",\n        \"employee_number\": \"77\"\n    }\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Create a Card Holder",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Create a Card Holder": {
+                      "value": "{\n    \"id\": {{card_holder_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"person\": {\n        \"first_name\": \"John\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"external_reference_id\": \"6RPD1QW-W75\",\n    \"purpose\": \"Ace Sales Rep\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"metadata\": {\n        \"designation\": \"Senior Sales Manager\",\n        \"employee_number\": \"77\"\n    },\n    \"attachments\": [\n        {\n            \"label\": \"Employee Badge\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-02T21:00:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        }
+      },
+      "/v2/card_holder/{card_holder_id}": {
+        "get": {
+          "tags": [
+            "Card Holders"
+          ],
+          "summary": "Retrieve a Card Holder",
+          "description": "Retrieve a Card Holder",
+          "operationId": "retrieveACardHolder",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Retrieve a Card Holder",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Retrieve a Card Holder": {
+                      "value": "{\n    \"id\": {{card_holder_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"person\": {\n        \"first_name\": \"Johnson\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"external_reference_id\": \"6RPD1QW-W75\",\n    \"purpose\": \"Ace Sales Rep\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"metadata\": {\n        \"designation\": \"Senior Sales Manager\",\n        \"employee_number\": \"77\"\n    },\n    \"attachments\": [\n        {\n            \"label\": \"Employee Badge\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-02T21:00:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "patch": {
+          "tags": [
+            "Card Holders"
+          ],
+          "summary": "Update a Card Holder",
+          "description": "Update a Card Holder",
+          "operationId": "updateACardHolder",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "person": {
+                      "type": "object",
+                      "properties": {
+                        "first_name": {
+                          "type": "string",
+                          "example": "Johnson"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Update a Card Holder": {
+                    "value": {
+                      "person": {
+                        "first_name": "Johnson"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Update a Card Holder",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Update a Card Holder": {
+                      "value": "{\n    \"id\": {{card_holder_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"person\": {\n        \"first_name\": \"Johnson\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"external_reference_id\": \"6RPD1QW-W75\",\n    \"purpose\": \"Ace Sales Rep\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"metadata\": {\n        \"designation\": \"Senior Sales Manager\",\n        \"employee_number\": \"77\"\n    },\n    \"attachments\": [\n        {\n            \"label\": \"Employee Badge\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-02T21:00:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "parameters": [
+          {
+            "name": "card_holder_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "/v2/card": {
+        "get": {
+          "tags": [
+            "Cards"
+          ],
+          "summary": "List all Cards",
+          "description": "List all Cards",
+          "operationId": "listAllCards",
+          "parameters": [
+            {
+              "name": "sub_account_id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "example": "{{sub_account_id}}"
+              }
+            },
+            {
+              "name": "card_holder_id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "example": "{{card_holder_id}}"
+              }
+            },
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "List all Cards",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "List all Cards": {
+                      "value": "{\n    \"data\": [\n        {\n            \"id\": {{card_id}},\n            \"client_id\": {{client_id}},\n            \"master_account_holder_id\": {{master_account_holder_id}},\n            \"master_account_id\": {{master_account_id}},\n            \"sub_account_holder_id\": {{sub_account_holder_id}},\n            \"sub_account_id\": {{sub_account_id}},\n            \"cardholder_id\": {{card_holder_id}},\n            \"label\": \"Travel Expense Card\",\n            \"product\": \"business_spend\",\n            \"theme\": \"metallic\",\n            \"type\": \"physical\",\n            \"expiry_month\": \"12\",\n            \"expiry_year\": \"2022\",\n            \"last4\": \"5275\",\n            \"card_fullfilment\": {\n                \"embossing\": {\n                    \"cardholder_name\": \"John Doe\",\n                    \"business_name\": \"Ace Inc\"\n                },\n                \"shipping_address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                },\n                \"tracking\": {\n                    \"status\": \"delivered\",\n                    \"eta\": \"2024-05-02\",\n                    \"number\": \"1231233\",\n                    \"url\": \"https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224\",\n                    \"provider\": \"usps\"\n                }\n            },\n            \"controls\": {\n                \"allowed\": {\n                    \"merchants\": [],\n                    \"categories\": [],\n                    \"countries\": []\n                },\n                \"blocked\": {\n                    \"merchants\": [],\n                    \"categories\": [],\n                    \"countries\": []\n                },\n                \"limit\": {\n                    \"period\": \"daily\",\n                    \"max_spend_amount\": \"500.00\",\n                    \"max_spend_per_transaction\": \"100.00\",\n                    \"max_spend_count\": \"10\"\n                },\n                \"atm_enabled\": true\n            },\n            \"external_reference_id\": \"FSY52RAZ-4X\",\n            \"attachments\": [\n                {\n                    \"label\": \"United\",\n                    \"id\": \"att_a8d2b191fa0e960d8e49a4bfd320e07b\",\n                    \"created_at\": \"2024-04-01T21:00:00Z\"\n                }\n            ],\n            \"metadata\": {\n                \"description\": \"Sales Team Card\"\n            },\n            \"status\": \"activated\",\n            \"timestamps\": {\n                \"created_at\": \"2024-04-01T21:00:00Z\",\n                \"updated_at\": \"2024-04-02T21:00:00Z\"\n            }\n        }\n    ],\n    \"has_more\": \"true\",\n    \"starting_after\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\",\n    \"ending_before\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\"\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "post": {
+          "tags": [
+            "Cards"
+          ],
+          "summary": "Create a Card",
+          "description": "Create a Card",
+          "operationId": "createACard",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Create a Card": {
+                    "value": "{\n    \"cardholder_id\": {{card_holder_id}},\n    \"label\": \"Travel\",\n    \"product\": \"business_spend\",\n    \"theme\": \"metallic\",\n    \"type\": \"physical\",\n    \"card_fullfilment\": {\n        \"embossing\": {\n            \"cardholder_name\": \"John Doe\",\n            \"business_name\": \"Ace Inc\"\n        },\n        \"shipping_address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"controls\": {\n        \"limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_per_transaction\": \"100.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"atm_enabled\": true\n    },\n    \"external_reference_id\": \"FSY52RAZ-4X\",\n    \"metadata\": {\n        \"description\": \"Sales Team Card\"\n    }\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Create a Card",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Create a Card": {
+                      "value": "{\n    \"id\": {{card_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"cardholder_id\": {{card_holder_id}},\n    \"label\": \"Travel\",\n    \"product\": \"business_spend\",\n    \"theme\": \"metallic\",\n    \"type\": \"physical\",\n    \"expiry_month\": \"12\",\n    \"expiry_year\": \"2022\",\n    \"last4\": \"5275\",\n    \"card_fullfilment\": {\n        \"embossing\": {\n            \"cardholder_name\": \"John Doe\",\n            \"business_name\": \"Ace Inc\"\n        },\n        \"shipping_address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"tracking\": {\n            \"status\": \"delivered\",\n            \"eta\": \"2024-05-02\",\n            \"number\": \"1231233\",\n            \"url\": \"https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224\",\n            \"provider\": \"usps\"\n        }\n    },\n    \"controls\": {\n        \"allowed\": {\n            \"merchants\": [],\n            \"categories\": [],\n            \"countries\": []\n        },\n        \"blocked\": {\n            \"merchants\": [],\n            \"categories\": [],\n            \"countries\": []\n        },\n        \"limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_per_transaction\": \"100.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"atm_enabled\": true\n    },\n    \"external_reference_id\": \"FSY52RAZ-4X\",\n    \"attachments\": [\n        {\n            \"label\": \"United\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"description\": \"Sales Team Card\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-02T21:00:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        }
+      },
+      "/v2/card/{card_id}": {
+        "get": {
+          "tags": [
+            "Cards"
+          ],
+          "summary": "Retrieve a Card",
+          "description": "Retrieve a Card",
+          "operationId": "retrieveACard",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Retrieve a Card",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Retrieve a Card": {
+                      "value": "{\n    \"id\": {{card_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"cardholder_id\": {{card_holder_id}},\n    \"label\": \"Travel Expense Card\",\n    \"product\": \"business_spend\",\n    \"theme\": \"metallic\",\n    \"type\": \"physical\",\n    \"expiry_month\": \"12\",\n    \"expiry_year\": \"2022\",\n    \"last4\": \"5275\",\n    \"card_fullfilment\": {\n        \"embossing\": {\n            \"cardholder_name\": \"John Doe\",\n            \"business_name\": \"Ace Inc\"\n        },\n        \"shipping_address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"tracking\": {\n            \"status\": \"delivered\",\n            \"eta\": \"2024-05-02\",\n            \"number\": \"1231233\",\n            \"url\": \"https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224\",\n            \"provider\": \"usps\"\n        }\n    },\n    \"controls\": {\n        \"allowed\": {\n            \"merchants\": [],\n            \"categories\": [],\n            \"countries\": []\n        },\n        \"blocked\": {\n            \"merchants\": [],\n            \"categories\": [],\n            \"countries\": []\n        },\n        \"limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_per_transaction\": \"100.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"atm_enabled\": true\n    },\n    \"external_reference_id\": \"FSY52RAZ-4X\",\n    \"attachments\": [\n        {\n            \"label\": \"United\",\n            \"id\": \"att_a8d2b191fa0e960d8e49a4bfd320e07b\",\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"description\": \"Sales Team Card\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-02T21:00:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "patch": {
+          "tags": [
+            "Cards"
+          ],
+          "summary": "Update a Card",
+          "description": "Update a Card",
+          "operationId": "updateACard",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "example": "Travel Expense Card"
+                    }
+                  }
+                },
+                "examples": {
+                  "Update a Card": {
+                    "value": {
+                      "label": "Travel Expense Card"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Update a Card",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Update a Card": {
+                      "value": "{\n    \"id\": {{card_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"cardholder_id\": {{card_holder_id}},\n    \"label\": \"Travel Expense Card\",\n    \"product\": \"business_spend\",\n    \"theme\": \"metallic\",\n    \"type\": \"physical\",\n    \"expiry_month\": \"12\",\n    \"expiry_year\": \"2022\",\n    \"last4\": \"5275\",\n    \"card_fullfilment\": {\n        \"embossing\": {\n            \"cardholder_name\": \"John Doe\",\n            \"business_name\": \"Ace Inc\"\n        },\n        \"shipping_address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"tracking\": {\n            \"status\": \"delivered\",\n            \"eta\": \"2024-05-02\",\n            \"number\": \"1231233\",\n            \"url\": \"https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224\",\n            \"provider\": \"usps\"\n        }\n    },\n    \"controls\": {\n        \"allowed\": {\n            \"merchants\": [],\n            \"categories\": [],\n            \"countries\": []\n        },\n        \"blocked\": {\n            \"merchants\": [],\n            \"categories\": [],\n            \"countries\": []\n        },\n        \"limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_per_transaction\": \"100.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"atm_enabled\": true\n    },\n    \"external_reference_id\": \"FSY52RAZ-4X\",\n    \"attachments\": [\n        {\n            \"label\": \"United\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"description\": \"Sales Team Card\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-02T21:00:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "parameters": [
+          {
+            "name": "card_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "/v2/transaction": {
+        "get": {
+          "tags": [
+            "Transactions"
+          ],
+          "summary": "List all Transactions",
+          "description": "List all Transactions",
+          "operationId": "listAllTransactions",
+          "parameters": [
+            {
+              "name": "sub_account_id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "example": "{{sub_account_id}}"
+              }
+            },
+            {
+              "name": "master_account_id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "example": "{{master_account_id}}"
+              }
+            },
+            {
+              "name": "sub_account_holder_id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "example": "{{sub_account_holder_id}}"
+              }
+            },
+            {
+              "name": "master_account_holder_id",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "example": "{{master_account_holder_id}}"
+              }
+            },
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "List all Transactions",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "List all Transactions": {
+                      "value": "{\n    \"data\": [\n        {\n            \"id\": {{transaction_id}},\n            \"client_id\": {{client_id}},\n            \"master_account_holder_id\": {{master_account_holder_id}},\n            \"master_account_id\": {{master_account_id}},\n            \"sub_account_holder_id\": {{sub_account_holder_id}},\n            \"sub_account_id\": {{sub_account_id}},\n            \"status\": \"settled\",\n            \"amount\": \"1500.00\",\n            \"currency\": \"usd\",\n            \"direction\": \"credit\",\n            \"method\": \"ach\",\n            \"type\": \"push\",\n            \"message\": \"incoming\",\n            \"description\": \"May invoice from NewCo\",\n            \"available_balance\": \"1590.00\",\n            \"pending_credits\": \"230.00\",\n            \"pending_debits\": \"150.00\",\n            \"counterparty\": {\n                \"id\": {{counterparty_id}},\n                \"name\": \"NewCo Inc\",\n                \"verification_status\": \"verified\",\n                \"account_number\": \"98324502\",\n                \"routing_number\": \"121042882\",\n                \"account_type\": \"business_checking\",\n                \"bank_name\": \"Wells Fargo\",\n                \"beneficiary_bank\": null,\n                \"correspondent_bank\": null,\n                \"shipping_address\": null\n            },\n            \"ach\": {\n                \"effective_date\": \"2024-04-04\",\n                \"company_entry_description\": \"Payments\",\n                \"trace_number\": \"123112211\",\n                \"return_code\": \"\",\n                \"rta_id\": \"\"\n            },\n            \"parent_transaction_id\": \"\",\n            \"external_reference_id\": \"123-9088-2\",\n            \"purpose\": \"\",\n            \"ofac\": {\n                \"status\": \"pass\",\n                \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n            },\n            \"attachments\": null,\n            \"metadata\": {\n                \"invoice_number\": \"INV-AC989878\"\n            },\n            \"reconciliation\": {\n                \"status\": \"not_reconciled\",\n                \"master_account\": null,\n                \"sub_account\": [\n                    {\n                        \"id\": {{sub_account_id}},\n                        \"transaction_id\": {{transaction_id}},\n                        \"amount\": \"1500.00\"\n                    }\n                ]\n            },\n            \"timestamps\": {\n                \"created_at\": \"2024-04-04T11:06:00Z\",\n                \"originated_at\": \"2024-04-04T11:06:00Z\",\n                \"modified_at\": \"2024-04-04T11:06:00Z\"\n            }\n        }\n    ],\n    \"has_more\": \"true\",\n    \"starting_after\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\",\n    \"ending_before\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\"\n}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Transactions"
+          ],
+          "summary": "Sub Ledger a Transaction",
+          "description": "Sub Ledger a Transaction",
+          "operationId": "subLedgerATransaction",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Sub Ledger a Transaction": {
+                    "value": "{\n    \"master_account_id\": {{master_account_id}},\n    \"master_account_transaction_id\": {{transaction_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"amount\": \"1500.00\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Sub Ledger a Transaction",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Sub Ledger a Transaction": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"settled\",\n    \"amount\": \"1500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"ach\",\n    \"type\": \"push\",\n    \"message\": \"incoming\",\n    \"description\": \"May invoice from NewCo\",\n    \"available_balance\": \"1590.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"personal_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"ach\": {\n        \"effective_date\": \"2024-04-04\",\n        \"company_entry_description\": \"Payments\",\n        \"trace_number\": \"123112211\",\n        \"return_code\": \"\",\n        \"rta_id\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"reconciled\",\n        \"master_account\": [\n            {\n                \"id\": {{master_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"1500.00\"\n            }\n        ],\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"1500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v2/ach/push": {
+        "post": {
+          "tags": [
+            "Transactions"
+          ],
+          "summary": "Originate an ACH Push",
+          "description": "Originate an ACH Push",
+          "operationId": "originateAnAchPush",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Originate an ACH Push": {
+                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"4570.00\",\n    \"description\": \"May Salary\",\n    \"same_day\": \"true\",\n    \"effective_date\": \"2024-04-05\",\n    \"company_discretionary_data\": \"DIRECT DEPOSIT\",\n    \"company_entry_description\": \"PAYROLL\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Originate an ACH Push",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Originate an ACH Push": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"4570.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"ach\",\n    \"type\": \"push\",\n    \"message\": \"outgoing\",\n    \"description\": \"May Salary\",\n    \"available_balance\": \"500.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"4570.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"ach\": {\n        \"effective_date\": \"2024-04-04\",\n        \"company_discretionary_data\": \"DIRECT DEPOSIT\",\n        \"company_entry_description\": \"PAYROLL\",\n        \"trace_number\": \"\",\n        \"return_code\": \"\",\n        \"rta_id\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"This is May Salary\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"4570.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v2/ach/pull": {
+        "post": {
+          "tags": [
+            "Transactions"
+          ],
+          "summary": "Originate an ACH Pull",
+          "description": "Originate an ACH Pull",
+          "operationId": "originateAnAchPull",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Originate an ACH Pull": {
+                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"500.00\",\n    \"description\": \"May Rent\",\n    \"same_day\": \"true\",\n    \"effective_date\": \"2024-04-05\",\n    \"company_entry_description\": \"Payment\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Originate an ACH Pull",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Originate an ACH Pull": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"ach\",\n    \"type\": \"pull\",\n    \"message\": \"outgoing\",\n    \"description\": \"May Rent\",\n    \"available_balance\": \"250.00\",\n    \"pending_credits\": \"500.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"ach\": {\n        \"effective_date\": \"2024-04-04\",\n        \"company_entry_description\": \"Payments\",\n        \"trace_number\": \"\",\n        \"return_code\": \"\",\n        \"rta_id\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v2/domestic_wire/push": {
+        "post": {
+          "tags": [
+            "Transactions"
+          ],
+          "summary": "Originate a Domestic Wire",
+          "description": "Originate a Domestic Wire",
+          "operationId": "originateADomesticWire",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Originate a Domestic Wire": {
+                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"2500.00\",\n    \"description\": \"Marketing Expenses for May\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Originate a Domestic Wire",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Originate a Domestic Wire": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"2500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"domestic_wire\",\n    \"type\": \"push\",\n    \"message\": \"outgoing\",\n    \"description\": \"Escrow Deposit\",\n    \"available_balance\": \"9500.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"2500.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"domestic_wire\": {\n        \"imad\": \"20240520D2B74A1C002742\",\n        \"omad\": \"20240520L1B7832F000914\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"2500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v2/international_wire/push": {
+        "post": {
+          "tags": [
+            "Transactions"
+          ],
+          "summary": "Originate an International Wire",
+          "description": "Originate an International Wire",
+          "operationId": "originateAnInternationalWire",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Originate an International Wire": {
+                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"12000.00\",\n    \"description\": \"Offshore dev team payment\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Originate an International Wire",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Originate an International Wire": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"12000.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"international_wire\",\n    \"type\": \"push\",\n    \"message\": \"outgoing\",\n    \"description\": \"Offshore dev team payment\",\n    \"available_balance\": \"9500.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"12000.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"Global Technologies\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"2986167511\",\n        \"routing_number\": \"\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"ICICI Bank\",\n        \"beneficiary_bank\": {\n            \"identifier_code\": \"ICICINBBNRI\",\n            \"name\": \"ICICI Bank\",\n            \"address\": {\n                \"line1\": \"256 Main St\",\n                \"line2\": \"\",\n                \"city\": \"Bengaluru\",\n                \"state\": \"KA\",\n                \"country\": \"IN\",\n                \"postal_code\": \"900009\"\n            }\n        },\n        \"correspondent_bank\": {\n            \"identifier_code\": \"SCBLUS33XXX\",\n            \"name\": \"STANDARD CHARTERED BANK\",\n            \"address\": {\n                \"line1\": \"1095 12th Ave\",\n                \"line2\": \"\",\n                \"city\": \"New York\",\n                \"state\": \"NY\",\n                \"country\": \"US\",\n                \"postal_code\": \"10001\"\n            }\n        },\n        \"shipping_address\": null\n    },\n    \"international_wire\": {\n        \"imad\": \"20240520D2B74A1C002742\",\n        \"omad\": \"20240520L1B7832F000914\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"12000.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v2/rtp/push": {
+        "post": {
+          "tags": [
+            "Transactions"
+          ],
+          "summary": "Originate an RTP Push",
+          "description": "Originate an RTP Push",
+          "operationId": "originateAnRtpPush",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Originate an RTP Push": {
+                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"500.00\",\n    \"description\": \"June office rent\",\n    \"reference_number\": \"KH1-ZI1L-PTY\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Originate an RTP Push",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Originate an RTP Push": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"rtp\",\n    \"type\": \"push\",\n    \"message\": \"outgoing\",\n    \"description\": \"June office rent\",\n    \"available_balance\": \"1900.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"500.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"personal_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"rtp\": {\n        \"reference_number\": \"KH1-ZI1L-PTY\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v2/fednow/push": {
+        "post": {
+          "tags": [
+            "Transactions"
+          ],
+          "summary": "Originate a FedNow Push",
+          "description": "Originate a FedNow Push",
+          "operationId": "originateAFednowPush",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Originate a FedNow Push": {
+                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"500.00\",\n    \"description\": \"June office rent\",\n    \"reference_number\": \"FR6L-81G634\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Originate a FedNow Push",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Originate a FedNow Push": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"fednow\",\n    \"type\": \"push\",\n    \"message\": \"outgoing\",\n    \"description\": \"May office rent\",\n    \"available_balance\": \"1900.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"500.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"personal_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"fednow\": {\n        \"reference_number\": \"1E5800WF8Q\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v2/debitcard/push": {
+        "post": {
+          "tags": [
+            "Transactions"
+          ],
+          "summary": "Originate a Debit Card Push",
+          "description": "Originate a Debit Card Push",
+          "operationId": "originateADebitCardPush",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Originate a Debit Card Push": {
+                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"23.50\",\n    \"description\": \"Lunch expense\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Originate a Debit Card Push",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Originate a Debit Card Push": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"23.50\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"debitcard\",\n    \"type\": \"push\",\n    \"message\": \"outgoing\",\n    \"description\": \"Tips Payout\",\n    \"available_balance\": \"90.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"23.50\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"\",\n        \"routing_number\": \"\",\n        \"account_type\": \"\",\n        \"bank_name\": \"\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"23.50\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v2/debitcard/pull": {
+        "post": {
+          "tags": [
+            "Transactions"
+          ],
+          "summary": "Originate a Debit Card Pull",
+          "description": "Originate a Debit Card Pull",
+          "operationId": "originateADebitCardPull",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Originate a Debit Card Pull": {
+                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"150.00\",\n    \"description\": \"Account funding\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Originate a Debit Card Pull",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Originate a Debit Card Pull": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"150.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"debitcard\",\n    \"type\": \"pull\",\n    \"message\": \"outgoing\",\n    \"description\": \"Account funding\",\n    \"available_balance\": \"90.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"150.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"\",\n        \"routing_number\": \"\",\n        \"account_type\": \"\",\n        \"bank_name\": \"\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"150.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v2/check/send": {
+        "post": {
+          "tags": [
+            "Transactions"
+          ],
+          "summary": "Originate a Check Send",
+          "description": "Originate a Check Send",
+          "operationId": "originateACheckSend",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Originate a Check Send": {
+                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"1500.00\",\n    \"description\": \"Plumbing Supplier\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Originate a Check Send",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Originate a Check Send": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"1500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"check\",\n    \"type\": \"send\",\n    \"message\": \"outgoing\",\n    \"description\": \"Plumbing Supplier\",\n    \"available_balance\": \"2390.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"1500.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"\",\n        \"routing_number\": \"\",\n        \"account_type\": \"\",\n        \"bank_name\": \"\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"check\": {\n        \"check_number\": \"98987679\",\n        \"cashed\": true,\n        \"tracking\": {\n            \"status\": \"pending\",\n            \"eta\": \"2024-05-01\"\n        }\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"1500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v2/check/deposit": {
+        "post": {
+          "tags": [
+            "Transactions"
+          ],
+          "summary": "Originate a Check Deposit",
+          "description": "Originate a Check Deposit",
+          "operationId": "originateACheckDeposit",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Originate a Check Deposit": {
+                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"500.00\",\n    \"description\": \"May invoice\",\n    \"image\": {\n        \"front\": \"TG9yZW0gSXBzdW0gaXMgc2ltcGx5IGR1bW15IHRleHQgb2YgdGhlIHByaW50aW5nIGFuZCB0eXBlc2V0dGluZyBpbmR1c3RyeS4gTG9yZW0gSXBzdW0gaGFzIGJlZW4gdGhlIGluZHVzdHJ5J3Mgc3RhbmRhcmQgZHVtbXkgdGV4dCBldmVyIHNpbmNlIHRoZSAxNTAwcywgd2hlbiBhbiB1bmtub3duIHByaW50ZXIgdG9vayBhIGdhbGxleSBvZiB0eXBlIGFuZCBzY3JhbWJsZWQgaXQgdG8gbWFrZSBhIHR5cGUgc3BlY2ltZW4gYm9vay4gSXQgaGFzIHN1cnZpdmVkIG5vdCBvbmx5IGZpdmUgY2VudHVyaWVzLCBidXQgYWxzbyB0aGUgbGVhcCBpbnRvIGVsZWN0cm9uaWMgdHlwZXNldHRpbmcsIHJlbWFpbmluZyBlc3NlbnRpYWxseSB1bmNoYW5nZWQuIEl0IHdhcyBwb3B1bGFyaXNlZCBpbiB0aGUgMTk2MHMgd2l0aCB0aGUgcmVsZWFzZSBvZiBMZXRyYXNldCBzaGVldHMgY29udGFpbmluZyBMb3JlbSBJcHN1bSBwYXNzYWdlcywgYW5kIG1vcmUgcmVjZW50bHkgd2l0aCBkZXNrdG9wIHB1Ymxpc2hpbmcgc29mdHdhcmUgbGlrZSBBbGR1cyBQYWdlTWFrZXIgaW5jbHVkaW5nIHZlcnNpb25zIG9mIExvcmVtIElwc3VtLg==\",\n        \"back\": \"TG9yZW0gSXBzdW0gaXMgc2ltcGx5IGR1bW15IHRleHQgb2YgdGhlIHByaW50aW5nIGFuZCB0eXBlc2V0dGluZyBpbmR1c3RyeS4gTG9yZW0gSXBzdW0gaGFzIGJlZW4gdGhlIGluZHVzdHJ5J3Mgc3RhbmRhcmQgZHVtbXkgdGV4dCBldmVyIHNpbmNlIHRoZSAxNTAwcywgd2hlbiBhbiB1bmtub3duIHByaW50ZXIgdG9vayBhIGdhbGxleSBvZiB0eXBlIGFuZCBzY3JhbWJsZWQgaXQgdG8gbWFrZSBhIHR5cGUgc3BlY2ltZW4gYm9vay4gSXQgaGFzIHN1cnZpdmVkIG5vdCBvbmx5IGZpdmUgY2VudHVyaWVzLCBidXQgYWxzbyB0aGUgbGVhcCBpbnRvIGVsZWN0cm9uaWMgdHlwZXNldHRpbmcsIHJlbWFpbmluZyBlc3NlbnRpYWxseSB1bmNoYW5nZWQuIEl0IHdhcyBwb3B1bGFyaXNlZCBpbiB0aGUgMTk2MHMgd2l0aCB0aGUgcmVsZWFzZSBvZiBMZXRyYXNldCBzaGVldHMgY29udGFpbmluZyBMb3JlbSBJcHN1bSBwYXNzYWdlcywgYW5kIG1vcmUgcmVjZW50bHkgd2l0aCBkZXNrdG9wIHB1Ymxpc2hpbmcgc29mdHdhcmUgbGlrZSBBbGR1cyBQYWdlTWFrZXIgaW5jbHVkaW5nIHZlcnNpb25zIG9mIExvcmVtIElwc3VtLg==\"\n    },\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Originate a Check Deposit",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Originate a Check Deposit": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"check\",\n    \"type\": \"deposit\",\n    \"message\": \"outgoing\",\n    \"description\": \"May invoice\",\n    \"available_balance\": \"9200.00\",\n    \"pending_credits\": \"500.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"\",\n        \"routing_number\": \"\",\n        \"account_type\": \"\",\n        \"bank_name\": \"\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"check\": {\n        \"check_number\": \"98987679\",\n        \"cashed\": true,\n        \"shipping_address\": null,\n        \"tracking\": null\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v2/transaction/{transaction_id}": {
+        "get": {
+          "tags": [
+            "Transactions"
+          ],
+          "summary": "Retrieve a Transaction",
+          "description": "Retrieve a Transaction",
+          "operationId": "retrieveATransaction",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Retrieve a Transaction",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Retrieve a Transaction": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"settled\",\n    \"amount\": \"1500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"ach\",\n    \"type\": \"push\",\n    \"message\": \"incoming\",\n    \"description\": \"May invoice from NewCo\",\n    \"available_balance\": \"1590.00\",\n    \"pending_credits\": \"230.00\",\n    \"pending_debits\": \"150.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"NewCo Inc\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"ach\": {\n        \"effective_date\": \"2024-04-04\",\n        \"company_entry_description\": \"Payments\",\n        \"trace_number\": \"123112211\",\n        \"return_code\": \"\",\n        \"rta_id\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": {\n        \"invoice_number\": \"INV-AC989878\"\n    },\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"1500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "patch": {
+          "tags": [
+            "Transactions"
+          ],
+          "summary": "Update a Transaction",
+          "description": "Update a Transaction",
+          "operationId": "updateATransaction",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "metadata": {
+                      "type": "object",
+                      "properties": {
+                        "invoice_number": {
+                          "type": "string",
+                          "example": "INV-AC989878"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Update a Transaction": {
+                    "value": {
+                      "metadata": {
+                        "invoice_number": "INV-AC989878"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Update a Transaction",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Update a Transaction": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"settled\",\n    \"amount\": \"1500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"ach\",\n    \"type\": \"push\",\n    \"message\": \"incoming\",\n    \"description\": \"May invoice from NewCo\",\n    \"available_balance\": \"1590.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"NewCo Inc\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"ach\": {\n        \"effective_date\": \"2024-04-04\",\n        \"company_entry_description\": \"Payments\",\n        \"trace_number\": \"123112211\",\n        \"return_code\": \"\",\n        \"rta_id\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": {\n        \"invoice_number\": \"INV-AC989878\"\n    },\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"1500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "transaction_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "/v2/attachment": {
+        "get": {
+          "tags": [
+            "Attachments"
+          ],
+          "summary": "List all Attachments",
+          "description": "List all Attachments",
+          "operationId": "listAllAttachments",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": ""
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "post": {
+          "tags": [
+            "Attachments"
+          ],
+          "summary": "Create an Attachment",
+          "description": "Create an Attachment",
+          "operationId": "createAnAttachment",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Create an Attachment": {
+                    "value": "{\n    \"reference_id\": {{counterparty_id}},\n    \"label\": \"formation\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Create an Attachment",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Create an Attachment": {
+                      "value": "{\n    \"id\": {{attachment_id}},\n    \"reference_id\": {{counterparty_id}},\n    \"label\": \"formation\",\n    \"url\": \"http://bucket.s3-website-us-east-1.amazonaws.com\",\n    \"created_at\": \"2024-04-04T11:06:00Z\"\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        }
+      },
+      "/v2/attachment/{attachment_id}": {
+        "get": {
+          "tags": [
+            "Attachments"
+          ],
+          "summary": "Retrieve an Attachment",
+          "description": "Retrieve an Attachment",
+          "operationId": "retrieveAnAttachment",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Retrieve an Attachment",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Retrieve an Attachment": {
+                      "value": "{\n    \"id\": {{attachment_id}},\n    \"reference_id\": {{counterparty_id}},\n    \"label\": \"formation\",\n    \"url\": \"http://bucket.s3-website-us-east-1.amazonaws.com\",\n    \"created_at\": \"2024-04-04T11:06:00Z\"\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        },
+        "delete": {
+          "tags": [
+            "Attachments"
+          ],
+          "summary": "Delete an Attachment",
+          "description": "Delete an Attachment",
+          "operationId": "deleteAnAttachment",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "Delete an Attachment",
+              "content": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "attachment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "/v2/simulate/incoming/ach/push": {
+        "post": {
+          "tags": [
+            "Simulation",
+            "ACH"
+          ],
+          "summary": "Simulate an Incoming ACH Push",
+          "description": "Simulate an Incoming ACH Push",
+          "operationId": "simulateAnIncomingAchPush",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Simulate an Incoming ACH Push": {
+                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"amount\": \"500.00\",\n    \"description\": \"May Rent\",\n    \"counterparty_name\": \"John Doe\",\n    \"counterparty_routing_number\": \"121042882\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Simulate an Incoming ACH Push",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Simulate an Incoming ACH Push": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"received\",\n    \"amount\": \"500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"ach\",\n    \"type\": \"push\",\n    \"message\": \"incoming\",\n    \"description\": \"May Rent\",\n    \"available_balance\": \"1250.50\",\n    \"pending_credits\": \"500.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"ach\": {\n        \"effective_date\": \"2024-04-04\",\n        \"company_discretionary_data\": \"\",\n        \"company_entry_description\": \"Payment\",\n        \"trace_number\": \"\",\n        \"return_code\": \"\",\n        \"rta_id\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"reconciled\",\n        \"master_account\": [\n            {\n                \"id\": {{master_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ],\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        }
+      },
+      "/v2/simulate/incoming/ach/pull": {
+        "post": {
+          "tags": [
+            "Simulation",
+            "ACH"
+          ],
+          "summary": "Simulate an Incoming ACH Pull",
+          "description": "Simulate an Incoming ACH Pull",
+          "operationId": "simulateAnIncomingAchPull",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Simulate an Incoming ACH Pull": {
+                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"amount\": \"500.00\",\n    \"description\": \"May Rent\",\n    \"counterparty_name\": \"John Doe\",\n    \"counterparty_routing_number\": \"121042882\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Simulate an Incoming ACH Pull",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Simulate an Incoming ACH Pull": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"received\",\n    \"amount\": \"500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"ach\",\n    \"type\": \"pull\",\n    \"message\": \"incoming\",\n    \"description\": \"May Rent\",\n    \"available_balance\": \"1250.50\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"500.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"ach\": {\n        \"effective_date\": \"2024-04-04\",\n        \"company_discretionary_data\": \"\",\n        \"company_entry_description\": \"Payment\",\n        \"trace_number\": \"\",\n        \"return_code\": \"\",\n        \"rta_id\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"reconciled\",\n        \"master_account\": [\n            {\n                \"id\": {{master_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ],\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        }
+      },
+      "/v2/simulate/incoming/card_issuing": {
+        "post": {
+          "tags": [
+            "Simulation",
+            "Card"
+          ],
+          "summary": "Simulate an Auth Transaction",
+          "description": "Simulate an Auth Transaction",
+          "operationId": "simulateAnAuthTransaction",
+          "parameters": [
+            {
+              "name": "api-key",
+              "in": "header",
+              "schema": {
+                "type": "string",
+                "example": "{{api_key}}"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Simulate a Refund Auth & Settle Transaction": {
+                    "value": "{\n    \"card_id\": {{card_id}},\n    \"amount\": \"120.00\",\n    \"parent_txn_id\": {{transaction_id}},\n    \"type\": \"refund\",\n    \"status\": \"settled\"\n}"
+                  },
+                  "Simulate a Refund Auth Transaction": {
+                    "value": "{\n    \"card_id\": {{card_id}},\n    \"amount\": \"120.00\",\n    \"parent_txn_id\": {{transaction_id}},\n    \"type\": \"refund\",\n    \"status\": \"pending\"\n}"
+                  },
+                  "Simulate a Refund Settle Transaction": {
+                    "value": "{\n    \"card_id\": {{card_id}},\n    \"amount\": \"120.00\",\n    \"parent_txn_id\": {{transaction_id}},\n    \"type\": \"refund\",\n    \"status\": \"settled\"\n}"
+                  },
+                  "Simulate a Reversal Transaction": {
+                    "value": "{\n    \"card_id\": {{card_id}},\n    \"amount\": \"120.00\",\n    \"parent_txn_id\": {{transaction_id}},\n    \"type\": \"reverse\",\n    \"status\": \"settled\"\n}"
+                  },
+                  "Simulate a Settle Transaction": {
+                    "value": "{\n    \"card_id\": {{card_id}},\n    \"amount\": \"120.00\",\n    \"parent_txn_id\": {{transaction_id}},\n    \"type\": \"adjust\",\n    \"status\": \"settled\"\n}"
+                  },
+                  "Simulate an Auth & Settle Transaction": {
+                    "value": "{\n    \"card_id\": {{card_id}},\n    \"amount\": \"120.00\",\n    \"type\": \"auth\",\n    \"status\": \"settled\"\n}"
+                  },
+                  "Simulate an Auth Transaction": {
+                    "value": "{\n    \"card_id\": {{card_id}},\n    \"amount\": \"93.50\",\n    \"type\": \"auth\",\n    \"status\": \"pending\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Simulate an Auth Transaction / Simulate a Settle Transaction / Simulate a Reversal Transaction / Simulate a Refund Auth Transaction / Simulate a Refund Settle Transaction / Simulate a Refund Auth & Settle Transaction",
+              "content": {
+                "text/plain": {
+                  "examples": {
+                    "Simulate a Refund Auth & Settle Transaction": {
+                      "value": "{\n    \"id\": {{sub_account_transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"settled\",\n    \"amount\": \"120.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"card_issuing\",\n    \"type\": \"refund\",\n    \"message\": \"incoming\",\n    \"description\": \"Mom and Pop\",\n    \"available_balance\": \"313.50\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": null,\n    \"card\": {\n        \"id\": {{card_id}},\n        \"cardholder_id\": {{card_holder_id}},\n        \"merchant\": \"Mom and Pop\",\n        \"auth_method\": \"online\",\n        \"wallet\": \"\",\n        \"rta_id\": \"\",\n        \"local_transaction\": {\n            \"amount\": \"120.00\",\n            \"currency\": \"usd\",\n            \"conversion_rate\": \"1.00\"\n        },\n        \"available_limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"network_settlement_at\": \"2024-04-04T11:06:00Z\"\n    },\n    \"parent_txn_id\": {{transaction_id}},\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-04T11:06:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"120.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\",\n        \"settled_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    },
+                    "Simulate a Refund Auth Transaction": {
+                      "value": "{\n    \"id\": {{sub_account_transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"pending\",\n    \"amount\": \"120.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"card_issuing\",\n    \"type\": \"refund\",\n    \"message\": \"incoming\",\n    \"description\": \"Mom and Pop\",\n    \"available_balance\": \"313.50\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": null,\n    \"card\": {\n        \"id\": {{card_id}},\n        \"cardholder_id\": {{card_holder_id}},\n        \"merchant\": \"Mom and Pop\",\n        \"auth_method\": \"online\",\n        \"wallet\": \"\",\n        \"rta_id\": \"\",\n        \"local_transaction\": {\n            \"amount\": \"120.00\",\n            \"currency\": \"usd\",\n            \"conversion_rate\": \"1.00\"\n        },\n        \"available_limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"network_settlement_at\": \"\"\n    },\n    \"parent_txn_id\": {{transaction_id}},\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-04T11:06:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"120.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\",\n        \"settled_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    },
+                    "Simulate a Refund Settle Transaction": {
+                      "value": "{\n    \"id\": {{sub_account_transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"settled\",\n    \"amount\": \"120.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"card_issuing\",\n    \"type\": \"refund\",\n    \"message\": \"incoming\",\n    \"description\": \"Mom and Pop\",\n    \"available_balance\": \"313.50\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": null,\n    \"card\": {\n        \"id\": {{card_id}},\n        \"cardholder_id\": {{card_holder_id}},\n        \"merchant\": \"Mom and Pop\",\n        \"auth_method\": \"online\",\n        \"wallet\": \"\",\n        \"rta_id\": \"\",\n        \"local_transaction\": {\n            \"amount\": \"120.00\",\n            \"currency\": \"usd\",\n            \"conversion_rate\": \"1.00\"\n        },\n        \"available_limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"network_settlement_at\": \"2024-04-05T11:06:00Z\"\n    },\n    \"parent_txn_id\": {{transaction_id}},\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-04T11:06:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"120.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\",\n        \"settled_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    },
+                    "Simulate a Reversal Transaction": {
+                      "value": "{\n    \"id\": {{sub_account_transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"settled\",\n    \"amount\": \"120.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"card_issuing\",\n    \"type\": \"reverse\",\n    \"message\": \"incoming\",\n    \"description\": \"Mom and Pop\",\n    \"available_balance\": \"313.50\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": null,\n    \"card\": {\n        \"id\": {{card_id}},\n        \"cardholder_id\": {{card_holder_id}},\n        \"merchant\": \"Mom and Pop\",\n        \"auth_method\": \"online\",\n        \"wallet\": \"\",\n        \"rta_id\": \"\",\n        \"local_transaction\": {\n            \"amount\": \"120.00\",\n            \"currency\": \"usd\",\n            \"conversion_rate\": \"1.00\"\n        },\n        \"available_limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"network_settlement_at\": \"\"\n    },\n    \"parent_txn_id\": {{transaction_id}},\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-04T11:06:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"26.50\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\",\n        \"settled_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    },
+                    "Simulate a Settle Transaction": {
+                      "value": "{\n    \"id\": {{sub_account_transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"settled\",\n    \"amount\": \"26.50\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"card_issuing\",\n    \"type\": \"adjust\",\n    \"message\": \"incoming\",\n    \"description\": \"Mom and Pop\",\n    \"available_balance\": \"120.50\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": null,\n    \"card\": {\n        \"id\": {{card_id}},\n        \"cardholder_id\": {{card_holder_id}},\n        \"merchant\": \"Mom and Pop\",\n        \"auth_method\": \"online\",\n        \"wallet\": \"\",\n        \"rta_id\": \"\",\n        \"local_transaction\": {\n            \"amount\": \"26.50\",\n            \"currency\": \"usd\",\n            \"conversion_rate\": \"1.00\"\n        },\n        \"available_limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"380.00\",\n            \"max_spend_count\": \"9\"\n        },\n        \"network_settlement_at\": \"2024-04-02T21:00:00\"\n    },\n    \"parent_txn_id\": {{transaction_id}},\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"26.50\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\",\n        \"settled_at\": \"2024-04-02T21:00:00Z\"\n    }\n}"
+                    },
+                    "Simulate an Auth Transaction": {
+                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"pending\",\n    \"amount\": \"93.50\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"card_issuing\",\n    \"type\": \"auth\",\n    \"message\": \"incoming\",\n    \"description\": \"Mom and Pop\",\n    \"available_balance\": \"290.50\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"93.50\",\n    \"counterparty\": null,\n    \"card\": {\n        \"id\": {{card_id}},\n        \"cardholder_id\": {{card_holder_id}},\n        \"merchant\": \"Mom and Pop\",\n        \"auth_method\": \"online\",\n        \"wallet\": \"\",\n        \"rta_id\": \"\",\n        \"local_transaction\": {\n            \"amount\": \"93.50\",\n            \"currency\": \"usd\",\n            \"conversion_rate\": \"1.00\"\n        },\n        \"available_limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"406.50\",\n            \"max_spend_count\": \"9\"\n        },\n        \"network_settlement_at\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"93.50\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {}
+          ]
+        }
+      }
+    },
+    "components": {
+      "securitySchemes": {}
+    },
+    "tags": [
+      {
+        "name": "Master Accounts"
+      },
+      {
+        "name": "Sub Account Holders"
+      },
+      {
+        "name": "Sub Accounts"
+      },
+      {
+        "name": "Counterparties"
+      },
+      {
+        "name": "Card Holders"
+      },
+      {
+        "name": "Cards"
+      },
+      {
+        "name": "Transactions"
+      },
+      {
+        "name": "Attachments"
+      },
+      {
+        "name": "Simulation"
+      },
+      {
+        "name": "ACH"
+      },
+      {
+        "name": "Card"
+      }
+    ]
+  }

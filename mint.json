@@ -11,6 +11,7 @@
         "default": "dark",
         "isHidden": true
     },
+    "versions": ["v2", "v1"],
     "topbarCtaButton": {
       "name": "Dashboard",
       "url": "https://dashboard.solidfi.com/login?&_ga=2.71532817.308955735.1702327933-383528257.1702327933"
@@ -18,8 +19,14 @@
     "tabs": [
         {
             "name": "API Reference",
-            "url": "api-reference"
-        }
+            "url": "v1/api-reference",
+            "version": "v1"
+        },
+        {
+          "name": "API Reference",
+          "url": "v2/api-reference",
+          "version": "v2"
+      }
     ],
     "anchors": [
       {
@@ -213,216 +220,330 @@
       "helpdesk/ticket-object"
     ]
   },
+  {
+    "group": "Master Accounts",
+    "version": "v2",
+    "pages": [
+      "v2/api-reference/master-accounts/retrieve-a-master-account",
+      "v2/api-reference/master-accounts/list-all-master-accounts"
+    ]
+  },
+  {
+    "group": "Sub Account Holders",
+    "version": "v2",
+    "pages": [
+      "v2/api-reference/sub-account-holders/list-all-sub-account-holders",
+      "v2/api-reference/sub-account-holders/create-a-sub-account-holder",
+      "v2/api-reference/sub-account-holders/retrieve-a-sub-account-holder",
+      "v2/api-reference/sub-account-holders/update-a-sub-account-holder"
+    ]
+  },
+  {
+    "group": "Sub Accounts",
+    "version": "v2",
+    "pages": [
+      "v2/api-reference/sub-accounts/list-all-sub-accounts",
+      "v2/api-reference/sub-accounts/create-a-sub-account",
+      "v2/api-reference/sub-accounts/retrieve-a-sub-account",
+      "v2/api-reference/sub-accounts/update-a-sub-account"
+    ]
+  },
+  {
+    "group": "Counterparties",
+    "version": "v2",
+    "pages": [
+      "v2/api-reference/counterparties/list-all-counterparties",
+      "v2/api-reference/counterparties/create-a-counterparty",
+      "v2/api-reference/counterparties/retrieve-a-counterparty",
+      "v2/api-reference/counterparties/update-a-counterparty"
+    ]
+  },
+  {
+    "group": "Card Holders",
+    "version": "v2",
+    "pages": [
+      "v2/api-reference/card-holders/list-all-card-holders",
+      "v2/api-reference/card-holders/create-a-card-holder",
+      "v2/api-reference/card-holders/retrieve-a-card-holder",
+      "v2/api-reference/card-holders/update-a-card-holder"
+    ]
+  },
+  {
+    "group": "Cards",
+    "version": "v2",
+    "pages": [
+      "v2/api-reference/cards/list-all-cards",
+      "v2/api-reference/cards/create-a-card",
+      "v2/api-reference/cards/retrieve-a-card",
+      "v2/api-reference/cards/update-a-card"
+    ]
+  },
+  {
+    "group": "Transactions",
+    "version": "v2",
+    "pages": [
+      "v2/api-reference/transactions/list-all-transactions",
+      "v2/api-reference/transactions/sub-ledger-a-transaction",
+      "v2/api-reference/transactions/originate-an-ach-push",
+      "v2/api-reference/transactions/originate-an-ach-pull",
+      "v2/api-reference/transactions/originate-a-domestic-wire",
+      "v2/api-reference/transactions/originate-an-international-wire",
+      "v2/api-reference/transactions/originate-an-rtp-push",
+      "v2/api-reference/transactions/originate-a-fednow-push",
+      "v2/api-reference/transactions/originate-a-debit-card-push",
+      "v2/api-reference/transactions/originate-a-debit-card-pull",
+      "v2/api-reference/transactions/originate-a-check-send",
+      "v2/api-reference/transactions/originate-a-check-deposit",
+      "v2/api-reference/transactions/retrieve-a-transaction",
+      "v2/api-reference/transactions/update-a-transaction"
+    ]
+  },
+  {
+    "group": "Attachments",
+    "version": "v2",
+    "pages": [
+      "v2/api-reference/attachments/list-all-attachments",
+      "v2/api-reference/attachments/create-an-attachment",
+      "v2/api-reference/attachments/retrieve-an-attachment",
+      "v2/api-reference/attachments/delete-an-attachment"
+    ]
+  },
+  {
+    "group": "Simulation",
+    "version": "v2",
+    "pages": [
+      "v2/api-reference/simulation/simulate-an-incoming-ach-push",
+      "v2/api-reference/simulation/simulate-an-incoming-ach-pull",
+      "v2/api-reference/simulation/simulate-an-auth-transaction"
+    ]
+  },
 
         {
             "group": "Person",
+            "version": "v1",
             "pages": [
-              "api-reference/person/create-a-person",
-              "api-reference/person/retrieve-a-person",
-              "api-reference/person/update-a-person",
-              "api-reference/person/retrieve-a-kyc",
-              "api-reference/person/submit-a-kyc",
-              "api-reference/person/kyc-approval",
-              "api-reference/person/retrieve-an-idv",
-              "api-reference/person/submit-an-idv",
-              "api-reference/person/idv-approval"
+              "v1/api-reference/person/create-a-person",
+              "v1/api-reference/person/retrieve-a-person",
+              "v1/api-reference/person/update-a-person",
+              "v1/api-reference/person/retrieve-a-kyc",
+              "v1/api-reference/person/submit-a-kyc",
+              "v1/api-reference/person/kyc-approval",
+              "v1/api-reference/person/retrieve-an-idv",
+              "v1/api-reference/person/submit-an-idv",
+              "v1/api-reference/person/idv-approval"
             ]
           },
           {
             "group": "Business",
+            "version": "v1",
             "pages": [
-              "api-reference/business/list-all-businesses",
-              "api-reference/business/create-a-business",
-              "api-reference/business/retrieve-a-business",
-              "api-reference/business/update-a-business",
-              "api-reference/business/retrieve-a-kyb",
-              "api-reference/business/submit-a-kyb",
-              "api-reference/business/kyb-approval"
+              "v1/api-reference/business/list-all-businesses",
+              "v1/api-reference/business/create-a-business",
+              "v1/api-reference/business/retrieve-a-business",
+              "v1/api-reference/business/update-a-business",
+              "v1/api-reference/business/retrieve-a-kyb",
+              "v1/api-reference/business/submit-a-kyb",
+              "v1/api-reference/business/kyb-approval"
             ]
           },
           {
             "group": "Documents Person",
+            "version": "v1",
             "pages": [
-              "api-reference/documents-person/list-all-documents",
-              "api-reference/documents-person/create-a-document",
-              "api-reference/documents-person/retrieve-a-document",
-              "api-reference/documents-person/delete-a-document",
-              "api-reference/documents-person/update-a-document",
-              "api-reference/documents-person/get-upload-url",
-              "api-reference/documents-person/get-download-url"
+              "v1/api-reference/documents-person/list-all-documents",
+              "v1/api-reference/documents-person/create-a-document",
+              "v1/api-reference/documents-person/retrieve-a-document",
+              "v1/api-reference/documents-person/delete-a-document",
+              "v1/api-reference/documents-person/update-a-document",
+              "v1/api-reference/documents-person/get-upload-url",
+              "v1/api-reference/documents-person/get-download-url"
             ]
           },
           {
             "group": "Document Business",
+            "version": "v1",
             "pages": [
-              "api-reference/document-business/upload-a-document",
-              "api-reference/document-business/list-of-all-documents",
-              "api-reference/document-business/create-a-document",
-              "api-reference/document-business/retrieve-a-document",
-              "api-reference/document-business/delete-a-document",
-              "api-reference/document-business/update-document",
-              "api-reference/document-business/get-document-upload-url",
-              "api-reference/document-business/get-document-download-url"
+              "v1/api-reference/document-business/upload-a-document",
+              "v1/api-reference/document-business/list-of-all-documents",
+              "v1/api-reference/document-business/create-a-document",
+              "v1/api-reference/document-business/retrieve-a-document",
+              "v1/api-reference/document-business/delete-a-document",
+              "v1/api-reference/document-business/update-document",
+              "v1/api-reference/document-business/get-document-upload-url",
+              "v1/api-reference/document-business/get-document-download-url"
             ]
           },
           {
             "group": "Family",
+            "version": "v1",
             "pages": [
-              "api-reference/family/list-all-families",
-              "api-reference/family/create-a-family",
-              "api-reference/family/retrieve-a-family",
-              "api-reference/family/update-a-family"
+              "v1/api-reference/family/list-all-families",
+              "v1/api-reference/family/create-a-family",
+              "v1/api-reference/family/retrieve-a-family",
+              "v1/api-reference/family/update-a-family"
             ]
           },
           {
             "group": "Member",
+            "version": "v1",
             "pages": [
-              "api-reference/member/list-all-family-members",
-              "api-reference/member/create-a-family-member",
-              "api-reference/member/retrieve-a-member",
-              "api-reference/member/delete-a-member",
-              "api-reference/member/update-a-member",
-              "api-reference/member/retrieve-a-member-kyc",
-              "api-reference/member/submit-a-member-kyc"
+              "v1/api-reference/member/list-all-family-members",
+              "v1/api-reference/member/create-a-family-member",
+              "v1/api-reference/member/retrieve-a-member",
+              "v1/api-reference/member/delete-a-member",
+              "v1/api-reference/member/update-a-member",
+              "v1/api-reference/member/retrieve-a-member-kyc",
+              "v1/api-reference/member/submit-a-member-kyc"
             ]
           },
           {
             "group": "Accounts",
+            "version": "v1",
             "pages": [
-              "api-reference/accounts/list-all-accounts",
-              "api-reference/accounts/create-an-account",
-              "api-reference/accounts/retrieve-an-account",
-              "api-reference/accounts/update-an-account",
-              "api-reference/accounts/retrieve-account-limits",
-              "api-reference/accounts/retrieve-a-statement",
-              "api-reference/accounts/list-all-statements"
+              "v1/api-reference/accounts/list-all-accounts",
+              "v1/api-reference/accounts/create-an-account",
+              "v1/api-reference/accounts/retrieve-an-account",
+              "v1/api-reference/accounts/update-an-account",
+              "v1/api-reference/accounts/retrieve-account-limits",
+              "v1/api-reference/accounts/retrieve-a-statement",
+              "v1/api-reference/accounts/list-all-statements"
             ]
           },
           {
             "group": "Contacts",
+            "version": "v1",
             "pages": [
-              "api-reference/contacts/list-all-contacts",
-              "api-reference/contacts/create-a-contact",
-              "api-reference/contacts/retrieve-a-contact",
-              "api-reference/contacts/delete-a-contact",
-              "api-reference/contacts/update-a-contact",
-              "api-reference/contacts/retrieve-bank-info",
-              "api-reference/contacts/plaid-processortoken-integration"
+              "v1/api-reference/contacts/list-all-contacts",
+              "v1/api-reference/contacts/create-a-contact",
+              "v1/api-reference/contacts/retrieve-a-contact",
+              "v1/api-reference/contacts/delete-a-contact",
+              "v1/api-reference/contacts/update-a-contact",
+              "v1/api-reference/contacts/retrieve-bank-info",
+              "v1/api-reference/contacts/plaid-processortoken-integration"
             ]
           },
           {
             "group": "Send",
+            "version": "v1",
             "pages": [
-              "api-reference/send/list-all-intrabank-push",
-              "api-reference/send/send-an-intrabank-push",
-              "api-reference/send/get-an-intrabank-push",
-              "api-reference/send/update-an-intrabank-push",
-              "api-reference/send/list-all-ach-push",
-              "api-reference/send/send-an-ach-push",
-              "api-reference/send/get-an-ach-push",
-              "api-reference/send/update-an-ach-push",
-              "api-reference/send/list-all-wire-sent",
-              "api-reference/send/send-an-wire-transfer",
-              "api-reference/send/get-an-wire-transfer",
-              "api-reference/send/update-an-wire-transfer",
-              "api-reference/send/list-all-check-sent",
-              "api-reference/send/send-an-check",
-              "api-reference/send/get-an-check-sent",
-              "api-reference/send/update-an-check-sent"
+              "v1/api-reference/send/list-all-intrabank-push",
+              "v1/api-reference/send/send-an-intrabank-push",
+              "v1/api-reference/send/get-an-intrabank-push",
+              "v1/api-reference/send/update-an-intrabank-push",
+              "v1/api-reference/send/list-all-ach-push",
+              "v1/api-reference/send/send-an-ach-push",
+              "v1/api-reference/send/get-an-ach-push",
+              "v1/api-reference/send/update-an-ach-push",
+              "v1/api-reference/send/list-all-wire-sent",
+              "v1/api-reference/send/send-an-wire-transfer",
+              "v1/api-reference/send/get-an-wire-transfer",
+              "v1/api-reference/send/update-an-wire-transfer",
+              "v1/api-reference/send/list-all-check-sent",
+              "v1/api-reference/send/send-an-check",
+              "v1/api-reference/send/get-an-check-sent",
+              "v1/api-reference/send/update-an-check-sent"
             ]
           },
           {
             "group": "Receive",
+            "version": "v1",
             "pages": [
-              "api-reference/receive/list-all-intrabank-pull",
-              "api-reference/receive/receive-an-intrabank-pull",
-              "api-reference/receive/retrieve-an-receive-intrabank",
-              "api-reference/receive/update-an-receive-intrabank",
-              "api-reference/receive/list-all-ach-pull",
-              "api-reference/receive/receive-an-ach-pull",
-              "api-reference/receive/retrieve-a-receive-ach-transfer",
-              "api-reference/receive/update-an-receive-ach"
+              "v1/api-reference/receive/list-all-intrabank-pull",
+              "v1/api-reference/receive/receive-an-intrabank-pull",
+              "v1/api-reference/receive/retrieve-an-receive-intrabank",
+              "v1/api-reference/receive/update-an-receive-intrabank",
+              "v1/api-reference/receive/list-all-ach-pull",
+              "v1/api-reference/receive/receive-an-ach-pull",
+              "v1/api-reference/receive/retrieve-a-receive-ach-transfer",
+              "v1/api-reference/receive/update-an-receive-ach"
             ]
           },
           {
             "group": "Cards",
+            "version": "v1",
             "pages": [
-              "api-reference/cards/list-all-cards",
-              "api-reference/cards/create-a-card",
-              "api-reference/cards/activate-a-card",
-              "api-reference/cards/create-a-pin-token",
-              "api-reference/cards/set-a-new-pin",
-              "api-reference/cards/retrieve-a-card",
-              "api-reference/cards/delete-a-card",
-              "api-reference/cards/update-a-card",
-              "api-reference/cards/create-a-show-token",
-              "api-reference/cards/show-a-card",
-              "api-reference/cards/list-all-atm",
-              "api-reference/cards/replace-a-card",
-              "api-reference/cards/retrieve-declined-card-authorizations"
+              "v1/api-reference/cards/list-all-cards",
+              "v1/api-reference/cards/create-a-card",
+              "v1/api-reference/cards/activate-a-card",
+              "v1/api-reference/cards/create-a-pin-token",
+              "v1/api-reference/cards/set-a-new-pin",
+              "v1/api-reference/cards/retrieve-a-card",
+              "v1/api-reference/cards/delete-a-card",
+              "v1/api-reference/cards/update-a-card",
+              "v1/api-reference/cards/create-a-show-token",
+              "v1/api-reference/cards/show-a-card",
+              "v1/api-reference/cards/list-all-atm",
+              "v1/api-reference/cards/replace-a-card",
+              "v1/api-reference/cards/retrieve-declined-card-authorizations"
             ]
           },
           {
             "group": "Transactions",
+            "version": "v1",
             "pages": [
-              "api-reference/transactions/retrieve-a-transaction",
-              "api-reference/transactions/update-a-transaction",
-              "api-reference/transactions/list-all-transactions"
+              "v1/api-reference/transactions/retrieve-a-transaction",
+              "v1/api-reference/transactions/update-a-transaction",
+              "v1/api-reference/transactions/list-all-transactions"
             ]
           },
           {
             "group": "Webhooks",
+            "version": "v1",
             "pages": [
-              "api-reference/webhooks/list-all-webhook-events",
-              "api-reference/webhooks/list-all-webhooks",
-              "api-reference/webhooks/create-a-webhook",
-              "api-reference/webhooks/delete-a-webhook",
-              "api-reference/webhooks/update-a-webhook",
-              "api-reference/webhooks/retrieve-a-webhook",
-              "api-reference/webhooks/retrieve-a-webhook-secret"
+              "v1/api-reference/webhooks/list-all-webhook-events",
+              "v1/api-reference/webhooks/list-all-webhooks",
+              "v1/api-reference/webhooks/create-a-webhook",
+              "v1/api-reference/webhooks/delete-a-webhook",
+              "v1/api-reference/webhooks/update-a-webhook",
+              "v1/api-reference/webhooks/retrieve-a-webhook",
+              "v1/api-reference/webhooks/retrieve-a-webhook-secret"
             ]
           },
           {
             "group": "Program",
+            "version": "v1",
             "pages": [
-              "api-reference/program/retrieve-a-program",
-              "api-reference/program/list-all-stats",
-              "api-reference/program/list-all-persons",
-              "api-reference/program/list-all-businesses",
-              "api-reference/program/list-all-family",
-              "api-reference/program/list-all-members",
-              "api-reference/program/list-all-cards",
-              "api-reference/program/list-all-accounts",
-              "api-reference/program/list-all-contacts",
-              "api-reference/program/list-all-transactions",
-              "api-reference/program/list-all-transfers",
-              "api-reference/program/list-all-carddecline-txn"
+              "v1/api-reference/program/retrieve-a-program",
+              "v1/api-reference/program/list-all-stats",
+              "v1/api-reference/program/list-all-persons",
+              "v1/api-reference/program/list-all-businesses",
+              "v1/api-reference/program/list-all-family",
+              "v1/api-reference/program/list-all-members",
+              "v1/api-reference/program/list-all-cards",
+              "v1/api-reference/program/list-all-accounts",
+              "v1/api-reference/program/list-all-contacts",
+              "v1/api-reference/program/list-all-transactions",
+              "v1/api-reference/program/list-all-transfers",
+              "v1/api-reference/program/list-all-carddecline-txn"
             ]
           },
           {
             "group": "Batch",
+            "version": "v1",
             "pages": [
-              "api-reference/batch/create-an-intrabank-batch",
-              "api-reference/batch/retrieve-an-intrabank-batch"
+              "v1/api-reference/batch/create-an-intrabank-batch",
+              "v1/api-reference/batch/retrieve-an-intrabank-batch"
             ]
           },
           {
             "group": "Help Desk",
+            "version": "v1",
             "pages": [
-              "api-reference/help-desk/create-a-ticket",
-              "api-reference/help-desk/retrieve-a-ticket",
-              "api-reference/help-desk/update-a-ticket",
-              "api-reference/help-desk/delete-a-ticket",
-              "api-reference/help-desk/list-all-tickets",
-              "api-reference/help-desk/upload-an-attachment"
+              "v1/api-reference/help-desk/create-a-ticket",
+              "v1/api-reference/help-desk/retrieve-a-ticket",
+              "v1/api-reference/help-desk/update-a-ticket",
+              "v1/api-reference/help-desk/delete-a-ticket",
+              "v1/api-reference/help-desk/list-all-tickets",
+              "v1/api-reference/help-desk/upload-an-attachment"
             ]
           },
           {
             "group": "Testing",
+            "version": "v1",
             "pages": [
-              "api-reference/testing/test-incoming-ach-credit",
-              "api-reference/testing/test-incoming-domesticwire",
-              "api-reference/testing/auth"
+              "v1/api-reference/testing/test-incoming-ach-credit",
+              "v1/api-reference/testing/test-incoming-domesticwire",
+              "v1/api-reference/testing/auth"
             ]
           }
     ],
