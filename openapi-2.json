@@ -172,7 +172,32 @@
               "application/json": {
                 "examples": {
                   "Create a Sub Account Holder": {
-                    "value": "{\n    \"master_account_id\": {{master_account_id}},\n    \"type\": \"person\",\n    \"person\": {\n        \"first_name\": \"Jane\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"jane.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"verification\": {\n        \"status\": \"pass\",\n        \"method\": \"persona\",\n        \"url\": \"https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV\"\n    }\n}"
+                    "value": {
+                      "master_account_id": "mas_123",
+                      "type": "person",
+                      "person": {
+                        "first_name": "Jane",
+                        "last_name": "Doe",
+                        "id_type": "ssn",
+                        "id_number": "223902234",
+                        "date_of_birth": "1974-01-25",
+                        "phone": "+19418405843",
+                        "email": "jane.doe@gmail.com",
+                        "address": {
+                          "line1": "123 Main St",
+                          "line2": "",
+                          "city": "New York",
+                          "state": "NY",
+                          "country": "US",
+                          "postal_code": "10001"
+                        }
+                      },
+                      "verification": {
+                        "status": "pass",
+                        "method": "persona",
+                        "url": "https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV"
+                      }
+                    }
                   }
                 }
               }
