@@ -129,7 +129,49 @@
                 "text/plain": {
                   "examples": {
                     "List all Master Accounts": {
-                      "value": "{\n    \"data\": [\n        {\n            \"id\": {{master_account_id}},\n            \"client_id\": {{client_id}},\n            \"master_account_holder_id\": {{master_account_holder_id}},\n            \"label\": \"Payments Account\",\n            \"available_balance\": \"104100.41\",\n            \"pending_credits\": \"1198.50\",\n            \"pending_debits\": \"390.10\",\n            \"account_number\": \"9545931209\",\n            \"routing_number\": \"123321123\",\n            \"sponsor_bank\": \"Sponsor Bank\",\n            \"currency\": \"usd\",\n            \"external_reference_id\": \"XV-H27LGD-FX\",\n            \"purpose\": \"Payment Ops Master Account\",\n            \"attachments\": [\n                {\n                    \"label\": \"flow of funds doc\",\n                    \"id\": {{attachment_id}},\n                    \"created_at\": \"2024-04-01T21:00:00Z\"\n                }\n            ],\n            \"metadata\": {\n                \"master_account_code\": \"001\"\n            },\n            \"status\": \"open\",\n            \"timestamps\": {\n                \"created_at\": \"2024-04-01T21:00:00Z\",\n                \"updated_at\": \"2024-04-02T21:00:00Z\",\n                \"deactivated_at\": \"2024-04-03T21:00:00Z\"\n            },\n            \"config\": {\n                \"payment\": {{payment_config_id}},\n                \"card\": {{card_config_id}},\n                \"sub_account\": {{sub_account_config_id}}\n            }\n        }\n    ],\n    \"has_more\": \"true\",\n    \"starting_after\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\",\n    \"ending_before\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\"\n}"
+                      "value": {
+                        "data": [
+                          {
+                            "id": "",
+                            "client_id": "",
+                            "master_account_holder_id": "",
+                            "label": "Payments Account",
+                            "available_balance": "104100.41",
+                            "pending_credits": "1198.50",
+                            "pending_debits": "390.10",
+                            "account_number": "9545931209",
+                            "routing_number": "123321123",
+                            "sponsor_bank": "Sponsor Bank",
+                            "currency": "usd",
+                            "external_reference_id": "XV-H27LGD-FX",
+                            "purpose": "Payment Ops Master Account",
+                            "attachments": [
+                              {
+                                "label": "flow of funds doc",
+                                "id": "",
+                                "created_at": "2024-04-01T21:00:00Z"
+                              }
+                            ],
+                            "metadata": {
+                              "master_account_code": "001"
+                            },
+                            "status": "open",
+                            "timestamps": {
+                              "created_at": "2024-04-01T21:00:00Z",
+                              "updated_at": "2024-04-02T21:00:00Z",
+                              "deactivated_at": "2024-04-03T21:00:00Z"
+                            },
+                            "config": {
+                              "payment": "",
+                              "card": "",
+                              "sub_account": ""
+                            }
+                          }
+                        ],
+                        "has_more": "true",
+                        "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+                        "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+                      }
                     }
                   }
                 }
@@ -174,7 +216,63 @@
                 "text/plain": {
                   "examples": {
                     "List all Sub Account Holders": {
-                      "value": "{\n    \"data\": [\n        {\n            \"id\": {{sub_account_holder_id}},\n            \"client_id\": {{client_id}},\n            \"master_account_holder_id\": {{master_account_holder_id}},\n            \"master_account_id\": {{master_account_id}},\n            \"type\": \"person\",\n            \"person\": {\n                \"first_name\": \"Jane\",\n                \"last_name\": \"Doe\",\n                \"id_type\": \"ssn\",\n                \"id_number\": \"223913234\",\n                \"date_of_birth\": \"1974-01-25\",\n                \"phone\": \"+19418405843\",\n                \"email\": \"jane.doe@gmail.com\",\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                }\n            },\n            \"verification\": {\n                \"status\": \"pass\",\n                \"method\": \"persona\",\n                \"url\": \"https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV\"\n            },\n            \"ofac\": {\n                \"status\": \"pass\",\n                \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n            },\n            \"external_reference_id\": \"TW-9L1L2-UVV\",\n            \"purpose\": \"Ace sub-account holder\",\n            \"attachments\": [\n                {\n                    \"label\": \"formation\",\n                    \"id\": {{attachment_id}},\n                    \"created_at\": \"2024-04-01T21:00:00Z\"\n                }\n            ],\n            \"metadata\": {\n                \"customer_code\": \"1501\"\n            },\n            \"status\": \"activated\",\n            \"timestamps\": {\n                \"created_at\": \"2024-04-01T21:00:00Z\",\n                \"updated_at\": \"2024-04-01T21:00:00Z\"\n            }\n        }\n    ],\n    \"has_more\": \"true\",\n    \"starting_after\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\",\n    \"ending_before\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\"\n}"
+                      "value": {
+                        "data": [
+                          {
+                            "id": "",
+                            "client_id": "",
+                            "master_account_holder_id": "",
+                            "master_account_id": "",
+                            "type": "person",
+                            "person": {
+                              "first_name": "Jane",
+                              "last_name": "Doe",
+                              "id_type": "ssn",
+                              "id_number": "223913234",
+                              "date_of_birth": "1974-01-25",
+                              "phone": "+19418405843",
+                              "email": "jane.doe@gmail.com",
+                              "address": {
+                                "line1": "123 Main St",
+                                "line2": "",
+                                "city": "New York",
+                                "state": "NY",
+                                "country": "US",
+                                "postal_code": "10001"
+                              }
+                            },
+                            "verification": {
+                              "status": "pass",
+                              "method": "persona",
+                              "url": "https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV"
+                            },
+                            "ofac": {
+                              "status": "pass",
+                              "last_updated_at": "2024-04-01T21:00:00Z"
+                            },
+                            "external_reference_id": "TW-9L1L2-UVV",
+                            "purpose": "Ace sub-account holder",
+                            "attachments": [
+                              {
+                                "label": "formation",
+                                "id": "",
+                                "created_at": "2024-04-01T21:00:00Z"
+                              }
+                            ],
+                            "metadata": {
+                              "customer_code": "1501"
+                            },
+                            "status": "activated",
+                            "timestamps": {
+                              "created_at": "2024-04-01T21:00:00Z",
+                              "updated_at": "2024-04-01T21:00:00Z"
+                            }
+                          }
+                        ],
+                        "has_more": "true",
+                        "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+                        "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+                      }
                     }
                   }
                 }
@@ -331,7 +429,56 @@
                 "text/plain": {
                   "examples": {
                     "Retrieve a Sub Account Holder": {
-                      "value": "{\n    \"id\": {{sub_account_holder_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"type\": \"person\",\n    \"person\": {\n        \"first_name\": \"Jane\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223913234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"jane.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"verification\": {\n        \"status\": \"pass\",\n        \"method\": \"persona\",\n        \"url\": \"https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV\"\n    },\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"external_reference_id\": \"TW-9L1L2-UVV\",\n    \"purpose\": \"Ace sub-account holder\",\n    \"attachments\": [\n        {\n            \"label\": \"formation\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"customer_code\": \"1501\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "type": "person",
+                        "person": {
+                          "first_name": "Jane",
+                          "last_name": "Doe",
+                          "id_type": "ssn",
+                          "id_number": "223913234",
+                          "date_of_birth": "1974-01-25",
+                          "phone": "+19418405843",
+                          "email": "jane.doe@gmail.com",
+                          "address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          }
+                        },
+                        "verification": {
+                          "status": "pass",
+                          "method": "persona",
+                          "url": "https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV"
+                        },
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "external_reference_id": "TW-9L1L2-UVV",
+                        "purpose": "Ace sub-account holder",
+                        "attachments": [
+                          {
+                            "label": "formation",
+                            "id": "",
+                            "created_at": "2024-04-01T21:00:00Z"
+                          }
+                        ],
+                        "metadata": {
+                          "customer_code": "1501"
+                        },
+                        "status": "activated",
+                        "timestamps": {
+                          "created_at": "2024-04-01T21:00:00Z",
+                          "updated_at": "2024-04-01T21:00:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -395,7 +542,56 @@
                 "text/plain": {
                   "examples": {
                     "Update a Sub Account Holder": {
-                      "value": "{\n    \"id\": {{sub_account_holder_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"type\": \"person\",\n    \"person\": {\n        \"first_name\": \"Johnson\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223913234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"jane.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"verification\": {\n        \"status\": \"pass\",\n        \"method\": \"persona\",\n        \"url\": \"https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV\"\n    },\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"external_reference_id\": \"TW-9L1L2-UVV\",\n    \"purpose\": \"Ace sub-account holder\",\n    \"attachments\": [\n        {\n            \"label\": \"formation\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"customer_code\": \"1501\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "type": "person",
+                        "person": {
+                          "first_name": "Johnson",
+                          "last_name": "Doe",
+                          "id_type": "ssn",
+                          "id_number": "223913234",
+                          "date_of_birth": "1974-01-25",
+                          "phone": "+19418405843",
+                          "email": "jane.doe@gmail.com",
+                          "address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          }
+                        },
+                        "verification": {
+                          "status": "pass",
+                          "method": "persona",
+                          "url": "https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV"
+                        },
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "external_reference_id": "TW-9L1L2-UVV",
+                        "purpose": "Ace sub-account holder",
+                        "attachments": [
+                          {
+                            "label": "formation",
+                            "id": "",
+                            "created_at": "2024-04-01T21:00:00Z"
+                          }
+                        ],
+                        "metadata": {
+                          "customer_code": "1501"
+                        },
+                        "status": "activated",
+                        "timestamps": {
+                          "created_at": "2024-04-01T21:00:00Z",
+                          "updated_at": "2024-04-01T21:00:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -458,7 +654,46 @@
                 "text/plain": {
                   "examples": {
                     "List all Sub Accounts": {
-                      "value": "{\n    \"data\": [\n        {\n            \"id\": {{sub_account_id}},\n            \"client_id\": {{client_id}},\n            \"master_account_holder_id\": {{master_account_holder_id}},\n            \"master_account_id\": {{master_account_id}},\n            \"sub_account_holder_id\": {{sub_account_holder_id}},\n            \"sub_account_holder_name\": \"Ace LLC\",\n            \"label\": \"Ace payments\",\n            \"type\": \"cash\",\n            \"account_number\": \"9540861337293709\",\n            \"routing_number\": \"123206972\",\n            \"available_balance\": \"1000.00\",\n            \"pending_credits\": \"250.00\",\n            \"pending_debits\": \"100.00\",\n            \"currency\": \"usd\",\n            \"external_reference_id\": \"XVH-27LGDFX\",\n            \"attachments\": [\n                {\n                    \"label\": \"contract\",\n                    \"id\": {{attachment_id}},\n                    \"created_at\": \"2024-04-01T21:00:00Z\"\n                }\n            ],\n            \"purpose\": \"Sub account to pay offshore dev team\",\n            \"metadata\": {\n                \"customer_code\": \"908\"\n            },\n            \"status\": \"open\",\n            \"timestamps\": {\n                \"created_at\": \"2024-04-01T21:00:00Z\",\n                \"updated_at\": \"2024-04-01T21:00:00Z\"\n            }\n        }\n    ],\n    \"has_more\": \"true\",\n    \"starting_after\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\",\n    \"ending_before\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\"\n}"
+                      "value": {
+                        "data": [
+                          {
+                            "id": "",
+                            "client_id": "",
+                            "master_account_holder_id": "",
+                            "master_account_id": "",
+                            "sub_account_holder_id": "",
+                            "sub_account_holder_name": "Ace LLC",
+                            "label": "Ace payments",
+                            "type": "cash",
+                            "account_number": "9540861337293709",
+                            "routing_number": "123206972",
+                            "available_balance": "1000.00",
+                            "pending_credits": "250.00",
+                            "pending_debits": "100.00",
+                            "currency": "usd",
+                            "external_reference_id": "XVH-27LGDFX",
+                            "attachments": [
+                              {
+                                "label": "contract",
+                                "id": "",
+                                "created_at": "2024-04-01T21:00:00Z"
+                              }
+                            ],
+                            "purpose": "Sub account to pay offshore dev team",
+                            "metadata": {
+                              "customer_code": "908"
+                            },
+                            "status": "open",
+                            "timestamps": {
+                              "created_at": "2024-04-01T21:00:00Z",
+                              "updated_at": "2024-04-01T21:00:00Z"
+                            }
+                          }
+                        ],
+                        "has_more": "true",
+                        "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+                        "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+                      }
                     }
                   }
                 }
@@ -491,7 +726,11 @@
               "application/json": {
                 "examples": {
                   "Create a Sub Account": {
-                    "value": "{\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"label\": \"Ace payments\",\n    \"type\": \"cash\"\n}"
+                    "value": {
+                      "sub_account_holder_id": "",
+                      "label": "Ace payments",
+                      "type": "cash"
+                    }
                   }
                 }
               }
@@ -554,7 +793,39 @@
                 "text/plain": {
                   "examples": {
                     "Create a Sub Account": {
-                      "value": "{\n    \"id\": {{sub_account_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_holder_name\": \"Ace LLC\",\n    \"label\": \"Ace payments\",\n    \"type\": \"cash\",\n    \"account_number\": \"9540861337293709\",\n    \"routing_number\": \"123206972\",\n    \"available_balance\": \"0.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"currency\": \"usd\",\n    \"external_reference_id\": \"XVH-27LGDFX\",\n    \"attachments\": [\n        {\n            \"label\": \"contract\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"purpose\": \"Sub account to pay offshore dev team\",\n    \"metadata\": {\n        \"customer_code\": \"908\"\n    },\n    \"status\": \"open\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_holder_name": "Ace LLC",
+                        "label": "Ace payments",
+                        "type": "cash",
+                        "account_number": "9540861337293709",
+                        "routing_number": "123206972",
+                        "available_balance": "0.00",
+                        "pending_credits": "0.00",
+                        "pending_debits": "0.00",
+                        "currency": "usd",
+                        "external_reference_id": "XVH-27LGDFX",
+                        "attachments": [
+                          {
+                            "label": "contract",
+                            "id": "",
+                            "created_at": "2024-04-01T21:00:00Z"
+                          }
+                        ],
+                        "purpose": "Sub account to pay offshore dev team",
+                        "metadata": {
+                          "customer_code": "908"
+                        },
+                        "status": "open",
+                        "timestamps": {
+                          "created_at": "2024-04-01T21:00:00Z",
+                          "updated_at": "2024-04-01T21:00:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -591,7 +862,39 @@
                 "text/plain": {
                   "examples": {
                     "Retrieve a Sub Account": {
-                      "value": "{\n    \"id\": {{sub_account_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_holder_name\": \"Ace LLC\",\n    \"label\": \"Ace PayOps\",\n    \"type\": \"cash\",\n    \"account_number\": \"9540861337293709\",\n    \"routing_number\": \"123206972\",\n    \"available_balance\": \"1000.00\",\n    \"pending_credits\": \"250.00\",\n    \"pending_debits\": \"100.00\",\n    \"currency\": \"usd\",\n    \"external_reference_id\": \"XVH-27LGDFX\",\n    \"attachments\": [\n        {\n            \"label\": \"contract\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"purpose\": \"Sub account to pay offshore dev team\",\n    \"metadata\": {\n        \"customer_code\": \"908\"\n    },\n    \"status\": \"open\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_holder_name": "Ace LLC",
+                        "label": "Ace PayOps",
+                        "type": "cash",
+                        "account_number": "9540861337293709",
+                        "routing_number": "123206972",
+                        "available_balance": "1000.00",
+                        "pending_credits": "250.00",
+                        "pending_debits": "100.00",
+                        "currency": "usd",
+                        "external_reference_id": "XVH-27LGDFX",
+                        "attachments": [
+                          {
+                            "label": "contract",
+                            "id": "",
+                            "created_at": "2024-04-01T21:00:00Z"
+                          }
+                        ],
+                        "purpose": "Sub account to pay offshore dev team",
+                        "metadata": {
+                          "customer_code": "908"
+                        },
+                        "status": "open",
+                        "timestamps": {
+                          "created_at": "2024-04-01T21:00:00Z",
+                          "updated_at": "2024-04-01T21:00:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -648,7 +951,39 @@
                 "text/plain": {
                   "examples": {
                     "Update a Sub Account": {
-                      "value": "{\n    \"id\": {{sub_account_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_holder_name\": \"Ace LLC\",\n    \"label\": \"Ace PayOps\",\n    \"type\": \"cash\",\n    \"account_number\": \"9540861337293709\",\n    \"routing_number\": \"123206972\",\n    \"available_balance\": \"1000.00\",\n    \"pending_credits\": \"250.00\",\n    \"pending_debits\": \"100.00\",\n    \"currency\": \"usd\",\n    \"external_reference_id\": \"XVH-27LGDFX\",\n    \"attachments\": [\n        {\n            \"label\": \"contract\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"purpose\": \"Sub account to pay offshore dev team\",\n    \"metadata\": {\n        \"customer_code\": \"908\"\n    },\n    \"status\": \"open\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_holder_name": "Ace LLC",
+                        "label": "Ace PayOps",
+                        "type": "cash",
+                        "account_number": "9540861337293709",
+                        "routing_number": "123206972",
+                        "available_balance": "1000.00",
+                        "pending_credits": "250.00",
+                        "pending_debits": "100.00",
+                        "currency": "usd",
+                        "external_reference_id": "XVH-27LGDFX",
+                        "attachments": [
+                          {
+                            "label": "contract",
+                            "id": "",
+                            "created_at": "2024-04-01T21:00:00Z"
+                          }
+                        ],
+                        "purpose": "Sub account to pay offshore dev team",
+                        "metadata": {
+                          "customer_code": "908"
+                        },
+                        "status": "open",
+                        "timestamps": {
+                          "created_at": "2024-04-01T21:00:00Z",
+                          "updated_at": "2024-04-01T21:00:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -703,7 +1038,186 @@
                 "text/plain": {
                   "examples": {
                     "List all Counterparties": {
-                      "value": "{\n    \"data\": [\n        {\n            \"id\": {{counterparty_id}},\n            \"client_id\": {{client_id}},\n            \"master_account_holder_id\": {{master_account_holder_id}},\n            \"master_account_id\": {{master_account_id}},\n            \"sub_account_holder_id\": {{sub_account_holder_id}},\n            \"sub_account_id\": {{sub_account_id}},\n            \"label\": \"Utilities\",\n            \"type\": \"person\",\n            \"person\": {\n                \"first_name\": \"John\",\n                \"last_name\": \"Doe\",\n                \"id_type\": \"ssn\",\n                \"id_number\": \"223902234\",\n                \"date_of_birth\": \"1974-01-25\",\n                \"phone\": \"+19418405843\",\n                \"email\": \"john.doe@gmail.com\",\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                }\n            },\n            \"business\": {\n                \"legal_name\": \"NewCo LLC\",\n                \"dba\": \"NewCo\",\n                \"entity_type\": \"limited_liability_company\",\n                \"id_type\": \"ein\",\n                \"id_number\": \"187654321\",\n                \"phone\": \"+16604491146\",\n                \"email\": \"support@newco.com\",\n                \"formation_date\": \"2018-02-18\",\n                \"address\": {\n                    \"line1\": \"456 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                },\n                \"members\": [\n                    {\n                        \"first_name\": \"John\",\n                        \"last_name\": \"Doe\",\n                        \"id_type\": \"ssn\",\n                        \"id_number\": \"223902234\",\n                        \"date_of_birth\": \"1974-01-25\",\n                        \"phone\": \"+19418405843\",\n                        \"email\": \"john.doe@gmail.com\",\n                        \"address\": {\n                            \"line1\": \"123 Main St\",\n                            \"line2\": \"\",\n                            \"city\": \"New York\",\n                            \"state\": \"NY\",\n                            \"country\": \"US\",\n                            \"postal_code\": \"10001\"\n                        },\n                        \"ownership\": \"50.00\",\n                        \"title\": \"CEO\",\n                        \"control_person\": true\n                    }\n                ]\n            },\n            \"intra_account\": {\n                \"sub_account_number\": \"95483674098723\",\n                \"sub_account_id\": \"sub_cda1e562657c41e553104b10aad3fe70\"\n            },\n            \"ach\": {\n                \"account_number\": \"98324502\",\n                \"routing_number\": \"121042882\",\n                \"account_type\": \"business_checking\",\n                \"bank_name\": \"Wells Fargo\",\n                \"verification_status\": \"verified\"\n            },\n            \"domestic_wire\": {\n                \"account_number\": \"98324502\",\n                \"routing_number\": \"121042882\",\n                \"account_type\": \"business_checking\",\n                \"bank_name\": \"Wells Fargo\"\n            },\n            \"international_wire\": {\n                \"account_number\": \"920020006167511\",\n                \"beneficiary_bank\": {\n                    \"identifier_code\": \"ICICINBBNRI\",\n                    \"name\": \"ICICI Bank\",\n                    \"address\": {\n                        \"line1\": \"256 Main St\",\n                        \"line2\": \"\",\n                        \"city\": \"Bengaluru\",\n                        \"state\": \"KA\",\n                        \"country\": \"IN\",\n                        \"postal_code\": \"900009\"\n                    }\n                },\n                \"correspondent_bank\": {\n                    \"identifier_code\": \"SCBLUS33XXX\",\n                    \"name\": \"STANDARD CHARTERED BANK\",\n                    \"address\": {\n                        \"line1\": \"1095 12th Ave\",\n                        \"line2\": \"\",\n                        \"city\": \"New York\",\n                        \"state\": \"NY\",\n                        \"country\": \"US\",\n                        \"postal_code\": \"10001\"\n                    }\n                }\n            },\n            \"rtp\": {\n                \"account_number\": \"98324502\",\n                \"routing_number\": \"121042882\",\n                \"account_type\": \"business_checking\",\n                \"bank_name\": \"Wells Fargo\",\n                \"verification_status\": \"verified\"\n            },\n            \"fednow\": {\n                \"account_number\": \"98324502\",\n                \"routing_number\": \"121042882\",\n                \"account_type\": \"business_checking\",\n                \"bank_name\": \"Wells Fargo\",\n                \"verification_status\": \"verified\"\n            },\n            \"check\": {\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                }\n            },\n            \"debit_card\": {\n                \"card_number\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n                \"last4\": \"9990\",\n                \"expiry_month\": \"10\",\n                \"expiry_year\": \"2024\",\n                \"cvv\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                },\n                \"pull_enabled\": true,\n                \"push_enabled\": true\n            },\n            \"purpose\": \"Offshore dev center\",\n            \"external_reference_id\": \"TW-9L1L2-UVV\",\n            \"ofac\": {\n                \"status\": \"pass\",\n                \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n            },\n            \"attachments\": [\n                {\n                    \"label\": \"Dev Contract\",\n                    \"id\": {{attachment_id}},\n                    \"created_at\": \"2024-04-01T21:00:00Z\"\n                }\n            ],\n            \"metadata\": {\n                \"vendor_id\": \"VID-0987ACR\"\n            },\n            \"status\": \"activated\",\n            \"timestamps\": {\n                \"created_at\": \"2024-04-01T21:00:00Z\",\n                \"updated_at\": \"2024-04-01T21:00:00Z\"\n            }\n        }\n    ],\n    \"has_more\": \"true\",\n    \"starting_after\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\",\n    \"ending_before\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\"\n}"
+                      "value": {
+                        "data": [
+                          {
+                            "id": "",
+                            "client_id": "",
+                            "master_account_holder_id": "",
+                            "master_account_id": "",
+                            "sub_account_holder_id": "",
+                            "sub_account_id": "",
+                            "label": "Utilities",
+                            "type": "person",
+                            "person": {
+                              "first_name": "John",
+                              "last_name": "Doe",
+                              "id_type": "ssn",
+                              "id_number": "223902234",
+                              "date_of_birth": "1974-01-25",
+                              "phone": "+19418405843",
+                              "email": "john.doe@gmail.com",
+                              "address": {
+                                "line1": "123 Main St",
+                                "line2": "",
+                                "city": "New York",
+                                "state": "NY",
+                                "country": "US",
+                                "postal_code": "10001"
+                              }
+                            },
+                            "business": {
+                              "legal_name": "NewCo LLC",
+                              "dba": "NewCo",
+                              "entity_type": "limited_liability_company",
+                              "id_type": "ein",
+                              "id_number": "187654321",
+                              "phone": "+16604491146",
+                              "email": "support@newco.com",
+                              "formation_date": "2018-02-18",
+                              "address": {
+                                "line1": "456 Main St",
+                                "line2": "",
+                                "city": "New York",
+                                "state": "NY",
+                                "country": "US",
+                                "postal_code": "10001"
+                              },
+                              "members": [
+                                {
+                                  "first_name": "John",
+                                  "last_name": "Doe",
+                                  "id_type": "ssn",
+                                  "id_number": "223902234",
+                                  "date_of_birth": "1974-01-25",
+                                  "phone": "+19418405843",
+                                  "email": "john.doe@gmail.com",
+                                  "address": {
+                                    "line1": "123 Main St",
+                                    "line2": "",
+                                    "city": "New York",
+                                    "state": "NY",
+                                    "country": "US",
+                                    "postal_code": "10001"
+                                  },
+                                  "ownership": "50.00",
+                                  "title": "CEO",
+                                  "control_person": true
+                                }
+                              ]
+                            },
+                            "intra_account": {
+                              "sub_account_number": "95483674098723",
+                              "sub_account_id": "sub_cda1e562657c41e553104b10aad3fe70"
+                            },
+                            "ach": {
+                              "account_number": "98324502",
+                              "routing_number": "121042882",
+                              "account_type": "business_checking",
+                              "bank_name": "Wells Fargo",
+                              "verification_status": "verified"
+                            },
+                            "domestic_wire": {
+                              "account_number": "98324502",
+                              "routing_number": "121042882",
+                              "account_type": "business_checking",
+                              "bank_name": "Wells Fargo"
+                            },
+                            "international_wire": {
+                              "account_number": "920020006167511",
+                              "beneficiary_bank": {
+                                "identifier_code": "ICICINBBNRI",
+                                "name": "ICICI Bank",
+                                "address": {
+                                  "line1": "256 Main St",
+                                  "line2": "",
+                                  "city": "Bengaluru",
+                                  "state": "KA",
+                                  "country": "IN",
+                                  "postal_code": "900009"
+                                }
+                              },
+                              "correspondent_bank": {
+                                "identifier_code": "SCBLUS33XXX",
+                                "name": "STANDARD CHARTERED BANK",
+                                "address": {
+                                  "line1": "1095 12th Ave",
+                                  "line2": "",
+                                  "city": "New York",
+                                  "state": "NY",
+                                  "country": "US",
+                                  "postal_code": "10001"
+                                }
+                              }
+                            },
+                            "rtp": {
+                              "account_number": "98324502",
+                              "routing_number": "121042882",
+                              "account_type": "business_checking",
+                              "bank_name": "Wells Fargo",
+                              "verification_status": "verified"
+                            },
+                            "fednow": {
+                              "account_number": "98324502",
+                              "routing_number": "121042882",
+                              "account_type": "business_checking",
+                              "bank_name": "Wells Fargo",
+                              "verification_status": "verified"
+                            },
+                            "check": {
+                              "address": {
+                                "line1": "123 Main St",
+                                "line2": "",
+                                "city": "New York",
+                                "state": "NY",
+                                "country": "US",
+                                "postal_code": "10001"
+                              }
+                            },
+                            "debit_card": {
+                              "card_number": "tok_live_6GVyHuQR7aAjCZivYzLbuP_9990",
+                              "last4": "9990",
+                              "expiry_month": "10",
+                              "expiry_year": "2024",
+                              "cvv": "tok_live_6GVyHuQR7aAjCZivYzLbuP_9990",
+                              "address": {
+                                "line1": "123 Main St",
+                                "line2": "",
+                                "city": "New York",
+                                "state": "NY",
+                                "country": "US",
+                                "postal_code": "10001"
+                              },
+                              "pull_enabled": true,
+                              "push_enabled": true
+                            },
+                            "purpose": "Offshore dev center",
+                            "external_reference_id": "TW-9L1L2-UVV",
+                            "ofac": {
+                              "status": "pass",
+                              "last_updated_at": "2024-04-01T21:00:00Z"
+                            },
+                            "attachments": [
+                              {
+                                "label": "Dev Contract",
+                                "id": "",
+                                "created_at": "2024-04-01T21:00:00Z"
+                              }
+                            ],
+                            "metadata": {
+                              "vendor_id": "VID-0987ACR"
+                            },
+                            "status": "activated",
+                            "timestamps": {
+                              "created_at": "2024-04-01T21:00:00Z",
+                              "updated_at": "2024-04-01T21:00:00Z"
+                            }
+                          }
+                        ],
+                        "has_more": "true",
+                        "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+                        "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+                      }
                     }
                   }
                 }
@@ -736,7 +1250,84 @@
               "application/json": {
                 "examples": {
                   "Create a Counterparty": {
-                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"label\": \"Development Vendor\",\n    \"type\": \"person\",\n    \"person\": {\n        \"first_name\": \"John\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"intra_account\": {\n        \"sub_account_number\": \"95483674098723\",\n        \"sub_account_id\": \"sub_cda1e562657c41e553104b10aad3fe70\"\n    },\n    \"ach\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"rtp\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"domestic_wire\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\"\n    },\n    \"international_wire\": {\n        \"account_number\": \"920020006167511\",\n        \"beneficiary_bank\": {\n            \"identifier_code\": \"ICICINBBNRI\",\n            \"name\": \"ICICI Bank\",\n            \"address\": {\n                \"line1\": \"256 Main St\",\n                \"line2\": \"\",\n                \"city\": \"Bengaluru\",\n                \"state\": \"KA\",\n                \"country\": \"IN\",\n                \"postal_code\": \"900009\"\n            }\n        },\n        \"correspondent_bank\": {\n            \"identifier_code\": \"SCBLUS33XXX\",\n            \"name\": \"STANDARD CHARTERED BANK\",\n            \"address\": {\n                \"line1\": \"1095 12th Ave\",\n                \"line2\": \"\",\n                \"city\": \"New York\",\n                \"state\": \"NY\",\n                \"country\": \"US\",\n                \"postal_code\": \"10001\"\n            }\n        }\n    },\n    \"purpose\": \"Offshore dev center\",\n    \"external_reference_id\": \"TW-9L1L2-UVV\",\n    \"metadata\": {\n        \"vendor_id\": \"VID-0987ACR\"\n    }\n}"
+                    "value": {
+                      "sub_account_id": "",
+                      "label": "Development Vendor",
+                      "type": "person",
+                      "person": {
+                        "first_name": "John",
+                        "last_name": "Doe",
+                        "id_type": "ssn",
+                        "id_number": "223902234",
+                        "date_of_birth": "1974-01-25",
+                        "phone": "+19418405843",
+                        "email": "john.doe@gmail.com",
+                        "address": {
+                          "line1": "123 Main St",
+                          "line2": "",
+                          "city": "New York",
+                          "state": "NY",
+                          "country": "US",
+                          "postal_code": "10001"
+                        }
+                      },
+                      "intra_account": {
+                        "sub_account_number": "95483674098723",
+                        "sub_account_id": "sub_cda1e562657c41e553104b10aad3fe70"
+                      },
+                      "ach": {
+                        "account_number": "98324502",
+                        "routing_number": "121042882",
+                        "account_type": "business_checking",
+                        "bank_name": "Wells Fargo",
+                        "verification_status": "verified"
+                      },
+                      "rtp": {
+                        "account_number": "98324502",
+                        "routing_number": "121042882",
+                        "account_type": "business_checking",
+                        "bank_name": "Wells Fargo",
+                        "verification_status": "verified"
+                      },
+                      "domestic_wire": {
+                        "account_number": "98324502",
+                        "routing_number": "121042882",
+                        "account_type": "business_checking",
+                        "bank_name": "Wells Fargo"
+                      },
+                      "international_wire": {
+                        "account_number": "920020006167511",
+                        "beneficiary_bank": {
+                          "identifier_code": "ICICINBBNRI",
+                          "name": "ICICI Bank",
+                          "address": {
+                            "line1": "256 Main St",
+                            "line2": "",
+                            "city": "Bengaluru",
+                            "state": "KA",
+                            "country": "IN",
+                            "postal_code": "900009"
+                          }
+                        },
+                        "correspondent_bank": {
+                          "identifier_code": "SCBLUS33XXX",
+                          "name": "STANDARD CHARTERED BANK",
+                          "address": {
+                            "line1": "1095 12th Ave",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          }
+                        }
+                      },
+                      "purpose": "Offshore dev center",
+                      "external_reference_id": "TW-9L1L2-UVV",
+                      "metadata": {
+                        "vendor_id": "VID-0987ACR"
+                      }
+                    }
                   }
                 }
               }
@@ -749,7 +1340,179 @@
                 "text/plain": {
                   "examples": {
                     "Create a Counterparty": {
-                      "value": "{\n    \"id\": {{counterparty_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"label\": \"Development Vendor\",\n    \"type\": \"person\",\n    \"person\": {\n        \"first_name\": \"John\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"business\": {\n        \"legal_name\": \"NewCo LLC\",\n        \"dba\": \"NewCo\",\n        \"entity_type\": \"limited_liability_company\",\n        \"id_type\": \"ein\",\n        \"id_number\": \"187654321\",\n        \"phone\": \"+16604491146\",\n        \"email\": \"support@newco.com\",\n        \"formation_date\": \"2018-02-18\",\n        \"address\": {\n            \"line1\": \"456 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"members\": [\n            {\n                \"first_name\": \"John\",\n                \"last_name\": \"Doe\",\n                \"id_type\": \"ssn\",\n                \"id_number\": \"223902234\",\n                \"date_of_birth\": \"1974-01-25\",\n                \"phone\": \"+19418405843\",\n                \"email\": \"john.doe@gmail.com\",\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                },\n                \"ownership\": \"50.00\",\n                \"title\": \"CEO\",\n                \"control_person\": true\n            }\n        ]\n    },\n    \"intra_account\": {\n        \"sub_account_number\": \"95483674098723\",\n        \"sub_account_id\": \"sub_cda1e562657c41e553104b10aad3fe70\"\n    },\n    \"ach\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"domestic_wire\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\"\n    },\n    \"international_wire\": {\n        \"account_number\": \"920020006167511\",\n        \"beneficiary_bank\": {\n            \"identifier_code\": \"ICICINBBNRI\",\n            \"name\": \"ICICI Bank\",\n            \"address\": {\n                \"line1\": \"256 Main St\",\n                \"line2\": \"\",\n                \"city\": \"Bengaluru\",\n                \"state\": \"KA\",\n                \"country\": \"IN\",\n                \"postal_code\": \"900009\"\n            }\n        },\n        \"correspondent_bank\": {\n            \"identifier_code\": \"SCBLUS33XXX\",\n            \"name\": \"STANDARD CHARTERED BANK\",\n            \"address\": {\n                \"line1\": \"1095 12th Ave\",\n                \"line2\": \"\",\n                \"city\": \"New York\",\n                \"state\": \"NY\",\n                \"country\": \"US\",\n                \"postal_code\": \"10001\"\n            }\n        }\n    },\n    \"rtp\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"fednow\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"check\": {\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"debit_card\": {\n        \"card_number\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n        \"last4\": \"9990\",\n        \"expiry_month\": \"10\",\n        \"expiry_year\": \"2024\",\n        \"cvv\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"pull_enabled\": true,\n        \"push_enabled\": true\n    },\n    \"purpose\": \"Offshore dev center\",\n    \"external_reference_id\": \"TW-9L1L2-UVV\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": [\n        {\n            \"label\": \"Dev Contract\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"vendor_id\": \"VID-0987ACR\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "label": "Development Vendor",
+                        "type": "person",
+                        "person": {
+                          "first_name": "John",
+                          "last_name": "Doe",
+                          "id_type": "ssn",
+                          "id_number": "223902234",
+                          "date_of_birth": "1974-01-25",
+                          "phone": "+19418405843",
+                          "email": "john.doe@gmail.com",
+                          "address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          }
+                        },
+                        "business": {
+                          "legal_name": "NewCo LLC",
+                          "dba": "NewCo",
+                          "entity_type": "limited_liability_company",
+                          "id_type": "ein",
+                          "id_number": "187654321",
+                          "phone": "+16604491146",
+                          "email": "support@newco.com",
+                          "formation_date": "2018-02-18",
+                          "address": {
+                            "line1": "456 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          },
+                          "members": [
+                            {
+                              "first_name": "John",
+                              "last_name": "Doe",
+                              "id_type": "ssn",
+                              "id_number": "223902234",
+                              "date_of_birth": "1974-01-25",
+                              "phone": "+19418405843",
+                              "email": "john.doe@gmail.com",
+                              "address": {
+                                "line1": "123 Main St",
+                                "line2": "",
+                                "city": "New York",
+                                "state": "NY",
+                                "country": "US",
+                                "postal_code": "10001"
+                              },
+                              "ownership": "50.00",
+                              "title": "CEO",
+                              "control_person": true
+                            }
+                          ]
+                        },
+                        "intra_account": {
+                          "sub_account_number": "95483674098723",
+                          "sub_account_id": "sub_cda1e562657c41e553104b10aad3fe70"
+                        },
+                        "ach": {
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo",
+                          "verification_status": "verified"
+                        },
+                        "domestic_wire": {
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo"
+                        },
+                        "international_wire": {
+                          "account_number": "920020006167511",
+                          "beneficiary_bank": {
+                            "identifier_code": "ICICINBBNRI",
+                            "name": "ICICI Bank",
+                            "address": {
+                              "line1": "256 Main St",
+                              "line2": "",
+                              "city": "Bengaluru",
+                              "state": "KA",
+                              "country": "IN",
+                              "postal_code": "900009"
+                            }
+                          },
+                          "correspondent_bank": {
+                            "identifier_code": "SCBLUS33XXX",
+                            "name": "STANDARD CHARTERED BANK",
+                            "address": {
+                              "line1": "1095 12th Ave",
+                              "line2": "",
+                              "city": "New York",
+                              "state": "NY",
+                              "country": "US",
+                              "postal_code": "10001"
+                            }
+                          }
+                        },
+                        "rtp": {
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo",
+                          "verification_status": "verified"
+                        },
+                        "fednow": {
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo",
+                          "verification_status": "verified"
+                        },
+                        "check": {
+                          "address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          }
+                        },
+                        "debit_card": {
+                          "card_number": "tok_live_6GVyHuQR7aAjCZivYzLbuP_9990",
+                          "last4": "9990",
+                          "expiry_month": "10",
+                          "expiry_year": "2024",
+                          "cvv": "tok_live_6GVyHuQR7aAjCZivYzLbuP_9990",
+                          "address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          },
+                          "pull_enabled": true,
+                          "push_enabled": true
+                        },
+                        "purpose": "Offshore dev center",
+                        "external_reference_id": "TW-9L1L2-UVV",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": [
+                          {
+                            "label": "Dev Contract",
+                            "id": "",
+                            "created_at": "2024-04-01T21:00:00Z"
+                          }
+                        ],
+                        "metadata": {
+                          "vendor_id": "VID-0987ACR"
+                        },
+                        "status": "activated",
+                        "timestamps": {
+                          "created_at": "2024-04-01T21:00:00Z",
+                          "updated_at": "2024-04-01T21:00:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -786,7 +1549,179 @@
                 "text/plain": {
                   "examples": {
                     "Retrieve a Counterparty": {
-                      "value": "{\n    \"id\": {{counterparty_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"label\": \"Utilities\",\n    \"type\": \"person\",\n    \"person\": {\n        \"first_name\": \"John\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"business\": {\n        \"legal_name\": \"NewCo LLC\",\n        \"dba\": \"NewCo\",\n        \"entity_type\": \"limited_liability_company\",\n        \"id_type\": \"ein\",\n        \"id_number\": \"187654321\",\n        \"phone\": \"+16604491146\",\n        \"email\": \"support@newco.com\",\n        \"formation_date\": \"2018-02-18\",\n        \"address\": {\n            \"line1\": \"456 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"members\": [\n            {\n                \"first_name\": \"John\",\n                \"last_name\": \"Doe\",\n                \"id_type\": \"ssn\",\n                \"id_number\": \"223902234\",\n                \"date_of_birth\": \"1974-01-25\",\n                \"phone\": \"+19418405843\",\n                \"email\": \"john.doe@gmail.com\",\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                },\n                \"ownership\": \"50.00\",\n                \"title\": \"CEO\",\n                \"control_person\": true\n            }\n        ]\n    },\n    \"intra_account\": {\n        \"sub_account_number\": \"95483674098723\",\n        \"sub_account_id\": \"sub_cda1e562657c41e553104b10aad3fe70\"\n    },\n    \"ach\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"domestic_wire\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\"\n    },\n    \"international_wire\": {\n        \"account_number\": \"920020006167511\",\n        \"beneficiary_bank\": {\n            \"identifier_code\": \"ICICINBBNRI\",\n            \"name\": \"ICICI Bank\",\n            \"address\": {\n                \"line1\": \"256 Main St\",\n                \"line2\": \"\",\n                \"city\": \"Bengaluru\",\n                \"state\": \"KA\",\n                \"country\": \"IN\",\n                \"postal_code\": \"900009\"\n            }\n        },\n        \"correspondent_bank\": {\n            \"identifier_code\": \"SCBLUS33XXX\",\n            \"name\": \"STANDARD CHARTERED BANK\",\n            \"address\": {\n                \"line1\": \"1095 12th Ave\",\n                \"line2\": \"\",\n                \"city\": \"New York\",\n                \"state\": \"NY\",\n                \"country\": \"US\",\n                \"postal_code\": \"10001\"\n            }\n        }\n    },\n    \"rtp\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"fednow\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"check\": {\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"debit_card\": {\n        \"card_number\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n        \"last4\": \"9990\",\n        \"expiry_month\": \"10\",\n        \"expiry_year\": \"2024\",\n        \"cvv\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"pull_enabled\": true,\n        \"push_enabled\": true\n    },\n    \"purpose\": \"Offshore dev center\",\n    \"external_reference_id\": \"TW-9L1L2-UVV\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": [\n        {\n            \"label\": \"Dev Contract\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"vendor_id\": \"VID-0987ACR\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "label": "Utilities",
+                        "type": "person",
+                        "person": {
+                          "first_name": "John",
+                          "last_name": "Doe",
+                          "id_type": "ssn",
+                          "id_number": "223902234",
+                          "date_of_birth": "1974-01-25",
+                          "phone": "+19418405843",
+                          "email": "john.doe@gmail.com",
+                          "address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          }
+                        },
+                        "business": {
+                          "legal_name": "NewCo LLC",
+                          "dba": "NewCo",
+                          "entity_type": "limited_liability_company",
+                          "id_type": "ein",
+                          "id_number": "187654321",
+                          "phone": "+16604491146",
+                          "email": "support@newco.com",
+                          "formation_date": "2018-02-18",
+                          "address": {
+                            "line1": "456 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          },
+                          "members": [
+                            {
+                              "first_name": "John",
+                              "last_name": "Doe",
+                              "id_type": "ssn",
+                              "id_number": "223902234",
+                              "date_of_birth": "1974-01-25",
+                              "phone": "+19418405843",
+                              "email": "john.doe@gmail.com",
+                              "address": {
+                                "line1": "123 Main St",
+                                "line2": "",
+                                "city": "New York",
+                                "state": "NY",
+                                "country": "US",
+                                "postal_code": "10001"
+                              },
+                              "ownership": "50.00",
+                              "title": "CEO",
+                              "control_person": true
+                            }
+                          ]
+                        },
+                        "intra_account": {
+                          "sub_account_number": "95483674098723",
+                          "sub_account_id": "sub_cda1e562657c41e553104b10aad3fe70"
+                        },
+                        "ach": {
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo",
+                          "verification_status": "verified"
+                        },
+                        "domestic_wire": {
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo"
+                        },
+                        "international_wire": {
+                          "account_number": "920020006167511",
+                          "beneficiary_bank": {
+                            "identifier_code": "ICICINBBNRI",
+                            "name": "ICICI Bank",
+                            "address": {
+                              "line1": "256 Main St",
+                              "line2": "",
+                              "city": "Bengaluru",
+                              "state": "KA",
+                              "country": "IN",
+                              "postal_code": "900009"
+                            }
+                          },
+                          "correspondent_bank": {
+                            "identifier_code": "SCBLUS33XXX",
+                            "name": "STANDARD CHARTERED BANK",
+                            "address": {
+                              "line1": "1095 12th Ave",
+                              "line2": "",
+                              "city": "New York",
+                              "state": "NY",
+                              "country": "US",
+                              "postal_code": "10001"
+                            }
+                          }
+                        },
+                        "rtp": {
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo",
+                          "verification_status": "verified"
+                        },
+                        "fednow": {
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo",
+                          "verification_status": "verified"
+                        },
+                        "check": {
+                          "address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          }
+                        },
+                        "debit_card": {
+                          "card_number": "tok_live_6GVyHuQR7aAjCZivYzLbuP_9990",
+                          "last4": "9990",
+                          "expiry_month": "10",
+                          "expiry_year": "2024",
+                          "cvv": "tok_live_6GVyHuQR7aAjCZivYzLbuP_9990",
+                          "address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          },
+                          "pull_enabled": true,
+                          "push_enabled": true
+                        },
+                        "purpose": "Offshore dev center",
+                        "external_reference_id": "TW-9L1L2-UVV",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": [
+                          {
+                            "label": "Dev Contract",
+                            "id": "",
+                            "created_at": "2024-04-01T21:00:00Z"
+                          }
+                        ],
+                        "metadata": {
+                          "vendor_id": "VID-0987ACR"
+                        },
+                        "status": "activated",
+                        "timestamps": {
+                          "created_at": "2024-04-01T21:00:00Z",
+                          "updated_at": "2024-04-01T21:00:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -843,7 +1778,179 @@
                 "text/plain": {
                   "examples": {
                     "Update a Counterparty": {
-                      "value": "{\n    \"id\": {{counterparty_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"label\": \"Utilities\",\n    \"type\": \"person\",\n    \"person\": {\n        \"first_name\": \"John\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"business\": {\n        \"legal_name\": \"NewCo LLC\",\n        \"dba\": \"NewCo\",\n        \"entity_type\": \"limited_liability_company\",\n        \"id_type\": \"ein\",\n        \"id_number\": \"187654321\",\n        \"phone\": \"+16604491146\",\n        \"email\": \"support@newco.com\",\n        \"formation_date\": \"2018-02-18\",\n        \"address\": {\n            \"line1\": \"456 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"members\": [\n            {\n                \"first_name\": \"John\",\n                \"last_name\": \"Doe\",\n                \"id_type\": \"ssn\",\n                \"id_number\": \"223902234\",\n                \"date_of_birth\": \"1974-01-25\",\n                \"phone\": \"+19418405843\",\n                \"email\": \"john.doe@gmail.com\",\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                },\n                \"ownership\": \"50.00\",\n                \"title\": \"CEO\",\n                \"control_person\": true\n            }\n        ]\n    },\n    \"intra_account\": {\n        \"sub_account_number\": \"95483674098723\",\n        \"sub_account_id\": \"sub_cda1e562657c41e553104b10aad3fe70\"\n    },\n    \"ach\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"domestic_wire\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\"\n    },\n    \"international_wire\": {\n        \"account_number\": \"920020006167511\",\n        \"beneficiary_bank\": {\n            \"identifier_code\": \"ICICINBBNRI\",\n            \"name\": \"ICICI Bank\",\n            \"address\": {\n                \"line1\": \"256 Main St\",\n                \"line2\": \"\",\n                \"city\": \"Bengaluru\",\n                \"state\": \"KA\",\n                \"country\": \"IN\",\n                \"postal_code\": \"900009\"\n            }\n        },\n        \"correspondent_bank\": {\n            \"identifier_code\": \"SCBLUS33XXX\",\n            \"name\": \"STANDARD CHARTERED BANK\",\n            \"address\": {\n                \"line1\": \"1095 12th Ave\",\n                \"line2\": \"\",\n                \"city\": \"New York\",\n                \"state\": \"NY\",\n                \"country\": \"US\",\n                \"postal_code\": \"10001\"\n            }\n        }\n    },\n    \"rtp\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"fednow\": {\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"verification_status\": \"verified\"\n    },\n    \"check\": {\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"debit_card\": {\n        \"card_number\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n        \"last4\": \"9990\",\n        \"expiry_month\": \"10\",\n        \"expiry_year\": \"2024\",\n        \"cvv\": \"tok_live_6GVyHuQR7aAjCZivYzLbuP_9990\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"pull_enabled\": true,\n        \"push_enabled\": true\n    },\n    \"purpose\": \"Offshore dev center\",\n    \"external_reference_id\": \"TW-9L1L2-UVV\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": [\n        {\n            \"label\": \"Dev Contract\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"vendor_id\": \"VID-0987ACR\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-01T21:00:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "label": "Utilities",
+                        "type": "person",
+                        "person": {
+                          "first_name": "John",
+                          "last_name": "Doe",
+                          "id_type": "ssn",
+                          "id_number": "223902234",
+                          "date_of_birth": "1974-01-25",
+                          "phone": "+19418405843",
+                          "email": "john.doe@gmail.com",
+                          "address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          }
+                        },
+                        "business": {
+                          "legal_name": "NewCo LLC",
+                          "dba": "NewCo",
+                          "entity_type": "limited_liability_company",
+                          "id_type": "ein",
+                          "id_number": "187654321",
+                          "phone": "+16604491146",
+                          "email": "support@newco.com",
+                          "formation_date": "2018-02-18",
+                          "address": {
+                            "line1": "456 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          },
+                          "members": [
+                            {
+                              "first_name": "John",
+                              "last_name": "Doe",
+                              "id_type": "ssn",
+                              "id_number": "223902234",
+                              "date_of_birth": "1974-01-25",
+                              "phone": "+19418405843",
+                              "email": "john.doe@gmail.com",
+                              "address": {
+                                "line1": "123 Main St",
+                                "line2": "",
+                                "city": "New York",
+                                "state": "NY",
+                                "country": "US",
+                                "postal_code": "10001"
+                              },
+                              "ownership": "50.00",
+                              "title": "CEO",
+                              "control_person": true
+                            }
+                          ]
+                        },
+                        "intra_account": {
+                          "sub_account_number": "95483674098723",
+                          "sub_account_id": "sub_cda1e562657c41e553104b10aad3fe70"
+                        },
+                        "ach": {
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo",
+                          "verification_status": "verified"
+                        },
+                        "domestic_wire": {
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo"
+                        },
+                        "international_wire": {
+                          "account_number": "920020006167511",
+                          "beneficiary_bank": {
+                            "identifier_code": "ICICINBBNRI",
+                            "name": "ICICI Bank",
+                            "address": {
+                              "line1": "256 Main St",
+                              "line2": "",
+                              "city": "Bengaluru",
+                              "state": "KA",
+                              "country": "IN",
+                              "postal_code": "900009"
+                            }
+                          },
+                          "correspondent_bank": {
+                            "identifier_code": "SCBLUS33XXX",
+                            "name": "STANDARD CHARTERED BANK",
+                            "address": {
+                              "line1": "1095 12th Ave",
+                              "line2": "",
+                              "city": "New York",
+                              "state": "NY",
+                              "country": "US",
+                              "postal_code": "10001"
+                            }
+                          }
+                        },
+                        "rtp": {
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo",
+                          "verification_status": "verified"
+                        },
+                        "fednow": {
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo",
+                          "verification_status": "verified"
+                        },
+                        "check": {
+                          "address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          }
+                        },
+                        "debit_card": {
+                          "card_number": "tok_live_6GVyHuQR7aAjCZivYzLbuP_9990",
+                          "last4": "9990",
+                          "expiry_month": "10",
+                          "expiry_year": "2024",
+                          "cvv": "tok_live_6GVyHuQR7aAjCZivYzLbuP_9990",
+                          "address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          },
+                          "pull_enabled": true,
+                          "push_enabled": true
+                        },
+                        "purpose": "Offshore dev center",
+                        "external_reference_id": "TW-9L1L2-UVV",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": [
+                          {
+                            "label": "Dev Contract",
+                            "id": "",
+                            "created_at": "2024-04-01T21:00:00Z"
+                          }
+                        ],
+                        "metadata": {
+                          "vendor_id": "VID-0987ACR"
+                        },
+                        "status": "activated",
+                        "timestamps": {
+                          "created_at": "2024-04-01T21:00:00Z",
+                          "updated_at": "2024-04-01T21:00:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -898,7 +2005,60 @@
                 "text/plain": {
                   "examples": {
                     "List all Card Holders": {
-                      "value": "{\n    \"data\": [\n        {\n            \"id\": {{card_holder_id}},\n            \"client_id\": {{client_id}},\n            \"master_account_holder_id\": {{master_account_holder_id}},\n            \"master_account_id\": {{master_account_id}},\n            \"sub_account_holder_id\": {{sub_account_holder_id}},\n            \"sub_account_id\": {{sub_account_id}},\n            \"person\": {\n                \"first_name\": \"Johnson\",\n                \"last_name\": \"Doe\",\n                \"id_type\": \"ssn\",\n                \"id_number\": \"223902234\",\n                \"date_of_birth\": \"1974-01-25\",\n                \"phone\": \"+19418405843\",\n                \"email\": \"john.doe@gmail.com\",\n                \"address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                }\n            },\n            \"external_reference_id\": \"6RPD1QW-W75\",\n            \"purpose\": \"Ace Sales Rep\",\n            \"ofac\": {\n                \"status\": \"pass\",\n                \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n            },\n            \"metadata\": {\n                \"designation\": \"Senior Sales Manager\",\n                \"employee_number\": \"77\"\n            },\n            \"attachments\": [\n                {\n                    \"label\": \"Employee Badge\",\n                    \"id\": {{attachment_id}},\n                    \"created_at\": \"2024-04-01T21:00:00Z\"\n                }\n            ],\n            \"status\": \"activated\",\n            \"timestamps\": {\n                \"created_at\": \"2024-04-01T21:00:00Z\",\n                \"updated_at\": \"2024-04-02T21:00:00Z\"\n            }\n        }\n    ],\n    \"has_more\": \"true\",\n    \"starting_after\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\",\n    \"ending_before\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\"\n}"
+                      "value": {
+                        "data": [
+                          {
+                            "id": "",
+                            "client_id": "",
+                            "master_account_holder_id": "",
+                            "master_account_id": "",
+                            "sub_account_holder_id": "",
+                            "sub_account_id": "",
+                            "person": {
+                              "first_name": "Johnson",
+                              "last_name": "Doe",
+                              "id_type": "ssn",
+                              "id_number": "223902234",
+                              "date_of_birth": "1974-01-25",
+                              "phone": "+19418405843",
+                              "email": "john.doe@gmail.com",
+                              "address": {
+                                "line1": "123 Main St",
+                                "line2": "",
+                                "city": "New York",
+                                "state": "NY",
+                                "country": "US",
+                                "postal_code": "10001"
+                              }
+                            },
+                            "external_reference_id": "6RPD1QW-W75",
+                            "purpose": "Ace Sales Rep",
+                            "ofac": {
+                              "status": "pass",
+                              "last_updated_at": "2024-04-01T21:00:00Z"
+                            },
+                            "metadata": {
+                              "designation": "Senior Sales Manager",
+                              "employee_number": "77"
+                            },
+                            "attachments": [
+                              {
+                                "label": "Employee Badge",
+                                "id": "",
+                                "created_at": "2024-04-01T21:00:00Z"
+                              }
+                            ],
+                            "status": "activated",
+                            "timestamps": {
+                              "created_at": "2024-04-01T21:00:00Z",
+                              "updated_at": "2024-04-02T21:00:00Z"
+                            }
+                          }
+                        ],
+                        "has_more": "true",
+                        "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+                        "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+                      }
                     }
                   }
                 }
@@ -931,7 +2091,31 @@
               "application/json": {
                 "examples": {
                   "Create a Card Holder": {
-                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"person\": {\n        \"first_name\": \"John\",\n        \"middle_name\": \"\",\n        \"last_name\": \"Doe\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"external_reference_id\": \"6RPD1QW-W75\",\n    \"purpose\": \"Ace Sales Expense Card\",\n    \"metadata\": {\n        \"designation\": \"Senior Sales Manager\",\n        \"employee_number\": \"77\"\n    }\n}"
+                    "value": {
+                      "sub_account_id": "",
+                      "person": {
+                        "first_name": "John",
+                        "middle_name": "",
+                        "last_name": "Doe",
+                        "phone": "+19418405843",
+                        "email": "john.doe@gmail.com",
+                        "date_of_birth": "1974-01-25",
+                        "address": {
+                          "line1": "123 Main St",
+                          "line2": "",
+                          "city": "New York",
+                          "state": "NY",
+                          "country": "US",
+                          "postal_code": "10001"
+                        }
+                      },
+                      "external_reference_id": "6RPD1QW-W75",
+                      "purpose": "Ace Sales Expense Card",
+                      "metadata": {
+                        "designation": "Senior Sales Manager",
+                        "employee_number": "77"
+                      }
+                    }
                   }
                 }
               }
@@ -944,7 +2128,53 @@
                 "text/plain": {
                   "examples": {
                     "Create a Card Holder": {
-                      "value": "{\n    \"id\": {{card_holder_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"person\": {\n        \"first_name\": \"John\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"external_reference_id\": \"6RPD1QW-W75\",\n    \"purpose\": \"Ace Sales Rep\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"metadata\": {\n        \"designation\": \"Senior Sales Manager\",\n        \"employee_number\": \"77\"\n    },\n    \"attachments\": [\n        {\n            \"label\": \"Employee Badge\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-02T21:00:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "person": {
+                          "first_name": "John",
+                          "last_name": "Doe",
+                          "id_type": "ssn",
+                          "id_number": "223902234",
+                          "date_of_birth": "1974-01-25",
+                          "phone": "+19418405843",
+                          "email": "john.doe@gmail.com",
+                          "address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          }
+                        },
+                        "external_reference_id": "6RPD1QW-W75",
+                        "purpose": "Ace Sales Rep",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "metadata": {
+                          "designation": "Senior Sales Manager",
+                          "employee_number": "77"
+                        },
+                        "attachments": [
+                          {
+                            "label": "Employee Badge",
+                            "id": "",
+                            "created_at": "2024-04-01T21:00:00Z"
+                          }
+                        ],
+                        "status": "activated",
+                        "timestamps": {
+                          "created_at": "2024-04-01T21:00:00Z",
+                          "updated_at": "2024-04-02T21:00:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -981,7 +2211,53 @@
                 "text/plain": {
                   "examples": {
                     "Retrieve a Card Holder": {
-                      "value": "{\n    \"id\": {{card_holder_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"person\": {\n        \"first_name\": \"Johnson\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"external_reference_id\": \"6RPD1QW-W75\",\n    \"purpose\": \"Ace Sales Rep\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"metadata\": {\n        \"designation\": \"Senior Sales Manager\",\n        \"employee_number\": \"77\"\n    },\n    \"attachments\": [\n        {\n            \"label\": \"Employee Badge\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-02T21:00:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "person": {
+                          "first_name": "Johnson",
+                          "last_name": "Doe",
+                          "id_type": "ssn",
+                          "id_number": "223902234",
+                          "date_of_birth": "1974-01-25",
+                          "phone": "+19418405843",
+                          "email": "john.doe@gmail.com",
+                          "address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          }
+                        },
+                        "external_reference_id": "6RPD1QW-W75",
+                        "purpose": "Ace Sales Rep",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "metadata": {
+                          "designation": "Senior Sales Manager",
+                          "employee_number": "77"
+                        },
+                        "attachments": [
+                          {
+                            "label": "Employee Badge",
+                            "id": "",
+                            "created_at": "2024-04-01T21:00:00Z"
+                          }
+                        ],
+                        "status": "activated",
+                        "timestamps": {
+                          "created_at": "2024-04-01T21:00:00Z",
+                          "updated_at": "2024-04-02T21:00:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -1045,7 +2321,53 @@
                 "text/plain": {
                   "examples": {
                     "Update a Card Holder": {
-                      "value": "{\n    \"id\": {{card_holder_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"person\": {\n        \"first_name\": \"Johnson\",\n        \"last_name\": \"Doe\",\n        \"id_type\": \"ssn\",\n        \"id_number\": \"223902234\",\n        \"date_of_birth\": \"1974-01-25\",\n        \"phone\": \"+19418405843\",\n        \"email\": \"john.doe@gmail.com\",\n        \"address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"external_reference_id\": \"6RPD1QW-W75\",\n    \"purpose\": \"Ace Sales Rep\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"metadata\": {\n        \"designation\": \"Senior Sales Manager\",\n        \"employee_number\": \"77\"\n    },\n    \"attachments\": [\n        {\n            \"label\": \"Employee Badge\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-02T21:00:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "person": {
+                          "first_name": "Johnson",
+                          "last_name": "Doe",
+                          "id_type": "ssn",
+                          "id_number": "223902234",
+                          "date_of_birth": "1974-01-25",
+                          "phone": "+19418405843",
+                          "email": "john.doe@gmail.com",
+                          "address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          }
+                        },
+                        "external_reference_id": "6RPD1QW-W75",
+                        "purpose": "Ace Sales Rep",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "metadata": {
+                          "designation": "Senior Sales Manager",
+                          "employee_number": "77"
+                        },
+                        "attachments": [
+                          {
+                            "label": "Employee Badge",
+                            "id": "",
+                            "created_at": "2024-04-01T21:00:00Z"
+                          }
+                        ],
+                        "status": "activated",
+                        "timestamps": {
+                          "created_at": "2024-04-01T21:00:00Z",
+                          "updated_at": "2024-04-02T21:00:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -1108,7 +2430,85 @@
                 "text/plain": {
                   "examples": {
                     "List all Cards": {
-                      "value": "{\n    \"data\": [\n        {\n            \"id\": {{card_id}},\n            \"client_id\": {{client_id}},\n            \"master_account_holder_id\": {{master_account_holder_id}},\n            \"master_account_id\": {{master_account_id}},\n            \"sub_account_holder_id\": {{sub_account_holder_id}},\n            \"sub_account_id\": {{sub_account_id}},\n            \"cardholder_id\": {{card_holder_id}},\n            \"label\": \"Travel Expense Card\",\n            \"product\": \"business_spend\",\n            \"theme\": \"metallic\",\n            \"type\": \"physical\",\n            \"expiry_month\": \"12\",\n            \"expiry_year\": \"2022\",\n            \"last4\": \"5275\",\n            \"card_fullfilment\": {\n                \"embossing\": {\n                    \"cardholder_name\": \"John Doe\",\n                    \"business_name\": \"Ace Inc\"\n                },\n                \"shipping_address\": {\n                    \"line1\": \"123 Main St\",\n                    \"line2\": \"\",\n                    \"city\": \"New York\",\n                    \"state\": \"NY\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"10001\"\n                },\n                \"tracking\": {\n                    \"status\": \"delivered\",\n                    \"eta\": \"2024-05-02\",\n                    \"number\": \"1231233\",\n                    \"url\": \"https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224\",\n                    \"provider\": \"usps\"\n                }\n            },\n            \"controls\": {\n                \"allowed\": {\n                    \"merchants\": [],\n                    \"categories\": [],\n                    \"countries\": []\n                },\n                \"blocked\": {\n                    \"merchants\": [],\n                    \"categories\": [],\n                    \"countries\": []\n                },\n                \"limit\": {\n                    \"period\": \"daily\",\n                    \"max_spend_amount\": \"500.00\",\n                    \"max_spend_per_transaction\": \"100.00\",\n                    \"max_spend_count\": \"10\"\n                },\n                \"atm_enabled\": true\n            },\n            \"external_reference_id\": \"FSY52RAZ-4X\",\n            \"attachments\": [\n                {\n                    \"label\": \"United\",\n                    \"id\": \"att_a8d2b191fa0e960d8e49a4bfd320e07b\",\n                    \"created_at\": \"2024-04-01T21:00:00Z\"\n                }\n            ],\n            \"metadata\": {\n                \"description\": \"Sales Team Card\"\n            },\n            \"status\": \"activated\",\n            \"timestamps\": {\n                \"created_at\": \"2024-04-01T21:00:00Z\",\n                \"updated_at\": \"2024-04-02T21:00:00Z\"\n            }\n        }\n    ],\n    \"has_more\": \"true\",\n    \"starting_after\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\",\n    \"ending_before\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\"\n}"
+                      "value": {
+                        "data": [
+                          {
+                            "id": "",
+                            "client_id": "",
+                            "master_account_holder_id": "",
+                            "master_account_id": "",
+                            "sub_account_holder_id": "",
+                            "sub_account_id": "",
+                            "cardholder_id": "",
+                            "label": "Travel Expense Card",
+                            "product": "business_spend",
+                            "theme": "metallic",
+                            "type": "physical",
+                            "expiry_month": "12",
+                            "expiry_year": "2022",
+                            "last4": "5275",
+                            "card_fullfilment": {
+                              "embossing": {
+                                "cardholder_name": "John Doe",
+                                "business_name": "Ace Inc"
+                              },
+                              "shipping_address": {
+                                "line1": "123 Main St",
+                                "line2": "",
+                                "city": "New York",
+                                "state": "NY",
+                                "country": "US",
+                                "postal_code": "10001"
+                              },
+                              "tracking": {
+                                "status": "delivered",
+                                "eta": "2024-05-02",
+                                "number": "1231233",
+                                "url": "https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224",
+                                "provider": "usps"
+                              }
+                            },
+                            "controls": {
+                              "allowed": {
+                                "merchants": [],
+                                "categories": [],
+                                "countries": []
+                              },
+                              "blocked": {
+                                "merchants": [],
+                                "categories": [],
+                                "countries": []
+                              },
+                              "limit": {
+                                "period": "daily",
+                                "max_spend_amount": "500.00",
+                                "max_spend_per_transaction": "100.00",
+                                "max_spend_count": "10"
+                              },
+                              "atm_enabled": true
+                            },
+                            "external_reference_id": "FSY52RAZ-4X",
+                            "attachments": [
+                              {
+                                "label": "United",
+                                "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
+                                "created_at": "2024-04-01T21:00:00Z"
+                              }
+                            ],
+                            "metadata": {
+                              "description": "Sales Team Card"
+                            },
+                            "status": "activated",
+                            "timestamps": {
+                              "created_at": "2024-04-01T21:00:00Z",
+                              "updated_at": "2024-04-02T21:00:00Z"
+                            }
+                          }
+                        ],
+                        "has_more": "true",
+                        "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+                        "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+                      }
                     }
                   }
                 }
@@ -1141,7 +2541,40 @@
               "application/json": {
                 "examples": {
                   "Create a Card": {
-                    "value": "{\n    \"cardholder_id\": {{card_holder_id}},\n    \"label\": \"Travel\",\n    \"product\": \"business_spend\",\n    \"theme\": \"metallic\",\n    \"type\": \"physical\",\n    \"card_fullfilment\": {\n        \"embossing\": {\n            \"cardholder_name\": \"John Doe\",\n            \"business_name\": \"Ace Inc\"\n        },\n        \"shipping_address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"controls\": {\n        \"limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_per_transaction\": \"100.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"atm_enabled\": true\n    },\n    \"external_reference_id\": \"FSY52RAZ-4X\",\n    \"metadata\": {\n        \"description\": \"Sales Team Card\"\n    }\n}"
+                    "value": {
+                      "cardholder_id": "",
+                      "label": "Travel",
+                      "product": "business_spend",
+                      "theme": "metallic",
+                      "type": "physical",
+                      "card_fullfilment": {
+                        "embossing": {
+                          "cardholder_name": "John Doe",
+                          "business_name": "Ace Inc"
+                        },
+                        "shipping_address": {
+                          "line1": "123 Main St",
+                          "line2": "",
+                          "city": "New York",
+                          "state": "NY",
+                          "country": "US",
+                          "postal_code": "10001"
+                        }
+                      },
+                      "controls": {
+                        "limit": {
+                          "period": "daily",
+                          "max_spend_amount": "500.00",
+                          "max_spend_per_transaction": "100.00",
+                          "max_spend_count": "10"
+                        },
+                        "atm_enabled": true
+                      },
+                      "external_reference_id": "FSY52RAZ-4X",
+                      "metadata": {
+                        "description": "Sales Team Card"
+                      }
+                    }
                   }
                 }
               }
@@ -1154,7 +2587,78 @@
                 "text/plain": {
                   "examples": {
                     "Create a Card": {
-                      "value": "{\n    \"id\": {{card_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"cardholder_id\": {{card_holder_id}},\n    \"label\": \"Travel\",\n    \"product\": \"business_spend\",\n    \"theme\": \"metallic\",\n    \"type\": \"physical\",\n    \"expiry_month\": \"12\",\n    \"expiry_year\": \"2022\",\n    \"last4\": \"5275\",\n    \"card_fullfilment\": {\n        \"embossing\": {\n            \"cardholder_name\": \"John Doe\",\n            \"business_name\": \"Ace Inc\"\n        },\n        \"shipping_address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"tracking\": {\n            \"status\": \"delivered\",\n            \"eta\": \"2024-05-02\",\n            \"number\": \"1231233\",\n            \"url\": \"https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224\",\n            \"provider\": \"usps\"\n        }\n    },\n    \"controls\": {\n        \"allowed\": {\n            \"merchants\": [],\n            \"categories\": [],\n            \"countries\": []\n        },\n        \"blocked\": {\n            \"merchants\": [],\n            \"categories\": [],\n            \"countries\": []\n        },\n        \"limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_per_transaction\": \"100.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"atm_enabled\": true\n    },\n    \"external_reference_id\": \"FSY52RAZ-4X\",\n    \"attachments\": [\n        {\n            \"label\": \"United\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"description\": \"Sales Team Card\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-02T21:00:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "cardholder_id": "",
+                        "label": "Travel",
+                        "product": "business_spend",
+                        "theme": "metallic",
+                        "type": "physical",
+                        "expiry_month": "12",
+                        "expiry_year": "2022",
+                        "last4": "5275",
+                        "card_fullfilment": {
+                          "embossing": {
+                            "cardholder_name": "John Doe",
+                            "business_name": "Ace Inc"
+                          },
+                          "shipping_address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          },
+                          "tracking": {
+                            "status": "delivered",
+                            "eta": "2024-05-02",
+                            "number": "1231233",
+                            "url": "https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224",
+                            "provider": "usps"
+                          }
+                        },
+                        "controls": {
+                          "allowed": {
+                            "merchants": [],
+                            "categories": [],
+                            "countries": []
+                          },
+                          "blocked": {
+                            "merchants": [],
+                            "categories": [],
+                            "countries": []
+                          },
+                          "limit": {
+                            "period": "daily",
+                            "max_spend_amount": "500.00",
+                            "max_spend_per_transaction": "100.00",
+                            "max_spend_count": "10"
+                          },
+                          "atm_enabled": true
+                        },
+                        "external_reference_id": "FSY52RAZ-4X",
+                        "attachments": [
+                          {
+                            "label": "United",
+                            "id": "",
+                            "created_at": "2024-04-01T21:00:00Z"
+                          }
+                        ],
+                        "metadata": {
+                          "description": "Sales Team Card"
+                        },
+                        "status": "activated",
+                        "timestamps": {
+                          "created_at": "2024-04-01T21:00:00Z",
+                          "updated_at": "2024-04-02T21:00:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -1191,7 +2695,78 @@
                 "text/plain": {
                   "examples": {
                     "Retrieve a Card": {
-                      "value": "{\n    \"id\": {{card_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"cardholder_id\": {{card_holder_id}},\n    \"label\": \"Travel Expense Card\",\n    \"product\": \"business_spend\",\n    \"theme\": \"metallic\",\n    \"type\": \"physical\",\n    \"expiry_month\": \"12\",\n    \"expiry_year\": \"2022\",\n    \"last4\": \"5275\",\n    \"card_fullfilment\": {\n        \"embossing\": {\n            \"cardholder_name\": \"John Doe\",\n            \"business_name\": \"Ace Inc\"\n        },\n        \"shipping_address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"tracking\": {\n            \"status\": \"delivered\",\n            \"eta\": \"2024-05-02\",\n            \"number\": \"1231233\",\n            \"url\": \"https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224\",\n            \"provider\": \"usps\"\n        }\n    },\n    \"controls\": {\n        \"allowed\": {\n            \"merchants\": [],\n            \"categories\": [],\n            \"countries\": []\n        },\n        \"blocked\": {\n            \"merchants\": [],\n            \"categories\": [],\n            \"countries\": []\n        },\n        \"limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_per_transaction\": \"100.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"atm_enabled\": true\n    },\n    \"external_reference_id\": \"FSY52RAZ-4X\",\n    \"attachments\": [\n        {\n            \"label\": \"United\",\n            \"id\": \"att_a8d2b191fa0e960d8e49a4bfd320e07b\",\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"description\": \"Sales Team Card\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-02T21:00:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "cardholder_id": "",
+                        "label": "Travel Expense Card",
+                        "product": "business_spend",
+                        "theme": "metallic",
+                        "type": "physical",
+                        "expiry_month": "12",
+                        "expiry_year": "2022",
+                        "last4": "5275",
+                        "card_fullfilment": {
+                          "embossing": {
+                            "cardholder_name": "John Doe",
+                            "business_name": "Ace Inc"
+                          },
+                          "shipping_address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          },
+                          "tracking": {
+                            "status": "delivered",
+                            "eta": "2024-05-02",
+                            "number": "1231233",
+                            "url": "https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224",
+                            "provider": "usps"
+                          }
+                        },
+                        "controls": {
+                          "allowed": {
+                            "merchants": [],
+                            "categories": [],
+                            "countries": []
+                          },
+                          "blocked": {
+                            "merchants": [],
+                            "categories": [],
+                            "countries": []
+                          },
+                          "limit": {
+                            "period": "daily",
+                            "max_spend_amount": "500.00",
+                            "max_spend_per_transaction": "100.00",
+                            "max_spend_count": "10"
+                          },
+                          "atm_enabled": true
+                        },
+                        "external_reference_id": "FSY52RAZ-4X",
+                        "attachments": [
+                          {
+                            "label": "United",
+                            "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
+                            "created_at": "2024-04-01T21:00:00Z"
+                          }
+                        ],
+                        "metadata": {
+                          "description": "Sales Team Card"
+                        },
+                        "status": "activated",
+                        "timestamps": {
+                          "created_at": "2024-04-01T21:00:00Z",
+                          "updated_at": "2024-04-02T21:00:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -1248,7 +2823,78 @@
                 "text/plain": {
                   "examples": {
                     "Update a Card": {
-                      "value": "{\n    \"id\": {{card_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"cardholder_id\": {{card_holder_id}},\n    \"label\": \"Travel Expense Card\",\n    \"product\": \"business_spend\",\n    \"theme\": \"metallic\",\n    \"type\": \"physical\",\n    \"expiry_month\": \"12\",\n    \"expiry_year\": \"2022\",\n    \"last4\": \"5275\",\n    \"card_fullfilment\": {\n        \"embossing\": {\n            \"cardholder_name\": \"John Doe\",\n            \"business_name\": \"Ace Inc\"\n        },\n        \"shipping_address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        },\n        \"tracking\": {\n            \"status\": \"delivered\",\n            \"eta\": \"2024-05-02\",\n            \"number\": \"1231233\",\n            \"url\": \"https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224\",\n            \"provider\": \"usps\"\n        }\n    },\n    \"controls\": {\n        \"allowed\": {\n            \"merchants\": [],\n            \"categories\": [],\n            \"countries\": []\n        },\n        \"blocked\": {\n            \"merchants\": [],\n            \"categories\": [],\n            \"countries\": []\n        },\n        \"limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_per_transaction\": \"100.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"atm_enabled\": true\n    },\n    \"external_reference_id\": \"FSY52RAZ-4X\",\n    \"attachments\": [\n        {\n            \"label\": \"United\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"description\": \"Sales Team Card\"\n    },\n    \"status\": \"activated\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-02T21:00:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "cardholder_id": "",
+                        "label": "Travel Expense Card",
+                        "product": "business_spend",
+                        "theme": "metallic",
+                        "type": "physical",
+                        "expiry_month": "12",
+                        "expiry_year": "2022",
+                        "last4": "5275",
+                        "card_fullfilment": {
+                          "embossing": {
+                            "cardholder_name": "John Doe",
+                            "business_name": "Ace Inc"
+                          },
+                          "shipping_address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          },
+                          "tracking": {
+                            "status": "delivered",
+                            "eta": "2024-05-02",
+                            "number": "1231233",
+                            "url": "https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224",
+                            "provider": "usps"
+                          }
+                        },
+                        "controls": {
+                          "allowed": {
+                            "merchants": [],
+                            "categories": [],
+                            "countries": []
+                          },
+                          "blocked": {
+                            "merchants": [],
+                            "categories": [],
+                            "countries": []
+                          },
+                          "limit": {
+                            "period": "daily",
+                            "max_spend_amount": "500.00",
+                            "max_spend_per_transaction": "100.00",
+                            "max_spend_count": "10"
+                          },
+                          "atm_enabled": true
+                        },
+                        "external_reference_id": "FSY52RAZ-4X",
+                        "attachments": [
+                          {
+                            "label": "United",
+                            "id": "",
+                            "created_at": "2024-04-01T21:00:00Z"
+                          }
+                        ],
+                        "metadata": {
+                          "description": "Sales Team Card"
+                        },
+                        "status": "activated",
+                        "timestamps": {
+                          "created_at": "2024-04-01T21:00:00Z",
+                          "updated_at": "2024-04-02T21:00:00Z"
+                        }
+                      }
                     }
                   }
                 }
