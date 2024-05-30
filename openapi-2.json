@@ -39,7 +39,42 @@
                 "text/plain": {
                   "examples": {
                     "Retrieve a Master Account": {
-                      "value": "{\n    \"id\": {{master_account_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"label\": \"Payments Account\",\n    \"available_balance\": \"104100.41\",\n    \"pending_credits\": \"1198.50\",\n    \"pending_debits\": \"390.10\",\n    \"account_number\": \"9545931209\",\n    \"routing_number\": \"123321123\",\n    \"sponsor_bank\": \"Sponsor Bank\",\n    \"currency\": \"usd\",\n    \"external_reference_id\": \"XV-H27LGD-FX\",\n    \"purpose\": \"Payment Ops Master Account\",\n    \"attachments\": [\n        {\n            \"label\": \"flow of funds doc\",\n            \"id\": {{attachment_id}},\n            \"created_at\": \"2024-04-01T21:00:00Z\"\n        }\n    ],\n    \"metadata\": {\n        \"master_account_code\": \"001\"\n    },\n    \"status\": \"open\",\n    \"timestamps\": {\n        \"created_at\": \"2024-04-01T21:00:00Z\",\n        \"updated_at\": \"2024-04-02T21:00:00Z\",\n        \"deactivated_at\": \"2024-04-03T21:00:00Z\"\n    },\n    \"config\": {\n        \"payment\": {{payment_config_id}},\n        \"card\": {{card_config_id}},\n        \"sub_account\": {{sub_account_config_id}}\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "label": "Payments Account",
+                        "available_balance": "104100.41",
+                        "pending_credits": "1198.50",
+                        "pending_debits": "390.10",
+                        "account_number": "9545931209",
+                        "routing_number": "123321123",
+                        "sponsor_bank": "Sponsor Bank",
+                        "currency": "usd",
+                        "external_reference_id": "XV-H27LGD-FX",
+                        "purpose": "Payment Ops Master Account",
+                        "attachments": [
+                          {
+                            "label": "flow of funds doc",
+                            "id": "",
+                            "created_at": "2024-04-01T21:00:00Z"
+                          }
+                        ],
+                        "metadata": {
+                          "master_account_code": "001"
+                        },
+                        "status": "open",
+                        "timestamps": {
+                          "created_at": "2024-04-01T21:00:00Z",
+                          "updated_at": "2024-04-02T21:00:00Z",
+                          "deactivated_at": "2024-04-03T21:00:00Z"
+                        },
+                        "config": {
+                          "payment": "",
+                          "card": "",
+                          "sub_account": ""
+                        }
+                      }
                     }
                   }
                 }
