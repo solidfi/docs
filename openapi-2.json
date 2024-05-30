@@ -2973,7 +2973,78 @@
                 "text/plain": {
                   "examples": {
                     "List all Transactions": {
-                      "value": "{\n    \"data\": [\n        {\n            \"id\": {{transaction_id}},\n            \"client_id\": {{client_id}},\n            \"master_account_holder_id\": {{master_account_holder_id}},\n            \"master_account_id\": {{master_account_id}},\n            \"sub_account_holder_id\": {{sub_account_holder_id}},\n            \"sub_account_id\": {{sub_account_id}},\n            \"status\": \"settled\",\n            \"amount\": \"1500.00\",\n            \"currency\": \"usd\",\n            \"direction\": \"credit\",\n            \"method\": \"ach\",\n            \"type\": \"push\",\n            \"message\": \"incoming\",\n            \"description\": \"May invoice from NewCo\",\n            \"available_balance\": \"1590.00\",\n            \"pending_credits\": \"230.00\",\n            \"pending_debits\": \"150.00\",\n            \"counterparty\": {\n                \"id\": {{counterparty_id}},\n                \"name\": \"NewCo Inc\",\n                \"verification_status\": \"verified\",\n                \"account_number\": \"98324502\",\n                \"routing_number\": \"121042882\",\n                \"account_type\": \"business_checking\",\n                \"bank_name\": \"Wells Fargo\",\n                \"beneficiary_bank\": null,\n                \"correspondent_bank\": null,\n                \"shipping_address\": null\n            },\n            \"ach\": {\n                \"effective_date\": \"2024-04-04\",\n                \"company_entry_description\": \"Payments\",\n                \"trace_number\": \"123112211\",\n                \"return_code\": \"\",\n                \"rta_id\": \"\"\n            },\n            \"parent_transaction_id\": \"\",\n            \"external_reference_id\": \"123-9088-2\",\n            \"purpose\": \"\",\n            \"ofac\": {\n                \"status\": \"pass\",\n                \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n            },\n            \"attachments\": null,\n            \"metadata\": {\n                \"invoice_number\": \"INV-AC989878\"\n            },\n            \"reconciliation\": {\n                \"status\": \"not_reconciled\",\n                \"master_account\": null,\n                \"sub_account\": [\n                    {\n                        \"id\": {{sub_account_id}},\n                        \"transaction_id\": {{transaction_id}},\n                        \"amount\": \"1500.00\"\n                    }\n                ]\n            },\n            \"timestamps\": {\n                \"created_at\": \"2024-04-04T11:06:00Z\",\n                \"originated_at\": \"2024-04-04T11:06:00Z\",\n                \"modified_at\": \"2024-04-04T11:06:00Z\"\n            }\n        }\n    ],\n    \"has_more\": \"true\",\n    \"starting_after\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\",\n    \"ending_before\": \"Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky\"\n}"
+                      "value": {
+                        "data": [
+                          {
+                            "id": "",
+                            "client_id": "",
+                            "master_account_holder_id": "",
+                            "master_account_id": "",
+                            "sub_account_holder_id": "",
+                            "sub_account_id": "",
+                            "status": "settled",
+                            "amount": "1500.00",
+                            "currency": "usd",
+                            "direction": "credit",
+                            "method": "ach",
+                            "type": "push",
+                            "message": "incoming",
+                            "description": "May invoice from NewCo",
+                            "available_balance": "1590.00",
+                            "pending_credits": "230.00",
+                            "pending_debits": "150.00",
+                            "counterparty": {
+                              "id": "",
+                              "name": "NewCo Inc",
+                              "verification_status": "verified",
+                              "account_number": "98324502",
+                              "routing_number": "121042882",
+                              "account_type": "business_checking",
+                              "bank_name": "Wells Fargo",
+                              "beneficiary_bank": null,
+                              "correspondent_bank": null,
+                              "shipping_address": null
+                            },
+                            "ach": {
+                              "effective_date": "2024-04-04",
+                              "company_entry_description": "Payments",
+                              "trace_number": "123112211",
+                              "return_code": "",
+                              "rta_id": ""
+                            },
+                            "parent_transaction_id": "",
+                            "external_reference_id": "123-9088-2",
+                            "purpose": "",
+                            "ofac": {
+                              "status": "pass",
+                              "last_updated_at": "2024-04-01T21:00:00Z"
+                            },
+                            "attachments": null,
+                            "metadata": {
+                              "invoice_number": "INV-AC989878"
+                            },
+                            "reconciliation": {
+                              "status": "not_reconciled",
+                              "master_account": null,
+                              "sub_account": [
+                                {
+                                  "id": "",
+                                  "transaction_id": "",
+                                  "amount": "1500.00"
+                                }
+                              ]
+                            },
+                            "timestamps": {
+                              "created_at": "2024-04-04T11:06:00Z",
+                              "originated_at": "2024-04-04T11:06:00Z",
+                              "modified_at": "2024-04-04T11:06:00Z"
+                            }
+                          }
+                        ],
+                        "has_more": "true",
+                        "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+                        "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+                      }
                     }
                   }
                 }
@@ -3003,7 +3074,12 @@
               "application/json": {
                 "examples": {
                   "Sub Ledger a Transaction": {
-                    "value": "{\n    \"master_account_id\": {{master_account_id}},\n    \"master_account_transaction_id\": {{transaction_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"amount\": \"1500.00\"\n}"
+                    "value": {
+                      "master_account_id": "",
+                      "master_account_transaction_id": "",
+                      "sub_account_id": "",
+                      "amount": "1500.00"
+                    }
                   }
                 }
               }
@@ -3016,7 +3092,75 @@
                 "text/plain": {
                   "examples": {
                     "Sub Ledger a Transaction": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"settled\",\n    \"amount\": \"1500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"ach\",\n    \"type\": \"push\",\n    \"message\": \"incoming\",\n    \"description\": \"May invoice from NewCo\",\n    \"available_balance\": \"1590.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"personal_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"ach\": {\n        \"effective_date\": \"2024-04-04\",\n        \"company_entry_description\": \"Payments\",\n        \"trace_number\": \"123112211\",\n        \"return_code\": \"\",\n        \"rta_id\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"reconciled\",\n        \"master_account\": [\n            {\n                \"id\": {{master_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"1500.00\"\n            }\n        ],\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"1500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "status": "settled",
+                        "amount": "1500.00",
+                        "currency": "usd",
+                        "direction": "credit",
+                        "method": "ach",
+                        "type": "push",
+                        "message": "incoming",
+                        "description": "May invoice from NewCo",
+                        "available_balance": "1590.00",
+                        "pending_credits": "0.00",
+                        "pending_debits": "0.00",
+                        "counterparty": {
+                          "id": "",
+                          "name": "John Doe",
+                          "verification_status": "verified",
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "personal_checking",
+                          "bank_name": "Wells Fargo",
+                          "beneficiary_bank": null,
+                          "correspondent_bank": null,
+                          "shipping_address": null
+                        },
+                        "ach": {
+                          "effective_date": "2024-04-04",
+                          "company_entry_description": "Payments",
+                          "trace_number": "123112211",
+                          "return_code": "",
+                          "rta_id": ""
+                        },
+                        "parent_transaction_id": "",
+                        "external_reference_id": "123-9088-2",
+                        "purpose": "",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": null,
+                        "metadata": null,
+                        "reconciliation": {
+                          "status": "reconciled",
+                          "master_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "1500.00"
+                            }
+                          ],
+                          "sub_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "1500.00"
+                            }
+                          ]
+                        },
+                        "timestamps": {
+                          "created_at": "2024-04-04T11:06:00Z",
+                          "originated_at": "2024-04-04T11:06:00Z",
+                          "modified_at": "2024-04-04T11:06:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -3048,7 +3192,17 @@
               "application/json": {
                 "examples": {
                   "Originate an ACH Push": {
-                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"4570.00\",\n    \"description\": \"May Salary\",\n    \"same_day\": \"true\",\n    \"effective_date\": \"2024-04-05\",\n    \"company_discretionary_data\": \"DIRECT DEPOSIT\",\n    \"company_entry_description\": \"PAYROLL\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                    "value": {
+                      "sub_account_id": "",
+                      "counterparty_id": "",
+                      "amount": "4570.00",
+                      "description": "May Salary",
+                      "same_day": "true",
+                      "effective_date": "2024-04-05",
+                      "company_discretionary_data": "DIRECT DEPOSIT",
+                      "company_entry_description": "PAYROLL",
+                      "external_reference_id": "123-9088-2"
+                    }
                   }
                 }
               }
@@ -3061,7 +3215,70 @@
                 "text/plain": {
                   "examples": {
                     "Originate an ACH Push": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"4570.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"ach\",\n    \"type\": \"push\",\n    \"message\": \"outgoing\",\n    \"description\": \"May Salary\",\n    \"available_balance\": \"500.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"4570.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"ach\": {\n        \"effective_date\": \"2024-04-04\",\n        \"company_discretionary_data\": \"DIRECT DEPOSIT\",\n        \"company_entry_description\": \"PAYROLL\",\n        \"trace_number\": \"\",\n        \"return_code\": \"\",\n        \"rta_id\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"This is May Salary\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"4570.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "status": "originated",
+                        "amount": "4570.00",
+                        "currency": "usd",
+                        "direction": "debit",
+                        "method": "ach",
+                        "type": "push",
+                        "message": "outgoing",
+                        "description": "May Salary",
+                        "available_balance": "500.00",
+                        "pending_credits": "0.00",
+                        "pending_debits": "4570.00",
+                        "counterparty": {
+                          "id": "",
+                          "name": "John Doe",
+                          "verification_status": "verified",
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo",
+                          "beneficiary_bank": null,
+                          "correspondent_bank": null,
+                          "shipping_address": null
+                        },
+                        "ach": {
+                          "effective_date": "2024-04-04",
+                          "company_discretionary_data": "DIRECT DEPOSIT",
+                          "company_entry_description": "PAYROLL",
+                          "trace_number": "",
+                          "return_code": "",
+                          "rta_id": ""
+                        },
+                        "parent_transaction_id": "",
+                        "external_reference_id": "123-9088-2",
+                        "purpose": "This is May Salary",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": null,
+                        "metadata": null,
+                        "reconciliation": {
+                          "status": "not_reconciled",
+                          "master_account": null,
+                          "sub_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "4570.00"
+                            }
+                          ]
+                        },
+                        "timestamps": {
+                          "created_at": "2024-04-04T11:06:00Z",
+                          "originated_at": "2024-04-04T11:06:00Z",
+                          "modified_at": "2024-04-04T11:06:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -3093,7 +3310,16 @@
               "application/json": {
                 "examples": {
                   "Originate an ACH Pull": {
-                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"500.00\",\n    \"description\": \"May Rent\",\n    \"same_day\": \"true\",\n    \"effective_date\": \"2024-04-05\",\n    \"company_entry_description\": \"Payment\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                    "value": {
+                      "sub_account_id": "",
+                      "counterparty_id": "",
+                      "amount": "500.00",
+                      "description": "May Rent",
+                      "same_day": "true",
+                      "effective_date": "2024-04-05",
+                      "company_entry_description": "Payment",
+                      "external_reference_id": "123-9088-2"
+                    }
                   }
                 }
               }
@@ -3106,7 +3332,69 @@
                 "text/plain": {
                   "examples": {
                     "Originate an ACH Pull": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"ach\",\n    \"type\": \"pull\",\n    \"message\": \"outgoing\",\n    \"description\": \"May Rent\",\n    \"available_balance\": \"250.00\",\n    \"pending_credits\": \"500.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"ach\": {\n        \"effective_date\": \"2024-04-04\",\n        \"company_entry_description\": \"Payments\",\n        \"trace_number\": \"\",\n        \"return_code\": \"\",\n        \"rta_id\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "status": "originated",
+                        "amount": "500.00",
+                        "currency": "usd",
+                        "direction": "credit",
+                        "method": "ach",
+                        "type": "pull",
+                        "message": "outgoing",
+                        "description": "May Rent",
+                        "available_balance": "250.00",
+                        "pending_credits": "500.00",
+                        "pending_debits": "0.00",
+                        "counterparty": {
+                          "id": "",
+                          "name": "John Doe",
+                          "verification_status": "verified",
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo",
+                          "beneficiary_bank": null,
+                          "correspondent_bank": null,
+                          "shipping_address": null
+                        },
+                        "ach": {
+                          "effective_date": "2024-04-04",
+                          "company_entry_description": "Payments",
+                          "trace_number": "",
+                          "return_code": "",
+                          "rta_id": ""
+                        },
+                        "parent_transaction_id": "",
+                        "external_reference_id": "123-9088-2",
+                        "purpose": "",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": null,
+                        "metadata": null,
+                        "reconciliation": {
+                          "status": "not_reconciled",
+                          "master_account": null,
+                          "sub_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "500.00"
+                            }
+                          ]
+                        },
+                        "timestamps": {
+                          "created_at": "2024-04-04T11:06:00Z",
+                          "originated_at": "2024-04-04T11:06:00Z",
+                          "modified_at": "2024-04-04T11:06:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -3138,7 +3426,13 @@
               "application/json": {
                 "examples": {
                   "Originate a Domestic Wire": {
-                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"2500.00\",\n    \"description\": \"Marketing Expenses for May\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                    "value": {
+                      "sub_account_id": "",
+                      "counterparty_id": "",
+                      "amount": "2500.00",
+                      "description": "Marketing Expenses for May",
+                      "external_reference_id": "123-9088-2"
+                    }
                   }
                 }
               }
@@ -3151,7 +3445,66 @@
                 "text/plain": {
                   "examples": {
                     "Originate a Domestic Wire": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"2500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"domestic_wire\",\n    \"type\": \"push\",\n    \"message\": \"outgoing\",\n    \"description\": \"Escrow Deposit\",\n    \"available_balance\": \"9500.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"2500.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"domestic_wire\": {\n        \"imad\": \"20240520D2B74A1C002742\",\n        \"omad\": \"20240520L1B7832F000914\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"2500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "status": "originated",
+                        "amount": "2500.00",
+                        "currency": "usd",
+                        "direction": "debit",
+                        "method": "domestic_wire",
+                        "type": "push",
+                        "message": "outgoing",
+                        "description": "Escrow Deposit",
+                        "available_balance": "9500.00",
+                        "pending_credits": "0.00",
+                        "pending_debits": "2500.00",
+                        "counterparty": {
+                          "id": "",
+                          "name": "John Doe",
+                          "verification_status": "verified",
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo",
+                          "beneficiary_bank": null,
+                          "correspondent_bank": null,
+                          "shipping_address": null
+                        },
+                        "domestic_wire": {
+                          "imad": "20240520D2B74A1C002742",
+                          "omad": "20240520L1B7832F000914"
+                        },
+                        "parent_transaction_id": "",
+                        "external_reference_id": "123-9088-2",
+                        "purpose": "",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": null,
+                        "metadata": null,
+                        "reconciliation": {
+                          "status": "not_reconciled",
+                          "master_account": null,
+                          "sub_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "2500.00"
+                            }
+                          ]
+                        },
+                        "timestamps": {
+                          "created_at": "2024-04-04T11:06:00Z",
+                          "originated_at": "2024-04-04T11:06:00Z",
+                          "modified_at": "2024-04-04T11:06:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -3183,7 +3536,13 @@
               "application/json": {
                 "examples": {
                   "Originate an International Wire": {
-                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"12000.00\",\n    \"description\": \"Offshore dev team payment\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                    "value": {
+                      "sub_account_id": "",
+                      "counterparty_id": "",
+                      "amount": "12000.00",
+                      "description": "Offshore dev team payment",
+                      "external_reference_id": "123-9088-2"
+                    }
                   }
                 }
               }
@@ -3196,7 +3555,87 @@
                 "text/plain": {
                   "examples": {
                     "Originate an International Wire": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"12000.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"international_wire\",\n    \"type\": \"push\",\n    \"message\": \"outgoing\",\n    \"description\": \"Offshore dev team payment\",\n    \"available_balance\": \"9500.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"12000.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"Global Technologies\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"2986167511\",\n        \"routing_number\": \"\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"ICICI Bank\",\n        \"beneficiary_bank\": {\n            \"identifier_code\": \"ICICINBBNRI\",\n            \"name\": \"ICICI Bank\",\n            \"address\": {\n                \"line1\": \"256 Main St\",\n                \"line2\": \"\",\n                \"city\": \"Bengaluru\",\n                \"state\": \"KA\",\n                \"country\": \"IN\",\n                \"postal_code\": \"900009\"\n            }\n        },\n        \"correspondent_bank\": {\n            \"identifier_code\": \"SCBLUS33XXX\",\n            \"name\": \"STANDARD CHARTERED BANK\",\n            \"address\": {\n                \"line1\": \"1095 12th Ave\",\n                \"line2\": \"\",\n                \"city\": \"New York\",\n                \"state\": \"NY\",\n                \"country\": \"US\",\n                \"postal_code\": \"10001\"\n            }\n        },\n        \"shipping_address\": null\n    },\n    \"international_wire\": {\n        \"imad\": \"20240520D2B74A1C002742\",\n        \"omad\": \"20240520L1B7832F000914\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"12000.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "status": "originated",
+                        "amount": "12000.00",
+                        "currency": "usd",
+                        "direction": "debit",
+                        "method": "international_wire",
+                        "type": "push",
+                        "message": "outgoing",
+                        "description": "Offshore dev team payment",
+                        "available_balance": "9500.00",
+                        "pending_credits": "0.00",
+                        "pending_debits": "12000.00",
+                        "counterparty": {
+                          "id": "",
+                          "name": "Global Technologies",
+                          "verification_status": "verified",
+                          "account_number": "2986167511",
+                          "routing_number": "",
+                          "account_type": "business_checking",
+                          "bank_name": "ICICI Bank",
+                          "beneficiary_bank": {
+                            "identifier_code": "ICICINBBNRI",
+                            "name": "ICICI Bank",
+                            "address": {
+                              "line1": "256 Main St",
+                              "line2": "",
+                              "city": "Bengaluru",
+                              "state": "KA",
+                              "country": "IN",
+                              "postal_code": "900009"
+                            }
+                          },
+                          "correspondent_bank": {
+                            "identifier_code": "SCBLUS33XXX",
+                            "name": "STANDARD CHARTERED BANK",
+                            "address": {
+                              "line1": "1095 12th Ave",
+                              "line2": "",
+                              "city": "New York",
+                              "state": "NY",
+                              "country": "US",
+                              "postal_code": "10001"
+                            }
+                          },
+                          "shipping_address": null
+                        },
+                        "international_wire": {
+                          "imad": "20240520D2B74A1C002742",
+                          "omad": "20240520L1B7832F000914"
+                        },
+                        "parent_transaction_id": "",
+                        "external_reference_id": "123-9088-2",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": null,
+                        "metadata": null,
+                        "reconciliation": {
+                          "status": "not_reconciled",
+                          "master_account": null,
+                          "sub_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "12000.00"
+                            }
+                          ]
+                        },
+                        "timestamps": {
+                          "created_at": "2024-04-04T11:06:00Z",
+                          "originated_at": "2024-04-04T11:06:00Z",
+                          "modified_at": "2024-04-04T11:06:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -3228,7 +3667,14 @@
               "application/json": {
                 "examples": {
                   "Originate an RTP Push": {
-                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"500.00\",\n    \"description\": \"June office rent\",\n    \"reference_number\": \"KH1-ZI1L-PTY\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                    "value": {
+                      "sub_account_id": "",
+                      "counterparty_id": "",
+                      "amount": "500.00",
+                      "description": "June office rent",
+                      "reference_number": "KH1-ZI1L-PTY",
+                      "external_reference_id": "123-9088-2"
+                    }
                   }
                 }
               }
@@ -3241,7 +3687,65 @@
                 "text/plain": {
                   "examples": {
                     "Originate an RTP Push": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"rtp\",\n    \"type\": \"push\",\n    \"message\": \"outgoing\",\n    \"description\": \"June office rent\",\n    \"available_balance\": \"1900.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"500.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"personal_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"rtp\": {\n        \"reference_number\": \"KH1-ZI1L-PTY\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "status": "originated",
+                        "amount": "500.00",
+                        "currency": "usd",
+                        "direction": "debit",
+                        "method": "rtp",
+                        "type": "push",
+                        "message": "outgoing",
+                        "description": "June office rent",
+                        "available_balance": "1900.00",
+                        "pending_credits": "0.00",
+                        "pending_debits": "500.00",
+                        "counterparty": {
+                          "id": "",
+                          "name": "John Doe",
+                          "verification_status": "verified",
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "personal_checking",
+                          "bank_name": "Wells Fargo",
+                          "beneficiary_bank": null,
+                          "correspondent_bank": null,
+                          "shipping_address": null
+                        },
+                        "rtp": {
+                          "reference_number": "KH1-ZI1L-PTY"
+                        },
+                        "parent_transaction_id": "",
+                        "external_reference_id": "123-9088-2",
+                        "purpose": "",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": null,
+                        "metadata": null,
+                        "reconciliation": {
+                          "status": "not_reconciled",
+                          "master_account": null,
+                          "sub_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "500.00"
+                            }
+                          ]
+                        },
+                        "timestamps": {
+                          "created_at": "2024-04-04T11:06:00Z",
+                          "originated_at": "2024-04-04T11:06:00Z",
+                          "modified_at": "2024-04-04T11:06:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -3273,7 +3777,14 @@
               "application/json": {
                 "examples": {
                   "Originate a FedNow Push": {
-                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"500.00\",\n    \"description\": \"June office rent\",\n    \"reference_number\": \"FR6L-81G634\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                    "value": {
+                      "sub_account_id": "",
+                      "counterparty_id": "",
+                      "amount": "500.00",
+                      "description": "June office rent",
+                      "reference_number": "FR6L-81G634",
+                      "external_reference_id": "123-9088-2"
+                    }
                   }
                 }
               }
@@ -3286,7 +3797,65 @@
                 "text/plain": {
                   "examples": {
                     "Originate a FedNow Push": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"fednow\",\n    \"type\": \"push\",\n    \"message\": \"outgoing\",\n    \"description\": \"May office rent\",\n    \"available_balance\": \"1900.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"500.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"personal_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"fednow\": {\n        \"reference_number\": \"1E5800WF8Q\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "status": "originated",
+                        "amount": "500.00",
+                        "currency": "usd",
+                        "direction": "debit",
+                        "method": "fednow",
+                        "type": "push",
+                        "message": "outgoing",
+                        "description": "May office rent",
+                        "available_balance": "1900.00",
+                        "pending_credits": "0.00",
+                        "pending_debits": "500.00",
+                        "counterparty": {
+                          "id": "",
+                          "name": "John Doe",
+                          "verification_status": "verified",
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "personal_checking",
+                          "bank_name": "Wells Fargo",
+                          "beneficiary_bank": null,
+                          "correspondent_bank": null,
+                          "shipping_address": null
+                        },
+                        "fednow": {
+                          "reference_number": "1E5800WF8Q"
+                        },
+                        "parent_transaction_id": "",
+                        "external_reference_id": "123-9088-2",
+                        "purpose": "",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": null,
+                        "metadata": null,
+                        "reconciliation": {
+                          "status": "not_reconciled",
+                          "master_account": null,
+                          "sub_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "500.00"
+                            }
+                          ]
+                        },
+                        "timestamps": {
+                          "created_at": "2024-04-04T11:06:00Z",
+                          "originated_at": "2024-04-04T11:06:00Z",
+                          "modified_at": "2024-04-04T11:06:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -3318,7 +3887,13 @@
               "application/json": {
                 "examples": {
                   "Originate a Debit Card Push": {
-                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"23.50\",\n    \"description\": \"Lunch expense\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                    "value": {
+                      "sub_account_id": "",
+                      "counterparty_id": "",
+                      "amount": "23.50",
+                      "description": "Lunch expense",
+                      "external_reference_id": "123-9088-2"
+                    }
                   }
                 }
               }
@@ -3331,7 +3906,62 @@
                 "text/plain": {
                   "examples": {
                     "Originate a Debit Card Push": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"23.50\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"debitcard\",\n    \"type\": \"push\",\n    \"message\": \"outgoing\",\n    \"description\": \"Tips Payout\",\n    \"available_balance\": \"90.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"23.50\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"\",\n        \"routing_number\": \"\",\n        \"account_type\": \"\",\n        \"bank_name\": \"\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"23.50\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "status": "originated",
+                        "amount": "23.50",
+                        "currency": "usd",
+                        "direction": "debit",
+                        "method": "debitcard",
+                        "type": "push",
+                        "message": "outgoing",
+                        "description": "Tips Payout",
+                        "available_balance": "90.00",
+                        "pending_credits": "0.00",
+                        "pending_debits": "23.50",
+                        "counterparty": {
+                          "id": "",
+                          "name": "John Doe",
+                          "verification_status": "verified",
+                          "account_number": "",
+                          "routing_number": "",
+                          "account_type": "",
+                          "bank_name": "",
+                          "beneficiary_bank": null,
+                          "correspondent_bank": null,
+                          "shipping_address": null
+                        },
+                        "parent_transaction_id": "",
+                        "external_reference_id": "123-9088-2",
+                        "purpose": "",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": null,
+                        "metadata": null,
+                        "reconciliation": {
+                          "status": "not_reconciled",
+                          "master_account": null,
+                          "sub_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "23.50"
+                            }
+                          ]
+                        },
+                        "timestamps": {
+                          "created_at": "2024-04-04T11:06:00Z",
+                          "originated_at": "2024-04-04T11:06:00Z",
+                          "modified_at": "2024-04-04T11:06:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -3363,7 +3993,13 @@
               "application/json": {
                 "examples": {
                   "Originate a Debit Card Pull": {
-                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"150.00\",\n    \"description\": \"Account funding\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                    "value": {
+                      "sub_account_id": "",
+                      "counterparty_id": "",
+                      "amount": "150.00",
+                      "description": "Account funding",
+                      "external_reference_id": "123-9088-2"
+                    }
                   }
                 }
               }
@@ -3376,7 +4012,62 @@
                 "text/plain": {
                   "examples": {
                     "Originate a Debit Card Pull": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"150.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"debitcard\",\n    \"type\": \"pull\",\n    \"message\": \"outgoing\",\n    \"description\": \"Account funding\",\n    \"available_balance\": \"90.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"150.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"\",\n        \"routing_number\": \"\",\n        \"account_type\": \"\",\n        \"bank_name\": \"\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"150.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "status": "originated",
+                        "amount": "150.00",
+                        "currency": "usd",
+                        "direction": "credit",
+                        "method": "debitcard",
+                        "type": "pull",
+                        "message": "outgoing",
+                        "description": "Account funding",
+                        "available_balance": "90.00",
+                        "pending_credits": "0.00",
+                        "pending_debits": "150.00",
+                        "counterparty": {
+                          "id": "",
+                          "name": "John Doe",
+                          "verification_status": "verified",
+                          "account_number": "",
+                          "routing_number": "",
+                          "account_type": "",
+                          "bank_name": "",
+                          "beneficiary_bank": null,
+                          "correspondent_bank": null,
+                          "shipping_address": null
+                        },
+                        "parent_transaction_id": "",
+                        "external_reference_id": "123-9088-2",
+                        "purpose": "",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": null,
+                        "metadata": null,
+                        "reconciliation": {
+                          "status": "not_reconciled",
+                          "master_account": null,
+                          "sub_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "150.00"
+                            }
+                          ]
+                        },
+                        "timestamps": {
+                          "created_at": "2024-04-04T11:06:00Z",
+                          "originated_at": "2024-04-04T11:06:00Z",
+                          "modified_at": "2024-04-04T11:06:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -3408,7 +4099,13 @@
               "application/json": {
                 "examples": {
                   "Originate a Check Send": {
-                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"1500.00\",\n    \"description\": \"Plumbing Supplier\",\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                    "value": {
+                      "sub_account_id": "",
+                      "counterparty_id": "",
+                      "amount": "1500.00",
+                      "description": "Plumbing Supplier",
+                      "external_reference_id": "123-9088-2"
+                    }
                   }
                 }
               }
@@ -3421,7 +4118,77 @@
                 "text/plain": {
                   "examples": {
                     "Originate a Check Send": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"1500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"check\",\n    \"type\": \"send\",\n    \"message\": \"outgoing\",\n    \"description\": \"Plumbing Supplier\",\n    \"available_balance\": \"2390.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"1500.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"\",\n        \"routing_number\": \"\",\n        \"account_type\": \"\",\n        \"bank_name\": \"\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": {\n            \"line1\": \"123 Main St\",\n            \"line2\": \"\",\n            \"city\": \"New York\",\n            \"state\": \"NY\",\n            \"country\": \"US\",\n            \"postal_code\": \"10001\"\n        }\n    },\n    \"check\": {\n        \"check_number\": \"98987679\",\n        \"cashed\": true,\n        \"tracking\": {\n            \"status\": \"pending\",\n            \"eta\": \"2024-05-01\"\n        }\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"1500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "status": "originated",
+                        "amount": "1500.00",
+                        "currency": "usd",
+                        "direction": "debit",
+                        "method": "check",
+                        "type": "send",
+                        "message": "outgoing",
+                        "description": "Plumbing Supplier",
+                        "available_balance": "2390.00",
+                        "pending_credits": "0.00",
+                        "pending_debits": "1500.00",
+                        "counterparty": {
+                          "id": "",
+                          "name": "John Doe",
+                          "verification_status": "verified",
+                          "account_number": "",
+                          "routing_number": "",
+                          "account_type": "",
+                          "bank_name": "",
+                          "beneficiary_bank": null,
+                          "correspondent_bank": null,
+                          "shipping_address": {
+                            "line1": "123 Main St",
+                            "line2": "",
+                            "city": "New York",
+                            "state": "NY",
+                            "country": "US",
+                            "postal_code": "10001"
+                          }
+                        },
+                        "check": {
+                          "check_number": "98987679",
+                          "cashed": true,
+                          "tracking": {
+                            "status": "pending",
+                            "eta": "2024-05-01"
+                          }
+                        },
+                        "parent_transaction_id": "",
+                        "external_reference_id": "123-9088-2",
+                        "purpose": "",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": null,
+                        "metadata": null,
+                        "reconciliation": {
+                          "status": "not_reconciled",
+                          "master_account": null,
+                          "sub_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "1500.00"
+                            }
+                          ]
+                        },
+                        "timestamps": {
+                          "created_at": "2024-04-04T11:06:00Z",
+                          "originated_at": "2024-04-04T11:06:00Z",
+                          "modified_at": "2024-04-04T11:06:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -3453,7 +4220,17 @@
               "application/json": {
                 "examples": {
                   "Originate a Check Deposit": {
-                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"counterparty_id\": {{counterparty_id}},\n    \"amount\": \"500.00\",\n    \"description\": \"May invoice\",\n    \"image\": {\n        \"front\": \"TG9yZW0gSXBzdW0gaXMgc2ltcGx5IGR1bW15IHRleHQgb2YgdGhlIHByaW50aW5nIGFuZCB0eXBlc2V0dGluZyBpbmR1c3RyeS4gTG9yZW0gSXBzdW0gaGFzIGJlZW4gdGhlIGluZHVzdHJ5J3Mgc3RhbmRhcmQgZHVtbXkgdGV4dCBldmVyIHNpbmNlIHRoZSAxNTAwcywgd2hlbiBhbiB1bmtub3duIHByaW50ZXIgdG9vayBhIGdhbGxleSBvZiB0eXBlIGFuZCBzY3JhbWJsZWQgaXQgdG8gbWFrZSBhIHR5cGUgc3BlY2ltZW4gYm9vay4gSXQgaGFzIHN1cnZpdmVkIG5vdCBvbmx5IGZpdmUgY2VudHVyaWVzLCBidXQgYWxzbyB0aGUgbGVhcCBpbnRvIGVsZWN0cm9uaWMgdHlwZXNldHRpbmcsIHJlbWFpbmluZyBlc3NlbnRpYWxseSB1bmNoYW5nZWQuIEl0IHdhcyBwb3B1bGFyaXNlZCBpbiB0aGUgMTk2MHMgd2l0aCB0aGUgcmVsZWFzZSBvZiBMZXRyYXNldCBzaGVldHMgY29udGFpbmluZyBMb3JlbSBJcHN1bSBwYXNzYWdlcywgYW5kIG1vcmUgcmVjZW50bHkgd2l0aCBkZXNrdG9wIHB1Ymxpc2hpbmcgc29mdHdhcmUgbGlrZSBBbGR1cyBQYWdlTWFrZXIgaW5jbHVkaW5nIHZlcnNpb25zIG9mIExvcmVtIElwc3VtLg==\",\n        \"back\": \"TG9yZW0gSXBzdW0gaXMgc2ltcGx5IGR1bW15IHRleHQgb2YgdGhlIHByaW50aW5nIGFuZCB0eXBlc2V0dGluZyBpbmR1c3RyeS4gTG9yZW0gSXBzdW0gaGFzIGJlZW4gdGhlIGluZHVzdHJ5J3Mgc3RhbmRhcmQgZHVtbXkgdGV4dCBldmVyIHNpbmNlIHRoZSAxNTAwcywgd2hlbiBhbiB1bmtub3duIHByaW50ZXIgdG9vayBhIGdhbGxleSBvZiB0eXBlIGFuZCBzY3JhbWJsZWQgaXQgdG8gbWFrZSBhIHR5cGUgc3BlY2ltZW4gYm9vay4gSXQgaGFzIHN1cnZpdmVkIG5vdCBvbmx5IGZpdmUgY2VudHVyaWVzLCBidXQgYWxzbyB0aGUgbGVhcCBpbnRvIGVsZWN0cm9uaWMgdHlwZXNldHRpbmcsIHJlbWFpbmluZyBlc3NlbnRpYWxseSB1bmNoYW5nZWQuIEl0IHdhcyBwb3B1bGFyaXNlZCBpbiB0aGUgMTk2MHMgd2l0aCB0aGUgcmVsZWFzZSBvZiBMZXRyYXNldCBzaGVldHMgY29udGFpbmluZyBMb3JlbSBJcHN1bSBwYXNzYWdlcywgYW5kIG1vcmUgcmVjZW50bHkgd2l0aCBkZXNrdG9wIHB1Ymxpc2hpbmcgc29mdHdhcmUgbGlrZSBBbGR1cyBQYWdlTWFrZXIgaW5jbHVkaW5nIHZlcnNpb25zIG9mIExvcmVtIElwc3VtLg==\"\n    },\n    \"external_reference_id\": \"123-9088-2\"\n}"
+                    "value": {
+                      "sub_account_id": "",
+                      "counterparty_id": "",
+                      "amount": "500.00",
+                      "description": "May invoice",
+                      "image": {
+                        "front": "TG9yZW0gSXBzdW0gaXMgc2ltcGx5IGR1bW15IHRleHQgb2YgdGhlIHByaW50aW5nIGFuZCB0eXBlc2V0dGluZyBpbmR1c3RyeS4gTG9yZW0gSXBzdW0gaGFzIGJlZW4gdGhlIGluZHVzdHJ5J3Mgc3RhbmRhcmQgZHVtbXkgdGV4dCBldmVyIHNpbmNlIHRoZSAxNTAwcywgd2hlbiBhbiB1bmtub3duIHByaW50ZXIgdG9vayBhIGdhbGxleSBvZiB0eXBlIGFuZCBzY3JhbWJsZWQgaXQgdG8gbWFrZSBhIHR5cGUgc3BlY2ltZW4gYm9vay4gSXQgaGFzIHN1cnZpdmVkIG5vdCBvbmx5IGZpdmUgY2VudHVyaWVzLCBidXQgYWxzbyB0aGUgbGVhcCBpbnRvIGVsZWN0cm9uaWMgdHlwZXNldHRpbmcsIHJlbWFpbmluZyBlc3NlbnRpYWxseSB1bmNoYW5nZWQuIEl0IHdhcyBwb3B1bGFyaXNlZCBpbiB0aGUgMTk2MHMgd2l0aCB0aGUgcmVsZWFzZSBvZiBMZXRyYXNldCBzaGVldHMgY29udGFpbmluZyBMb3JlbSBJcHN1bSBwYXNzYWdlcywgYW5kIG1vcmUgcmVjZW50bHkgd2l0aCBkZXNrdG9wIHB1Ymxpc2hpbmcgc29mdHdhcmUgbGlrZSBBbGR1cyBQYWdlTWFrZXIgaW5jbHVkaW5nIHZlcnNpb25zIG9mIExvcmVtIElwc3VtLg==",
+                        "back": "TG9yZW0gSXBzdW0gaXMgc2ltcGx5IGR1bW15IHRleHQgb2YgdGhlIHByaW50aW5nIGFuZCB0eXBlc2V0dGluZyBpbmR1c3RyeS4gTG9yZW0gSXBzdW0gaGFzIGJlZW4gdGhlIGluZHVzdHJ5J3Mgc3RhbmRhcmQgZHVtbXkgdGV4dCBldmVyIHNpbmNlIHRoZSAxNTAwcywgd2hlbiBhbiB1bmtub3duIHByaW50ZXIgdG9vayBhIGdhbGxleSBvZiB0eXBlIGFuZCBzY3JhbWJsZWQgaXQgdG8gbWFrZSBhIHR5cGUgc3BlY2ltZW4gYm9vay4gSXQgaGFzIHN1cnZpdmVkIG5vdCBvbmx5IGZpdmUgY2VudHVyaWVzLCBidXQgYWxzbyB0aGUgbGVhcCBpbnRvIGVsZWN0cm9uaWMgdHlwZXNldHRpbmcsIHJlbWFpbmluZyBlc3NlbnRpYWxseSB1bmNoYW5nZWQuIEl0IHdhcyBwb3B1bGFyaXNlZCBpbiB0aGUgMTk2MHMgd2l0aCB0aGUgcmVsZWFzZSBvZiBMZXRyYXNldCBzaGVldHMgY29udGFpbmluZyBMb3JlbSBJcHN1bSBwYXNzYWdlcywgYW5kIG1vcmUgcmVjZW50bHkgd2l0aCBkZXNrdG9wIHB1Ymxpc2hpbmcgc29mdHdhcmUgbGlrZSBBbGR1cyBQYWdlTWFrZXIgaW5jbHVkaW5nIHZlcnNpb25zIG9mIExvcmVtIElwc3VtLg=="
+                      },
+                      "external_reference_id": "123-9088-2"
+                    }
                   }
                 }
               }
@@ -3466,7 +4243,68 @@
                 "text/plain": {
                   "examples": {
                     "Originate a Check Deposit": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"originated\",\n    \"amount\": \"500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"check\",\n    \"type\": \"deposit\",\n    \"message\": \"outgoing\",\n    \"description\": \"May invoice\",\n    \"available_balance\": \"9200.00\",\n    \"pending_credits\": \"500.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"\",\n        \"routing_number\": \"\",\n        \"account_type\": \"\",\n        \"bank_name\": \"\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"check\": {\n        \"check_number\": \"98987679\",\n        \"cashed\": true,\n        \"shipping_address\": null,\n        \"tracking\": null\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "status": "originated",
+                        "amount": "500.00",
+                        "currency": "usd",
+                        "direction": "credit",
+                        "method": "check",
+                        "type": "deposit",
+                        "message": "outgoing",
+                        "description": "May invoice",
+                        "available_balance": "9200.00",
+                        "pending_credits": "500.00",
+                        "pending_debits": "0.00",
+                        "counterparty": {
+                          "id": "",
+                          "name": "John Doe",
+                          "verification_status": "verified",
+                          "account_number": "",
+                          "routing_number": "",
+                          "account_type": "",
+                          "bank_name": "",
+                          "beneficiary_bank": null,
+                          "correspondent_bank": null,
+                          "shipping_address": null
+                        },
+                        "check": {
+                          "check_number": "98987679",
+                          "cashed": true,
+                          "shipping_address": null,
+                          "tracking": null
+                        },
+                        "parent_transaction_id": "",
+                        "external_reference_id": "123-9088-2",
+                        "purpose": "",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": null,
+                        "metadata": null,
+                        "reconciliation": {
+                          "status": "not_reconciled",
+                          "master_account": null,
+                          "sub_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "500.00"
+                            }
+                          ]
+                        },
+                        "timestamps": {
+                          "created_at": "2024-04-04T11:06:00Z",
+                          "originated_at": "2024-04-04T11:06:00Z",
+                          "modified_at": "2024-04-04T11:06:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -3500,7 +4338,71 @@
                 "text/plain": {
                   "examples": {
                     "Retrieve a Transaction": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"settled\",\n    \"amount\": \"1500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"ach\",\n    \"type\": \"push\",\n    \"message\": \"incoming\",\n    \"description\": \"May invoice from NewCo\",\n    \"available_balance\": \"1590.00\",\n    \"pending_credits\": \"230.00\",\n    \"pending_debits\": \"150.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"NewCo Inc\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"ach\": {\n        \"effective_date\": \"2024-04-04\",\n        \"company_entry_description\": \"Payments\",\n        \"trace_number\": \"123112211\",\n        \"return_code\": \"\",\n        \"rta_id\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": {\n        \"invoice_number\": \"INV-AC989878\"\n    },\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"1500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "status": "settled",
+                        "amount": "1500.00",
+                        "currency": "usd",
+                        "direction": "credit",
+                        "method": "ach",
+                        "type": "push",
+                        "message": "incoming",
+                        "description": "May invoice from NewCo",
+                        "available_balance": "1590.00",
+                        "pending_credits": "230.00",
+                        "pending_debits": "150.00",
+                        "counterparty": {
+                          "id": "",
+                          "name": "NewCo Inc",
+                          "verification_status": "verified",
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo",
+                          "beneficiary_bank": null,
+                          "correspondent_bank": null,
+                          "shipping_address": null
+                        },
+                        "ach": {
+                          "effective_date": "2024-04-04",
+                          "company_entry_description": "Payments",
+                          "trace_number": "123112211",
+                          "return_code": "",
+                          "rta_id": ""
+                        },
+                        "parent_transaction_id": "",
+                        "external_reference_id": "123-9088-2",
+                        "purpose": "",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": null,
+                        "metadata": {
+                          "invoice_number": "INV-AC989878"
+                        },
+                        "reconciliation": {
+                          "status": "not_reconciled",
+                          "master_account": null,
+                          "sub_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "1500.00"
+                            }
+                          ]
+                        },
+                        "timestamps": {
+                          "created_at": "2024-04-04T11:06:00Z",
+                          "originated_at": "2024-04-04T11:06:00Z",
+                          "modified_at": "2024-04-04T11:06:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -3561,7 +4463,71 @@
                 "text/plain": {
                   "examples": {
                     "Update a Transaction": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"settled\",\n    \"amount\": \"1500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"ach\",\n    \"type\": \"push\",\n    \"message\": \"incoming\",\n    \"description\": \"May invoice from NewCo\",\n    \"available_balance\": \"1590.00\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"NewCo Inc\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"98324502\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"business_checking\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"ach\": {\n        \"effective_date\": \"2024-04-04\",\n        \"company_entry_description\": \"Payments\",\n        \"trace_number\": \"123112211\",\n        \"return_code\": \"\",\n        \"rta_id\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"123-9088-2\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": {\n        \"invoice_number\": \"INV-AC989878\"\n    },\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"master_account\": null,\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"1500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "status": "settled",
+                        "amount": "1500.00",
+                        "currency": "usd",
+                        "direction": "credit",
+                        "method": "ach",
+                        "type": "push",
+                        "message": "incoming",
+                        "description": "May invoice from NewCo",
+                        "available_balance": "1590.00",
+                        "pending_credits": "0.00",
+                        "pending_debits": "0.00",
+                        "counterparty": {
+                          "id": "",
+                          "name": "NewCo Inc",
+                          "verification_status": "verified",
+                          "account_number": "98324502",
+                          "routing_number": "121042882",
+                          "account_type": "business_checking",
+                          "bank_name": "Wells Fargo",
+                          "beneficiary_bank": null,
+                          "correspondent_bank": null,
+                          "shipping_address": null
+                        },
+                        "ach": {
+                          "effective_date": "2024-04-04",
+                          "company_entry_description": "Payments",
+                          "trace_number": "123112211",
+                          "return_code": "",
+                          "rta_id": ""
+                        },
+                        "parent_transaction_id": "",
+                        "external_reference_id": "123-9088-2",
+                        "purpose": "",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": null,
+                        "metadata": {
+                          "invoice_number": "INV-AC989878"
+                        },
+                        "reconciliation": {
+                          "status": "not_reconciled",
+                          "master_account": null,
+                          "sub_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "1500.00"
+                            }
+                          ]
+                        },
+                        "timestamps": {
+                          "created_at": "2024-04-04T11:06:00Z",
+                          "originated_at": "2024-04-04T11:06:00Z",
+                          "modified_at": "2024-04-04T11:06:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -3629,7 +4595,10 @@
               "application/json": {
                 "examples": {
                   "Create an Attachment": {
-                    "value": "{\n    \"reference_id\": {{counterparty_id}},\n    \"label\": \"formation\"\n}"
+                    "value": {
+                      "reference_id": "",
+                      "label": "formation"
+                    }
                   }
                 }
               }
@@ -3642,7 +4611,13 @@
                 "text/plain": {
                   "examples": {
                     "Create an Attachment": {
-                      "value": "{\n    \"id\": {{attachment_id}},\n    \"reference_id\": {{counterparty_id}},\n    \"label\": \"formation\",\n    \"url\": \"http://bucket.s3-website-us-east-1.amazonaws.com\",\n    \"created_at\": \"2024-04-04T11:06:00Z\"\n}"
+                      "value": {
+                        "id": "",
+                        "reference_id": "",
+                        "label": "formation",
+                        "url": "http://bucket.s3-website-us-east-1.amazonaws.com",
+                        "created_at": "2024-04-04T11:06:00Z"
+                      }
                     }
                   }
                 }
@@ -3679,7 +4654,13 @@
                 "text/plain": {
                   "examples": {
                     "Retrieve an Attachment": {
-                      "value": "{\n    \"id\": {{attachment_id}},\n    \"reference_id\": {{counterparty_id}},\n    \"label\": \"formation\",\n    \"url\": \"http://bucket.s3-website-us-east-1.amazonaws.com\",\n    \"created_at\": \"2024-04-04T11:06:00Z\"\n}"
+                      "value": {
+                        "id": "",
+                        "reference_id": "",
+                        "label": "formation",
+                        "url": "http://bucket.s3-website-us-east-1.amazonaws.com",
+                        "created_at": "2024-04-04T11:06:00Z"
+                      }
                     }
                   }
                 }
@@ -3749,7 +4730,13 @@
               "application/json": {
                 "examples": {
                   "Simulate an Incoming ACH Push": {
-                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"amount\": \"500.00\",\n    \"description\": \"May Rent\",\n    \"counterparty_name\": \"John Doe\",\n    \"counterparty_routing_number\": \"121042882\"\n}"
+                    "value": {
+                      "sub_account_id": "",
+                      "amount": "500.00",
+                      "description": "May Rent",
+                      "counterparty_name": "John Doe",
+                      "counterparty_routing_number": "121042882"
+                    }
                   }
                 }
               }
@@ -3762,7 +4749,76 @@
                 "text/plain": {
                   "examples": {
                     "Simulate an Incoming ACH Push": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"received\",\n    \"amount\": \"500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"ach\",\n    \"type\": \"push\",\n    \"message\": \"incoming\",\n    \"description\": \"May Rent\",\n    \"available_balance\": \"1250.50\",\n    \"pending_credits\": \"500.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"ach\": {\n        \"effective_date\": \"2024-04-04\",\n        \"company_discretionary_data\": \"\",\n        \"company_entry_description\": \"Payment\",\n        \"trace_number\": \"\",\n        \"return_code\": \"\",\n        \"rta_id\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"reconciled\",\n        \"master_account\": [\n            {\n                \"id\": {{master_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ],\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "status": "received",
+                        "amount": "500.00",
+                        "currency": "usd",
+                        "direction": "credit",
+                        "method": "ach",
+                        "type": "push",
+                        "message": "incoming",
+                        "description": "May Rent",
+                        "available_balance": "1250.50",
+                        "pending_credits": "500.00",
+                        "pending_debits": "0.00",
+                        "counterparty": {
+                          "id": "",
+                          "name": "John Doe",
+                          "verification_status": "verified",
+                          "account_number": "",
+                          "routing_number": "121042882",
+                          "account_type": "",
+                          "bank_name": "Wells Fargo",
+                          "beneficiary_bank": null,
+                          "correspondent_bank": null,
+                          "shipping_address": null
+                        },
+                        "ach": {
+                          "effective_date": "2024-04-04",
+                          "company_discretionary_data": "",
+                          "company_entry_description": "Payment",
+                          "trace_number": "",
+                          "return_code": "",
+                          "rta_id": ""
+                        },
+                        "parent_transaction_id": "",
+                        "external_reference_id": "",
+                        "purpose": "",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": null,
+                        "metadata": null,
+                        "reconciliation": {
+                          "status": "reconciled",
+                          "master_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "500.00"
+                            }
+                          ],
+                          "sub_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "500.00"
+                            }
+                          ]
+                        },
+                        "timestamps": {
+                          "created_at": "2024-04-04T11:06:00Z",
+                          "originated_at": "2024-04-04T11:06:00Z",
+                          "modified_at": "2024-04-04T11:06:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -3798,7 +4854,13 @@
               "application/json": {
                 "examples": {
                   "Simulate an Incoming ACH Pull": {
-                    "value": "{\n    \"sub_account_id\": {{sub_account_id}},\n    \"amount\": \"500.00\",\n    \"description\": \"May Rent\",\n    \"counterparty_name\": \"John Doe\",\n    \"counterparty_routing_number\": \"121042882\"\n}"
+                    "value": {
+                      "sub_account_id": "",
+                      "amount": "500.00",
+                      "description": "May Rent",
+                      "counterparty_name": "John Doe",
+                      "counterparty_routing_number": "121042882"
+                    }
                   }
                 }
               }
@@ -3811,7 +4873,76 @@
                 "text/plain": {
                   "examples": {
                     "Simulate an Incoming ACH Pull": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"received\",\n    \"amount\": \"500.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"ach\",\n    \"type\": \"pull\",\n    \"message\": \"incoming\",\n    \"description\": \"May Rent\",\n    \"available_balance\": \"1250.50\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"500.00\",\n    \"counterparty\": {\n        \"id\": {{counterparty_id}},\n        \"name\": \"John Doe\",\n        \"verification_status\": \"verified\",\n        \"account_number\": \"\",\n        \"routing_number\": \"121042882\",\n        \"account_type\": \"\",\n        \"bank_name\": \"Wells Fargo\",\n        \"beneficiary_bank\": null,\n        \"correspondent_bank\": null,\n        \"shipping_address\": null\n    },\n    \"ach\": {\n        \"effective_date\": \"2024-04-04\",\n        \"company_discretionary_data\": \"\",\n        \"company_entry_description\": \"Payment\",\n        \"trace_number\": \"\",\n        \"return_code\": \"\",\n        \"rta_id\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"reconciled\",\n        \"master_account\": [\n            {\n                \"id\": {{master_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ],\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"500.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"originated_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {
+                        "id": "",
+                        "client_id": "",
+                        "master_account_holder_id": "",
+                        "master_account_id": "",
+                        "sub_account_holder_id": "",
+                        "sub_account_id": "",
+                        "status": "received",
+                        "amount": "500.00",
+                        "currency": "usd",
+                        "direction": "debit",
+                        "method": "ach",
+                        "type": "pull",
+                        "message": "incoming",
+                        "description": "May Rent",
+                        "available_balance": "1250.50",
+                        "pending_credits": "0.00",
+                        "pending_debits": "500.00",
+                        "counterparty": {
+                          "id": "",
+                          "name": "John Doe",
+                          "verification_status": "verified",
+                          "account_number": "",
+                          "routing_number": "121042882",
+                          "account_type": "",
+                          "bank_name": "Wells Fargo",
+                          "beneficiary_bank": null,
+                          "correspondent_bank": null,
+                          "shipping_address": null
+                        },
+                        "ach": {
+                          "effective_date": "2024-04-04",
+                          "company_discretionary_data": "",
+                          "company_entry_description": "Payment",
+                          "trace_number": "",
+                          "return_code": "",
+                          "rta_id": ""
+                        },
+                        "parent_transaction_id": "",
+                        "external_reference_id": "",
+                        "purpose": "",
+                        "ofac": {
+                          "status": "pass",
+                          "last_updated_at": "2024-04-01T21:00:00Z"
+                        },
+                        "attachments": null,
+                        "metadata": null,
+                        "reconciliation": {
+                          "status": "reconciled",
+                          "master_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "500.00"
+                            }
+                          ],
+                          "sub_account": [
+                            {
+                              "id": "",
+                              "transaction_id": "",
+                              "amount": "500.00"
+                            }
+                          ]
+                        },
+                        "timestamps": {
+                          "created_at": "2024-04-04T11:06:00Z",
+                          "originated_at": "2024-04-04T11:06:00Z",
+                          "modified_at": "2024-04-04T11:06:00Z"
+                        }
+                      }
                     }
                   }
                 }
@@ -3847,25 +4978,25 @@
               "application/json": {
                 "examples": {
                   "Simulate a Refund Auth & Settle Transaction": {
-                    "value": "{\n    \"card_id\": {{card_id}},\n    \"amount\": \"120.00\",\n    \"parent_txn_id\": {{transaction_id}},\n    \"type\": \"refund\",\n    \"status\": \"settled\"\n}"
+                    "value": {    "card_id": "",    "amount": "120.00",    "parent_txn_id": "",    "type": "refund",    "status": "settled"}
                   },
                   "Simulate a Refund Auth Transaction": {
-                    "value": "{\n    \"card_id\": {{card_id}},\n    \"amount\": \"120.00\",\n    \"parent_txn_id\": {{transaction_id}},\n    \"type\": \"refund\",\n    \"status\": \"pending\"\n}"
+                    "value": {    "card_id": "",    "amount": "120.00",    "parent_txn_id": "",    "type": "refund",    "status": "pending"}
                   },
                   "Simulate a Refund Settle Transaction": {
-                    "value": "{\n    \"card_id\": {{card_id}},\n    \"amount\": \"120.00\",\n    \"parent_txn_id\": {{transaction_id}},\n    \"type\": \"refund\",\n    \"status\": \"settled\"\n}"
+                    "value": {    "card_id": "",    "amount": "120.00",    "parent_txn_id": "",    "type": "refund",    "status": "settled"}
                   },
                   "Simulate a Reversal Transaction": {
-                    "value": "{\n    \"card_id\": {{card_id}},\n    \"amount\": \"120.00\",\n    \"parent_txn_id\": {{transaction_id}},\n    \"type\": \"reverse\",\n    \"status\": \"settled\"\n}"
+                    "value": {    "card_id": "",    "amount": "120.00",    "parent_txn_id": "",    "type": "reverse",    "status": "settled"}
                   },
                   "Simulate a Settle Transaction": {
-                    "value": "{\n    \"card_id\": {{card_id}},\n    \"amount\": \"120.00\",\n    \"parent_txn_id\": {{transaction_id}},\n    \"type\": \"adjust\",\n    \"status\": \"settled\"\n}"
+                    "value": {    "card_id": "",    "amount": "120.00",    "parent_txn_id": "",    "type": "adjust",    "status": "settled"}
                   },
                   "Simulate an Auth & Settle Transaction": {
-                    "value": "{\n    \"card_id\": {{card_id}},\n    \"amount\": \"120.00\",\n    \"type\": \"auth\",\n    \"status\": \"settled\"\n}"
+                    "value": {    "card_id": "",    "amount": "120.00",    "type": "auth",    "status": "settled"}
                   },
                   "Simulate an Auth Transaction": {
-                    "value": "{\n    \"card_id\": {{card_id}},\n    \"amount\": \"93.50\",\n    \"type\": \"auth\",\n    \"status\": \"pending\"\n}"
+                    "value": {    "card_id": "",    "amount": "93.50",    "type": "auth",    "status": "pending"}
                   }
                 }
               }
@@ -3878,22 +5009,22 @@
                 "text/plain": {
                   "examples": {
                     "Simulate a Refund Auth & Settle Transaction": {
-                      "value": "{\n    \"id\": {{sub_account_transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"settled\",\n    \"amount\": \"120.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"card_issuing\",\n    \"type\": \"refund\",\n    \"message\": \"incoming\",\n    \"description\": \"Mom and Pop\",\n    \"available_balance\": \"313.50\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": null,\n    \"card\": {\n        \"id\": {{card_id}},\n        \"cardholder_id\": {{card_holder_id}},\n        \"merchant\": \"Mom and Pop\",\n        \"auth_method\": \"online\",\n        \"wallet\": \"\",\n        \"rta_id\": \"\",\n        \"local_transaction\": {\n            \"amount\": \"120.00\",\n            \"currency\": \"usd\",\n            \"conversion_rate\": \"1.00\"\n        },\n        \"available_limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"network_settlement_at\": \"2024-04-04T11:06:00Z\"\n    },\n    \"parent_txn_id\": {{transaction_id}},\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-04T11:06:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"120.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\",\n        \"settled_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {    "id": "",    "client_id": "",    "master_account_holder_id": "",    "master_account_id": "",    "sub_account_holder_id": "",    "sub_account_id": "",    "status": "settled",    "amount": "120.00",    "currency": "usd",    "direction": "credit",    "method": "card_issuing",    "type": "refund",    "message": "incoming",    "description": "Mom and Pop",    "available_balance": "313.50",    "pending_credits": "0.00",    "pending_debits": "0.00",    "counterparty": null,    "card": {        "id": "",        "cardholder_id": "",        "merchant": "Mom and Pop",        "auth_method": "online",        "wallet": "",        "rta_id": "",        "local_transaction": {            "amount": "120.00",            "currency": "usd",            "conversion_rate": "1.00"        },        "available_limit": {            "period": "daily",            "max_spend_amount": "500.00",            "max_spend_count": "10"        },        "network_settlement_at": "2024-04-04T11:06:00Z"    },    "parent_txn_id": "",    "external_reference_id": "",    "purpose": "",    "ofac": {        "status": "pass",        "last_updated_at": "2024-04-04T11:06:00Z"    },    "attachments": null,    "metadata": null,    "reconciliation": {        "status": "not_reconciled",        "sub_account": [            {                "id": "",                "transaction_id": "",                "amount": "120.00"            }        ]    },    "timestamps": {        "created_at": "2024-04-04T11:06:00Z",        "modified_at": "2024-04-04T11:06:00Z",        "settled_at": "2024-04-04T11:06:00Z"    }}
                     },
                     "Simulate a Refund Auth Transaction": {
-                      "value": "{\n    \"id\": {{sub_account_transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"pending\",\n    \"amount\": \"120.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"card_issuing\",\n    \"type\": \"refund\",\n    \"message\": \"incoming\",\n    \"description\": \"Mom and Pop\",\n    \"available_balance\": \"313.50\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": null,\n    \"card\": {\n        \"id\": {{card_id}},\n        \"cardholder_id\": {{card_holder_id}},\n        \"merchant\": \"Mom and Pop\",\n        \"auth_method\": \"online\",\n        \"wallet\": \"\",\n        \"rta_id\": \"\",\n        \"local_transaction\": {\n            \"amount\": \"120.00\",\n            \"currency\": \"usd\",\n            \"conversion_rate\": \"1.00\"\n        },\n        \"available_limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"network_settlement_at\": \"\"\n    },\n    \"parent_txn_id\": {{transaction_id}},\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-04T11:06:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"120.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\",\n        \"settled_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {    "id": "",    "client_id": "",    "master_account_holder_id": "",    "master_account_id": "",    "sub_account_holder_id": "",    "sub_account_id": "",    "status": "pending",    "amount": "120.00",    "currency": "usd",    "direction": "credit",    "method": "card_issuing",    "type": "refund",    "message": "incoming",    "description": "Mom and Pop",    "available_balance": "313.50",    "pending_credits": "0.00",    "pending_debits": "0.00",    "counterparty": null,    "card": {        "id": "",        "cardholder_id": "",        "merchant": "Mom and Pop",        "auth_method": "online",        "wallet": "",        "rta_id": "",        "local_transaction": {            "amount": "120.00",            "currency": "usd",            "conversion_rate": "1.00"        },        "available_limit": {            "period": "daily",            "max_spend_amount": "500.00",            "max_spend_count": "10"        },        "network_settlement_at": ""    },    "parent_txn_id": "",    "external_reference_id": "",    "purpose": "",    "ofac": {        "status": "pass",        "last_updated_at": "2024-04-04T11:06:00Z"    },    "attachments": null,    "metadata": null,    "reconciliation": {        "status": "not_reconciled",        "sub_account": [            {                "id": "",                "transaction_id": "",                "amount": "120.00"            }        ]    },    "timestamps": {        "created_at": "2024-04-04T11:06:00Z",        "modified_at": "2024-04-04T11:06:00Z",        "settled_at": "2024-04-04T11:06:00Z"    }}
                     },
                     "Simulate a Refund Settle Transaction": {
-                      "value": "{\n    \"id\": {{sub_account_transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"settled\",\n    \"amount\": \"120.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"card_issuing\",\n    \"type\": \"refund\",\n    \"message\": \"incoming\",\n    \"description\": \"Mom and Pop\",\n    \"available_balance\": \"313.50\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": null,\n    \"card\": {\n        \"id\": {{card_id}},\n        \"cardholder_id\": {{card_holder_id}},\n        \"merchant\": \"Mom and Pop\",\n        \"auth_method\": \"online\",\n        \"wallet\": \"\",\n        \"rta_id\": \"\",\n        \"local_transaction\": {\n            \"amount\": \"120.00\",\n            \"currency\": \"usd\",\n            \"conversion_rate\": \"1.00\"\n        },\n        \"available_limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"network_settlement_at\": \"2024-04-05T11:06:00Z\"\n    },\n    \"parent_txn_id\": {{transaction_id}},\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-04T11:06:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"120.00\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\",\n        \"settled_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {    "id": "",    "client_id": "",    "master_account_holder_id": "",    "master_account_id": "",    "sub_account_holder_id": "",    "sub_account_id": "",    "status": "settled",    "amount": "120.00",    "currency": "usd",    "direction": "credit",    "method": "card_issuing",    "type": "refund",    "message": "incoming",    "description": "Mom and Pop",    "available_balance": "313.50",    "pending_credits": "0.00",    "pending_debits": "0.00",    "counterparty": null,    "card": {        "id": "",        "cardholder_id": "",        "merchant": "Mom and Pop",        "auth_method": "online",        "wallet": "",        "rta_id": "",        "local_transaction": {            "amount": "120.00",            "currency": "usd",            "conversion_rate": "1.00"        },        "available_limit": {            "period": "daily",            "max_spend_amount": "500.00",            "max_spend_count": "10"        },        "network_settlement_at": "2024-04-05T11:06:00Z"    },    "parent_txn_id": "",    "external_reference_id": "",    "purpose": "",    "ofac": {        "status": "pass",        "last_updated_at": "2024-04-04T11:06:00Z"    },    "attachments": null,    "metadata": null,    "reconciliation": {        "status": "not_reconciled",        "sub_account": [            {                "id": "",                "transaction_id": "",                "amount": "120.00"            }        ]    },    "timestamps": {        "created_at": "2024-04-04T11:06:00Z",        "modified_at": "2024-04-04T11:06:00Z",        "settled_at": "2024-04-04T11:06:00Z"    }}
                     },
                     "Simulate a Reversal Transaction": {
-                      "value": "{\n    \"id\": {{sub_account_transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"settled\",\n    \"amount\": \"120.00\",\n    \"currency\": \"usd\",\n    \"direction\": \"credit\",\n    \"method\": \"card_issuing\",\n    \"type\": \"reverse\",\n    \"message\": \"incoming\",\n    \"description\": \"Mom and Pop\",\n    \"available_balance\": \"313.50\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": null,\n    \"card\": {\n        \"id\": {{card_id}},\n        \"cardholder_id\": {{card_holder_id}},\n        \"merchant\": \"Mom and Pop\",\n        \"auth_method\": \"online\",\n        \"wallet\": \"\",\n        \"rta_id\": \"\",\n        \"local_transaction\": {\n            \"amount\": \"120.00\",\n            \"currency\": \"usd\",\n            \"conversion_rate\": \"1.00\"\n        },\n        \"available_limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"500.00\",\n            \"max_spend_count\": \"10\"\n        },\n        \"network_settlement_at\": \"\"\n    },\n    \"parent_txn_id\": {{transaction_id}},\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-04T11:06:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"26.50\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\",\n        \"settled_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {    "id": "",    "client_id":"",    "master_account_holder_id": "",    "master_account_id": "",    "sub_account_holder_id": "",    "sub_account_id": "",    "status": "settled",    "amount": "120.00",    "currency": "usd",    "direction": "credit",    "method": "card_issuing",    "type": "reverse",    "message": "incoming",    "description": "Mom and Pop",    "available_balance": "313.50",    "pending_credits": "0.00",    "pending_debits": "0.00",    "counterparty": null,    "card": {        "id": "",        "cardholder_id": "",        "merchant": "Mom and Pop",        "auth_method": "online",        "wallet": "",        "rta_id": "",        "local_transaction": {            "amount": "120.00",            "currency": "usd",            "conversion_rate": "1.00"        },        "available_limit": {            "period": "daily",            "max_spend_amount": "500.00",            "max_spend_count": "10"        },        "network_settlement_at": ""    },    "parent_txn_id": "",    "external_reference_id": "",    "purpose": "",    "ofac": {        "status": "pass",        "last_updated_at": "2024-04-04T11:06:00Z"    },    "attachments": null,    "metadata": null,    "reconciliation": {        "status": "not_reconciled",        "sub_account": [            {                "id": "",                "transaction_id": "",                "amount": "26.50"            }        ]    },    "timestamps": {        "created_at": "2024-04-04T11:06:00Z",        "modified_at": "2024-04-04T11:06:00Z",        "settled_at": "2024-04-04T11:06:00Z"    }}
                     },
                     "Simulate a Settle Transaction": {
-                      "value": "{\n    \"id\": {{sub_account_transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"settled\",\n    \"amount\": \"26.50\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"card_issuing\",\n    \"type\": \"adjust\",\n    \"message\": \"incoming\",\n    \"description\": \"Mom and Pop\",\n    \"available_balance\": \"120.50\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"0.00\",\n    \"counterparty\": null,\n    \"card\": {\n        \"id\": {{card_id}},\n        \"cardholder_id\": {{card_holder_id}},\n        \"merchant\": \"Mom and Pop\",\n        \"auth_method\": \"online\",\n        \"wallet\": \"\",\n        \"rta_id\": \"\",\n        \"local_transaction\": {\n            \"amount\": \"26.50\",\n            \"currency\": \"usd\",\n            \"conversion_rate\": \"1.00\"\n        },\n        \"available_limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"380.00\",\n            \"max_spend_count\": \"9\"\n        },\n        \"network_settlement_at\": \"2024-04-02T21:00:00\"\n    },\n    \"parent_txn_id\": {{transaction_id}},\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{sub_account_transaction_id}},\n                \"amount\": \"26.50\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\",\n        \"settled_at\": \"2024-04-02T21:00:00Z\"\n    }\n}"
+                      "value": {    "id": "",    "client_id": "",    "master_account_holder_id": "",    "master_account_id": "",    "sub_account_holder_id": "",    "sub_account_id": "",    "status": "settled",    "amount": "26.50",    "currency": "usd",    "direction": "debit",    "method": "card_issuing",    "type": "adjust",    "message": "incoming",    "description": "Mom and Pop",    "available_balance": "120.50",    "pending_credits": "0.00",    "pending_debits": "0.00",    "counterparty": null,    "card": {        "id": "",        "cardholder_id": "",        "merchant": "Mom and Pop",        "auth_method": "online",        "wallet": "",        "rta_id": "",        "local_transaction": {            "amount": "26.50",            "currency": "usd",            "conversion_rate": "1.00"        },        "available_limit": {            "period": "daily",            "max_spend_amount": "380.00",            "max_spend_count": "9"        },        "network_settlement_at": "2024-04-02T21:00:00"    },    "parent_txn_id": "",    "external_reference_id": "",    "purpose": "",    "ofac": {        "status": "pass",        "last_updated_at": "2024-04-01T21:00:00Z"    },    "attachments": null,    "metadata": null,    "reconciliation": {        "status": "not_reconciled",        "sub_account": [            {                "id": "",                "transaction_id": "",                "amount": "26.50"            }        ]    },    "timestamps": {        "created_at": "2024-04-04T11:06:00Z",        "modified_at": "2024-04-04T11:06:00Z",        "settled_at": "2024-04-02T21:00:00Z"    }}
                     },
                     "Simulate an Auth Transaction": {
-                      "value": "{\n    \"id\": {{transaction_id}},\n    \"client_id\": {{client_id}},\n    \"master_account_holder_id\": {{master_account_holder_id}},\n    \"master_account_id\": {{master_account_id}},\n    \"sub_account_holder_id\": {{sub_account_holder_id}},\n    \"sub_account_id\": {{sub_account_id}},\n    \"status\": \"pending\",\n    \"amount\": \"93.50\",\n    \"currency\": \"usd\",\n    \"direction\": \"debit\",\n    \"method\": \"card_issuing\",\n    \"type\": \"auth\",\n    \"message\": \"incoming\",\n    \"description\": \"Mom and Pop\",\n    \"available_balance\": \"290.50\",\n    \"pending_credits\": \"0.00\",\n    \"pending_debits\": \"93.50\",\n    \"counterparty\": null,\n    \"card\": {\n        \"id\": {{card_id}},\n        \"cardholder_id\": {{card_holder_id}},\n        \"merchant\": \"Mom and Pop\",\n        \"auth_method\": \"online\",\n        \"wallet\": \"\",\n        \"rta_id\": \"\",\n        \"local_transaction\": {\n            \"amount\": \"93.50\",\n            \"currency\": \"usd\",\n            \"conversion_rate\": \"1.00\"\n        },\n        \"available_limit\": {\n            \"period\": \"daily\",\n            \"max_spend_amount\": \"406.50\",\n            \"max_spend_count\": \"9\"\n        },\n        \"network_settlement_at\": \"\"\n    },\n    \"parent_transaction_id\": \"\",\n    \"external_reference_id\": \"\",\n    \"purpose\": \"\",\n    \"ofac\": {\n        \"status\": \"pass\",\n        \"last_updated_at\": \"2024-04-01T21:00:00Z\"\n    },\n    \"attachments\": null,\n    \"metadata\": null,\n    \"reconciliation\": {\n        \"status\": \"not_reconciled\",\n        \"sub_account\": [\n            {\n                \"id\": {{sub_account_id}},\n                \"transaction_id\": {{transaction_id}},\n                \"amount\": \"93.50\"\n            }\n        ]\n    },\n    \"timestamps\": {\n        \"created_at\": \"2024-04-04T11:06:00Z\",\n        \"modified_at\": \"2024-04-04T11:06:00Z\"\n    }\n}"
+                      "value": {    "id": "",    "client_id": "",    "master_account_holder_id": "",    "master_account_id": "",    "sub_account_holder_id": "",    "sub_account_id": "",    "status": "pending",    "amount": "93.50",    "currency": "usd",    "direction": "debit",    "method": "card_issuing",    "type": "auth",    "message": "incoming",    "description": "Mom and Pop",    "available_balance": "290.50",    "pending_credits": "0.00",    "pending_debits": "93.50",    "counterparty": null,    "card": {        "id": "",        "cardholder_id": "",        "merchant": "Mom and Pop",        "auth_method": "online",        "wallet": "",        "rta_id": "",        "local_transaction": {            "amount": "93.50",            "currency": "usd",            "conversion_rate": "1.00"        },        "available_limit": {            "period": "daily",            "max_spend_amount": "406.50",            "max_spend_count": "9"        },        "network_settlement_at": ""    },    "parent_transaction_id": "",    "external_reference_id": "",    "purpose": "",    "ofac": {        "status": "pass",        "last_updated_at": "2024-04-01T21:00:00Z"    },    "attachments": null,    "metadata": null,    "reconciliation": {        "status": "not_reconciled",        "sub_account": [            {                "id": "",                "transaction_id": "",                "amount": "93.50"            }        ]    },    "timestamps": {        "created_at": "2024-04-04T11:06:00Z",        "modified_at": "2024-04-04T11:06:00Z"    }}
                     }
                   }
                 }
