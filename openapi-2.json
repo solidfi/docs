@@ -311,6 +311,14 @@
                   "master_account_id": {
                     "type": "string",
                     "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "person",
+                      "business"                        
+                    ],
+                    "example": "person"
                   }
                 },
                 "required": [
