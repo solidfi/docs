@@ -298,12 +298,22 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
           "content": {
             "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "master_account_id": {
+                    "type": "string",
+                    "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+                  }
+                }
+              },
               "examples": {
                 "Create a Sub Account Holder": {
                   "value": {
