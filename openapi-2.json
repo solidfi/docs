@@ -316,13 +316,13 @@
                     "type": "string",
                     "enum": [
                       "person",
-                      "business"                        
+                      "business"
                     ],
                     "example": "person"
                   },
                   "person": {
                     "type": "object",
-                    "properties":{
+                    "properties": {
                       "first_name": {
                         "type": "string",
                         "example": "Jane"
@@ -359,7 +359,7 @@
                       "email": {
                         "type": "string",
                         "example": "jane.doe@gmail.com"
-                      },                        
+                      },
                       "address": {
                         "type": "object",
                         "properties": {
@@ -392,60 +392,69 @@
                     }
                   },
                   "business": {
-                    "legal_name": {
-                      "type": "string",
-                      "example": "Ace LLC"
-                    },
-                    "dba": {
-                      "type": "string",
-                      "example": "Ace Inc"
-                    },
-                    "entity_type": {
-                      "type": "string",
-                      "example": "limited_liability_company",
-                      "enum": [
-                        "sole_proprietor",
-                        "single_member_llc", 
-                        "limited_liability_company", 
-                        "general_partnership",
-                        "unlisted_corporation",
-                        "publicly_traded_corporation",
-                        "association",
-                        "non_profit",
-                        "government_organization", 
-                        "revocable_trust",
-                        "irrevocable_trust",
-                        "estate", 
-                        "professional_association", 
-                        "limited_partnership", 
-                        "limited_liability_partnership", 
-                        "professional_corporation"
-                      ]
-                    },
-                    "id_type": {
-                      "type": "string",
-                      "example": "ein",
-                      "enum": [
-                        "ein",
-                        "other"
-                      ]
-                    },
-                    "id_number": {
-                      "type": "string",
-                      "example": "187654321"
-                    },
-                    "phone": {
-                      "type": "string",
-                      "example": "16604491146"
-                    },
-                    "email": {
-                      "type": "string",
-                      "example": "support@ace.com"
-                    },
-                    "formation_date": {
-                      "type": "string",
-                      "example": "2018-02-18"
-                    }                     
+                    "type": "object",
+                    "properties": {
+                      "legal_name": {
+                        "type": "string",
+                        "example": "Ace LLC"
+                      },
+                      "dba": {
+                        "type": "string",
+                        "example": "Ace Inc"
+                      },
+                      "entity_type": {
+                        "type": "string",
+                        "example": "limited_liability_company",
+                        "enum": [
+                          "sole_proprietor",
+                          "single_member_llc",
+                          "limited_liability_company",
+                          "general_partnership",
+                          "unlisted_corporation",
+                          "publicly_traded_corporation",
+                          "association",
+                          "non_profit",
+                          "government_organization",
+                          "revocable_trust",
+                          "irrevocable_trust",
+                          "estate",
+                          "professional_association",
+                          "limited_partnership",
+                          "limited_liability_partnership",
+                          "professional_corporation"
+                        ]
+                      },
+                      "id_type": {
+                        "type": "string",
+                        "example": "ein",
+                        "enum": [
+                          "ein",
+                          "other"
+                        ]
+                      },
+                      "id_number": {
+                        "type": "string",
+                        "example": "187654321"
+                      },
+                      "phone": {
+                        "type": "string",
+                        "example": "16604491146"
+                      },
+                      "email": {
+                        "type": "string",
+                        "example": "support@ace.com"
+                      },
+                      "formation_date": {
+                        "type": "string",
+                        "example": "2018-02-18"
+                      },
+                      "members": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/business_member"
+                        }
+                      }
+                    }
                   },
                   "verification": {
                     "type": "object",
