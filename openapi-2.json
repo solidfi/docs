@@ -445,13 +445,7 @@
                     "formation_date": {
                       "type": "string",
                       "example": "2018-02-18"
-                    },
-                    "members": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/business_member"
-                      }
-                    }                      
+                    }                     
                   },
                   "verification": {
                     "type": "object",
