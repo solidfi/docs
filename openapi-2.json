@@ -24,12 +24,13 @@
         "operationId": "retrieveAMasterAccount",
         "parameters": [
           {
-            "name": "api_key",
+            "name": "api-key",
             "in": "header",
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
