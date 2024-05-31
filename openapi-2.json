@@ -319,10 +319,103 @@
                       "business"                        
                     ],
                     "example": "person"
+                  },
+                  "person": {
+                    "type": "object",
+                    "properties":{
+                      "first_name": {
+                        "type": "string",
+                        "example": "Jane"
+                      },
+                      "middle_name": {
+                        "type": "string",
+                        "example": "Jack"
+                      },
+                      "last_name": {
+                        "type": "string",
+                        "example": "Doe"
+                      },
+                      "id_type": {
+                        "type": "string",
+                        "example": "ssn",
+                        "enum": [
+                          "ssn",
+                          "passport",
+                          "other"
+                        ]
+                      },
+                      "id_number": {
+                        "type": "string",
+                        "example": "945678934"
+                      },
+                      "date_of_birth": {
+                        "type": "string",
+                        "example": "1974-01-01"
+                      },
+                      "phone": {
+                        "type": "string",
+                        "example": "+19418405843"
+                      },
+                      "email": {
+                        "type": "string",
+                        "example": "jane.doe@gmail.com"
+                      },                        
+                      "address": {
+                        "type": "object",
+                        "properties": {
+                          "line1": {
+                            "type": "string",
+                            "example": "123 Main St"
+                          },
+                          "line2": {
+                            "type": "string",
+                            "example": ""
+                          },
+                          "city": {
+                            "type": "string",
+                            "example": "New York"
+                          },
+                          "state": {
+                            "type": "string",
+                            "example": "NY"
+                          },
+                          "country": {
+                            "type": "string",
+                            "example": "US"
+                          },
+                          "postal_code": {
+                            "type": "string",
+                            "example": "10001"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "verification": {
+                    "type": "object",
+                    "properties": {
+                      "status": {
+                        "type": "string",
+                        "example": "pass",
+                        "enum": [
+                          "pass",
+                          "fail"
+                        ]
+                      },
+                      "method": {
+                        "type": "string",
+                        "example": "persona"
+                      },
+                      "url": {
+                        "type": "string",
+                        "example": "https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV"
+                      }
+                    }
                   }
                 },
                 "required": [
-                  "master_account_id"
+                  "master_account_id",
+                  "type"
                 ]
               },
               "examples": {
