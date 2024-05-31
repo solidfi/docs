@@ -310,7 +310,8 @@
                 "properties": {
                   "master_account_id": {
                     "type": "string",
-                    "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+                    "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
+                    "required": true
                   }
                 }
               },
