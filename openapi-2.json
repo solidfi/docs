@@ -385,11 +385,6 @@
                 "schema": {
                   "type": "object",
                   "$ref": "#/components/schemas/sub_account_holder"
-                },
-                "examples": {
-                  "value": {
-                    "$ref": "#/components/examples/sub_account_holder_example"
-                  }
                 }
               }
             }
