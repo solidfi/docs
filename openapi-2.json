@@ -385,6 +385,9 @@
                 "schema": {
                   "type": "object",
                   "$ref": "#/components/schemas/sub_account_holder"
+                },
+                "examples": {
+                  "$ref": "#/components/schemas/sub_account_holder_example"
                 }
               }
             }
@@ -5817,7 +5820,7 @@
     },
     "examples": {
       "sub_account_holder_example": {
-        "id": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+        "id": "sah_5ccfeef0adf0cbe2aa0980d2c950abcd",
         "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
         "master_account_holder_id": "mah_201e02c581a098a740456c5c19fcfcd6",
         "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
