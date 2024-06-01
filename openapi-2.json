@@ -326,89 +326,11 @@
                   },
                   "business": {
                     "type": "object",
-                    "properties": {
-                      "legal_name": {
-                        "type": "string",
-                        "example": "Ace LLC"
-                      },
-                      "dba": {
-                        "type": "string",
-                        "example": "Ace Inc"
-                      },
-                      "entity_type": {
-                        "type": "string",
-                        "example": "limited_liability_company",
-                        "enum": [
-                          "sole_proprietor",
-                          "single_member_llc",
-                          "limited_liability_company",
-                          "general_partnership",
-                          "unlisted_corporation",
-                          "publicly_traded_corporation",
-                          "association",
-                          "non_profit",
-                          "government_organization",
-                          "revocable_trust",
-                          "irrevocable_trust",
-                          "estate",
-                          "professional_association",
-                          "limited_partnership",
-                          "limited_liability_partnership",
-                          "professional_corporation"
-                        ]
-                      },
-                      "id_type": {
-                        "type": "string",
-                        "example": "ein",
-                        "enum": [
-                          "ein",
-                          "other"
-                        ]
-                      },
-                      "id_number": {
-                        "type": "string",
-                        "example": "187654321"
-                      },
-                      "phone": {
-                        "type": "string",
-                        "example": "16604491146"
-                      },
-                      "email": {
-                        "type": "string",
-                        "example": "support@ace.com"
-                      },
-                      "formation_date": {
-                        "type": "string",
-                        "example": "2018-02-18"
-                      },
-                      "members": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/business_member"
-                        }
-                      }
-                    }
+                    "$ref": "#/components/schemas/business"
                   },
                   "verification": {
                     "type": "object",
-                    "properties": {
-                      "status": {
-                        "type": "string",
-                        "example": "pass",
-                        "enum": [
-                          "pass",
-                          "fail"
-                        ]
-                      },
-                      "method": {
-                        "type": "string",
-                        "example": "persona"
-                      },
-                      "url": {
-                        "type": "string",
-                        "example": "https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV"
-                      }
-                    }
+                    "$ref": "#/components/schemas/verification"
                   }
                 },
                 "required": [
@@ -453,7 +375,11 @@
           "201": {
             "description": "Create a Sub Account Holder",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/sub_account_holder"
+                },
                 "examples": {
                   "Create a Sub Account Holder": {
                     "value": {
@@ -5635,6 +5561,71 @@
           }
         }
       },
+      "business": {
+        "type": "object",
+        "properties": {
+          "legal_name": {
+            "type": "string",
+            "example": "Ace LLC"
+          },
+          "dba": {
+            "type": "string",
+            "example": "Ace Inc"
+          },
+          "entity_type": {
+            "type": "string",
+            "example": "limited_liability_company",
+            "enum": [
+              "sole_proprietor",
+              "single_member_llc",
+              "limited_liability_company",
+              "general_partnership",
+              "unlisted_corporation",
+              "publicly_traded_corporation",
+              "association",
+              "non_profit",
+              "government_organization",
+              "revocable_trust",
+              "irrevocable_trust",
+              "estate",
+              "professional_association",
+              "limited_partnership",
+              "limited_liability_partnership",
+              "professional_corporation"
+            ]
+          },
+          "id_type": {
+            "type": "string",
+            "example": "ein",
+            "enum": [
+              "ein",
+              "other"
+            ]
+          },
+          "id_number": {
+            "type": "string",
+            "example": "187654321"
+          },
+          "phone": {
+            "type": "string",
+            "example": "16604491146"
+          },
+          "email": {
+            "type": "string",
+            "example": "support@ace.com"
+          },
+          "formation_date": {
+            "type": "string",
+            "example": "2018-02-18"
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/business_member"
+            }
+          }
+        }
+      },
       "business_member": {
         "properties": {
           "first_name": {
@@ -5721,6 +5712,93 @@
           }
         }
       },
+      "verification": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "pass",
+            "enum": [
+              "pass",
+              "fail"
+            ]
+          },
+          "method": {
+            "type": "string",
+            "example": "persona"
+          },
+          "url": {
+            "type": "string",
+            "example": "https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV"
+          }
+        }
+      },
+      "ofac": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "pass",
+            "enum": [
+              "pass",
+              "fail"
+            ]
+          },
+          "last_updated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z"
+          }
+        }
+      },
+      "attachments": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/attachment_object"
+        }
+      },
+      "attachment_object": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "example": "formation"
+          },
+          "id": {
+            "type": "string",
+            "example": "att_a8d2b191fa0e960d8e49a4bfd320e07b"
+          },
+          "created_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z"
+          }
+        }
+      },
+      "metadata": {
+        "type": "object",
+        "properties": {
+          "customer_code": {
+            "type": "string",
+            "example": "1501"
+          }
+        }
+      },
+      "entity_timestamp": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z"
+          },
+          "deactivated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z"
+          }
+        }
+      },
       "sub_account_holder": {
         "properties": {
           "id": {
@@ -5738,6 +5816,49 @@
           "master_account_id": {
             "type": "string",
             "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+          },
+          "person": {
+            "type": "object",
+            "$ref": "#/components/schemas/person"
+          },
+          "business": {
+            "type": "object",
+            "$ref": "#/components/schemas/business"
+          },
+          "ofac": {
+            "type": "object",
+            "$ref": "#/components/schemas/ofac"
+          },
+          "external_reference_id": {
+            "type": "string",
+            "example": "TW-9L1L2-UVV"
+          },
+          "purpose": {
+            "type": "string",
+            "example": "Ace sub-account holder"
+          },
+          "attachments": {
+            "type": "object",
+            "$ref": "#/components/schemas/attachments"
+          },
+          "metadata": {
+            "type": "object",
+            "$ref": "#/components/schemas/metadata"
+          },
+          "status": {
+            "type": "string",
+            "example": "activated",
+            "enum": [
+              "pending_activation",
+              "activated",
+              "suspended",
+              "deactivated", 
+              "locked"
+            ]
+          },
+          "timestamps": {
+            "type": "object",
+            "$ref": "#/components/schemas/entity_timestamp"
           }
         }
       }
