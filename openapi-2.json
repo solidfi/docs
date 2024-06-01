@@ -388,11 +388,9 @@
                 },
                 "examples": {
                   "Create a Sub Account Holder": {
-                    "value": {
                       "sub_account_holder_example": {
                         "$ref": "#/components/examples/sub_account_holder_example"
                       }
-                    }
                   }
                 }
               }
