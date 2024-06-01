@@ -347,7 +347,7 @@
               "examples": {
                 "Create a Sub Account Holder": {
                   "value": {
-                    "master_account_id": "mas_123",
+                    "master_account_id": "mas_456",
                     "type": "person",
                     "person": {
                       "first_name": "Jane",
