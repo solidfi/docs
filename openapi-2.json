@@ -214,7 +214,13 @@
           "200": {
             "description": "List all Sub Account Holders",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/sub_account_holder"
+                  }
+                },
                 "examples": {
                   "List all Sub Account Holders": {
                     "value": {
