@@ -388,7 +388,7 @@
                 },
                 "examples": {
                   "sub_account_holder_example": {
-                    "$ref": "#/components/schemas/sub_account_holder_example"
+                    "$ref": "#/components/examples/sub_account_holder_example"
                   }
                 }
               }
