@@ -227,7 +227,7 @@
                     "value": {
                       "data": [
                         {
-                          "$ref": "#/components/examples/sub_account_holder_example",
+                          "$ref": "#/components/examples/sub_account_holder_example/value",
                           "id": "",
                           "client_id": "",
                           "master_account_holder_id": "",
