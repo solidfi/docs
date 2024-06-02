@@ -367,6 +367,10 @@
             "description": "Retrieve a Sub Account Holder",
             "content": {
               "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/sub_account_holder"
+                },
                 "examples": {
                   "sub_account_holder_example": {
                     "$ref": "#/components/examples/sub_account_holder_example"
@@ -432,6 +436,10 @@
             "description": "Update a Sub Account Holder",
             "content": {
               "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/sub_account_holder"
+                },
                 "examples": {
                   "sub_account_holder_example": {
                     "$ref": "#/components/examples/sub_account_holder_example"
