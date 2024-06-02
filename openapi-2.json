@@ -5309,23 +5309,23 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/sub_account_holder"
-            },
-            "has_more": {
-              "type": "string",
-              "example": "true",
-              "enum": [
-                "true",
-                "false"
-              ]
-            },
-            "starting_after": {
-              "type": "string",
-              "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
-            },
-            "ending_before": {
-              "type": "string",
-              "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
             }
+          },
+          "has_more": {
+            "type": "string",
+            "example": "true",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          "starting_after": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          },
+          "ending_before": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
           }
         }
       },
