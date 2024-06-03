@@ -5746,6 +5746,76 @@
             "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
           }
         }
+      },
+      "card_holder": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0"
+          },
+          "client_id": {
+            "type": "string",
+            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce"
+          },
+          "master_account_holder_id": {
+            "type": "string",
+            "example": "mah_201e02c581a098a740456c5c19fcfcd6"
+          },
+          "master_account_id": {
+            "type": "string",
+            "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+          },
+          "sub_account_holder_id": {
+            "type": "string",
+            "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752"
+          },
+          "sub_account_id": {
+            "type": "string",
+            "example": "sub_bda1e562657c41e553104b10aad3fe70"
+          },
+          "person": {
+            "type": "object",
+            "$ref": "#/components/schemas/person"
+          },
+          "external_reference_id": {
+            "type": "string",
+            "example": "6RPD1QW-W75"
+          },
+          "purpose": {
+            "type": "string",
+            "example": "Ace Sales Rep"
+          },
+          "ofac": {
+            "type": "object",
+            "$ref": "#/components/schemas/ofac"
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/attachment_object"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "$ref": "#/components/schemas/metadata"
+          },
+          "status": {
+            "type": "string",
+            "example": "activated",
+            "enum": [
+              "pending_activation",
+              "activated",
+              "suspended",
+              "deactivated",
+              "locked"
+            ]
+          },
+          "timestamps": {
+            "type": "object",
+            "$ref": "#/components/schemas/entity_timestamp"
+          }
+        }
       }
     },
     "examples": {
