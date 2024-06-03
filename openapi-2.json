@@ -714,10 +714,79 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sub_account_holder_id": {
+                    "type": "string",
+                    "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752"
+                  },
+                  "label": {
+                    "type": "string",
+                    "example": "Development Vendor"
+                  },
+                  "type": {
+                    "type": "string",
+                    "example": "person",
+                    "enum": [
+                      "person",
+                      "business"
+                    ]
+                  },
+                  "person": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/person"
+                  },
+                  "intra_account": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_intra_account"
+                  },
+                  "ach": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_ach"
+                  },
+                  "domestic_wire": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_domestic_wire"
+                  },
+                  "international_wire": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_international_wire"
+                  },
+                  "rtp": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_rtp"
+                  },
+                  "fednow": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_fednow"
+                  },
+                  "check": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_check"
+                  },
+                  "debit_card": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_debit_card"
+                  },
+                  "purpose": {
+                    "type": "string",
+                    "example": "Offshore dev center"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "TW-9L1L2-UVV"
+                  },
+                  "metadata": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/metadata"
+                  }
+                }
+              },
               "examples": {
                 "Create a Counterparty": {
                   "value": {
-                    "sub_account_id": "",
+                    "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
                     "label": "Development Vendor",
                     "type": "person",
                     "person": {
@@ -5859,46 +5928,6 @@
               "postal_code": "10001"
             }
           },
-          "business": {
-            "legal_name": "NewCo LLC",
-            "dba": "NewCo",
-            "entity_type": "limited_liability_company",
-            "id_type": "ein",
-            "id_number": "187654321",
-            "phone": "+16604491146",
-            "email": "support@newco.com",
-            "formation_date": "2018-02-18",
-            "address": {
-              "line1": "456 Main St",
-              "line2": "",
-              "city": "New York",
-              "state": "NY",
-              "country": "US",
-              "postal_code": "10001"
-            },
-            "members": [
-              {
-                "first_name": "John",
-                "last_name": "Doe",
-                "id_type": "ssn",
-                "id_number": "223902234",
-                "date_of_birth": "1974-01-25",
-                "phone": "+19418405843",
-                "email": "john.doe@gmail.com",
-                "address": {
-                  "line1": "123 Main St",
-                  "line2": "",
-                  "city": "New York",
-                  "state": "NY",
-                  "country": "US",
-                  "postal_code": "10001"
-                },
-                "ownership": "50.00",
-                "title": "CEO",
-                "control_person": true
-              }
-            ]
-          },
           "intra_account": {
             "sub_account_number": "95483674098723",
             "sub_account_id": "sub_cda1e562657c41e553104b10aad3fe70"
@@ -5993,7 +6022,7 @@
           "attachments": [
             {
               "label": "Dev Contract",
-              "id": "",
+              "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
               "created_at": "2024-04-01T21:00:00Z"
             }
           ],
@@ -6036,46 +6065,6 @@
                     "country": "US",
                     "postal_code": "10001"
                   }
-                },
-                "business": {
-                  "legal_name": "NewCo LLC",
-                  "dba": "NewCo",
-                  "entity_type": "limited_liability_company",
-                  "id_type": "ein",
-                  "id_number": "187654321",
-                  "phone": "+16604491146",
-                  "email": "support@newco.com",
-                  "formation_date": "2018-02-18",
-                  "address": {
-                    "line1": "456 Main St",
-                    "line2": "",
-                    "city": "New York",
-                    "state": "NY",
-                    "country": "US",
-                    "postal_code": "10001"
-                  },
-                  "members": [
-                    {
-                      "first_name": "John",
-                      "last_name": "Doe",
-                      "id_type": "ssn",
-                      "id_number": "223902234",
-                      "date_of_birth": "1974-01-25",
-                      "phone": "+19418405843",
-                      "email": "john.doe@gmail.com",
-                      "address": {
-                        "line1": "123 Main St",
-                        "line2": "",
-                        "city": "New York",
-                        "state": "NY",
-                        "country": "US",
-                        "postal_code": "10001"
-                      },
-                      "ownership": "50.00",
-                      "title": "CEO",
-                      "control_person": true
-                    }
-                  ]
                 },
                 "intra_account": {
                   "sub_account_number": "95483674098723",
@@ -6171,7 +6160,7 @@
                 "attachments": [
                   {
                     "label": "Dev Contract",
-                    "id": "",
+                    "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
                     "created_at": "2024-04-01T21:00:00Z"
                   }
                 ],
