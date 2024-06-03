@@ -717,9 +717,9 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "sub_account_holder_id": {
+                  "sub_account_id": {
                     "type": "string",
-                    "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
                   },
                   "label": {
                     "type": "string",
@@ -736,6 +736,10 @@
                   "person": {
                     "type": "object",
                     "$ref": "#/components/schemas/person"
+                  },
+                  "business": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/business"
                   },
                   "intra_account": {
                     "type": "object",
