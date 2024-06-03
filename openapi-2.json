@@ -1078,10 +1078,35 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "person": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/person"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "6RPD1QW-W75"
+                  },
+                  "purpose": {
+                    "type": "string",
+                    "example": "Ace Sales Rep"
+                  },
+                  "metadata": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/metadata"
+                  }
+                }
+              },
               "examples": {
                 "Create a Card Holder": {
                   "value": {
-                    "sub_account_id": "",
+                    "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
                     "person": {
                       "first_name": "John",
                       "middle_name": "",
