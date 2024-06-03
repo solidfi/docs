@@ -5319,6 +5319,23 @@
           }
         }
       },
+      "counterparty_international_wire": {
+        "type": "object",
+        "properties": {
+          "account_number": {
+            "type": "string",
+            "example": "920020006167511"
+          },
+          "beneficiary_bank": {
+            "type": "object",
+            "$ref": "#/components/schemas/counterparty_beneficiary_bank"
+          },
+          "correspondent_bank": {
+            "type": "object",
+            "$ref": "#/components/schemas/counterparty_correspondent_bank"
+          }
+        }
+      },
       "counterparty_beneficiary_bank": {
         "type": "object",
         "properties": {
