@@ -4567,8 +4567,10 @@
             "example": "Sub account to pay offshore dev team"
           },
           "attachments": {
-            "type": "object",
-            "$ref": "#/components/schemas/attachments"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/attachment_object"
+            }
           },
           "metadata": {
             "type": "object",
@@ -4651,8 +4653,10 @@
             "example": "Payment Ops Master Account"
           },
           "attachments": {
-            "type": "object",
-            "$ref": "#/components/schemas/attachments"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/attachment_object"
+            }
           },
           "metadata": {
             "type": "object",
@@ -5018,12 +5022,6 @@
           }
         }
       },
-      "attachments": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/attachment_object"
-        }
-      },
       "attachment_object": {
         "type": "object",
         "properties": {
@@ -5123,8 +5121,10 @@
             "example": "Ace sub-account holder"
           },
           "attachments": {
-            "type": "object",
-            "$ref": "#/components/schemas/attachments"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/attachment_object"
+            }
           },
           "metadata": {
             "type": "object",
@@ -5589,8 +5589,10 @@
             "$ref": "#/components/schemas/ofac"
           },
           "attachments": {
-            "type": "object",
-            "$ref": "#/components/schemas/attachments"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/attachment_object"
+            }
           },
           "metadata": {
             "type": "object",
