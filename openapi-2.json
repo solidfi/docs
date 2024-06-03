@@ -96,52 +96,14 @@
           "200": {
             "description": "List all Master Accounts",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/list_master_account"
+                },
                 "examples": {
-                  "List all Master Accounts": {
-                    "value": {
-                      "data": [
-                        {
-                          "id": "",
-                          "client_id": "",
-                          "master_account_holder_id": "",
-                          "label": "Payments Account",
-                          "available_balance": "104100.41",
-                          "pending_credits": "1198.50",
-                          "pending_debits": "390.10",
-                          "account_number": "9545931209",
-                          "routing_number": "123321123",
-                          "sponsor_bank": "Sponsor Bank",
-                          "currency": "usd",
-                          "external_reference_id": "XV-H27LGD-FX",
-                          "purpose": "Payment Ops Master Account",
-                          "attachments": [
-                            {
-                              "label": "flow of funds doc",
-                              "id": "",
-                              "created_at": "2024-04-01T21:00:00Z"
-                            }
-                          ],
-                          "metadata": {
-                            "master_account_code": "001"
-                          },
-                          "status": "open",
-                          "timestamps": {
-                            "created_at": "2024-04-01T21:00:00Z",
-                            "updated_at": "2024-04-02T21:00:00Z",
-                            "deactivated_at": "2024-04-03T21:00:00Z"
-                          },
-                          "config": {
-                            "payment": "",
-                            "card": "",
-                            "sub_account": ""
-                          }
-                        }
-                      ],
-                      "has_more": "true",
-                      "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
-                      "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
-                    }
+                  "master_account_example": {
+                    "$ref": "#/components/examples/list_master_account_example"
                   }
                 }
               }
@@ -5355,6 +5317,33 @@
           }
         }
       },
+      "list_master_account": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/master_account"
+            }
+          },
+          "has_more": {
+            "type": "string",
+            "example": "true",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          "starting_after": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          },
+          "ending_before": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          }
+        }
+      },
       "list_sub_account_holder": {
         "type": "object",
         "properties": {
@@ -5773,7 +5762,7 @@
       }
     },
     "examples": {
-      "list_sub_account_holder_example": {
+      "list_master_account_example": {
         "value": {
           "data": [
             {
@@ -5824,6 +5813,46 @@
               "timestamps": {
                 "created_at": "2024-04-01T21:00:00Z",
                 "updated_at": "2024-04-01T21:00:00Z"
+              }
+            }
+          ],
+          "has_more": "true",
+          "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+          "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+        }
+      },
+      "list_sub_account_holder_example": {
+        "value": {
+          "data": [
+            {
+              "id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+              "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+              "master_account_holder_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+              "label": "Payments Account",
+              "available_balance": "104100.41",
+              "pending_credits": "1198.50",
+              "pending_debits": "390.10",
+              "account_number": "9545931209",
+              "routing_number": "123321123",
+              "sponsor_bank": "Sponsor Bank",
+              "currency": "usd",
+              "external_reference_id": "XV-H27LGD-FX",
+              "purpose": "Payment Ops Master Account",
+              "attachments": [
+                {
+                  "label": "flow of funds doc",
+                  "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
+                  "created_at": "2024-04-01T21:00:00Z"
+                }
+              ],
+              "metadata": {
+                "master_account_code": "001"
+              },
+              "status": "open",
+              "timestamps": {
+                "created_at": "2024-04-01T21:00:00Z",
+                "updated_at": "2024-04-02T21:00:00Z",
+                "deactivated_at": "2024-04-03T21:00:00Z"
               }
             }
           ],
@@ -5913,7 +5942,8 @@
           "status": "activated",
           "timestamps": {
             "created_at": "2024-04-01T21:00:00Z",
-            "updated_at": "2024-04-01T21:00:00Z"
+            "updated_at": "2024-04-01T21:00:00Z",
+            "deactivated_at": "2024-04-01T21:00:00Z"
           }
         }
       }
