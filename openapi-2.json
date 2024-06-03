@@ -675,189 +675,14 @@
           "200": {
             "description": "List all Counterparties",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/list_counterparty"
+                },
                 "examples": {
-                  "List all Counterparties": {
-                    "value": {
-                      "data": [
-                        {
-                          "id": "",
-                          "client_id": "",
-                          "master_account_holder_id": "",
-                          "master_account_id": "",
-                          "sub_account_holder_id": "",
-                          "sub_account_id": "",
-                          "label": "Utilities",
-                          "type": "person",
-                          "person": {
-                            "first_name": "John",
-                            "last_name": "Doe",
-                            "id_type": "ssn",
-                            "id_number": "223902234",
-                            "date_of_birth": "1974-01-25",
-                            "phone": "+19418405843",
-                            "email": "john.doe@gmail.com",
-                            "address": {
-                              "line1": "123 Main St",
-                              "line2": "",
-                              "city": "New York",
-                              "state": "NY",
-                              "country": "US",
-                              "postal_code": "10001"
-                            }
-                          },
-                          "business": {
-                            "legal_name": "NewCo LLC",
-                            "dba": "NewCo",
-                            "entity_type": "limited_liability_company",
-                            "id_type": "ein",
-                            "id_number": "187654321",
-                            "phone": "+16604491146",
-                            "email": "support@newco.com",
-                            "formation_date": "2018-02-18",
-                            "address": {
-                              "line1": "456 Main St",
-                              "line2": "",
-                              "city": "New York",
-                              "state": "NY",
-                              "country": "US",
-                              "postal_code": "10001"
-                            },
-                            "members": [
-                              {
-                                "first_name": "John",
-                                "last_name": "Doe",
-                                "id_type": "ssn",
-                                "id_number": "223902234",
-                                "date_of_birth": "1974-01-25",
-                                "phone": "+19418405843",
-                                "email": "john.doe@gmail.com",
-                                "address": {
-                                  "line1": "123 Main St",
-                                  "line2": "",
-                                  "city": "New York",
-                                  "state": "NY",
-                                  "country": "US",
-                                  "postal_code": "10001"
-                                },
-                                "ownership": "50.00",
-                                "title": "CEO",
-                                "control_person": true
-                              }
-                            ]
-                          },
-                          "intra_account": {
-                            "sub_account_number": "95483674098723",
-                            "sub_account_id": "sub_cda1e562657c41e553104b10aad3fe70"
-                          },
-                          "ach": {
-                            "account_number": "98324502",
-                            "routing_number": "121042882",
-                            "account_type": "business_checking",
-                            "bank_name": "Wells Fargo",
-                            "verification_status": "verified"
-                          },
-                          "domestic_wire": {
-                            "account_number": "98324502",
-                            "routing_number": "121042882",
-                            "account_type": "business_checking",
-                            "bank_name": "Wells Fargo"
-                          },
-                          "international_wire": {
-                            "account_number": "920020006167511",
-                            "beneficiary_bank": {
-                              "identifier_code": "ICICINBBNRI",
-                              "name": "ICICI Bank",
-                              "address": {
-                                "line1": "256 Main St",
-                                "line2": "",
-                                "city": "Bengaluru",
-                                "state": "KA",
-                                "country": "IN",
-                                "postal_code": "900009"
-                              }
-                            },
-                            "correspondent_bank": {
-                              "identifier_code": "SCBLUS33XXX",
-                              "name": "STANDARD CHARTERED BANK",
-                              "address": {
-                                "line1": "1095 12th Ave",
-                                "line2": "",
-                                "city": "New York",
-                                "state": "NY",
-                                "country": "US",
-                                "postal_code": "10001"
-                              }
-                            }
-                          },
-                          "rtp": {
-                            "account_number": "98324502",
-                            "routing_number": "121042882",
-                            "account_type": "business_checking",
-                            "bank_name": "Wells Fargo",
-                            "verification_status": "verified"
-                          },
-                          "fednow": {
-                            "account_number": "98324502",
-                            "routing_number": "121042882",
-                            "account_type": "business_checking",
-                            "bank_name": "Wells Fargo",
-                            "verification_status": "verified"
-                          },
-                          "check": {
-                            "address": {
-                              "line1": "123 Main St",
-                              "line2": "",
-                              "city": "New York",
-                              "state": "NY",
-                              "country": "US",
-                              "postal_code": "10001"
-                            }
-                          },
-                          "debit_card": {
-                            "card_number": "tok_live_6GVyHuQR7aAjCZivYzLbuP_9990",
-                            "last4": "9990",
-                            "expiry_month": "10",
-                            "expiry_year": "2024",
-                            "cvv": "tok_live_6GVyHuQR7aAjCZivYzLbuP_9990",
-                            "address": {
-                              "line1": "123 Main St",
-                              "line2": "",
-                              "city": "New York",
-                              "state": "NY",
-                              "country": "US",
-                              "postal_code": "10001"
-                            },
-                            "pull_enabled": true,
-                            "push_enabled": true
-                          },
-                          "purpose": "Offshore dev center",
-                          "external_reference_id": "TW-9L1L2-UVV",
-                          "ofac": {
-                            "status": "pass",
-                            "last_updated_at": "2024-04-01T21:00:00Z"
-                          },
-                          "attachments": [
-                            {
-                              "label": "Dev Contract",
-                              "id": "",
-                              "created_at": "2024-04-01T21:00:00Z"
-                            }
-                          ],
-                          "metadata": {
-                            "vendor_id": "VID-0987ACR"
-                          },
-                          "status": "activated",
-                          "timestamps": {
-                            "created_at": "2024-04-01T21:00:00Z",
-                            "updated_at": "2024-04-01T21:00:00Z"
-                          }
-                        }
-                      ],
-                      "has_more": "true",
-                      "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
-                      "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
-                    }
+                  "list_sub_account_holder_example": {
+                    "$ref": "#/components/examples/list_counterparty_example"
                   }
                 }
               }
@@ -5699,19 +5524,45 @@
           },
           "status": {
             "type": "string",
-            "example": "open",
+            "example": "activated",
             "enum": [
-              "open",
-              "closed", 
-              "credit_blocked", 
-              "debit_blocked", 
-              "blocked", 
+              "pending_activation",
+              "activated",
+              "suspended",
+              "deactivated",
               "locked"
             ]
           },
           "timestamps": {
             "type": "object",
             "$ref": "#/components/schemas/entity_timestamp"
+          }
+        }
+      },
+      "list_counterparty": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/counterparty"
+            }
+          },
+          "has_more": {
+            "type": "string",
+            "example": "true",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          "starting_after": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          },
+          "ending_before": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
           }
         }
       }
@@ -6154,6 +6005,190 @@
             "created_at": "2024-04-01T21:00:00Z",
             "updated_at": "2024-04-01T21:00:00Z"
           }
+        }
+      },
+      "list_counterparty_example": {
+        "value": {
+          "data": [
+            {
+              "value": {
+                "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+                "master_account_holder_id": "mah_201e02c581a098a740456c5c19fcfcd6",
+                "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+                "sub_account_holder_id": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+                "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
+                "label": "Development Vendor",
+                "type": "person",
+                "person": {
+                  "first_name": "John",
+                  "last_name": "Doe",
+                  "id_type": "ssn",
+                  "id_number": "223902234",
+                  "date_of_birth": "1974-01-25",
+                  "phone": "+19418405843",
+                  "email": "john.doe@gmail.com",
+                  "address": {
+                    "line1": "123 Main St",
+                    "line2": "",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "US",
+                    "postal_code": "10001"
+                  }
+                },
+                "business": {
+                  "legal_name": "NewCo LLC",
+                  "dba": "NewCo",
+                  "entity_type": "limited_liability_company",
+                  "id_type": "ein",
+                  "id_number": "187654321",
+                  "phone": "+16604491146",
+                  "email": "support@newco.com",
+                  "formation_date": "2018-02-18",
+                  "address": {
+                    "line1": "456 Main St",
+                    "line2": "",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "US",
+                    "postal_code": "10001"
+                  },
+                  "members": [
+                    {
+                      "first_name": "John",
+                      "last_name": "Doe",
+                      "id_type": "ssn",
+                      "id_number": "223902234",
+                      "date_of_birth": "1974-01-25",
+                      "phone": "+19418405843",
+                      "email": "john.doe@gmail.com",
+                      "address": {
+                        "line1": "123 Main St",
+                        "line2": "",
+                        "city": "New York",
+                        "state": "NY",
+                        "country": "US",
+                        "postal_code": "10001"
+                      },
+                      "ownership": "50.00",
+                      "title": "CEO",
+                      "control_person": true
+                    }
+                  ]
+                },
+                "intra_account": {
+                  "sub_account_number": "95483674098723",
+                  "sub_account_id": "sub_cda1e562657c41e553104b10aad3fe70"
+                },
+                "ach": {
+                  "account_number": "98324502",
+                  "routing_number": "121042882",
+                  "account_type": "business_checking",
+                  "bank_name": "Wells Fargo",
+                  "verification_status": "verified"
+                },
+                "domestic_wire": {
+                  "account_number": "98324502",
+                  "routing_number": "121042882",
+                  "account_type": "business_checking",
+                  "bank_name": "Wells Fargo"
+                },
+                "international_wire": {
+                  "account_number": "920020006167511",
+                  "beneficiary_bank": {
+                    "identifier_code": "ICICINBBNRI",
+                    "name": "ICICI Bank",
+                    "address": {
+                      "line1": "256 Main St",
+                      "line2": "",
+                      "city": "Bengaluru",
+                      "state": "KA",
+                      "country": "IN",
+                      "postal_code": "900009"
+                    }
+                  },
+                  "correspondent_bank": {
+                    "identifier_code": "SCBLUS33XXX",
+                    "name": "STANDARD CHARTERED BANK",
+                    "address": {
+                      "line1": "1095 12th Ave",
+                      "line2": "",
+                      "city": "New York",
+                      "state": "NY",
+                      "country": "US",
+                      "postal_code": "10001"
+                    }
+                  }
+                },
+                "rtp": {
+                  "account_number": "98324502",
+                  "routing_number": "121042882",
+                  "account_type": "business_checking",
+                  "bank_name": "Wells Fargo",
+                  "verification_status": "verified"
+                },
+                "fednow": {
+                  "account_number": "98324502",
+                  "routing_number": "121042882",
+                  "account_type": "business_checking",
+                  "bank_name": "Wells Fargo",
+                  "verification_status": "verified"
+                },
+                "check": {
+                  "address": {
+                    "line1": "123 Main St",
+                    "line2": "",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "US",
+                    "postal_code": "10001"
+                  }
+                },
+                "debit_card": {
+                  "card_number": "tok_live_6GVyHuQR7aAjCZivYzLbuP_9990",
+                  "last4": "9990",
+                  "expiry_month": "10",
+                  "expiry_year": "2024",
+                  "cvv": "tok_live_6GVyHuQR7aAjCZivYzLbuP_9990",
+                  "address": {
+                    "line1": "123 Main St",
+                    "line2": "",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "US",
+                    "postal_code": "10001"
+                  },
+                  "pull_enabled": true,
+                  "push_enabled": true
+                },
+                "purpose": "Offshore dev center",
+                "external_reference_id": "TW-9L1L2-UVV",
+                "ofac": {
+                  "status": "pass",
+                  "last_updated_at": "2024-04-01T21:00:00Z"
+                },
+                "attachments": [
+                  {
+                    "label": "Dev Contract",
+                    "id": "",
+                    "created_at": "2024-04-01T21:00:00Z"
+                  }
+                ],
+                "metadata": {
+                  "vendor_id": "VID-0987ACR"
+                },
+                "status": "activated",
+                "timestamps": {
+                  "created_at": "2024-04-01T21:00:00Z",
+                  "updated_at": "2024-04-01T21:00:00Z"
+                }
+              }
+            }
+          ],
+          "has_more": "true",
+          "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+          "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
         }
       }
     }
