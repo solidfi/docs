@@ -3609,7 +3609,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "$ref": "#/components/schemas/list_attachment_object"
+                  "$ref": "#/components/schemas/list_attachment"
                 },
                 "examples": {
                   "list_attachment_example": {
@@ -3663,7 +3663,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "$ref": "#/components/schemas/attachment_object"
+                  "$ref": "#/components/schemas/attachment"
                 },
                 "examples": {
                   "list_sub_account_holder_example": {
@@ -3705,7 +3705,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "$ref": "#/components/schemas/attachment_object"
+                  "$ref": "#/components/schemas/attachment"
                 },
                 "examples": {
                   "list_sub_account_holder_example": {
@@ -5058,7 +5058,7 @@
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/attachment_object"
+              "$ref": "#/components/schemas/attachment"
             }
           },
           "has_more": {
