@@ -3645,10 +3645,23 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reference_id": {
+                    "type": "string",
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                  },
+                  "label": {
+                    "type": "string",
+                    "example": "formation"
+                  }
+                }
+              },
               "examples": {
                 "Create an Attachment": {
                   "value": {
-                    "reference_id": "",
+                    "reference_id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
                     "label": "formation"
                   }
                 }
