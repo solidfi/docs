@@ -1032,70 +1032,22 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
           "200": {
             "description": "List all Card Holders",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/list_card_holder"
+                },
                 "examples": {
-                  "List all Card Holders": {
-                    "value": {
-                      "data": [
-                        {
-                          "id": "",
-                          "client_id": "",
-                          "master_account_holder_id": "",
-                          "master_account_id": "",
-                          "sub_account_holder_id": "",
-                          "sub_account_id": "",
-                          "person": {
-                            "first_name": "Johnson",
-                            "last_name": "Doe",
-                            "id_type": "ssn",
-                            "id_number": "223902234",
-                            "date_of_birth": "1974-01-25",
-                            "phone": "+19418405843",
-                            "email": "john.doe@gmail.com",
-                            "address": {
-                              "line1": "123 Main St",
-                              "line2": "",
-                              "city": "New York",
-                              "state": "NY",
-                              "country": "US",
-                              "postal_code": "10001"
-                            }
-                          },
-                          "external_reference_id": "6RPD1QW-W75",
-                          "purpose": "Ace Sales Rep",
-                          "ofac": {
-                            "status": "pass",
-                            "last_updated_at": "2024-04-01T21:00:00Z"
-                          },
-                          "metadata": {
-                            "designation": "Senior Sales Manager",
-                            "employee_number": "77"
-                          },
-                          "attachments": [
-                            {
-                              "label": "Employee Badge",
-                              "id": "",
-                              "created_at": "2024-04-01T21:00:00Z"
-                            }
-                          ],
-                          "status": "activated",
-                          "timestamps": {
-                            "created_at": "2024-04-01T21:00:00Z",
-                            "updated_at": "2024-04-02T21:00:00Z"
-                          }
-                        }
-                      ],
-                      "has_more": "true",
-                      "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
-                      "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
-                    }
+                  "master_account_example": {
+                    "$ref": "#/components/examples/list_card_holder_example"
                   }
                 }
               }
@@ -1162,56 +1114,14 @@
           "201": {
             "description": "Create a Card Holder",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/card_holder"
+                },
                 "examples": {
-                  "Create a Card Holder": {
-                    "value": {
-                      "id": "",
-                      "client_id": "",
-                      "master_account_holder_id": "",
-                      "master_account_id": "",
-                      "sub_account_holder_id": "",
-                      "sub_account_id": "",
-                      "person": {
-                        "first_name": "John",
-                        "last_name": "Doe",
-                        "id_type": "ssn",
-                        "id_number": "223902234",
-                        "date_of_birth": "1974-01-25",
-                        "phone": "+19418405843",
-                        "email": "john.doe@gmail.com",
-                        "address": {
-                          "line1": "123 Main St",
-                          "line2": "",
-                          "city": "New York",
-                          "state": "NY",
-                          "country": "US",
-                          "postal_code": "10001"
-                        }
-                      },
-                      "external_reference_id": "6RPD1QW-W75",
-                      "purpose": "Ace Sales Rep",
-                      "ofac": {
-                        "status": "pass",
-                        "last_updated_at": "2024-04-01T21:00:00Z"
-                      },
-                      "metadata": {
-                        "designation": "Senior Sales Manager",
-                        "employee_number": "77"
-                      },
-                      "attachments": [
-                        {
-                          "label": "Employee Badge",
-                          "id": "",
-                          "created_at": "2024-04-01T21:00:00Z"
-                        }
-                      ],
-                      "status": "activated",
-                      "timestamps": {
-                        "created_at": "2024-04-01T21:00:00Z",
-                        "updated_at": "2024-04-02T21:00:00Z"
-                      }
-                    }
+                  "master_account_example": {
+                    "$ref": "#/components/examples/card_holder_example"
                   }
                 }
               }
@@ -1245,56 +1155,14 @@
           "200": {
             "description": "Retrieve a Card Holder",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/card_holder"
+                },
                 "examples": {
-                  "Retrieve a Card Holder": {
-                    "value": {
-                      "id": "",
-                      "client_id": "",
-                      "master_account_holder_id": "",
-                      "master_account_id": "",
-                      "sub_account_holder_id": "",
-                      "sub_account_id": "",
-                      "person": {
-                        "first_name": "Johnson",
-                        "last_name": "Doe",
-                        "id_type": "ssn",
-                        "id_number": "223902234",
-                        "date_of_birth": "1974-01-25",
-                        "phone": "+19418405843",
-                        "email": "john.doe@gmail.com",
-                        "address": {
-                          "line1": "123 Main St",
-                          "line2": "",
-                          "city": "New York",
-                          "state": "NY",
-                          "country": "US",
-                          "postal_code": "10001"
-                        }
-                      },
-                      "external_reference_id": "6RPD1QW-W75",
-                      "purpose": "Ace Sales Rep",
-                      "ofac": {
-                        "status": "pass",
-                        "last_updated_at": "2024-04-01T21:00:00Z"
-                      },
-                      "metadata": {
-                        "designation": "Senior Sales Manager",
-                        "employee_number": "77"
-                      },
-                      "attachments": [
-                        {
-                          "label": "Employee Badge",
-                          "id": "",
-                          "created_at": "2024-04-01T21:00:00Z"
-                        }
-                      ],
-                      "status": "activated",
-                      "timestamps": {
-                        "created_at": "2024-04-01T21:00:00Z",
-                        "updated_at": "2024-04-02T21:00:00Z"
-                      }
-                    }
+                  "master_account_example": {
+                    "$ref": "#/components/examples/card_holder_example"
                   }
                 }
               }
@@ -1355,56 +1223,14 @@
           "200": {
             "description": "Update a Card Holder",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/card_holder"
+                },
                 "examples": {
-                  "Update a Card Holder": {
-                    "value": {
-                      "id": "",
-                      "client_id": "",
-                      "master_account_holder_id": "",
-                      "master_account_id": "",
-                      "sub_account_holder_id": "",
-                      "sub_account_id": "",
-                      "person": {
-                        "first_name": "Johnson",
-                        "last_name": "Doe",
-                        "id_type": "ssn",
-                        "id_number": "223902234",
-                        "date_of_birth": "1974-01-25",
-                        "phone": "+19418405843",
-                        "email": "john.doe@gmail.com",
-                        "address": {
-                          "line1": "123 Main St",
-                          "line2": "",
-                          "city": "New York",
-                          "state": "NY",
-                          "country": "US",
-                          "postal_code": "10001"
-                        }
-                      },
-                      "external_reference_id": "6RPD1QW-W75",
-                      "purpose": "Ace Sales Rep",
-                      "ofac": {
-                        "status": "pass",
-                        "last_updated_at": "2024-04-01T21:00:00Z"
-                      },
-                      "metadata": {
-                        "designation": "Senior Sales Manager",
-                        "employee_number": "77"
-                      },
-                      "attachments": [
-                        {
-                          "label": "Employee Badge",
-                          "id": "",
-                          "created_at": "2024-04-01T21:00:00Z"
-                        }
-                      ],
-                      "status": "activated",
-                      "timestamps": {
-                        "created_at": "2024-04-01T21:00:00Z",
-                        "updated_at": "2024-04-02T21:00:00Z"
-                      }
-                    }
+                  "master_account_example": {
+                    "$ref": "#/components/examples/card_holder_example"
                   }
                 }
               }
@@ -5816,6 +5642,33 @@
             "$ref": "#/components/schemas/entity_timestamp"
           }
         }
+      },
+      "list_card_holder": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/card_holder"
+            }
+          },
+          "has_more": {
+            "type": "string",
+            "example": "true",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          "starting_after": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          },
+          "ending_before": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          }
+        }
       }
     },
     "examples": {
@@ -6380,6 +6233,111 @@
               "label": "formation",
               "url": "",
               "created_at": "2024-04-04T11:06:00Z"
+            }
+          ],
+          "has_more": "true",
+          "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+          "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+        }
+      },
+      "card_holder_example": {
+        "value": {
+          "id": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0",
+          "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+          "master_account_holder_id": "mah_201e02c581a098a740456c5c19fcfcd6",
+          "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+          "sub_account_holder_id": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+          "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
+          "person": {
+            "first_name": "John",
+            "last_name": "Doe",
+            "id_type": "ssn",
+            "id_number": "223902234",
+            "date_of_birth": "1974-01-25",
+            "phone": "+19418405843",
+            "email": "john.doe@gmail.com",
+            "address": {
+              "line1": "123 Main St",
+              "line2": "",
+              "city": "New York",
+              "state": "NY",
+              "country": "US",
+              "postal_code": "10001"
+            }
+          },
+          "external_reference_id": "6RPD1QW-W75",
+          "purpose": "Ace Sales Rep",
+          "ofac": {
+            "status": "pass",
+            "last_updated_at": "2024-04-01T21:00:00Z"
+          },
+          "metadata": {
+            "designation": "Senior Sales Manager",
+            "employee_number": "77"
+          },
+          "attachments": [
+            {
+              "label": "Employee Badge",
+              "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
+              "created_at": "2024-04-01T21:00:00Z"
+            }
+          ],
+          "status": "activated",
+          "timestamps": {
+            "created_at": "2024-04-01T21:00:00Z",
+            "updated_at": "2024-04-02T21:00:00Z"
+          }
+        }
+      },
+      "list_card_holder_example": {
+        "value": {
+          "data": [
+            {
+              "id": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0",
+              "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+              "master_account_holder_id": "mah_201e02c581a098a740456c5c19fcfcd6",
+              "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+              "sub_account_holder_id": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+              "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
+              "person": {
+                "first_name": "John",
+                "last_name": "Doe",
+                "id_type": "ssn",
+                "id_number": "223902234",
+                "date_of_birth": "1974-01-25",
+                "phone": "+19418405843",
+                "email": "john.doe@gmail.com",
+                "address": {
+                  "line1": "123 Main St",
+                  "line2": "",
+                  "city": "New York",
+                  "state": "NY",
+                  "country": "US",
+                  "postal_code": "10001"
+                }
+              },
+              "external_reference_id": "6RPD1QW-W75",
+              "purpose": "Ace Sales Rep",
+              "ofac": {
+                "status": "pass",
+                "last_updated_at": "2024-04-01T21:00:00Z"
+              },
+              "metadata": {
+                "designation": "Senior Sales Manager",
+                "employee_number": "77"
+              },
+              "attachments": [
+                {
+                  "label": "Employee Badge",
+                  "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
+                  "created_at": "2024-04-01T21:00:00Z"
+                }
+              ],
+              "status": "activated",
+              "timestamps": {
+                "created_at": "2024-04-01T21:00:00Z",
+                "updated_at": "2024-04-02T21:00:00Z"
+              }
             }
           ],
           "has_more": "true",
