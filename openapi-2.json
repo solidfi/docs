@@ -37,45 +37,14 @@
           "200": {
             "description": "Retrieve a Master Account",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/master_account"
+                },
                 "examples": {
-                  "Retrieve a Master Account": {
-                    "value": {
-                      "id": "",
-                      "client_id": "",
-                      "master_account_holder_id": "",
-                      "label": "Payments Account",
-                      "available_balance": "104100.41",
-                      "pending_credits": "1198.50",
-                      "pending_debits": "390.10",
-                      "account_number": "9545931209",
-                      "routing_number": "123321123",
-                      "sponsor_bank": "Sponsor Bank",
-                      "currency": "usd",
-                      "external_reference_id": "XV-H27LGD-FX",
-                      "purpose": "Payment Ops Master Account",
-                      "attachments": [
-                        {
-                          "label": "flow of funds doc",
-                          "id": "",
-                          "created_at": "2024-04-01T21:00:00Z"
-                        }
-                      ],
-                      "metadata": {
-                        "master_account_code": "001"
-                      },
-                      "status": "open",
-                      "timestamps": {
-                        "created_at": "2024-04-01T21:00:00Z",
-                        "updated_at": "2024-04-02T21:00:00Z",
-                        "deactivated_at": "2024-04-03T21:00:00Z"
-                      },
-                      "config": {
-                        "payment": "",
-                        "card": "",
-                        "sub_account": ""
-                      }
-                    }
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_example"
                   }
                 }
               }
@@ -5302,6 +5271,90 @@
   "components": {
     "securitySchemes": {},
     "schemas": {
+      "master_account": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+          },
+          "client_id": {
+            "type": "string",
+            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce"
+          },
+          "master_account_holder_id": {
+            "type": "string",
+            "example": "mah_201e02c581a098a740456c5c19fcfcd6"
+          },
+          "label": {
+            "type": "string",
+            "example": "Payments Account"
+          },
+          "available_balance": {
+            "type": "string",
+            "example": "104100.41"
+          },
+          "pending_credits": {
+            "type": "string",
+            "example": "1198.50"
+          },
+          "pending_debits": {
+            "type": "string",
+            "example": "390.10"
+          },
+          "account_number": {
+            "type": "string",
+            "example": "9545931209"
+          },
+          "routing_number": {
+            "type": "string",
+            "example": "123321123"
+          },
+          "sponsor_bank": {
+            "type": "string",
+            "example": "Lewis and Clark Bank"
+          },
+          "currency": {
+            "type": "string",
+            "example": "usd",
+            "enum": [
+              "usd"
+            ]
+          },
+          "external_reference_id": {
+            "type": "string",
+            "example": "XV-H27LGD-FX"
+          },
+          "purpose": {
+            "type": "string",
+            "example": "Payment Ops Master Account"
+          },
+          "attachments": {
+            "type": "object",
+            "$ref": "#/components/schemas/attachments"
+          },
+          "metadata": {
+            "type": "object",
+            "$ref": "#/components/schemas/metadata"
+          },
+          "status": {
+            "type": "string",
+            "example": "open",
+            "enum": [
+              "open",
+              "closed", 
+              "credit_blocked", 
+              "debit_blocked", 
+              "blocked", 
+              "locked"
+            ]
+          },
+          "timestamps": {
+            "type": "object",
+            "$ref": "#/components/schemas/non_entity_timestamp"
+          }
+        }
+      },
       "list_sub_account_holder": {
         "type": "object",
         "properties": {
@@ -5638,6 +5691,23 @@
           }
         }
       },
+      "non_entity_timestamp": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z"
+          },
+          "closed_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z"
+          }
+        }
+      },
       "sub_account_holder": {
         "properties": {
           "id": {
@@ -5760,6 +5830,39 @@
           "has_more": "true",
           "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
           "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+        }
+      },
+      "master_account_example": {
+        "value": {
+          "id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+          "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+          "master_account_holder_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+          "label": "Payments Account",
+          "available_balance": "104100.41",
+          "pending_credits": "1198.50",
+          "pending_debits": "390.10",
+          "account_number": "9545931209",
+          "routing_number": "123321123",
+          "sponsor_bank": "Sponsor Bank",
+          "currency": "usd",
+          "external_reference_id": "XV-H27LGD-FX",
+          "purpose": "Payment Ops Master Account",
+          "attachments": [
+            {
+              "label": "flow of funds doc",
+              "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
+              "created_at": "2024-04-01T21:00:00Z"
+            }
+          ],
+          "metadata": {
+            "master_account_code": "001"
+          },
+          "status": "open",
+          "timestamps": {
+            "created_at": "2024-04-01T21:00:00Z",
+            "updated_at": "2024-04-02T21:00:00Z",
+            "deactivated_at": "2024-04-03T21:00:00Z"
+          }
         }
       },
       "sub_account_holder_example": {
