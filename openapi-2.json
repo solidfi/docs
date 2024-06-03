@@ -89,7 +89,8 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
@@ -426,56 +427,22 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
           "200": {
             "description": "List all Sub Accounts",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/list_sub_account"
+                },
                 "examples": {
-                  "List all Sub Accounts": {
-                    "value": {
-                      "data": [
-                        {
-                          "id": "",
-                          "client_id": "",
-                          "master_account_holder_id": "",
-                          "master_account_id": "",
-                          "sub_account_holder_id": "",
-                          "sub_account_holder_name": "Ace LLC",
-                          "label": "Ace payments",
-                          "type": "cash",
-                          "account_number": "9540861337293709",
-                          "routing_number": "123206972",
-                          "available_balance": "1000.00",
-                          "pending_credits": "250.00",
-                          "pending_debits": "100.00",
-                          "currency": "usd",
-                          "external_reference_id": "XVH-27LGDFX",
-                          "attachments": [
-                            {
-                              "label": "contract",
-                              "id": "",
-                              "created_at": "2024-04-01T21:00:00Z"
-                            }
-                          ],
-                          "purpose": "Sub account to pay offshore dev team",
-                          "metadata": {
-                            "customer_code": "908"
-                          },
-                          "status": "open",
-                          "timestamps": {
-                            "created_at": "2024-04-01T21:00:00Z",
-                            "updated_at": "2024-04-01T21:00:00Z"
-                          }
-                        }
-                      ],
-                      "has_more": "true",
-                      "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
-                      "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
-                    }
+                  "list_sub_account_holder_example": {
+                    "$ref": "#/components/examples/list_sub_account_example"
                   }
                 }
               }
@@ -500,7 +467,8 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
@@ -521,93 +489,15 @@
         "responses": {
           "201": {
             "description": "Create a Sub Account",
-            "headers": {
-              "Connection": {
-                "schema": {
-                  "type": "string",
-                  "example": "keep-alive"
-                }
-              },
-              "Content-Length": {
-                "schema": {
-                  "type": "string",
-                  "example": "0"
-                }
-              },
-              "Via": {
-                "schema": {
-                  "type": "string",
-                  "example": "1.1 a821cc058353c1317806ae362898a2d2.cloudfront.net (CloudFront)"
-                }
-              },
-              "X-Amz-Cf-Id": {
-                "schema": {
-                  "type": "string",
-                  "example": "3B7-bvRcLEhA6u1l-lUs7H8kIvo0c2Dfc7stGxp2zzi2r23Og9g6OQ=="
-                }
-              },
-              "X-Amz-Cf-Pop": {
-                "schema": {
-                  "type": "string",
-                  "example": "SFO5-P1"
-                }
-              },
-              "X-Cache": {
-                "schema": {
-                  "type": "string",
-                  "example": "Error from cloudfront"
-                }
-              },
-              "date": {
-                "schema": {
-                  "type": "string",
-                  "example": "Sun, 19 May 2024 23:44:48 GMT"
-                }
-              },
-              "server": {
-                "schema": {
-                  "type": "string",
-                  "example": "istio-envoy"
-                }
-              }
-            },
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/sub_account"
+                },
                 "examples": {
-                  "Create a Sub Account": {
-                    "value": {
-                      "id": "",
-                      "client_id": "",
-                      "master_account_holder_id": "",
-                      "master_account_id": "",
-                      "sub_account_holder_id": "",
-                      "sub_account_holder_name": "Ace LLC",
-                      "label": "Ace payments",
-                      "type": "cash",
-                      "account_number": "9540861337293709",
-                      "routing_number": "123206972",
-                      "available_balance": "0.00",
-                      "pending_credits": "0.00",
-                      "pending_debits": "0.00",
-                      "currency": "usd",
-                      "external_reference_id": "XVH-27LGDFX",
-                      "attachments": [
-                        {
-                          "label": "contract",
-                          "id": "",
-                          "created_at": "2024-04-01T21:00:00Z"
-                        }
-                      ],
-                      "purpose": "Sub account to pay offshore dev team",
-                      "metadata": {
-                        "customer_code": "908"
-                      },
-                      "status": "open",
-                      "timestamps": {
-                        "created_at": "2024-04-01T21:00:00Z",
-                        "updated_at": "2024-04-01T21:00:00Z"
-                      }
-                    }
+                  "sub_account_example": {
+                    "$ref": "#/components/examples/sub_account_example"
                   }
                 }
               }
@@ -634,49 +524,22 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
           "200": {
             "description": "Retrieve a Sub Account",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/sub_account"
+                },
                 "examples": {
-                  "Retrieve a Sub Account": {
-                    "value": {
-                      "id": "",
-                      "client_id": "",
-                      "master_account_holder_id": "",
-                      "master_account_id": "",
-                      "sub_account_holder_id": "",
-                      "sub_account_holder_name": "Ace LLC",
-                      "label": "Ace PayOps",
-                      "type": "cash",
-                      "account_number": "9540861337293709",
-                      "routing_number": "123206972",
-                      "available_balance": "1000.00",
-                      "pending_credits": "250.00",
-                      "pending_debits": "100.00",
-                      "currency": "usd",
-                      "external_reference_id": "XVH-27LGDFX",
-                      "attachments": [
-                        {
-                          "label": "contract",
-                          "id": "",
-                          "created_at": "2024-04-01T21:00:00Z"
-                        }
-                      ],
-                      "purpose": "Sub account to pay offshore dev team",
-                      "metadata": {
-                        "customer_code": "908"
-                      },
-                      "status": "open",
-                      "timestamps": {
-                        "created_at": "2024-04-01T21:00:00Z",
-                        "updated_at": "2024-04-01T21:00:00Z"
-                      }
-                    }
+                  "sub_account_example": {
+                    "$ref": "#/components/examples/sub_account_example"
                   }
                 }
               }
@@ -701,7 +564,8 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
@@ -730,42 +594,14 @@
           "200": {
             "description": "Update a Sub Account",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/sub_account"
+                },
                 "examples": {
-                  "Update a Sub Account": {
-                    "value": {
-                      "id": "",
-                      "client_id": "",
-                      "master_account_holder_id": "",
-                      "master_account_id": "",
-                      "sub_account_holder_id": "",
-                      "sub_account_holder_name": "Ace LLC",
-                      "label": "Ace PayOps",
-                      "type": "cash",
-                      "account_number": "9540861337293709",
-                      "routing_number": "123206972",
-                      "available_balance": "1000.00",
-                      "pending_credits": "250.00",
-                      "pending_debits": "100.00",
-                      "currency": "usd",
-                      "external_reference_id": "XVH-27LGDFX",
-                      "attachments": [
-                        {
-                          "label": "contract",
-                          "id": "",
-                          "created_at": "2024-04-01T21:00:00Z"
-                        }
-                      ],
-                      "purpose": "Sub account to pay offshore dev team",
-                      "metadata": {
-                        "customer_code": "908"
-                      },
-                      "status": "open",
-                      "timestamps": {
-                        "created_at": "2024-04-01T21:00:00Z",
-                        "updated_at": "2024-04-01T21:00:00Z"
-                      }
-                    }
+                  "sub_account_example": {
+                    "$ref": "#/components/examples/sub_account_example"
                   }
                 }
               }
@@ -5233,6 +5069,110 @@
   "components": {
     "securitySchemes": {},
     "schemas": {
+      "sub_account": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "sub_bda1e562657c41e553104b10aad3fe70"
+          },
+          "client_id": {
+            "type": "string",
+            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce"
+          },
+          "master_account_holder_id": {
+            "type": "string",
+            "example": "mah_201e02c581a098a740456c5c19fcfcd6"
+          },
+          "master_account_id": {
+            "type": "string",
+            "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+          },
+          "sub_account_holder_id": {
+            "type": "string",
+            "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752"
+          },
+          "sub_account_holder_name": {
+            "type": "string",
+            "example": "Ace LLC"
+          },
+          "label": {
+            "type": "string",
+            "example": "Ace payments"
+          },
+          "type": {
+            "type": "string",
+            "example": "cash",
+            "enum": [
+              "cash",
+              "prepaid"
+            ]
+          },
+          "account_number": {
+            "type": "string",
+            "example": "9540861337293709"
+          },
+          "routing_number": {
+            "type": "string",
+            "example": "123206972"
+          },
+          "sponsor_bank": {
+            "type": "string",
+            "example": "Lewis and Clark Bank"
+          },
+          "available_balance": {
+            "type": "string",
+            "example": "0.00"
+          },
+          "pending_credits": {
+            "type": "string",
+            "example": "0.00"
+          },
+          "pending_debits": {
+            "type": "string",
+            "example": "0.00"
+          },
+          "currency": {
+            "type": "string",
+            "example": "usd",
+            "enum": [
+              "usd"
+            ]
+          },
+          "external_reference_id": {
+            "type": "string",
+            "example": "XVH-27LGDFX"
+          },
+          "purpose": {
+            "type": "string",
+            "example": "Sub account to pay offshore dev team"
+          },
+          "attachments": {
+            "type": "object",
+            "$ref": "#/components/schemas/attachments"
+          },
+          "metadata": {
+            "type": "object",
+            "$ref": "#/components/schemas/metadata"
+          },
+          "status": {
+            "type": "string",
+            "example": "open",
+            "enum": [
+              "open",
+              "closed", 
+              "credit_blocked", 
+              "debit_blocked", 
+              "blocked", 
+              "locked"
+            ]
+          },
+          "timestamps": {
+            "type": "object",
+            "$ref": "#/components/schemas/non_entity_timestamp"
+          }
+        }
+      },
       "master_account": {
         "type": "object",
         "properties": {
@@ -5351,6 +5291,33 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/sub_account_holder"
+            }
+          },
+          "has_more": {
+            "type": "string",
+            "example": "true",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          "starting_after": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          },
+          "ending_before": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          }
+        }
+      },
+      "list_sub_account": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/sub_account"
             }
           },
           "has_more": {
@@ -5945,6 +5912,85 @@
             "updated_at": "2024-04-01T21:00:00Z",
             "deactivated_at": "2024-04-01T21:00:00Z"
           }
+        }
+      },
+      "sub_account_example": {
+        "value": {
+          "id": "sub_bda1e562657c41e553104b10aad3fe70",
+          "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+          "master_account_holder_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+          "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+          "sub_account_holder_id": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+          "sub_account_holder_name": "Ace LLC",
+          "label": "Payments Account",
+          "available_balance": "0.00",
+          "pending_credits": "0.00",
+          "pending_debits": "0.00",
+          "account_number": "9540861337293709",
+          "routing_number": "123321123",
+          "sponsor_bank": "Sponsor Bank",
+          "currency": "usd",
+          "external_reference_id": "XV-H27LGD-FX",
+          "purpose": "Sub account to pay offshore dev team",
+          "attachments": [
+            {
+              "label": "fcontract",
+              "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
+              "created_at": "2024-04-01T21:00:00Z"
+            }
+          ],
+          "metadata": {
+            "master_account_code": "001"
+          },
+          "status": "open",
+          "timestamps": {
+            "created_at": "2024-04-01T21:00:00Z",
+            "updated_at": "2024-04-02T21:00:00Z",
+            "deactivated_at": "2024-04-03T21:00:00Z"
+          }
+        }
+      },
+      "list_sub_account_example": {
+        "value": {
+          "data": [
+            {
+              "id": "sub_bda1e562657c41e553104b10aad3fe70",
+              "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+              "master_account_holder_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+              "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+              "sub_account_holder_id": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+              "sub_account_holder_name": "Ace LLC",
+              "label": "Payments Account",
+              "available_balance": "0.00",
+              "pending_credits": "0.00",
+              "pending_debits": "0.00",
+              "account_number": "9540861337293709",
+              "routing_number": "123321123",
+              "sponsor_bank": "Sponsor Bank",
+              "currency": "usd",
+              "external_reference_id": "XV-H27LGD-FX",
+              "purpose": "Sub account to pay offshore dev team",
+              "attachments": [
+                {
+                  "label": "fcontract",
+                  "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
+                  "created_at": "2024-04-01T21:00:00Z"
+                }
+              ],
+              "metadata": {
+                "master_account_code": "001"
+              },
+              "status": "open",
+              "timestamps": {
+                "created_at": "2024-04-01T21:00:00Z",
+                "updated_at": "2024-04-02T21:00:00Z",
+                "deactivated_at": "2024-04-03T21:00:00Z"
+              }
+            }
+          ],
+          "has_more": "true",
+          "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+          "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
         }
       }
     }
