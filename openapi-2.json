@@ -3598,12 +3598,26 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "Retrieve an Attachment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/list_attachment_object"
+                },
+                "examples": {
+                  "list_attachment_example": {
+                    "$ref": "#/components/examples/list_attachment_example"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -3624,7 +3638,8 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
@@ -3645,16 +3660,14 @@
           "201": {
             "description": "Create an Attachment",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/attachment_object"
+                },
                 "examples": {
-                  "Create an Attachment": {
-                    "value": {
-                      "id": "",
-                      "reference_id": "",
-                      "label": "formation",
-                      "url": "http://bucket.s3-website-us-east-1.amazonaws.com",
-                      "created_at": "2024-04-04T11:06:00Z"
-                    }
+                  "list_sub_account_holder_example": {
+                    "$ref": "#/components/examples/attachment_example"
                   }
                 }
               }
@@ -3681,23 +3694,22 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
           "200": {
             "description": "Retrieve an Attachment",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/attachment_object"
+                },
                 "examples": {
-                  "Retrieve an Attachment": {
-                    "value": {
-                      "id": "",
-                      "reference_id": "",
-                      "label": "formation",
-                      "url": "http://bucket.s3-website-us-east-1.amazonaws.com",
-                      "created_at": "2024-04-04T11:06:00Z"
-                    }
+                  "list_sub_account_holder_example": {
+                    "$ref": "#/components/examples/attachment_example"
                   }
                 }
               }
@@ -3722,7 +3734,8 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
@@ -5039,6 +5052,33 @@
           }
         }
       },
+      "list_attachment_object": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/attachment_object"
+            }
+          },
+          "has_more": {
+            "type": "string",
+            "example": "true",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          "starting_after": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          },
+          "ending_before": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          }
+        }
+      },
       "metadata": {
         "type": "object",
         "properties": {
@@ -5641,6 +5681,58 @@
             "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
           }
         }
+      },
+      "attachment": {
+        "type": "object",
+        "properties": {
+          "id":{
+            "type": "string",
+            "example": "att_a8d2b191fa0e960d8e49a4bfd320e07b"
+          },
+          "reference_id":{
+            "type": "string",
+            "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+          },
+          "label":{
+            "type": "string",
+            "example": "formation"
+          },
+          "url":{
+            "type": "string",
+            "example": "http://bucket.s3-website-us-east-1.amazonaws.com"
+          },
+          "created_at":{
+            "type": "string",
+            "example": "2024-04-04T11:06:00Z"
+          }
+        }
+      },
+      "list_attachment": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/attachment"
+            }
+          },
+          "has_more": {
+            "type": "string",
+            "example": "true",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          "starting_after": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          },
+          "ending_before": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          }
+        }
       }
     },
     "examples": {
@@ -6180,6 +6272,31 @@
                   "updated_at": "2024-04-01T21:00:00Z"
                 }
               }
+            }
+          ],
+          "has_more": "true",
+          "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+          "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+        }
+      },
+      "attachment_example": {
+        "value": {
+          "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
+          "reference_id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+          "label": "formation",
+          "url": "http://bucket.s3-website-us-east-1.amazonaws.com",
+          "created_at": "2024-04-04T11:06:00Z"
+        }
+      },
+      "list_attachment_example": {
+        "value": {
+          "data": [
+            {
+              "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
+              "reference_id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+              "label": "formation",
+              "url": "",
+              "created_at": "2024-04-04T11:06:00Z"
             }
           ],
           "has_more": "true",
