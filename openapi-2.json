@@ -1878,7 +1878,11 @@
           "201": {
             "description": "Sub Ledger a Transaction",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
                   "Sub Ledger a Transaction": {
                     "value": {
@@ -4887,6 +4891,23 @@
           }
         }
       },
+      "transaction_timestamp": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z"
+          },
+          "settled_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z"
+          }
+        }
+      },
       "sub_account_holder": {
         "properties": {
           "id": {
@@ -5882,6 +5903,478 @@
           "ending_before": {
             "type": "string",
             "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          }
+        }
+      },
+      "transaction_counterparty": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+          },
+          "name": {
+            "type": "string",
+            "example": "John Doe"
+          },
+          "verification_status": {
+            "type": "string",
+            "example": "verified",
+            "enum": [
+              "verified",
+              "unverified"
+            ]
+          },
+          "account_number": {
+            "type": "string",
+            "example": "98324502"
+          },
+          "routing_number": {
+            "type": "string",
+            "example": "121042882"
+          },
+          "account_type": {
+            "type": "string",
+            "example": "business_checking",
+            "enum": [
+              "business_checking",
+              "business_savings",
+              "personal_checking",
+              "personal_savings"
+            ]
+          },
+          "bank_name": {
+            "type": "string",
+            "example": "Wells Fargo"
+          },
+          "beneficiary_bank": {
+            "type": "object",
+            "$ref": "#/components/schemas/counterparty_beneficiary_bank"
+          },
+          "correspondent_bank": {
+            "type": "object",
+            "$ref": "#/components/schemas/counterparty_correspondent_bank"
+          },
+          "shipping_address": {
+            "type": "object",
+            "properties": {
+              "line1": {
+                "type": "string",
+                "example": "123 Main St"
+              },
+              "line2": {
+                "type": "string",
+                "example": ""
+              },
+              "city": {
+                "type": "string",
+                "example": "New York"
+              },
+              "state": {
+                "type": "string",
+                "example": "NY"
+              },
+              "country": {
+                "type": "string",
+                "example": "US"
+              },
+              "postal_code": {
+                "type": "string",
+                "example": "10001"
+              }
+            }
+          }
+        }
+      },
+      "transaction_ach": {
+        "type": "object",
+        "properties": {
+          "effective_date": {
+            "type": "string",
+            "example": "2024-05-05"
+          },
+          "company_discretionary_data": {
+            "type": "string",
+            "example": "DIRECT DEPOSIT"
+          },
+          "company_entry_description": {
+            "type": "string",
+            "example": "PAYROLL"
+          },
+          "trace_number": {
+            "type": "string",
+            "example": "12309876564"
+          },
+          "return_code": {
+            "type": "string",
+            "example": "R01"
+          },
+          "rta_id": {
+            "type": "string",
+            "example": "rta_64c6c87ee9d609f36a6f390dc378a4ce"
+          }
+        }
+      },
+      "transaction_master_account_reconciliation": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "mas_bda1e562657c41e553104b10aad3fe70"
+          },
+          "transaction_id": {
+            "type": "string",
+            "example": "txn_817d2a074042bb4ec54e08fd82b1e0a8"
+          },
+          "amount": {
+            "type": "string",
+            "example": "93.50"
+          }
+        }
+      },
+      "transaction_sub_account_reconciliation": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "sub_bda1e562657c41e553104b10aad3fe70"
+          },
+          "transaction_id": {
+            "type": "string",
+            "example": "txn_a0b56852400c9fede6233fd8c2e60f9c"
+          },
+          "amount": {
+            "type": "string",
+            "example": "93.50"
+          }
+        }
+      },
+      "transaction_reconciliation": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "reconciled",
+            "enum": [
+              "reconciled",
+              "not_reconciled"
+            ]
+          },
+          "master_account": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transaction_master_account_reconciliation"
+            }
+          },
+          "sub_account": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transaction_sub_account_reconciliation"
+            }
+          }
+        }
+      },
+      "transaction_domestic_wire":{
+        "type": "object",
+        "properties": {
+          "imad": {
+            "type": "string",
+            "example": "20240520D2B74A1C002742"
+          },
+          "omad": {
+            "type": "string",
+            "example": "20240520L1B7832F000914"
+          }
+        }
+      },
+      "transaction_international_wire":{
+        "type": "object",
+        "properties": {
+          "imad": {
+            "type": "string",
+            "example": "20240520D2B74A1C002742"
+          },
+          "omad": {
+            "type": "string",
+            "example": "20240520L1B7832F000914"
+          }
+        }
+      },
+      "transaction_rtp":{
+        "type": "object",
+        "properties": {
+          "reference_number": {
+            "type": "string",
+            "example": "20240410T110000Z"
+          }
+        }
+      },
+      "transaction_fednow":{
+        "type": "object",
+        "properties": {
+          "reference_number": {
+            "type": "string",
+            "example": "20240410T110000Z"
+          }
+        }
+      },
+      "transaction_check":{
+        "type": "object",
+        "properties": {
+          "check_number": {
+            "type": "string",
+            "example": "98987679"
+          },
+          "cashed": {
+            "type": "string",
+            "example": "true"
+          }
+        }
+      },
+      "transaction_card":{
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "id",
+            "example": "crd_7948d9a96706dd05360a340002de725f"
+          },
+          "cardholder_id": {
+            "type": "string",
+            "example": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0"
+          },
+          "merchant": {
+            "type": "string",
+            "example": "Walmart"
+          },
+          "auth_method": {
+            "type": "string",
+            "example": "online"
+          },
+          "wallet": {
+            "type": "string",
+            "example": "google_pay"
+          },
+          "rta_id": {
+            "type": "string",
+            "example": "rta_a120a61f60dfd40fdb07b2e8bcd1f6f0"
+          },
+          "local_transaction": {
+            "type": "object",
+            "properties": {
+              "amount": {
+                "type": "string",
+                "example": "10.00"
+              },
+              "currency": {
+                "type": "string",
+                "example": "usd"
+              },
+              "conversion_rate": {
+                "type": "string",
+                "example": "1.00"
+              }
+            }
+          },
+          "available_limit": {
+            "type": "object",
+            "properties": {
+              "period": {
+                "type": "string",
+                "example": "daily",
+                "enum": [
+                  "daily",
+                  "per_transaction",
+                  "weekly",
+                  "monthly",
+                  "yearly",
+                  "all_time"
+                ]
+              },
+              "max_spend_amount": {
+                "type": "string",
+                "example": "50.00"
+              },
+              "max_spend_count": {
+                "type": "string",
+                "example": "10"
+              }
+            }
+          }
+        }
+      },
+      "transaction": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "txn_817d2a074042bb4ec54e08fd82b1e0a8"
+          },
+          "sub_account_id": {
+            "type": "string",
+            "example": "sub_bda1e562657c41e553104b10aad3fe70"
+          },
+          "master_account_id": {
+            "type": "string",
+            "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+          },
+          "status": {
+            "type": "string",
+            "example": "originated",
+            "enum": [
+              "originated", 
+              "pending", 
+              "clearing", 
+              "cleared", 
+              "settled", 
+              "canceled", 
+              "in_review", 
+              "returned", 
+              "reversed", 
+              "received", 
+              "declined", 
+              "refunded"
+            ]
+          },
+          "amount": {
+            "type": "string",
+            "example": "93.50"
+          },
+          "currency": {
+            "type": "string",
+            "example": "usd",
+            "enum": [
+              "usd"
+            ]
+          },
+          "direction": {
+            "type": "string",
+            "example": "debit",
+            "enum": [
+              "debit",
+              "credit"
+            ]
+          },
+          "method": {
+            "type": "string",
+            "example": "ach",
+            "enum": [
+              "ach", 
+              "domestic_wire", 
+              "international_wire", 
+              "check", 
+              "fednow", 
+              "rtp", 
+              "debit_card", 
+              "card_issuing"
+            ]
+          },
+          "type": {
+            "type": "string",
+            "example": "push",
+            "enum": [
+              "push", 
+              "pull", 
+              "decline", 
+              "cancel", 
+              "return", 
+              "send", 
+              "deposit", 
+              "request", 
+              "auth", 
+              "adjust", 
+              "reverse", 
+              "refund"
+            ]
+          },
+          "message": {
+            "type": "string",
+            "example": "outgoing",
+            "enum": [
+              "incoming", 
+              "outgoing"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "example": "Invoice payment"
+          },
+          "available_balance": {
+            "type": "string",
+            "example": "500.00"
+          },
+          "pending_credits": {
+            "type": "string",
+            "example": "0.00"
+          },
+          "pending_debits": {
+            "type": "string",
+            "example": "93.50"
+          },
+          "counterparty": {
+            "type": "object",
+            "$ref": "#/components/schemas/transaction_counterparty"
+          },
+          "ach": {
+            "type": "object",
+            "$ref": "#/components/schemas/transaction_ach"
+          },
+          "domestic_wire": {
+            "type": "object",
+            "$ref": "#/components/schemas/transaction_domestic_wire"
+          },
+          "international_wire": {
+            "type": "object",
+            "$ref": "#/components/schemas/transaction_international_wire"
+          },
+          "rtp": {
+            "type": "object",
+            "$ref": "#/components/schemas/transaction_rtp"
+          },
+          "fednow": {
+            "type": "object",
+            "$ref": "#/components/schemas/transaction_fednow"
+          },
+          "check": {
+            "type": "object",
+            "$ref": "#/components/schemas/transaction_check"
+          },
+          "card": {
+            "type": "object",
+            "$ref": "#/components/schemas/transaction_card"
+          },
+          "parent_transaction_id": {
+            "type": "string",
+            "example": "txn_64c6c87ee9d609f36a6f390dc378a4ce"
+          },
+          "external_reference_id": {
+            "type": "string",
+            "example": "123-9088-2"
+          },
+          "purpose": {
+            "type": "string",
+            "example": "May Invoice"
+          },
+          "ofac": {
+            "type": "object",
+            "$ref": "#/components/schemas/ofac"
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/attachment_object"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "$ref": "#/components/schemas/metadata"
+          },
+          "reconciliation": {
+            "type": "object",
+            "$ref": "#/components/schemas/transaction_reconciliation"
+          },
+          "timestamps": {
+            "type": "object",
+            "$ref": "#/components/schemas/transaction_timestamp"
           }
         }
       }
