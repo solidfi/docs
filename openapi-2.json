@@ -1795,7 +1795,7 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "scheme": {
+              "schema": {
                 "type": "object",
                 "properties": {
                   "master_account_id": {
@@ -1871,7 +1871,7 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "scheme": {
+              "schema": {
                 "type": "object",
                 "properties": {
                   "sub_account_id": {
@@ -1972,7 +1972,7 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "scheme": {
+              "schema": {
                 "type": "object",
                 "properties": {
                   "sub_account_id": {
@@ -2068,7 +2068,7 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "scheme": {
+              "schema": {
                 "type": "object",
                 "properties": {
                   "sub_account_id": {
@@ -2149,7 +2149,7 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "scheme": {
+              "schema": {
                 "type": "object",
                 "properties": {
                   "sub_account_id": {
@@ -2230,7 +2230,7 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "scheme": {
+              "schema": {
                 "type": "object",
                 "properties": {
                   "sub_account_id": {
@@ -2316,7 +2316,7 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "scheme": {
+              "schema": {
                 "type": "object",
                 "properties": {
                   "sub_account_id": {
@@ -2402,7 +2402,7 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "scheme": {
+              "schema": {
                 "type": "object",
                 "properties": {
                   "sub_account_id": {
@@ -2483,7 +2483,7 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "scheme": {
+              "schema": {
                 "type": "object",
                 "properties": {
                   "sub_account_id": {
@@ -2564,7 +2564,7 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "scheme": {
+              "schema": {
                 "type": "object",
                 "properties": {
                   "sub_account_id": {
@@ -2645,7 +2645,7 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "scheme": {
+              "schema": {
                 "type": "object",
                 "properties": {
                   "sub_account_id": {
