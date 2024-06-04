@@ -1759,7 +1759,11 @@
           "200": {
             "description": "List all Transactions",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/list_transaction"
+                },
                 "examples": {
                   "List all Transactions": {
                     "value": {
@@ -2005,7 +2009,11 @@
           "201": {
             "description": "Originate an ACH Push",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
                   "Originate an ACH Push": {
                     "value": {
@@ -2122,7 +2130,11 @@
           "201": {
             "description": "Originate an ACH Pull",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
                   "Originate an ACH Pull": {
                     "value": {
@@ -2235,7 +2247,11 @@
           "201": {
             "description": "Originate a Domestic Wire",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
                   "Originate a Domestic Wire": {
                     "value": {
@@ -2345,7 +2361,11 @@
           "201": {
             "description": "Originate an International Wire",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
                   "Originate an International Wire": {
                     "value": {
@@ -2477,7 +2497,11 @@
           "201": {
             "description": "Originate an RTP Push",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
                   "Originate an RTP Push": {
                     "value": {
@@ -2587,7 +2611,11 @@
           "201": {
             "description": "Originate a FedNow Push",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
                   "Originate a FedNow Push": {
                     "value": {
@@ -2696,7 +2724,11 @@
           "201": {
             "description": "Originate a Debit Card Push",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
                   "Originate a Debit Card Push": {
                     "value": {
@@ -2802,7 +2834,11 @@
           "201": {
             "description": "Originate a Debit Card Pull",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
                   "Originate a Debit Card Pull": {
                     "value": {
@@ -2908,7 +2944,11 @@
           "201": {
             "description": "Originate a Check Send",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
                   "Originate a Check Send": {
                     "value": {
@@ -3033,7 +3073,11 @@
           "201": {
             "description": "Originate a Check Deposit",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
                   "Originate a Check Deposit": {
                     "value": {
@@ -3128,7 +3172,11 @@
           "200": {
             "description": "Retrieve a Transaction",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
                   "Retrieve a Transaction": {
                     "value": {
@@ -3253,7 +3301,11 @@
           "200": {
             "description": "Update a Transaction",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
                   "Update a Transaction": {
                     "value": {
@@ -6375,6 +6427,33 @@
           "timestamps": {
             "type": "object",
             "$ref": "#/components/schemas/transaction_timestamp"
+          }
+        }
+      },
+      "list_transaction": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transaction"
+            }
+          },
+          "has_more": {
+            "type": "string",
+            "example": "true",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          "starting_after": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          },
+          "ending_before": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
           }
         }
       }
