@@ -1795,12 +1795,33 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "scheme": {
+                "type": "object",
+                "properties": {
+                  "master_account_id": {
+                    "type": "string",
+                    "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+                  },
+                  "master_account_transaction_id": {
+                    "type": "string",
+                    "example": "txn_817d2a074042bb4ec54e08fd82b1e0a8"
+                  },
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "1500.00"
+                  }
+                }
+              },
               "examples": {
                 "Sub Ledger a Transaction": {
                   "value": {
-                    "master_account_id": "",
-                    "master_account_transaction_id": "",
-                    "sub_account_id": "",
+                    "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+                    "master_account_transaction_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+                    "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
                     "amount": "1500.00"
                   }
                 }
@@ -1850,6 +1871,47 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "scheme": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "counterparty_id": {
+                    "type": "string",
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "4570.00"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "May Salary"
+                  },
+                  "same_day": {
+                    "type": "string",
+                    "example": "true"
+                  },
+                  "effective_date": {
+                    "type": "string",
+                    "example": "2024-04-05"
+                  },
+                  "company_discretionary_data": {
+                    "type": "string",
+                    "example": "DIRECT DEPOSIT"
+                  },
+                  "company_entry_description": {
+                    "type": "string",
+                    "example": "PAYROLL"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "123-9088-2"
+                  }
+                }
+              },
               "examples": {
                 "Originate an ACH Push": {
                   "value": {
@@ -1910,6 +1972,43 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "scheme": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "counterparty_id": {
+                    "type": "string",
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "500.00"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "May Rent"
+                  },
+                  "same_day": {
+                    "type": "string",
+                    "example": "true"
+                  },
+                  "effective_date": {
+                    "type": "string",
+                    "example": "2024-04-05"
+                  },
+                  "company_entry_description": {
+                    "type": "string",
+                    "example": "Payment"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "123-9088-2"
+                  }
+                }
+              },
               "examples": {
                 "Originate an ACH Pull": {
                   "value": {
@@ -1969,6 +2068,31 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "scheme": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "counterparty_id": {
+                    "type": "string",
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "2500.00"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Marketing Expenses for May"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "123-9088-2"
+                  }
+                }
+              },
               "examples": {
                 "Originate a Domestic Wire": {
                   "value": {
@@ -2025,6 +2149,31 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "scheme": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "counterparty_id": {
+                    "type": "string",
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "12000.00"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Offshore dev team payment"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "123-9088-2"
+                  }
+                }
+              },
               "examples": {
                 "Originate an International Wire": {
                   "value": {
@@ -2081,6 +2230,35 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "scheme": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "counterparty_id": {
+                    "type": "string",
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "500.00"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "June office rent"
+                  },
+                  "reference_number": {
+                    "type": "string",
+                    "example": "KH1-ZI1L-PTY"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "123-9088-2"
+                  }
+                }
+              },
               "examples": {
                 "Originate an RTP Push": {
                   "value": {
@@ -2138,6 +2316,35 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "scheme": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "counterparty_id": {
+                    "type": "string",
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "500.00"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "June office rent"
+                  },
+                  "reference_number": {
+                    "type": "string",
+                    "example": "FR6L-81G634"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "123-9088-2"
+                  }
+                }
+              },
               "examples": {
                 "Originate a FedNow Push": {
                   "value": {
@@ -2195,11 +2402,36 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "scheme": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "counterparty_id": {
+                    "type": "string",
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "23.50"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Lunch expense"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "123-9088-2"
+                  }
+                }
+              },
               "examples": {
                 "Originate a Debit Card Push": {
                   "value": {
-                    "sub_account_id": "",
-                    "counterparty_id": "",
+                    "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "counterparty_id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
                     "amount": "23.50",
                     "description": "Lunch expense",
                     "external_reference_id": "123-9088-2"
@@ -2251,6 +2483,31 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "scheme": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "counterparty_id": {
+                    "type": "string",
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "150.00"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Account funding"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "123-9088-2"
+                  }
+                }
+              },
               "examples": {
                 "Originate a Debit Card Pull": {
                   "value": {
@@ -2307,6 +2564,31 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "scheme": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "counterparty_id": {
+                    "type": "string",
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "1500.00"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Plumbing Supplier"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "123-9088-2"
+                  }
+                }
+              },
               "examples": {
                 "Originate a Check Send": {
                   "value": {
@@ -2363,6 +2645,44 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "scheme": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "counterparty_id": {
+                    "type": "string",
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "500.00"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "May invoice"
+                  },
+                  "image": {
+                    "type": "object",
+                    "properties": {
+                      "front": {
+                        "type": "string",
+                        "example": "TG9yZW0gSXBzdW0gaXMgc2ltcGx5IGR1bW15IHRleHQgb2YgdGhlIHByaW50aW5nIGFuZCB0eXBlc2V0dGluZyBpbmR1c3RyeS4gTG9yZW0gSXBzdW0gaGFzIGJlZW4gdGhlIGluZHVzdHJ5J3Mgc3RhbmRhcmQgZHVtbXkgdGV4dCBldmVyIHNpbmNlIHRoZSAxNTAwcywgd2hlbiBhbiB1bmtub3duIHByaW50ZXIgdG9vayBhIGdhbGxleSBvZiB0eXBlIGFuZCBzY3JhbWJsZWQgaXQgdG8gbWFrZSBhIHR5cGUgc3BlY2ltZW4gYm9vay4gSXQgaGFzIHN1cnZpdmVkIG5vdCBvbmx5IGZpdmUgY2VudHVyaWVzLCBidXQgYWxzbyB0aGUgbGVhcCBpbnRvIGVsZWN0cm9uaWMgdHlwZXNldHRpbmcsIHJlbWFpbmluZyBlc3NlbnRpYWxseSB1bmNoYW5nZWQuIEl0IHdhcyBwb3B1bGFyaXNlZCBpbiB0aGUgMTk2MHMgd2l0aCB0aGUgcmVsZWFzZSBvZiBMZXRyYXNldCBzaGVldHMgY29udGFpbmluZyBMb3JlbSBJcHN1bSBwYXNzYWdlcywgYW5kIG1vcmUgcmVjZW50bHkgd2l0aCBkZXNrdG9wIHB1Ymxpc2hpbmcgc29mdHdhcmUgbGlrZSBBbGR1cyBQYWdlTWFrZXIgaW5jbHVkaW5nIHZlcnNpb25zIG9mIExvcmVtIElwc3VtLg"
+                      },
+                      "back": {
+                        "type": "string",
+                        "example": "TG9yZW0gSXBzdW0gaXMgc2ltcGx5IGR1bW15IHRleHQgb2YgdGhlIHByaW50aW5nIGFuZCB0eXBlc2V0dGluZyBpbmR1c3RyeS4gTG9yZW0gSXBzdW0gaGFzIGJlZW4gdGhlIGluZHVzdHJ5J3Mgc3RhbmRhcmQgZHVtbXkgdGV4dCBldmVyIHNpbmNlIHRoZSAxNTAwcywgd2hlbiBhbiB1bmtub3duIHByaW50ZXIgdG9vayBhIGdhbGxleSBvZiB0eXBlIGFuZCBzY3JhbWJsZWQgaXQgdG8gbWFrZSBhIHR5cGUgc3BlY2ltZW4gYm9vay4gSXQgaGFzIHN1cnZpdmVkIG5vdCBvbmx5IGZpdmUgY2VudHVyaWVzLCBidXQgYWxzbyB0aGUgbGVhcCBpbnRvIGVsZWN0cm9uaWMgdHlwZXNldHRpbmcsIHJlbWFpbmluZyBlc3NlbnRpYWxseSB1bmNoYW5nZWQuIEl0IHdhcyBwb3B1bGFyaXNlZCBpbiB0aGUgMTk2MHMgd2l0aCB0aGUgcmVsZWFzZSBvZiBMZXRyYXNldCBzaGVldHMgY29udGFpbmluZyBMb3JlbSBJcHN1bSBwYXNzYWdlcywgYW5kIG1vcmUgcmVjZW50bHkgd2l0aCBkZXNrdG9wIHB1Ymxpc2hpbmcgc29mdHdhcmUgbGlrZSBBbGR1cyBQYWdlTWFrZXIgaW5jbHVkaW5nIHZlcnNpb25zIG9mIExvcmVtIElwc3VtLg"
+                      }
+                    }
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "123-9088-2"
+                  }
+                }
+              },
               "examples": {
                 "Originate a Check Deposit": {
                   "value": {
