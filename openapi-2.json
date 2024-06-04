@@ -1318,88 +1318,14 @@
           "200": {
             "description": "List all Cards",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/list_card"
+                },
                 "examples": {
-                  "List all Cards": {
-                    "value": {
-                      "data": [
-                        {
-                          "id": "",
-                          "client_id": "",
-                          "master_account_holder_id": "",
-                          "master_account_id": "",
-                          "sub_account_holder_id": "",
-                          "sub_account_id": "",
-                          "cardholder_id": "",
-                          "label": "Travel Expense Card",
-                          "product": "business_spend",
-                          "theme": "metallic",
-                          "type": "physical",
-                          "expiry_month": "12",
-                          "expiry_year": "2022",
-                          "last4": "5275",
-                          "card_fullfilment": {
-                            "embossing": {
-                              "cardholder_name": "John Doe",
-                              "business_name": "Ace Inc"
-                            },
-                            "shipping_address": {
-                              "line1": "123 Main St",
-                              "line2": "",
-                              "city": "New York",
-                              "state": "NY",
-                              "country": "US",
-                              "postal_code": "10001"
-                            },
-                            "tracking": {
-                              "status": "delivered",
-                              "eta": "2024-05-02",
-                              "number": "1231233",
-                              "url": "https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224",
-                              "provider": "usps"
-                            }
-                          },
-                          "controls": {
-                            "allowed": {
-                              "merchants": [],
-                              "categories": [],
-                              "countries": []
-                            },
-                            "blocked": {
-                              "merchants": [],
-                              "categories": [],
-                              "countries": []
-                            },
-                            "limit": {
-                              "period": "daily",
-                              "max_spend_amount": "500.00",
-                              "max_spend_per_transaction": "100.00",
-                              "max_spend_count": "10"
-                            },
-                            "atm_enabled": true
-                          },
-                          "external_reference_id": "FSY52RAZ-4X",
-                          "attachments": [
-                            {
-                              "label": "United",
-                              "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
-                              "created_at": "2024-04-01T21:00:00Z"
-                            }
-                          ],
-                          "metadata": {
-                            "description": "Sales Team Card"
-                          },
-                          "status": "activated",
-                          "timestamps": {
-                            "created_at": "2024-04-01T21:00:00Z",
-                            "updated_at": "2024-04-02T21:00:00Z"
-                          }
-                        }
-                      ],
-                      "has_more": "true",
-                      "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
-                      "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
-                    }
+                  "master_account_example": {
+                    "$ref": "#/components/examples/list_card_example"
                   }
                 }
               }
@@ -1433,7 +1359,7 @@
               "examples": {
                 "Create a Card": {
                   "value": {
-                    "cardholder_id": "",
+                    "card_holder_id": "",
                     "label": "Travel",
                     "product": "business_spend",
                     "theme": "metallic",
@@ -1475,81 +1401,14 @@
           "201": {
             "description": "Create a Card",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/card"
+                },
                 "examples": {
-                  "Create a Card": {
-                    "value": {
-                      "id": "",
-                      "client_id": "",
-                      "master_account_holder_id": "",
-                      "master_account_id": "",
-                      "sub_account_holder_id": "",
-                      "sub_account_id": "",
-                      "cardholder_id": "",
-                      "label": "Travel",
-                      "product": "business_spend",
-                      "theme": "metallic",
-                      "type": "physical",
-                      "expiry_month": "12",
-                      "expiry_year": "2022",
-                      "last4": "5275",
-                      "card_fullfilment": {
-                        "embossing": {
-                          "cardholder_name": "John Doe",
-                          "business_name": "Ace Inc"
-                        },
-                        "shipping_address": {
-                          "line1": "123 Main St",
-                          "line2": "",
-                          "city": "New York",
-                          "state": "NY",
-                          "country": "US",
-                          "postal_code": "10001"
-                        },
-                        "tracking": {
-                          "status": "delivered",
-                          "eta": "2024-05-02",
-                          "number": "1231233",
-                          "url": "https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224",
-                          "provider": "usps"
-                        }
-                      },
-                      "controls": {
-                        "allowed": {
-                          "merchants": [],
-                          "categories": [],
-                          "countries": []
-                        },
-                        "blocked": {
-                          "merchants": [],
-                          "categories": [],
-                          "countries": []
-                        },
-                        "limit": {
-                          "period": "daily",
-                          "max_spend_amount": "500.00",
-                          "max_spend_per_transaction": "100.00",
-                          "max_spend_count": "10"
-                        },
-                        "atm_enabled": true
-                      },
-                      "external_reference_id": "FSY52RAZ-4X",
-                      "attachments": [
-                        {
-                          "label": "United",
-                          "id": "",
-                          "created_at": "2024-04-01T21:00:00Z"
-                        }
-                      ],
-                      "metadata": {
-                        "description": "Sales Team Card"
-                      },
-                      "status": "activated",
-                      "timestamps": {
-                        "created_at": "2024-04-01T21:00:00Z",
-                        "updated_at": "2024-04-02T21:00:00Z"
-                      }
-                    }
+                  "master_account_example": {
+                    "$ref": "#/components/examples/card_example"
                   }
                 }
               }
@@ -1583,81 +1442,14 @@
           "200": {
             "description": "Retrieve a Card",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/card"
+                },
                 "examples": {
-                  "Retrieve a Card": {
-                    "value": {
-                      "id": "",
-                      "client_id": "",
-                      "master_account_holder_id": "",
-                      "master_account_id": "",
-                      "sub_account_holder_id": "",
-                      "sub_account_id": "",
-                      "cardholder_id": "",
-                      "label": "Travel Expense Card",
-                      "product": "business_spend",
-                      "theme": "metallic",
-                      "type": "physical",
-                      "expiry_month": "12",
-                      "expiry_year": "2022",
-                      "last4": "5275",
-                      "card_fullfilment": {
-                        "embossing": {
-                          "cardholder_name": "John Doe",
-                          "business_name": "Ace Inc"
-                        },
-                        "shipping_address": {
-                          "line1": "123 Main St",
-                          "line2": "",
-                          "city": "New York",
-                          "state": "NY",
-                          "country": "US",
-                          "postal_code": "10001"
-                        },
-                        "tracking": {
-                          "status": "delivered",
-                          "eta": "2024-05-02",
-                          "number": "1231233",
-                          "url": "https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224",
-                          "provider": "usps"
-                        }
-                      },
-                      "controls": {
-                        "allowed": {
-                          "merchants": [],
-                          "categories": [],
-                          "countries": []
-                        },
-                        "blocked": {
-                          "merchants": [],
-                          "categories": [],
-                          "countries": []
-                        },
-                        "limit": {
-                          "period": "daily",
-                          "max_spend_amount": "500.00",
-                          "max_spend_per_transaction": "100.00",
-                          "max_spend_count": "10"
-                        },
-                        "atm_enabled": true
-                      },
-                      "external_reference_id": "FSY52RAZ-4X",
-                      "attachments": [
-                        {
-                          "label": "United",
-                          "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
-                          "created_at": "2024-04-01T21:00:00Z"
-                        }
-                      ],
-                      "metadata": {
-                        "description": "Sales Team Card"
-                      },
-                      "status": "activated",
-                      "timestamps": {
-                        "created_at": "2024-04-01T21:00:00Z",
-                        "updated_at": "2024-04-02T21:00:00Z"
-                      }
-                    }
+                  "master_account_example": {
+                    "$ref": "#/components/examples/card_example"
                   }
                 }
               }
@@ -1711,81 +1503,14 @@
           "200": {
             "description": "Update a Card",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/card"
+                },
                 "examples": {
-                  "Update a Card": {
-                    "value": {
-                      "id": "",
-                      "client_id": "",
-                      "master_account_holder_id": "",
-                      "master_account_id": "",
-                      "sub_account_holder_id": "",
-                      "sub_account_id": "",
-                      "cardholder_id": "",
-                      "label": "Travel Expense Card",
-                      "product": "business_spend",
-                      "theme": "metallic",
-                      "type": "physical",
-                      "expiry_month": "12",
-                      "expiry_year": "2022",
-                      "last4": "5275",
-                      "card_fullfilment": {
-                        "embossing": {
-                          "cardholder_name": "John Doe",
-                          "business_name": "Ace Inc"
-                        },
-                        "shipping_address": {
-                          "line1": "123 Main St",
-                          "line2": "",
-                          "city": "New York",
-                          "state": "NY",
-                          "country": "US",
-                          "postal_code": "10001"
-                        },
-                        "tracking": {
-                          "status": "delivered",
-                          "eta": "2024-05-02",
-                          "number": "1231233",
-                          "url": "https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224",
-                          "provider": "usps"
-                        }
-                      },
-                      "controls": {
-                        "allowed": {
-                          "merchants": [],
-                          "categories": [],
-                          "countries": []
-                        },
-                        "blocked": {
-                          "merchants": [],
-                          "categories": [],
-                          "countries": []
-                        },
-                        "limit": {
-                          "period": "daily",
-                          "max_spend_amount": "500.00",
-                          "max_spend_per_transaction": "100.00",
-                          "max_spend_count": "10"
-                        },
-                        "atm_enabled": true
-                      },
-                      "external_reference_id": "FSY52RAZ-4X",
-                      "attachments": [
-                        {
-                          "label": "United",
-                          "id": "",
-                          "created_at": "2024-04-01T21:00:00Z"
-                        }
-                      ],
-                      "metadata": {
-                        "description": "Sales Team Card"
-                      },
-                      "status": "activated",
-                      "timestamps": {
-                        "created_at": "2024-04-01T21:00:00Z",
-                        "updated_at": "2024-04-02T21:00:00Z"
-                      }
-                    }
+                  "master_account_example": {
+                    "$ref": "#/components/examples/card_example"
                   }
                 }
               }
@@ -3987,7 +3712,7 @@
                       "counterparty": null,
                       "card": {
                         "id": "",
-                        "cardholder_id": "",
+                        "card_holder_id": "",
                         "merchant": "Mom and Pop",
                         "auth_method": "online",
                         "wallet": "",
@@ -4052,7 +3777,7 @@
                       "counterparty": null,
                       "card": {
                         "id": "",
-                        "cardholder_id": "",
+                        "card_holder_id": "",
                         "merchant": "Mom and Pop",
                         "auth_method": "online",
                         "wallet": "",
@@ -4117,7 +3842,7 @@
                       "counterparty": null,
                       "card": {
                         "id": "",
-                        "cardholder_id": "",
+                        "card_holder_id": "",
                         "merchant": "Mom and Pop",
                         "auth_method": "online",
                         "wallet": "",
@@ -4182,7 +3907,7 @@
                       "counterparty": null,
                       "card": {
                         "id": "",
-                        "cardholder_id": "",
+                        "card_holder_id": "",
                         "merchant": "Mom and Pop",
                         "auth_method": "online",
                         "wallet": "",
@@ -4247,7 +3972,7 @@
                       "counterparty": null,
                       "card": {
                         "id": "",
-                        "cardholder_id": "",
+                        "card_holder_id": "",
                         "merchant": "Mom and Pop",
                         "auth_method": "online",
                         "wallet": "",
@@ -4312,7 +4037,7 @@
                       "counterparty": null,
                       "card": {
                         "id": "",
-                        "cardholder_id": "",
+                        "card_holder_id": "",
                         "merchant": "Mom and Pop",
                         "auth_method": "online",
                         "wallet": "",
@@ -5697,6 +5422,295 @@
             "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
           }
         }
+      },
+      "card": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "crd_7948d9a96706dd05360a340002de725f"
+          },
+          "client_id": {
+            "type": "string",
+            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce"
+          },
+          "master_account_holder_id": {
+            "type": "string",
+            "example": "mah_201e02c581a098a740456c5c19fcfcd6"
+          },
+          "master_account_id": {
+            "type": "string",
+            "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+          },
+          "sub_account_holder_id": {
+            "type": "string",
+            "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752"
+          },
+          "sub_account_id": {
+            "type": "string",
+            "example": "sub_bda1e562657c41e553104b10aad3fe70"
+          },
+          "cardholder_id": {
+            "type": "string",
+            "example": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0"
+          },
+          "label": {
+            "type": "string",
+            "example": "Travel"
+          },
+          "product": {
+            "type": "string",
+            "example": "business_spend",
+            "enum": [
+              "business_spend", 
+              "consumer_debit", 
+              "business_debit", 
+              "consumer_gpr", 
+              "consumer_gpnr", 
+              "consumer_payroll", 
+              "consumer_hsa", 
+              "consumer_fsa", 
+              "consumer_govt_benefits"
+            ]
+          },
+          "theme": {
+            "type": "string",
+            "example": "metallic"
+          },
+          "type": {
+            "type": "string",
+            "example": "physical",
+            "enum": [
+              "physical",
+              "virtual"
+            ]
+          },
+          "expiry_month": {
+            "type": "string",
+            "example": "12"
+          },
+          "expiry_year": {
+            "type": "string",
+            "example": "2025"
+          },
+          "last4": {
+            "type": "string",
+            "example": "5275"
+          },
+          "card_fullfilment": {
+            "type": "object",
+            "properties": {
+              "embossing": {
+                "type": "object",
+                "properties": {
+                  "card_holder_name": {
+                    "type": "string",
+                    "example": "John Doe"
+                  },
+                  "business_name": {
+                    "type": "string",
+                    "example": "Ace Inc"
+                  }
+                }
+              },
+              "shipping_address": {
+                "type": "object",
+                "properties": {
+                  "line1": {
+                    "type": "string",
+                    "example": "123 Main St"
+                  },
+                  "line2": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "city": {
+                    "type": "string",
+                    "example": "New York"
+                  },
+                  "state": {
+                    "type": "string",
+                    "example": "NY"
+                  },
+                  "country": {
+                    "type": "string",
+                    "example": "US"
+                  },
+                  "postal_code": {
+                    "type": "string",
+                    "example": "10001"
+                  }
+                }
+              },
+              "tracking": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "example": "delivered",
+                    "enum": [
+                      "pending",
+                      "delivered",
+                      "canceled",
+                      "failure",
+                      "returned",
+                      "shipped"
+                    ]
+                  },
+                  "eta": {
+                    "type": "string",
+                    "example": "2024-05-02"
+                  },
+                  "number": {
+                    "type": "string",
+                    "example": "1231233"
+                  },
+                  "url": {
+                    "type": "string",
+                    "example": "https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224"
+                  },
+                  "provider": {
+                    "type": "string",
+                    "example": "usps"
+                  }
+                }
+              }
+            }
+          },
+          "controls": {
+            "type": "object",
+            "properties": {
+              "allowed": {
+                "type": "object",
+                "properties": {
+                  "merchants": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "categories": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "countries": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "blocked": {
+                "type": "object",
+                "properties": {
+                  "merchants": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "categories": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "countries": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "limit": {
+                "type": "object",
+                "properties": {
+                  "period": {
+                    "type": "string",
+                    "example": "daily",
+                    "enum": [
+                      "daily",
+                      "per_transaction",
+                      "weekly",
+                      "monthly",
+                      "yearly",
+                      "all_time"
+                    ]
+                  },
+                  "max_spend_amount": {
+                    "type": "string",
+                    "example": "500.00"
+                  }
+                }
+              },
+              "atm_enabled": {
+                "type": "string",
+                "example": "true"
+              }
+            }
+          },
+          "external_reference_id": {
+            "type": "string",
+            "example": "XV-H27LGD-FX"
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/attachment_object"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "$ref": "#/components/schemas/metadata"
+          },
+          "status": {
+            "type": "string",
+            "example": "open",
+            "enum": [
+              "open",
+              "closed", 
+              "credit_blocked", 
+              "debit_blocked", 
+              "blocked", 
+              "locked"
+            ]
+          },
+          "timestamps": {
+            "type": "object",
+            "$ref": "#/components/schemas/non_entity_timestamp"
+          }
+        }
+      },
+      "list_card": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/card"
+            }
+          },
+          "has_more": {
+            "type": "string",
+            "example": "true",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          "starting_after": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          },
+          "ending_before": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+          }
+        }
       }
     },
     "examples": {
@@ -6361,6 +6375,161 @@
                   "created_at": "2024-04-01T21:00:00Z"
                 }
               ],
+              "status": "activated",
+              "timestamps": {
+                "created_at": "2024-04-01T21:00:00Z",
+                "updated_at": "2024-04-02T21:00:00Z"
+              }
+            }
+          ],
+          "has_more": "true",
+          "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+          "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+        }
+      },
+      "card_example":{
+        "value":{
+          "id": "crd_7948d9a96706dd05360a340002de725f",
+          "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+          "master_account_holder_id": "mah_201e02c581a098a740456c5c19fcfcd6",
+          "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+          "sub_account_holder_id": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+          "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
+          "card_holder_id": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0",
+          "label": "Travel",
+          "product": "business_spend",
+          "theme": "metallic",
+          "type": "physical",
+          "expiry_month": "12",
+          "expiry_year": "2022",
+          "last4": "5275",
+          "card_fullfilment": {
+            "embossing": {
+              "cardholder_name": "John Doe",
+              "business_name": "Ace Inc"
+            },
+            "shipping_address": {
+              "line1": "123 Main St",
+              "line2": "",
+              "city": "New York",
+              "state": "NY",
+              "country": "US",
+              "postal_code": "10001"
+            },
+            "tracking": {
+              "status": "delivered",
+              "eta": "2024-05-02",
+              "number": "1231233",
+              "url": "https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224",
+              "provider": "usps"
+            }
+          },
+          "controls": {
+            "allowed": {
+              "merchants": [],
+              "categories": [],
+              "countries": []
+            },
+            "blocked": {
+              "merchants": [],
+              "categories": [],
+              "countries": []
+            },
+            "limit": {
+              "period": "daily",
+              "max_spend_amount": "500.00",
+              "max_spend_per_transaction": "100.00",
+              "max_spend_count": "10"
+            },
+            "atm_enabled": true
+          },
+          "external_reference_id": "FSY52RAZ-4X",
+          "attachments": [
+            {
+              "label": "United",
+              "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
+              "created_at": "2024-04-01T21:00:00Z"
+            }
+          ],
+          "metadata": {
+            "description": "Sales Team Card"
+          },
+          "status": "activated",
+          "timestamps": {
+            "created_at": "2024-04-01T21:00:00Z",
+            "updated_at": "2024-04-02T21:00:00Z"
+          }
+        }
+      },
+      "list_card_example": {
+        "value": {
+          "data": [
+            {
+              "id": "crd_7948d9a96706dd05360a340002de725f",
+              "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+              "master_account_holder_id": "mah_201e02c581a098a740456c5c19fcfcd6",
+              "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+              "sub_account_holder_id": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+              "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
+              "card_holder_id": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0",
+              "label": "Travel",
+              "product": "business_spend",
+              "theme": "metallic",
+              "type": "physical",
+              "expiry_month": "12",
+              "expiry_year": "2022",
+              "last4": "5275",
+              "card_fullfilment": {
+                "embossing": {
+                  "cardholder_name": "John Doe",
+                  "business_name": "Ace Inc"
+                },
+                "shipping_address": {
+                  "line1": "123 Main St",
+                  "line2": "",
+                  "city": "New York",
+                  "state": "NY",
+                  "country": "US",
+                  "postal_code": "10001"
+                },
+                "tracking": {
+                  "status": "delivered",
+                  "eta": "2024-05-02",
+                  "number": "1231233",
+                  "url": "https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224",
+                  "provider": "usps"
+                }
+              },
+              "controls": {
+                "allowed": {
+                  "merchants": [],
+                  "categories": [],
+                  "countries": []
+                },
+                "blocked": {
+                  "merchants": [],
+                  "categories": [],
+                  "countries": []
+                },
+                "limit": {
+                  "period": "daily",
+                  "max_spend_amount": "500.00",
+                  "max_spend_per_transaction": "100.00",
+                  "max_spend_count": "10"
+                },
+                "atm_enabled": true
+              },
+              "external_reference_id": "FSY52RAZ-4X",
+              "attachments": [
+                {
+                  "label": "United",
+                  "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
+                  "created_at": "2024-04-01T21:00:00Z"
+                }
+              ],
+              "metadata": {
+                "description": "Sales Team Card"
+              },
               "status": "activated",
               "timestamps": {
                 "created_at": "2024-04-01T21:00:00Z",
