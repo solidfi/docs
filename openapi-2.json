@@ -6135,7 +6135,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "id",
+            "type": "string",
             "example": "crd_7948d9a96706dd05360a340002de725f"
           },
           "cardholder_id": {
