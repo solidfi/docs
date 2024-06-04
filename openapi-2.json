@@ -1311,7 +1311,8 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
@@ -1350,12 +1351,184 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
           "content": {
             "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "cardholder_id": {
+                    "type": "string",
+                    "example": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0"
+                  },
+                  "label": {
+                    "type": "string",
+                    "example": "Travel"
+                  },
+                  "product": {
+                    "type": "string",
+                    "example": "business_spend",
+                    "enum": [
+                      "business_spend", 
+                      "consumer_debit", 
+                      "business_debit", 
+                      "consumer_gpr", 
+                      "consumer_gpnr", 
+                      "consumer_payroll", 
+                      "consumer_hsa", 
+                      "consumer_fsa", 
+                      "consumer_govt_benefits"
+                    ]
+                  },
+                  "theme": {
+                    "type": "string",
+                    "example": "metallic"
+                  },
+                  "type": {
+                    "type": "string",
+                    "example": "physical",
+                    "enum": [
+                      "physical",
+                      "virtual"
+                    ]
+                  },
+                  "card_fullfilment": {
+                    "type": "object",
+                    "properties": {
+                      "embossing": {
+                        "type": "object",
+                        "properties": {
+                          "card_holder_name": {
+                            "type": "string",
+                            "example": "John Doe"
+                          },
+                          "business_name": {
+                            "type": "string",
+                            "example": "Ace Inc"
+                          }
+                        }
+                      },
+                      "shipping_address": {
+                        "type": "object",
+                        "properties": {
+                          "line1": {
+                            "type": "string",
+                            "example": "123 Main St"
+                          },
+                          "line2": {
+                            "type": "string",
+                            "example": ""
+                          },
+                          "city": {
+                            "type": "string",
+                            "example": "New York"
+                          },
+                          "state": {
+                            "type": "string",
+                            "example": "NY"
+                          },
+                          "country": {
+                            "type": "string",
+                            "example": "US"
+                          },
+                          "postal_code": {
+                            "type": "string",
+                            "example": "10001"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "controls": {
+                    "type": "object",
+                    "properties": {
+                      "allowed": {
+                        "type": "object",
+                        "properties": {
+                          "merchants": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "categories": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "countries": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "blocked": {
+                        "type": "object",
+                        "properties": {
+                          "merchants": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "categories": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "countries": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "limit": {
+                        "type": "object",
+                        "properties": {
+                          "period": {
+                            "type": "string",
+                            "example": "daily",
+                            "enum": [
+                              "daily",
+                              "per_transaction",
+                              "weekly",
+                              "monthly",
+                              "yearly",
+                              "all_time"
+                            ]
+                          },
+                          "max_spend_amount": {
+                            "type": "string",
+                            "example": "500.00"
+                          }
+                        }
+                      },
+                      "atm_enabled": {
+                        "type": "string",
+                        "example": "true"
+                      }
+                    }
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "XV-H27LGD-FX"
+                  },
+                  "metadata": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/metadata"
+                  }
+                }
+              },
               "examples": {
                 "Create a Card": {
                   "value": {
@@ -1381,9 +1554,7 @@
                     "controls": {
                       "limit": {
                         "period": "daily",
-                        "max_spend_amount": "500.00",
-                        "max_spend_per_transaction": "100.00",
-                        "max_spend_count": "10"
+                        "max_spend_amount": "500.00"
                       },
                       "atm_enabled": true
                     },
@@ -1435,7 +1606,8 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
@@ -1474,7 +1646,8 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
