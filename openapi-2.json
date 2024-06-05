@@ -1849,6 +1849,168 @@
         }
       }
     },
+    "/v2/intra_account/push": {
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Originate an Intra Account Push",
+        "description": "Originate an Intra Account Push",
+        "operationId": "originateAnIntraAccountPush",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "counterparty_id": {
+                    "type": "string",
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "4570.00"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "May Salary"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "123-9088-2"
+                  }
+                }
+              },
+              "examples": {
+                "Originate an ACH Push": {
+                  "value": {
+                    "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "counterparty_id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "amount": "4570.00",
+                    "description": "May Salary",
+                    "external_reference_id": "123-9088-2"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Originate an Intra Account Push",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
+                "examples": {
+                  "ach_push_transaction_example": {
+                    "$ref": "#/components/examples/ach_push_transaction_example"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/intra_account/pull": {
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Originate an Intra Account Pull",
+        "description": "Originate an Intra Account Pull",
+        "operationId": "originateAnIntraAccountPull",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "counterparty_id": {
+                    "type": "string",
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "500.00"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "May Rent"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "123-9088-2"
+                  }
+                }
+              },
+              "examples": {
+                "Originate an ACH Pull": {
+                  "value": {
+                    "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "counterparty_id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "amount": "500.00",
+                    "description": "May Rent",
+                    "external_reference_id": "123-9088-2"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Originate an Intra Account Pull",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
+                "examples": {
+                  "ach_pull_transaction_example": {
+                    "$ref": "#/components/examples/ach_pull_transaction_example"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v2/ach/push": {
       "post": {
         "tags": [
@@ -6387,6 +6549,122 @@
                 "id": "sub_bda1e562657c41e553104b10aad3fe70",
                 "transaction_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
                 "amount": "1500.00"
+              }
+            ]
+          },
+          "timestamps": {
+            "created_at": "2024-04-04T11:06:00Z",
+            "settled_at": "2024-04-04T11:06:00Z",
+            "modified_at": "2024-04-04T11:06:00Z"
+          }
+        }
+      },
+      "intra_account_push_transaction_example": {
+        "value": {
+          "id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+          "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+          "master_account_holder_id": "mah_201e02c581a098a740456c5c19fcfcd6",
+          "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+          "sub_account_holder_id": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+          "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
+          "status": "settled",
+          "amount": "4570.00",
+          "currency": "usd",
+          "direction": "debit",
+          "method": "ach",
+          "type": "push",
+          "message": "outgoing",
+          "description": "May Salary",
+          "available_balance": "500.00",
+          "pending_credits": "0.00",
+          "pending_debits": "4570.00",
+          "counterparty": {
+            "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+            "name": "John Doe",
+            "verification_status": "unverified",
+            "account_number": "9542450298324502",
+            "routing_number": "",
+            "account_type": "",
+            "bank_name": "",
+            "beneficiary_bank": null,
+            "correspondent_bank": null,
+            "shipping_address": null
+          },
+          "parent_transaction_id": "",
+          "external_reference_id": "123-9088-2",
+          "purpose": "This is May Salary",
+          "ofac": {
+            "status": "pass",
+            "last_updated_at": "2024-04-01T21:00:00Z"
+          },
+          "attachments": null,
+          "metadata": null,
+          "reconciliation": {
+            "status": "reconciled",
+            "master_account": null,
+            "sub_account": [
+              {
+                "id": "sub_bda1e562657c41e553104b10aad3fe70",
+                "transaction_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+                "amount": "4570.00"
+              }
+            ]
+          },
+          "timestamps": {
+            "created_at": "2024-04-04T11:06:00Z",
+            "settled_at": "2024-04-04T11:06:00Z",
+            "modified_at": "2024-04-04T11:06:00Z"
+          }
+        }
+      },
+      "intra_account_pull_transaction_example": {
+        "value": {
+          "id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+          "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+          "master_account_holder_id": "mah_201e02c581a098a740456c5c19fcfcd6",
+          "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+          "sub_account_holder_id": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+          "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
+          "status": "settled",
+          "amount": "500.00",
+          "currency": "usd",
+          "direction": "credit",
+          "method": "intra_account",
+          "type": "pull",
+          "message": "outgoing",
+          "description": "May Rent",
+          "available_balance": "250.00",
+          "pending_credits": "500.00",
+          "pending_debits": "0.00",
+          "counterparty": {
+            "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+            "name": "John Doe",
+            "verification_status": "unverified",
+            "account_number": "9542450298324502",
+            "routing_number": "",
+            "account_type": "",
+            "bank_name": "",
+            "beneficiary_bank": null,
+            "correspondent_bank": null,
+            "shipping_address": null
+          },
+          "parent_transaction_id": "",
+          "external_reference_id": "123-9088-2",
+          "purpose": "",
+          "ofac": {
+            "status": "pass",
+            "last_updated_at": "2024-04-01T21:00:00Z"
+          },
+          "attachments": null,
+          "metadata": null,
+          "reconciliation": {
+            "status": "reconciled",
+            "master_account": null,
+            "sub_account": [
+              {
+                "id": "sub_bda1e562657c41e553104b10aad3fe70",
+                "transaction_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+                "amount": "500.00"
               }
             ]
           },
