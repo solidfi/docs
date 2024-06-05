@@ -3044,6 +3044,31 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "500.00"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "May Rent"
+                  },
+                  "counterparty_name": {
+                    "type": "string",
+                    "example": "John Doe"
+                  },
+                  "counterparty_routing_number": {
+                    "type": "string",
+                    "example": "121042882"
+                  }
+                }
+              },
               "examples": {
                 "Simulate an Incoming ACH Push": {
                   "value": {
