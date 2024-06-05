@@ -3049,7 +3049,7 @@
                 "properties": {
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
                   },
                   "amount": {
                     "type": "string",
@@ -3072,7 +3072,7 @@
               "examples": {
                 "Simulate an Incoming ACH Push": {
                   "value": {
-                    "sub_account_id": "",
+                    "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
                     "amount": "500.00",
                     "description": "May Rent",
                     "counterparty_name": "John Doe",
@@ -3128,6 +3128,31 @@
         "requestBody": {
           "content": {
             "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "500.00"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "May Rent"
+                  },
+                  "counterparty_name": {
+                    "type": "string",
+                    "example": "John Doe"
+                  },
+                  "counterparty_routing_number": {
+                    "type": "string",
+                    "example": "121042882"
+                  }
+                }
+              },
               "examples": {
                 "Simulate an Incoming ACH Pull": {
                   "value": {
