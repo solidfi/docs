@@ -3321,6 +3321,10 @@
             "description": "Simulate an Auth Transaction / Simulate a Settle Transaction / Simulate a Reversal Transaction / Simulate a Refund Auth Transaction / Simulate a Refund Settle Transaction / Simulate a Refund Auth & Settle Transaction",
             "content": {
               "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
                   "simulate_refund_auth_settle_example": {
                     "$ref": "#/components/examples/simulate_refund_auth_settle_example"
