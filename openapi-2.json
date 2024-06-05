@@ -3038,7 +3038,8 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
@@ -3122,7 +3123,8 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
@@ -3156,7 +3158,7 @@
               "examples": {
                 "Simulate an Incoming ACH Pull": {
                   "value": {
-                    "sub_account_id": "",
+                    "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
                     "amount": "500.00",
                     "description": "May Rent",
                     "counterparty_name": "John Doe",
@@ -3206,12 +3208,48 @@
             "schema": {
               "type": "string",
               "example": "{{api_key}}"
-            }
+            },
+            "required": true
           }
         ],
         "requestBody": {
           "content": {
             "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "card_id": {
+                    "type": "string",
+                    "example": "crd_7948d9a96706dd05360a340002de725f"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "120.00"
+                  },
+                  "parent_txn_id": {
+                    "type": "string",
+                    "example": "txn_817d2a074042bb4ec54e08fd82b1e0a8"
+                  },
+                  "type": {
+                    "type": "string",
+                    "example": "refund",
+                    "enum": [
+                      "auth", 
+                      "adjust", 
+                      "reverse", 
+                      "refund"
+                    ]
+                  },
+                  "status": {
+                    "type": "string",
+                    "example": "settled",
+                    "enum": [
+                      "pending",
+                      "settled"
+                    ]
+                  }
+                }
+              },
               "examples": {
                 "simulate_refund_auth_settle_example": {
                   "value": {
