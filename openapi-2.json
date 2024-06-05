@@ -3062,79 +3062,14 @@
           "201": {
             "description": "Simulate an Incoming ACH Push",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
-                  "Simulate an Incoming ACH Push": {
-                    "value": {
-                      "id": "",
-                      "client_id": "",
-                      "master_account_holder_id": "",
-                      "master_account_id": "",
-                      "sub_account_holder_id": "",
-                      "sub_account_id": "",
-                      "status": "received",
-                      "amount": "500.00",
-                      "currency": "usd",
-                      "direction": "credit",
-                      "method": "ach",
-                      "type": "push",
-                      "message": "incoming",
-                      "description": "May Rent",
-                      "available_balance": "1250.50",
-                      "pending_credits": "500.00",
-                      "pending_debits": "0.00",
-                      "counterparty": {
-                        "id": "",
-                        "name": "John Doe",
-                        "verification_status": "verified",
-                        "account_number": "",
-                        "routing_number": "121042882",
-                        "account_type": "",
-                        "bank_name": "Wells Fargo",
-                        "beneficiary_bank": null,
-                        "correspondent_bank": null,
-                        "shipping_address": null
-                      },
-                      "ach": {
-                        "effective_date": "2024-04-04",
-                        "company_discretionary_data": "",
-                        "company_entry_description": "Payment",
-                        "trace_number": "",
-                        "return_code": "",
-                        "rta_id": ""
-                      },
-                      "parent_transaction_id": "",
-                      "external_reference_id": "",
-                      "purpose": "",
-                      "ofac": {
-                        "status": "pass",
-                        "last_updated_at": "2024-04-01T21:00:00Z"
-                      },
-                      "attachments": null,
-                      "metadata": null,
-                      "reconciliation": {
-                        "status": "reconciled",
-                        "master_account": [
-                          {
-                            "id": "",
-                            "transaction_id": "",
-                            "amount": "500.00"
-                          }
-                        ],
-                        "sub_account": [
-                          {
-                            "id": "",
-                            "transaction_id": "",
-                            "amount": "500.00"
-                          }
-                        ]
-                      },
-                      "timestamps": {
-                        "created_at": "2024-04-04T11:06:00Z",
-                        "settled_at": "2024-04-04T11:06:00Z",
-                        "modified_at": "2024-04-04T11:06:00Z"
-                      }
-                    }
+                  "simulate_ach_push_example": {
+                    "$ref": "#/components/examples/simulate_ach_push_example"
                   }
                 }
               }
@@ -3186,79 +3121,14 @@
           "201": {
             "description": "Simulate an Incoming ACH Pull",
             "content": {
-              "text/plain": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
                 "examples": {
-                  "Simulate an Incoming ACH Pull": {
-                    "value": {
-                      "id": "",
-                      "client_id": "",
-                      "master_account_holder_id": "",
-                      "master_account_id": "",
-                      "sub_account_holder_id": "",
-                      "sub_account_id": "",
-                      "status": "received",
-                      "amount": "500.00",
-                      "currency": "usd",
-                      "direction": "debit",
-                      "method": "ach",
-                      "type": "pull",
-                      "message": "incoming",
-                      "description": "May Rent",
-                      "available_balance": "1250.50",
-                      "pending_credits": "0.00",
-                      "pending_debits": "500.00",
-                      "counterparty": {
-                        "id": "",
-                        "name": "John Doe",
-                        "verification_status": "verified",
-                        "account_number": "",
-                        "routing_number": "121042882",
-                        "account_type": "",
-                        "bank_name": "Wells Fargo",
-                        "beneficiary_bank": null,
-                        "correspondent_bank": null,
-                        "shipping_address": null
-                      },
-                      "ach": {
-                        "effective_date": "2024-04-04",
-                        "company_discretionary_data": "",
-                        "company_entry_description": "Payment",
-                        "trace_number": "",
-                        "return_code": "",
-                        "rta_id": ""
-                      },
-                      "parent_transaction_id": "",
-                      "external_reference_id": "",
-                      "purpose": "",
-                      "ofac": {
-                        "status": "pass",
-                        "last_updated_at": "2024-04-01T21:00:00Z"
-                      },
-                      "attachments": null,
-                      "metadata": null,
-                      "reconciliation": {
-                        "status": "reconciled",
-                        "master_account": [
-                          {
-                            "id": "",
-                            "transaction_id": "",
-                            "amount": "500.00"
-                          }
-                        ],
-                        "sub_account": [
-                          {
-                            "id": "",
-                            "transaction_id": "",
-                            "amount": "500.00"
-                          }
-                        ]
-                      },
-                      "timestamps": {
-                        "created_at": "2024-04-04T11:06:00Z",
-                        "settled_at": "2024-04-04T11:06:00Z",
-                        "modified_at": "2024-04-04T11:06:00Z"
-                      }
-                    }
+                  "simulate_ach_pull_example": {
+                    "$ref": "#/components/examples/simulate_ach_pull_example"
                   }
                 }
               }
@@ -7660,6 +7530,150 @@
           "has_more": "true",
           "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
           "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+        }
+      },
+      "simulate_ach_push_example": {
+        "value": {
+          "id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+          "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+          "master_account_holder_id": "mah_201e02c581a098a740456c5c19fcfcd6",
+          "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+          "sub_account_holder_id": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+          "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
+          "status": "received",
+          "amount": "500.00",
+          "currency": "usd",
+          "direction": "credit",
+          "method": "ach",
+          "type": "push",
+          "message": "incoming",
+          "description": "May Rent",
+          "available_balance": "1250.50",
+          "pending_credits": "500.00",
+          "pending_debits": "0.00",
+          "counterparty": {
+            "id": "",
+            "name": "John Doe",
+            "verification_status": "verified",
+            "account_number": "",
+            "routing_number": "121042882",
+            "account_type": "",
+            "bank_name": "Wells Fargo",
+            "beneficiary_bank": null,
+            "correspondent_bank": null,
+            "shipping_address": null
+          },
+          "ach": {
+            "effective_date": "2024-04-04",
+            "company_discretionary_data": "",
+            "company_entry_description": "Payment",
+            "trace_number": "12104288212098",
+            "return_code": "",
+            "rta_id": ""
+          },
+          "parent_transaction_id": "",
+          "external_reference_id": "",
+          "purpose": "",
+          "ofac": {
+            "status": "pass",
+            "last_updated_at": "2024-04-01T21:00:00Z"
+          },
+          "attachments": null,
+          "metadata": null,
+          "reconciliation": {
+            "status": "reconciled",
+            "master_account": [
+              {
+                "id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+                "transaction_id": "txn_a0b56852400c9fede6233fd8c2e60f9c",
+                "amount": "500.00"
+              }
+            ],
+            "sub_account": [
+              {
+                "id": "sub_bda1e562657c41e553104b10aad3fe70",
+                "transaction_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+                "amount": "500.00"
+              }
+            ]
+          },
+          "timestamps": {
+            "created_at": "2024-04-04T11:06:00Z",
+            "settled_at": "2024-04-04T11:06:00Z",
+            "modified_at": "2024-04-04T11:06:00Z"
+          }
+        }
+      },
+      "simulate_ach_pull_example": {
+        "value": {
+          "id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+          "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+          "master_account_holder_id": "mah_201e02c581a098a740456c5c19fcfcd6",
+          "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+          "sub_account_holder_id": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+          "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
+          "status": "received",
+          "amount": "500.00",
+          "currency": "usd",
+          "direction": "debit",
+          "method": "ach",
+          "type": "pull",
+          "message": "incoming",
+          "description": "May Rent",
+          "available_balance": "1250.50",
+          "pending_credits": "0.00",
+          "pending_debits": "500.00",
+          "counterparty": {
+            "id": "",
+            "name": "John Doe",
+            "verification_status": "verified",
+            "account_number": "",
+            "routing_number": "121042882",
+            "account_type": "",
+            "bank_name": "Wells Fargo",
+            "beneficiary_bank": null,
+            "correspondent_bank": null,
+            "shipping_address": null
+          },
+          "ach": {
+            "effective_date": "2024-04-04",
+            "company_discretionary_data": "",
+            "company_entry_description": "Payment",
+            "trace_number": "12104288212876",
+            "return_code": "",
+            "rta_id": ""
+          },
+          "parent_transaction_id": "",
+          "external_reference_id": "",
+          "purpose": "",
+          "ofac": {
+            "status": "pass",
+            "last_updated_at": "2024-04-01T21:00:00Z"
+          },
+          "attachments": null,
+          "metadata": null,
+          "reconciliation": {
+            "status": "reconciled",
+            "master_account": [
+              {
+                "id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+                "transaction_id": "txn_a0b56852400c9fede6233fd8c2e60f9c",
+                "amount": "500.00"
+              }
+            ],
+            "sub_account": [
+              {
+                "id": "sub_bda1e562657c41e553104b10aad3fe70",
+                "transaction_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+                "amount": "500.00"
+              }
+            ]
+          },
+          "timestamps": {
+            "created_at": "2024-04-04T11:06:00Z",
+            "settled_at": "2024-04-04T11:06:00Z",
+            "modified_at": "2024-04-04T11:06:00Z"
+          }
         }
       }
     }
