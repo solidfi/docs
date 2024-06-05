@@ -3165,52 +3165,52 @@
               "examples": {
                 "simulate_refund_auth_settle_example": {
                   "value": {
-                    "card_id": "",
+                    "card_id": "crd_7948d9a96706dd05360a340002de725f",
                     "amount": "120.00",
-                    "parent_txn_id": "",
+                    "parent_txn_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
                     "type": "refund",
                     "status": "settled"
                   }
                 },
                 "simulate_refund_example": {
                   "value": {
-                    "card_id": "",
+                    "card_id": "crd_7948d9a96706dd05360a340002de725f",
                     "amount": "120.00",
-                    "parent_txn_id": "",
+                    "parent_txn_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
                     "type": "refund",
                     "status": "pending"
                   }
                 },
                 "simulate_refund_settle_example": {
                   "value": {
-                    "card_id": "",
+                    "card_id": "crd_7948d9a96706dd05360a340002de725f",
                     "amount": "120.00",
-                    "parent_txn_id": "",
+                    "parent_txn_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
                     "type": "refund",
                     "status": "settled"
                   }
                 },
                 "simulate_reversal_example": {
                   "value": {
-                    "card_id": "",
+                    "card_id": "crd_7948d9a96706dd05360a340002de725f",
                     "amount": "120.00",
-                    "parent_txn_id": "",
+                    "parent_txn_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
                     "type": "reverse",
                     "status": "settled"
                   }
                 },
                 "simulate_settle_example": {
                   "value": {
-                    "card_id": "",
+                    "card_id": "crd_7948d9a96706dd05360a340002de725f",
                     "amount": "120.00",
-                    "parent_txn_id": "",
+                    "parent_txn_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
                     "type": "adjust",
                     "status": "settled"
                   }
                 },
                 "simulate_auth_example": {
                   "value": {
-                    "card_id": "",
+                    "card_id": "crd_7948d9a96706dd05360a340002de725f",
                     "amount": "93.50",
                     "type": "auth",
                     "status": "pending"
@@ -3218,7 +3218,7 @@
                 },
                 "simulate_auth_settle_example": {
                   "value": {
-                    "card_id": "",
+                    "card_id": "crd_7948d9a96706dd05360a340002de725f",
                     "amount": "120.00",
                     "type": "auth",
                     "status": "settled"
@@ -3232,7 +3232,7 @@
           "201": {
             "description": "Simulate an Auth Transaction / Simulate a Settle Transaction / Simulate a Reversal Transaction / Simulate a Refund Auth Transaction / Simulate a Refund Settle Transaction / Simulate a Refund Auth & Settle Transaction",
             "content": {
-              "text/plain": {
+              "application/json": {
                 "examples": {
                   "simulate_refund_auth_settle_example": {
                     "$ref": "#/components/examples/simulate_refund_auth_settle_example"
