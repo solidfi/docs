@@ -1849,7 +1849,7 @@
         }
       }
     },
-    "/v2/intra_account/push": {
+    "/v2/intraaccount/push": {
       "post": {
         "tags": [
           "Transactions"
