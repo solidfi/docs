@@ -275,7 +275,8 @@
       "v2/api-reference/cards/list-all-cards",
       "v2/api-reference/cards/create-a-card",
       "v2/api-reference/cards/retrieve-a-card",
-      "v2/api-reference/cards/update-a-card"
+      "v2/api-reference/cards/update-a-card",
+      "v2/api-reference/cards/activate-a-card"
     ]
   },
   {

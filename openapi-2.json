@@ -1705,6 +1705,90 @@
         }
       ]
     },
+    "/v2/card/{card_id}/activate": {
+      "patch": {
+        "tags": [
+          "Cards"
+        ],
+        "summary": "Activate a Card",
+        "description": "Activate a Card",
+        "operationId": "activateACard",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "expiry_month": {
+                    "type": "string",
+                    "example": "12"
+                  },
+                  "expiry_year": {
+                    "type": "string",
+                    "example": "2022"
+                  },
+                  "last4": {
+                    "type": "string",
+                    "example": "5275"
+                  }
+                }
+              },
+              "examples": {
+                "Activate a Card": {
+                  "value": {
+                    "expiry_month": "12",
+                    "expiry_year": "2022",
+                    "last4": "5275"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Activate a Card",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/card"
+                },
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/card_example"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {}
+        ]
+      },
+      "parameters": [
+        {
+          "name": "card_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
     "/v2/transaction": {
       "get": {
         "tags": [
