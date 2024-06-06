@@ -1789,6 +1789,72 @@
         }
       ]
     },
+    "/v2/card/{card_id}/show_token": {
+      "post": {
+        "tags": [
+          "Cards"
+        ],
+        "summary": "Show a Card",
+        "description": "Show a Card",
+        "operationId": "showACard",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Show a Card",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "crd_7948d9a96706dd05360a340002de725f"
+                    },
+                    "show_token": {
+                      "type": "string",
+                      "example": "card_show_test_66449e6614b54f9e838c74807268db09"
+                    }
+                  }
+                },
+                "examples": {
+                  "master_account_example": {
+                    "id": "crd_7948d9a96706dd05360a340002de725f",
+                    "show_token": "card_show_test_66449e6614b54f9e838c74807268db09"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {}
+        ]
+      },
+      "parameters": [
+        {
+          "name": "card_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
     "/v2/transaction": {
       "get": {
         "tags": [
