@@ -1705,6 +1705,42 @@
         }
       ]
     },
+    "/v2/intraaccount/push": {
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Originate an Intra Account Push",
+        "description": "Originate an Intra Account Push",
+        "operationId": "originateAnIntraAccountPush",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Originate an Intra Account Push",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        }
+      }
+    },
     "/v2/transaction": {
       "get": {
         "tags": [
@@ -1843,42 +1879,6 @@
                     "$ref": "#/components/examples/sub_ledger_transaction_example"
                   }
                 }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v2/intraaccount/push": {
-      "post": {
-        "tags": [
-          "Transactions"
-        ],
-        "summary": "Originate an Intra Account Push",
-        "description": "Originate an Intra Account Push",
-        "operationId": "originateAnIntraAccountPush",
-        "parameters": [
-          {
-            "name": "api-key",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{{api_key}}"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Originate an Intra Account Push",
-            "content": {
-              "application/json": {
               }
             }
           }
