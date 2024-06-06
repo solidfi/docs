@@ -1935,9 +1935,9 @@
         "tags": [
           "Transactions"
         ],
-        "summary": "Originate an ACH Push",
-        "description": "Originate an ACH Push",
-        "operationId": "originateAnAchPush",
+        "summary": "Originate an ACH Pushs",
+        "description": "Originate an ACH Pushs",
+        "operationId": "originateAnAchPushs",
         "parameters": [
           {
             "name": "api-key",
