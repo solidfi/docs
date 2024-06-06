@@ -284,6 +284,8 @@
     "pages": [
       "v2/api-reference/transactions/list-all-transactions",
       "v2/api-reference/transactions/sub-ledger-a-transaction",
+      "v2/api-reference/transactions/originate-an-intra-account-push",
+      "v2/api-reference/transactions/originate-an-intra-account-pull",
       "v2/api-reference/transactions/originate-an-ach-push",
       "v2/api-reference/transactions/originate-an-ach-pull",
       "v2/api-reference/transactions/originate-a-domestic-wire",
