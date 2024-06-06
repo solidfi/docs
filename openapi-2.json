@@ -1897,7 +1897,7 @@
                 }
               },
               "examples": {
-                "Originate an ACH Push": {
+                "Originate an Intra Account Push": {
                   "value": {
                     "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
                     "counterparty_id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
@@ -1920,8 +1920,8 @@
                   "$ref": "#/components/schemas/transaction"
                 },
                 "examples": {
-                  "ach_push_transaction_example": {
-                    "$ref": "#/components/examples/ach_push_transaction_example"
+                  "intra_account_push_transaction_example": {
+                    "$ref": "#/components/examples/intra_account_push_transaction_example"
                   }
                 }
               }
@@ -1978,7 +1978,7 @@
                 }
               },
               "examples": {
-                "Originate an ACH Pull": {
+                "Originate an Intra Account Pull": {
                   "value": {
                     "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
                     "counterparty_id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
@@ -2001,8 +2001,8 @@
                   "$ref": "#/components/schemas/transaction"
                 },
                 "examples": {
-                  "ach_pull_transaction_example": {
-                    "$ref": "#/components/examples/ach_pull_transaction_example"
+                  "intra_account_pull_transaction_example": {
+                    "$ref": "#/components/examples/intra_account_pull_transaction_example"
                   }
                 }
               }
