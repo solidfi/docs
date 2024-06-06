@@ -1915,15 +1915,6 @@
             "description": "Originate an Intra Account Push",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "$ref": "#/components/schemas/transaction"
-                },
-                "examples": {
-                  "intra_account_push_transaction_example": {
-                    "$ref": "#/components/examples/intra_account_push_transaction_example"
-                  }
-                }
               }
             }
           }
@@ -1935,9 +1926,9 @@
         "tags": [
           "Transactions"
         ],
-        "summary": "Originate an ACH Pushs",
-        "description": "Originate an ACH Pushs",
-        "operationId": "originateAnAchPushs",
+        "summary": "Originate an ACH Push",
+        "description": "Originate an ACH Push",
+        "operationId": "originateAnAchPush",
         "parameters": [
           {
             "name": "api-key",
