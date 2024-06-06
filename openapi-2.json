@@ -3396,9 +3396,9 @@
                     "type": "string",
                     "example": "refund",
                     "enum": [
-                      "auth", 
-                      "adjust", 
-                      "reverse", 
+                      "auth",
+                      "adjust",
+                      "reverse",
                       "refund"
                     ]
                   },
