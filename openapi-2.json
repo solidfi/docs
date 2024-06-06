@@ -1705,42 +1705,6 @@
         }
       ]
     },
-    "/v2/intraaccount/push": {
-      "post": {
-        "tags": [
-          "Transactions"
-        ],
-        "summary": "Originate an Intra Account Push",
-        "description": "Originate an Intra Account Push",
-        "operationId": "originateAnIntraAccountPush",
-        "parameters": [
-          {
-            "name": "api-key",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{{api_key}}"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Originate an Intra Account Push",
-            "content": {
-              "application/json": {
-              }
-            }
-          }
-        }
-      }
-    },
     "/v2/transaction": {
       "get": {
         "tags": [
@@ -1877,6 +1841,107 @@
                 "examples": {
                   "sub_ledger_transaction_example": {
                     "$ref": "#/components/examples/sub_ledger_transaction_example"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/ach/pushes": {
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Originate an ACH Push",
+        "description": "Originate an ACH Push",
+        "operationId": "originateAnAchPush",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                  },
+                  "counterparty_id": {
+                    "type": "string",
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "4570.00"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "May Salary"
+                  },
+                  "same_day": {
+                    "type": "string",
+                    "example": "true"
+                  },
+                  "effective_date": {
+                    "type": "string",
+                    "example": "2024-04-05"
+                  },
+                  "company_discretionary_data": {
+                    "type": "string",
+                    "example": "DIRECT DEPOSIT"
+                  },
+                  "company_entry_description": {
+                    "type": "string",
+                    "example": "PAYROLL"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "123-9088-2"
+                  }
+                }
+              },
+              "examples": {
+                "Originate an ACH Push": {
+                  "value": {
+                    "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "counterparty_id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "amount": "4570.00",
+                    "description": "May Salary",
+                    "same_day": "true",
+                    "effective_date": "2024-04-05",
+                    "company_discretionary_data": "DIRECT DEPOSIT",
+                    "company_entry_description": "PAYROLL",
+                    "external_reference_id": "123-9088-2"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Originate an ACH Push",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
+                "examples": {
+                  "ach_push_transaction_example": {
+                    "$ref": "#/components/examples/ach_push_transaction_example"
                   }
                 }
               }
