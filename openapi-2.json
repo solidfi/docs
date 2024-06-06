@@ -6571,7 +6571,7 @@
           "amount": "4570.00",
           "currency": "usd",
           "direction": "debit",
-          "method": "ach",
+          "method": "intra_account",
           "type": "push",
           "message": "outgoing",
           "description": "May Salary",
