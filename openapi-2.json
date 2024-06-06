@@ -1856,7 +1856,7 @@
         ],
         "summary": "Originate an ACH Push",
         "description": "Originate an ACH Push",
-        "operationId": "originateAnAchPush",
+        "operationId": "originateAnAchPushes",
         "parameters": [
           {
             "name": "api-key",
