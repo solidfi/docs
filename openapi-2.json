@@ -1808,12 +1808,6 @@
             "required": true
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Show a Card",
