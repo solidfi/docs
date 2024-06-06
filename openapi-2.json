@@ -1834,8 +1834,10 @@
                 },
                 "examples": {
                   "master_account_example": {
-                    "id": "crd_7948d9a96706dd05360a340002de725f",
-                    "show_token": "card_show_test_66449e6614b54f9e838c74807268db09"
+                    "value": {
+                      "id": "crd_7948d9a96706dd05360a340002de725f",
+                      "show_token": "card_show_test_66449e6614b54f9e838c74807268db09"
+                    }
                   }
                 }
               }
