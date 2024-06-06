@@ -1871,17 +1871,6 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "examples": {
-                "Originate an Intra Account Push": {
-                  "value": {
-                    "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
-                    "counterparty_id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
-                    "amount": "4570.00",
-                    "description": "May Salary",
-                    "external_reference_id": "123-9088-2"
-                  }
-                }
-              }
             }
           }
         },
