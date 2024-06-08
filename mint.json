@@ -47,7 +47,7 @@
     ],
     "navigation": [
         {
-            "group": "General",
+            "group": "Gen",
             "pages": [
               "general/introduction",
               "general/dashboard",
