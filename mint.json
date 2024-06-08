@@ -9,7 +9,7 @@
     },
     "modeToggle": {
         "default": "light",
-        "isHidden": false
+        "isHidden": true
     },
     "versions": ["v2", "v1"],
     "topbarCtaButton": {
