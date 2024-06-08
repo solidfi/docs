@@ -3675,35 +3675,43 @@
         "properties": {
           "id": {
             "type": "string",
-            "example": "sub_bda1e562657c41e553104b10aad3fe70"
+            "example": "sub_bda1e562657c41e553104b10aad3fe70",
+            "description": "unique id of the sub account"
           },
           "client_id": {
             "type": "string",
-            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce"
+            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+            "description": "unique id of the client that created the master account"
           },
           "master_account_holder_id": {
             "type": "string",
-            "example": "mah_201e02c581a098a740456c5c19fcfcd6"
+            "example": "mah_201e02c581a098a740456c5c19fcfcd6",
+            "description": "unique id of the master account holder"
           },
           "master_account_id": {
             "type": "string",
-            "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+            "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
+            "description": "unique id of the master account under which the sub account was created"
           },
           "sub_account_holder_id": {
             "type": "string",
-            "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752"
+            "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+            "description": "unique id of the sub account holder"
           },
           "sub_account_holder_name": {
             "type": "string",
-            "example": "Ace LLC"
+            "example": "Ace LLC",
+            "description": "sub account holder name"
           },
           "label": {
             "type": "string",
-            "example": "Ace payments"
+            "example": "Ace payments",
+            "description": "label of the sub account"
           },
           "type": {
             "type": "string",
             "example": "cash",
+            "description": "type of the sub account",
             "enum": [
               "cash",
               "prepaid"
@@ -3711,42 +3719,51 @@
           },
           "account_number": {
             "type": "string",
-            "example": "9540861337293709"
+            "example": "9540861337293709",
+            "description": "account number of the sub account"
           },
           "routing_number": {
             "type": "string",
-            "example": "123206972"
+            "example": "123206972",
+            "description": "9 digit routing number of the sub account"
           },
           "sponsor_bank": {
             "type": "string",
-            "example": "Lewis and Clark Bank"
+            "example": "Lewis and Clark Bank",
+            "description": "sponsor bank name"
           },
           "available_balance": {
             "type": "string",
-            "example": "0.00"
+            "example": "0.00",
+            "description": "available balance in the sub account "
           },
           "pending_credits": {
             "type": "string",
-            "example": "0.00"
+            "example": "0.00",
+            "description": "total pending credits to the sub account"
           },
           "pending_debits": {
             "type": "string",
-            "example": "0.00"
+            "example": "0.00",
+            "description": "total pending debits to the sub account"
           },
           "currency": {
             "type": "string",
             "example": "usd",
+            "description": "currency of the sub account",
             "enum": [
               "usd"
             ]
           },
           "external_reference_id": {
             "type": "string",
-            "example": "XVH-27LGDFX"
+            "example": "XVH-27LGDFX",
+            "description": "unique id to cross-reference records with external systems"
           },
           "purpose": {
             "type": "string",
-            "example": "Sub account to pay offshore dev team"
+            "example": "Sub account to pay offshore dev team",
+            "description": "purpose of sub account"
           },
           "attachments": {
             "type": "array",
@@ -3761,6 +3778,7 @@
           "status": {
             "type": "string",
             "example": "open",
+            "description": "status of sub account",
             "enum": [
               "open",
               "closed",
@@ -3856,8 +3874,7 @@
           },
           "metadata": {
             "type": "object",
-            "$ref": "#/components/schemas/metadata",
-            "description": "Metadata takes free-form key-value pairs. You may send metadata when you create an object (POST) and when updating the object (PATCH).  If you would like to remove metadata that is already on an object, you can unset it by passing in the key-value pair with an empty string, like this:\n {  \"key\": \"\" }"
+            "$ref": "#/components/schemas/metadata"
           },
           "status": {
             "type": "string",
@@ -4279,6 +4296,7 @@
       },
       "metadata": {
         "type": "object",
+        "description": "Metadata takes free-form key-value pairs. You may send metadata when you create an object (POST) and when updating the object (PATCH).  If you would like to remove metadata that is already on an object, you can unset it by passing in the key-value pair with an empty string, like this:\n {  \"key\": \"\" }",
         "properties": {
           "customer_code": {
             "type": "string",
