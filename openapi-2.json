@@ -3781,72 +3781,88 @@
         "properties": {
           "id": {
             "type": "string",
-            "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+            "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
+            "description": "unique id of the master account"
           },
           "client_id": {
             "type": "string",
-            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce"
+            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+            "description": "unique id of the client that created the master account"
           },
           "master_account_holder_id": {
             "type": "string",
-            "example": "mah_201e02c581a098a740456c5c19fcfcd6"
+            "example": "mah_201e02c581a098a740456c5c19fcfcd6",
+            "description": "unique id of the master account holder"
           },
           "label": {
             "type": "string",
-            "example": "Payments Account"
+            "example": "Payments Account",
+            "description": "label of the master account"
           },
           "available_balance": {
             "type": "string",
-            "example": "104100.41"
+            "example": "104100.41",
+            "description": "available balance in the master account"
           },
           "pending_credits": {
             "type": "string",
-            "example": "1198.50"
+            "example": "1198.50",
+            "description": "total pending credits to the master account"
           },
           "pending_debits": {
             "type": "string",
-            "example": "390.10"
+            "example": "390.10",
+            "description": "total pending debits to the master account"
           },
           "account_number": {
             "type": "string",
-            "example": "9545931209"
+            "example": "9545931209",
+            "description": "account number of the master account"
           },
           "routing_number": {
             "type": "string",
-            "example": "123321123"
+            "example": "123321123",
+            "description": "9 digit routing number of the master account"
           },
           "sponsor_bank": {
             "type": "string",
-            "example": "Lewis and Clark Bank"
+            "example": "Lewis and Clark Bank",
+            "description": "sponsor bank name"
           },
           "currency": {
             "type": "string",
             "example": "usd",
+            "description": "currency of the master account",
             "enum": [
               "usd"
             ]
           },
           "external_reference_id": {
             "type": "string",
-            "example": "XV-H27LGD-FX"
+            "example": "XV-H27LGD-FX",
+            "description": "unique id to cross-reference records with external systems"
           },
           "purpose": {
             "type": "string",
-            "example": "Payment Ops Master Account"
+            "example": "Payment Ops Master Account",
+            "description": "purpose of master account"
           },
           "attachments": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/attachment_object"
+              "$ref": "#/components/schemas/attachment_object",
+              "description": ""
             }
           },
           "metadata": {
             "type": "object",
-            "$ref": "#/components/schemas/metadata"
+            "$ref": "#/components/schemas/metadata",
+            "description": ""
           },
           "status": {
             "type": "string",
             "example": "open",
+            "description": "status of master account",
             "enum": [
               "open",
               "closed",
@@ -3858,7 +3874,7 @@
           },
           "timestamps": {
             "type": "object",
-            "$ref": "#/components/schemas/non_entity_timestamp"
+            "$ref": "#/components/schemas/master_account_timestamp"
           }
         }
       },
@@ -4271,6 +4287,26 @@
           "deactivated_at": {
             "type": "string",
             "example": "2024-04-01T21:00:00Z"
+          }
+        }
+      },
+      "master_account_timestamp": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the master account was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the master account was updated"
+          },
+          "closed_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the master account was closed"
           }
         }
       },
