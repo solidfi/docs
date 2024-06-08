@@ -4946,6 +4946,7 @@
                 "description": "time at which the attachment was deleted"
               }
             }
+          }
         }
       },
       "list_attachment": {
