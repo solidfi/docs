@@ -3239,7 +3239,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "$ref": "#/components/schemas/attachment"
+                  "$ref": "#/components/schemas/create_attachment_response"
                 },
                 "examples": {
                   "list_sub_account_holder_example": {
@@ -4874,24 +4874,78 @@
         "properties": {
           "id": {
             "type": "string",
-            "example": "att_a8d2b191fa0e960d8e49a4bfd320e07b"
+            "example": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
+            "description": "unique id of the attachment created"
           },
           "reference_id": {
             "type": "string",
-            "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+            "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+            "description": "resource id to which the attachment belongs"
           },
           "label": {
             "type": "string",
-            "example": "formation"
+            "example": "formation",
+            "description": "label of the attachment"
           },
           "url": {
             "type": "string",
-            "example": "http://bucket.s3-website-us-east-1.amazonaws.com"
+            "example": "http://bucket.s3-website-us-east-1.amazonaws.com",
+            "description": "url to download the attachment"
           },
-          "created_at": {
-            "type": "string",
-            "example": "2024-04-04T11:06:00Z"
+          "timestamps": {
+            "type": "object",
+            "properties": {
+              "created_at": {
+                "type": "string",
+                "example": "2024-04-04T11:06:00Z",
+                "description": "time at which the attachment was created"
+              },
+              "deleted_at": {
+                "type": "string",
+                "example": "2024-04-04T11:06:00Z",
+                "description": "time at which the attachment was deleted"
+              }
+            }
           }
+        }
+      },
+      "create_attachment_response": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
+            "description": "unique id of the attachment created"
+          },
+          "reference_id": {
+            "type": "string",
+            "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+            "description": "resource id to which the attachment belongs"
+          },
+          "label": {
+            "type": "string",
+            "example": "formation",
+            "description": "label of the attachment"
+          },
+          "url": {
+            "type": "string",
+            "example": "http://bucket.s3-website-us-east-1.amazonaws.com",
+            "description": "url to upload the attachment"
+          },
+          "timestamps": {
+            "type": "object",
+            "properties": {
+              "created_at": {
+                "type": "string",
+                "example": "2024-04-04T11:06:00Z",
+                "description": "time at which the attachment was created"
+              },
+              "deleted_at": {
+                "type": "string",
+                "example": "2024-04-04T11:06:00Z",
+                "description": "time at which the attachment was deleted"
+              }
+            }
         }
       },
       "list_attachment": {
