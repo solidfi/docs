@@ -3,9 +3,9 @@
     "logo": "/logo.png",
     "favicon": "/favicon.png",
     "colors": {
-      "primary": "#248BF5",
-      "light": "#55A9FF",
-      "dark": "#248BF5"
+      "primary": "#22C55E",
+      "light": "#FAFAF9",
+      "dark": "#0C0A09"
     },
     "modeToggle": {
         "default": "light",
