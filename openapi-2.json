@@ -3857,7 +3857,7 @@
           "metadata": {
             "type": "object",
             "$ref": "#/components/schemas/metadata",
-            "description": ""
+            "description": "Metadata takes free-form key-value pairs. You may send metadata when you create an object (POST) and when updating the object (PATCH).  If you would like to remove metadata that is already on an object, you can unset it by passing in the key-value pair with an empty string, like this:\n {  \"key\": \"\" }"
           },
           "status": {
             "type": "string",
@@ -4223,17 +4223,30 @@
       "attachment_object": {
         "type": "object",
         "properties": {
-          "label": {
-            "type": "string",
-            "example": "formation"
-          },
           "id": {
             "type": "string",
-            "example": "att_a8d2b191fa0e960d8e49a4bfd320e07b"
+            "example": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
+            "description": "unique id of the attachment created"
           },
-          "created_at": {
+          "label": {
             "type": "string",
-            "example": "2024-04-01T21:00:00Z"
+            "example": "formation",
+            "description": "label of the attachment"
+          },
+          "timestamps": {
+            "type": "object",
+            "properties": {
+              "created_at": {
+              "type": "string",
+              "example": "2024-04-01T21:00:00Z",
+              "description": "date and time at which the attachment was created"
+              },
+              "deleted_at": {
+                "type": "string",
+                "example": "2024-04-01T21:00:00Z",
+                "description": "date and time at which the attachment was deleted"
+              }
+            }
           }
         }
       },
