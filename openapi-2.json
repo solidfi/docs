@@ -7,10 +7,10 @@
   },
   "servers": [
     {
-      "url": "https://api.solidfi.com"
+      "url": "https://api.sandbox.solidfi.com"
     },
     {
-      "url": "https://api.solidfi.com"
+      "url": "https://api.prod.solidfi.com"
     }
   ],
   "paths": {
@@ -498,7 +498,7 @@
               "examples": {
                 "Create a Sub Account": {
                   "value": {
-                    "sub_account_holder_id": "",
+                    "sub_account_holder_id": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
                     "label": "Ace payments",
                     "type": "cash"
                   }
