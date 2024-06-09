@@ -4417,6 +4417,26 @@
           }
         }
       },
+      "counterparty_timestamp": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the counterparty was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the counterparty was updated"
+          },
+          "deactivated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the counterparty was deactivated"
+          }
+        }
+      },
       "entity_timestamp": {
         "type": "object",
         "properties": {
@@ -4540,7 +4560,7 @@
           },
           "ofac": {
             "type": "object",
-            "$ref": "#/components/schemas/ofac"
+            "$ref": "#/components/schemas/sub_account_holder_timestamp"
           },
           "external_reference_id": {
             "type": "string",
@@ -4585,11 +4605,13 @@
         "properties": {
           "sub_account_number": {
             "type": "string",
-            "example": "95483674098723"
+            "example": "95483674098723",
+            "description": "sub account number of the counterparty"
           },
           "sub_account_id": {
             "type": "string",
-            "example": "sub_cda1e562657c41e553104b10aad3fe70"
+            "example": "sub_cda1e562657c41e553104b10aad3fe70",
+            "description": "sub account id of the counterparty"
           }
         }
       },
@@ -4598,15 +4620,18 @@
         "properties": {
           "account_number": {
             "type": "string",
-            "example": "98324502"
+            "example": "98324502",
+            "description": "bank account number of the counterparty"
           },
           "routing_number": {
             "type": "string",
-            "example": "121042882"
+            "example": "121042882",
+            "description": "ACH routing number of the counterparty's bank"
           },
           "account_type": {
             "type": "string",
             "example": "business_checking",
+            "description": "type of the counterparty's bank account",
             "enum": [
               "business_checking",
               "business_savings",
@@ -4616,10 +4641,12 @@
           },
           "bank_name": {
             "type": "string",
-            "example": "Wells Fargo"
+            "example": "Wells Fargo",
+            "description": "name of counterparty's bank"
           },
           "verification_status": {
             "type": "string",
+            "description": "if the account is verified - true or false",
             "example": "verified",
             "enum": [
               "verified",
@@ -4633,15 +4660,18 @@
         "properties": {
           "account_number": {
             "type": "string",
-            "example": "98324502"
+            "example": "98324502",
+            "description": "bank account number of the counterparty"
           },
           "routing_number": {
             "type": "string",
-            "example": "121042882"
+            "example": "121042882",
+            "description": "Wire routing number of the counterparty's bank"
           },
           "account_type": {
             "type": "string",
             "example": "business_checking",
+            "description": "type of counterparty's bank account",
             "enum": [
               "business_checking",
               "business_savings",
@@ -4651,7 +4681,8 @@
           },
           "bank_name": {
             "type": "string",
-            "example": "Wells Fargo"
+            "example": "Wells Fargo",
+            "description": "name of counterparty's bank"
           }
         }
       },
@@ -4660,7 +4691,8 @@
         "properties": {
           "account_number": {
             "type": "string",
-            "example": "920020006167511"
+            "example": "920020006167511",
+            "description": "bank account number of the counterparty"
           },
           "beneficiary_bank": {
             "type": "object",
@@ -4677,38 +4709,46 @@
         "properties": {
           "identifier_code": {
             "type": "string",
-            "example": "ICICINBBNRI"
+            "example": "ICICINBBNRI",
+            "description": "SWIFT/BIC code of counterparty's bank"
           },
           "name": {
             "type": "string",
-            "example": "ICICI Bank"
+            "example": "ICICI Bank",
+            "description": "name of counterparty's bank"
           },
           "address": {
             "type": "object",
             "properties": {
               "line1": {
                 "type": "string",
-                "example": "256 Main St"
+                "example": "256 Main St",
+                "description": "line 1 of the address"
               },
               "line2": {
                 "type": "string",
-                "example": "Suite 201"
+                "example": "Suite 201",
+                "description": "line 2 of the address"
               },
               "city": {
                 "type": "string",
-                "example": "Bengaluru"
+                "example": "Bengaluru",
+                "description": "city of the address"
               },
               "state": {
                 "type": "string",
-                "example": "KA"
+                "example": "KA",
+                "description": "2-Letter state abbreviation (ex: CA)"
               },
               "country": {
                 "type": "string",
-                "example": "IN"
+                "example": "IN",
+                "description": "2-letter abbreviated country code (ex: US)"
               },
               "postal_code": {
                 "type": "string",
-                "example": "900009"
+                "example": "900009",
+                "description": "postal code"
               }
             }
           }
@@ -4719,38 +4759,46 @@
         "properties": {
           "identifier_code": {
             "type": "string",
-            "example": "SCBLUS33XXX"
+            "example": "SCBLUS33XXX",
+            "description": "SWIFT/BIC code of counterparty's correspondent bank"
           },
           "name": {
             "type": "string",
-            "example": "STANDARD CHARTERED BANK"
+            "example": "STANDARD CHARTERED BANK",
+            "description": "name of counterparty's correspondent bank"
           },
           "address": {
             "type": "object",
             "properties": {
               "line1": {
                 "type": "string",
-                "example": "1095 12th Ave"
+                "example": "1095 12th Ave",
+                "description": "line 1 of the address"
               },
               "line2": {
                 "type": "string",
-                "example": "Suite 201"
+                "example": "Suite 201",
+                "description": "line 2 of the address"
               },
               "city": {
                 "type": "string",
-                "example": "New York"
+                "example": "New York",
+                "description": "city of the address"
               },
               "state": {
                 "type": "string",
-                "example": "NY"
+                "example": "NY",
+                "description": "2-Letter US state abbreviation (ex: CA)"
               },
               "country": {
                 "type": "string",
-                "example": "US"
+                "example": "US",
+                "description": "2-letter abbreviated country code (ex: US)"
               },
               "postal_code": {
                 "type": "string",
-                "example": "10001"
+                "example": "10001",
+                "description": "postal code"
               }
             }
           }
@@ -4761,15 +4809,18 @@
         "properties": {
           "account_number": {
             "type": "string",
-            "example": "98324502"
+            "example": "98324502",
+            "description": "bank account number of the counterparty"
           },
           "routing_number": {
             "type": "string",
-            "example": "121042882"
+            "example": "121042882",
+            "description": "RTP routing number of the counterparty's bank"
           },
           "account_type": {
             "type": "string",
             "example": "business_checking",
+            "description": "type of the counterparty's bank account",
             "enum": [
               "business_checking",
               "business_savings",
@@ -4779,11 +4830,13 @@
           },
           "bank_name": {
             "type": "string",
-            "example": "Wells Fargo"
+            "example": "Wells Fargo",
+            "description": "name of counterparty's bank"
           },
           "verification_status": {
             "type": "string",
             "example": "verified",
+            "description": "if the account is verified",
             "enum": [
               "verified",
               "unverified"
@@ -4796,15 +4849,18 @@
         "properties": {
           "account_number": {
             "type": "string",
-            "example": "98324502"
+            "example": "98324502",
+            "description": "bank account number of the counterparty"
           },
           "routing_number": {
             "type": "string",
-            "example": "121042882"
+            "example": "121042882",
+            "description": "FedNow routing number of the counterparty's bank"
           },
           "account_type": {
             "type": "string",
             "example": "business_checking",
+            "description": "type of the counterparty's bank account",
             "enum": [
               "business_checking",
               "business_savings",
@@ -4814,11 +4870,13 @@
           },
           "bank_name": {
             "type": "string",
-            "example": "Wells Fargo"
+            "example": "Wells Fargo",
+            "description": "name of counterparty's bank"
           },
           "verification_status": {
             "type": "string",
             "example": "verified",
+            "description": "if the account is verified or not",
             "enum": [
               "verified",
               "unverified"
@@ -4834,27 +4892,33 @@
             "properties": {
               "line1": {
                 "type": "string",
-                "example": "123 Main St"
+                "example": "123 Main St",
+                "description": "line 1 of the address"
               },
               "line2": {
                 "type": "string",
-                "example": "Suite 201"
+                "example": "Suite 201",
+                "description": "line 2 of the address"
               },
               "city": {
                 "type": "string",
-                "example": "New York"
+                "example": "New York",
+                "description": "city of the address"
               },
               "state": {
                 "type": "string",
-                "example": "NY"
+                "example": "NY",
+                "description": "2-Letter US state abbreviation (ex: CA)"
               },
               "country": {
                 "type": "string",
-                "example": "US"
+                "example": "US",
+                "description": "2-letter abbreviated country code (ex: US)"
               },
               "postal_code": {
                 "type": "string",
-                "example": "10001"
+                "example": "10001",
+                "description": "postal code"
               }
             }
           }
@@ -4865,56 +4929,68 @@
         "properties": {
           "card_number": {
             "type": "string",
-            "example": "tok_live_6GVyHuQR7aAjCZivYzLbuP_9990"
+            "example": "tok_live_6GVyHuQR7aAjCZivYzLbuP_9990",
+            "description": "tokenized card number of counterparty's debit card"
           },
           "last4": {
             "type": "string",
-            "example": "9990"
+            "example": "9990",
+            "description": "last4 of counterparty's debit card"
           },
           "expiry_month": {
             "type": "string",
-            "example": "10"
+            "example": "10",
+            "description": "expiration month of counterparty's debit card"
           },
           "expiry_year": {
             "type": "string",
-            "example": "2024"
+            "example": "2024",
+            "description": "expiration year of counterparty's debit card"
           },
           "cvv": {
             "type": "string",
-            "example": "tok_live_7CVyHuQR7aAjCZivYzLbuP_9990"
+            "example": "tok_live_7CVyHuQR7aAjCZivYzLbuP_9990",
+            "description": "cvv code of counterparty's debit card"
           },
           "address": {
             "type": "object",
             "properties": {
               "line1": {
                 "type": "string",
-                "example": "123 Main St"
+                "example": "123 Main St",
+                "description": "line 1 of the address"
               },
               "line2": {
                 "type": "string",
-                "example": "Suite 201"
+                "example": "Suite 201",
+                "description": "line 2 of the address"
               },
               "city": {
                 "type": "string",
-                "example": "New York"
+                "example": "New York",
+                "description": "city of the address"
               },
               "state": {
                 "type": "string",
-                "example": "NY"
+                "example": "NY",
+                "description": "2-Letter US state abbreviation (ex: CA)"
               },
               "country": {
                 "type": "string",
-                "example": "US"
+                "example": "US",
+                "description": "2-letter abbreviated country code (ex: US)"
               },
               "postal_code": {
                 "type": "string",
-                "example": "10001"
+                "example": "10001",
+                "description": "postal code"
               }
             }
           },
           "pull_enabled": {
             "type": "string",
             "example": "true",
+            "description": "if debit pull is enabled or disabled by the debit card issuer",
             "enum": [
               "true",
               "false"
@@ -4923,6 +4999,7 @@
           "push_enabled": {
             "type": "string",
             "example": "true",
+            "description": "if debit pull is enabled or disabled by the debit card issuer",
             "enum": [
               "true",
               "false"
@@ -4935,35 +5012,43 @@
         "properties": {
           "id": {
             "type": "string",
-            "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+            "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+            "description": "unique id of the counterparty"
           },
           "client_id": {
             "type": "string",
-            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce"
+            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+            "description": "unique id of the client to which the counterparty belongs"
           },
           "master_account_holder_id": {
             "type": "string",
-            "example": "mah_201e02c581a098a740456c5c19fcfcd6"
+            "example": "mah_201e02c581a098a740456c5c19fcfcd6",
+            "description": "unique id of the master account holder"
           },
           "master_account_id": {
             "type": "string",
-            "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+            "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
+            "description": "unique id of the master account"
           },
           "sub_account_holder_id": {
             "type": "string",
-            "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752"
+            "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+            "description": "unique id of the sub account holder"
           },
           "sub_account_id": {
             "type": "string",
-            "example": "sub_bda1e562657c41e553104b10aad3fe70"
+            "example": "sub_bda1e562657c41e553104b10aad3fe70",
+            "description": "unique id of the sub account under which the counterparty was created"
           },
           "label": {
             "type": "string",
-            "example": "Development Vendor"
+            "example": "Development Vendor",
+            "description": "label of the counterparty"
           },
           "type": {
             "type": "string",
             "example": "person",
+            "description": "type of counterparty",
             "enum": [
               "person",
               "business"
@@ -5011,15 +5096,17 @@
           },
           "purpose": {
             "type": "string",
-            "example": "Offshore dev center"
+            "example": "Offshore dev center",
+            "description": "purpose of counterparty"
           },
           "external_reference_id": {
             "type": "string",
-            "example": "TW-9L1L2-UVV"
+            "example": "TW-9L1L2-UVV",
+            "description": "unique id to cross-reference records with external systems"
           },
           "ofac": {
             "type": "object",
-            "$ref": "#/components/schemas/ofac"
+            "$ref": "#/components/schemas/counterparty_ofac"
           },
           "attachments": {
             "type": "array",
@@ -5034,6 +5121,7 @@
           "status": {
             "type": "string",
             "example": "activated",
+            "description": "status of counterparty",
             "enum": [
               "pending_activation",
               "activated",
@@ -5044,7 +5132,7 @@
           },
           "timestamps": {
             "type": "object",
-            "$ref": "#/components/schemas/entity_timestamp"
+            "$ref": "#/components/schemas/counterparty_timestamp"
           }
         }
       },
