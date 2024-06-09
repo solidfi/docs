@@ -4012,17 +4012,17 @@
           "date_of_birth": {
             "type": "string",
             "example": "1974-01-01",
-            "description": ""
+            "description": "date of birth of the person (YYYY-MM-DD)"
           },
           "phone": {
             "type": "string",
             "example": "+19418405843",
-            "description": ""
+            "description": "phone number of the person (E.164, max 16 chars, starts with +)"
           },
           "email": {
             "type": "string",
             "example": "jane.doe@gmail.com",
-            "description": ""
+            "description": "email of the person"
           },
           "address": {
             "type": "object",
@@ -4030,32 +4030,32 @@
               "line1": {
                 "type": "string",
                 "example": "123 Main St",
-                "description": ""
+                "description": "line 1 of the address"
               },
               "line2": {
                 "type": "string",
                 "example": "",
-                "description": ""
+                "description": "line 2 of the address"
               },
               "city": {
                 "type": "string",
                 "example": "New York",
-                "description": ""
+                "description": "city of the address"
               },
               "state": {
                 "type": "string",
                 "example": "NY",
-                "description": ""
+                "description": "2-Letter US state abbreviation (ex: CA)"
               },
               "country": {
                 "type": "string",
                 "example": "US",
-                "description": ""
+                "description": "2-letter abbreviated country code (ex: US)"
               },
               "postal_code": {
                 "type": "string",
                 "example": "10001",
-                "description": ""
+                "description": "postal code"
               }
             }
           }
@@ -4066,15 +4066,18 @@
         "properties": {
           "legal_name": {
             "type": "string",
-            "example": "Ace LLC"
+            "example": "Ace LLC",
+            "description": "legal name of the business"
           },
           "dba": {
             "type": "string",
-            "example": "Ace Inc"
+            "example": "Ace Inc",
+            "description": "doing business as"
           },
           "entity_type": {
             "type": "string",
             "example": "limited_liability_company",
+            "description": "entity type of the business",
             "enum": [
               "sole_proprietor",
               "single_member_llc",
@@ -4097,6 +4100,7 @@
           "id_type": {
             "type": "string",
             "example": "ein",
+            "description": "type of the business identity used",
             "enum": [
               "ein",
               "other"
@@ -4104,19 +4108,23 @@
           },
           "id_number": {
             "type": "string",
-            "example": "187654321"
+            "example": "187654321",
+            "description": "- if id_type is ssn, id_number must be full SSN \n - if id_type is ein, id_number must be ein number \n - if id_type is other, id_number must be unique number of the id \n \n id_number must be unique, as in, you cannot use the same id_number for two different businesses"
           },
           "phone": {
             "type": "string",
-            "example": "16604491146"
+            "example": "16604491146",
+            "description": "phone number of the business (E.164, max 16 chars, starts with +)"
           },
           "email": {
             "type": "string",
-            "example": "support@ace.com"
+            "example": "support@ace.com",
+            "description": "email of the business"
           },
           "formation_date": {
             "type": "string",
-            "example": "2018-02-18"
+            "example": "2018-02-18",
+            "description": "date business was formed (YYYY-MM-DD)"
           },
           "members": {
             "type": "array",
@@ -4131,19 +4139,23 @@
         "properties": {
           "first_name": {
             "type": "string",
-            "example": "Jane"
+            "example": "Jane",
+            "description": "first name of the person"
           },
           "middle_name": {
             "type": "string",
-            "example": "Jack"
+            "example": "Jack",
+            "description": "middle name of the person"
           },
           "last_name": {
             "type": "string",
-            "example": "Doe"
+            "example": "Doe",
+            "description": "last name of the person"
           },
           "id_type": {
             "type": "string",
             "example": "ssn",
+            "description": "type of identity used",
             "enum": [
               "ssn",
               "passport",
@@ -4152,60 +4164,73 @@
           },
           "id_number": {
             "type": "string",
-            "example": "945678934"
+            "example": "945678934",
+            "description": "- if id_type is ssn, id_number must be full SSN \n - if id_type is passport, id_number must be passport number \n - if id_type is other, id_number must be unique number of the id \n \n id_number must be unique, as in, you cannot use the same id_number for two different persons"
           },
           "date_of_birth": {
             "type": "string",
-            "example": "1974-01-01"
+            "example": "1974-01-01",
+            "description": "date of birth of the person (YYYY-MM-DD)"
           },
           "phone": {
             "type": "string",
-            "example": "+19418405843"
+            "example": "+19418405843",
+            "description": "phone number of the person (E.164, max 16 chars, starts with +)"
           },
           "email": {
             "type": "string",
-            "example": "jane.doe@gmail.com"
+            "example": "jane.doe@gmail.com",
+            "description": "email of the person"
           },
           "address": {
             "type": "object",
             "properties": {
               "line1": {
                 "type": "string",
-                "example": "123 Main St"
+                "example": "123 Main St",
+                "description": "line 1 of the address"
               },
               "line2": {
                 "type": "string",
-                "example": ""
+                "example": "",
+                "description": "line 2 of the address (optional)"
               },
               "city": {
                 "type": "string",
-                "example": "New York"
+                "example": "New York",
+                "description": "city of the address"
               },
               "state": {
                 "type": "string",
-                "example": "NY"
+                "example": "NY",
+                "description": "2-Letter US state abbreviation (ex: CA)"
               },
               "country": {
                 "type": "string",
-                "example": "US"
+                "example": "US",
+                "description": "2-letter abbreviated country code (ex: US)"
               },
               "postal_code": {
                 "type": "string",
-                "example": "10001"
+                "example": "10001",
+                "description": "postal code"
               }
             }
           },
           "ownership": {
             "type": "number",
-            "example": 50.59
+            "example": 50.59,
+            "description": "ownership percentage in the business"
           },
           "title": {
             "type": "string",
-            "example": "CEO"
+            "example": "CEO",
+            "description": "title of the member in the business"
           },
           "control_person": {
             "type": "string",
             "example": "true",
+            "description": "true if this member is the control person of the business",
             "enum": [
               "true",
               "false"
@@ -4219,6 +4244,7 @@
           "status": {
             "type": "string",
             "example": "pass",
+            "description": "verification status of the sub account holder",
             "enum": [
               "pass",
               "fail"
@@ -4226,11 +4252,70 @@
           },
           "method": {
             "type": "string",
-            "example": "persona"
+            "example": "persona",
+            "description": "sub account holder verification method. It could be an external vendor used to verify the person or business (Ex: alloy)"
           },
           "url": {
             "type": "string",
-            "example": "https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV"
+            "example": "https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV",
+            "description": "url to the person or business verification result. It could be a link to the external vendor"
+          }
+        }
+      },
+      "sub_account_holder_ofac": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "pass",
+            "description": "ofac status of the sub account holder",
+            "enum": [
+              "pass",
+              "fail"
+            ]
+          },
+          "last_updated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "last date and time at which the sub account holder's ofac status was checked"
+          }
+        }
+      },
+      "counterparty_ofac": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "pass",
+            "description": "ofac status of the counterparty",
+            "enum": [
+              "pass",
+              "fail"
+            ]
+          },
+          "last_updated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "last date and time at which the counterparty's ofac status was checked"
+          }
+        }
+      },
+      "cardholder_holder_ofac": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "pass",
+            "description": "ofac status of the card holder",
+            "enum": [
+              "pass",
+              "fail"
+            ]
+          },
+          "last_updated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "last date and time at which the card holder's ofac status was checked"
           }
         }
       },
@@ -4268,9 +4353,9 @@
             "type": "object",
             "properties": {
               "created_at": {
-              "type": "string",
-              "example": "2024-04-01T21:00:00Z",
-              "description": "date and time at which the attachment was created"
+                "type": "string",
+                "example": "2024-04-01T21:00:00Z",
+                "description": "date and time at which the attachment was created"
               },
               "deleted_at": {
                 "type": "string",
@@ -4311,6 +4396,25 @@
       "metadata": {
         "type": "object",
         "description": "Metadata takes free-form key-value pairs. You may send metadata when you create an object (POST) and when updating the object (PATCH).  If you would like to remove metadata that is already on an object, you can unset it by passing in the key-value pair with an empty string, like this: \n {  \"key\": \"\" }"
+      },
+      "sub_account_holder_timestamp": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the sub account holder was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the sub account holder was updated"
+          },
+          "deactivated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the sub account holder was deactivated"
+          }
         }
       },
       "entity_timestamp": {
@@ -4440,11 +4544,13 @@
           },
           "external_reference_id": {
             "type": "string",
-            "example": "TW-9L1L2-UVV"
+            "example": "TW-9L1L2-UVV",
+            "description": "unique id to cross-reference records with external systems"
           },
           "purpose": {
             "type": "string",
-            "example": "Ace sub-account holder"
+            "example": "Ace sub-account holder",
+            "description": "purpose of sub account holder"
           },
           "attachments": {
             "type": "array",
@@ -4459,6 +4565,7 @@
           "status": {
             "type": "string",
             "example": "activated",
+            "description": "status of sub account holder",
             "enum": [
               "pending_activation",
               "activated",
@@ -4469,7 +4576,7 @@
           },
           "timestamps": {
             "type": "object",
-            "$ref": "#/components/schemas/entity_timestamp"
+            "$ref": "#/components/schemas/sub_account_holder_timestamp"
           }
         }
       },
