@@ -4007,7 +4007,7 @@
           "id_number": {
             "type": "string",
             "example": "945678934",
-            "description": "- if id_type is ssn, id_number must be full SSN \n - if id_type is passport, id_number must be passport number \n - if id_type is other, id_number must be unique number of the id \n \"\\n\" id_number must be unique, as in, you cannot use the same id_number for two different persons"
+            "description": "- if id_type is ssn, id_number must be full SSN \n - if id_type is passport, id_number must be passport number \n - if id_type is other, id_number must be unique number of the id \n \n id_number must be unique, as in, you cannot use the same id_number for two different persons"
           },
           "date_of_birth": {
             "type": "string",
@@ -4310,7 +4310,7 @@
       },
       "metadata": {
         "type": "object",
-        "description": "Metadata takes free-form key-value pairs. You may send metadata when you create an object (POST) and when updating the object (PATCH).  If you would like to remove metadata that is already on an object, you can unset it by passing in the key-value pair with an empty string, like this:\n {  \"key\": \"\" }",
+        "description": "Metadata takes free-form key-value pairs. You may send metadata when you create an object (POST) and when updating the object (PATCH).  If you would like to remove metadata that is already on an object, you can unset it by passing in the key-value pair with an empty string, like this: \n {  \"key\": \"\" }",
         "properties": {
           "customer_code": {
             "type": "string",
