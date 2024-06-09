@@ -3790,7 +3790,7 @@
           },
           "timestamps": {
             "type": "object",
-            "$ref": "#/components/schemas/non_entity_timestamp"
+            "$ref": "#/components/schemas/sub_account_timestamp"
           }
         }
       },
@@ -3981,19 +3981,23 @@
         "properties": {
           "first_name": {
             "type": "string",
-            "example": "Jane"
+            "example": "Jane",
+            "description": "first name of the person"
           },
           "middle_name": {
             "type": "string",
-            "example": "Jack"
+            "example": "Jack",
+            "description": "middle name of the person"
           },
           "last_name": {
             "type": "string",
-            "example": "Doe"
+            "example": "Doe",
+            "description": "last name of the person"
           },
           "id_type": {
             "type": "string",
             "example": "ssn",
+            "description": "type of identity used",
             "enum": [
               "ssn",
               "passport",
@@ -4002,46 +4006,56 @@
           },
           "id_number": {
             "type": "string",
-            "example": "945678934"
+            "example": "945678934",
+            "description": "- if id_type is ssn, id_number must be full SSN \n - if id_type is passport, id_number must be passport number \n - if id_type is other, id_number must be unique number of the id \n \"\\n\" id_number must be unique, as in, you cannot use the same id_number for two different persons"
           },
           "date_of_birth": {
             "type": "string",
-            "example": "1974-01-01"
+            "example": "1974-01-01",
+            "description": ""
           },
           "phone": {
             "type": "string",
-            "example": "+19418405843"
+            "example": "+19418405843",
+            "description": ""
           },
           "email": {
             "type": "string",
-            "example": "jane.doe@gmail.com"
+            "example": "jane.doe@gmail.com",
+            "description": ""
           },
           "address": {
             "type": "object",
             "properties": {
               "line1": {
                 "type": "string",
-                "example": "123 Main St"
+                "example": "123 Main St",
+                "description": ""
               },
               "line2": {
                 "type": "string",
-                "example": ""
+                "example": "",
+                "description": ""
               },
               "city": {
                 "type": "string",
-                "example": "New York"
+                "example": "New York",
+                "description": ""
               },
               "state": {
                 "type": "string",
-                "example": "NY"
+                "example": "NY",
+                "description": ""
               },
               "country": {
                 "type": "string",
-                "example": "US"
+                "example": "US",
+                "description": ""
               },
               "postal_code": {
                 "type": "string",
-                "example": "10001"
+                "example": "10001",
+                "description": ""
               }
             }
           }
@@ -4341,6 +4355,26 @@
           }
         }
       },
+      "sub_account_timestamp": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the sub account was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the sub account was updated"
+          },
+          "closed_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the sub account was closed"
+          }
+        }
+      },
       "non_entity_timestamp": {
         "type": "object",
         "properties": {
@@ -4379,19 +4413,23 @@
         "properties": {
           "id": {
             "type": "string",
-            "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752"
+            "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+            "description": "unique id of the sub account holder"
           },
           "client_id": {
             "type": "string",
-            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce"
+            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+            "description": "unique id of the client that created the sub account"
           },
           "master_account_holder_id": {
             "type": "string",
-            "example": "mah_201e02c581a098a740456c5c19fcfcd6"
+            "example": "mah_201e02c581a098a740456c5c19fcfcd6",
+            "description": "unique id of the master account holder"
           },
           "master_account_id": {
             "type": "string",
-            "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+            "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
+            "description": "unique id of the master account"
           },
           "person": {
             "type": "object",
