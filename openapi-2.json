@@ -4319,6 +4319,25 @@
           }
         }
       },
+      "transaction_ofac": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "pass",
+            "description": "ofac status of the counterparty",
+            "enum": [
+              "pass",
+              "fail"
+            ]
+          },
+          "last_updated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "last date and time at which the counterparty's ofac status was checked"
+          }
+        }
+      },
       "ofac": {
         "type": "object",
         "properties": {
@@ -4556,15 +4575,18 @@
         "properties": {
           "created_at": {
             "type": "string",
-            "example": "2024-04-01T21:00:00Z"
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the transaction was created"
           },
           "updated_at": {
             "type": "string",
-            "example": "2024-04-01T21:00:00Z"
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the transaction was updated"
           },
           "settled_at": {
             "type": "string",
-            "example": "2024-04-01T21:00:00Z"
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the transaction was settled"
           }
         }
       },
@@ -5748,15 +5770,18 @@
         "properties": {
           "id": {
             "type": "string",
-            "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+            "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+            "description": "unique id of the counterparty"
           },
           "name": {
             "type": "string",
-            "example": "John Doe"
+            "example": "John Doe",
+            "description": "name of the counterparty"
           },
           "verification_status": {
             "type": "string",
             "example": "verified",
+            "description": "account verification status of the counterparty",
             "enum": [
               "verified",
               "unverified"
@@ -5764,15 +5789,18 @@
           },
           "account_number": {
             "type": "string",
-            "example": "98324502"
+            "example": "98324502",
+            "description": "bank account number of the counterparty"
           },
           "routing_number": {
             "type": "string",
-            "example": "121042882"
+            "example": "121042882",
+            "description": "routing number of the counterparty's bank"
           },
           "account_type": {
             "type": "string",
             "example": "business_checking",
+            "description": "type of counterparty's bank account",
             "enum": [
               "business_checking",
               "business_savings",
@@ -5782,7 +5810,8 @@
           },
           "bank_name": {
             "type": "string",
-            "example": "Wells Fargo"
+            "example": "Wells Fargo",
+            "description": "name of counterparty's bank"
           },
           "beneficiary_bank": {
             "type": "object",
@@ -5797,27 +5826,33 @@
             "properties": {
               "line1": {
                 "type": "string",
-                "example": "123 Main St"
+                "example": "123 Main St",
+                "description": "line 1 of the address"
               },
               "line2": {
                 "type": "string",
-                "example": ""
+                "example": "",
+                "description": "line 2 of the address"
               },
               "city": {
                 "type": "string",
-                "example": "New York"
+                "example": "New York",
+                "description": "city of the address"
               },
               "state": {
                 "type": "string",
-                "example": "NY"
+                "example": "NY",
+                "description": "2-Letter US state abbreviation (ex: CA)"
               },
               "country": {
                 "type": "string",
-                "example": "US"
+                "example": "US",
+                "description": "2-letter abbreviated country code (ex: US)"
               },
               "postal_code": {
                 "type": "string",
-                "example": "10001"
+                "example": "10001",
+                "description": "postal code"
               }
             }
           }
@@ -5828,27 +5863,33 @@
         "properties": {
           "effective_date": {
             "type": "string",
-            "example": "2024-05-05"
+            "example": "2024-05-05",
+            "description": "date on which the ACH must post on the beneficiary's bank account"
           },
           "company_discretionary_data": {
             "type": "string",
-            "example": "DIRECT DEPOSIT"
+            "example": "DIRECT DEPOSIT",
+            "description": "text field within the ACH batch file used to reference ACH originator details like name, etc."
           },
           "company_entry_description": {
             "type": "string",
-            "example": "PAYROLL"
+            "example": "PAYROLL",
+            "description": "text field within the ACH batch file that describes the purpose of the ACH transaction"
           },
           "trace_number": {
             "type": "string",
-            "example": "12309876564"
+            "example": "12309876564",
+            "description": "unique identifier within the ACH batch file"
           },
           "return_code": {
             "type": "string",
-            "example": "R01"
+            "example": "R01",
+            "description": "reason code given in case of ACH return"
           },
           "rta_id": {
             "type": "string",
-            "example": "rta_64c6c87ee9d609f36a6f390dc378a4ce"
+            "example": "rta_64c6c87ee9d609f36a6f390dc378a4ce",
+            "description": "unique id for real time authorization"
           }
         }
       },
@@ -5857,15 +5898,18 @@
         "properties": {
           "id": {
             "type": "string",
-            "example": "mas_bda1e562657c41e553104b10aad3fe70"
+            "example": "mas_bda1e562657c41e553104b10aad3fe70",
+            "description": "unique id of the master account"
           },
           "transaction_id": {
             "type": "string",
-            "example": "txn_817d2a074042bb4ec54e08fd82b1e0a8"
+            "example": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+            "description": "unique id of the master account transaction"
           },
           "amount": {
             "type": "string",
-            "example": "93.50"
+            "example": "93.50",
+            "description": "master account transaction amount"
           }
         }
       },
@@ -5874,15 +5918,18 @@
         "properties": {
           "id": {
             "type": "string",
-            "example": "sub_bda1e562657c41e553104b10aad3fe70"
+            "example": "sub_bda1e562657c41e553104b10aad3fe70",
+            "description": "unique id of the sub account"
           },
           "transaction_id": {
             "type": "string",
-            "example": "txn_a0b56852400c9fede6233fd8c2e60f9c"
+            "example": "txn_a0b56852400c9fede6233fd8c2e60f9c",
+            "description": "unique id of the sub account transaction"
           },
           "amount": {
             "type": "string",
-            "example": "93.50"
+            "example": "93.50",
+            "description": "sub account transaction amount"
           }
         }
       },
@@ -5892,6 +5939,7 @@
           "status": {
             "type": "string",
             "example": "reconciled",
+            "description": "reconciliation status of the transaction",
             "enum": [
               "reconciled",
               "not_reconciled"
@@ -5916,11 +5964,13 @@
         "properties": {
           "imad": {
             "type": "string",
-            "example": "20240520D2B74A1C002742"
+            "example": "20240520D2B74A1C002742",
+            "description": "IMAD (Input Message Accountability Data) number is a unique number generated by FedwireService for tracking purposes."
           },
           "omad": {
             "type": "string",
-            "example": "20240520L1B7832F000914"
+            "example": "20240520L1B7832F000914",
+            "description": "OMAD (Output Message Accountability Data) number is a unique number generated by FedwireService for tracking purposes."
           }
         }
       },
@@ -5929,11 +5979,13 @@
         "properties": {
           "imad": {
             "type": "string",
-            "example": "20240520D2B74A1C002742"
+            "example": "20240520D2B74A1C002742",
+            "description": "IMAD (Input Message Accountability Data) number is a unique number generated by FedwireService for tracking purposes."
           },
           "omad": {
             "type": "string",
-            "example": "20240520L1B7832F000914"
+            "example": "20240520L1B7832F000914",
+            "description": "OMAD (Output Message Accountability Data) number is a unique number generated by FedwireService for tracking purposes."
           }
         }
       },
@@ -5942,7 +5994,8 @@
         "properties": {
           "reference_number": {
             "type": "string",
-            "example": "20240410T110000Z"
+            "example": "20240410T110000Z",
+            "description": "reference number of the RTP transaction that shown to the beneficiary"
           }
         }
       },
@@ -5951,7 +6004,8 @@
         "properties": {
           "reference_number": {
             "type": "string",
-            "example": "20240410T110000Z"
+            "example": "20240410T110000Z",
+            "description": "reference number of the FedNow transaction that shown to the beneficiary"
           }
         }
       },
@@ -5960,11 +6014,13 @@
         "properties": {
           "check_number": {
             "type": "string",
-            "example": "98987679"
+            "example": "98987679",
+            "description": "check number"
           },
           "cashed": {
             "type": "string",
-            "example": "true"
+            "example": "true",
+            "description": "if the check is cashed or not"
           }
         }
       },
@@ -5973,42 +6029,51 @@
         "properties": {
           "id": {
             "type": "string",
-            "example": "crd_7948d9a96706dd05360a340002de725f"
+            "example": "crd_7948d9a96706dd05360a340002de725f",
+            "description": "unique id of the card"
           },
           "cardholder_id": {
             "type": "string",
-            "example": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0"
+            "example": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0",
+            "description": "unique id of the card holder"
           },
           "merchant": {
             "type": "string",
-            "example": "Walmart"
+            "example": "Walmart",
+            "description": "merchant the card was used at"
           },
           "auth_method": {
             "type": "string",
-            "example": "online"
+            "example": "online",
+            "description": "method of use for the card transaction"
           },
           "wallet": {
             "type": "string",
-            "example": "google_pay"
+            "example": "google_pay",
+            "description": "digital wallet type"
           },
           "rta_id": {
             "type": "string",
-            "example": "rta_a120a61f60dfd40fdb07b2e8bcd1f6f0"
+            "example": "rta_a120a61f60dfd40fdb07b2e8bcd1f6f0",
+            "description": "unique id for real time authorization"
           },
           "local_transaction": {
             "type": "object",
             "properties": {
               "amount": {
                 "type": "string",
-                "example": "10.00"
+                "example": "10.00",
+                "description": "transaction amount in local currency"
               },
               "currency": {
                 "type": "string",
-                "example": "usd"
+                "example": "usd",
+                "description": "local currency code"
               },
               "conversion_rate": {
                 "type": "string",
-                "example": "1.00"
+                "example": "1.00",
+                "description": "currency conversion rate"
               }
             }
           },
@@ -6018,6 +6083,7 @@
               "period": {
                 "type": "string",
                 "example": "daily",
+                "description": "time period available in which the maximum amount is allowed to be spent",
                 "enum": [
                   "daily",
                   "per_transaction",
@@ -6029,11 +6095,8 @@
               },
               "max_spend_amount": {
                 "type": "string",
-                "example": "50.00"
-              },
-              "max_spend_count": {
-                "type": "string",
-                "example": "10"
+                "example": "50.00",
+                "description": "maximum amount available to be spent in the set period"
               }
             }
           }
@@ -6044,19 +6107,23 @@
         "properties": {
           "id": {
             "type": "string",
-            "example": "txn_817d2a074042bb4ec54e08fd82b1e0a8"
+            "example": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+            "description": "unique id of the transaction"
           },
           "sub_account_id": {
             "type": "string",
-            "example": "sub_bda1e562657c41e553104b10aad3fe70"
+            "example": "sub_bda1e562657c41e553104b10aad3fe70",
+            "description": "unique id of the sub account holder"
           },
           "master_account_id": {
             "type": "string",
-            "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+            "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
+            "description": "unique id of the master account holder"
           },
           "status": {
             "type": "string",
             "example": "originated",
+            "description": "status of the transaction",
             "enum": [
               "originated",
               "pending",
@@ -6074,11 +6141,13 @@
           },
           "amount": {
             "type": "string",
-            "example": "93.50"
+            "example": "93.50",
+            "description": "amount of the transaction"
           },
           "currency": {
             "type": "string",
             "example": "usd",
+            "description": "currency of the transaction",
             "enum": [
               "usd"
             ]
@@ -6086,6 +6155,7 @@
           "direction": {
             "type": "string",
             "example": "debit",
+            "description": "if transaction is debit or credit",
             "enum": [
               "debit",
               "credit"
@@ -6094,6 +6164,7 @@
           "method": {
             "type": "string",
             "example": "ach",
+            "description": "payment method for the transaction",
             "enum": [
               "ach",
               "domestic_wire",
@@ -6108,6 +6179,7 @@
           "type": {
             "type": "string",
             "example": "push",
+            "description": "type within the payment method used for the transaction",
             "enum": [
               "push",
               "pull",
@@ -6126,6 +6198,7 @@
           "message": {
             "type": "string",
             "example": "outgoing",
+            "description": "if transaction is incoming or outgoing",
             "enum": [
               "incoming",
               "outgoing"
@@ -6133,19 +6206,23 @@
           },
           "description": {
             "type": "string",
-            "example": "Invoice payment"
+            "example": "Invoice payment",
+            "description": "description of the transaction"
           },
           "available_balance": {
             "type": "string",
-            "example": "500.00"
+            "example": "500.00",
+            "description": "available balance in the sub account after the transaction"
           },
           "pending_credits": {
             "type": "string",
-            "example": "0.00"
+            "example": "0.00",
+            "description": "total pending credits to the sub account after the transaction"
           },
           "pending_debits": {
             "type": "string",
-            "example": "93.50"
+            "example": "93.50",
+            "description": "total pending debits to the sub account after the transaction"
           },
           "counterparty": {
             "type": "object",
@@ -6179,21 +6256,19 @@
             "type": "object",
             "$ref": "#/components/schemas/transaction_card"
           },
-          "parent_transaction_id": {
-            "type": "string",
-            "example": "txn_64c6c87ee9d609f36a6f390dc378a4ce"
-          },
           "external_reference_id": {
             "type": "string",
-            "example": "123-9088-2"
+            "example": "123-9088-2",
+            "description": "unique id to cross-reference records with external systems"
           },
           "purpose": {
             "type": "string",
-            "example": "May Invoice"
+            "example": "May Invoice",
+            "description": "purpose of the transaction"
           },
           "ofac": {
             "type": "object",
-            "$ref": "#/components/schemas/ofac"
+            "$ref": "#/components/schemas/transaction_ofac"
           },
           "attachments": {
             "type": "array",
