@@ -4514,6 +4514,26 @@
           }
         }
       },
+      "card_timestamp": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the card was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the card was updated"
+          },
+          "closed_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the card was closed"
+          }
+        }
+      },
       "non_entity_timestamp": {
         "type": "object",
         "properties": {
@@ -5401,39 +5421,48 @@
         "properties": {
           "id": {
             "type": "string",
-            "example": "crd_7948d9a96706dd05360a340002de725f"
+            "example": "crd_7948d9a96706dd05360a340002de725f",
+            "description": "unique id of the card"
           },
           "client_id": {
             "type": "string",
-            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce"
+            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+            "description": "unique id of the client that created the card"
           },
           "master_account_holder_id": {
             "type": "string",
-            "example": "mah_201e02c581a098a740456c5c19fcfcd6"
+            "example": "mah_201e02c581a098a740456c5c19fcfcd6",
+            "description": "unique id of the master account holder"
           },
           "master_account_id": {
             "type": "string",
-            "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+            "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
+            "description": "unique id of the master account"
           },
           "sub_account_holder_id": {
             "type": "string",
-            "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752"
+            "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+            "description": "unique id of the sub account holder"
           },
           "sub_account_id": {
             "type": "string",
-            "example": "sub_bda1e562657c41e553104b10aad3fe70"
+            "example": "sub_bda1e562657c41e553104b10aad3fe70",
+            "description": "unique id of the sub account under which the card was created"
           },
           "cardholder_id": {
             "type": "string",
-            "example": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0"
+            "example": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0",
+            "description": "unique id of the card holder"
           },
           "label": {
             "type": "string",
-            "example": "Travel"
+            "example": "Travel",
+            "description": "label of the card"
           },
           "product": {
             "type": "string",
             "example": "business_spend",
+            "description": "type of card product configured based on the client's use case",
             "enum": [
               "business_spend",
               "consumer_debit",
@@ -5448,11 +5477,13 @@
           },
           "theme": {
             "type": "string",
-            "example": "metallic"
+            "example": "metallic",
+            "description": "theme of the card configured as part of the client use case"
           },
           "type": {
             "type": "string",
             "example": "physical",
+            "description": "type of card - physical or virtual",
             "enum": [
               "physical",
               "virtual"
@@ -5460,15 +5491,18 @@
           },
           "expiry_month": {
             "type": "string",
-            "example": "12"
+            "example": "12",
+            "description": "expiration month of the card"
           },
           "expiry_year": {
             "type": "string",
-            "example": "2025"
+            "example": "2025",
+            "description": "expiration year of the card"
           },
           "last4": {
             "type": "string",
-            "example": "5275"
+            "example": "5275",
+            "description": "last 4 digits of the card number"
           },
           "card_fullfilment": {
             "type": "object",
@@ -5478,11 +5512,13 @@
                 "properties": {
                   "card_holder_name": {
                     "type": "string",
-                    "example": "John Doe"
+                    "example": "John Doe",
+                    "description": "name of the person to be embossed on the card"
                   },
                   "business_name": {
                     "type": "string",
-                    "example": "Ace Inc"
+                    "example": "Ace Inc",
+                    "description": "name of the business to be embossed on the card"
                   }
                 }
               },
@@ -5491,27 +5527,33 @@
                 "properties": {
                   "line1": {
                     "type": "string",
-                    "example": "123 Main St"
+                    "example": "123 Main St",
+                    "description": "line 1 of the address"
                   },
                   "line2": {
                     "type": "string",
-                    "example": ""
+                    "example": "",
+                    "description": "line 2 of the address"
                   },
                   "city": {
                     "type": "string",
-                    "example": "New York"
+                    "example": "New York",
+                    "description": "city of the address"
                   },
                   "state": {
                     "type": "string",
-                    "example": "NY"
+                    "example": "NY",
+                    "description": "2-Letter US state abbreviation (ex: CA)"
                   },
                   "country": {
                     "type": "string",
-                    "example": "US"
+                    "example": "US",
+                    "description": "2-letter abbreviated country code (ex: US)"
                   },
                   "postal_code": {
                     "type": "string",
-                    "example": "10001"
+                    "example": "10001",
+                    "description": "postal code"
                   }
                 }
               },
@@ -5521,6 +5563,7 @@
                   "status": {
                     "type": "string",
                     "example": "delivered",
+                    "description": "delivery status of the card",
                     "enum": [
                       "pending",
                       "delivered",
@@ -5532,19 +5575,23 @@
                   },
                   "eta": {
                     "type": "string",
-                    "example": "2024-05-02"
+                    "example": "2024-05-02",
+                    "description": "estimated date of arrival for the shipped card"
                   },
                   "number": {
                     "type": "string",
-                    "example": "1231233"
+                    "example": "1231233",
+                    "description": "tracking number if shipped via USPS Priority or UPS Next Day"
                   },
                   "url": {
                     "type": "string",
-                    "example": "https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224"
+                    "example": "https://tools.usps.com/go/TrackConfirmAction_input?strOrigTrackNum=120635849224",
+                    "description": "tracking URL if shipped via USPS Priority or UPS Next Day"
                   },
                   "provider": {
                     "type": "string",
-                    "example": "usps"
+                    "example": "usps",
+                    "description": "shipping provider (eg. USPS) that shipped the card"
                   }
                 }
               }
@@ -5558,18 +5605,21 @@
                 "properties": {
                   "merchants": {
                     "type": "array",
+                    "description": "an array of merchant names to allow on the card. Example [\"Amazon\",\"Netflix\"]",
                     "items": {
                       "type": "string"
                     }
                   },
                   "categories": {
                     "type": "array",
+                    "description": "an array of mcc codes to allow on the card. Example [\"0742\",\"0763\"]",
                     "items": {
                       "type": "string"
                     }
                   },
                   "countries": {
                     "type": "array",
+                    "description": "an array of country codes to allow on the card. Example [\"US\",\"IN\"]",
                     "items": {
                       "type": "string"
                     }
@@ -5581,18 +5631,21 @@
                 "properties": {
                   "merchants": {
                     "type": "array",
+                    "description": "an array of merchant names to block on the card. Example [\"Amazon\",\"Netflix\"]",
                     "items": {
                       "type": "string"
                     }
                   },
                   "categories": {
                     "type": "array",
+                    "description": "an array of mcc codes to block on the card. Example [\"0742\",\"0763\"]",
                     "items": {
                       "type": "string"
                     }
                   },
                   "countries": {
                     "type": "array",
+                    "description": "an array of country codes to block on the card. Example [\"US\",\"IN\"]",
                     "items": {
                       "type": "string"
                     }
@@ -5605,6 +5658,7 @@
                   "period": {
                     "type": "string",
                     "example": "daily",
+                    "description": "time period in which the maximum amount is allowed to be spent",
                     "enum": [
                       "daily",
                       "per_transaction",
@@ -5616,19 +5670,22 @@
                   },
                   "max_spend_amount": {
                     "type": "string",
-                    "example": "500.00"
+                    "example": "500.00",
+                    "description": "maximum amount allowed to be spent in the set period"
                   }
                 }
               },
               "atm_enabled": {
                 "type": "string",
-                "example": "true"
+                "example": "true",
+                "description": "atm access for the card, true means enabled (by default), false means disabled"
               }
             }
           },
           "external_reference_id": {
             "type": "string",
-            "example": "XV-H27LGD-FX"
+            "example": "XV-H27LGD-FX",
+            "description": "unique id to cross-reference records with external systems"
           },
           "attachments": {
             "type": "array",
@@ -5643,6 +5700,7 @@
           "status": {
             "type": "string",
             "example": "open",
+            "description": "status of the card",
             "enum": [
               "open",
               "closed",
@@ -5654,7 +5712,7 @@
           },
           "timestamps": {
             "type": "object",
-            "$ref": "#/components/schemas/non_entity_timestamp"
+            "$ref": "#/components/schemas/card_timestamp"
           }
         }
       },
