@@ -4310,12 +4310,7 @@
       },
       "metadata": {
         "type": "object",
-        "description": "Metadata takes free-form key-value pairs. You may send metadata when you create an object (POST) and when updating the object (PATCH).  If you would like to remove metadata that is already on an object, you can unset it by passing in the key-value pair with an empty string, like this: \n {  \"key\": \"\" }",
-        "properties": {
-          "customer_code": {
-            "type": "string",
-            "example": "1501"
-          }
+        "description": "Metadata takes free-form key-value pairs. You may send metadata when you create an object (POST) and when updating the object (PATCH).  If you would like to remove metadata that is already on an object, you can unset it by passing in the key-value pair with an empty string, like this: \n {  \"key\": \"\" }"
         }
       },
       "entity_timestamp": {
