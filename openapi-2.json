@@ -4300,7 +4300,7 @@
           }
         }
       },
-      "cardholder_holder_ofac": {
+      "card_holder_ofac": {
         "type": "object",
         "properties": {
           "status": {
@@ -4434,6 +4434,26 @@
             "type": "string",
             "example": "2024-04-01T21:00:00Z",
             "description": "date and time at which the counterparty was deactivated"
+          }
+        }
+      },
+      "card_holder_timestamp": {
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the card holder was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the card holder was updated"
+          },
+          "deactivated_at": {
+            "type": "string",
+            "example": "2024-04-01T21:00:00Z",
+            "description": "date and time at which the card holder was deactivated"
           }
         }
       },
@@ -5275,27 +5295,33 @@
         "properties": {
           "id": {
             "type": "string",
-            "example": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0"
+            "example": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0",
+            "description": "unique id of the card holder"
           },
           "client_id": {
             "type": "string",
-            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce"
+            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+            "description": "unique id of the client that issued the card"
           },
           "master_account_holder_id": {
             "type": "string",
-            "example": "mah_201e02c581a098a740456c5c19fcfcd6"
+            "example": "mah_201e02c581a098a740456c5c19fcfcd6",
+            "description": "unique id of the master account holder"
           },
           "master_account_id": {
             "type": "string",
-            "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+            "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
+            "description": "unique id of the master account"
           },
           "sub_account_holder_id": {
             "type": "string",
-            "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752"
+            "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+            "description": "unique id of the sub account holder"
           },
           "sub_account_id": {
             "type": "string",
-            "example": "sub_bda1e562657c41e553104b10aad3fe70"
+            "example": "sub_bda1e562657c41e553104b10aad3fe70",
+            "description": "unique id of the sub account"
           },
           "person": {
             "type": "object",
@@ -5303,15 +5329,17 @@
           },
           "external_reference_id": {
             "type": "string",
-            "example": "6RPD1QW-W75"
+            "example": "6RPD1QW-W75",
+            "description": "unique id to cross-reference records with external systems"
           },
           "purpose": {
             "type": "string",
-            "example": "Ace Sales Rep"
+            "example": "Ace Sales Rep",
+            "description": "purpose of card holder"
           },
           "ofac": {
             "type": "object",
-            "$ref": "#/components/schemas/ofac"
+            "$ref": "#/components/schemas/card_holder_ofac"
           },
           "attachments": {
             "type": "array",
@@ -5326,6 +5354,7 @@
           "status": {
             "type": "string",
             "example": "activated",
+            "description": "status of card holder",
             "enum": [
               "pending_activation",
               "activated",
@@ -5336,7 +5365,7 @@
           },
           "timestamps": {
             "type": "object",
-            "$ref": "#/components/schemas/entity_timestamp"
+            "$ref": "#/components/schemas/card_holder_timestamp"
           }
         }
       },
