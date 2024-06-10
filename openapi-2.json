@@ -344,12 +344,15 @@
                 "properties": {
                   "person": {
                     "type": "object",
-                    "properties": {
-                      "first_name": {
-                        "type": "string",
-                        "example": "Johnson"
-                      }
-                    }
+                    "$ref": "#/components/schemas/person"
+                  },
+                  "business": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/business"
+                  },
+                  "verification": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/verification"
                   }
                 }
               },
