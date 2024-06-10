@@ -1553,15 +1553,18 @@
                 "properties": {
                   "cardholder_id": {
                     "type": "string",
-                    "example": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0"
+                    "example": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0",
+                    "description": "unique id of the card holder"
                   },
                   "label": {
                     "type": "string",
-                    "example": "Travel"
+                    "example": "Travel",
+                    "description": "label of the card"
                   },
                   "product": {
                     "type": "string",
                     "example": "business_spend",
+                    "description": "type of card product configured based on the client's use case",
                     "enum": [
                       "business_spend",
                       "consumer_debit",
@@ -1576,11 +1579,13 @@
                   },
                   "theme": {
                     "type": "string",
-                    "example": "metallic"
+                    "example": "metallic",
+                    "description": "theme of the card configured as part of the client use case"
                   },
                   "type": {
                     "type": "string",
                     "example": "physical",
+                    "description": "type of card - physical or virtual",
                     "enum": [
                       "physical",
                       "virtual"
@@ -1594,11 +1599,13 @@
                         "properties": {
                           "card_holder_name": {
                             "type": "string",
-                            "example": "John Doe"
+                            "example": "John Doe",
+                            "description": "name of the person to be embossed on the card"
                           },
                           "business_name": {
                             "type": "string",
-                            "example": "Ace Inc"
+                            "example": "Ace Inc",
+                            "description": "name of the business to be embossed on the card"
                           }
                         }
                       },
@@ -1607,27 +1614,33 @@
                         "properties": {
                           "line1": {
                             "type": "string",
-                            "example": "123 Main St"
+                            "example": "123 Main St",
+                            "description": "line 1 of the address"
                           },
                           "line2": {
                             "type": "string",
-                            "example": ""
+                            "example": "",
+                            "description": "line 2 of the address"
                           },
                           "city": {
                             "type": "string",
-                            "example": "New York"
+                            "example": "New York",
+                            "description": "city of the address"
                           },
                           "state": {
                             "type": "string",
-                            "example": "NY"
+                            "example": "NY",
+                            "description": "2-Letter US state abbreviation (ex: CA)"
                           },
                           "country": {
                             "type": "string",
-                            "example": "US"
+                            "example": "US",
+                            "description": "2-letter abbreviated country code (ex: US)"
                           },
                           "postal_code": {
                             "type": "string",
-                            "example": "10001"
+                            "example": "10001",
+                            "description": "postal code"
                           }
                         }
                       }
@@ -1641,18 +1654,21 @@
                         "properties": {
                           "merchants": {
                             "type": "array",
+                            "description": "an array of merchant names to allow on the card. Example [\"Amazon\",\"Netflix\"]",
                             "items": {
                               "type": "string"
                             }
                           },
                           "categories": {
                             "type": "array",
+                            "description": "an array of mcc codes to allow on the card. Example [\"0742\",\"0763\"]",
                             "items": {
                               "type": "string"
                             }
                           },
                           "countries": {
                             "type": "array",
+                            "description": "an array of country codes to allow on the card. Example [\"US\",\"IN\"]",
                             "items": {
                               "type": "string"
                             }
@@ -1664,18 +1680,21 @@
                         "properties": {
                           "merchants": {
                             "type": "array",
+                            "description": "an array of merchant names to block on the card. Example [\"Amazon\",\"Netflix\"]",
                             "items": {
                               "type": "string"
                             }
                           },
                           "categories": {
                             "type": "array",
+                            "description": "an array of mcc codes to block on the card. Example [\"0742\",\"0763\"]",
                             "items": {
                               "type": "string"
                             }
                           },
                           "countries": {
                             "type": "array",
+                            "description": "an array of country codes to block on the card. Example [\"US\",\"IN\"]",
                             "items": {
                               "type": "string"
                             }
@@ -1688,6 +1707,7 @@
                           "period": {
                             "type": "string",
                             "example": "daily",
+                            "description": "time period in which the maximum amount is allowed to be spent",
                             "enum": [
                               "daily",
                               "per_transaction",
@@ -1699,19 +1719,22 @@
                           },
                           "max_spend_amount": {
                             "type": "string",
-                            "example": "500.00"
+                            "example": "500.00",
+                            "description": "maximum amount allowed to be spent in the set period"
                           }
                         }
                       },
                       "atm_enabled": {
                         "type": "string",
-                        "example": "true"
+                        "example": "true",
+                        "description": "atm access for the card, true means enabled (by default), false means disabled"
                       }
                     }
                   },
                   "external_reference_id": {
                     "type": "string",
-                    "example": "XV-H27LGD-FX"
+                    "example": "XV-H27LGD-FX",
+                    "description": "unique id to cross-reference records with external systems"
                   },
                   "metadata": {
                     "type": "object",
@@ -1849,6 +1872,112 @@
                   "label": {
                     "type": "string",
                     "example": "Travel Expense Card"
+                  },
+                  "controls": {
+                    "type": "object",
+                    "properties": {
+                      "allowed": {
+                        "type": "object",
+                        "properties": {
+                          "merchants": {
+                            "type": "array",
+                            "description": "an array of merchant names to allow on the card. Example [\"Amazon\",\"Netflix\"]",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "categories": {
+                            "type": "array",
+                            "description": "an array of mcc codes to allow on the card. Example [\"0742\",\"0763\"]",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "countries": {
+                            "type": "array",
+                            "description": "an array of country codes to allow on the card. Example [\"US\",\"IN\"]",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "blocked": {
+                        "type": "object",
+                        "properties": {
+                          "merchants": {
+                            "type": "array",
+                            "description": "an array of merchant names to block on the card. Example [\"Amazon\",\"Netflix\"]",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "categories": {
+                            "type": "array",
+                            "description": "an array of mcc codes to block on the card. Example [\"0742\",\"0763\"]",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "countries": {
+                            "type": "array",
+                            "description": "an array of country codes to block on the card. Example [\"US\",\"IN\"]",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "limit": {
+                        "type": "object",
+                        "properties": {
+                          "period": {
+                            "type": "string",
+                            "example": "daily",
+                            "description": "time period in which the maximum amount is allowed to be spent",
+                            "enum": [
+                              "daily",
+                              "per_transaction",
+                              "weekly",
+                              "monthly",
+                              "yearly",
+                              "all_time"
+                            ]
+                          },
+                          "max_spend_amount": {
+                            "type": "string",
+                            "example": "500.00",
+                            "description": "maximum amount allowed to be spent in the set period"
+                          }
+                        }
+                      },
+                      "atm_enabled": {
+                        "type": "string",
+                        "example": "true",
+                        "description": "atm access for the card, true means enabled (by default), false means disabled"
+                      }
+                    }
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "XV-H27LGD-FX",
+                    "description": "unique id to cross-reference records with external systems"
+                  },
+                  "metadata": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/metadata"
+                  },
+                  "status": {
+                    "type": "string",
+                    "example": "open",
+                    "description": "status of the card",
+                    "enum": [
+                      "open",
+                      "closed",
+                      "credit_blocked",
+                      "debit_blocked",
+                      "blocked"
+                    ]
                   }
                 }
               },
