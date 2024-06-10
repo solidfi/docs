@@ -1251,7 +1251,8 @@
                 "properties": {
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account"
                   },
                   "person": {
                     "type": "object",
@@ -1259,11 +1260,13 @@
                   },
                   "external_reference_id": {
                     "type": "string",
-                    "example": "6RPD1QW-W75"
+                    "example": "6RPD1QW-W75",
+                    "description": "unique id to cross-reference records with external systems"
                   },
                   "purpose": {
                     "type": "string",
-                    "example": "Ace Sales Rep"
+                    "example": "Ace Sales Rep",
+                    "description": "purpose of card holder"
                   },
                   "metadata": {
                     "type": "object",
@@ -1393,12 +1396,32 @@
                 "properties": {
                   "person": {
                     "type": "object",
-                    "properties": {
-                      "first_name": {
-                        "type": "string",
-                        "example": "Johnson"
-                      }
-                    }
+                    "$ref": "#/components/schemas/person"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "6RPD1QW-W75",
+                    "description": "unique id to cross-reference records with external systems"
+                  },
+                  "purpose": {
+                    "type": "string",
+                    "example": "Ace Sales Rep",
+                    "description": "purpose of card holder"
+                  },
+                  "metadata": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/metadata"
+                  },
+                  "status": {
+                    "type": "string",
+                    "example": "activated",
+                    "description": "status of card holder",
+                    "enum": [
+                      "pending_activation",
+                      "activated",
+                      "suspended",
+                      "deactivated"
+                    ]
                   }
                 }
               },
