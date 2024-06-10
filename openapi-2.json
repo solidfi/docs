@@ -3618,11 +3618,13 @@
                 "properties": {
                   "reference_id": {
                     "type": "string",
-                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "description": "resource id to which the attachment belongs"
                   },
                   "label": {
                     "type": "string",
-                    "example": "formation"
+                    "example": "formation",
+                    "description": "label of the attachment"
                   }
                 }
               },
@@ -3721,7 +3723,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Delete an Attachment"
+            "description": "The attachment was deleted successfully."
           }
         }
       },
