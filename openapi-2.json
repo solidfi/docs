@@ -390,8 +390,7 @@
                       "pending_activation",
                       "activated",
                       "suspended",
-                      "deactivated",
-                      "locked"
+                      "deactivated"
                     ]
                   }
                 }
@@ -684,8 +683,7 @@
                       "closed",
                       "credit_blocked",
                       "debit_blocked",
-                      "blocked",
-                      "locked"
+                      "blocked"
                     ]
                   }
                 }
@@ -808,15 +806,18 @@
                 "properties": {
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account under which the counterparty was created"
                   },
                   "label": {
                     "type": "string",
-                    "example": "Development Vendor"
+                    "example": "Development Vendor",
+                    "description": "label of the counterparty"
                   },
                   "type": {
                     "type": "string",
                     "example": "person",
+                    "description": "type of counterparty",
                     "enum": [
                       "person",
                       "business"
@@ -864,11 +865,13 @@
                   },
                   "purpose": {
                     "type": "string",
-                    "example": "Offshore dev center"
+                    "example": "Offshore dev center",
+                    "description": "purpose of counterparty"
                   },
                   "external_reference_id": {
                     "type": "string",
-                    "example": "TW-9L1L2-UVV"
+                    "example": "TW-9L1L2-UVV",
+                    "description": "unique id to cross-reference records with external systems"
                   },
                   "metadata": {
                     "type": "object",
@@ -1051,7 +1054,82 @@
                 "properties": {
                   "label": {
                     "type": "string",
-                    "example": "Utilities"
+                    "example": "Development Vendor",
+                    "description": "label of the counterparty"
+                  },
+                  "type": {
+                    "type": "string",
+                    "example": "person",
+                    "description": "type of counterparty",
+                    "enum": [
+                      "person",
+                      "business"
+                    ]
+                  },
+                  "person": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/person"
+                  },
+                  "business": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/business"
+                  },
+                  "intra_account": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_intra_account"
+                  },
+                  "ach": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_ach"
+                  },
+                  "domestic_wire": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_domestic_wire"
+                  },
+                  "international_wire": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_international_wire"
+                  },
+                  "rtp": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_rtp"
+                  },
+                  "fednow": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_fednow"
+                  },
+                  "check": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_check"
+                  },
+                  "debit_card": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/counterparty_debit_card"
+                  },
+                  "purpose": {
+                    "type": "string",
+                    "example": "Offshore dev center",
+                    "description": "purpose of counterparty"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "TW-9L1L2-UVV",
+                    "description": "unique id to cross-reference records with external systems"
+                  },
+                  "metadata": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/metadata"
+                  },
+                  "status": {
+                    "type": "string",
+                    "example": "activated",
+                    "description": "status of counterparty",
+                    "enum": [
+                      "pending_activation",
+                      "activated",
+                      "suspended",
+                      "deactivated"
+                    ]
                   }
                 }
               },
