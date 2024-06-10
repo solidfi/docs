@@ -2273,19 +2273,23 @@
                 "properties": {
                   "master_account_id": {
                     "type": "string",
-                    "example": "mas_743fa071316bc6beaf5dddfd05f49c30"
+                    "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
+                    "description": "unique id of the master account"
                   },
                   "master_account_transaction_id": {
                     "type": "string",
-                    "example": "txn_817d2a074042bb4ec54e08fd82b1e0a8"
+                    "example": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+                    "description": "unique id of the master account transaction"
                   },
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account"
                   },
                   "amount": {
                     "type": "string",
-                    "example": "1500.00"
+                    "example": "1500.00",
+                    "description": "amount of the transaction"
                   }
                 }
               },
@@ -2349,23 +2353,28 @@
                 "properties": {
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account holder"
                   },
                   "counterparty_id": {
                     "type": "string",
-                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "desciption": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
-                    "example": "4570.00"
+                    "example": "4570.00",
+                    "description": "amount of the transaction"
                   },
                   "description": {
                     "type": "string",
-                    "example": "May Salary"
+                    "example": "May Salary",
+                    "description": "description of the transaction"
                   },
                   "external_reference_id": {
                     "type": "string",
-                    "example": "123-9088-2"
+                    "example": "123-9088-2",
+                    "description": "unique id to cross-reference records with external systems"
                   }
                 }
               },
@@ -2430,23 +2439,28 @@
                 "properties": {
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account"
                   },
                   "counterparty_id": {
                     "type": "string",
-                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "desciption": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
-                    "example": "500.00"
+                    "example": "500.00",
+                    "description": "amount of the transaction"
                   },
                   "description": {
                     "type": "string",
-                    "example": "May Rent"
+                    "example": "May Rent",
+                    "description": "description of the transaction"
                   },
                   "external_reference_id": {
                     "type": "string",
-                    "example": "123-9088-2"
+                    "example": "123-9088-2",
+                    "description": "unique id to cross-reference records with external systems"
                   }
                 }
               },
@@ -2511,39 +2525,48 @@
                 "properties": {
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account"
                   },
                   "counterparty_id": {
                     "type": "string",
-                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "desciption": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
-                    "example": "4570.00"
+                    "example": "4570.00",
+                    "description": "amount of the transaction"
                   },
                   "description": {
                     "type": "string",
-                    "example": "May Salary"
+                    "example": "May Salary",
+                    "description": "description of the transaction"
                   },
                   "same_day": {
                     "type": "string",
-                    "example": "true"
+                    "example": "true",
+                    "description": "if ACH is same day or next day"
                   },
                   "effective_date": {
                     "type": "string",
-                    "example": "2024-04-05"
+                    "example": "2024-04-05",
+                    "description": "date on which the ACH must post on the beneficiary's bank account"
                   },
                   "company_discretionary_data": {
                     "type": "string",
-                    "example": "DIRECT DEPOSIT"
+                    "example": "DIRECT DEPOSIT",
+                    "description": "text field within the ACH batch file used to reference ACH originator details like name, etc."
                   },
                   "company_entry_description": {
                     "type": "string",
-                    "example": "PAYROLL"
+                    "example": "PAYROLL",
+                    "description": "text field within the ACH batch file that describes the purpose of the ACH transaction"
                   },
                   "external_reference_id": {
                     "type": "string",
-                    "example": "123-9088-2"
+                    "example": "123-9088-2",
+                    "description": "unique id to cross-reference records with external systems"
                   }
                 }
               },
@@ -2612,35 +2635,48 @@
                 "properties": {
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account"
                   },
                   "counterparty_id": {
                     "type": "string",
-                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "desciption": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
-                    "example": "500.00"
+                    "example": "500.00",
+                    "description": "amount of the transaction"
                   },
                   "description": {
                     "type": "string",
-                    "example": "May Rent"
+                    "example": "May Rent",
+                    "description": "description of the transaction"
                   },
                   "same_day": {
                     "type": "string",
-                    "example": "true"
+                    "example": "true",
+                    "description": "if ACH is same day or next day"
                   },
                   "effective_date": {
                     "type": "string",
-                    "example": "2024-04-05"
+                    "example": "2024-04-05",
+                    "description": "date on which the ACH must post on the beneficiary's bank account"
+                  },
+                  "company_discretionary_data": {
+                    "type": "string",
+                    "example": "DIRECT DEPOSIT",
+                    "description": "text field within the ACH batch file used to reference ACH originator details like name, etc."
                   },
                   "company_entry_description": {
                     "type": "string",
-                    "example": "Payment"
+                    "example": "PAYROLL",
+                    "description": "text field within the ACH batch file that describes the purpose of the ACH transaction"
                   },
                   "external_reference_id": {
                     "type": "string",
-                    "example": "123-9088-2"
+                    "example": "123-9088-2",
+                    "description": "unique id to cross-reference records with external systems"
                   }
                 }
               },
@@ -2708,23 +2744,28 @@
                 "properties": {
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account holder"
                   },
                   "counterparty_id": {
                     "type": "string",
-                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "desciption": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
-                    "example": "2500.00"
+                    "example": "2500.00",
+                    "description": "amount of the transaction"
                   },
                   "description": {
                     "type": "string",
-                    "example": "Marketing Expenses for May"
+                    "example": "Marketing Expenses for May",
+                    "description": "description of the transaction"
                   },
                   "external_reference_id": {
                     "type": "string",
-                    "example": "123-9088-2"
+                    "example": "123-9088-2",
+                    "description": "unique id to cross-reference records with external systems"
                   }
                 }
               },
@@ -2789,23 +2830,28 @@
                 "properties": {
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account"
                   },
                   "counterparty_id": {
                     "type": "string",
-                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "desciption": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
-                    "example": "12000.00"
+                    "example": "12000.00",
+                    "description": "amount of the transaction"
                   },
                   "description": {
                     "type": "string",
-                    "example": "Offshore dev team payment"
+                    "example": "Offshore dev team payment",
+                    "description": "description of the transaction"
                   },
                   "external_reference_id": {
                     "type": "string",
-                    "example": "123-9088-2"
+                    "example": "123-9088-2",
+                    "description": "unique id to cross-reference records with external systems"
                   }
                 }
               },
@@ -2870,27 +2916,33 @@
                 "properties": {
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account"
                   },
                   "counterparty_id": {
                     "type": "string",
-                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "desciption":"unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
-                    "example": "500.00"
+                    "example": "500.00",
+                    "description": "amount of the transaction"
                   },
                   "description": {
                     "type": "string",
-                    "example": "June office rent"
+                    "example": "June office rent",
+                    "description": "description of the transaction"
                   },
                   "reference_number": {
                     "type": "string",
-                    "example": "KH1-ZI1L-PTY"
+                    "example": "KH1-ZI1L-PTY",
+                    "description": "reference number of the RTP transaction that shown to the beneficiary"
                   },
                   "external_reference_id": {
                     "type": "string",
-                    "example": "123-9088-2"
+                    "example": "123-9088-2",
+                    "description": "unique id to cross-reference records with external systems"
                   }
                 }
               },
@@ -2956,27 +3008,33 @@
                 "properties": {
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account"
                   },
                   "counterparty_id": {
                     "type": "string",
-                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "desciption": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
-                    "example": "500.00"
+                    "example": "500.00",
+                    "description": "amount of the transaction"
                   },
                   "description": {
                     "type": "string",
-                    "example": "June office rent"
+                    "example": "June office rent",
+                    "description": "description of the transaction"
                   },
                   "reference_number": {
                     "type": "string",
-                    "example": "FR6L-81G634"
+                    "example": "FR6L-81G634",
+                    "description": "reference number of the FedNow transaction that shown to the beneficiary"
                   },
                   "external_reference_id": {
                     "type": "string",
-                    "example": "123-9088-2"
+                    "example": "123-9088-2",
+                    "description": "unique id to cross-reference records with external systems"
                   }
                 }
               },
@@ -3042,23 +3100,28 @@
                 "properties": {
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account"
                   },
                   "counterparty_id": {
                     "type": "string",
-                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "desciption":"unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
-                    "example": "23.50"
+                    "example": "23.50",
+                    "description": "amount of the transaction"
                   },
                   "description": {
                     "type": "string",
-                    "example": "Lunch expense"
+                    "example": "Lunch expense",
+                    "description": "description of the transaction"
                   },
                   "external_reference_id": {
                     "type": "string",
-                    "example": "123-9088-2"
+                    "example": "123-9088-2",
+                    "description": "unique id to cross-reference records with external systems"
                   }
                 }
               },
@@ -3123,23 +3186,28 @@
                 "properties": {
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account"
                   },
                   "counterparty_id": {
                     "type": "string",
-                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "desciption":"unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
-                    "example": "150.00"
+                    "example": "23.50",
+                    "description": "amount of the transaction"
                   },
                   "description": {
                     "type": "string",
-                    "example": "Account funding"
+                    "example": "Lunch expense",
+                    "description": "description of the transaction"
                   },
                   "external_reference_id": {
                     "type": "string",
-                    "example": "123-9088-2"
+                    "example": "123-9088-2",
+                    "description": "unique id to cross-reference records with external systems"
                   }
                 }
               },
@@ -3204,23 +3272,28 @@
                 "properties": {
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account"
                   },
                   "counterparty_id": {
                     "type": "string",
-                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "description": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
-                    "example": "1500.00"
+                    "example": "1500.00",
+                    "description": "amount of the transaction"
                   },
                   "description": {
                     "type": "string",
-                    "example": "Plumbing Supplier"
+                    "example": "Plumbing Supplier",
+                    "description": "description of the transaction"
                   },
                   "external_reference_id": {
                     "type": "string",
-                    "example": "123-9088-2"
+                    "example": "123-9088-2",
+                    "description": "unique id to cross-reference records with external systems"
                   }
                 }
               },
@@ -3285,19 +3358,23 @@
                 "properties": {
                   "sub_account_id": {
                     "type": "string",
-                    "example": "sub_bda1e562657c41e553104b10aad3fe70"
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account"
                   },
                   "counterparty_id": {
                     "type": "string",
-                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130"
+                    "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
+                    "desciption": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
-                    "example": "500.00"
+                    "example": "500.00",
+                    "description": "amount of the transaction"
                   },
                   "description": {
                     "type": "string",
-                    "example": "May invoice"
+                    "example": "May invoice",
+                    "description": "description of the transaction"
                   },
                   "image": {
                     "type": "object",
@@ -3314,7 +3391,8 @@
                   },
                   "external_reference_id": {
                     "type": "string",
-                    "example": "123-9088-2"
+                    "example": "123-9088-2",
+                    "description": "unique id to cross-reference records with external systems"
                   }
                 }
               },
@@ -3418,14 +3496,14 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "description": {
+                    "type": "string",
+                    "example": "Invoice payment",
+                    "description": "description of the transaction"
+                  },
                   "metadata": {
                     "type": "object",
-                    "properties": {
-                      "invoice_number": {
-                        "type": "string",
-                        "example": "INV-AC989878"
-                      }
-                    }
+                    "$ref": "#/components/schemas/metadata"
                   }
                 }
               },
@@ -6438,7 +6516,7 @@
           "sub_account_id": {
             "type": "string",
             "example": "sub_bda1e562657c41e553104b10aad3fe70",
-            "description": "unique id of the sub account holder"
+            "description": "unique id of the sub account"
           },
           "master_account_id": {
             "type": "string",
