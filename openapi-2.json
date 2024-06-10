@@ -214,6 +214,20 @@
                   "verification": {
                     "type": "object",
                     "$ref": "#/components/schemas/verification"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "TW-9L1L2-UVV",
+                    "description": "unique id to cross-reference records with external systems"
+                  },
+                  "purpose": {
+                    "type": "string",
+                    "example": "Ace sub-account holder",
+                    "description": "purpose of sub account holder"
+                  },
+                  "metadata": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/metadata"
                   }
                 },
                 "required": [
@@ -353,6 +367,32 @@
                   "verification": {
                     "type": "object",
                     "$ref": "#/components/schemas/verification"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "TW-9L1L2-UVV",
+                    "description": "unique id to cross-reference records with external systems"
+                  },
+                  "purpose": {
+                    "type": "string",
+                    "example": "Ace sub-account holder",
+                    "description": "purpose of sub account holder"
+                  },
+                  "metadata": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/metadata"
+                  },
+                  "status": {
+                    "type": "string",
+                    "example": "activated",
+                    "description": "status of sub account holder",
+                    "enum": [
+                      "pending_activation",
+                      "activated",
+                      "suspended",
+                      "deactivated",
+                      "locked"
+                    ]
                   }
                 }
               },
