@@ -2359,7 +2359,7 @@
                   "counterparty_id": {
                     "type": "string",
                     "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
-                    "desciption": "unique id of the counterparty"
+                    "description": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
@@ -2445,7 +2445,7 @@
                   "counterparty_id": {
                     "type": "string",
                     "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
-                    "desciption": "unique id of the counterparty"
+                    "description": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
@@ -2531,7 +2531,7 @@
                   "counterparty_id": {
                     "type": "string",
                     "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
-                    "desciption": "unique id of the counterparty"
+                    "description": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
@@ -2641,7 +2641,7 @@
                   "counterparty_id": {
                     "type": "string",
                     "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
-                    "desciption": "unique id of the counterparty"
+                    "description": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
@@ -2750,7 +2750,7 @@
                   "counterparty_id": {
                     "type": "string",
                     "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
-                    "desciption": "unique id of the counterparty"
+                    "description": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
@@ -2836,7 +2836,7 @@
                   "counterparty_id": {
                     "type": "string",
                     "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
-                    "desciption": "unique id of the counterparty"
+                    "description": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
@@ -2922,7 +2922,7 @@
                   "counterparty_id": {
                     "type": "string",
                     "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
-                    "desciption":"unique id of the counterparty"
+                    "description":"unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
@@ -3014,7 +3014,7 @@
                   "counterparty_id": {
                     "type": "string",
                     "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
-                    "desciption": "unique id of the counterparty"
+                    "description": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
@@ -3106,7 +3106,7 @@
                   "counterparty_id": {
                     "type": "string",
                     "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
-                    "desciption":"unique id of the counterparty"
+                    "description":"unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
@@ -3192,7 +3192,7 @@
                   "counterparty_id": {
                     "type": "string",
                     "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
-                    "desciption":"unique id of the counterparty"
+                    "description":"unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
@@ -3364,7 +3364,7 @@
                   "counterparty_id": {
                     "type": "string",
                     "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
-                    "desciption": "unique id of the counterparty"
+                    "description": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
