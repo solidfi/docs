@@ -1585,7 +1585,7 @@
                   "type": {
                     "type": "string",
                     "example": "physical",
-                    "description": "type of card - physical or virtual",
+                    "description": "type of card",
                     "enum": [
                       "physical",
                       "virtual"
@@ -1871,7 +1871,8 @@
                 "properties": {
                   "label": {
                     "type": "string",
-                    "example": "Travel Expense Card"
+                    "example": "Travel Expense Card",
+                    "description": "label of the card"
                   },
                   "controls": {
                     "type": "object",
@@ -2051,15 +2052,18 @@
                 "properties": {
                   "expiry_month": {
                     "type": "string",
-                    "example": "12"
+                    "example": "12",
+                    "description": "expiration month of the card"
                   },
                   "expiry_year": {
                     "type": "string",
-                    "example": "2022"
+                    "example": "2022",
+                    "description": "expiration year of the card"
                   },
                   "last4": {
                     "type": "string",
-                    "example": "5275"
+                    "example": "5275",
+                    "description": "last 4 digits of the card number"
                   }
                 }
               },
@@ -2137,11 +2141,13 @@
                   "properties": {
                     "id": {
                       "type": "string",
-                      "example": "crd_7948d9a96706dd05360a340002de725f"
+                      "example": "crd_7948d9a96706dd05360a340002de725f",
+                      "description": "unique id of the card"
                     },
                     "show_token": {
                       "type": "string",
-                      "example": "card_show_test_66449e6614b54f9e838c74807268db09"
+                      "example": "card_show_test_66449e6614b54f9e838c74807268db09",
+                      "description": "show token"
                     }
                   }
                 },
@@ -5824,7 +5830,7 @@
           "type": {
             "type": "string",
             "example": "physical",
-            "description": "type of card - physical or virtual",
+            "description": "type of card",
             "enum": [
               "physical",
               "virtual"
