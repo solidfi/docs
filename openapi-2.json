@@ -524,19 +524,36 @@
                 "properties": {
                   "sub_account_holder_id": {
                     "type": "string",
-                    "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752"
+                    "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
+                    "description": "unique id of the sub account"
                   },
                   "label": {
                     "type": "string",
-                    "example": "Ace payments"
+                    "example": "Ace payments",
+                    "description": "label of the sub account"
                   },
                   "type": {
                     "type": "string",
                     "example": "cash",
+                    "description": "type of the sub account",
                     "enum": [
                       "cash",
                       "prepaid"
                     ]
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "XVH-27LGDFX",
+                    "description": "unique id to cross-reference records with external systems"
+                  },
+                  "purpose": {
+                    "type": "string",
+                    "example": "Sub account to pay offshore dev team",
+                    "description": "purpose of sub account"
+                  },
+                  "metadata": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/metadata"
                   }
                 }
               },
@@ -643,6 +660,33 @@
                   "label": {
                     "type": "string",
                     "example": "Ace PayOps"
+                  },
+                  "external_reference_id": {
+                    "type": "string",
+                    "example": "XVH-27LGDFX",
+                    "description": "unique id to cross-reference records with external systems"
+                  },
+                  "purpose": {
+                    "type": "string",
+                    "example": "Sub account to pay offshore dev team",
+                    "description": "purpose of sub account"
+                  },
+                  "metadata": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/metadata"
+                  },
+                  "status": {
+                    "type": "string",
+                    "example": "open",
+                    "description": "status of sub account",
+                    "enum": [
+                      "open",
+                      "closed",
+                      "credit_blocked",
+                      "debit_blocked",
+                      "blocked",
+                      "locked"
+                    ]
                   }
                 }
               },
@@ -4459,7 +4503,7 @@
       },
       "metadata": {
         "type": "object",
-        "description": "Metadata takes free-form key-value pairs. You may send metadata when you create an object (POST) and when updating the object (PATCH).  If you would like to remove metadata that is already on an object, you can unset it by passing in the key-value pair with an empty string, like this: \n {  \"key\": \"\" }"
+        "description": "Metadata takes free-form key-value pairs. You may send metadata when you create an object (POST) and when updating the object (PATCH).  If you would like to remove metadata that is already on an object, you can unset it by passing in the key-value pair with an empty string, like this: \n {\"key\": \"\"}"
       },
       "sub_account_holder_timestamp": {
         "type": "object",
