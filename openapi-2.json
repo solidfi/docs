@@ -14,7 +14,7 @@
     }
   ],
   "paths": {
-    "/v2/master_account/{master_account_id}": {
+    "/v2/accounts/master_account/{master_account_id}": {
       "get": {
         "tags": [
           "Master Accounts"
@@ -67,7 +67,7 @@
         }
       ]
     },
-    "/v2/master_account": {
+    "/v2/accounts/master_account": {
       "get": {
         "tags": [
           "Master Accounts"
@@ -2451,7 +2451,8 @@
               "type": "string",
               "example": "{{api_key}}",
               "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
@@ -4595,6 +4596,11 @@
       "list_master_account": {
         "type": "object",
         "properties": {
+          "total": {
+            "type": "number",
+            "example": 1,
+            "description": "total number of records"
+          },
           "data": {
             "type": "array",
             "items": {
@@ -7171,7 +7177,7 @@
           "timestamps": {
             "created_at": "2024-04-01T21:00:00Z",
             "updated_at": "2024-04-02T21:00:00Z",
-            "deactivated_at": "2024-04-03T21:00:00Z"
+            "closed_at": "2024-04-03T21:00:00Z"
           }
         }
       },
