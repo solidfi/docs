@@ -146,7 +146,7 @@
         ]
       }
     },
-    "/v2/sub_account_holder": {
+    "/v2/accounts/sub_account_holder": {
       "get": {
         "tags": [
           "Sub Account Holders"
@@ -351,7 +351,7 @@
         ]
       }
     },
-    "/v2/sub_account_holder/{sub_account_holder_id}": {
+    "/v2/accounts/sub_account_holder/{sub_account_holder_id}": {
       "get": {
         "tags": [
           "Sub Account Holders"
@@ -502,7 +502,7 @@
         }
       ]
     },
-    "/v2/sub_account": {
+    "/v2/accounts/sub_account": {
       "get": {
         "tags": [
           "Sub Accounts"
@@ -684,7 +684,7 @@
         ]
       }
     },
-    "/v2/sub_account/{sub_account_id}": {
+    "/v2/accounts/sub_account/{sub_account_id}": {
       "get": {
         "tags": [
           "Sub Accounts"
@@ -7140,7 +7140,8 @@
               "status": "activated",
               "timestamps": {
                 "created_at": "2024-04-01T21:00:00Z",
-                "updated_at": "2024-04-01T21:00:00Z"
+                "updated_at": "2024-04-01T21:00:00Z",
+                "closed_at": "2024-04-01T21:00:00Z"
               }
             }
           ],
