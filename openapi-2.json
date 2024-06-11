@@ -7051,6 +7051,7 @@
     "examples": {
       "list_master_account_example": {
         "value": {
+          "total": 42,
           "data": [
             {
               "id": "sah_5ccfeef0adf0cbe2aa0980d2c9509b2d",
