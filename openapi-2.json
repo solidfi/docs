@@ -90,7 +90,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           },
@@ -195,7 +196,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -235,7 +237,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -362,7 +365,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -402,7 +406,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -556,7 +561,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -596,7 +602,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -691,7 +698,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -731,7 +739,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -867,7 +876,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -907,7 +917,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -1115,7 +1126,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -1155,7 +1167,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -1340,7 +1353,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -1380,7 +1394,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -1485,7 +1500,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -1525,7 +1541,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -1671,7 +1688,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -1711,7 +1729,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -1989,7 +2008,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -2029,7 +2049,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -2210,7 +2231,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -2297,7 +2319,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -2426,7 +2449,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             }
           }
         ],
@@ -2462,7 +2486,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -2542,7 +2567,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -2628,7 +2654,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -2714,7 +2741,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -2824,7 +2852,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -2933,7 +2962,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -3019,7 +3049,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -3105,7 +3136,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -3197,7 +3229,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -3289,7 +3322,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -3375,7 +3409,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -3461,7 +3496,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -3547,7 +3583,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -3652,7 +3689,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -3689,7 +3727,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -3767,7 +3806,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           },
@@ -3834,7 +3874,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -3905,7 +3946,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -3945,7 +3987,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -3982,7 +4025,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -4072,7 +4116,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -4162,7 +4207,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
