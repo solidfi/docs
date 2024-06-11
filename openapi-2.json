@@ -28,7 +28,8 @@
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "{{api_key}}"
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
             },
             "required": true
           }
@@ -80,7 +81,8 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{master_account_holder_id}}"
+              "example": "{{master_account_holder_id}}",
+              "description": "unique id of the master account holder"
             }
           },
           {
@@ -157,7 +159,8 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{master_account_id}}"
+              "example": "{{master_account_id}}",
+              "description": "unique id of the master account"
             }
           },
           {
@@ -508,7 +511,8 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{sub_account_holder_id}}"
+              "example": "{{sub_account_holder_id}}",
+              "description": "unique id of the sub account holder"
             }
           },
           {
@@ -516,7 +520,8 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{master_account_id}}"
+              "example": "{{master_account_id}}",
+              "description": "unique id of the master account"
             }
           },
           {
@@ -826,7 +831,8 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{sub_account_id}}"
+              "example": "{{sub_account_id}}",
+              "description": "unique id of the sub account"
             }
           },
           {
@@ -1298,7 +1304,8 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{master_account_id}}"
+              "example": "{{master_account_id}}",
+              "description": "unique id of the master account"
             }
           },
           {
@@ -1619,7 +1626,8 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{sub_account_id}}"
+              "example": "{{sub_account_id}}",
+              "description": "unique id of the sub account"
             }
           },
           {
@@ -1627,7 +1635,8 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{card_holder_id}}"
+              "example": "{{card_holder_id}}",
+              "description": "unique id of the card holder"
             }
           },
           {
@@ -2354,7 +2363,8 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{sub_account_id}}"
+              "example": "{{sub_account_id}}",
+              "description": "unique id of the sub account"
             }
           },
           {
@@ -2362,7 +2372,8 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{master_account_id}}"
+              "example": "{{master_account_id}}",
+              "description": "unique id of the master account"
             }
           },
           {
@@ -2370,7 +2381,8 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{sub_account_holder_id}}"
+              "example": "{{sub_account_holder_id}}",
+              "description": "unique id of the sub account holder"
             }
           },
           {
@@ -2378,7 +2390,8 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{master_account_holder_id}}"
+              "example": "{{master_account_holder_id}}",
+              "description": "unique id of the master account holder"
             }
           },
           {
