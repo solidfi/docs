@@ -108,7 +108,7 @@
             "schema": {
               "type": "string",
               "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
-              "description": "A cursor for use in pagination. starting_after is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, ending with Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky, your subsequent call can include starting_after=Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky in order to fetch the next page of the list."
+              "description": "A cursor for use in pagination. `starting_after` is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, ending with `Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky`, your subsequent call can include `starting_after=Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky` in order to fetch the next page of the list."
             },
             "required": true
           },
@@ -118,7 +118,7 @@
             "schema": {
               "type": "string",
               "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
-              "description": "A cursor for use in pagination. starting_after is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, ending with Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky, your subsequent call can include starting_after=Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky in order to fetch the next page of the list."
+              "description": "A cursor for use in pagination. `ending_before` is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, starting with `Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky`, your subsequent call can include `ending_before= Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky` in order to fetch the previous page of the list."
             },
             "required": true
           }
@@ -4359,6 +4359,7 @@
           "has_more": {
             "type": "string",
             "example": "true",
+            "description": "if there are more records to iterate or not",
             "enum": [
               "true",
               "false"
@@ -4366,11 +4367,13 @@
           },
           "starting_after": {
             "type": "string",
-            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+            "description": "A cursor for use in pagination. `starting_after` is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, ending with `Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky`, your subsequent call can include `starting_after=Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky` in order to fetch the next page of the list."
           },
           "ending_before": {
             "type": "string",
-            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+            "description": "A cursor for use in pagination. `ending_before` is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, starting with `Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky`, your subsequent call can include `ending_before= Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky` in order to fetch the previous page of the list."
           }
         }
       },
@@ -4395,12 +4398,12 @@
           "starting_after": {
             "type": "string",
             "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
-            "description": "A cursor for use in pagination. starting_after is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, ending with Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky, your subsequent call can include starting_after=Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky in order to fetch the next page of the list."
+            "description": "A cursor for use in pagination. `starting_after` is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, ending with `Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky`, your subsequent call can include `starting_after=Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky` in order to fetch the next page of the list."
           },
           "ending_before": {
             "type": "string",
             "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
-            "description": "A cursor for use in pagination. starting_after is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, ending with Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky, your subsequent call can include starting_after=Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky in order to fetch the next page of the list."
+            "description": "A cursor for use in pagination. `ending_before` is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, starting with `Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky`, your subsequent call can include `ending_before= Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky` in order to fetch the previous page of the list."
           }
         }
       },
