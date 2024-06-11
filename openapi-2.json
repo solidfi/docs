@@ -99,8 +99,7 @@
               "type": "number",
               "example": 10,
               "description": "number of records to return"
-            },
-            "required": true
+            }
           },
           {
             "name": "starting_after",
@@ -109,8 +108,7 @@
               "type": "string",
               "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
               "description": "A cursor for use in pagination. `starting_after` is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, ending with `Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky`, your subsequent call can include `starting_after=Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky` in order to fetch the next page of the list."
-            },
-            "required": true
+            }
           },
           {
             "name": "ending_before",
@@ -119,8 +117,7 @@
               "type": "string",
               "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
               "description": "A cursor for use in pagination. `ending_before` is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, starting with `Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky`, your subsequent call can include `ending_before= Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky` in order to fetch the previous page of the list."
-            },
-            "required": true
+            }
           }
         ],
         "responses": {
