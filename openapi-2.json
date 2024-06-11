@@ -94,7 +94,7 @@
           },
           {
             "name": "limit",
-            "in": "header",
+            "in": "query",
             "schema": {
               "type": "number",
               "example": 10,
@@ -103,7 +103,7 @@
           },
           {
             "name": "starting_after",
-            "in": "header",
+            "in": "query",
             "schema": {
               "type": "string",
               "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
@@ -112,7 +112,7 @@
           },
           {
             "name": "ending_before",
-            "in": "header",
+            "in": "query",
             "schema": {
               "type": "string",
               "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
