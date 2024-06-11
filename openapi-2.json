@@ -4631,6 +4631,11 @@
       "list_sub_account_holder": {
         "type": "object",
         "properties": {
+          "total": {
+            "type": "number",
+            "example": 1,
+            "description": "total number of records"
+          },
           "data": {
             "type": "array",
             "items": {
@@ -4661,6 +4666,11 @@
       "list_sub_account": {
         "type": "object",
         "properties": {
+          "total": {
+            "type": "number",
+            "example": 1,
+            "description": "total number of records"
+          },
           "data": {
             "type": "array",
             "items": {
@@ -5100,6 +5110,11 @@
       "list_attachment_object": {
         "type": "object",
         "properties": {
+          "total": {
+            "type": "number",
+            "example": 1,
+            "description": "total number of records"
+          },
           "data": {
             "type": "array",
             "items": {
@@ -5916,6 +5931,11 @@
       "list_counterparty": {
         "type": "object",
         "properties": {
+          "total": {
+            "type": "number",
+            "example": 1,
+            "description": "total number of records"
+          },
           "data": {
             "type": "array",
             "items": {
@@ -6026,6 +6046,11 @@
       "list_attachment": {
         "type": "object",
         "properties": {
+          "total": {
+            "type": "number",
+            "example": 1,
+            "description": "total number of records"
+          },
           "data": {
             "type": "array",
             "items": {
@@ -6135,6 +6160,11 @@
       "list_card_holder": {
         "type": "object",
         "properties": {
+          "total": {
+            "type": "number",
+            "example": 1,
+            "description": "total number of records"
+          },
           "data": {
             "type": "array",
             "items": {
@@ -6465,6 +6495,11 @@
       "list_card": {
         "type": "object",
         "properties": {
+          "total": {
+            "type": "number",
+            "example": 1,
+            "description": "total number of records"
+          },
           "data": {
             "type": "array",
             "items": {
@@ -7020,6 +7055,11 @@
       "list_transaction": {
         "type": "object",
         "properties": {
+          "total": {
+            "type": "number",
+            "example": 1,
+            "description": "total number of records"
+          },
           "data": {
             "type": "array",
             "items": {
@@ -7051,7 +7091,7 @@
     "examples": {
       "list_master_account_example": {
         "value": {
-          "total": 42,
+          "total": 1,
           "data": [
             {
               "id": "sah_5ccfeef0adf0cbe2aa0980d2c9509b2d",
@@ -7111,6 +7151,7 @@
       },
       "list_sub_account_holder_example": {
         "value": {
+          "total": 1,
           "data": [
             {
               "id": "mas_743fa071316bc6beaf5dddfd05f49c30",
@@ -7273,6 +7314,7 @@
       },
       "list_sub_account_example": {
         "value": {
+          "total": 1,
           "data": [
             {
               "id": "sub_bda1e562657c41e553104b10aad3fe70",
@@ -7451,6 +7493,7 @@
       },
       "list_counterparty_example": {
         "value": {
+          "total": 1,
           "data": [
             {
               "value": {
@@ -7604,6 +7647,7 @@
       },
       "list_attachment_example": {
         "value": {
+          "total": 1,
           "data": [
             {
               "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
@@ -7669,6 +7713,7 @@
       },
       "list_card_holder_example": {
         "value": {
+          "total": 1,
           "data": [
             {
               "id": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0",
@@ -7799,6 +7844,7 @@
       },
       "list_card_example": {
         "value": {
+          "total": 1,
           "data": [
             {
               "id": "crd_7948d9a96706dd05360a340002de725f",
@@ -8852,6 +8898,7 @@
       },
       "list_transaction_example": {
         "value": {
+          "total": 1,
           "data": [
             {
               "id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
