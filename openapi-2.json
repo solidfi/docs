@@ -8819,6 +8819,7 @@
           "ach": {
             "same_day": "true",
             "effective_date": "2024-04-04",
+            "company_discretionary_data": "",
             "company_entry_description": "Payments",
             "trace_number": "123112211",
             "return_code": "",
@@ -8887,6 +8888,7 @@
           "ach": {
             "same_day": "true",
             "effective_date": "2024-04-04",
+            "company_discretionary_data": "",
             "company_entry_description": "Payments",
             "trace_number": "123112211",
             "return_code": "",
@@ -8958,6 +8960,7 @@
               "ach": {
                 "same_day": "true",
                 "effective_date": "2024-04-04",
+                "company_discretionary_data": "",
                 "company_entry_description": "Payments",
                 "trace_number": "123112211",
                 "return_code": "",
