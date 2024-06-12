@@ -826,7 +826,7 @@
         }
       ]
     },
-    "/v2/counterparty": {
+    "/v2/payments/counterparty": {
       "get": {
         "tags": [
           "Counterparties"
@@ -1112,7 +1112,7 @@
         ]
       }
     },
-    "/v2/counterparty/{counterparty_id}": {
+    "/v2/payments/counterparty/{counterparty_id}": {
       "get": {
         "tags": [
           "Counterparties"
@@ -1303,7 +1303,7 @@
         }
       ]
     },
-    "/v2/card_holder": {
+    "/v2/issuing/card_holder": {
       "get": {
         "tags": [
           "Card Holders"
@@ -1486,7 +1486,7 @@
         ]
       }
     },
-    "/v2/card_holder/{card_holder_id}": {
+    "/v2/issuing/card_holder/{card_holder_id}": {
       "get": {
         "tags": [
           "Card Holders"
@@ -1629,7 +1629,7 @@
         }
       ]
     },
-    "/v2/card": {
+    "/v2/issuing/card": {
       "get": {
         "tags": [
           "Cards"
@@ -1935,7 +1935,7 @@
               "examples": {
                 "Create a Card": {
                   "value": {
-                    "card_holder_id": "",
+                    "card_holder_id": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0",
                     "label": "Travel",
                     "product": "business_spend",
                     "theme": "metallic",
@@ -1994,7 +1994,7 @@
         ]
       }
     },
-    "/v2/card/{card_id}": {
+    "/v2/issuing/card/{card_id}": {
       "get": {
         "tags": [
           "Cards"
@@ -2217,7 +2217,7 @@
         }
       ]
     },
-    "/v2/card/{card_id}/activate": {
+    "/v2/issuing/card/{card_id}/activate": {
       "patch": {
         "tags": [
           "Cards"
@@ -2305,7 +2305,7 @@
         }
       ]
     },
-    "/v2/card/{card_id}/show_token": {
+    "/v2/issuing/card/{card_id}/show_token": {
       "post": {
         "tags": [
           "Cards"
@@ -2372,7 +2372,7 @@
         }
       ]
     },
-    "/v2/transaction": {
+    "/v2/payments/transaction": {
       "get": {
         "tags": [
           "Transactions"
@@ -2554,7 +2554,7 @@
         }
       }
     },
-    "/v2/intra_account/push": {
+    "/v2/payments/intra_account/push": {
       "post": {
         "tags": [
           "Transactions"
@@ -2641,7 +2641,7 @@
         }
       }
     },
-    "/v2/intra_account/pull": {
+    "/v2/payments/intra_account/pull": {
       "post": {
         "tags": [
           "Transactions"
@@ -2728,7 +2728,7 @@
         }
       }
     },
-    "/v2/ach/push": {
+    "/v2/payments/ach/push": {
       "post": {
         "tags": [
           "Transactions"
@@ -2839,7 +2839,7 @@
         }
       }
     },
-    "/v2/ach/pull": {
+    "/v2/payments/ach/pull": {
       "post": {
         "tags": [
           "Transactions"
@@ -2949,7 +2949,7 @@
         }
       }
     },
-    "/v2/domestic_wire/push": {
+    "/v2/payments/domestic_wire/push": {
       "post": {
         "tags": [
           "Transactions"
@@ -3036,7 +3036,7 @@
         }
       }
     },
-    "/v2/international_wire/push": {
+    "/v2/payments/international_wire/push": {
       "post": {
         "tags": [
           "Transactions"
@@ -3123,7 +3123,7 @@
         }
       }
     },
-    "/v2/rtp/push": {
+    "/v2/payments/rtp/push": {
       "post": {
         "tags": [
           "Transactions"
@@ -3216,7 +3216,7 @@
         }
       }
     },
-    "/v2/fednow/push": {
+    "/v2/payments/fednow/push": {
       "post": {
         "tags": [
           "Transactions"
@@ -3309,7 +3309,7 @@
         }
       }
     },
-    "/v2/debitcard/push": {
+    "/v2/payments/debitcard/push": {
       "post": {
         "tags": [
           "Transactions"
@@ -3396,7 +3396,7 @@
         }
       }
     },
-    "/v2/debitcard/pull": {
+    "/v2/payments/debitcard/pull": {
       "post": {
         "tags": [
           "Transactions"
@@ -3483,7 +3483,7 @@
         }
       }
     },
-    "/v2/check/send": {
+    "/v2/payments/check/send": {
       "post": {
         "tags": [
           "Transactions"
@@ -3570,7 +3570,7 @@
         }
       }
     },
-    "/v2/check/deposit": {
+    "/v2/payments/check/deposit": {
       "post": {
         "tags": [
           "Transactions"
@@ -3676,7 +3676,7 @@
         }
       }
     },
-    "/v2/transaction/{transaction_id}": {
+    "/v2/payments/transaction/{transaction_id}": {
       "get": {
         "tags": [
           "Transactions"
@@ -4038,6 +4038,11 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "master_account_id": {
+                    "type": "string",
+                    "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
+                    "description": "unique id of the master account"
+                  },
                   "sub_account_id": {
                     "type": "string",
                     "example": "sub_bda1e562657c41e553104b10aad3fe70",
@@ -4129,6 +4134,11 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "master_account_id": {
+                    "type": "string",
+                    "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
+                    "description": "unique id of the master account"
+                  },
                   "sub_account_id": {
                     "type": "string",
                     "example": "sub_bda1e562657c41e553104b10aad3fe70",
@@ -7155,9 +7165,10 @@
           "total": 1,
           "data": [
             {
-              "id": "mas_743fa071316bc6beaf5dddfd05f49c30",
+              "id": "sah_743fa071316bc6beaf5dddfd05f49c30",
               "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
               "master_account_holder_id": "mah_201e02c581a098a740456c5c19fcfcd6",
+              "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
               "label": "Payments Account",
               "available_balance": "104100.41",
               "pending_credits": "1198.50",
@@ -7178,7 +7189,7 @@
               "metadata": {
                 "master_account_code": "001"
               },
-              "status": "open",
+              "status": "activated",
               "timestamps": {
                 "created_at": "2024-04-01T21:00:00Z",
                 "updated_at": "2024-04-02T21:00:00Z",
@@ -7286,6 +7297,7 @@
           "sub_account_holder_id": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
           "sub_account_holder_name": "Ace LLC",
           "label": "Payments Account",
+          "type": "cash",
           "available_balance": "0.00",
           "pending_credits": "0.00",
           "pending_debits": "0.00",
@@ -7325,6 +7337,7 @@
               "sub_account_holder_id": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
               "sub_account_holder_name": "Ace LLC",
               "label": "Payments Account",
+              "type": "cash",
               "available_balance": "0.00",
               "pending_credits": "0.00",
               "pending_debits": "0.00",
@@ -7708,7 +7721,8 @@
           "status": "activated",
           "timestamps": {
             "created_at": "2024-04-01T21:00:00Z",
-            "updated_at": "2024-04-02T21:00:00Z"
+            "updated_at": "2024-04-02T21:00:00Z",
+            "deactivated_at": "2024-04-02T21:00:00Z"
           }
         }
       },
@@ -7760,7 +7774,8 @@
               "status": "activated",
               "timestamps": {
                 "created_at": "2024-04-01T21:00:00Z",
-                "updated_at": "2024-04-02T21:00:00Z"
+                "updated_at": "2024-04-02T21:00:00Z",
+                "deactivated_at": "2024-04-02T21:00:00Z"
               }
             }
           ],
@@ -7839,7 +7854,8 @@
           "status": "activated",
           "timestamps": {
             "created_at": "2024-04-01T21:00:00Z",
-            "updated_at": "2024-04-02T21:00:00Z"
+            "updated_at": "2024-04-02T21:00:00Z",
+            "closed_at": "2024-04-02T21:00:00Z"
           }
         }
       },
@@ -7916,7 +7932,8 @@
               "status": "activated",
               "timestamps": {
                 "created_at": "2024-04-01T21:00:00Z",
-                "updated_at": "2024-04-02T21:00:00Z"
+                "updated_at": "2024-04-02T21:00:00Z",
+                "closed_at": "2024-04-02T21:00:00Z"
               }
             }
           ],
@@ -7957,7 +7974,9 @@
             "shipping_address": null
           },
           "ach": {
+            "same_day": "true",
             "effective_date": "2024-04-04",
+            "company_discretionary_data": "DIRECT DEPOSIT",
             "company_entry_description": "Payments",
             "trace_number": "123112211",
             "return_code": "",
@@ -8144,6 +8163,7 @@
             "shipping_address": null
           },
           "ach": {
+            "same_day": "true",
             "effective_date": "2024-04-04",
             "company_discretionary_data": "DIRECT DEPOSIT",
             "company_entry_description": "PAYROLL",
@@ -8210,7 +8230,9 @@
             "shipping_address": null
           },
           "ach": {
+            "same_day": "true",
             "effective_date": "2024-04-04",
+            "company_discretionary_data": "DIRECT DEPOSIT",
             "company_entry_description": "Payments",
             "trace_number": "",
             "return_code": "",
@@ -8795,6 +8817,7 @@
             "shipping_address": null
           },
           "ach": {
+            "same_day": "true",
             "effective_date": "2024-04-04",
             "company_entry_description": "Payments",
             "trace_number": "123112211",
@@ -8862,6 +8885,7 @@
             "shipping_address": null
           },
           "ach": {
+            "same_day": "true",
             "effective_date": "2024-04-04",
             "company_entry_description": "Payments",
             "trace_number": "123112211",
@@ -8932,6 +8956,7 @@
                 "shipping_address": null
               },
               "ach": {
+                "same_day": "true",
                 "effective_date": "2024-04-04",
                 "company_entry_description": "Payments",
                 "trace_number": "123112211",
@@ -9004,6 +9029,7 @@
             "shipping_address": null
           },
           "ach": {
+            "same_day": "true",
             "effective_date": "2024-04-04",
             "company_discretionary_data": "",
             "company_entry_description": "Payment",
@@ -9076,6 +9102,7 @@
             "shipping_address": null
           },
           "ach": {
+            "same_day": "true",
             "effective_date": "2024-04-04",
             "company_discretionary_data": "",
             "company_entry_description": "Payment",
