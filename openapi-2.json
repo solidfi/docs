@@ -50,6 +50,18 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Retrieve a Master Account",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -7099,6 +7111,20 @@
       }
     },
     "examples": {
+      "unauth_error": {
+        "value": {
+          "request_id": "req_01900e34c96d7abfa970a9f454ab2d5d",
+          "client_id": "",
+          "method": "GET",
+          "status": 401,
+          "error": {
+            "code": "ERROR_CODE_UNAUTHORIZED",
+            "message": "unauthorized",
+            "field_name": ""
+          },
+          "created_at": "2024-06-12T20:47:38Z"
+        }
+      },
       "list_master_account_example": {
         "value": {
           "total": 1,
