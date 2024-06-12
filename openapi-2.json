@@ -4247,6 +4247,7 @@
             }
           },
           "401": {
+            "description": "Unauthorized Error",
             "content": {
               "application/json": {
                 "examples": {
