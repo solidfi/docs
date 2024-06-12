@@ -62,6 +62,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -7651,6 +7663,20 @@
       }
     },
     "examples": {
+      "master_account_not_found_error": {
+        "value": {
+          "request_id": "req_01900e959896706b870affad1b4d71dd",
+          "client_id": "",
+          "method": "GET",
+          "status": 404,
+          "error": {
+              "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
+              "message": "cannot find account by id in qldb",
+              "field_name": ""
+          },
+          "created_at": "2024-06-12T22:33:23Z"
+        }
+      },
       "unauth_error": {
         "value": {
           "request_id": "req_01900e34c96d7abfa970a9f454ab2d5d",
