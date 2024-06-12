@@ -135,3 +135,27 @@
 - Metadata search filters added to List all Accounts, Transfers, Contacts, Crypto APIs
 - Added CVV verification field for debit pull contacts to The Debit Card sub-object
 - Bug fixes
+
+### October 27, 2022
+
+- If person has a US address, SSN is required to Create a Crypto Wallet
+- Support for new cryptocurrencies: Solana (SOL) and Polkadot (DOT)
+- Send a Check
+    - "deliveryStatus" gets updated in transaction data when shipping status changes
+    - now writing "description" field data to memo line on check
+- ach.originated.updated webhook for when ACH is updated (eg. trace number is added)
+- List all Cards APIs - Provide filter for availableLimit
+- Added totalCredit and totalDebit to Retrieve a Statement API
+- Added filter to List all Persons dateOfBirth=YYYY-MM-DD
+- New API to List Supported Cryptocurrencies‍
+- Submit an IDV - new "action" request resumes or force expires existing IDV inquiries and gets a new inquiry link
+- New IDV Approval API (requires Operational permission)
+- Added a new "label" field to The Contact object
+- New filters added to List all ATM API:
+    - "available24Hours"
+    - "handicappedAccessible"
+    - "depositAvailable"
+- Send a Debit Push - removed AVS check if card contact is push only
+- Submit an IDV - new "action" request resumes or force expires existing IDV inquiries and gets a new inquiry link
+- Expose new DE-* fields in Card RTA Webhooks
+- Bug fixes
