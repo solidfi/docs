@@ -37,7 +37,7 @@
       {
         "name": "Changelog",
         "icon": "list-check",
-        "page": ["chagelog/change-log.mdx"]
+        "url": "chagelog/change-log.mdx"
       }
     ],
     "navigation": [
