@@ -380,6 +380,18 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -745,6 +757,18 @@
                 "examples": {
                   "sub_account_example": {
                     "$ref": "#/components/examples/sub_account_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -1213,6 +1237,18 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -1619,6 +1655,18 @@
                 "examples": {
                   "master_account_example": {
                     "$ref": "#/components/examples/card_holder_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -2163,6 +2211,18 @@
                 "examples": {
                   "master_account_example": {
                     "$ref": "#/components/examples/card_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -2790,6 +2850,18 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -2877,6 +2949,18 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -2960,6 +3044,18 @@
                 "examples": {
                   "intra_account_pull_transaction_example": {
                     "$ref": "#/components/examples/intra_account_pull_transaction_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -3075,6 +3171,18 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -3185,6 +3293,18 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -3272,6 +3392,18 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -3355,6 +3487,18 @@
                 "examples": {
                   "international_wire_transaction_example": {
                     "$ref": "#/components/examples/international_wire_transaction_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -3452,6 +3596,18 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -3545,6 +3701,18 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -3628,6 +3796,18 @@
                 "examples": {
                   "debit_card_push_transaction_example": {
                     "$ref": "#/components/examples/debit_card_push_transaction_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -3719,6 +3899,18 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -3802,6 +3994,18 @@
                 "examples": {
                   "check_send_transaction_example": {
                     "$ref": "#/components/examples/check_send_transaction_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -3908,6 +4112,18 @@
                 "examples": {
                   "check_deposit_transaction_example": {
                     "$ref": "#/components/examples/check_deposit_transaction_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -4202,6 +4418,18 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -4388,6 +4616,18 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -4480,6 +4720,18 @@
                 "examples": {
                   "simulate_ach_pull_example": {
                     "$ref": "#/components/examples/simulate_ach_pull_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -4651,6 +4903,18 @@
                   },
                   "simulate_auth_settle_example": {
                     "$ref": "#/components/examples/simulate_auth_settle_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
