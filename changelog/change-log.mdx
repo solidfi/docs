@@ -22,3 +22,11 @@
 - New endpoint to Recover Provisional Credit for disputes
 - New fields added to The Program object for dispute processing: "company":"businessId" and "dispute":"checkingAccountId"
 - Bug fixes
+
+### December 21, 2023
+
+- New business details deployed in preparation for upcoming KYB requirement changes
+    - List NAICS Codes API to get a list of available codes to present to the user from which they must make a selection. This then needs to be input into the "naicsCode" field in The Business object
+    - Submit Business Projections API to collect projected amounts of annual transaction volume in each of the payment form factors
+- Updated the character limit to 135 for the "description" field on Send a Wire Transfer
+- Bug Fixes
