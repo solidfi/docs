@@ -52,7 +52,6 @@
             }
           },
           "401": {
-            "description": "Unauthorized error",
             "content": {
               "application/json": {
                 "examples": {
@@ -145,8 +144,19 @@
                   "$ref": "#/components/schemas/list_master_account"
                 },
                 "examples": {
-                  "master_account_example": {
+                  "list_master_account_example": {
                     "$ref": "#/components/examples/list_master_account_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "list_master_account_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -226,6 +236,17 @@
                 "examples": {
                   "list_sub_account_holder_example": {
                     "$ref": "#/components/examples/list_sub_account_holder_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "list_sub_account_holder_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -399,6 +420,17 @@
                 }
               }
             }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "sub_account_holder_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -497,6 +529,17 @@
                 }
               }
             }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "sub_account_holder_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -589,8 +632,19 @@
                   "$ref": "#/components/schemas/list_sub_account"
                 },
                 "examples": {
-                  "list_sub_account_holder_example": {
+                  "list_sub_account_example": {
                     "$ref": "#/components/examples/list_sub_account_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "list_sub_account_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -732,6 +786,17 @@
                 }
               }
             }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "sub_account_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -821,6 +886,17 @@
                 }
               }
             }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "sub_account_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -904,8 +980,19 @@
                   "$ref": "#/components/schemas/list_counterparty"
                 },
                 "examples": {
-                  "list_sub_account_holder_example": {
+                  "list_counterparty_example": {
                     "$ref": "#/components/examples/list_counterparty_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "list_counterparty_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -1154,8 +1241,19 @@
                   "$ref": "#/components/schemas/counterparty"
                 },
                 "examples": {
-                  "master_account_example": {
+                  "counterparty_example": {
                     "$ref": "#/components/examples/counterparty_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "counterparty_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -1292,8 +1390,19 @@
                   "$ref": "#/components/schemas/counterparty"
                 },
                 "examples": {
-                  "master_account_example": {
+                  "counterparty_example": {
                     "$ref": "#/components/examples/counterparty_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "counterparty_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -1381,8 +1490,19 @@
                   "$ref": "#/components/schemas/list_card_holder"
                 },
                 "examples": {
-                  "master_account_example": {
+                  "list_card_holder_example": {
                     "$ref": "#/components/examples/list_card_holder_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "list_card_holder_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -1528,8 +1648,19 @@
                   "$ref": "#/components/schemas/card_holder"
                 },
                 "examples": {
-                  "master_account_example": {
+                  "card_holder_example": {
                     "$ref": "#/components/examples/card_holder_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "card_holder_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -1618,8 +1749,19 @@
                   "$ref": "#/components/schemas/card_holder"
                 },
                 "examples": {
-                  "master_account_example": {
+                  "card_holder_example": {
                     "$ref": "#/components/examples/card_holder_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "card_holder_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -1716,8 +1858,19 @@
                   "$ref": "#/components/schemas/list_card"
                 },
                 "examples": {
-                  "master_account_example": {
+                  "list_card_example": {
                     "$ref": "#/components/examples/list_card_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "list_card_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -2036,8 +2189,19 @@
                   "$ref": "#/components/schemas/card"
                 },
                 "examples": {
-                  "master_account_example": {
+                  "card_example": {
                     "$ref": "#/components/examples/card_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "card_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -2206,8 +2370,19 @@
                   "$ref": "#/components/schemas/card"
                 },
                 "examples": {
-                  "master_account_example": {
+                  "card_example": {
                     "$ref": "#/components/examples/card_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "card_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -2294,8 +2469,19 @@
                   "$ref": "#/components/schemas/card"
                 },
                 "examples": {
-                  "master_account_example": {
+                  "card_example": {
                     "$ref": "#/components/examples/card_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "card_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -2358,11 +2544,22 @@
                   }
                 },
                 "examples": {
-                  "master_account_example": {
+                  "show_card_example": {
                     "value": {
                       "id": "crd_7948d9a96706dd05360a340002de725f",
                       "show_token": "card_show_test_66449e6614b54f9e838c74807268db09"
                     }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "show_card_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -2479,6 +2676,17 @@
                 "examples": {
                   "list_transaction_example": {
                     "$ref": "#/components/examples/list_transaction_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "list_transaction_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -3724,6 +3932,17 @@
                 }
               }
             }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "retrieve_transaction_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -3787,6 +4006,17 @@
                 "examples": {
                   "update_transaction_example": {
                     "$ref": "#/components/examples/update_transaction_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "update_transaction_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -3864,6 +4094,17 @@
                 "examples": {
                   "list_attachment_example": {
                     "$ref": "#/components/examples/list_attachment_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "list_attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
@@ -3975,8 +4216,19 @@
                   "$ref": "#/components/schemas/attachment"
                 },
                 "examples": {
-                  "list_sub_account_holder_example": {
+                  "attachment_example": {
                     "$ref": "#/components/examples/attachment_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "attachment_example": {
+                    "$ref": "#/components/examples/unauth_error"
                   }
                 }
               }
