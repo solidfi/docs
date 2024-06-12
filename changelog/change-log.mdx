@@ -1,4 +1,261 @@
-## "March 21, 2024"
+## March 21, 2024
 
 - Docusign check skipped for sandbox test EINs: 999999999, 099999999, 199999999
+- Bug fixes
+
+## February 26, 2024
+
+- Full SSN required to Create a Person or Update a Person - Last 4 of SSN no longer permitted
+- Remote Check Deposit is enabled for use with LCB
+- Webhook updated when a Send a Check is cashed: check.originated.debit
+- Updated Provisional Credit APIs to support multiple credits for ongoing disputes
+- Added The Dispute sub-object to The Transaction Object
+- Card Declined Reason Codes list is updated
+- Bug fixes and enhancements
+
+## January 29, 2024
+
+- Business Ownership Disclosure API added for business owner to sign the required disclosure via Docusign
+- New required designation field added to the business member object (enforcement begins 2/15/24)
+- Submit Business Projections API can now be updated retroactively on KYB approved businesses
+- New endpoint to Issue Provisional Credit for disputes
+- New endpoint to Recover Provisional Credit for disputes
+- New fields added to The Program object for dispute processing: "company":"businessId" and "dispute":"checkingAccountId"
+- Bug fixes
+
+## December 21, 2023
+
+- New business details deployed in preparation for upcoming KYB requirement changes
+  - List NAICS Codes API to get a list of available codes to present to the user from which they must make a selection. This then needs to be input into the "naicsCode" field in The Business object
+  - Submit Business Projections API to collect projected amounts of annual transaction volume in each of the payment form factors
+- Updated the character limit to 135 for the "description" field on Send a Wire Transfer
+- Bug Fixes
+
+## November 15, 2023
+
+- The "ownership" field in is now mandatory (for Lewis & Clark bank) in The Member object
+- Also, the "ownership" field now supports decimal values
+- Bug Fixes
+
+## October 12, 2023
+
+- Send a Check now supports including attachments (PDF, PNG, JPG, HTML) via the "attachment" field
+- Also in Send a Check, description field updated to 200 character maximum
+- Bug Fixes
+
+## September 29, 2023
+
+- Added "pinVerified" field to The Card Transaction sub-object
+- Bug Fixes
+
+## August 17, 2023
+
+- Added new Send a Check deliveryStatus "delivered" to The Transaction Type sub-object
+- Now allowing PO Box shipping addresses for physical cards in Create a Card
+- Bug fixes
+
+## July 10, 2023
+
+- Updated Card Declined Reason Codes
+- Check Deposit support for Base64 encoded images
+- added new Batch Intrabank API
+- Bug fixes
+
+## June 19, 2023
+
+- Fix for issue with missing ach.originated.credit webhooks
+
+## May 24, 2023
+
+- Added query filter for List all Accounts (Program) to search for strings in the label field
+- Added disputeStatus field for disputes to The Card Transaction sub-object
+- New webhook: card.dispute.updated when a card transaction dispute status is updated
+- Updated webhook: ach.returned when an ACH return is invoiced
+- Added error code when attempting to close account with pending transactions
+- Bug fixes
+
+## April 20, 2023
+
+- New field, "last4", added to The ACH sub-object, providing the last 4 digits of the account number for Plaid linked accounts (useful in case of Chase TANs)
+- Bug fixes
+
+## March 29, 2023
+
+- New API - List All Card Declined Transactions (Program)
+- New fields, "isCaptured" and "capturedAt", added to The Card Transaction sub-object
+- New webhook related to the previous note - card.captured
+- KYC required for business members to create cards (does not apply to Evolve accounts)
+- Replace a Card now allows updated shipping address
+- New fields, "fallbackTransferId" and "fallbackTxnId", added to The Transaction Object to support mapping of overdraft transfers
+- rtaAuthId field added to card.declined webhook events
+- Support for independent refund (without parentTxnId) on Card Testing
+- Bug fixes
+‍
+## March 13, 2023
+
+- Webhook contact.updated status now updates on contact deletion
+- New API to List Plaid Exchange Links
+- New web hooks for Plaid Exchange linking: person.plaid.linked, person.plaid.unlinked
+- authMethod field added to RTA webhooks
+- isCashed and cashedAt fields added to the Send Check Transaction sub-object
+
+## February 24, 2023
+
+- Create a Person now allowed without phone number (only for non-KYC use cases)
+- List All Cards APIs now support orderBy queries
+- Update an Account API can be used to close if the balance is 0
+
+## February 14, 2023
+
+- Fix for Fallback Account Config not getting inherited from Program Config
+
+## February 8, 2023
+
+- New API to update the title and description of a transaction: Update a Transaction
+- New webhook for program config updates: program.updated
+- Updates to webhooks for card spend on Solid cards
+- Support for Slack channel integration of webhooks
+- Bug fixes
+
+## December 8, 2022
+
+- Merge duplicative refund transactions
+- Enforce Card Account requirement for credit card issuance per compliance
+- Caching for List all Stats API & Dashboard Overview
+- Improved tracking for Send a Check
+- New webhook for enriched merchant data: card.enriched
+- Bug fixes
+
+## November 22, 2022
+
+- Send a Card API now has "bin" field so both "credit" and "debit" cards can be sent. Default is "debit"
+- Now you can Create an Intrabank Contact by accountId (in addition to accountNumber)
+- AVAX, FTM, PAXG, AAVE, COMP, XTZ, ALGO, and AXS added to Supported Cryptocurrencies
+- Card RTA Webhooks - support for approvedBalance in RTA response
+- Metadata search filters added to List all Accounts, Transfers, Contacts, Crypto APIs
+- Added CVV verification field for debit pull contacts to The Debit Card sub-object
+- Bug fixes
+
+## October 27, 2022
+
+- If person has a US address, SSN is required to Create a Crypto Wallet
+- Support for new cryptocurrencies: Solana (SOL) and Polkadot (DOT)
+- Send a Check
+  - "deliveryStatus" gets updated in transaction data when shipping status changes
+   - now writing "description" field data to memo line on check
+- ach.originated.updated webhook for when ACH is updated (eg. trace number is added)
+- List all Cards APIs - Provide filter for availableLimit
+- Added totalCredit and totalDebit to Retrieve a Statement API
+- Added filter to List all Persons dateOfBirth=YYYY-MM-DD
+- New API to List Supported Cryptocurrencies‍
+- Submit an IDV - new "action" request resumes or force expires existing IDV inquiries and gets a new inquiry link
+- New IDV Approval API (requires Operational permission)
+- Added a new "label" field to The Contact object
+- New filters added to List all ATM API:
+  - "available24Hours"
+  - "handicappedAccessible"
+  - "depositAvailable"
+- Send a Debit Push - removed AVS check if card contact is push only
+- Submit an IDV - new "action" request resumes or force expires existing IDV inquiries and gets a new inquiry link
+- Expose new DE-* fields in Card RTA Webhooks
+- Bug fixes
+
+## October 14, 2022
+
+- OFAC compliance block on emails, TLDs, and phone ISO codes from the following countries:
+  - Russia (.ru, +7)
+  - Cuba (.cu, +53)
+  - Iran (.ir, +98)
+  - North Korea (.kp, +850)
+  - Syria (.sy, +963)
+
+## October 6, 2022
+
+- ACH Pull balance verification: use current balance if available balance is null
+- Family accounts can now be created as cardAccount type (in addition to personalChecking)
+- Support for new cryptocurrencies: APE, BCH, MANA, MATIC, SAND, SHIB, UNI
+- Statement cut off timezone is now UTC
+- Added Response time in API Logs
+- Webhooks added for merchant funded rewards (coming soon)
+- Webhooks added for digital wallets: card.wallet.created, card.wallet.updated
+- Link refund transactions using parent transaction ID
+- Bug fixes
+
+## September 27, 2022
+
+- IDV status changes:
+    - if a person drops off onboarding in between IDV statuses, they will be changed to "pending" instead of "inReview" (as previously)
+    - you can use the Submit an IDV API to get a new URL and nudge users to start IDV again
+    - once users complete everything, then only it will move to "approved", "review", or "declined"
+
+## September 20, 2022
+
+- Support for LINK and XLM
+- Added a retry for crypto wallet creation in Test environment
+- Added option to delete a transfer type from a contact by setting sub-object as null. Delete debit card not yet supported.
+- ACH returned transactions missing reason codes fixed
+- Exposed new currency (DE-*) fields in webhook events
+- Form Factor Limits now enforce 0 limit. Existing 0 limits set to null.
+- Bug fixes & optimization
+
+## September 12, 2022
+
+- Migration for updating the existing crypto addresses on ETH blockchain in Test environment
+
+## September 6, 2022
+
+- API schema change for allowedOriginator & blockedOriginator in The Account object
+
+## August 29, 2022
+
+- Program name prefix when you Send an ACH:
+     Solid {Program name}: {Person/Business name} {Transaction description}
+- Exposed new local currency data fields in card transaction sub-object
+- Convert accented characters before doing name match for Plaid, ACH, and Debit Pull
+- Get Transactions on Send a Card (Sender access only)
+- PO address validation on Create a Card
+- Send transfer.updated webhook whenever a transfer changes status
+- Added blockchain hash in crypto transaction payload as new field "txnHash"
+- Add personId and programId in Card RTA Webhooks
+- Added Crypto Transfer webhook
+- Bug fixes
+
+## August 23, 2022
+
+- Platform now updates cardholder email and phone when its updated in the person object
+- Allow cardholder billing address to be updated via PATCH in the card object
+
+## August 16, 2022
+
+- Sanitize name & addenda for ACH contacts with special characters
+
+## August 8, 2022
+
+- Sell Crypto from users wallet and credit program funding account
+- idNumber otherId subtype now allows certain characters in the person object
+- Plaid balance check on ACH Pull: if "available" balance is null, fallback to "current" balance value
+- More webhooks for Send a Card
+- API to estimate gas fees on crypto transfers
+- Send Business Name (or Person Name) as part of addenda when you Send an ACH
+- Added trace numbers to ACH sub-object for incoming ACH transactions
+- Bug fixes
+
+## August 1, 2022
+
+- Debit card linking address verification now uses address of person linking instead of account owner
+
+## July 25, 2022
+
+- Intrabank pull payee details now show business name for business account & person name for personal account
+- Allow metadata for member object
+- Send full account object and card object (+metadata) in RTA webhooks
+- New field "modifiedAt" time added to transaction object
+- Allow buy crypto for end user wallets but from the program funding account
+- Allow $0.00 Limit for card limitAmount in the card object
+- Filter by status via List All Transactions API
+- Activity Logs for Crypto Wallets & Transactions
+- IP Whitelisting: option to add Label for IPs
+- Link fiat and crypto transactions: added "buy" and "sell" fields to the transaction object
+- Update a Person name, address, DOB, idType, idNumber longer allowed after KYC approval (must submit a ticket for review)
+- Update a Business legalName, idType, idNumber via no longer allowed after KYB approval (must submit a ticket for review)
 - Bug fixes
