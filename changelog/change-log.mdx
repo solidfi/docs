@@ -187,3 +187,13 @@
     - if a person drops off onboarding in between IDV statuses, they will be changed to "pending" instead of "inReview" (as previously)
     - you can use the Submit an IDV API to get a new URL and nudge users to start IDV again
     - once users complete everything, then only it will move to "approved", "review", or "declined"
+
+### September 20, 2022
+
+- Support for LINK and XLM
+- Added a retry for crypto wallet creation in Test environment
+- Added option to delete a transfer type from a contact by setting sub-object as null. Delete debit card not yet supported.
+- ACH returned transactions missing reason codes fixed
+- Exposed new currency (DE-*) fields in webhook events
+- Form Factor Limits now enforce 0 limit. Existing 0 limits set to null.
+- Bug fixes & optimization
