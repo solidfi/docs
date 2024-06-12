@@ -197,3 +197,34 @@
 - Exposed new currency (DE-*) fields in webhook events
 - Form Factor Limits now enforce 0 limit. Existing 0 limits set to null.
 - Bug fixes & optimization
+
+### September 12, 2022
+
+- Migration for updating the existing crypto addresses on ETH blockchain in Test environment
+
+### September 6, 2022
+
+- API schema change for allowedOriginator & blockedOriginator in The Account object
+
+### August 29, 2022
+
+- Program name prefix when you Send an ACH:
+    Solid {Program name}: {Person/Business name} {Transaction description}
+- Exposed new local currency data fields in card transaction sub-object
+- Convert accented characters before doing name match for Plaid, ACH, and Debit Pull
+- Get Transactions on Send a Card (Sender access only)
+- PO address validation on Create a Card
+- Send transfer.updated webhook whenever a transfer changes status
+- Added blockchain hash in crypto transaction payload as new field "txnHash"
+- Add personId and programId in Card RTA Webhooks
+- Added Crypto Transfer webhook
+- Bug fixes
+
+### August 23, 2022
+
+- Platform now updates cardholder email and phone when its updated in the person object
+- Allow cardholder billing address to be updated via PATCH in the card object
+
+### August 16, 2022
+
+- Sanitize name & addenda for ACH contacts with special characters
