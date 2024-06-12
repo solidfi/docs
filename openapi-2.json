@@ -52,7 +52,7 @@
             }
           },
           "401": {
-            "description": "Retrieve a Master Account",
+            "description": "Unauthorized error",
             "content": {
               "application/json": {
                 "examples": {
