@@ -37,7 +37,7 @@
       {
         "name": "Changelog",
         "icon": "list-check",
-        "url": "https://www.solidfi.com/contact?"
+        "page": ["chagelog/change-log.mdx"]
       }
     ],
     "navigation": [
