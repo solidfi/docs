@@ -404,6 +404,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -455,6 +467,18 @@
                 "examples": {
                   "sub_account_holder_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/sub_account_holder_not_found_error"
                   }
                 }
               }
@@ -565,6 +589,18 @@
                 "examples": {
                   "sub_account_holder_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/sub_account_holder_not_found_error"
                   }
                 }
               }
@@ -785,6 +821,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/sub_account_holder_not_found_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -836,6 +884,18 @@
                 "examples": {
                   "sub_account_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
               }
@@ -937,6 +997,18 @@
                 "examples": {
                   "sub_account_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
               }
@@ -1261,6 +1333,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -1312,6 +1396,18 @@
                 "examples": {
                   "counterparty_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/counterparty_not_found_error"
                   }
                 }
               }
@@ -1462,6 +1558,18 @@
                 "examples": {
                   "counterparty_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/counterparty_not_found_error"
                   }
                 }
               }
@@ -1683,6 +1791,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -1734,6 +1854,18 @@
                 "examples": {
                   "card_holder_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/cardholder_not_found_error"
                   }
                 }
               }
@@ -1836,6 +1968,18 @@
                 "examples": {
                   "card_holder_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/cardholder_not_found_error"
                   }
                 }
               }
@@ -2239,6 +2383,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/cardholder_not_found_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -2290,6 +2446,18 @@
                 "examples": {
                   "card_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/card_not_found_error"
                   }
                 }
               }
@@ -2476,6 +2644,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/card_not_found_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -2576,6 +2756,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/card_not_found_error"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -2651,6 +2843,18 @@
                 "examples": {
                   "show_card_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/card_not_found_error"
                   }
                 }
               }
@@ -2874,6 +3078,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -2973,6 +3189,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -3068,6 +3296,18 @@
                 "examples": {
                   "attachment_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
               }
@@ -3195,6 +3435,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -3317,6 +3569,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -3416,6 +3680,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -3511,6 +3787,18 @@
                 "examples": {
                   "attachment_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
               }
@@ -3620,6 +3908,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -3725,6 +4025,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -3820,6 +4132,18 @@
                 "examples": {
                   "attachment_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
               }
@@ -3923,6 +4247,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -4018,6 +4354,18 @@
                 "examples": {
                   "attachment_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
               }
@@ -4140,6 +4488,18 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -4188,6 +4548,18 @@
                 "examples": {
                   "retrieve_transaction_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/transaction_found_error"
                   }
                 }
               }
@@ -4267,6 +4639,18 @@
                 "examples": {
                   "update_transaction_example": {
                     "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/transaction_found_error"
                   }
                 }
               }
@@ -7672,6 +8056,76 @@
           "error": {
               "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
               "message": "cannot find account by id in qldb",
+              "field_name": ""
+          },
+          "created_at": "2024-06-12T22:33:23Z"
+        }
+      },
+      "sub_account_holder_not_found_error": {
+        "value": {
+          "request_id": "req_01900e9f737376be8aa2aa9c351ff598",
+          "client_id": "",
+          "method": "GET",
+          "status": 404,
+          "error": {
+              "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
+              "message": "cannot find account holder by client id in qldb",
+              "field_name": ""
+          },
+          "created_at": "2024-06-12T22:44:09Z"
+        }
+      },
+      "counterparty_not_found_error": {
+        "value": {
+          "request_id": "req_01900e959896706b870affad1b4d71dd",
+          "client_id": "",
+          "method": "GET",
+          "status": 404,
+          "error": {
+              "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
+              "message": "cannot find counterparty by id in qldb",
+              "field_name": ""
+          },
+          "created_at": "2024-06-12T22:33:23Z"
+        }
+      },
+      "cardholder_not_found_error": {
+        "value": {
+          "request_id": "req_01900e959896706b870affad1b4d71dd",
+          "client_id": "",
+          "method": "GET",
+          "status": 404,
+          "error": {
+              "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
+              "message": "cannot find card holder by id in qldb",
+              "field_name": ""
+          },
+          "created_at": "2024-06-12T22:33:23Z"
+        }
+      },
+      "card_not_found_error": {
+        "value": {
+          "request_id": "req_01900e959896706b870affad1b4d71dd",
+          "client_id": "",
+          "method": "GET",
+          "status": 404,
+          "error": {
+              "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
+              "message": "cannot find card holder by id in qldb",
+              "field_name": ""
+          },
+          "created_at": "2024-06-12T22:33:23Z"
+        }
+      },
+      "transaction_found_error": {
+        "value": {
+          "request_id": "req_01900e959896706b870affad1b4d71dd",
+          "client_id": "",
+          "method": "GET",
+          "status": 404,
+          "error": {
+              "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
+              "message": "cannot find transaction by id in qldb",
               "field_name": ""
           },
           "created_at": "2024-06-12T22:33:23Z"
