@@ -114,13 +114,15 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "activated",
-              "description": "status of the master account",
+              "example": "open",
+              "description": "status of master account",
               "enum": [
-                "pending_activation",
-                "activated",
-                "suspended",
-                "deactivated"
+                "open",
+                "closed",
+                "credit_blocked",
+                "debit_blocked",
+                "blocked",
+                "locked"
               ]
             }
           },
@@ -590,10 +592,12 @@
                     "example": "activated",
                     "description": "status of sub account holder",
                     "enum": [
-                      "pending_activation",
-                      "activated",
-                      "suspended",
-                      "deactivated"
+                      "open",
+                      "closed",
+                      "credit_blocked",
+                      "debit_blocked",
+                      "blocked",
+                      "locked"
                     ]
                   }
                 }
@@ -704,6 +708,30 @@
               "type": "string",
               "example": "{{master_account_id}}",
               "description": "unique id of the master account"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "activated",
+              "description": "status of the sub account",
+              "enum": [
+                "pending_activation",
+                "activated",
+                "suspended",
+                "deactivated"
+              ]
+            }
+          },
+          {
+            "name": "external_reference_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "XVH-27LGDFX",
+              "description": "unique id to cross-reference records with external systems"
             }
           },
           {
@@ -1127,6 +1155,30 @@
               "type": "string",
               "example": "{{sub_account_id}}",
               "description": "unique id of the sub account"
+            }
+          },
+          {
+            "name": "external_reference_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "XVH-27LGDFX",
+              "description": "unique id to cross-reference records with external systems"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "activated",
+              "description": "status of counterparty",
+              "enum": [
+                "pending_activation",
+                "activated",
+                "suspended",
+                "deactivated"
+              ]
             }
           },
           {
@@ -3072,6 +3124,28 @@
               "type": "string",
               "example": "{{master_account_holder_id}}",
               "description": "unique id of the master account holder"
+            }
+          },
+          {
+            "name": "external_reference_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "XVH-27LGDFX",
+              "description": "unique id to cross-reference records with external systems"
+            }
+          },
+          {
+            "name": "ledger_type",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "master_account",
+              "description": "type of ledger",
+              "enum": [
+                "master_account",
+                "sub_account"
+              ]
             }
           },
           {
