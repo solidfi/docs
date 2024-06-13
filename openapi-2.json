@@ -105,7 +105,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{master_account_holder_id}}",
+              "example": "mah_201e02c581a098a740456c5c19fcfcd6",
               "description": "unique id of the master account holder"
             }
           },
@@ -697,7 +697,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{sub_account_holder_id}}",
+              "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
               "description": "unique id of the sub account holder"
             }
           },
@@ -706,7 +706,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{master_account_id}}",
+              "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
               "description": "unique id of the master account"
             }
           },
@@ -1153,7 +1153,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{sub_account_id}}",
+              "example": "sub_bda1e562657c41e553104b10aad3fe70",
               "description": "unique id of the sub account"
             }
           },
@@ -1762,7 +1762,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{master_account_id}}",
+              "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
               "description": "unique id of the master account"
             }
           },
@@ -2196,7 +2196,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{sub_account_id}}",
+              "example": "sub_bda1e562657c41e553104b10aad3fe70",
               "description": "unique id of the sub account"
             }
           },
@@ -2205,7 +2205,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{card_holder_id}}",
+              "example": "cah_a120a61f60dfd40fdb07b2e8bcd1f6f0",
               "description": "unique id of the card holder"
             }
           },
@@ -3095,7 +3095,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{sub_account_id}}",
+              "example": "sub_bda1e562657c41e553104b10aad3fe70",
               "description": "unique id of the sub account"
             }
           },
@@ -3104,7 +3104,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{master_account_id}}",
+              "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
               "description": "unique id of the master account"
             }
           },
@@ -3113,7 +3113,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{sub_account_holder_id}}",
+              "example": "sah_5ccfeef0adf0cbe2aa0980d2c9505752",
               "description": "unique id of the sub account holder"
             }
           },
@@ -3122,7 +3122,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{master_account_holder_id}}",
+              "example": "mah_201e02c581a098a740456c5c19fcfcd6",
               "description": "unique id of the master account holder"
             }
           },
