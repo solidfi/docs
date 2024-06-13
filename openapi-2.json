@@ -110,6 +110,21 @@
             }
           },
           {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "activated",
+              "description": "status of the master account",
+              "enum": [
+                "pending_activation",
+                "activated",
+                "suspended",
+                "deactivated"
+              ]
+            }
+          },
+          {
             "name": "api-key",
             "in": "header",
             "schema": {
