@@ -2,19 +2,23 @@
     "name": "Solid",
     "logo": "/logo.png",
     "favicon": "/favicon.png",
-    "colors": {
-      "primary": "#22C55E",
+"colors": {
+    "primary": "#22C55E",
+    "light": "#FAFAF9",
+    "dark": "#0C0A09",
+    "background": {
       "light": "#FAFAF9",
       "dark": "#0C0A09"
-    },
+    }
+  },
     "modeToggle": {
         "default": "light",
-        "isHidden": false
+        "isHidden": true
     },
     "versions": ["v2", "v1"],
     "topbarCtaButton": {
-      "name": "Dash",
-      "url": "https://dashboard.solidfi.com/login?&_ga=2.71532817.308955735.1702327933-383528257.1702327933"
+      "name": "Solid Website",
+      "url": "https://solidfi.com"
     },
     "tabs": [
         {
