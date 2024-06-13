@@ -211,8 +211,26 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "{{master_account_id}}",
+              "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
               "description": "unique id of the master account"
+            }
+          },
+          {
+            "name": "sub_account_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "sub_bda1e562657c41e553104b10aad3fe70",
+              "description": "unique id of the sub account"
+            }
+          },
+          {
+            "name": "external_reference_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "XVH-27LGDFX",
+              "description": "unique id to cross-reference records with external systems"
             }
           },
           {
