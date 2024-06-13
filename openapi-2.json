@@ -3242,11 +3242,6 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "master_account_id": {
-                    "type": "string",
-                    "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
-                    "description": "unique id of the master account"
-                  },
                   "master_account_transaction_id": {
                     "type": "string",
                     "example": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
@@ -3267,7 +3262,6 @@
               "examples": {
                 "Sub Ledger a Transaction": {
                   "value": {
-                    "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
                     "master_account_transaction_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
                     "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
                     "amount": "1500.00"
