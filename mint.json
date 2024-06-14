@@ -67,6 +67,13 @@
         "general/pagination"
       ]
     },
+     {
+      "group": "Accounts",
+      "pages": [
+        "accounts/introduction",
+        "accounts/master-accounts"
+      ]
+    },
     {
       "group": "Master Accounts",
       "version": "v2",
