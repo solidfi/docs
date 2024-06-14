@@ -2792,8 +2792,6 @@
                     "enum": [
                       "open",
                       "closed",
-                      "credit_blocked",
-                      "debit_blocked",
                       "blocked"
                     ]
                   }
@@ -7659,8 +7657,6 @@
             "enum": [
               "open",
               "closed",
-              "credit_blocked",
-              "debit_blocked",
               "blocked",
               "locked"
             ]
