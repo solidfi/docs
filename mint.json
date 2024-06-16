@@ -71,7 +71,9 @@
       "group": "Accounts",
       "pages": [
         "accounts/introduction",
-        "accounts/master-accounts"
+        "accounts/master-accounts",
+        "accounts/sub-accounts",
+        "accounts/reconciliation"
       ]
     },
     {
