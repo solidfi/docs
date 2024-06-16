@@ -55,16 +55,14 @@
       "group": "General Concepts",
       "pages": [
         "general/introduction",
-        "general/dashboard",
-        "general/environments",
-        "general/authentication",
-        "general/idempotency",
-        "general/metadata",
-        "general/errors",
-        "general/rate-limiting",
-        "general/testing",
-        "general/platform",
-        "general/pagination"
+        "general/bank",
+        "general/fintech",
+        "general/cip",
+        "general/account-holder",
+        "general/card-holder",
+        "general/counterparty",
+        "general/transactions",        
+        "general/flow-of-funds"
       ]
     },
      {
@@ -81,7 +79,6 @@
       "group": "Payments",
       "pages": [
         "payments/introduction",
-        "payments/counterparty",
         "payments/intra-account",
         "payments/ach",
         "payments/wire",
