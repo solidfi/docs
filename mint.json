@@ -73,7 +73,8 @@
         "accounts/introduction",
         "accounts/master-accounts",
         "accounts/sub-accounts",
-        "accounts/reconciliation"
+        "accounts/reconciliation",
+        "accounts/controls"
       ]
     },
     {
@@ -84,7 +85,17 @@
         "payments/intra-account",
         "payments/ach",
         "payments/wire",
-        "payments/check"
+        "payments/check",
+        "payments/controls"
+      ]
+    },
+    {
+      "group": "Card Issuance",
+      "pages": [
+        "card-issuance/introduction",
+        "card-issuance/card-art",
+        "card-issuance/atm",
+        "card-issuance/controls"
       ]
     },
     {
