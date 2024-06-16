@@ -110,6 +110,15 @@
       ]
     },
     {
+      "group": "Getting Started",
+      "version": "v2",
+      "pages": [
+        "v2/api-reference/getting-started/introduction",
+        "v2/api-reference/getting-started/environments",
+        "v2/api-reference/getting-started/authentication"
+      ]
+    },
+    {
       "group": "Master Accounts",
       "version": "v2",
       "pages": [
