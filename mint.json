@@ -99,6 +99,17 @@
       ]
     },
     {
+      "group": "Compliance",
+      "pages": [
+        "compliance/introduction",
+        "compliance/diligence",
+        "compliance/onboarding",
+        "compliance/pilot",
+        "compliance/launch",
+        "compliance/ongoing"
+      ]
+    },
+    {
       "group": "Master Accounts",
       "version": "v2",
       "pages": [
