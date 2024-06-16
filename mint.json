@@ -108,6 +108,21 @@
     },
     {
       "group": "Getting Started",
+      "version": "v1",
+      "pages": [
+        "v1/api-reference/getting-started/introduction",
+        "v1/api-reference/getting-started/environments",
+        "v1/api-reference/getting-started/authentication",
+        "v1/api-reference/getting-started/idempotency",
+        "v1/api-reference/getting-started/metadata",
+        "v1/api-reference/getting-started/errors",
+        "v1/api-reference/getting-started/rate-limiting",
+        "v1/api-reference/getting-started/pagination",
+        "v1/api-reference/getting-started/testing"
+      ]
+    },
+    {
+      "group": "Getting Started",
       "version": "v2",
       "pages": [
         "v2/api-reference/getting-started/introduction",
