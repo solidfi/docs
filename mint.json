@@ -77,6 +77,17 @@
       ]
     },
     {
+      "group": "Payments",
+      "pages": [
+        "payments/introduction",
+        "payments/counterparty",
+        "payments/intra-account",
+        "payments/ach",
+        "payments/wire",
+        "payments/check"
+      ]
+    },
+    {
       "group": "Master Accounts",
       "version": "v2",
       "pages": [
