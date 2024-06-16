@@ -115,7 +115,14 @@
       "pages": [
         "v2/api-reference/getting-started/introduction",
         "v2/api-reference/getting-started/environments",
-        "v2/api-reference/getting-started/authentication"
+        "v2/api-reference/getting-started/authentication",
+        "v2/api-reference/getting-started/idempotency",
+        "v2/api-reference/getting-started/metadata",
+        "v2/api-reference/getting-started/attachments",
+        "v2/api-reference/getting-started/errors",
+        "v2/api-reference/getting-started/rate-limiting",
+        "v2/api-reference/getting-started/pagination",
+        "v2/api-reference/getting-started/simulation"
       ]
     },
     {
