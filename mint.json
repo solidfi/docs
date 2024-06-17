@@ -30,7 +30,13 @@
   },
   "topbarLinks": [
     {
-      "name": "Example",
+      "name": "Example 1",
+      "url": "https://solidfi.com"
+    }
+  ],
+    "topbarLinks": [
+    {
+      "name": "Example 2",
       "url": "https://solidfi.com"
     }
   ],
