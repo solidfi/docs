@@ -28,6 +28,12 @@
     "name": "Solid Website",
     "url": "https://solidfi.com"
   },
+  "topbarLinks": [
+    {
+      "name": "Example",
+      "url": "https://solidfi.com"
+    }
+  ],
   "tabs": [
     {
       "name": "API Reference",
