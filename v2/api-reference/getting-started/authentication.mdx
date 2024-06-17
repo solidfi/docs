@@ -4,6 +4,8 @@ description: API key based authentication
 ---
 All requests to Solid's platform must be made over HTTPS and authenticated via API key. You need to pass the API key in the header. You can view and manage your API keys in the Solid Dashboard. API keys must be kept secret. They should not be in your client-side code or checked into your application's code.
 
+As an example:
+
 1. Proceed to Create a Sub Account Holder with the API key. Set the api-key in the header.
 2. Once you create a Sub Account Holder, you will receive the Sub Account Holder ID in the response.
 
@@ -41,4 +43,6 @@ curl --request POST \
 }'
 ```
 
-<Warning>IP Whitelisting is not required in Sandbox environment, but required in Prod</Warning>
+<Warning>IP Whitelisting is not required in Sandbox environment, but mandatory in Prod.</Warning>
+
+To further secure your API key in Production, the Solid platform only accepts API requests if the originating IP address is whitelisted in the Prod Dashboard. If the IP address is mismatched, the request is discarded.
