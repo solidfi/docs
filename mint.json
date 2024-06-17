@@ -58,8 +58,8 @@
         "general/bank",
         "general/fintech",
         "general/cip",
-        "general/account-holder",
-        "general/card-holder",
+        "general/account-holders",
+        "general/card-holders",
         "general/counterparty",
         "general/transactions",        
         "general/flow-of-funds"
