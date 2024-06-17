@@ -5,7 +5,11 @@
       "measurementId": "G-3EV4BYMFCQ"
     }
   },
-  "logo": "/logo.svg",
+  "logo": {
+    "light": "/logo.svg",
+    "dark": "/logo.svg",
+    "href": "https://www.solidfi.com"
+  }, 
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#16A34A",
@@ -35,6 +39,14 @@
     },
     {
       "name": "Example 2",
+      "url": "https://solidfi.com"
+    },
+    {
+      "name": "Example 3",
+      "url": "https://solidfi.com"
+    },
+    {
+      "name": "Example 4",
       "url": "https://solidfi.com"
     }
   ],
