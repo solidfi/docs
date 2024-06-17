@@ -28,12 +28,10 @@
     "v2",
     "v1"
   ],
-  "topbarLinks": [
-    {
-      "name": "Contact Us",
-      "url": "https://www.solidfi.com/contact"
-    }
-  ],
+  "topbarCtaButton": {
+    "name": "Contact Us",
+    "url": "https://www.solidfi.com/contact"
+  },
   "tabs": [
     {
       "name": "API Reference",
