@@ -69,9 +69,6 @@
       "group": "General Concepts",
       "pages": [
         "general/introduction",
-        "general/bank",
-        "general/fintech",
-        "general/cip",
         "general/account-holders",
         "general/card-holders",
         "general/counterparties",
