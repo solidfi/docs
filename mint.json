@@ -44,66 +44,28 @@
       "icon": "signal-bars",
       "url": "https://status.solidfi.com/?&_ga=2.106479873.308955735.1702327933-383528257.1702327933"
     },
+        {
+      "name": "Help Center",
+      "icon": "square-info",
+      "url": "https://help.solidfi.com/hc/en-us"
+    }
     {
       "name": "Changelog",
       "icon": "list-check",
       "url": "https://docs.solidfi.com/changelog"
     }
+
   ],
   "navigation": [
     {
       "group": "General Concepts",
       "pages": [
         "general/introduction",
-        "general/bank",
-        "general/fintech",
-        "general/cip",
         "general/account-holders",
         "general/card-holders",
         "general/counterparties",
         "general/transactions",        
         "general/flow-of-funds"
-      ]
-    },
-     {
-      "group": "Accounts",
-      "pages": [
-        "accounts/introduction",
-        "accounts/master-accounts",
-        "accounts/sub-accounts",
-        "accounts/reconciliation",
-        "accounts/controls"
-      ]
-    },
-    {
-      "group": "Payments",
-      "pages": [
-        "payments/introduction",
-        "payments/intra-account",
-        "payments/ach",
-        "payments/wire",
-        "payments/check",
-        "payments/controls"
-      ]
-    },
-    {
-      "group": "Card Issuance",
-      "pages": [
-        "card-issuance/introduction",
-        "card-issuance/card-art",
-        "card-issuance/atm",
-        "card-issuance/controls"
-      ]
-    },
-    {
-      "group": "Compliance",
-      "pages": [
-        "compliance/introduction",
-        "compliance/diligence",
-        "compliance/onboarding",
-        "compliance/pilot",
-        "compliance/launch",
-        "compliance/ongoing"
       ]
     },
     {
