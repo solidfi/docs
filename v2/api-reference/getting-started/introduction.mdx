@@ -1,0 +1,51 @@
+---
+title: 'Introduction'
+description: 'An introduction to the Solid APIs'
+---
+
+Solid APIs REST-based and built around JSON-encoded requests and responses with standard authentication method, response and error codes.
+
+To get started,
+1. Solid team will set you up with a Pre-provisioned Sandbox account.
+2. Using the [Dashboard](https://dashboard.sandbox.solidfi.com/login) in the Sandbox environment, you'll create an API key.
+
+You'll need Postman or a similar tool to run the APIs.
+
+<Note>You always start with a Sandbox. Once your FinTech program is ready to be onboarded with the partner bank, you'll receive a pre-provisioned Production access.</Note>
+
+Here are the ten steps we will guide you through. After completing these steps, you will have originated a sub account, created cards and counterparties, made a payment and viewed the transactions.
+
+<Steps>
+  <Step title="Auth">
+    [Authenticate](/v2/api-reference/getting-started/authentication) into your Sandbox account (using the API key in the Sandbox environment).
+  </Step>
+  <Step title="Sub Account Holder">
+    [Create a Sub Account Holder](/v2/api-reference/sub-account-holders/create-a-sub-account-holder) under the Master Account.
+  </Step>
+  <Step title="Sub Account">
+    For the Sub Account Holder, [create a Sub Account](/v2/api-reference/sub-accounts/create-a-sub-account).
+  </Step>
+  <Step title="Fund">
+    Fund the Sub Account using Incoming ACH (see how to [Simulate](/v2/api-reference/getting-started/simulation))
+  </Step>
+  <Step title="Counterparty">
+    [Create a Counterparty](/v2/api-reference/counterparties/create-a-counterparty) under the Sub Account.
+  </Step>
+  <Step title="ACH Payment">
+    [Originate an ACH payment](/v2/api-reference/transactions/originate-an-ach-push) to the Counterparty.
+  </Step>
+  <Step title="Card Holder">
+    [Create a Card Holder](/v2/api-reference/card-holders/create-a-card-holder) under the Sub Account.
+  </Step>
+  <Step title="Issue Card">
+    [Issue a Card](/v2/api-reference/cards/create-a-card) to the Card Holder.
+  </Step>
+  <Step title="Spend Card">
+    Spend the issued card (see how to [Simulate](/v2/api-reference/getting-started/simulation))
+  </Step>
+  <Step title="Transactions">
+    View [transactions](/v2/api-reference/transactions/list-all-transactions) in the Sub Account ledger
+  </Step>
+</Steps>
+
+<Check>Congratulations, you have now successfully originated a sub account, created cards and counterparties, made a payment and viewed the transactions!</Check>

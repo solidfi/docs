@@ -3,7 +3,7 @@
   "logo": "/logo.png",
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#22C55E",
+    "primary": "#16A34A",
     "light": "#FAFAF9",
     "dark": "#0C0A09",
     "background": {
@@ -55,23 +55,86 @@
       "group": "General Concepts",
       "pages": [
         "general/introduction",
-        "general/dashboard",
-        "general/environments",
-        "general/authentication",
-        "general/idempotency",
-        "general/metadata",
-        "general/errors",
-        "general/rate-limiting",
-        "general/testing",
-        "general/platform",
-        "general/pagination"
+        "general/bank",
+        "general/fintech",
+        "general/cip",
+        "general/account-holders",
+        "general/card-holders",
+        "general/counterparties",
+        "general/transactions",        
+        "general/flow-of-funds"
       ]
     },
      {
       "group": "Accounts",
       "pages": [
         "accounts/introduction",
-        "accounts/master-accounts"
+        "accounts/master-accounts",
+        "accounts/sub-accounts",
+        "accounts/reconciliation",
+        "accounts/controls"
+      ]
+    },
+    {
+      "group": "Payments",
+      "pages": [
+        "payments/introduction",
+        "payments/intra-account",
+        "payments/ach",
+        "payments/wire",
+        "payments/check",
+        "payments/controls"
+      ]
+    },
+    {
+      "group": "Card Issuance",
+      "pages": [
+        "card-issuance/introduction",
+        "card-issuance/card-art",
+        "card-issuance/atm",
+        "card-issuance/controls"
+      ]
+    },
+    {
+      "group": "Compliance",
+      "pages": [
+        "compliance/introduction",
+        "compliance/diligence",
+        "compliance/onboarding",
+        "compliance/pilot",
+        "compliance/launch",
+        "compliance/ongoing"
+      ]
+    },
+    {
+      "group": "Getting Started",
+      "version": "v1",
+      "pages": [
+        "v1/api-reference/getting-started/introduction",
+        "v1/api-reference/getting-started/environments",
+        "v1/api-reference/getting-started/authentication",
+        "v1/api-reference/getting-started/idempotency",
+        "v1/api-reference/getting-started/metadata",
+        "v1/api-reference/getting-started/errors",
+        "v1/api-reference/getting-started/rate-limiting",
+        "v1/api-reference/getting-started/pagination",
+        "v1/api-reference/getting-started/testing"
+      ]
+    },
+    {
+      "group": "Getting Started",
+      "version": "v2",
+      "pages": [
+        "v2/api-reference/getting-started/introduction",
+        "v2/api-reference/getting-started/environments",
+        "v2/api-reference/getting-started/authentication",
+        "v2/api-reference/getting-started/idempotency",
+        "v2/api-reference/getting-started/metadata",
+        "v2/api-reference/getting-started/attachments",
+        "v2/api-reference/getting-started/errors",
+        "v2/api-reference/getting-started/rate-limiting",
+        "v2/api-reference/getting-started/pagination",
+        "v2/api-reference/getting-started/simulation"
       ]
     },
     {
