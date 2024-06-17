@@ -60,7 +60,7 @@
         "general/cip",
         "general/account-holders",
         "general/card-holders",
-        "general/counterparty",
+        "general/counterparties",
         "general/transactions",        
         "general/flow-of-funds"
       ]
