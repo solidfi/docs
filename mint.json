@@ -28,26 +28,10 @@
     "v2",
     "v1"
   ],
-  "topbarCtaButton": {
-    "name": "Solid Website",
-    "url": "https://solidfi.com"
-  },
   "topbarLinks": [
     {
-      "name": "Example 1",
-      "url": "https://solidfi.com"
-    },
-    {
-      "name": "Example 2",
-      "url": "https://solidfi.com"
-    },
-    {
-      "name": "Example 3",
-      "url": "https://solidfi.com"
-    },
-    {
-      "name": "Example 4",
-      "url": "https://solidfi.com"
+      "name": "Contact Us",
+      "url": "https://www.solidfi.com/contact"
     }
   ],
   "tabs": [
