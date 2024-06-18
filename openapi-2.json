@@ -5395,7 +5395,7 @@
                     "example": "120.00",
                     "description": "amount of the transaction"
                   },
-                  "parent_txn_id": {
+                  "parent_transaction_id": {
                     "type": "string",
                     "example": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
                     "description": "unique id of the parent transaction"
@@ -5427,7 +5427,7 @@
                   "value": {
                     "card_id": "crd_7948d9a96706dd05360a340002de725f",
                     "amount": "120.00",
-                    "parent_txn_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+                    "parent_transaction_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
                     "type": "refund",
                     "status": "settled"
                   }
@@ -5436,7 +5436,7 @@
                   "value": {
                     "card_id": "crd_7948d9a96706dd05360a340002de725f",
                     "amount": "120.00",
-                    "parent_txn_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+                    "parent_transaction_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
                     "type": "refund",
                     "status": "pending"
                   }
@@ -5445,7 +5445,7 @@
                   "value": {
                     "card_id": "crd_7948d9a96706dd05360a340002de725f",
                     "amount": "120.00",
-                    "parent_txn_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+                    "parent_transaction_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
                     "type": "refund",
                     "status": "settled"
                   }
@@ -5454,7 +5454,7 @@
                   "value": {
                     "card_id": "crd_7948d9a96706dd05360a340002de725f",
                     "amount": "120.00",
-                    "parent_txn_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+                    "parent_transaction_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
                     "type": "reverse",
                     "status": "settled"
                   }
@@ -5463,7 +5463,7 @@
                   "value": {
                     "card_id": "crd_7948d9a96706dd05360a340002de725f",
                     "amount": "120.00",
-                    "parent_txn_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
+                    "parent_transaction_id": "txn_817d2a074042bb4ec54e08fd82b1e0a8",
                     "type": "adjust",
                     "status": "settled"
                   }
@@ -10532,7 +10532,7 @@
             },
             "network_settlement_at": "2024-04-04T11:06:00Z"
           },
-          "parent_txn_id": "",
+          "parent_transaction_id": "",
           "external_reference_id": "",
           "purpose": "",
           "ofac": {
@@ -10604,7 +10604,7 @@
             },
             "network_settlement_at": ""
           },
-          "parent_txn_id": "",
+          "parent_transaction_id": "",
           "external_reference_id": "",
           "purpose": "",
           "ofac": {
@@ -10676,7 +10676,7 @@
             },
             "network_settlement_at": "2024-04-05T11:06:00Z"
           },
-          "parent_txn_id": "",
+          "parent_transaction_id": "",
           "external_reference_id": "",
           "purpose": "",
           "ofac": {
@@ -10748,7 +10748,7 @@
             },
             "network_settlement_at": ""
           },
-          "parent_txn_id": "",
+          "parent_transaction_id": "",
           "external_reference_id": "",
           "purpose": "",
           "ofac": {
@@ -10820,7 +10820,7 @@
             },
             "network_settlement_at": "2024-04-02T21:00:00"
           },
-          "parent_txn_id": "",
+          "parent_transaction_id": "",
           "external_reference_id": "",
           "purpose": "",
           "ofac": {
@@ -10964,7 +10964,7 @@
             },
             "network_settlement_at": "2024-04-04T11:06:00Z"
           },
-          "parent_txn_id": "",
+          "parent_transaction_id": "",
           "external_reference_id": "",
           "purpose": "",
           "ofac": {
