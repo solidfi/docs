@@ -2,13 +2,20 @@
 title: 'Master Accounts'
 description: 'A guide to Master Accounts'
 ---
-The Master Account (provisioned for FinTech) mirrors FinTech's FBO  with the bank. The FBO and the Master Accounts always have the following:
-- same balance
-- same transactions
+The Master Account (provisioned for FinTech) mirrors FinTech's FBO  with the bank. The FBO and the Master Accounts always have the same balance and same set of credit and debit transactions.
 
 The Master Account is provisioned for the Master Account Holder, usually the FinTech. Solid provisions the Master Account at the time of onboarding and configures it to FinTech's specific needs upon the bank's approval. 
 
-In most cases, the FinTech is provisioned with a single Master Account. However, in some cases, depending on the use case, the provisioning process is flexible enough to accommodate the FinTech with multiple Master Accounts that mirror a single FBO at the bank. 
+In most cases, the FinTech is provisioned with a single Master Account. 
+<Frame caption="Single Master Account" type="glass">
+  <img src="https://uploads-ssl.webflow.com/66633a8deaa98cd86b9f0eb3/668ef93a56916a95030e6e1e_One-Master-Account.png" />
+</Frame>
+
+However, in some cases, depending on the use case, the provisioning process is flexible enough to accommodate the FinTech with multiple Master Accounts that mirror a single FBO at the bank. 
+
+<Frame caption="Multiple Master Accounts" type="glass">
+  <img src="https://uploads-ssl.webflow.com/66633a8deaa98cd86b9f0eb3/668ef966fbe6c0803bfa50c5_Two-Master-Accounts.png" />
+</Frame>
 
 Every incoming transaction that hits the FBO is first ledgered to the Master Account and then sub-ledgered to the Sub Account. The two entries of the incoming transaction (in the Master Account and Sub Accounts) are	required to reconcile the transaction.
 For more, see the [Reconcilation Guide](/accounts/reconciliation).
