@@ -107,17 +107,7 @@
         "card-issuance/controls"
       ]
     },
-    {
-      "group": "Compliance",
-      "pages": [
-        "compliance/introduction",
-        "compliance/diligence",
-        "compliance/onboarding",
-        "compliance/pilot",
-        "compliance/launch",
-        "compliance/ongoing"
-      ]
-    },
+
     {
       "group": "Getting Started",
       "version": "v1",
