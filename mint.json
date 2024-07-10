@@ -10,7 +10,7 @@
     "light": "/logo.svg",
     "dark": "/logo.svg",
     "href": "https://www.solidfi.com"
-  }, 
+  },
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#16A34A",
@@ -75,6 +75,47 @@
         "general/counterparties",
         "general/transactions",
         "general/flow-of-funds"
+      ]
+    },
+    {
+      "group": "Accounts",
+      "pages": [
+        "accounts/introduction",
+        "accounts/master-accounts",
+        "accounts/sub-accounts",
+        "accounts/reconciliation",
+        "accounts/controls"
+      ]
+    },
+    {
+      "group": "Payments",
+      "pages": [
+        "payments/introduction",
+        "payments/intra-account",
+        "payments/ach",
+        "payments/wire",
+        "payments/check",
+        "payments/controls"
+      ]
+    },
+    {
+      "group": "Card Issuance",
+      "pages": [
+        "card-issuance/introduction",
+        "card-issuance/card-art",
+        "card-issuance/atm",
+        "card-issuance/controls"
+      ]
+    },
+    {
+      "group": "Compliance",
+      "pages": [
+        "compliance/introduction",
+        "compliance/diligence",
+        "compliance/onboarding",
+        "compliance/pilot",
+        "compliance/launch",
+        "compliance/ongoing"
       ]
     },
     {
