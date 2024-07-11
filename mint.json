@@ -1,5 +1,6 @@
 {
   "name": "Solid",
+  "theme": "prism",
   "analytics": {
     "ga4": {
       "measurementId": "G-3EV4BYMFCQ"
