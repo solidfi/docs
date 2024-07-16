@@ -35,3 +35,5 @@ Solid provides you with status through the lifecycle of each payment transaction
 <Tip>Note that payments can only originate from a Sub Account, not from a Master Account.</Tip>
 
 **Receiving Transactions** (with an Incoming message): Transactions received in the Sub Account with an Incoming message, which includes important instructions such as amount, credit/debit, method, and type. Transactions are received via Payment webhooks.
+
+Every transaction is ledgered in both the Master Account and the Sub Account (that originated or received the transaction).
