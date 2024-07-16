@@ -1,4 +1,37 @@
 ---
 title: 'Introduction'
-description: 'Description of your new file.'
+description: 'An introduction to Payments'
 ---
+You can use Solid's payments stack to move money in and out of a Sub Account.
+
+If money is moved out of a Sub Account, it results in a Debit Transaction.
+If money is moved into a Sub Account, it results in a Credit Transaction.
+
+Any money movement transaction (a credit or a debit) from in and out of the Sub Account creates a Transaction object. 
+
+Solid provides you with various payment methods to move money in and out of the Sub Account:
+- Intra Account (On-us)
+- ACH
+- Check
+- Wire
+- FedNow (coming soon)
+
+Solid provides you with status through the lifecycle of each payment transaction (available in the Transaction object): 
+- Originated
+- Pending
+- Clearing
+- Cleared
+- Settled
+- Canceled
+- In Review
+- Returned
+- Reversed
+- Received
+- Declined
+- Refunded
+
+**Originating Transactions** (with an Outgoing message): Transactions originated from the Sub Account with an Outgoing message, which includes important instructions such as amount, credit/debit, method, and type. Transactions are originated via Payment APIs.
+
+<Tip>Note that payments can only originate from a Sub Account, not from a Master Account.</Tip>
+
+**Receiving Transactions** (with an Incoming message): Transactions received in the Sub Account with an Incoming message, which includes important instructions such as amount, credit/debit, method, and type. Transactions are received via Payment webhooks.
