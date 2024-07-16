@@ -94,6 +94,7 @@
         "payments/ach",
         "payments/wire",
         "payments/check",
+        "payments/debit-card",
         "payments/controls"
       ]
     },
