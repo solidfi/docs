@@ -12,8 +12,9 @@ Automated Clearing House (ACH) payment is a Push & Pull payment method supported
 
 While ACH transactions can be somewhat complex, understanding the possible types of ACH transactions is essential. See examples below on originating outgoing (push/pull) and receiving incoming (push/pull) ACH transactions.
 
-### Originating ACH Transactions ###
-**Example 1a: Originate an ACH Push**<br />
+### 1. Originating ACH Transactions ###
+<AccordionGroup>
+  <Accordion title="Example 1a: Originate an ACH Push">
 Sub Account Holder 1 at Partner Bank A wants to push \$100 via ACH to Person 2 at Bank B. In this example, Sub Account Holder 1 is originating the ACH transaction at Partner Bank A, instructing the bank (via Solid's technology) to:<br />
 Debit \$100 from Sub Account Holder 1's Sub Account at Partner Bank A<br />
 Credit \$100 to Person 2's Account at Bank B<br />
@@ -22,8 +23,8 @@ Method: ACH<br />
 Type: Push<br />
 ODFI (Originating Depository Financial Institution): Partner Bank A<br />
 RDFI (Receiving Depository Financial Institution): Bank B
-
-**Example 1b: Originate an ACH Pull**<br />
+  </Accordion>
+    <Accordion title="Example 1b: Originate an ACH Pull">
 Sub Account Holder 1 (Utility Company) at Partner Bank A wants to pull \$100 via ACH from Person 2 at Bank B. In this example, Sub Account Holder 1 (Utility Company) is originating the ACH transaction at Partner Bank A, instructing the bank (via Solid's technology) to:<br />
 Credit \$100 to Sub Account Holder 1's Sub Account at Partner Bank A<br />
 Debit \$100 from Person 2's Account at Bank B<br />
@@ -32,6 +33,9 @@ Method: ACH<br />
 Type: Pull<br />
 ODFI (Originating Depository Financial Institution): Partner Bank A<br />
 RDFI (Receiving Depository Financial Institution): Bank B<br />
+  </Accordion>
+</AccordionGroup>
+
 
 <Tip>Note that ACH payments can only originate from a Sub Account, not from a Master Account.</Tip>
 
