@@ -66,3 +66,30 @@ Steps to originate an ACH payment transaction:
 
 <Check>Congratulations, you have now successfully Originated an ACH payment transaction!</Check>
 
+### 2. Receiving ACH Transactions ###
+ACH Transactions received in the Sub Account with an incoming message include essential instructions such as amount, credit/debit, method, and type. Transactions are received via ACH Payment webhooks.
+
+<AccordionGroup>
+  <Accordion title="Example 2a: Receiving an ACH Push">
+Person 2 at Bank B wants to push \$100 via ACH to Sub Account Holder 1 at Partner Bank A. In this example, Person 2 is originating the ACH transaction at Bank B, instructing the bank to:<br />
+Debit \$100 from Person 2's Account at Bank B<br />
+Credit \$100 to Sub Account Holder 1's Account at Bank B<br />
+Message: Incoming<br />
+Method: ACH<br />
+Type: Push<br />
+ODFI (Originating Depository Financial Institution): Bank B<br />
+RDFI (Receiving Depository Financial Institution): Partner Bank A
+  </Accordion>
+ <Accordion title="Example 2b: Receiving an ACH Pull">
+Utility Company at Bank B wants to pull \$100 from via ACH from Sub Account Holder 1 at Partner Bank A. In this example, Utility Company is originating the ACH transaction at Bank B, instructing the bank to:<br />
+Credit \$100 to Utility Company's Account at Bank B<br />
+Debit \$100 from Sub Account Holder 1's Account at Partner Bank A<br />
+Message: Incoming<br />
+Method: ACH<br />
+Type: Pull<br />
+ODFI (Originating Depository Financial Institution): Bank B<br />
+RDFI (Receiving Depository Financial Institution): Partner Bank A<br />
+  </Accordion>
+</AccordionGroup>
+
+
