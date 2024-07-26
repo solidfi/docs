@@ -433,7 +433,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "sub_account_holder_example": {
                     "$ref": "#/components/examples/sub_account_holder_bad_request_error"
                   }
                 }
@@ -445,7 +445,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "sub_account_holder_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -900,7 +900,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "sub_account_example": {
                     "$ref": "#/components/examples/sub_account_bad_request_error"
                   }
                 }
@@ -912,7 +912,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "sub_account_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -1092,7 +1092,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "sub_account_example": {
                     "$ref": "#/components/examples/sub_account_bad_request_error"
                   }
                 }
@@ -1448,7 +1448,7 @@
                   "$ref": "#/components/schemas/counterparty"
                 },
                 "examples": {
-                  "master_account_example": {
+                  "counterparty_example": {
                     "$ref": "#/components/examples/counterparty_example"
                   }
                 }
@@ -1460,7 +1460,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "counterparty_example": {
                     "$ref": "#/components/examples/counterparty_bad_request_error"
                   }
                 }
@@ -1472,7 +1472,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "counterparty_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -1484,7 +1484,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "counterparty_example": {
                     "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
@@ -1701,7 +1701,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "counterparty_example": {
                     "$ref": "#/components/examples/counterparty_bad_request_error"
                   }
                 }
@@ -1930,7 +1930,7 @@
                   "$ref": "#/components/schemas/card_holder"
                 },
                 "examples": {
-                  "master_account_example": {
+                  "card_holder_example": {
                     "$ref": "#/components/examples/card_holder_example"
                   }
                 }
@@ -1942,7 +1942,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "card_holder_example": {
                     "$ref": "#/components/examples/cardholder_bad_request_error"
                   }
                 }
@@ -1954,7 +1954,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "card_holder_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -1966,7 +1966,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "card_holder_example": {
                     "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
@@ -2135,7 +2135,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "card_holder_example": {
                     "$ref": "#/components/examples/cardholder_bad_request_error"
                   }
                 }
@@ -2159,7 +2159,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "card_holder_example": {
                     "$ref": "#/components/examples/cardholder_not_found_error"
                   }
                 }
@@ -2546,7 +2546,7 @@
                   "$ref": "#/components/schemas/card"
                 },
                 "examples": {
-                  "master_account_example": {
+                  "card_example": {
                     "$ref": "#/components/examples/card_example"
                   }
                 }
@@ -2558,7 +2558,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "card_example": {
                     "$ref": "#/components/examples/card_bad_request_error"
                   }
                 }
@@ -2570,7 +2570,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "card_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -2582,7 +2582,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "card_example": {
                     "$ref": "#/components/examples/cardholder_not_found_error"
                   }
                 }
@@ -2829,7 +2829,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "card_example": {
                     "$ref": "#/components/examples/card_bad_request_error"
                   }
                 }
@@ -3291,7 +3291,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "sub_ledger_transaction_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -3303,7 +3303,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "sub_ledger_transaction_example": {
                     "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
@@ -3402,7 +3402,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "intra_account_push_transaction_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -3414,7 +3414,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "intra_account_push_transaction_example": {
                     "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
@@ -3513,7 +3513,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "intra_account_pull_transaction_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -3525,7 +3525,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "intra_account_pull_transaction_example": {
                     "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
@@ -3648,7 +3648,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "ach_push_transaction_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -3660,7 +3660,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "ach_push_transaction_example": {
                     "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
@@ -3782,7 +3782,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "ach_pull_transaction_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -3794,7 +3794,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "ach_pull_transaction_example": {
                     "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
@@ -3893,7 +3893,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "domestic_wire_transaction_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -3905,7 +3905,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "domestic_wire_transaction_example": {
                     "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
@@ -4004,7 +4004,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "international_wire_transaction_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -4016,7 +4016,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "international_wire_transaction_example": {
                     "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
@@ -4060,7 +4060,7 @@
                   "counterparty_id": {
                     "type": "string",
                     "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
-                    "description":"unique id of the counterparty"
+                    "description": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
@@ -4121,7 +4121,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "rtp_transaction_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -4133,7 +4133,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "rtp_transaction_example": {
                     "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
@@ -4238,7 +4238,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "fednow_transaction_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -4250,7 +4250,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "fednow_transaction_example": {
                     "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
@@ -4294,7 +4294,7 @@
                   "counterparty_id": {
                     "type": "string",
                     "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
-                    "description":"unique id of the counterparty"
+                    "description": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
@@ -4349,7 +4349,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "debit_card_push_transaction_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -4361,7 +4361,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "debit_card_push_transaction_example": {
                     "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
@@ -4405,7 +4405,7 @@
                   "counterparty_id": {
                     "type": "string",
                     "example": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
-                    "description":"unique id of the counterparty"
+                    "description": "unique id of the counterparty"
                   },
                   "amount": {
                     "type": "string",
@@ -4460,7 +4460,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "debit_card_pull_transaction_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -4472,7 +4472,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "debit_card_pull_transaction_example": {
                     "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
@@ -4571,7 +4571,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "check_send_transaction_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -4583,7 +4583,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "check_send_transaction_example": {
                     "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
@@ -4701,7 +4701,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "check_deposit_transaction_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -4713,7 +4713,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "master_account_example": {
+                  "check_deposit_transaction_example": {
                     "$ref": "#/components/examples/master_account_not_found_error"
                   }
                 }
@@ -4937,7 +4937,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Retrieve an Attachment",
+            "description": "List all Attachments",
             "content": {
               "application/json": {
                 "schema": {
@@ -5027,7 +5027,7 @@
                   "$ref": "#/components/schemas/create_attachment_response"
                 },
                 "examples": {
-                  "list_sub_account_holder_example": {
+                  "create_attachment_example": {
                     "$ref": "#/components/examples/attachment_example"
                   }
                 }
@@ -5142,6 +5142,327 @@
         }
       ]
     },
+    "/v2/webhook/events": {
+      "get": {
+        "tags": [
+          "Webhooks"
+        ],
+        "summary": "List all Webhook Events",
+        "description": "List all Webhook Events",
+        "operationId": "listAllWebhookEvents",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List all Webhook Events",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/list_webhook_events"
+                },
+                "examples": {
+                  "list_webhook_events_example": {
+                    "$ref": "#/components/examples/list_webhook_events_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "list_webhook_events_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {}
+        ]
+      }
+    },
+    "/v2/webhook": {
+      "get": {
+        "tags": [
+          "Webhooks"
+        ],
+        "summary": "List all Webhooks",
+        "description": "List all Webhooks",
+        "operationId": "listAllWebhooks",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
+            },
+            "required": true
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "example": 10,
+              "description": "number of records to return"
+            }
+          },
+          {
+            "name": "starting_after",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+              "description": "A cursor for use in pagination. `starting_after` is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, ending with `Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky`, your subsequent call can include `starting_after=Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky` in order to fetch the next page of the list."
+            }
+          },
+          {
+            "name": "ending_before",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+              "description": "A cursor for use in pagination. `ending_before` is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, starting with `Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky`, your subsequent call can include `ending_before= Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky` in order to fetch the previous page of the list."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List all Webhooks",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/list_webhook"
+                },
+                "examples": {
+                  "list_webhook_example": {
+                    "$ref": "#/components/examples/list_webhook_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "list_webhook_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {}
+        ]
+      },
+      "post": {
+        "tags": [
+          "Webhooks"
+        ],
+        "summary": "Create a Webhook",
+        "description": "Create a Webhook",
+        "operationId": "createAWebhook",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "example": "Transaction webhook",
+                    "description": "description of the webhook"
+                  },
+                  "url": {
+                    "type": "string",
+                    "example": "http://test-url.com/txn-webhook",
+                    "description": "url of the webhook endpoint"
+                  },
+                  "events": {
+                    "type": "array",
+                    "description": "an array of events to enable for this webhook endpoint. Example [\"transaction.status.declined\",\"transaction.status.received\"]",
+                    "items": {
+                      "type": "string",
+                      "example": "transaction.status.declined"
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Create a Webhook": {
+                  "value": {
+                    "description": "Transaction Webhook",
+                    "url": "http://test-url.com/txn-webhook",
+                    "events": [
+                      "transaction.status.declined",
+                      "transaction.status.received"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Create a Webhook",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/create_webhook_response"
+                },
+                "examples": {
+                  "create_webhook_example": {
+                    "$ref": "#/components/examples/webhook_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "create_webhook_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {}
+        ]
+      }
+    },
+    "/v2/webhook/{webhook_id}": {
+      "get": {
+        "tags": [
+          "Webhooks"
+        ],
+        "summary": "Retrieve a Webhook",
+        "description": "Retrieve a Webhook",
+        "operationId": "retrieveAWebhook",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieve a Webhook",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/webhook"
+                },
+                "examples": {
+                  "webhook_example": {
+                    "$ref": "#/components/examples/webhook_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "webhook_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {}
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Webhooks"
+        ],
+        "summary": "Delete a Webhook",
+        "description": "Delete a Webhook",
+        "operationId": "deleteAWebhook",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The webhook was deleted successfully."
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "webhook_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
     "/v2/simulate/incoming/ach/push": {
       "post": {
         "tags": [
@@ -5237,7 +5558,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "simulate_ach_push_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -5345,7 +5666,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "simulate_ach_pull_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -5528,7 +5849,7 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "attachment_example": {
+                  "simulate_auth_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -7180,6 +7501,68 @@
           }
         }
       },
+      "webhook": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "whk_a8d2b191fa0e960d8e49a4bfd320e07b",
+            "description": "unique id of the webhook created"
+          },
+          "client_id": {
+            "type": "string",
+            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+            "description": "unique id of the client that issued the card"
+          },
+          "description": {
+            "type": "string",
+            "example": "Transaction webhook",
+            "description": "description of the webhook"
+          },
+          "url": {
+            "type": "string",
+            "example": "http://test-url.com/txn-webhook",
+            "description": "url of the webhook endpoint"
+          },
+          "events": {
+            "type": "array",
+            "description": "an array of events to enable for this webhook endpoint. Example [\"transaction.status.declined\",\"transaction.status.received\"]",
+            "items": {
+              "type": "string",
+              "example": "transaction.status.declined"
+            }
+          },
+          "status": {
+            "type": "string",
+            "example": "active",
+            "description": "status of the webhook",
+            "enum": [
+              "active",
+              "inactive"
+            ]
+          },
+          "timestamps": {
+            "type": "object",
+            "properties": {
+              "created_at": {
+                "type": "string",
+                "example": "2024-04-04T11:06:00Z",
+                "description": "time at which the webhook was created"
+              },
+              "updated_at": {
+                "type": "string",
+                "example": "2024-04-04T11:06:00Z",
+                "description": "time at which the webhook was updated"
+              },
+              "deleted_at": {
+                "type": "string",
+                "example": "2024-04-04T11:06:00Z",
+                "description": "time at which the webhook was deleted"
+              }
+            }
+          }
+        }
+      },
       "create_attachment_response": {
         "type": "object",
         "properties": {
@@ -7232,6 +7615,223 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/attachment"
+            }
+          },
+          "has_more": {
+            "type": "string",
+            "example": "true",
+            "description": "if there are more records to iterate or not",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          "starting_after": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+            "description": "A cursor for use in pagination. `starting_after` is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, ending with `Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky`, your subsequent call can include `starting_after=Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky` in order to fetch the next page of the list."
+          },
+          "ending_before": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+            "description": "A cursor for use in pagination. `ending_before` is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, starting with `Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky`, your subsequent call can include `ending_before= Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky` in order to fetch the previous page of the list."
+          }
+        }
+      },
+      "create_webhook_response": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "whk_a8d2b191fa0e960d8e49a4bfd320e07b",
+            "description": "unique id of the webhook created"
+          },
+          "client_id": {
+            "type": "string",
+            "example": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
+            "description": "unique id of the client that issued the card"
+          },
+          "description": {
+            "type": "string",
+            "example": "Transaction webhook",
+            "description": "description of the webhook"
+          },
+          "url": {
+            "type": "string",
+            "example": "http://test-url.com/txn-webhook",
+            "description": "url of the webhook endpoint"
+          },
+          "events": {
+            "type": "array",
+            "description": "an array of events to enable for this webhook endpoint. Example [\"transaction.status.declined\",\"transaction.status.received\"]",
+            "items": {
+              "type": "string"
+            }
+          },
+          "secret": {
+            "type": "string",
+            "example": "pPibTgWHeiAAlJR7I0gzuXJpU3iNcwlf",
+            "description": "webhook signing secret which is returned only at the time of webhook creation"
+          },
+          "status": {
+            "type": "string",
+            "example": "active",
+            "description": "status of the webhook",
+            "enum": [
+              "active",
+              "inactive"
+            ]
+          },
+          "timestamps": {
+            "type": "object",
+            "properties": {
+              "created_at": {
+                "type": "string",
+                "example": "2024-04-04T11:06:00Z",
+                "description": "time at which the webhook was created"
+              },
+              "updated_at": {
+                "type": "string",
+                "example": "2024-04-04T11:06:00Z",
+                "description": "time at which the webhook was updated"
+              },
+              "deleted_at": {
+                "type": "string",
+                "example": "2024-04-04T11:06:00Z",
+                "description": "time at which the webhook was deleted"
+              }
+            }
+          }
+        }
+      },
+      "list_webhook_events": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "number",
+            "example": 1,
+            "description": "total number of records"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "transaction.status.pending",
+              "enum": [
+                "counterparty.status.deactivated",
+                "transaction.status.pending",
+                "transaction.status.reversed",
+                "client_member.status.locked",
+                "sub_account_holder.status.deactivated",
+                "sub_account_holder.status.locked",
+                "sub_account.updated",
+                "client.status.pending_activation",
+                "client_member.updated",
+                "transaction.status.declined",
+                "card_holder.status.locked",
+                "card.status.debit_blocked",
+                "card.status.blocked",
+                "client_member.status.activated",
+                "master_account.created",
+                "sub_account.status.locked",
+                "card_holder.updated",
+                "card_holder.status.suspended",
+                "transaction.status.received",
+                "master_account.status.open",
+                "master_account.status.debit_blocked",
+                "sub_account.created",
+                "card_holder.status.pending_activation",
+                "client_member.created",
+                "master_account_holder.status.locked",
+                "client.status.deactivated",
+                "card_holder.created",
+                "counterparty.status.suspended",
+                "client_member.status.pending_activation",
+                "master_account_holder.created",
+                "master_account.updated",
+                "counterparty.updated",
+                "transaction.created",
+                "sub_account_holder.created",
+                "sub_account_holder.status.pending_activation",
+                "sub_account.status.blocked",
+                "card.status.open",
+                "counterparty.status.activated",
+                "counterparty.status.locked",
+                "card_holder.status.deactivated",
+                "transaction.status.cleared",
+                "client_member.status.deactivated",
+                "master_account.status.locked",
+                "sub_account.status.open",
+                "card.status.credit_blocked",
+                "client.status.locked",
+                "master_account_holder.status.suspended",
+                "sub_account.status.debit_blocked",
+                "counterparty.status.pending_activation",
+                "sub_account_holder.updated",
+                "counterparty.created",
+                "transaction.status.clearing",
+                "sub_account.status.credit_blocked",
+                "card.created",
+                "transaction.status.returned",
+                "card_holder.status.activated",
+                "client.status.suspended",
+                "master_account_holder.status.pending_activation",
+                "master_account_holder.status.deactivated",
+                "master_account.status.credit_blocked",
+                "transaction.status.canceled",
+                "client.updated",
+                "client.status.activated",
+                "master_account.status.blocked",
+                "sub_account.status.closed",
+                "card.status.closed",
+                "card.status.locked",
+                "transaction.status.refunded",
+                "client_member.status.suspended",
+                "master_account_holder.updated",
+                "master_account.status.closed",
+                "card.updated",
+                "transaction.status.settled",
+                "transaction.status.in_review",
+                "master_account_holder.status.activated",
+                "sub_account_holder.status.activated",
+                "sub_account_holder.status.suspended",
+                "transaction.updated"
+              ]
+            }
+          },
+          "has_more": {
+            "type": "string",
+            "example": "true",
+            "description": "if there are more records to iterate or not",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          "starting_after": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+            "description": "A cursor for use in pagination. `starting_after` is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, ending with `Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky`, your subsequent call can include `starting_after=Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky` in order to fetch the next page of the list."
+          },
+          "ending_before": {
+            "type": "string",
+            "example": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+            "description": "A cursor for use in pagination. `ending_before` is an ID that defines your place in the list. For instance, if you make a list request and receive 50 records, starting with `Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky`, your subsequent call can include `ending_before= Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky` in order to fetch the previous page of the list."
+          }
+        }
+      },
+      "list_webhook": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "number",
+            "example": 1,
+            "description": "total number of records"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/webhook"
             }
           },
           "has_more": {
@@ -8271,9 +8871,9 @@
           "method": "GET",
           "status": 404,
           "error": {
-              "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
-              "message": "cannot find account by id in qldb",
-              "field_name": ""
+            "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
+            "message": "cannot find account by id in qldb",
+            "field_name": ""
           },
           "created_at": "2024-06-12T22:33:23Z"
         }
@@ -8285,9 +8885,9 @@
           "method": "GET",
           "status": 404,
           "error": {
-              "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
-              "message": "cannot find account holder by client id in qldb",
-              "field_name": ""
+            "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
+            "message": "cannot find account holder by client id in qldb",
+            "field_name": ""
           },
           "created_at": "2024-06-12T22:44:09Z"
         }
@@ -8299,9 +8899,9 @@
           "method": "GET",
           "status": 404,
           "error": {
-              "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
-              "message": "cannot find counterparty by id in qldb",
-              "field_name": ""
+            "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
+            "message": "cannot find counterparty by id in qldb",
+            "field_name": ""
           },
           "created_at": "2024-06-12T22:33:23Z"
         }
@@ -8313,9 +8913,9 @@
           "method": "GET",
           "status": 404,
           "error": {
-              "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
-              "message": "cannot find card holder by id in qldb",
-              "field_name": ""
+            "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
+            "message": "cannot find card holder by id in qldb",
+            "field_name": ""
           },
           "created_at": "2024-06-12T22:33:23Z"
         }
@@ -8327,9 +8927,9 @@
           "method": "GET",
           "status": 404,
           "error": {
-              "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
-              "message": "cannot find card holder by id in qldb",
-              "field_name": ""
+            "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
+            "message": "cannot find card holder by id in qldb",
+            "field_name": ""
           },
           "created_at": "2024-06-12T22:33:23Z"
         }
@@ -8341,9 +8941,9 @@
           "method": "GET",
           "status": 404,
           "error": {
-              "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
-              "message": "cannot find transaction by id in qldb",
-              "field_name": ""
+            "code": "ERROR_CODE_RESOURCE_NOT_FOUND",
+            "message": "cannot find transaction by id in qldb",
+            "field_name": ""
           },
           "created_at": "2024-06-12T22:33:23Z"
         }
@@ -8355,9 +8955,9 @@
           "method": "POST",
           "status": 400,
           "error": {
-              "code": "ERROR_CODE_INVALID_FIELD",
-              "message": "no type specified!",
-              "field_name": "type"
+            "code": "ERROR_CODE_INVALID_FIELD",
+            "message": "no type specified!",
+            "field_name": "type"
           },
           "created_at": "2024-06-12T23:26:10Z"
         }
@@ -8369,9 +8969,9 @@
           "method": "PATCH",
           "status": 400,
           "error": {
-              "code": "ERROR_CODE_INVALID_REQUEST_BODY",
-              "message": "invalid request body",
-              "field_name": ""
+            "code": "ERROR_CODE_INVALID_REQUEST_BODY",
+            "message": "invalid request body",
+            "field_name": ""
           },
           "created_at": "2024-06-13T00:51:53Z"
         }
@@ -8383,9 +8983,9 @@
           "method": "POST",
           "status": 400,
           "error": {
-              "code": "ERROR_CODE_INVALID_FIELD",
-              "message": "invalid field",
-              "field_name": ""
+            "code": "ERROR_CODE_INVALID_FIELD",
+            "message": "invalid field",
+            "field_name": ""
           },
           "created_at": "2024-06-12T23:28:56Z"
         }
@@ -8397,9 +8997,9 @@
           "method": "POST",
           "status": 400,
           "error": {
-              "code": "ERROR_CODE_INVALID_FIELD",
-              "message": "type must be properly set",
-              "field_name": ""
+            "code": "ERROR_CODE_INVALID_FIELD",
+            "message": "type must be properly set",
+            "field_name": ""
           },
           "created_at": "2024-06-12T23:30:41Z"
         }
@@ -8411,9 +9011,9 @@
           "method": "POST",
           "status": 400,
           "error": {
-              "code": "ERROR_CODE_INVALID_PHONE",
-              "message": "invalid phone",
-              "field_name": "phone"
+            "code": "ERROR_CODE_INVALID_PHONE",
+            "message": "invalid phone",
+            "field_name": "phone"
           },
           "created_at": "2024-06-12T23:33:51Z"
         }
@@ -8425,9 +9025,9 @@
           "method": "POST",
           "status": 400,
           "error": {
-              "code": "ERROR_CODE_INVALID_FIELD",
-              "message": "enum is required",
-              "field_name": "card_type"
+            "code": "ERROR_CODE_INVALID_FIELD",
+            "message": "enum is required",
+            "field_name": "card_type"
           },
           "created_at": "2024-06-12T23:36:12Z"
         }
@@ -8995,6 +9595,138 @@
           "has_more": "true",
           "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
           "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+        }
+      },
+      "list_webhook_events_example": {
+        "value": {
+          "total": 78,
+          "data": [
+            "counterparty.status.deactivated",
+            "transaction.status.pending",
+            "transaction.status.reversed",
+            "client_member.status.locked",
+            "sub_account_holder.status.deactivated",
+            "sub_account_holder.status.locked",
+            "sub_account.updated",
+            "client.status.pending_activation",
+            "client_member.updated",
+            "transaction.status.declined",
+            "card_holder.status.locked",
+            "card.status.debit_blocked",
+            "card.status.blocked",
+            "client_member.status.activated",
+            "master_account.created",
+            "sub_account.status.locked",
+            "card_holder.updated",
+            "card_holder.status.suspended",
+            "transaction.status.received",
+            "master_account.status.open",
+            "master_account.status.debit_blocked",
+            "sub_account.created",
+            "card_holder.status.pending_activation",
+            "client_member.created",
+            "master_account_holder.status.locked",
+            "client.status.deactivated",
+            "card_holder.created",
+            "counterparty.status.suspended",
+            "client_member.status.pending_activation",
+            "master_account_holder.created",
+            "master_account.updated",
+            "counterparty.updated",
+            "transaction.created",
+            "sub_account_holder.created",
+            "sub_account_holder.status.pending_activation",
+            "sub_account.status.blocked",
+            "card.status.open",
+            "counterparty.status.activated",
+            "counterparty.status.locked",
+            "card_holder.status.deactivated",
+            "transaction.status.cleared",
+            "client_member.status.deactivated",
+            "master_account.status.locked",
+            "sub_account.status.open",
+            "card.status.credit_blocked",
+            "client.status.locked",
+            "master_account_holder.status.suspended",
+            "sub_account.status.debit_blocked",
+            "counterparty.status.pending_activation",
+            "sub_account_holder.updated",
+            "counterparty.created",
+            "transaction.status.clearing",
+            "sub_account.status.credit_blocked",
+            "card.created",
+            "transaction.status.returned",
+            "card_holder.status.activated",
+            "client.status.suspended",
+            "master_account_holder.status.pending_activation",
+            "master_account_holder.status.deactivated",
+            "master_account.status.credit_blocked",
+            "transaction.status.canceled",
+            "client.updated",
+            "client.status.activated",
+            "master_account.status.blocked",
+            "sub_account.status.closed",
+            "card.status.closed",
+            "card.status.locked",
+            "transaction.status.refunded",
+            "client_member.status.suspended",
+            "master_account_holder.updated",
+            "master_account.status.closed",
+            "card.updated",
+            "transaction.status.settled",
+            "transaction.status.in_review",
+            "master_account_holder.status.activated",
+            "sub_account_holder.status.activated",
+            "sub_account_holder.status.suspended",
+            "transaction.updated"
+          ],
+          "has_more": "false",
+          "starting_after": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky",
+          "ending_before": "Y2xpXzAxOGY4NjEzMDEyYjdlNTFiOTZjNmVlYWJiNmRiZTky"
+        }
+      },
+      "webhook_example": {
+        "value": {
+          "id": "whk_0190e7185e4874dab687e7af88f6f368",
+          "client_id": "cli_01901368dbc174a9864a7cb156b0a207",
+          "description": "Transaction Webhook",
+          "url": "http://test-url.com/txn-webhook",
+          "events": [
+            "transaction.status.declined",
+            "transaction.status.received"
+          ],
+          "status": "active",
+          "timestamps": {
+            "created_at": "2024-07-24T23:34:12Z",
+            "updated_at": "2024-07-25T10:22:11Z",
+            "deleted_at": "2024-07-26T05:45:19Z"
+          }
+        }
+      },
+      "list_webhook_example": {
+        "value": {
+          "total": 1,
+          "data": [
+            {
+              "id": "whk_0190e7185e4874dab687e7af88f6f368",
+              "client_id": "cli_01901368dbc174a9864a7cb156b0a207",
+              "description": "Transaction Webhook",
+              "url": "http://test-url.com/txn-webhook",
+              "events": [
+                "transaction.status.declined",
+                "transaction.status.received"
+              ],
+              "status": "active",
+              "timestamps": {
+                "created_at": "2024-07-24T23:34:12Z",
+                "updated_at": "2024-07-25T10:22:11Z",
+                "deleted_at": "2024-07-26T05:45:19Z"
+              }
+            }
+          ],
+          "starting_after": "",
+          "ending_before": "",
+          "has_more": false
         }
       },
       "attachment_example": {
@@ -11023,6 +11755,9 @@
     },
     {
       "name": "Attachments"
+    },
+    {
+      "name": "Webhooks"
     },
     {
       "name": "Simulation"
