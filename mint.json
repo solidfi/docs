@@ -232,6 +232,17 @@
       ]
     },
     {
+      "group": "Webhooks",
+      "version": "v2",
+      "pages": [
+        "v2/api-reference/webhooks/list-all-webhook-events",
+        "v2/api-reference/webhooks/list-all-webhook",
+        "v2/api-reference/webhooks/create-a-webhook",
+        "v2/api-reference/webhooks/retrieve-a-webhook",
+        "v2/api-reference/webhooks/delete-a-webhook"
+      ]
+    },
+    {
       "group": "Simulation",
       "version": "v2",
       "pages": [
