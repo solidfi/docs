@@ -174,7 +174,8 @@
         "v2/api-reference/counterparties/list-all-counterparties",
         "v2/api-reference/counterparties/create-a-counterparty",
         "v2/api-reference/counterparties/retrieve-a-counterparty",
-        "v2/api-reference/counterparties/update-a-counterparty"
+        "v2/api-reference/counterparties/update-a-counterparty",
+        "v2/api-reference/counterparties/retrieve-bank-info"
       ]
     },
     {
