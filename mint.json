@@ -101,7 +101,7 @@
       "group": "Card Issuance",
       "pages": [
         "card-issuance/introduction",
-        "card-issuance/card-art",
+        "card-issuance/physical-card",
         "card-issuance/atm",
         "card-issuance/controls"
       ]
