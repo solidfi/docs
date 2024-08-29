@@ -1,4 +1,18 @@
 ---
 title: 'Controls'
-description: 'Description of your new file.'
+description: 'A guide to Payment Controls'
 ---
+
+Depending on the payment use case, a wide range of controls can be set not just based on frequency but also at the form factor levels, each in full adherence to the bank's risk and compliance standards.
+
+Controls and limits can be applied to both incoming and outgoing transactions. If any transaction (incoming or outgoing) violates the set controls or exceeds the set limits, the transaction will be auto-declined, and clients will be promptly notified via a webhook. 
+
+Here are some examples of controls available in payments:
+- Banks can configure clients' daily limits for outgoing domestic wire transactions.
+- Banks can configure clients' monthly limits for incoming ACH pull transactions.
+Banks can configure the client's settlement delay for all ACH pull transactions originated. Solid will release the funds only after the settlement wait time.
+- Banks can disable international wire for a particular client.
+- Clients can enable RTA to process incoming ACH pull transactions.
+- Based on the ACH details, clients can decide whether to process or return the transaction.
+
+Payment controls and limits are set during the onboarding process.
