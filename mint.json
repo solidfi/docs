@@ -94,7 +94,6 @@
         "payments/ach",
         "payments/wire",
         "payments/check",
-        "payments/debit-card",
         "payments/controls"
       ]
     },
@@ -102,7 +101,7 @@
       "group": "Card Issuance",
       "pages": [
         "card-issuance/introduction",
-        "card-issuance/card-art",
+        "card-issuance/physical-card",
         "card-issuance/atm",
         "card-issuance/controls"
       ]
