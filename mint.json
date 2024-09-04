@@ -248,7 +248,9 @@
       "pages": [
         "v2/api-reference/simulation/simulate-an-incoming-ach-push",
         "v2/api-reference/simulation/simulate-an-incoming-ach-pull",
-        "v2/api-reference/simulation/simulate-an-auth-transaction"
+        "v2/api-reference/simulation/simulate-an-auth-transaction",
+        "v2/api-reference/simulation/simulate-an-incoming-domestic-wire-push",
+        "v2/api-reference/simulation/simulate-an-incoming-international-wire-push"
       ]
     },
     {
