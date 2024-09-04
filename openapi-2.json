@@ -5577,15 +5577,20 @@
                     "example": "May Rent",
                     "description": "description of the transaction"
                   },
-                  "counterparty_name": {
-                    "type": "string",
-                    "example": "John Doe",
-                    "description": "name of the counterparty"
-                  },
-                  "counterparty_routing_number": {
-                    "type": "string",
-                    "example": "121042882",
-                    "description": "routing number of the counterparty's bank"
+                  "counterparty": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "example": "John Doe",
+                        "description": "name of the counterparty"
+                      },
+                      "routing_number": {
+                        "type": "string",
+                        "example": "121042882",
+                        "description": "routing number of the counterparty's bank"
+                      }
+                    }
                   }
                 }
               },
@@ -5595,8 +5600,10 @@
                     "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
                     "amount": "500.00",
                     "description": "May Rent",
-                    "counterparty_name": "John Doe",
-                    "counterparty_routing_number": "121042882"
+                    "counterparty": {
+                      "name": "John Doe",
+                      "routing_number": "121042882"
+                    }
                   }
                 }
               }
@@ -5685,15 +5692,20 @@
                     "example": "May Rent",
                     "description": "description of the transaction"
                   },
-                  "counterparty_name": {
-                    "type": "string",
-                    "example": "John Doe",
-                    "description": "name of the counterparty"
-                  },
-                  "counterparty_routing_number": {
-                    "type": "string",
-                    "example": "121042882",
-                    "description": "routing number of the counterparty's bank"
+                  "counterparty": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "example": "John Doe",
+                        "description": "name of the counterparty"
+                      },
+                      "routing_number": {
+                        "type": "string",
+                        "example": "121042882",
+                        "description": "routing number of the counterparty's bank"
+                      }
+                    }
                   }
                 }
               },
@@ -5703,8 +5715,10 @@
                     "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
                     "amount": "500.00",
                     "description": "May Rent",
-                    "counterparty_name": "John Doe",
-                    "counterparty_routing_number": "121042882"
+                    "counterparty": {
+                      "name": "John Doe",
+                      "routing_number": "121042882"
+                    }
                   }
                 }
               }
@@ -5734,6 +5748,291 @@
               "application/json": {
                 "examples": {
                   "simulate_ach_pull_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {}
+        ]
+      }
+    },
+    "/v2/simulate/incoming/domestic_wire": {
+      "post": {
+        "tags": [
+          "Simulation",
+          "Domestic Wire"
+        ],
+        "summary": "Simulate an Incoming Domestic Wire Push",
+        "description": "Simulate an Incoming Domestic Wire Push",
+        "operationId": "simulateAnIncomingDomesticWirePush",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "master_account_id": {
+                    "type": "string",
+                    "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
+                    "description": "unique id of the master account"
+                  },
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "500.00",
+                    "description": "amount of the transaction"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "May Rent",
+                    "description": "description of the transaction"
+                  },
+                  "counterparty": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "example": "John Doe",
+                        "description": "name of the counterparty"
+                      },
+                      "account_number": {
+                        "type": "string",
+                        "example": "78762546",
+                        "description": "account number of the counterparty"
+                      },
+                      "routing_number": {
+                        "type": "string",
+                        "example": "121042882",
+                        "description": "routing number of the counterparty's bank"
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Simulate an Incoming Domestic Wire Push": {
+                  "value": {
+                    "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "amount": "500.00",
+                    "description": "May Rent",
+                    "counterparty": {
+                      "name": "John Doe",
+                      "account_number": "78762546",
+                      "routing_number": "121042882"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Simulate an Incoming Domestic Wire Push",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
+                "examples": {
+                  "simulate_domestic_wire_example": {
+                    "$ref": "#/components/examples/simulate_domestic_wire_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "simulate_domestic_wire_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {}
+        ]
+      }
+    },
+    "/v2/simulate/incoming/international_wire": {
+      "post": {
+        "tags": [
+          "Simulation",
+          "International Wire"
+        ],
+        "summary": "Simulate an Incoming International Wire Push",
+        "description": "Simulate an Incoming International Wire Push",
+        "operationId": "simulateAnIncomingInternationalWirePush",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "master_account_id": {
+                    "type": "string",
+                    "example": "mas_743fa071316bc6beaf5dddfd05f49c30",
+                    "description": "unique id of the master account"
+                  },
+                  "sub_account_id": {
+                    "type": "string",
+                    "example": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "description": "unique id of the sub account"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "example": "500.00",
+                    "description": "amount of the transaction"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "May Rent",
+                    "description": "description of the transaction"
+                  },
+                  "counterparty": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "example": "John Doe",
+                        "description": "name of the counterparty"
+                      },
+                      "identifier_code": {
+                        "type": "string",
+                        "example": "ICICINBBNRI",
+                        "description": "SWIFT/BIC code of counterparty's bank"
+                      },
+                      "account_number": {
+                        "type": "string",
+                        "example": "121042882",
+                        "description": "bank account number of the counterparty"
+                      },
+                      "address": {
+                        "type": "object",
+                        "properties": {
+                          "line1": {
+                            "type": "string",
+                            "example": "1095 12th Ave",
+                            "description": "line 1 of the address"
+                          },
+                          "line2": {
+                            "type": "string",
+                            "example": "Suite 201",
+                            "description": "line 2 of the address"
+                          },
+                          "city": {
+                            "type": "string",
+                            "example": "New York",
+                            "description": "city of the address"
+                          },
+                          "state": {
+                            "type": "string",
+                            "example": "NY",
+                            "description": "2-Letter US state abbreviation (ex: CA)"
+                          },
+                          "country": {
+                            "type": "string",
+                            "example": "US",
+                            "description": "2-letter abbreviated country code (ex: US)"
+                          },
+                          "postal_code": {
+                            "type": "string",
+                            "example": "10001",
+                            "description": "postal code"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Simulate an Incoming International Wire Push": {
+                  "value": {
+                    "sub_account_id": "sub_bda1e562657c41e553104b10aad3fe70",
+                    "amount": "500.00",
+                    "description": "May Rent",
+                    "counterparty": {
+                      "name": "John Doe",
+                      "identifier_code": "ICICINBBNRI",
+                      "account_number": "78762546",
+                      "address": {
+                        "line1": "123 Main St",
+                        "line2": "",
+                        "city": "New York",
+                        "state": "NY",
+                        "country": "US",
+                        "postal_code": "10001"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Simulate an Incoming International Wire Push",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/transaction"
+                },
+                "examples": {
+                  "simulate_international_wire_example": {
+                    "$ref": "#/components/examples/simulate_international_wire_example"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "simulate_international_wire_example": {
                     "$ref": "#/components/examples/unauth_error"
                   }
                 }
@@ -9868,16 +10167,16 @@
           "bank_name": "ConnectOne Bank",
           "type": "aba",
           "payment_methods": [
-              "ach",
-              "wire"
+            "ach",
+            "wire"
           ],
           "address": {
-              "line1": "1365 Palisades Ave",
-              "line2": "",
-              "city": "Fort Lee",
-              "state": "NJ",
-              "country": "US",
-              "postal_code": "07024-5242"
+            "line1": "1365 Palisades Ave",
+            "line2": "",
+            "city": "Fort Lee",
+            "state": "NJ",
+            "country": "US",
+            "postal_code": "07024-5242"
           }
         }
       },
@@ -11374,6 +11673,153 @@
             "created_at": "2024-04-04T11:06:00Z",
             "updated_at": "2024-04-04T11:06:00Z",
             "settled_at": "2024-04-04T11:06:00Z"
+          }
+        }
+      },
+      "simulate_domestic_wire_example": {
+        "value": {
+          "id": "txn_0191beb31b3771ec86fe245d603f1521",
+          "sub_account_id": "sub_019105d908077ed2be68d7a08b4c7bfb",
+          "master_account_holder_id": "mah_019105907421702091f5651e87682222",
+          "sub_account_holder_id": "sah_019105d12584786ab54e4d1ba55f7c00",
+          "client_id": "cli_0191058c4fc676dcb4ed67a096a80d6a",
+          "master_account_id": "mas_019105952d8770f984bc888caa8059f8",
+          "status": "received",
+          "amount": "8.00",
+          "currency": "USD",
+          "direction": "credit",
+          "method": "domestic_wire",
+          "type": "push",
+          "message": "incoming",
+          "description": "Rent Payment",
+          "available_balance": "130.85",
+          "pending_credits": "8.00",
+          "pending_debits": "0.00",
+          "counterparty": {
+            "id": "",
+            "name": "John Doe",
+            "verification_status": "",
+            "account_number": "78762546",
+            "routing_number": "121042882",
+            "account_type": "",
+            "bank_name": "",
+            "beneficiary_bank": null,
+            "correspondent_bank": null,
+            "shipping_address": null
+          },
+          "ach": null,
+          "domestic_wire": {
+            "imad": "FVtvUkfw0",
+            "omad": "k2aVdUuUy"
+          },
+          "international_wire": null,
+          "rtp": null,
+          "fednow": null,
+          "check": null,
+          "card": null,
+          "parent_transaction_id": "",
+          "external_reference_id": "",
+          "purpose": "",
+          "ofac": {
+            "status": "pass",
+            "last_updated_at": "2024-04-01T21:00:00Z"
+          },
+          "attachments": null,
+          "metadata": null,
+          "reconciliation": {
+            "status": "reconciled",
+            "master_account": [
+              {
+                "id": "mas_019105952d8770f984bc888caa8059f8",
+                "transaction_id": "txn_0191beb31a0573b586bbaf1909a0dd2a",
+                "amount": "8.00"
+              }
+            ],
+            "sub_account": null
+          },
+          "timestamps": {
+            "created_at": "2024-09-04T20:21:34Z",
+            "updated_at": "2024-09-04T20:21:34Z",
+            "settled_at": ""
+          }
+        }
+      },
+      "simulate_international_wire_example": {
+        "value": {
+          "id": "txn_0191beb4cecf7ac5a1044ff0fef33c06",
+          "sub_account_id": "sub_019105d908077ed2be68d7a08b4c7bfb",
+          "master_account_holder_id": "mah_019105907421702091f5651e87682222",
+          "sub_account_holder_id": "sah_019105d12584786ab54e4d1ba55f7c00",
+          "client_id": "cli_0191058c4fc676dcb4ed67a096a80d6a",
+          "master_account_id": "mas_019105952d8770f984bc888caa8059f8",
+          "status": "received",
+          "amount": "8.00",
+          "currency": "USD",
+          "direction": "credit",
+          "method": "international_wire",
+          "type": "push",
+          "message": "incoming",
+          "description": "Rent Payment",
+          "available_balance": "138.85",
+          "pending_credits": "8.00",
+          "pending_debits": "0.00",
+          "counterparty": {
+            "id": "",
+            "name": "John Doe",
+            "verification_status": "",
+            "account_number": "78762546",
+            "routing_number": "",
+            "account_type": "",
+            "bank_name": "",
+            "beneficiary_bank": null,
+            "correspondent_bank": {
+              "identifier_code": "ICICINBBNRI",
+              "name": "",
+              "address": {
+                "line1": "123 Main St",
+                "line2": "",
+                "city": "New York",
+                "state": "NY",
+                "country": "US",
+                "postal_code": "10001"
+              }
+            },
+            "shipping_address": null
+          },
+          "ach": null,
+          "domestic_wire": null,
+          "international_wire": {
+            "imad": "MTrfbagJU",
+            "omad": "qkBZM9FW5"
+          },
+          "rtp": null,
+          "fednow": null,
+          "check": null,
+          "card": null,
+          "parent_transaction_id": "",
+          "external_reference_id": "",
+          "purpose": "",
+          "ofac": {
+            "status": "pass",
+            "last_updated_at": "2024-04-01T21:00:00Z"
+          },
+          "attachments": null,
+          "metadata": null,
+          "reconciliation": {
+            "status": "reconciled",
+            "master_account": [
+              {
+                "id": "mas_019105952d8770f984bc888caa8059f8",
+                "transaction_id": "txn_0191beb4cdae7d45bac2845756f8c00e",
+                "amount": "8.00"
+              }
+            ],
+            "sub_account": null
+          },
+          "timestamps": {
+            "created_at": "2024-09-04T20:23:26Z",
+            "updated_at": "2024-09-04T20:23:26Z",
+            "settled_at": ""
           }
         }
       },
