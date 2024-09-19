@@ -3302,6 +3302,97 @@
         }
       ]
     },
+    "/v2/issuing/card/{card_id}/set_pin_token": {
+      "post": {
+        "tags": [
+          "Cards"
+        ],
+        "summary": "Set a PIN",
+        "description": "Set a PIN",
+        "operationId": "setAPIN",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Set a PIN",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "crd_7948d9a96706dd05360a340002de725f",
+                      "description": "unique id of the card"
+                    },
+                    "set_pin_token": {
+                      "type": "string",
+                      "example": "card_pin_test_01920c6725b4707688fa0ad517bdeddb",
+                      "description": "set PIN token"
+                    }
+                  }
+                },
+                "examples": {
+                  "set_pin_example": {
+                    "value": {
+                      "id": "crd_7948d9a96706dd05360a340002de725f",
+                      "set_pin_token": "card_pin_test_01920c6725b4707688fa0ad517bdeddb"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "show_card_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/card_not_found_error"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {}
+        ]
+      },
+      "parameters": [
+        {
+          "name": "card_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
     "/v2/payments/transaction": {
       "get": {
         "tags": [

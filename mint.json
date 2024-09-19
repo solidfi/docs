@@ -192,7 +192,8 @@
         "v2/api-reference/cards/update-a-card",
         "v2/api-reference/cards/activate-a-card",
         "v2/api-reference/cards/show-a-card",
-        "v2/api-reference/cards/reissue-a-card"
+        "v2/api-reference/cards/reissue-a-card",
+        "v2/api-reference/cards/set-a-pin"
       ]
     },
     {
