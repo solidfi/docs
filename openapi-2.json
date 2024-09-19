@@ -3061,7 +3061,7 @@
           "Cards"
         ],
         "summary": "Show a Card",
-        "description": "Show a Card",
+        "description": "Displaying unredacted card number and CVV is a two-step process \n 1. Get a one-time show token \n 2. Use the show token in Solid's SDK to show the unredacted card number and CVV. Solid will provide access to the SDK during the implementation.",
         "operationId": "showACard",
         "parameters": [
           {
