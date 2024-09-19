@@ -54,11 +54,6 @@
       "url": "https://status.solidfi.com/?&_ga=2.106479873.308955735.1702327933-383528257.1702327933"
     },
     {
-      "name": "Help Center",
-      "icon": "square-info",
-      "url": "https://help.solidfi.com/hc/en-us"
-    },
-    {
       "name": "Changelog",
       "icon": "list-check",
       "url": "https://docs.solidfi.com/changelog"
