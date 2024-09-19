@@ -3308,7 +3308,7 @@
           "Cards"
         ],
         "summary": "Set a PIN",
-        "description": "Set a PIN",
+        "description": "Setting a PIN is a two-step process \n 1. Get a one-time PIN token \n 2. Use the PIN token in Solid's SDK to set a PIN. Solid will provide access to the SDK during the implementation.",
         "operationId": "setAPIN",
         "parameters": [
           {
