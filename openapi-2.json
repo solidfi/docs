@@ -2413,7 +2413,7 @@
                       "virtual"
                     ]
                   },
-                  "card_fullfilment": {
+                  "card_fulfilment": {
                     "type": "object",
                     "properties": {
                       "embossing": {
@@ -2572,7 +2572,7 @@
                     "product": "business_spend",
                     "theme": "metallic",
                     "type": "physical",
-                    "card_fullfilment": {
+                    "card_fulfilment": {
                       "embossing": {
                         "cardholder_name": "John Doe",
                         "business_name": "Ace Inc"
@@ -3101,6 +3101,162 @@
                       "id": "crd_7948d9a96706dd05360a340002de725f",
                       "show_token": "card_show_test_66449e6614b54f9e838c74807268db09"
                     }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "show_card_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/card_not_found_error"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {}
+        ]
+      },
+      "parameters": [
+        {
+          "name": "card_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/v2/issuing/card/{card_id}/replace": {
+      "post": {
+        "tags": [
+          "Cards"
+        ],
+        "summary": "Reissue a Card",
+        "description": "Reissue a Card",
+        "operationId": "ReissueACard",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reason": {
+                    "type": "string",
+                    "example": "lost",
+                    "description": "card reissue reason",
+                    "enum": [
+                      "lost",
+                      "stolen",
+                      "damaged",
+                      "expired"
+                    ]
+                  },
+                  "card_fulfilment": {
+                    "type": "object",
+                    "properties": {
+                      "shipping_address": {
+                        "type": "object",
+                        "properties": {
+                          "line1": {
+                            "type": "string",
+                            "example": "123 Main St",
+                            "description": "line 1 of the address"
+                          },
+                          "line2": {
+                            "type": "string",
+                            "example": "",
+                            "description": "line 2 of the address"
+                          },
+                          "city": {
+                            "type": "string",
+                            "example": "New York",
+                            "description": "city of the address"
+                          },
+                          "state": {
+                            "type": "string",
+                            "example": "NY",
+                            "description": "2-Letter US state abbreviation (ex: CA)"
+                          },
+                          "country": {
+                            "type": "string",
+                            "example": "US",
+                            "description": "2-letter abbreviated country code (ex: US)"
+                          },
+                          "postal_code": {
+                            "type": "string",
+                            "example": "10001",
+                            "description": "postal code"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Reissue a Card": {
+                  "value": {
+                    "reason": "lost",
+                    "card_fulfilment": {
+                      "shipping_address": {
+                        "line1": "123 Main St",
+                        "line2": "",
+                        "city": "New York",
+                        "state": "NY",
+                        "country": "US",
+                        "postal_code": "10001"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Reissue a Card",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/card"
+                },
+                "examples": {
+                  "card_example": {
+                    "$ref": "#/components/examples/card_example"
                   }
                 }
               }
@@ -8489,7 +8645,7 @@
             "example": "5275",
             "description": "last 4 digits of the card number"
           },
-          "card_fullfilment": {
+          "card_fulfilment": {
             "type": "object",
             "properties": {
               "embossing": {
@@ -10330,7 +10486,7 @@
           "expiry_month": "12",
           "expiry_year": "2022",
           "last4": "5275",
-          "card_fullfilment": {
+          "card_fulfilment": {
             "embossing": {
               "cardholder_name": "John Doe",
               "business_name": "Ace Inc"
@@ -10408,7 +10564,7 @@
               "expiry_month": "12",
               "expiry_year": "2022",
               "last4": "5275",
-              "card_fullfilment": {
+              "card_fulfilment": {
                 "embossing": {
                   "cardholder_name": "John Doe",
                   "business_name": "Ace Inc"
