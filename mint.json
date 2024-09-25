@@ -97,6 +97,8 @@
       "pages": [
         "card-issuance/introduction",
         "card-issuance/physical-card",
+        "card-issuance/virtual-card",
+        "card-issuance/wallet",
         "card-issuance/atm",
         "card-issuance/controls"
       ]
