@@ -99,9 +99,21 @@ By carefully managing each step of the process, we can ensure that your cards ar
 
 To comply with the issuing bank's requirements, you must provide support information to your cardholders, which needs to be included on the back of physical cards.
 
-### 4. Reissuing Cards ###
+### 5. Reissuing Cards ###
 
-You can [reissue a card] (/v2/api-reference/cards/reissue-a-card) if your end user informs you that it is misplaced, lost, or stolen. Solid does not cover the cost of reissued cards for such scenarios.  
+You can [Reissue a Card](/v2/api-reference/cards/reissue-a-card) if your end user informs you that it is misplaced, lost, or stolen. Solid does not cover the cost of reissued cards for such scenarios.  
 
 If the card arrives damaged, you must request that your end user send photo evidence of the damage. Solid will contact its fulfillment partners for an explanation. In some cases, they may grant a credit. This credit is likely to cover shipping issues (resulting in a shipping credit), but it's possible that it could also cover printing issues (printing credit).
 Please note that damaged cards are reviewed case by case and are not guaranteed. If a credit is received, it can be deducted from the program's next invoice. As usual, the program should submit a ticket for any such cases.
+
+### 6. Multiple Card Designs (Themes) ###
+
+Solid offers a feature called Solid Card Themes, which enables you to manage multiple card types and artwork within a single program.
+
+For example, you could offer a single product that allows end users to choose a white or black card. Alternatively, you could use this feature to offer multiple financial products within a single program, such as Brand X Card and Brand Y Card.
+
+Solid implementation team sets up themes in conjunction with your card program needs. Every card in the program will be assigned a unique theme, and each theme requires the artwork to be set up.
+
+Once the Solid Solutions team has set up all card themes, they will provide you with the necessary information about the possible theme values, ensuring your confidence in the process.
+
+You pass the theme in the [Create a Card](/v2/api-reference/cards/reissue-a-card) API.
