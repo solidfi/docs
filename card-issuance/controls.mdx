@@ -1,4 +1,41 @@
 ---
 title: 'Controls'
-description: 'Description of your new file.'
+description: 'A guide to Cards Issuance Controls.'
 ---
+
+Depending on the card issuance use case, a wide range of controls can be set not at the program level but at the card level (including spend and frequency), each in full adherence to the bank's risk and compliance standards.
+
+### 1. Program Config ###
+
+Program-level controls are global, meaning every card issued in the program will have built-in controls by default. Program-level controls can be set by the program type (prepaid, debit, or credit) and the number of cards the program can issue. 
+
+Solid implementation will work closely with you, to set the card program controls, first in the sandbox, which is replicated in production.
+
+### 2. Merchant Category Codes (MCC) Controls ###
+
+You can set spending controls to allow or block transactions at specific merchant categories by setting their Merchant Category Codes (MCC). These controls are applied at the Card Level.
+
+Allowed MCCs (Whitelist): While Creating a Card or Updating a Card, set an array of allowed MCC codes that should be allowed. The complete list is [here](https://github.com/greggles/mcc-codes/blob/main/mcc_codes.json). At the time of the transaction, if the Merchant's MCC code matches the allowed MCC code, then the transaction is approved. If not, it is declined.
+
+Blocked MCCs (Blacklist): While Creating a Card or Updating a Card, set an array of blocked MCC codes that should not be blocked. The complete list is [here](https://github.com/greggles/mcc-codes/blob/main/mcc_codes.json). At the time of the transaction, if the Merchant's MCC code matches the blocked MCC code, then the transaction is not approved. If not, it is approved.
+ 
+<Note>For a card, you can only set allowedCategories or blockedCategories. You can't set both at the same time.</Note>
+
+### 3. Merchant Name Controls ###
+
+You can set spending controls to allow or block transactions at specific merchants. These controls are applied at the Card Level.
+
+Allowed Merchants (Whitelist): While creating or updating a card, set an array of allowed Merchants that should be allowed. At the time of the transaction, if the Merchant matches the allowed Merchant, then the transaction is approved. If not, it is declined.
+
+Blocked MCCs (Blacklist): While creating or updating a card, set an array of blocked Merchants that should be blocked. At the time of the transaction, if the Merchant matches the blocked Merchant, then the transaction is declined. If not, it is approved.
+ 
+<Note>For a card, you can only set allowedMerchants or blockedMerchants. You can't set both at the same time.</Note>
+
+
+### 4. Real Time Authorization (RTA) ###
+
+Solid's Card Issuing supports Real-Time Authorization (RTA) of card transactions, which means that using Card RTA Webhooks, you can approve or decline authorization requests in real-time.
+Here is how it works:
+1. In the Solid Dashboard, (in Card Config) configure the RTA webhook endpoint for your program.
+2. When a Solid issued card on your program makes a purchase, you must approve or decline each Authorization.
+<Note> If Solid does not receive your approve or decline request within 2 seconds, the Authorization is automatically approved or declined based on your Stand-In Processing (STIP) settings.</Note>

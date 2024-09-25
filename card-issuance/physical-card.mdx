@@ -1,6 +1,6 @@
 ---
 title: 'Physical Card'
-description: 'A guide to Card Art'
+description: 'A guide to Physical Cards'
 ---
 Solid offers its clients a fully managed card-art program. That means Solid manages the physical card approval with the issuing bank, network, and card printer.
 
@@ -86,3 +86,34 @@ Note:
 
 You can download the mailer art template's Figma file [here](https://www.figma.com/file/cwxnEXJtFIalnq96UCefSj/Card-Art-Template?node-id=2%3A436). Then, you can customize your mailer art using the Figma app or your web browser, export it to an SVG file, and send it back to Solid. Alternatively, you can send back your .fig file.
 
+### 3. Timelines ###
+
+When issuing physical cards, timing is essential, but quality is even more so. Here are the key details you need to know:
+- We will collaborate closely with you during the approximately two weeks it takes to configure your artwork. It ensures that all the necessary details are in place and your design looks exactly how you want it to.
+- Once the artwork has been finalized, we will begin the printing process. Depending on the size of your order and our current workload, this typically takes around two days to complete.
+- Finally, shipping times will vary based on the method you have selected. We offer a range of shipping options to meet your needs, from standard delivery to expedited shipping for those needing cards as quickly as possible.
+
+By carefully managing each step of the process, we can ensure that your cards are delivered on time and with the highest quality.
+
+### 4. Support ###
+
+To comply with the issuing bank's requirements, you must provide support information to your cardholders, which needs to be included on the back of physical cards.
+
+### 5. Reissuing Cards ###
+
+You can [Reissue a Card](/v2/api-reference/cards/reissue-a-card) if your end user informs you that it is misplaced, lost, or stolen. Solid does not cover the cost of reissued cards for such scenarios.  
+
+If the card arrives damaged, you must request that your end user send photo evidence of the damage. Solid will contact its fulfillment partners for an explanation. In some cases, they may grant a credit. This credit is likely to cover shipping issues (resulting in a shipping credit), but it's possible that it could also cover printing issues (printing credit).
+Please note that damaged cards are reviewed case by case and are not guaranteed. If a credit is received, it can be deducted from the program's next invoice. As usual, the program should submit a ticket for any such cases.
+
+### 6. Multiple Card Designs (Themes) ###
+
+Solid offers a feature called Solid Card Themes, which enables you to manage multiple card types and artwork within a single program.
+
+For example, you could offer a single product that allows end users to choose a white or black card. Alternatively, you could use this feature to offer multiple financial products within a single program, such as Brand X Card and Brand Y Card.
+
+Solid implementation team sets up themes in conjunction with your card program needs. Every card in the program will be assigned a unique theme, and each theme requires the artwork to be set up.
+
+Once the Solid Solutions team has set up all card themes, they will provide you with the necessary information about the possible theme values, ensuring your confidence in the process.
+
+You pass the theme in the [Create a Card](/v2/api-reference/cards/create-a-card) API.
