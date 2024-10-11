@@ -150,7 +150,10 @@
         "v2/api-reference/sub-account-holders/list-all-sub-account-holders",
         "v2/api-reference/sub-account-holders/create-a-sub-account-holder",
         "v2/api-reference/sub-account-holders/retrieve-a-sub-account-holder",
-        "v2/api-reference/sub-account-holders/update-a-sub-account-holder"
+        "v2/api-reference/sub-account-holders/update-a-sub-account-holder",
+        "v2/api-reference/sub-account-holders/submit-a-kyc",
+        "v2/api-reference/sub-account-holders/submit-a-idv",
+        "v2/api-reference/sub-account-holders/submit-a-kyb"
       ]
     },
     {
