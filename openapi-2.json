@@ -683,6 +683,273 @@
         }
       ]
     },
+    "/v2/accounts/sub_account_holder/{sub_account_holder_id}/kyc": {
+      "post": {
+        "tags": [
+          "Sub Account Holders"
+        ],
+        "summary": "Submit a KYC",
+        "description": "Submit a KYC",
+        "operationId": "SubmitAKYC",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Submit a KYC",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/sub_account_holder"
+                },
+                "examples": {
+                  "sub_account_holder_example": {
+                    "$ref": "#/components/examples/sub_account_holder_example"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "sub_account_holder_example": {
+                    "$ref": "#/components/examples/sub_account_holder_bad_request_error"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "sub_account_holder_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {}
+        ]
+      },
+      "parameters": [
+        {
+          "name": "sub_account_holder_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/v2/accounts/sub_account_holder/{sub_account_holder_id}/idv": {
+      "post": {
+        "tags": [
+          "Sub Account Holders"
+        ],
+        "summary": "Submit an IDV",
+        "description": "Submit an IDV",
+        "operationId": "SubmitAnIDV",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Submit an IDV",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/sub_account_holder"
+                },
+                "examples": {
+                  "sub_account_holder_example": {
+                    "$ref": "#/components/examples/sub_account_holder_example"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "sub_account_holder_example": {
+                    "$ref": "#/components/examples/sub_account_holder_bad_request_error"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "sub_account_holder_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {}
+        ]
+      },
+      "parameters": [
+        {
+          "name": "sub_account_holder_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/v2/accounts/sub_account_holder/{sub_account_holder_id}/kyb": {
+      "post": {
+        "tags": [
+          "Sub Account Holders"
+        ],
+        "summary": "Submit a KYB",
+        "description": "Submit a KYB",
+        "operationId": "SubmitAKYB",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "{{api_key}}",
+              "description": "API key is required to call Solid APIs. You can view and manage your API keys in the Solid dashboard."
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Submit a KYB",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/sub_account_holder"
+                },
+                "examples": {
+                  "sub_account_holder_example": {
+                    "$ref": "#/components/examples/sub_account_holder_example"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "sub_account_holder_example": {
+                    "$ref": "#/components/examples/sub_account_holder_bad_request_error"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "sub_account_holder_example": {
+                    "$ref": "#/components/examples/unauth_error"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found Error",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "master_account_example": {
+                    "$ref": "#/components/examples/master_account_not_found_error"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {}
+        ]
+      },
+      "parameters": [
+        {
+          "name": "sub_account_holder_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
     "/v2/accounts/sub_account": {
       "get": {
         "tags": [
@@ -7127,6 +7394,111 @@
                 "description": "postal code"
               }
             }
+          },
+          "kyc": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "kyc_7948d9a96706dd05360a340002de725f",
+                "description": "unique id of the KYC"
+              },
+              "status": {
+                "type": "string",
+                "example": "pass",
+                "description": "status of the KYC",
+                "enum": [
+                  "pass",
+                  "fail",
+                  "review",
+                  "not_started"
+                ]
+              },
+              "method": {
+                "type": "string",
+                "example": "solid",
+                "description": "sub account holder verification method. It could be an external vendor(Ex: alloy) or Solid"
+              },
+              "url": {
+                "type": "string",
+                "example": "https://dashboard.solidfi.com/id=kyc_7948d9a96706dd05360a340002de725f",
+                "description": "url to the person or business verification result. It could be a link to the external vendor or Solid"
+              },
+              "details": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "address": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "dob": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "ssn": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "phone": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "email": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "watchlist": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "fraud": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  }
+                }
+              }
+            }
+          },
+          "idv": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "idv_7948d9a96706dd05360a340002de725f",
+                "description": "unique id of the IDV"
+              },
+              "status": {
+                "type": "string",
+                "example": "pass",
+                "description": "status of the IDV",
+                "enum": [
+                  "pass",
+                  "fail",
+                  "review",
+                  "not_started"
+                ]
+              },
+              "method": {
+                "type": "string",
+                "example": "solid",
+                "description": "sub account holder IDV method. It could be an external vendor(Ex: plaid) or Solid"
+              },
+              "url": {
+                "type": "string",
+                "example": "https://dashboard.solidfi.com/id=kyc_7948d9a96706dd05360a340002de725f",
+                "description": "url to the identity verification result. It could be a link to the external vendor or Solid"
+              },
+              "reasons": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/kyc_kyb_reasons"
+                }
+              }
+            }
           }
         }
       },
@@ -7194,6 +7566,93 @@
             "type": "string",
             "example": "2018-02-18",
             "description": "date business was formed (YYYY-MM-DD)"
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "line1": {
+                "type": "string",
+                "example": "123 Main St",
+                "description": "line 1 of the address"
+              },
+              "line2": {
+                "type": "string",
+                "example": "",
+                "description": "line 2 of the address (optional)"
+              },
+              "city": {
+                "type": "string",
+                "example": "New York",
+                "description": "city of the address"
+              },
+              "state": {
+                "type": "string",
+                "example": "NY",
+                "description": "2-Letter US state abbreviation (ex: CA)"
+              },
+              "country": {
+                "type": "string",
+                "example": "US",
+                "description": "2-letter abbreviated country code (ex: US)"
+              },
+              "postal_code": {
+                "type": "string",
+                "example": "10001",
+                "description": "postal code"
+              }
+            }
+          },
+          "kyb": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "kyb_7948d9a96706dd05360a340002de725f",
+                "description": "unique id of the KYB"
+              },
+              "status": {
+                "type": "string",
+                "example": "pass",
+                "description": "status of the KYB",
+                "enum": [
+                  "pass",
+                  "fail",
+                  "review",
+                  "not_started"
+                ]
+              },
+              "method": {
+                "type": "string",
+                "example": "solid",
+                "description": "sub account holder verification method. It could be an external vendor(Ex: alloy) or Solid"
+              },
+              "url": {
+                "type": "string",
+                "example": "https://dashboard.solidfi.com/id=kyc_7948d9a96706dd05360a340002de725f",
+                "description": "url to the person or business verification result. It could be a link to the external vendor or Solid"
+              },
+              "details": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "address": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "watchlist": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "fraud": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  }
+                }
+              }
+            }
           },
           "members": {
             "type": "array",
@@ -7304,6 +7763,74 @@
               "true",
               "false"
             ]
+          },
+          "kyc": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "kyc_7948d9a96706dd05360a340002de725f",
+                "description": "unique id of the KYC"
+              },
+              "status": {
+                "type": "string",
+                "example": "pass",
+                "description": "status of the KYC",
+                "enum": [
+                  "pass",
+                  "fail",
+                  "review",
+                  "not_started"
+                ]
+              },
+              "method": {
+                "type": "string",
+                "example": "solid",
+                "description": "sub account holder verification method. It could be an external vendor(Ex: alloy) or Solid"
+              },
+              "url": {
+                "type": "string",
+                "example": "https://dashboard.solidfi.com/id=kyc_7948d9a96706dd05360a340002de725f",
+                "description": "url to the person or business verification result. It could be a link to the external vendor or Solid"
+              },
+              "details": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "address": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "dob": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "ssn": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "phone": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "email": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "watchlist": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  },
+                  "fraud": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/kyc_kyb"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -7421,6 +7948,42 @@
           "last_updated_at": {
             "type": "string",
             "example": "2024-04-01T21:00:00Z"
+          }
+        }
+      },
+      "kyc_kyb": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "pass",
+            "enum": [
+              "pass",
+              "fail",
+              "review",
+              "in_review"
+            ]
+          },
+          "reasons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/kyc_kyb_reasons"
+            }
+          }
+        }
+      },
+      "kyc_kyb_reasons": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "example": "N001",
+            "description": "reason code"
+          },
+          "description": {
+            "type": "string",
+            "example": "First name didn't match",
+            "description": "description of reason code"
           }
         }
       },
