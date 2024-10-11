@@ -2841,7 +2841,7 @@
                     "type": "physical",
                     "card_fulfilment": {
                       "embossing": {
-                        "cardholder_name": "John Doe",
+                        "card_holder_name": "John Doe",
                         "business_name": "Ace Inc"
                       },
                       "shipping_address": {
@@ -2858,7 +2858,7 @@
                         "period": "daily",
                         "max_spend_amount": "500.00"
                       },
-                      "atm_enabled": true
+                      "atm_enabled": "true"
                     },
                     "external_reference_id": "FSY52RAZ-4X",
                     "metadata": {
@@ -11483,7 +11483,7 @@
           "last4": "5275",
           "card_fulfilment": {
             "embossing": {
-              "cardholder_name": "John Doe",
+              "card_holder_name": "John Doe",
               "business_name": "Ace Inc"
             },
             "shipping_address": {
@@ -11519,7 +11519,7 @@
               "max_spend_per_transaction": "100.00",
               "max_spend_count": "10"
             },
-            "atm_enabled": true
+            "atm_enabled": "true"
           },
           "external_reference_id": "FSY52RAZ-4X",
           "attachments": [
@@ -11561,7 +11561,7 @@
               "last4": "5275",
               "card_fulfilment": {
                 "embossing": {
-                  "cardholder_name": "John Doe",
+                  "card_holder_name": "John Doe",
                   "business_name": "Ace Inc"
                 },
                 "shipping_address": {
@@ -11597,7 +11597,7 @@
                   "max_spend_per_transaction": "100.00",
                   "max_spend_count": "10"
                 },
-                "atm_enabled": true
+                "atm_enabled": "true"
               },
               "external_reference_id": "FSY52RAZ-4X",
               "attachments": [
