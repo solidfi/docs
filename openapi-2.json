@@ -10682,12 +10682,54 @@
               "state": "NY",
               "country": "US",
               "postal_code": "10001"
+            },
+            "kyc": {
+              "id": "kyc_01arz3ndektsv4rrffq69g5fav",
+              "status": "pass",
+              "method": "solid",
+              "url": "https://dashboard.solidfi.com/verify?id=kyc_01arz3ndektsv4rrffq69g5fav",
+              "details": {
+                "name": {
+                  "status": "pass",
+                  "reasons": null
+                },
+                "address": {
+                  "status": "pass",
+                  "reasons": null
+                },
+                "dob": {
+                  "status": "pass",
+                  "reasons": null
+                },
+                "ssn": {
+                  "status": "pass",
+                  "reasons": null
+                },
+                "phone": {
+                  "status": "pass",
+                  "reasons": null
+                },
+                "email": {
+                  "status": "pass",
+                  "reasons": null
+                },
+                "watchlist": {
+                  "status": "pass",
+                  "reasons": null
+                },
+                "fraud": {
+                  "status": "pass",
+                  "reasons": null
+                }
+              }
+            },
+            "idv": {
+              "id": "idv_01arz3ndektsv4rrffq69g5fav",
+              "status": "fail",
+              "method": "solid",
+              "url": "https://dashboard.solidfi.com/id=idv_01arz3ndektsv4rrffq69g5fav",
+              "reasons": null
             }
-          },
-          "verification": {
-            "status": "pass",
-            "method": "persona",
-            "url": "https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV"
           },
           "ofac": {
             "status": "pass",
