@@ -8262,7 +8262,7 @@
           },
           "ofac": {
             "type": "object",
-            "$ref": "#/components/schemas/sub_account_holder_timestamp"
+            "$ref": "#/components/schemas/sub_account_holder_ofac"
           },
           "external_reference_id": {
             "type": "string",
