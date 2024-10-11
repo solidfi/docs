@@ -10590,35 +10590,97 @@
           "total": 1,
           "data": [
             {
-              "id": "sah_743fa071316bc6beaf5dddfd05f49c30",
+              "id": "sah_5ccfeef0adf0cbe2aa0980d2c9509b2d",
               "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
               "master_account_holder_id": "mah_201e02c581a098a740456c5c19fcfcd6",
               "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
-              "label": "Payments Account",
-              "available_balance": "104100.41",
-              "pending_credits": "1198.50",
-              "pending_debits": "390.10",
-              "account_number": "9545931209",
-              "routing_number": "123321123",
-              "sponsor_bank": "Sponsor Bank",
-              "currency": "usd",
-              "external_reference_id": "XV-H27LGD-FX",
-              "purpose": "Payment Ops Master Account",
+              "type": "person",
+              "person": {
+                "first_name": "Jane",
+                "last_name": "Doe",
+                "id_type": "ssn",
+                "id_number": "223913234",
+                "date_of_birth": "1974-01-25",
+                "phone": "+19418405843",
+                "email": "jane.doe@gmail.com",
+                "address": {
+                  "line1": "123 Main St",
+                  "line2": "",
+                  "city": "New York",
+                  "state": "NY",
+                  "country": "US",
+                  "postal_code": "10001"
+                },
+                "kyc": {
+                  "id": "kyc_01arz3ndektsv4rrffq69g5fav",
+                  "status": "pass",
+                  "method": "solid",
+                  "url": "https://dashboard.solidfi.com/verify?id=kyc_01arz3ndektsv4rrffq69g5fav",
+                  "details": {
+                    "name": {
+                      "status": "pass",
+                      "reasons": null
+                    },
+                    "address": {
+                      "status": "pass",
+                      "reasons": null
+                    },
+                    "dob": {
+                      "status": "pass",
+                      "reasons": null
+                    },
+                    "ssn": {
+                      "status": "pass",
+                      "reasons": null
+                    },
+                    "phone": {
+                      "status": "pass",
+                      "reasons": null
+                    },
+                    "email": {
+                      "status": "pass",
+                      "reasons": null
+                    },
+                    "watchlist": {
+                      "status": "pass",
+                      "reasons": null
+                    },
+                    "fraud": {
+                      "status": "pass",
+                      "reasons": null
+                    }
+                  }
+                },
+                "idv": {
+                  "id": "idv_01arz3ndektsv4rrffq69g5fav",
+                  "status": "fail",
+                  "method": "solid",
+                  "url": "https://dashboard.solidfi.com/id=idv_01arz3ndektsv4rrffq69g5fav",
+                  "reasons": null
+                }
+              },
+              "business": null,
+              "ofac": {
+                "status": "pass",
+                "last_updated_at": "2024-04-01T21:00:00Z"
+              },
+              "external_reference_id": "TW-9L1L2-UVV",
+              "purpose": "Ace sub-account holder",
               "attachments": [
                 {
-                  "label": "flow of funds doc",
+                  "label": "formation",
                   "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
                   "created_at": "2024-04-01T21:00:00Z"
                 }
               ],
               "metadata": {
-                "master_account_code": "001"
+                "customer_code": "1501"
               },
               "status": "activated",
               "timestamps": {
                 "created_at": "2024-04-01T21:00:00Z",
-                "updated_at": "2024-04-02T21:00:00Z",
-                "deactivated_at": "2024-04-03T21:00:00Z"
+                "updated_at": "2024-04-01T21:00:00Z",
+                "deactivated_at": "2024-04-01T21:00:00Z"
               }
             }
           ],
@@ -10731,6 +10793,7 @@
               "reasons": null
             }
           },
+          "business": null,
           "ofac": {
             "status": "pass",
             "last_updated_at": "2024-04-01T21:00:00Z"
