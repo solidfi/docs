@@ -891,8 +891,8 @@
                   "$ref": "#/components/schemas/sub_account_holder"
                 },
                 "examples": {
-                  "sub_account_holder_example": {
-                    "$ref": "#/components/examples/sub_account_holder_example"
+                  "sub_account_holder_business_example": {
+                    "$ref": "#/components/examples/sub_account_holder_business_example"
                   }
                 }
               }
@@ -1114,7 +1114,8 @@
                     "description": "type of the sub account",
                     "enum": [
                       "cash",
-                      "prepaid"
+                      "prepaid",
+                      "checking"
                     ]
                   },
                   "external_reference_id": {
@@ -7026,7 +7027,8 @@
             "description": "type of the sub account",
             "enum": [
               "cash",
-              "prepaid"
+              "prepaid",
+              "checking"
             ]
           },
           "account_number": {
@@ -10529,54 +10531,34 @@
           "total": 1,
           "data": [
             {
-              "id": "sah_5ccfeef0adf0cbe2aa0980d2c9509b2d",
+              "id": "mas_743fa071316bc6beaf5dddfd05f49c30",
               "client_id": "cli_64c6c87ee9d609f36a6f390dc378a4ce",
               "master_account_holder_id": "mah_201e02c581a098a740456c5c19fcfcd6",
-              "master_account_id": "mas_743fa071316bc6beaf5dddfd05f49c30",
-              "type": "person",
-              "person": {
-                "first_name": "Jane",
-                "last_name": "Doe",
-                "id_type": "ssn",
-                "id_number": "223913234",
-                "date_of_birth": "1974-01-25",
-                "phone": "+19418405843",
-                "email": "jane.doe@gmail.com",
-                "address": {
-                  "line1": "123 Main St",
-                  "line2": "",
-                  "city": "New York",
-                  "state": "NY",
-                  "country": "US",
-                  "postal_code": "10001"
-                }
-              },
-              "verification": {
-                "status": "pass",
-                "method": "persona",
-                "url": "https://withpersona.com/verify?inquiry-id=inq_p1LgZj3wp5xWMk5XUhWAMrgV"
-              },
-              "ofac": {
-                "status": "pass",
-                "last_updated_at": "2024-04-01T21:00:00Z"
-              },
-              "external_reference_id": "TW-9L1L2-UVV",
-              "purpose": "Ace sub-account holder",
+              "label": "Payments Account",
+              "available_balance": "104100.41",
+              "pending_credits": "1198.50",
+              "pending_debits": "390.10",
+              "account_number": "9545931209",
+              "routing_number": "123321123",
+              "sponsor_bank": "Sponsor Bank",
+              "currency": "usd",
+              "external_reference_id": "XV-H27LGD-FX",
+              "purpose": "Payment Ops Master Account",
               "attachments": [
                 {
-                  "label": "formation",
+                  "label": "flow of funds doc",
                   "id": "att_a8d2b191fa0e960d8e49a4bfd320e07b",
                   "created_at": "2024-04-01T21:00:00Z"
                 }
               ],
               "metadata": {
-                "customer_code": "1501"
+                "master_account_code": "001"
               },
-              "status": "activated",
+              "status": "open",
               "timestamps": {
                 "created_at": "2024-04-01T21:00:00Z",
-                "updated_at": "2024-04-01T21:00:00Z",
-                "closed_at": "2024-04-01T21:00:00Z"
+                "updated_at": "2024-04-02T21:00:00Z",
+                "closed_at": "2024-04-03T21:00:00Z"
               }
             }
           ],
@@ -10815,6 +10797,146 @@
             "created_at": "2024-04-01T21:00:00Z",
             "updated_at": "2024-04-01T21:00:00Z",
             "deactivated_at": "2024-04-01T21:00:00Z"
+          }
+        }
+      },
+      "sub_account_holder_business_example": {
+        "value": {
+          "id": "sah_01929abad28978ae83b24f5141638475",
+          "client_id": "cli_01922e0609e877308fe708217311f5c8",
+          "master_account_holder_id": "mah_01922e644f1876cd85f8611582db198c",
+          "master_account_id": "mas_01922e6530ec79b589b4470cba42cb09",
+          "type": "business",
+          "person": null,
+          "business": {
+            "legal_name": "Acme LLC",
+            "dba": "Acme LLC",
+            "entity_type": "limited_liability_company",
+            "id_type": "ein",
+            "id_number": "223913234",
+            "phone": "+11231231231",
+            "email": "contact@acme.com",
+            "formation_date": "1989-08-09",
+            "address": {
+              "line1": "123 Main St",
+              "line2": "",
+              "city": "New York",
+              "state": "NY",
+              "country": "US",
+              "postal_code": "10001"
+            },
+            "kyb": {
+              "id": "kyb_01arz3ndektsv4rrffq69g5fav",
+              "status": "pass",
+              "method": "solid",
+              "url": "https://dashboard.solidfi.com/verify?id=kyb_01arz3ndektsv4rrffq69g5fav",
+              "details": {
+                "name": {
+                  "status": "pass",
+                  "reason": null
+                },
+                "address": {
+                  "status": "pass",
+                  "reason": null
+                },
+                "watchlist": {
+                  "status": "pass",
+                  "reason": null
+                },
+                "fraud": {
+                  "status": "pass",
+                  "reason": null
+                }
+              }
+            },
+            "members": [
+              {
+                "id": "mem_01929abad17f7c2e80a766a5d4a38b39",
+                "first_name": "Jane",
+                "middle_name": "",
+                "last_name": "Doe",
+                "id_type": "ssn",
+                "id_number": "223902214",
+                "date_of_birth": "1974-08-09",
+                "phone": "+11231231231",
+                "email": "jane@acme.com",
+                "address": {
+                  "line1": "123 Main St",
+                  "line2": "",
+                  "city": "New York",
+                  "state": "NY",
+                  "country": "US",
+                  "postal_code": "10001"
+                },
+                "kyc": {
+                  "id": "kyc_01arz3ndektsv4rrffq69g5fav",
+                  "status": "pass",
+                  "method": "solid",
+                  "url": "https://dashboard.solidfi.com/verify?id=kyc_01arz3ndektsv4rrffq69g5fav",
+                  "details": {
+                    "name": {
+                      "status": "pass",
+                      "reasons": null
+                    },
+                    "address": {
+                      "status": "pass",
+                      "reasons": null
+                    },
+                    "dob": {
+                      "status": "pass",
+                      "reasons": null
+                    },
+                    "ssn": {
+                      "status": "pass",
+                      "reasons": null
+                    },
+                    "phone": {
+                      "status": "pass",
+                      "reasons": null
+                    },
+                    "email": {
+                      "status": "pass",
+                      "reasons": null
+                    },
+                    "watchlist": {
+                      "status": "pass",
+                      "reasons": null
+                    },
+                    "fraud": {
+                      "status": "pass",
+                      "reasons": null
+                    }
+                  }
+                },
+                "idv": {
+                  "id": "idv_01arz3ndektsv4rrffq69g5fav",
+                  "status": "pass",
+                  "method": "solid",
+                  "url": "https://dashboard.solidfi.com/id=idv_01arz3ndektsv4rrffq69g5fav",
+                  "reasons": null
+                },
+                "ownership": "50.00",
+                "designation": "president",
+                "title": "",
+                "control_person": "true"
+              }
+            ]
+          },
+          "ofac": {
+            "status": "passed",
+            "last_updated_at": "2024-10-17T13:46:27Z"
+          },
+          "external_reference_id": "xyz-123-qwerp",
+          "purpose": "Acme sub account holder",
+          "attachments": null,
+          "metadata": {
+            "customer_code": "1501"
+          },
+          "status": "activated",
+          "timestamps": {
+            "created_at": "2024-10-17T13:46:27Z",
+            "updated_at": "",
+            "deactivated_at": ""
           }
         }
       },
