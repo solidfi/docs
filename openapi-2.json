@@ -1653,14 +1653,14 @@
                       "routing_number": "121042882",
                       "account_type": "business_checking",
                       "bank_name": "Wells Fargo",
-                      "verification_status": "verified"
+                      "verification_status": "pass"
                     },
                     "rtp": {
                       "account_number": "98324502",
                       "routing_number": "121042882",
                       "account_type": "business_checking",
                       "bank_name": "Wells Fargo",
-                      "verification_status": "verified"
+                      "verification_status": "pass"
                     },
                     "domestic_wire": {
                       "account_number": "98324502",
@@ -8351,10 +8351,11 @@
           "verification_status": {
             "type": "string",
             "description": "if the account is verified - true or false",
-            "example": "verified",
+            "example": "pass",
             "enum": [
-              "verified",
-              "unverified"
+              "pass",
+              "fail",
+              "review"
             ]
           }
         }
@@ -8539,11 +8540,12 @@
           },
           "verification_status": {
             "type": "string",
-            "example": "verified",
+            "example": "pass",
             "description": "if the account is verified",
             "enum": [
-              "verified",
-              "unverified"
+              "pass",
+              "fail",
+              "review"
             ]
           }
         }
@@ -8579,11 +8581,12 @@
           },
           "verification_status": {
             "type": "string",
-            "example": "verified",
+            "example": "pass",
             "description": "if the account is verified or not",
             "enum": [
-              "verified",
-              "unverified"
+              "pass",
+              "fail",
+              "review"
             ]
           }
         }
@@ -9797,11 +9800,12 @@
           },
           "verification_status": {
             "type": "string",
-            "example": "verified",
+            "example": "pass",
             "description": "account verification status of the counterparty",
             "enum": [
-              "verified",
-              "unverified"
+              "pass",
+              "fail",
+              "review"
             ]
           },
           "account_number": {
@@ -11058,7 +11062,7 @@
             "routing_number": "121042882",
             "account_type": "business_checking",
             "bank_name": "Wells Fargo",
-            "verification_status": "verified"
+            "verification_status": "pass"
           },
           "domestic_wire": {
             "account_number": "98324502",
@@ -11098,14 +11102,14 @@
             "routing_number": "121042882",
             "account_type": "business_checking",
             "bank_name": "Wells Fargo",
-            "verification_status": "verified"
+            "verification_status": "pass"
           },
           "fednow": {
             "account_number": "98324502",
             "routing_number": "121042882",
             "account_type": "business_checking",
             "bank_name": "Wells Fargo",
-            "verification_status": "verified"
+            "verification_status": "pass"
           },
           "check": {
             "address": {
@@ -11197,7 +11201,7 @@
                   "routing_number": "121042882",
                   "account_type": "business_checking",
                   "bank_name": "Wells Fargo",
-                  "verification_status": "verified"
+                  "verification_status": "pass"
                 },
                 "domestic_wire": {
                   "account_number": "98324502",
@@ -11237,14 +11241,14 @@
                   "routing_number": "121042882",
                   "account_type": "business_checking",
                   "bank_name": "Wells Fargo",
-                  "verification_status": "verified"
+                  "verification_status": "pass"
                 },
                 "fednow": {
                   "account_number": "98324502",
                   "routing_number": "121042882",
                   "account_type": "business_checking",
                   "bank_name": "Wells Fargo",
-                  "verification_status": "verified"
+                  "verification_status": "pass"
                 },
                 "check": {
                   "address": {
@@ -11767,7 +11771,7 @@
           "counterparty": {
             "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
             "name": "John Doe",
-            "verification_status": "verified",
+            "verification_status": "pass",
             "account_number": "98324502",
             "routing_number": "121042882",
             "account_type": "personal_checking",
@@ -11840,7 +11844,7 @@
           "counterparty": {
             "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
             "name": "John Doe",
-            "verification_status": "unverified",
+            "verification_status": "pass",
             "account_number": "9542450298324502",
             "routing_number": "",
             "account_type": "",
@@ -11898,7 +11902,7 @@
           "counterparty": {
             "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
             "name": "John Doe",
-            "verification_status": "unverified",
+            "verification_status": "pass",
             "account_number": "9542450298324502",
             "routing_number": "",
             "account_type": "",
@@ -11956,7 +11960,7 @@
           "counterparty": {
             "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
             "name": "John Doe",
-            "verification_status": "verified",
+            "verification_status": "pass",
             "account_number": "98324502",
             "routing_number": "121042882",
             "account_type": "business_checking",
@@ -12023,7 +12027,7 @@
           "counterparty": {
             "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
             "name": "John Doe",
-            "verification_status": "verified",
+            "verification_status": "pass",
             "account_number": "98324502",
             "routing_number": "121042882",
             "account_type": "business_checking",
@@ -12090,7 +12094,7 @@
           "counterparty": {
             "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
             "name": "John Doe",
-            "verification_status": "verified",
+            "verification_status": "pass",
             "account_number": "98324502",
             "routing_number": "121042882",
             "account_type": "business_checking",
@@ -12152,7 +12156,7 @@
           "counterparty": {
             "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
             "name": "Global Technologies",
-            "verification_status": "verified",
+            "verification_status": "pass",
             "account_number": "2986167511",
             "routing_number": "",
             "account_type": "business_checking",
@@ -12235,7 +12239,7 @@
           "counterparty": {
             "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
             "name": "John Doe",
-            "verification_status": "verified",
+            "verification_status": "pass",
             "account_number": "98324502",
             "routing_number": "121042882",
             "account_type": "personal_checking",
@@ -12296,7 +12300,7 @@
           "counterparty": {
             "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
             "name": "John Doe",
-            "verification_status": "verified",
+            "verification_status": "pass",
             "account_number": "98324502",
             "routing_number": "121042882",
             "account_type": "personal_checking",
@@ -12357,7 +12361,7 @@
           "counterparty": {
             "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
             "name": "John Doe",
-            "verification_status": "verified",
+            "verification_status": "pass",
             "account_number": "",
             "routing_number": "",
             "account_type": "",
@@ -12415,7 +12419,7 @@
           "counterparty": {
             "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
             "name": "John Doe",
-            "verification_status": "verified",
+            "verification_status": "pass",
             "account_number": "",
             "routing_number": "",
             "account_type": "",
@@ -12473,7 +12477,7 @@
           "counterparty": {
             "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
             "name": "John Doe",
-            "verification_status": "verified",
+            "verification_status": "pass",
             "account_number": "",
             "routing_number": "",
             "account_type": "",
@@ -12546,7 +12550,7 @@
           "counterparty": {
             "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
             "name": "John Doe",
-            "verification_status": "verified",
+            "verification_status": "pass",
             "account_number": "",
             "routing_number": "",
             "account_type": "",
@@ -12610,7 +12614,7 @@
           "counterparty": {
             "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
             "name": "NewCo Inc",
-            "verification_status": "verified",
+            "verification_status": "pass",
             "account_number": "98324502",
             "routing_number": "121042882",
             "account_type": "business_checking",
@@ -12679,7 +12683,7 @@
           "counterparty": {
             "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
             "name": "NewCo Inc",
-            "verification_status": "verified",
+            "verification_status": "pass",
             "account_number": "98324502",
             "routing_number": "121042882",
             "account_type": "business_checking",
@@ -12751,7 +12755,7 @@
               "counterparty": {
                 "id": "ctp_8e5541c8a9e50c3af3b0daacf9175130",
                 "name": "NewCo Inc",
-                "verification_status": "verified",
+                "verification_status": "pass",
                 "account_number": "98324502",
                 "routing_number": "121042882",
                 "account_type": "business_checking",
@@ -12825,7 +12829,7 @@
           "counterparty": {
             "id": "",
             "name": "John Doe",
-            "verification_status": "verified",
+            "verification_status": "pass",
             "account_number": "",
             "routing_number": "121042882",
             "account_type": "",
@@ -12898,7 +12902,7 @@
           "counterparty": {
             "id": "",
             "name": "John Doe",
-            "verification_status": "verified",
+            "verification_status": "pass",
             "account_number": "",
             "routing_number": "121042882",
             "account_type": "",
