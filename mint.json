@@ -49,11 +49,6 @@
   },
   "anchors": [
     {
-      "name": "Platform Status",
-      "icon": "signal-bars",
-      "url": "https://status.solidfi.com/?&_ga=2.106479873.308955735.1702327933-383528257.1702327933"
-    },
-    {
       "name": "Changelog",
       "icon": "list-check",
       "url": "https://docs.solidfi.com/changelog"
